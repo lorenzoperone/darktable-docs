@@ -1,0 +1,3498 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/agx/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../exposure/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Tone Mapping: AGX - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tone-mapping-agx" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tone Mapping: AGX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workshop/" class="md-tabs__link">
+          
+  
+  
+  Workshop
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: AGX
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: AGX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro consigliato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-auto-tune-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 1: Auto Tune Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-contrasto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2: Contrasto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-shoulder-e-toe-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3: Shoulder e Toe Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-principali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri principali
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-avanzati-della-curva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri avanzati della curva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestione-del-colore-in-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione del colore in AGX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione del colore in AGX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attenuazione-delle-primarie-before-tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attenuazione delle primarie (Before Tone Mapping)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recupero-della-purezza-after-tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recupero della purezza (After Tone Mapping)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversals-inversioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reversals (inversioni)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-della-pipetta-eyedropper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso della pipetta (eyedropper)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casi-duso-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casi d'uso pratici
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casi d&#39;uso pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ritratti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ritratti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paesaggi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paesaggi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tramonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tramonti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene-in-scarsa-luce-lowlight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene in scarsa luce (Lowlight)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effetto-dragan-ritratti-drammatici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effetto Dragan (ritratti drammatici)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-notorious-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I "Notorious 6"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agx-vs-filmic-rgb-vs-sigmoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGX vs Filmic RGB vs Sigmoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errori-comuni-e-come-evitarli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errori comuni e come evitarli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errori comuni e come evitarli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-non-regolare-lesposizione-prima-di-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Non regolare l'esposizione prima di AGX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contrast-troppo-alto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Contrast troppo alto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ignorare-lattenuazione-delle-primarie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ignorare l'attenuazione delle primarie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pivot-mal-posizionato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pivot mal posizionato
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-dynamic-range-scaling-aggressivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Dynamic range scaling aggressivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-target-black-troppo-alto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Target black troppo alto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-curve-avanzata-senza-motivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Curve avanzata senza motivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scorciatoie-da-tastiera-utili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scorciatoie da tastiera utili
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-di-riferimento-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri di riferimento rapido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-sulla-curva-arancione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note sulla curva arancione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse-aggiuntive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse aggiuntive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../channel-mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Channel Mixer (Mix di Canali)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diffuse-sharpen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diffuse or Sharpen (Diffondi o Nitidezza)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workshop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop -- Casi pratici di editing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/black-white/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bianco e Nero -- Conversione da foto infrarosso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/portrait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritratto -- Effetto Dragan e ritratto chiaroscuro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paesaggio -- Tramonto con albero e maschere avanzate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/lowlight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scarsa illuminazione -- Concerto e foto notturne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro consigliato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-auto-tune-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 1: Auto Tune Levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-contrasto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2: Contrasto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-shoulder-e-toe-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3: Shoulder e Toe Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-principali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri principali
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-avanzati-della-curva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri avanzati della curva
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestione-del-colore-in-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione del colore in AGX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestione del colore in AGX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attenuazione-delle-primarie-before-tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attenuazione delle primarie (Before Tone Mapping)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recupero-della-purezza-after-tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recupero della purezza (After Tone Mapping)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversals-inversioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reversals (inversioni)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-della-pipetta-eyedropper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso della pipetta (eyedropper)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casi-duso-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casi d'uso pratici
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Casi d&#39;uso pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ritratti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ritratti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paesaggi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paesaggi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tramonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tramonti
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene-in-scarsa-luce-lowlight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene in scarsa luce (Lowlight)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effetto-dragan-ritratti-drammatici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effetto Dragan (ritratti drammatici)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-notorious-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I "Notorious 6"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agx-vs-filmic-rgb-vs-sigmoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AGX vs Filmic RGB vs Sigmoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errori-comuni-e-come-evitarli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errori comuni e come evitarli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Errori comuni e come evitarli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-non-regolare-lesposizione-prima-di-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Non regolare l'esposizione prima di AGX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contrast-troppo-alto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Contrast troppo alto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ignorare-lattenuazione-delle-primarie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ignorare l'attenuazione delle primarie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pivot-mal-posizionato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Pivot mal posizionato
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-dynamic-range-scaling-aggressivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Dynamic range scaling aggressivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-target-black-troppo-alto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Target black troppo alto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-curve-avanzata-senza-motivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Curve avanzata senza motivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scorciatoie-da-tastiera-utili" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scorciatoie da tastiera utili
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-di-riferimento-rapido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri di riferimento rapido
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note-sulla-curva-arancione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note sulla curva arancione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse-aggiuntive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse aggiuntive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tone-mapping-agx">Tone Mapping: AGX<a class="headerlink" href="#tone-mapping-agx" title="Permanent link">&para;</a></h1>
+<p>Il modulo <strong>AGX</strong> (Academy Color Encoding System-inspired tone mapping) e' il tone mapper predefinito in darktable 5.4+. Sostituisce gradualmente Filmic RGB e Sigmoid, offrendo un approccio ispirato al workflow cinematografico ACES per la compressione tonale scene-referred.[^agx-guide][^manual-agx]</p>
+<p><img alt="Introduzione al modulo AGX" src="../../images/agx-intro.jpg" /></p>
+<div class="admonition info">
+<p class="admonition-title">AGX e' il default da darktable 5.4</p>
+<p>Dalla versione 5.4, AGX e' il modulo di tone mapping predefinito nella pipeline scene-referred. Questo significa che ogni nuova immagine RAW verra' elaborata con AGX automaticamente.[^dt54-update]</p>
+</div>
+<h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
+<p>AGX gestisce due aspetti fondamentali in un unico modulo:</p>
+<ol>
+<li><strong>Compressione tonale</strong> (scheda <em>Primaries</em> / <em>Tone</em>) -- comprime l'ampia gamma dinamica del RAW nel range visualizzabile dello schermo</li>
+<li><strong>Gestione del colore</strong> (scheda <em>Color</em> / <em>Primaries</em>) -- controlla saturazione, rotazioni e recupero della puretta cromatica dopo la compressione[^agx-guide][^dt54-update]</li>
+</ol>
+<p>A differenza di Filmic RGB, AGX gestisce la saturazione seguendo il comportamento della pellicola analogica: i colori molto luminosi si desaturano naturalmente, come avviene nella realta'.[^manual-agx] Questo risolve il cosiddetto problema dei "<strong>Notorious 6</strong>" -- sei comportamenti problematici dei tone mapper precedenti con colori saturi e luminosi.[^agx-guide]</p>
+<h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
+<p>Il flusso di lavoro tipico con AGX si articola in tre fasi:[^agx-guide][^pipeline-beginner]</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione (modulo exposure)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. AGX -- compressione tonale
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Bilanciamento colore (color balance rgb)
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Regola d'oro: esponi prima, comprimi dopo</p>
+<p>Imposta <strong>sempre</strong> l'esposizione globale <em>prima</em> di toccare AGX. Il tone mapper lavora sui dati gia' esposti; se l'esposizione e' sbagliata, nessun parametro di AGX potra' recuperare la situazione.[^agx-guide]</p>
+</div>
+<h3 id="passo-1-auto-tune-levels">Passo 1: Auto Tune Levels<a class="headerlink" href="#passo-1-auto-tune-levels" title="Permanent link">&para;</a></h3>
+<p>Il primo passo pratico in AGX e' quasi sempre il pulsante <strong>Auto Tune Levels</strong>:[^agx-guide]</p>
+<ul>
+<li>Cliccalo una sola volta all'inizio dell'editing</li>
+<li>Calcola automaticamente i punti di bianco e nero dell'immagine</li>
+<li>Funziona meglio se l'esposizione globale e' gia' stata regolata[^pipeline-beginner]</li>
+</ul>
+<p><img alt="AGX nella pipeline di darktable" src="../../images/pipeline-agx-default.jpg" /></p>
+<h3 id="passo-2-contrasto">Passo 2: Contrasto<a class="headerlink" href="#passo-2-contrasto" title="Permanent link">&para;</a></h3>
+<p>Il parametro <strong>Contrast</strong> controlla la pendenza della curva S globale:[^agx-guide]</p>
+<ul>
+<li><strong>Default</strong>: ~2.80</li>
+<li><strong>Aumenta</strong> per piu' impatto visivo (tipicamente 3.0-4.5)</li>
+<li><strong>Riduci</strong> per scene gia' contrastate o per un look piu' morbido[^agx-guide]</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Valuta il contrasto a distanza</p>
+<p>Riduci la dimensione di visualizzazione dell'immagine (Ctrl + -) per percepire meglio l'impatto globale del contrasto, invece di lavorare sempre zoomato al 100%.[^pipeline-beginner]</p>
+</div>
+<h3 id="passo-3-shoulder-e-toe-power">Passo 3: Shoulder e Toe Power<a class="headerlink" href="#passo-3-shoulder-e-toe-power" title="Permanent link">&para;</a></h3>
+<p>Questi due parametri controllano separatamente le estremita' della curva:[^agx-guide]</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Cosa controlla</th>
+<th>Effetto pratico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shoulder Power</strong></td>
+<td>Compressione alte luci</td>
+<td>Aumenta per recuperare dettagli nelle zone luminose (cieli, finestre). Valori alti schiariscono le luci gradualmente.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Toe Power</strong></td>
+<td>Compressione ombre</td>
+<td>Aumenta per aprire le ombre senza appiattirle. Valori alti schiariscono le zone scure mantenendo profondita'.[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Non esagerare</p>
+<p>Valori estremi di shoulder/toe power possono distruggere la forma a S della curva, riducendo il controllo locale. Se la curva diventa arancione nelle estremita', stai spingendo troppo.[^agx-guide]</p>
+</div>
+<h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Range tipico</th>
+<th>Default</th>
+<th>Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>White relative exposure</strong></td>
+<td>2.0 - 8.0 EV</td>
+<td>6.50 EV</td>
+<td>Punto piu' luminoso dell'immagine. Usa la pipetta per campionare.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Black relative exposure</strong></td>
+<td>-4.0 - -15.0 EV</td>
+<td>-10.00 EV</td>
+<td>Punto piu' scuro dell'immagine. Usa la pipetta per campionare.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Dynamic range scaling</strong></td>
+<td>-50% - +50%</td>
+<td>+10.00%</td>
+<td>Scala simmetricamente il range dinamico calcolato. Utile come margine di sicurezza per luminanze estreme.[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Pivot relative exposure</strong></td>
+<td>Variabile</td>
+<td>+0.00 EV</td>
+<td>Punto di massimo contrasto sulla curva. Spostalo sulla zona dell'immagine che vuoi sia piu' nitida.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Pivot target output</strong></td>
+<td>0% - 50%</td>
+<td>18.00%</td>
+<td>Luminanza di output del pivot. 18% corrisponde al grigio medio (riflettanza neutra).[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Contrast</strong></td>
+<td>1.0 - 5.0</td>
+<td>2.80</td>
+<td>Pendenza della curva S. Controlla il contrasto globale.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Shoulder power</strong></td>
+<td>1.0 - 5.0</td>
+<td>1.55</td>
+<td>Controllo della compressione nelle alte luci.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Toe power</strong></td>
+<td>1.0 - 5.0</td>
+<td>1.55</td>
+<td>Controllo della compressione nelle ombre.[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Pannello dei parametri AGX" src="../../images/agx-parameters-panel.jpg" /></p>
+<h2 id="parametri-avanzati-della-curva">Parametri avanzati della curva<a class="headerlink" href="#parametri-avanzati-della-curva" title="Permanent link">&para;</a></h2>
+<p>Espandendo la sezione <em>Advanced Curve Parameters</em>, si trovano controlli aggiuntivi:[^agx-guide]</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Funzione</th>
+<th>Quando usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shoulder start</strong></td>
+<td>Dove inizia la compressione delle luci</td>
+<td>Per anticipare o ritardare la curva nella zona luminosa[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Toe start</strong></td>
+<td>Dove inizia la compressione delle ombre</td>
+<td>Per controllare da dove parte la curva nelle zone scure[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Target white</strong></td>
+<td>Luminanza massima di output</td>
+<td>Di solito 100%. Abbassare per look desaturato.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Target black</strong></td>
+<td>Luminanza minima di output</td>
+<td>Alza leggermente (1-3%) per effetto "pellicola sbiadita" (black lift)[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Curve Y gamma</strong></td>
+<td>Gamma della curva</td>
+<td>Workaround quando shoulder/toe non bastano. Aumenta per schiarire senza perdere controllo sulla spalla.[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Slope</strong></td>
+<td>Pendenza lineare</td>
+<td>Regolazione fine della pendenza globale[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Parametri da non toccare (di solito)</p>
+<p>I seguenti parametri sono sconsigliati per l'uso quotidiano:[^agx-guide]</p>
+<ul>
+<li><strong>Dynamic range scaling</strong> oltre +/-10% -- rischio clipping</li>
+<li><strong>Target white/black</strong> estremi -- effetto sbiadito innaturale</li>
+<li><strong>Parametri avanzati della curva</strong> -- usa solo se shoulder/toe non sono sufficienti</li>
+</ul>
+</div>
+<p><img alt="Visualizzazione della curva tonale AGX" src="../../images/agx-curve-display.jpg" /></p>
+<h2 id="gestione-del-colore-in-agx">Gestione del colore in AGX<a class="headerlink" href="#gestione-del-colore-in-agx" title="Permanent link">&para;</a></h2>
+<p>La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda <em>Color</em> o tramite il modulo <em>Color Calibration</em> con tab <em>Primaries</em>.[^agx-guide][^dt54-update]</p>
+<p><img alt="Nuova ruota cromatica dt 5.4" src="../../images/dt54-hue-wheel.jpg" /></p>
+<h3 id="attenuazione-delle-primarie-before-tone-mapping">Attenuazione delle primarie (Before Tone Mapping)<a class="headerlink" href="#attenuazione-delle-primarie-before-tone-mapping" title="Permanent link">&para;</a></h3>
+<p>Prima della compressione tonale, puoi desaturare selettivamente i canali RGB:[^dt54-update]</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Funzione</th>
+<th>Valore tipico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Red attenuation</strong></td>
+<td>Desatura i rossi prima del tone mapping</td>
+<td>10-30%[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Green attenuation</strong></td>
+<td>Desatura i verdi prima del tone mapping</td>
+<td>0-10%[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Blue attenuation</strong></td>
+<td>Desatura i blu prima del tone mapping</td>
+<td>10-70% (scene con blu saturi)[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Red/Green/Blue rotation</strong></td>
+<td>Ruota la tonalità del canale</td>
+<td>+/- 1-5°[^dt54-update]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Perche' attenuare prima del tone mapping</p>
+<p>I colori troppo saturi e luminosi vengono troncati a valori massimi sullo schermo (clipping cromatico). Attenuandoli <em>prima</em> della compressione, li porti in uno "spazio sicuro" dove il tone mapper puo' gestirli correttamente.[^dt54-update]</p>
+</div>
+<h3 id="recupero-della-purezza-after-tone-mapping">Recupero della purezza (After Tone Mapping)<a class="headerlink" href="#recupero-della-purezza-after-tone-mapping" title="Permanent link">&para;</a></h3>
+<p>Dopo la compressione, puoi recuperare la vividezza cromatica persa:[^dt54-update]</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Funzione</th>
+<th>Quando usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recover purity</strong></td>
+<td>Recupera saturazione persa dal tone mapping</td>
+<td>Quando i colori sembrano spenti dopo AGX[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Master purity boost</strong></td>
+<td>Aumento globale di purezza cromatica</td>
+<td>Per dare piu' "pop" ai colori[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Red/Green/Blue purity boost</strong></td>
+<td>Aumento selettivo per canale</td>
+<td>Per correggere dominanti o enfatizzare colori specifici[^dt54-update]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reversals-inversioni">Reversals (inversioni)<a class="headerlink" href="#reversals-inversioni" title="Permanent link">&para;</a></h3>
+<p>I controlli <em>reversal</em> permettono di "tornare indietro" parzialmente sulle correzioni applicate:[^dt54-update]</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Funzione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Master rotation reversal</strong></td>
+<td>Inverte parzialmente le rotazioni di tonalità</td>
+</tr>
+<tr>
+<td><strong>Red/Green/Blue attenuation reversal</strong></td>
+<td>Recupera parte dell'attenuazione applicata</td>
+</tr>
+<tr>
+<td><strong>Red/Green/Blue rotation reversal</strong></td>
+<td>Corregge la rotazione dopo l'attenuazione</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Come funzionano le reversals</p>
+<p>Le reversals non annullano le correzioni, ma ne mitigano l'effetto. Questo permette un controllo fine: attenui molto per evitare clipping, poi recuperi parzialmente con la reversal.[^dt54-update]</p>
+</div>
+<h2 id="uso-della-pipetta-eyedropper">Uso della pipetta (eyedropper)<a class="headerlink" href="#uso-della-pipetta-eyedropper" title="Permanent link">&para;</a></h2>
+<p>AGX offre strumenti pipetta per impostare automaticamente i parametri:[^agx-guide]</p>
+<table>
+<thead>
+<tr>
+<th>Strumento</th>
+<th>Cosa fa</th>
+<th>Come usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto tune levels</strong></td>
+<td>Calcola white/black exposure</td>
+<td>Clicca una volta dopo aver regolato l'esposizione[^agx-guide]</td>
+</tr>
+<tr>
+<td><strong>Pipetta pivot</strong></td>
+<td>Campiona l'esposizione media di un'area</td>
+<td>Trascina un rettangolo sulla zona che vuoi sia a massimo contrasto[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tecnica del rettangolo</p>
+<p>Quando usi la pipetta per il pivot, non cliccare su un singolo pixel. Trascina un rettangolo sulla zona di interesse (es. il soggetto principale) per campionare l'esposizione media di quell'area.[^agx-guide]</p>
+</div>
+<p><img alt="Uso della pipetta per il pivot AGX" src="../../images/agx-pivot-eyedropper.jpg" /></p>
+<h2 id="casi-duso-pratici">Casi d'uso pratici<a class="headerlink" href="#casi-duso-pratici" title="Permanent link">&para;</a></h2>
+<h3 id="ritratti">Ritratti<a class="headerlink" href="#ritratti" title="Permanent link">&para;</a></h3>
+<p>Per i ritratti, AGX offre toni della pelle naturali e buona gestione delle alte luci:[^agx-guide]</p>
+<ol>
+<li><strong>Esposizione</strong>: regola per esporre correttamente il volto (spesso +0.5 a +1.5 EV)</li>
+<li><strong>Auto tune levels</strong> per impostare i punti bianco/nero</li>
+<li><strong>Contrast</strong>: 2.80-3.50 (moderato, non aggressivo)</li>
+<li><strong>Shoulder power</strong>: 1.55-2.00 (protegge le alte luci della pelle)</li>
+<li><strong>Toe power</strong>: 1.55-2.00 (apre le ombre senza appiattire)</li>
+<li><strong>Color balance RGB</strong>: preset <em>Basic Colorfulness - Standard</em> per saturazione naturale[^agx-guide]</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Toni della pelle</p>
+<p>Se i toni della pelle risultano troppo saturi, usa il <em>Color Equalizer</em> sulla saturazione per desaturare selettivamente la zona dei rossi/arancioni.[^dragan-effect]</p>
+</div>
+<p><img alt="Desaturazione della pelle effetto Dragan" src="../../images/dragan-skin-desaturation.jpg" /></p>
+<h3 id="paesaggi">Paesaggi<a class="headerlink" href="#paesaggi" title="Permanent link">&para;</a></h3>
+<p>I paesaggi beneficiano della gestione avanzata della dinamica di AGX:[^landscape]</p>
+<ol>
+<li><strong>Exposure</strong>: esponi per le alte luci (proteggi il cielo)</li>
+<li><strong>Auto tune levels</strong></li>
+<li><strong>Contrast</strong>: 3.0-4.5 (i paesaggi reggono contrasti piu' alti)</li>
+<li><strong>Shoulder power</strong>: 2.0-3.0 (recupera dettagli nel cielo)</li>
+<li><strong>Toe power</strong>: 1.55-2.50 (mantieni profondita' nelle ombre)</li>
+<li><strong>Pivot</strong>: campiona sulla zona principale (es. albero, montagna)[^landscape]</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Maschere parametriche</p>
+<p>Per paesaggi complessi, usa maschere parametriche su moduli Exposure aggiuntivi per lavorare separatamente su cielo, terreno e soggetti.[^landscape]</p>
+</div>
+<p><img alt="Maschera Tone EQ per paesaggi" src="../../images/dt54-tone-eq-mask.jpg" /></p>
+<h3 id="tramonti">Tramonti<a class="headerlink" href="#tramonti" title="Permanent link">&para;</a></h3>
+<p>I tramonti sono la sfida piu' difficile per un tone mapper a causa dei colori estremamente saturi:[^agx-guide]</p>
+<ol>
+<li><strong>Exposure</strong>: esponi per il cielo (spesso sottoesponi leggermente)</li>
+<li><strong>Auto tune levels</strong></li>
+<li><strong>Blue attenuation</strong>: aumenta significativamente (30-70%) per evitare clipping dei blu[^dt54-update]</li>
+<li><strong>Red attenuation</strong>: 10-20% per gestire i rossi saturi[^dt54-update]</li>
+<li><strong>Contrast</strong>: 2.5-3.5</li>
+<li><strong>Recover purity</strong>: 50-100% per recuperare vividezza dopo la compressione[^dt54-update]</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Attenzione al color banding</p>
+<p>I tramonti con colori molto saturi possono mostrare <em>color banding</em> (bande di colore) nelle zone di transizione. Se succede, aumenta l'attenuazione del blu e del rosso, poi recupera con <em>recover purity</em>.[^dt52-release]</p>
+</div>
+<p><img alt="Funzionalita Preserve Hue per i tramonti" src="../../images/agx-preserve-hue.jpg" /></p>
+<h3 id="scene-in-scarsa-luce-lowlight">Scene in scarsa luce (Lowlight)<a class="headerlink" href="#scene-in-scarsa-luce-lowlight" title="Permanent link">&para;</a></h3>
+<p>Per foto scattate in condizioni di scarsa luce:[^lowlight]</p>
+<ol>
+<li><strong>Exposure</strong>: aumenta significativamente (+1.0 a +2.0 EV o piu')</li>
+<li><strong>AGX+</strong> come profilo di output (evita tonalita' magenta indesiderate)[^lowlight]</li>
+<li><strong>Black relative exposure</strong>: spingi piu' in basso (-15 a -20 EV) per pulire il rumore nelle ombre[^lowlight]</li>
+<li><strong>Shoulder power</strong>: 2.0-2.5 (proteggi le luci artificiali)</li>
+<li><strong>Toe power</strong>: 1.5-2.0 (controlla le ombre sollevate dall'esposizione)</li>
+<li><strong>Color Balance RGB</strong>: usa la scheda <em>4 Ways</em> per color grading creativo nelle ombre e luci[^lowlight]</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Foto ISO alti</p>
+<p>Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.[^lowlight]</p>
+</div>
+<p><img alt="Impostazioni AGX per scene lowlight" src="../../images/lowlight-agx-settings.jpg" /></p>
+<h3 id="effetto-dragan-ritratti-drammatici">Effetto Dragan (ritratti drammatici)<a class="headerlink" href="#effetto-dragan-ritratti-drammatici" title="Permanent link">&para;</a></h3>
+<p>Per il look ad alto contrasto stile Andrzej Dragan:[^dragan-effect]</p>
+<ol>
+<li>Elaborazione base con AGX (contrasto medio-alto)</li>
+<li>Duplica l'immagine</li>
+<li>Sulla duplicata: converti in bianco e nero (Color Calibration - Monochrome)</li>
+<li>Applica sfocatura (Blur module, gaussiano, raggio 15-20px)</li>
+<li>Composite: fondi con modalita' <em>Overlay</em> o <em>Hard Light</em></li>
+<li>Regola l'opacita' del composite per controllare l'intensita'[^dragan-effect]</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Il modulo Composite e' fondamentale</p>
+<p>Il modulo <em>Composite</em> permette di fondere due versioni della stessa immagine. E' posizionato nella pipeline: i moduli <em>sotto</em> di esso vengono elaborati separatamente, quelli <em>sopra</em> lavorano sul risultato fuso.[^dragan-effect]</p>
+</div>
+<h2 id="i-notorious-6">I "Notorious 6"<a class="headerlink" href="#i-notorious-6" title="Permanent link">&para;</a></h2>
+<p>I "Notorious 6" sono sei problemi noti dei tone mapper scene-referred (in particolare Filmic RGB e Sigmoid) quando gestiscono colori molto saturi e luminosi:[^agx-guide]</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Problema</th>
+<th>Descrizione</th>
+<th>Come AGX lo risolve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Hue shift</strong></td>
+<td>Le tonalità cambiano quando i colori diventano molto luminosi</td>
+<td>AGX preserva le tonalità durante la compressione, seguendo il modello ACES[^agx-guide]</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Luminance inversion</strong></td>
+<td>Colori saturi appaiono piu' scuri del previsto</td>
+<td>La mappatura AGX mantiene la relazione luminanza-saturazione della pellicola[^manual-agx]</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Gamut clipping</strong></td>
+<td>Colori fuori gamut vengono troncati bruscamente</td>
+<td>AGX comprime il gamut gradualmente, come farebbe una pellicola[^agx-guide]</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Desaturation delle luci</strong></td>
+<td>Le alte luci perdono colore troppo rapidamente</td>
+<td>Il comportamento filmico di AGX desatura in modo naturale e progressivo[^manual-agx]</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Saturation pumping</strong></td>
+<td>Alcuni colori diventano innaturalmente saturi</td>
+<td>La compressione AGX e' uniforme su tutti i canali[^agx-guide]</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Black crush</strong></td>
+<td>Le ombre collassano perdendo dettaglio</td>
+<td>Il controllo toe power indipendente permette di aprire le ombre senza distruggere il contrasto[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Perche' si chiamano cosi'</p>
+<p>Il termine "Notorious 6" nasce nella community di darktable per descrivere i sei comportamenti piu' problematici che si manifestavano con Filmic RGB quando si elaboravano immagini con colori saturi (tramonti, luci al neon, fiori).[^agx-guide] AGX e' stato progettato specificamente per risolvere questi problemi.</p>
+</div>
+<h2 id="agx-vs-filmic-rgb-vs-sigmoid">AGX vs Filmic RGB vs Sigmoid<a class="headerlink" href="#agx-vs-filmic-rgb-vs-sigmoid" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Caratteristica</th>
+<th>AGX</th>
+<th>Sigmoid</th>
+<th>Filmic RGB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complessita'</strong></td>
+<td>Media</td>
+<td>Bassa</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td><strong>Notorious 6</strong></td>
+<td>Risolti</td>
+<td>Parzialmente</td>
+<td>Parzialmente</td>
+</tr>
+<tr>
+<td><strong>Toni pelle</strong></td>
+<td>Buoni</td>
+<td>Ottimi</td>
+<td>Buoni con tuning</td>
+</tr>
+<tr>
+<td><strong>Controllo</strong></td>
+<td>Buono</td>
+<td>Minimo</td>
+<td>Massimo</td>
+</tr>
+<tr>
+<td><strong>Curve visualizzabile</strong></td>
+<td>Si'</td>
+<td>No</td>
+<td>Si'</td>
+</tr>
+<tr>
+<td><strong>Gestione saturazione</strong></td>
+<td>Automatica (filmica)</td>
+<td>Manuale</td>
+<td>Manuale</td>
+</tr>
+<tr>
+<td><strong>Default dt 5.4</strong></td>
+<td><strong>Si'</strong></td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Ideale per</strong></td>
+<td>Uso generale, tramonti, ritratti</td>
+<td>Ritratti, editing rapido</td>
+<td>Controllo totale, B/N</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Quale scegliere?</p>
+<ul>
+<li><strong>AGX</strong>: default consigliato per la maggior parte delle situazioni. Eccelle con tramonti, paesaggi e scene ad alto contrasto cromatico.[^agx-guide]</li>
+<li><strong>Sigmoid</strong>: ancora ottimo per ritratti rapidi con toni della pelle naturali "out of the box".[^manual-sigmoid]</li>
+<li><strong>Filmic RGB</strong>: preferito da alcuni per il bianco e nero, dove offre un controllo granulare su curve e latitudine.[^dt52-release]</li>
+</ul>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Usa un solo tone mapper alla volta</p>
+<p>Non attivare mai piu' di un tone mapper simultaneamente. AGX, Sigmoid e Filmic RGB sono mutualmente esclusivi: usarne due insieme crea artefatti imprevedibili.[^manual-agx][^manual-sigmoid]</p>
+</div>
+<h2 id="errori-comuni-e-come-evitarli">Errori comuni e come evitarli<a class="headerlink" href="#errori-comuni-e-come-evitarli" title="Permanent link">&para;</a></h2>
+<h3 id="1-non-regolare-lesposizione-prima-di-agx">1. Non regolare l'esposizione prima di AGX<a class="headerlink" href="#1-non-regolare-lesposizione-prima-di-agx" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: AGX applicato a un'immagine sotto/sovraesposta produce risultati scadenti.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Sempre il modulo <em>Exposure</em> prima, poi <em>Auto Tune Levels</em> in AGX.[^pipeline-beginner]</p>
+<h3 id="2-contrast-troppo-alto">2. Contrast troppo alto<a class="headerlink" href="#2-contrast-troppo-alto" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Valori di contrasto &gt; 5.0 distruggono la forma a S, riducono il controllo di shoulder/toe e possono generare artefatti.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Resta tra 2.5 e 4.0 per la maggior parte delle immagini. Se serve piu' contrasto, usa shoulder/toe power.[^agx-guide]</p>
+<h3 id="3-ignorare-lattenuazione-delle-primarie">3. Ignorare l'attenuazione delle primarie<a class="headerlink" href="#3-ignorare-lattenuazione-delle-primarie" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Colori molto saturi (tramonti, luci al neon) causano clipping cromatico e color banding.[^dt54-update]</p>
+<p><strong>Soluzione</strong>: Attenua i blu (e talvolta i rossi) <em>prima</em> del tone mapping, poi recupera con <em>recover purity</em>.[^dt54-update]</p>
+<p><img alt="Bilanciamento colore dopo AGX" src="../../images/lowlight-color-balance.jpg" /></p>
+<h3 id="4-pivot-mal-posizionato">4. Pivot mal posizionato<a class="headerlink" href="#4-pivot-mal-posizionato" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Il pivot di default (0 EV, 18% output) potrebbe non corrispondere al soggetto principale.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Usa la pipetta per campionare la zona dell'immagine che deve avere il massimo contrasto.[^agx-guide]</p>
+<h3 id="5-dynamic-range-scaling-aggressivo">5. Dynamic range scaling aggressivo<a class="headerlink" href="#5-dynamic-range-scaling-aggressivo" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Valori estremi di dynamic range scaling causano clipping nelle alte luci o nelle ombre.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Mantieni il dynamic range scaling tra -10% e +10%. Il default +10% va bene per la maggior parte dei casi.[^agx-guide]</p>
+<h3 id="6-target-black-troppo-alto">6. Target black troppo alto<a class="headerlink" href="#6-target-black-troppo-alto" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Alzare troppo il target black (es. &gt; 5%) crea un effetto "sbiadito" innaturale.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Se vuoi l'effetto pellicola, alza il target black gradualmente (1-3%) e valuta il risultato.[^agx-guide]</p>
+<h3 id="7-curve-avanzata-senza-motivo">7. Curve avanzata senza motivo<a class="headerlink" href="#7-curve-avanzata-senza-motivo" title="Permanent link">&para;</a></h3>
+<p><strong>Problema</strong>: Modificare i parametri avanzati della curva (shoulder start, toe start, gamma) senza bisogno complica l'editing senza benefici.[^agx-guide]</p>
+<p><strong>Soluzione</strong>: Usa solo contrast, shoulder power e toe power. Passa ai parametri avanzati solo se questi non bastano.[^agx-guide]</p>
+<h2 id="scorciatoie-da-tastiera-utili">Scorciatoie da tastiera utili<a class="headerlink" href="#scorciatoie-da-tastiera-utili" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scorciatoia</th>
+<th>Azione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E</strong></td>
+<td>Attiva/disattiva il modulo exposure</td>
+</tr>
+<tr>
+<td><strong>Scroll del mouse</strong> su un modulo</td>
+<td>Regola il primo parametro visibile</td>
+</tr>
+<tr>
+<td><strong>Ctrl + click destro</strong> su uno slider</td>
+<td>Reset del parametro al valore default</td>
+</tr>
+<tr>
+<td><strong>Click destro</strong> su slider di tonalità</td>
+<td>Apre la ruota cromatica visuale[^dt54-update]</td>
+</tr>
+<tr>
+<td><strong>Cmd/Ctrl + B</strong></td>
+<td>Mostra bordo bianco di riferimento per valutare l'esposizione[^agx-guide]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="parametri-di-riferimento-rapido">Parametri di riferimento rapido<a class="headerlink" href="#parametri-di-riferimento-rapido" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Contrast</th>
+<th>Shoulder</th>
+<th>Toe</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ritratto</strong></td>
+<td>2.80-3.50</td>
+<td>1.55-2.00</td>
+<td>1.55-2.00</td>
+<td>Toni pelle naturali</td>
+</tr>
+<tr>
+<td><strong>Paesaggio</strong></td>
+<td>3.00-4.50</td>
+<td>2.00-3.00</td>
+<td>1.55-2.50</td>
+<td>Recupera cielo</td>
+</tr>
+<tr>
+<td><strong>Tramonto</strong></td>
+<td>2.50-3.50</td>
+<td>1.55-2.00</td>
+<td>1.55-2.00</td>
+<td>Attenua blu/rossi</td>
+</tr>
+<tr>
+<td><strong>Lowlight</strong></td>
+<td>2.50-3.50</td>
+<td>2.00-2.50</td>
+<td>1.50-2.00</td>
+<td>Usa profilo AGX+</td>
+</tr>
+<tr>
+<td><strong>B/N</strong></td>
+<td>3.00-4.00</td>
+<td>1.55-2.00</td>
+<td>1.55-2.00</td>
+<td>Poi desatura</td>
+</tr>
+<tr>
+<td><strong>Alto contrasto</strong></td>
+<td>3.50-4.50</td>
+<td>2.00-3.00</td>
+<td>1.55-2.00</td>
+<td>Dragan effect[^dragan-effect]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="note-sulla-curva-arancione">Note sulla curva arancione<a class="headerlink" href="#note-sulla-curva-arancione" title="Permanent link">&para;</a></h2>
+<p>In AGX, quando la curva tonale mostra una porzione <strong>arancione</strong> nelle estremita', questo e' un <strong>avviso</strong>, non un errore:[^agx-guide]</p>
+<ul>
+<li>Indica che la curva sta raggiungendo limiti dove ulteriori correzioni potrebbero generare artefatti</li>
+<li>A differenza di Filmic RGB (dove l'arancione era un errore bloccante), in AGX e' solo un suggerimento</li>
+<li>Se vedi arancione: riduci il contrasto o aggiusta shoulder/toe power per riportare la curva in zona sicura[^agx-guide]</li>
+</ul>
+<h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
+<p>Per approfondire:</p>
+<ul>
+<li><em>darktable User Manual -- AgX</em>: <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a>[^manual-agx]</li>
+<li><em>A guide to AGX in darktable</em> (94 screenshot): <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">YouTube - A Dabble in Photography</a>[^agx-guide]</li>
+<li><em>Lowlight photos in darktable</em>: <a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">YouTube - A Dabble in Photography</a>[^lowlight]</li>
+<li><em>Landscape edit with AI</em>: <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">YouTube - A Dabble in Photography</a>[^landscape]</li>
+<li><em>The darktable pipeline for beginners</em>: <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">YouTube - A Dabble in Photography</a>[^pipeline-beginner]</li>
+<li><em>darktable 5.4 UPDATE</em>: <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">YouTube - A Dabble in Photography</a>[^dt54-update]</li>
+<li><em>darktable 5.2 Release</em>: <a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">YouTube - A Dabble in Photography</a>[^dt52-release]</li>
+<li><em>The Dragan effect in darktable</em>: <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">YouTube - A Dabble in Photography</a>[^dragan-effect]</li>
+<li><em>The Orton effect in darktable</em>: <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">YouTube - A Dabble in Photography</a>[^orton-effect]</li>
+</ul>
+<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
+<p>[^agx-guide]: <em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a></em> -- A Dabble in Photography
+[^lowlight]: <em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography
+[^landscape]: <em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography
+[^pipeline-beginner]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography
+[^dt54-update]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a></em> -- A Dabble in Photography
+[^dt52-release]: <em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">New Release: darktable 5.2</a></em> -- A Dabble in Photography
+[^dragan-effect]: <em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a></em> -- A Dabble in Photography
+[^orton-effect]: <em><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect in darktable</a></em> -- A Dabble in Photography
+[^manual-agx]: <em>darktable User Manual -- AgX</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a>
+[^manual-sigmoid]: <em>darktable User Manual -- Sigmoid</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/sigmoid/">docs.darktable.org</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

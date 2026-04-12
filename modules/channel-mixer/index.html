@@ -1,0 +1,3390 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/channel-mixer/">
+      
+      
+        <link rel="prev" href="../color-calibration/">
+      
+      
+        <link rel="next" href="../color-equalizer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Channel Mixer (Mix di Canali) - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#channel-mixer-mix-di-canali" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Channel Mixer (Mix di Canali)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workshop/" class="md-tabs__link">
+          
+  
+  
+  Workshop
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: AGX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Channel Mixer (Mix di Canali)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Channel Mixer (Mix di Canali)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#come-funziona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come funziona
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Come funziona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stato-iniziale-matrice-identita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stato iniziale: matrice identita
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regola-fondamentale-la-somma-dei-coefficienti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regola fondamentale: la somma dei coefficienti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretazione-intuitiva-dei-cursori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretazione intuitiva dei cursori
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-1-conversione-in-bianco-e-nero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 1: Conversione in bianco e nero
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 1: Conversione in bianco e nero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulare-pellicole-tradizionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulare pellicole tradizionali
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-2-fotografia-infrarosso-a-falsi-colori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 2: Fotografia infrarosso a falsi colori
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 2: Fotografia infrarosso a falsi colori">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ricetta-base-scambio-rosso-blu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ricetta base: scambio Rosso-Blu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizzare-la-ricetta-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personalizzare la ricetta IR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-completo-per-infrarosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow completo per infrarosso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-3-correzione-colore-mirata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 3: Correzione colore mirata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 3: Correzione colore mirata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominanti-da-led-blu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominanti da LED blu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viraggio-del-cielo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viraggio del cielo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viraggio-verso-il-magenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viraggio verso il magenta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 4: Tonalita globali ed effetti creativi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 4: Tonalita globali ed effetti creativi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effetto-marrone-vintage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effetto "marrone vintage"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falsi-colori-estremi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falsi colori estremi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-del-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri del modulo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parametri del modulo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destinazione-destination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Destinazione (Destination)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursori-input-r-g-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursori Input R / G / B
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalize-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalize Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-e-buone-pratiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow e buone pratiche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow e buone pratiche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quando-usare-channel-mixer-vs-altri-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando usare Channel Mixer vs altri moduli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-delle-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione delle maschere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordine-nella-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordine nella pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#istanze-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Istanze multiple
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempi-passo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempi passo-passo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi passo-passo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-1-bw-con-pelle-morbida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 1: B&amp;W con pelle morbida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-2-infrarosso-a-falsi-colori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 2: Infrarosso a falsi colori
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-3-correggere-dominante-blu-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 3: Correggere dominante blu globale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riepilogo-dei-canali-di-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riepilogo dei canali di output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diffuse-sharpen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diffuse or Sharpen (Diffondi o Nitidezza)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workshop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workshop -- Casi pratici di editing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/black-white/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bianco e Nero -- Conversione da foto infrarosso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/portrait/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ritratto -- Effetto Dragan e ritratto chiaroscuro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paesaggio -- Tramonto con albero e maschere avanzate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workshop/lowlight/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scarsa illuminazione -- Concerto e foto notturne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#come-funziona" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come funziona
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Come funziona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stato-iniziale-matrice-identita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stato iniziale: matrice identita
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regola-fondamentale-la-somma-dei-coefficienti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regola fondamentale: la somma dei coefficienti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretazione-intuitiva-dei-cursori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretazione intuitiva dei cursori
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-1-conversione-in-bianco-e-nero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 1: Conversione in bianco e nero
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 1: Conversione in bianco e nero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulare-pellicole-tradizionali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulare pellicole tradizionali
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-2-fotografia-infrarosso-a-falsi-colori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 2: Fotografia infrarosso a falsi colori
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 2: Fotografia infrarosso a falsi colori">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ricetta-base-scambio-rosso-blu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ricetta base: scambio Rosso-Blu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizzare-la-ricetta-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Personalizzare la ricetta IR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-completo-per-infrarosso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow completo per infrarosso
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-3-correzione-colore-mirata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 3: Correzione colore mirata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 3: Correzione colore mirata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dominanti-da-led-blu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dominanti da LED blu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viraggio-del-cielo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viraggio del cielo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viraggio-verso-il-magenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viraggio verso il magenta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uso pratico 4: Tonalita globali ed effetti creativi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso pratico 4: Tonalita globali ed effetti creativi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effetto-marrone-vintage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effetto "marrone vintage"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falsi-colori-estremi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Falsi colori estremi
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-del-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri del modulo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parametri del modulo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#destinazione-destination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Destinazione (Destination)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursori-input-r-g-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cursori Input R / G / B
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalize-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalize Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-e-buone-pratiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow e buone pratiche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow e buone pratiche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quando-usare-channel-mixer-vs-altri-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quando usare Channel Mixer vs altri moduli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestione-delle-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestione delle maschere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordine-nella-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordine nella pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#istanze-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Istanze multiple
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esempi-passo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempi passo-passo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi passo-passo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-1-bw-con-pelle-morbida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 1: B&amp;W con pelle morbida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-2-infrarosso-a-falsi-colori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 2: Infrarosso a falsi colori
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-3-correggere-dominante-blu-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio 3: Correggere dominante blu globale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riepilogo-dei-canali-di-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riepilogo dei canali di output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="channel-mixer-mix-di-canali">Channel Mixer (Mix di Canali)<a class="headerlink" href="#channel-mixer-mix-di-canali" title="Permanent link">&para;</a></h1>
+<p>Il <strong>Channel Mixer</strong> (Mix di Canali) e uno dei moduli piu potenti di darktable per la manipolazione cromatica. Permette di controllare in modo indipendente quanto ciascun canale di ingresso (Rosso, Verde, Blu) contribuisce a ciascun canale di uscita, attraverso una <strong>moltiplicazione matriciale 3x3</strong>.[^manual]</p>
+<div class="admonition warning">
+<p class="admonition-title">Modulo deprecato</p>
+<p>Questo modulo e <strong>deprecato dalla versione 3.4</strong> di darktable. La funzionalita e stata integralmente sostituita dal modulo <a href="../color-calibration/">Color Calibration</a>, che offre le stesse capacita di mix dei canali tramite i cursori <strong>input R/G/B</strong> nelle schede di destinazione colore. Questa documentazione e valida per entrambi i moduli, poiché la logica matematica e identica.[^manual]</p>
+</div>
+<h2 id="come-funziona">Come funziona<a class="headerlink" href="#come-funziona" title="Permanent link">&para;</a></h2>
+<p>Il Channel Mixer esegue una trasformazione lineare dei canali RGB dell'immagine. Ogni pixel viene elaborato secondo la seguente operazione matriciale:[^ch1]</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌ R_out ┐     ┌ Rr Rg Rb ┐     ┌ R_in ┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ G_out │  =  │ Gr Gg Gb │  ×  │ G_in │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└ B_out ┘     └ Br Bg Bb ┘     └ B_in ┘
+</code></pre></div>
+<p>Che si espande in tre equazioni scalari:</p>
+<ul>
+<li><strong>R_out</strong> = Rr × R_in + Rg × G_in + Rb × B_in</li>
+<li><strong>G_out</strong> = Gr × R_in + Gg × G_in + Gb × B_in</li>
+<li><strong>B_out</strong> = Br × R_in + Bg × G_in + Bb × B_in</li>
+</ul>
+<p><img alt="Channel mixer matrix explanation" src="../../images/channel-mixer-matrix.jpg" /></p>
+<h3 id="stato-iniziale-matrice-identita">Stato iniziale: matrice identita<a class="headerlink" href="#stato-iniziale-matrice-identita" title="Permanent link">&para;</a></h3>
+<p>Per impostazione predefinita, il modulo non altera l'immagine. La matrice e quella <strong>identita</strong>, dove ogni canale di uscita riceve contributo solo dal corrispondente canale di ingresso:[^ch1]</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌ R_out ┐     ┌ 1  0  0 ┐     ┌ R_in ┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│ G_out │  =  │ 0  1  0 │  ×  │ G_in │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>└ B_out ┘     └ 0  0  1 ┘     └ B_in ┘
+</code></pre></div>
+<p>Nell'interfaccia di darktable (modulo Color Calibration), questo corrisponde a:</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Input R</th>
+<th>Input G</th>
+<th>Input B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>1.000</td>
+<td>0.000</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>0.000</td>
+<td>1.000</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>0.000</td>
+<td>0.000</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Come leggere i controlli</p>
+<p>Ogni scheda di destinazione (R, G, B) ha tre cursori che indicano quanto i canali di <strong>ingresso</strong> R, G, B contribuiscono a quel canale di <strong>uscita</strong>. Spostare un cursore verso destra aggiunge quel canale di ingresso; spostarlo verso sinistra (valori negativi) lo sottrae.[^manual]</p>
+</div>
+<h2 id="regola-fondamentale-la-somma-dei-coefficienti">Regola fondamentale: la somma dei coefficienti<a class="headerlink" href="#regola-fondamentale-la-somma-dei-coefficienti" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Mantieni la somma vicina a 1</p>
+<p>Per ogni canale di uscita, mantieni la <strong>somma dei tre coefficienti</strong> vicina a <strong>1.0</strong>. Questo preserva la luminosita originale dell'immagine. Somme maggiori di 1 schiariscono l'immagine; somme minori la scuriscono.[^ch1]</p>
+</div>
+<p>Ad esempio, per un canale di uscita con coefficienti <code>[0.5, 0.3, 0.2]</code>, la somma e <code>1.0</code> -- la luminosita rimane invariata. Con <code>[1.5, 0.3, 0.2]</code> la somma e <code>2.0</code> -- il risultato sara piu luminoso.[^ch1]</p>
+<h2 id="interpretazione-intuitiva-dei-cursori">Interpretazione intuitiva dei cursori<a class="headerlink" href="#interpretazione-intuitiva-dei-cursori" title="Permanent link">&para;</a></h2>
+<p>Per comprendere rapidamente l'effetto di ciascun cursore:[^manual]</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Cursore a destra (positivo)</th>
+<th>Cursore a sinistra (negativo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>Le zone R, G, B diventano piu <strong>rosse</strong></td>
+<td>Diventano piu <strong>ciano</strong></td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>Le zone R, G, B diventano piu <strong>verdi</strong></td>
+<td>Diventano piu <strong>magenta</strong></td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>Le zone R, G, B diventano piu <strong>blu</strong></td>
+<td>Diventano piu <strong>gialle</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="uso-pratico-1-conversione-in-bianco-e-nero">Uso pratico 1: Conversione in bianco e nero<a class="headerlink" href="#uso-pratico-1-conversione-in-bianco-e-nero" title="Permanent link">&para;</a></h2>
+<p>Uno degli impieghi piu utili del Channel Mixer e la creazione di immagini monocromatiche personalizzate. Seleziona la destinazione <strong>Grigio</strong> (gray) e regola i cursori R, G, B per controllare come ciascun canale contribuisce alla luminosita finale.[^manual]</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GRAY_out = [r  g  b] × [R_in, G_in, B_in]
+</code></pre></div>
+<p><img alt="B&amp;W conversion with channel mixer" src="../../images/channel-mixer-bw-conversion.jpg" /></p>
+<h3 id="simulare-pellicole-tradizionali">Simulare pellicole tradizionali<a class="headerlink" href="#simulare-pellicole-tradizionali" title="Permanent link">&para;</a></h3>
+<p>Diverse pellicole bianco e nero hanno sensibilita differenti ai colori. Il Channel Mixer permette di simulare queste caratteristiche:[^manual]</p>
+<table>
+<thead>
+<tr>
+<th>Stile pellicola</th>
+<th>Rosso</th>
+<th>Verde</th>
+<th>Blu</th>
+<th>Caratteristiche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pelle morbida</strong></td>
+<td>0.90</td>
+<td>0.30</td>
+<td>-0.30</td>
+<td>Enfatizza il rosso per una pelle uniforme, riduce il blu per evitare texture indesiderate</td>
+</tr>
+<tr>
+<td><strong>Maggior dettaglio</strong></td>
+<td>0.40</td>
+<td>0.75</td>
+<td>-0.15</td>
+<td>Enfatizza il verde per maggiori dettagli, riduce il blu</td>
+</tr>
+<tr>
+<td><strong>Solo canale rosso</strong></td>
+<td>1.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>Cielo molto scuro, vegetazione chiara -- utile per infrarosso</td>
+</tr>
+<tr>
+<td><strong>Solo canale verde</strong></td>
+<td>0.00</td>
+<td>1.00</td>
+<td>0.00</td>
+<td>Buon bilanciamento per paesaggi naturali</td>
+</tr>
+<tr>
+<td><strong>Solo canale blu</strong></td>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.00</td>
+<td>Effetto drammatico, cieli molto contrastati</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Infrarosso in bianco e nero</p>
+<p>Per foto infrarosse, il solo canale <strong>rosso</strong> produce risultati eccellenti: la vegetazione che riflette IR appare molto chiara, mentre il cielo diventa scuro. E un punto di partenza classico per il B&amp;W infrarosso.[^ch1]</p>
+</div>
+<h2 id="uso-pratico-2-fotografia-infrarosso-a-falsi-colori">Uso pratico 2: Fotografia infrarosso a falsi colori<a class="headerlink" href="#uso-pratico-2-fotografia-infrarosso-a-falsi-colori" title="Permanent link">&para;</a></h2>
+<p>La fotografia infrarossa con filtro (es. 720nm) produce immagini con forte dominante rossa. Il Channel Mixer permette di convertire queste immagini in <strong>falsi colori</strong> realistici attraverso lo scambio dei canali.[^ir]</p>
+<h3 id="ricetta-base-scambio-rosso-blu">Ricetta base: scambio Rosso-Blu<a class="headerlink" href="#ricetta-base-scambio-rosso-blu" title="Permanent link">&para;</a></h3>
+<p>Questa e la trasformazione fondamentale per l'infrarosso a falsi colori. Il canale rosso (che contiene la riflessione IR della vegetazione) viene mappato sul blu in uscita, e il blu viene mappato sul rosso:[^ch1]</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Input R</th>
+<th>Input G</th>
+<th>Input B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>0.00</td>
+<td>1.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>1.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Infrared channel swap" src="../../images/channel-mixer-ir-channel-swap.jpg" /></p>
+<p>Il risultato: la vegetazione (che era rossa nell'immagine IR) diventa blu/ciano, e il cielo (che era blu) diventa rosso. L'effetto e simile al filtro Wratten #80A usato in pellicola.[^ir]</p>
+<h3 id="personalizzare-la-ricetta-ir">Personalizzare la ricetta IR<a class="headerlink" href="#personalizzare-la-ricetta-ir" title="Permanent link">&para;</a></h3>
+<p>Non esiste una combinazione "giusta" universale. Ogni sensore e filtro produce risultati leggermente diversi. Ecco come personalizzare:[^ir]</p>
+<ol>
+<li><strong>Parti dallo scambio R-B</strong> come base</li>
+<li><strong>Regola la saturazione</strong> modificando i coefficienti: valori piu alti aumentano la saturazione</li>
+<li><strong>Controlla la luminanza</strong> mantenendo la somma dei coefficienti vicina a 1 per ogni canale</li>
+<li><strong>Usa il vettorscopio</strong> per monitorare la distribuzione cromatica e evitare dominanti indesiderate</li>
+<li><strong>Verifica con campioni live</strong> (color picker) i valori RGB nelle zone chiave (vegetazione, cielo)</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Ricetta personalizzata da video tutorial</p>
+<p>Una ricetta avanzata per falsi colori con maggiore saturazione del fogliame:[^ir]</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Input R</th>
+<th>Input G</th>
+<th>Input B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>0.00</td>
+<td>1.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>-1.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p>Il valore negativo sul blu in ingresso crea un'inversione che produce tonalita piu ricche e saturazione differenziata.[^ch1]</p>
+</div>
+<h3 id="workflow-completo-per-infrarosso">Workflow completo per infrarosso<a class="headerlink" href="#workflow-completo-per-infrarosso" title="Permanent link">&para;</a></h3>
+<p><img alt="Infrared final result" src="../../images/channel-mixer-ir-final.jpg" /></p>
+<ol>
+<li><strong>Importa il RAW</strong> e imposta il profilo colore di ingresso su <code>Linear Rec 2020</code>[^ir]</li>
+<li><strong>Bilanciamento del bianco</strong>: punta su vegetazione (foglie o erba) -- la riflessione IR funziona come riferimento neutro[^ir]</li>
+<li><strong>Color Calibration</strong> (tab CAT): applica il preset "infrared" se disponibile, oppure imposta manualmente lo scambio R-B[^ir]</li>
+<li><strong>Filmic RGB</strong>: regola esposizione relativa bianco/nero per il mapping tonale[^ir]</li>
+<li><strong>Color Balance RGB</strong> (opzionale): per affinamenti creativi sulle tonalita[^ir]</li>
+</ol>
+<h2 id="uso-pratico-3-correzione-colore-mirata">Uso pratico 3: Correzione colore mirata<a class="headerlink" href="#uso-pratico-3-correzione-colore-mirata" title="Permanent link">&para;</a></h2>
+<p>Il Channel Mixer eccelle nel correggere problemi cromatici specifici che altri moduli non affrontano facilmente.[^manual]</p>
+<h3 id="dominanti-da-led-blu">Dominanti da LED blu<a class="headerlink" href="#dominanti-da-led-blu" title="Permanent link">&para;</a></h3>
+<p>Le luci LED blu spesso producono colori fuori gamut sgradevoli. Una matrice utile per renderli piu magenta:[^manual]</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Input R</th>
+<th>Input G</th>
+<th>Input B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>1.00</td>
+<td>-0.18</td>
+<td>0.18</td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>-0.20</td>
+<td>1.00</td>
+<td>0.20</td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>0.05</td>
+<td>-0.05</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Usa maschere parametriche</p>
+<p>Quando correggi colori specifici (come LED blu), applica il Channel Mixer solo sulle zone problematiche usando una <strong>maschera parametrica</strong> basata sulla luminanza o sul canale blu. Applicarlo globalmente altererebbe tutta l'immagine.[^manual]</p>
+</div>
+<h3 id="viraggio-del-cielo">Viraggio del cielo<a class="headerlink" href="#viraggio-del-cielo" title="Permanent link">&para;</a></h3>
+<p>Per modificare il colore del cielo senza alterare il resto della scena, il Channel Mixer offre un controllo chirurgico:[^ch2]</p>
+<p><img alt="Sky retargeting with channel mixer" src="../../images/channel-mixer-sky-retarget.jpg" /></p>
+<p><strong>Esempio: cielo blu verso ciano</strong></p>
+<p>Il cielo blu ha valori RGB tipo <code>(86, 100, 159)</code>. Per spostarlo verso il ciano, occorre aggiungere verde al canale blu. La scelta del canale di ingresso e cruciale:[^ch2]</p>
+<ul>
+<li>Usando <strong>input Blu</strong> (valore 159): la modifica e piu forte, ma altera anche altre zone blu</li>
+<li>Usando <strong>input Rosso</strong> (valore 86): la modifica e piu selettiva, perche il rosso ha il valore piu basso nel cielo</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Scegli il canale con il differenziale maggiore</p>
+<p>Per minimizzare gli effetti collaterali, seleziona il canale di ingresso in cui la differenza tra il valore del colore target e quello dei colori da preservare e massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica.[^ch2]</p>
+</div>
+<h3 id="viraggio-verso-il-magenta">Viraggio verso il magenta<a class="headerlink" href="#viraggio-verso-il-magenta" title="Permanent link">&para;</a></h3>
+<p>Per un cielo al tramonto che tende al magenta senza alterare gialli e arancioni:[^ch2]</p>
+<ol>
+<li>Posiziona <strong>campioni live</strong> (color picker) sul cielo e sulle zone da preservare</li>
+<li>Monitora i valori RGB in tempo reale sul vettorscopio</li>
+<li>Aggiungi rosso o sottrai verde/blu dal canale blu di destinazione</li>
+<li>Confronta diverse combinazioni: aggiungere rosso schiarisce, sottrarre verde/blu scurisce[^ch2]</li>
+</ol>
+<h2 id="uso-pratico-4-tonalita-globali-ed-effetti-creativi">Uso pratico 4: Tonalita globali ed effetti creativi<a class="headerlink" href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" title="Permanent link">&para;</a></h2>
+<h3 id="effetto-marrone-vintage">Effetto "marrone vintage"<a class="headerlink" href="#effetto-marrone-vintage" title="Permanent link">&para;</a></h3>
+<p>Per dare a un'immagine un aspetto invecchiato con tonalita marrone:[^ch2]</p>
+<p><img alt="Brown tint effect" src="../../images/channel-mixer-brown-tint.jpg" /></p>
+<ol>
+<li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)[^ch2]</li>
+<li>Nel Channel Mixer, modifica i canali per introdurre piu rosso e verde, meno blu</li>
+<li>Il marrone nel modello additivo e: molto rosso, meno verde, ancora meno blu (es. <code>161, 106, 64</code>)[^ch2]</li>
+<li>Bilancia la luminosita compensando con valori negativi dove necessario[^ch2]</li>
+</ol>
+<h3 id="falsi-colori-estremi">Falsi colori estremi<a class="headerlink" href="#falsi-colori-estremi" title="Permanent link">&para;</a></h3>
+<p>Per effetti creativi estremi (non fotograficamente realistici), si possono usare coefficienti molto alti e illuminanti personalizzati. L'immagine risultante avra tonalita innaturali ma artisticamente interessanti.[^ir]</p>
+<h2 id="parametri-del-modulo">Parametri del modulo<a class="headerlink" href="#parametri-del-modulo" title="Permanent link">&para;</a></h2>
+<h3 id="destinazione-destination">Destinazione (Destination)<a class="headerlink" href="#destinazione-destination" title="Permanent link">&para;</a></h3>
+<p>Seleziona il canale di uscita influenzato dai cursori:[^manual]</p>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rosso</strong></td>
+<td>Miscelazione colore -- canale rosso di uscita</td>
+</tr>
+<tr>
+<td><strong>Verde</strong></td>
+<td>Miscelazione colore -- canale verde di uscita</td>
+</tr>
+<tr>
+<td><strong>Blu</strong></td>
+<td>Miscelazione colore -- canale blu di uscita</td>
+</tr>
+<tr>
+<td><strong>Grigio</strong></td>
+<td>Immagini monocromatiche -- luminanza di uscita</td>
+</tr>
+<tr>
+<td><strong>Tonalita</strong></td>
+<td>Applicazione HSL (uso specialistico)</td>
+</tr>
+<tr>
+<td><strong>Saturazione</strong></td>
+<td>Applicazione HSL (uso specialistico)</td>
+</tr>
+<tr>
+<td><strong>Luminosita</strong></td>
+<td>Applicazione HSL (uso specialistico)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cursori-input-r-g-b">Cursori Input R / G / B<a class="headerlink" href="#cursori-input-r-g-b" title="Permanent link">&para;</a></h3>
+<p>Per ogni destinazione, definiscono quanto ciascun canale di ingresso contribuisce al canale di uscita selezionato:[^manual]</p>
+<ul>
+<li><strong>Valore positivo</strong>: aggiunge il canale di ingresso, spostando il colore verso la tinta corrispondente</li>
+<li><strong>Valore negativo</strong>: sottrae il canale di ingresso, spostando il colore verso la tinta complementare</li>
+<li><strong>Valore zero</strong>: il canale di ingresso non contribuisce</li>
+</ul>
+<h3 id="normalize-channels">Normalize Channels<a class="headerlink" href="#normalize-channels" title="Permanent link">&para;</a></h3>
+<p>Quando attivata, questa opzione normalizza automaticamente i coefficienti. Utile per evitare variazioni di luminosita non intenzionali, ma riduce il controllo fine.[^ch1]</p>
+<h2 id="workflow-e-buone-pratiche">Workflow e buone pratiche<a class="headerlink" href="#workflow-e-buone-pratiche" title="Permanent link">&para;</a></h2>
+<h3 id="quando-usare-channel-mixer-vs-altri-moduli">Quando usare Channel Mixer vs altri moduli<a class="headerlink" href="#quando-usare-channel-mixer-vs-altri-moduli" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Modulo consigliato</th>
+<th>Motivazione</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bilanciamento del bianco globale</td>
+<td>Color Calibration (tab CAT)</td>
+<td>Adattamento cromatico percettivo con CAT16[^pipeline]</td>
+</tr>
+<tr>
+<td>Viraggio creativo mirato</td>
+<td><strong>Channel Mixer</strong></td>
+<td>Controllo matriciale preciso su ogni canale</td>
+</tr>
+<tr>
+<td>Conversione B&amp;W personalizzata</td>
+<td><strong>Channel Mixer</strong> (destinazione Grigio)</td>
+<td>Controllo dei pesi dei canali RGB</td>
+</tr>
+<tr>
+<td>Correzione colore locale</td>
+<td>Channel Mixer + maschera parametrica</td>
+<td>Isolamento cromatico preciso[^manual]</td>
+</tr>
+<tr>
+<td>Regolazione tonale generale</td>
+<td>Color Balance RGB</td>
+<td>Controle separato ombre/mezzi/lucci</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestione-delle-maschere">Gestione delle maschere<a class="headerlink" href="#gestione-delle-maschere" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Non mascherare il bilanciamento del bianco</p>
+<p>Evita di applicare maschere al Channel Mixer quando lo usi per bilanciamento del bianco o calibrazione globale. Differenze di bilanciamento cromatico localizzate risultano innaturali. Preferisci correzioni globali e sottili.[^ch2]</p>
+</div>
+<p>Le maschere parametriche sono invece molto utili quando il Channel Mixer viene usato per <strong>correzioni selettive</strong> (es. correggere solo le luci LED blu). In questo caso, maschera basandoti sul canale cromatica dominante o sulla luminanza.[^manual]</p>
+<h3 id="ordine-nella-pipeline">Ordine nella pipeline<a class="headerlink" href="#ordine-nella-pipeline" title="Permanent link">&para;</a></h3>
+<p>Il Channel Mixer (tramite Color Calibration) si colloca nella fase di <strong>calibrazione colore</strong> della pipeline scene-referred:[^pipeline]</p>
+<ol>
+<li>White Balance (lasciare su <em>Camera Reference</em>)</li>
+<li>Profilo colore in ingresso (<code>Linear Rec 2020</code>)</li>
+<li><strong>Color Calibration / Channel Mixer</strong> &lt;-- qui</li>
+<li>Esposizione / Filmic RGB</li>
+<li>Color Balance RGB (per affinamenti creativi)</li>
+</ol>
+<h3 id="istanze-multiple">Istanze multiple<a class="headerlink" href="#istanze-multiple" title="Permanent link">&para;</a></h3>
+<p>Per illuminazione mista o correzioni complesse, puoi usare <strong>istanze multiple</strong> del modulo Color Calibration con maschere diverse. Ad esempio, una istanza per il cielo e una per il terreno in un paesaggio infrarosso.[^ir]</p>
+<div class="admonition warning">
+<p class="admonition-title">Evita applicazioni duplicate</p>
+<p>Quando duplichi un modulo di calibrazione, darktable potrebbe segnalare un'applicazione doppia. Verifica la modalita operativa per evitare conflitti tra le istanze.[^ir]</p>
+</div>
+<h2 id="esempi-passo-passo">Esempi passo-passo<a class="headerlink" href="#esempi-passo-passo" title="Permanent link">&para;</a></h2>
+<h3 id="esempio-1-bw-con-pelle-morbida">Esempio 1: B&amp;W con pelle morbida<a class="headerlink" href="#esempio-1-bw-con-pelle-morbida" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Aggiungi un modulo <strong>Color Calibration</strong> (nuova istanza)</li>
+<li>Vai alla scheda di destinazione <strong>Grigio</strong> (o usa il Channel Mixer deprecato, destinazione Gray)</li>
+<li>Imposta i cursori: <strong>Rosso = 0.90</strong>, <strong>Verde = 0.30</strong>, <strong>Blu = -0.30</strong>[^manual]</li>
+<li>Verifica sull'istogramma che la distribuzione tonale sia bilanciata</li>
+<li>Se la pelle appare troppo chiara, riduci il cursore Rosso a 0.80</li>
+<li>Per piu dettaglio nei tessuti, aumenta il Verde a 0.40</li>
+</ol>
+<h3 id="esempio-2-infrarosso-a-falsi-colori">Esempio 2: Infrarosso a falsi colori<a class="headerlink" href="#esempio-2-infrarosso-a-falsi-colori" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Apri il RAW della foto infrarossa in darktable</li>
+<li>Imposta <strong>Linear Rec 2020</strong> come profilo colore di ingresso[^ir]</li>
+<li>Nel modulo <strong>White Balance</strong>, punta il contagocce su vegetazione (foglie o erba)[^ir]</li>
+<li>Aggiungi un modulo <strong>Color Calibration</strong> (seconda istanza)</li>
+<li>Imposta i coefficienti per lo scambio R-B:[^ch1]</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Destinazione</th>
+<th>Input R</th>
+<th>Input G</th>
+<th>Input B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rosso</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Verde</td>
+<td>0.00</td>
+<td>1.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Blu</td>
+<td>1.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Valuta il risultato: se il fogliame e troppo saturo, riduci il coefficiente Blu nella destinazione Rosso (es. 0.80 invece di 1.00)</li>
+<li>Usa <strong>Filmic RGB</strong> per il mapping tonale e <strong>Color Balance RGB</strong> per affinamenti[^ir]</li>
+</ol>
+<h3 id="esempio-3-correggere-dominante-blu-globale">Esempio 3: Correggere dominante blu globale<a class="headerlink" href="#esempio-3-correggere-dominante-blu-globale" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Identifica una zona che dovrebbe essere grigio neutro</li>
+<li>Usa il <strong>color picker</strong> per verificare i valori RGB (es. <code>61, 62, 61</code>)[^ch2]</li>
+<li>Se i valori indicano una dominante blu (B piu alto di R e G), aggiungi un modulo <strong>Color Calibration</strong></li>
+<li>Nella destinazione <strong>Blu</strong>, riduci l'input Blu sotto 1.0 (es. 0.85)</li>
+<li>In alternativa, aggiungi input Rosso alla destinazione Blu per compensare</li>
+<li>Verifica con il color picker che la zona neutra abbia ora valori RGB equilibrati[^ch2]</li>
+</ol>
+<h2 id="riepilogo-dei-canali-di-output">Riepilogo dei canali di output<a class="headerlink" href="#riepilogo-dei-canali-di-output" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Complementare</th>
+<th>Cursore destra</th>
+<th>Cursore sinistra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>Ciano</td>
+<td>Piu rosso</td>
+<td>Piu ciano</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Magenta</td>
+<td>Piu verde</td>
+<td>Piu magenta</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Giallo</td>
+<td>Piu blu</td>
+<td>Piu giallo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
+<p>[^manual]: <em>darktable User Manual -- (deprecated) Channel Mixer</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/channel-mixer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-channel-mixer.md</code>
+[^ch1]: <em><a href="https://www.youtube.com/watch?v=IRIVqQoqPnU">Channel Mixer Part 1</a></em> -- A Dabble in Photography
+[^ch2]: <em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography
+[^ir]: <em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography
+[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -65,11 +65,27 @@
          <lastmod>2026-04-12</lastmod>
     </url>
     <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/agx/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/channel-mixer/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/color-calibration/</loc>
          <lastmod>2026-04-12</lastmod>
     </url>
     <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/color-equalizer/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/denoise/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/diffuse-sharpen/</loc>
          <lastmod>2026-04-12</lastmod>
     </url>
     <url>
@@ -110,6 +126,26 @@
     </url>
     <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/workflow/tone/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/workshop/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/workshop/black-white/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/workshop/landscape/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/workshop/lowlight/</loc>
+         <lastmod>2026-04-12</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/workshop/portrait/</loc>
          <lastmod>2026-04-12</lastmod>
     </url>
 </urlset>
