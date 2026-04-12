@@ -1,0 +1,3213 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/OF7ZcDPQfeM/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] The Orton effect in darktable - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-the-orton-effect-in-darktable" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] The Orton effect in darktable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-obiettivo-del-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e Obiettivo del Tutorial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e Obiettivo del Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-metodo-1-utilizzo-del-modulo-soften" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Metodo 1: Utilizzo del Modulo Soften
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Metodo 1: Utilizzo del Modulo Soften">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-metodo-2-sfocatura-gaussiana-e-fusione-moltiplica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Metodo 2: Sfocatura Gaussiana e Fusione Moltiplica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Metodo 2: Sfocatura Gaussiana e Fusione Moltiplica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-metodo-3-modulo-composite-e-flusso-avanzato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Metodo 3: Modulo Composite e Flusso Avanzato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Metodo 3: Modulo Composite e Flusso Avanzato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-confronto-finale-e-raccomandazioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Confronto Finale e Raccomandazioni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Confronto Finale e Raccomandazioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-introduzione-e-selezione-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Introduzione e selezione dei moduli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Introduzione e selezione dei moduli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-applicazione-sfocatura-e-creazione-livello-ausiliario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Applicazione sfocatura e creazione livello ausiliario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Applicazione sfocatura e creazione livello ausiliario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-configurazione-del-modulo-composite-e-confronto-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Configurazione del modulo Composite e confronto finale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Configurazione del modulo Composite e confronto finale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-the-orton-effect-in-darktable">[ENG] The Orton effect in darktable<a class="headerlink" href="#eng-the-orton-effect-in-darktable" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">https://www.youtube.com/watch?v=OF7ZcDPQfeM</a>
+<strong>Generato:</strong> 2026-04-12T01:13:04.220370
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-obiettivo-del-tutorial">Introduzione e Obiettivo del Tutorial</a></li>
+<li><a href="#metodo-1:-utilizzo-del-modulo-soften">Metodo 1: Utilizzo del Modulo Soften</a></li>
+<li><a href="#metodo-2:-sfocatura-gaussiana-e-fusione-moltiplica">Metodo 2: Sfocatura Gaussiana e Fusione Moltiplica</a></li>
+<li><a href="#metodo-3:-modulo-composite-e-flusso-avanzato">Metodo 3: Modulo Composite e Flusso Avanzato</a></li>
+<li><a href="#confronto-finale-e-raccomandazioni">Confronto Finale e Raccomandazioni</a></li>
+<li><a href="#introduzione-e-selezione-dei-moduli">Introduzione e selezione dei moduli</a></li>
+<li><a href="#applicazione-sfocatura-e-creazione-livello-ausiliario">Applicazione sfocatura e creazione livello ausiliario</a></li>
+<li><a href="#configurazione-del-modulo-composite-e-confronto-finale">Configurazione del modulo Composite e confronto finale</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-obiettivo-del-tutorial">1. Introduzione e Obiettivo del Tutorial<a class="headerlink" href="#1-introduzione-e-obiettivo-del-tutorial" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 01:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione dell'effetto autunnale (glow/Orton), confronto con software esterni come Luminar Neo e preparazione dei file RAW di esempio.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la fase di importazione in darktable: sono visibili quattro immagini nella griglia (due RAW DNG/TIFF e due TIFF con watermark 'ORTON EFFECT'), con il modulo 'import' attivo a sinistra. Il pannello destro mostra la sezione 'selection' con opzioni come 'copy', 'paste', 'history stack'. Nessun modulo di sviluppo è attivo; l'utente sta selezionando immagini da importare o gestire, prima di procedere con elaborazioni successive (come menzionato nel contesto riguardo al modulo composite e Luminar Neo)." src="screenshots/frame_00030_266.jpg" /></p>
+<p><em>L'interfaccia mostra la fase di importazione in darktable: sono visibili quattro immagini nella griglia (due RAW DNG/TIFF e due TIFF con watermark 'ORTON EFFECT'), con il modulo 'import' attivo a sinistra. Il pannello destro mostra la sezione 'selection' con opzioni come 'copy', 'paste', 'history stack'. Nessun modulo di sviluppo è attivo; l'utente sta selezionando immagini da importare o gestire, prima di procedere con elaborazioni successive (come menzionato nel contesto riguardo al modulo composite e Luminar Neo).</em></p>
+<p><strong>Modulo:</strong> import</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ignore EXIF rating</td>
+<td>false</td>
+</tr>
+<tr>
+<td>initial rating</td>
+<td>1</td>
+</tr>
+<tr>
+<td>apply metadata</td>
+<td>true</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>N. Winspeare</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>N. Winspeare (all rights reserved)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) in un video, non l'interfaccia di darktable. Sullo sfondo si vede una parete rossa con carta da parati floreale e due cornici con foto, tra cui una di un cane. Non è visibile alcun elemento dell'interfaccia di darktable: né moduli, né pannelli, né istogrammi o controlli. Il contesto narrativo indica che sta per iniziare una dimostrazione con il modulo 'composite', ma al momento dello screenshot l'interfaccia di darktable non è ancora mostrata." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) in un video, non l'interfaccia di darktable. Sullo sfondo si vede una parete rossa con carta da parati floreale e due cornici con foto, tra cui una di un cane. Non è visibile alcun elemento dell'interfaccia di darktable: né moduli, né pannelli, né istogrammi o controlli. Il contesto narrativo indica che sta per iniziare una dimostrazione con il modulo 'composite', ma al momento dello screenshot l'interfaccia di darktable non è ancora mostrata.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<hr />
+<h2 id="2-metodo-1-utilizzo-del-modulo-soften">2. Metodo 1: Utilizzo del Modulo Soften<a class="headerlink" href="#2-metodo-1-utilizzo-del-modulo-soften" title="Permanent link">&para;</a></h2>
+<p><strong>[01:05 – 03:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=65">Guarda nel video</a></p>
+<p>Applicazione rapida dell'effetto glow tramite il modulo Soften, con regolazione di sfocatura, saturazione, luminosità e opacità di fusione.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con il modulo 'soften' attivo e configurato per creare un effetto autunnale: la saturazione è al massimo (100%), la dimensione del glow è impostata a 34.55%, la luminosità è leggermente aumentata (+0.33 EV) e il mix è al 50%. L'immagine principale è un primo piano di un fungo Amanita muscaria con sfondo sfocato, e il testo 'Soften module' sovrapposto indica che si sta dimostrando l'uso del modulo. Nella barra laterale sinistra sono visibili i snapshot 'Original' e 'Soften', confermando l'applicazione del modulo." src="screenshots/frame_00150_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con il modulo 'soften' attivo e configurato per creare un effetto autunnale: la saturazione è al massimo (100%), la dimensione del glow è impostata a 34.55%, la luminosità è leggermente aumentata (+0.33 EV) e il mix è al 50%. L'immagine principale è un primo piano di un fungo Amanita muscaria con sfondo sfocato, e il testo 'Soften module' sovrapposto indica che si sta dimostrando l'uso del modulo. Nella barra laterale sinistra sono visibili i snapshot 'Original' e 'Soften', confermando l'applicazione del modulo.</em></p>
+<p><strong>Modulo:</strong> soften</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td>34.55%</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>+0.33 EV</td>
+</tr>
+<tr>
+<td>mix</td>
+<td>50.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista 'darkroom' di darktable con un'immagine di un fungo Amanita muscaria in primo piano, sfondo bokeh verde-ambra tipico di una foresta autunnale. Il modulo di editing non è espanso: la barra laterale destra elenca i moduli disponibili (es. watermark, framing, vignetting, soften, grain, etc.), ma nessuno è attivo o configurato. In basso è visibile la timeline delle miniature con 4 immagini totali, di cui la prima selezionata. A sinistra, il pannello 'duplicate manager' mostra una copia ('duplicate') dell'immagine originale, confermando l'azione di duplicazione menzionata nel contesto. L'istogramma RGB è visibile a destra, con picchi nei toni verdi e gialli. Non sono presenti maschere attive né modifiche applicate." src="screenshots/frame_00110_379.jpg" /></p>
+<p><em>L'interfaccia mostra la vista 'darkroom' di darktable con un'immagine di un fungo Amanita muscaria in primo piano, sfondo bokeh verde-ambra tipico di una foresta autunnale. Il modulo di editing non è espanso: la barra laterale destra elenca i moduli disponibili (es. watermark, framing, vignetting, soften, grain, etc.), ma nessuno è attivo o configurato. In basso è visibile la timeline delle miniature con 4 immagini totali, di cui la prima selezionata. A sinistra, il pannello 'duplicate manager' mostra una copia ('duplicate') dell'immagine originale, confermando l'azione di duplicazione menzionata nel contesto. L'istogramma RGB è visibile a destra, con picchi nei toni verdi e gialli. Non sono presenti maschere attive né modifiche applicate.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata (fungo Amanita muscaria) e il modulo 'watermark' attivo nel pannello destro. È stato inserito il testo 'Soften module' come watermark, posizionato centralmente sull'immagine. Sul pannello sinistro è visibile la sezione 'duplicate manager' con due versioni: 'Original' e 'Soften', indicando che è stata creata una duplicata per applicare un effetto di sfocatura (soften). L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra le miniature delle immagini nella collezione. Il narratore sta configurando un preset per tracciare l'applicazione del modulo 'soften', menzionato come utile per ottenere un effetto autunnale tramite controllo della dimensione del glow e della sfocatura." src="screenshots/frame_00138_900.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata (fungo Amanita muscaria) e il modulo 'watermark' attivo nel pannello destro. È stato inserito il testo 'Soften module' come watermark, posizionato centralmente sull'immagine. Sul pannello sinistro è visibile la sezione 'duplicate manager' con due versioni: 'Original' e 'Soften', indicando che è stata creata una duplicata per applicare un effetto di sfocatura (soften). L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra le miniature delle immagini nella collezione. Il narratore sta configurando un preset per tracciare l'applicazione del modulo 'soften', menzionato come utile per ottenere un effetto autunnale tramite controllo della dimensione del glow e della sfocatura.</em></p>
+<p><strong>Modulo:</strong> watermark</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>Soften module</td>
+</tr>
+<tr>
+<td>font</td>
+<td>None</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>49.68%</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>x offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>y offset</td>
+<td>+0.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista di importazione di darktable con 5 immagini selezionate nella griglia: due versioni di un fungo (una etichettata 'DNG', l'altra 'Soften module'), una con 'ORTON EFFECT', e due paesaggi con 'ORTON EFFECT'. Il cursore è posizionato sopra la prima immagine (fungo DNG). A destra, il pannello 'selection' mostra azioni disponibili su immagini selezionate. Il narratore sta confrontando l'originale, l'effetto 'soften' e l'effetto 'autumn' (Orton), commentando la perdita di nitidezza e colori, e preferendo un effetto glow senza eccessiva sfocatura." src="screenshots/frame_00183_139.jpg" /></p>
+<p><em>L'interfaccia mostra la vista di importazione di darktable con 5 immagini selezionate nella griglia: due versioni di un fungo (una etichettata 'DNG', l'altra 'Soften module'), una con 'ORTON EFFECT', e due paesaggi con 'ORTON EFFECT'. Il cursore è posizionato sopra la prima immagine (fungo DNG). A destra, il pannello 'selection' mostra azioni disponibili su immagini selezionate. Il narratore sta confrontando l'originale, l'effetto 'soften' e l'effetto 'autumn' (Orton), commentando la perdita di nitidezza e colori, e preferendo un effetto glow senza eccessiva sfocatura.</em></p>
+<p><strong>Modulo:</strong> import</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initial_rating</td>
+<td>1</td>
+</tr>
+<tr>
+<td>apply_metadata</td>
+<td>true</td>
+</tr>
+<tr>
+<td>metadata_presets</td>
+<td>N.Winspeare</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable (visualizzazione a griglia/anteprima), con una singola immagine selezionata: un fungo Amanita muscaria in un ambiente boschivo, con sfondo sfocato e illuminazione morbida. In alto a sinistra è visibile il pannello metadati dell'immagine (X-H2S, 1/40s, f/2.8, 80mm, ISO 160) e le stelle di valutazione (una stella piena, altre vuote). Non sono attivi moduli di sviluppo (darkroom), né maschere o strumenti di editing. Il cursore del mouse è posizionato sopra l'immagine, ma nessun modulo è espanso o selezionato. Il contesto narrativo indica che si sta per passare alla fase di editing per replicare un 'effetto autunno', ma al momento dello screenshot l'editing non è ancora iniziato." src="screenshots/frame_00090_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable (visualizzazione a griglia/anteprima), con una singola immagine selezionata: un fungo Amanita muscaria in un ambiente boschivo, con sfondo sfocato e illuminazione morbida. In alto a sinistra è visibile il pannello metadati dell'immagine (X-H2S, 1/40s, f/2.8, 80mm, ISO 160) e le stelle di valutazione (una stella piena, altre vuote). Non sono attivi moduli di sviluppo (darkroom), né maschere o strumenti di editing. Il cursore del mouse è posizionato sopra l'immagine, ma nessun modulo è espanso o selezionato. Il contesto narrativo indica che si sta per passare alla fase di editing per replicare un 'effetto autunno', ma al momento dello screenshot l'editing non è ancora iniziato.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>soften</li>
+<li>watermark</li>
+</ul>
+<hr />
+<h2 id="3-metodo-2-sfocatura-gaussiana-e-fusione-moltiplica">3. Metodo 2: Sfocatura Gaussiana e Fusione Moltiplica<a class="headerlink" href="#3-metodo-2-sfocatura-gaussiana-e-fusione-moltiplica" title="Permanent link">&para;</a></h2>
+<p><strong>[03:30 – 07:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=210">Guarda nel video</a></p>
+<p>Tecnica ispirata a Photoshop: duplicazione, applicazione di Gaussian Blur, maschera globale e impostazione della modalità di fusione su Multiply, con aggiustamenti di contrasto tramite Sigmoid.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Blur' attivo in darktable, con un raggio di sfocatura impostato a 20 px e tipo 'gaussian'. L'immagine principale è una foto di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module'. Sul pannello destro sono visibili le opzioni del modulo blur, inclusi i toggle per maschere esterne e composizione. La descrizione del narratore indica che sta applicando uno strato di sfocatura in modalità 'multiply' e sta per aggiungere una maschera gialla (tipicamente indicante una maschera attiva/visibile in darktable)." src="screenshots/frame_00261_360.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Blur' attivo in darktable, con un raggio di sfocatura impostato a 20 px e tipo 'gaussian'. L'immagine principale è una foto di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module'. Sul pannello destro sono visibili le opzioni del modulo blur, inclusi i toggle per maschere esterne e composizione. La descrizione del narratore indica che sta applicando uno strato di sfocatura in modalità 'multiply' e sta per aggiungere una maschera gialla (tipicamente indicante una maschera attiva/visibile in darktable).</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>20 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo nella sezione di sviluppo (darkroom). È applicata una maschera di sfocatura gaussiana con raggio 21 px, in modalità 'Multiply', con un fulcro impostato a +1.226 EV e opacità al 100%. Sullo sfondo è visibile un'immagine di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module'. A destra si vede l'istogramma e i controlli del blend mask, inclusa la visualizzazione della maschera circolare luminosa. Il narratore sta descrivendo l'uso della maschera globale in Multiply mode per regolare i livelli globali, accennando alla necessità di ridurre il contrasto successivamente tramite il modulo sigmoid." src="screenshots/frame_00292_600.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo nella sezione di sviluppo (darkroom). È applicata una maschera di sfocatura gaussiana con raggio 21 px, in modalità 'Multiply', con un fulcro impostato a +1.226 EV e opacità al 100%. Sullo sfondo è visibile un'immagine di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module'. A destra si vede l'istogramma e i controlli del blend mask, inclusa la visualizzazione della maschera circolare luminosa. Il narratore sta descrivendo l'uso della maschera globale in Multiply mode per regolare i livelli globali, accennando alla necessità di ridurre il contrasto successivamente tramite il modulo sigmoid.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>21 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>fulcrum</td>
+<td>+1.226 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un fungo Amanita muscaria al centro. Sul pannello sinistro è evidenziato il modulo 'Blur module', mentre sul pannello destro la lista dei moduli mostra 'sigmoid' selezionato o sotto il cursore del mouse. Sull'immagine è sovrapposto il testo 'Blur module' in grande carattere bianco. L'istogramma RGB è visibile in alto a destra. Il narratore sta discutendo della posizione relativa del modulo blur rispetto a sigmoid nella pipeline di elaborazione, suggerendo che collocare blur *sotto* sigmoid sia più logico per preservare il controllo sui toni chiari e scuri da parte di sigmoid." src="screenshots/frame_00371_699.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un fungo Amanita muscaria al centro. Sul pannello sinistro è evidenziato il modulo 'Blur module', mentre sul pannello destro la lista dei moduli mostra 'sigmoid' selezionato o sotto il cursore del mouse. Sull'immagine è sovrapposto il testo 'Blur module' in grande carattere bianco. L'istogramma RGB è visibile in alto a destra. Il narratore sta discutendo della posizione relativa del modulo blur rispetto a sigmoid nella pipeline di elaborazione, suggerendo che collocare blur </em>sotto<em> sigmoid sia più logico per preservare il controllo sui toni chiari e scuri da parte di sigmoid.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo, applicato a una fotografia di un fungo Amanita muscaria in primo piano su sfondo boschivo sfocato. Il testo 'Blur module' è sovrapposto in basso al centro dell'immagine, indicando che si sta dimostrando o testando l'effetto di sfuocatura. L'istogramma e i metadati della foto (X-H2S, 1/40s, f/2.8, 80mm, ISO 160) sono visibili nell'angolo in alto a sinistra. Il cursore del mouse è posizionato sullo sfondo sfocato, suggerendo un'interazione in corso. La descrizione del narratore evidenzia come questo tipo di blur accentui i colori e dia 'pop', a differenza di altri effetti (es. Neo), confermando che si sta valutando l'impatto cromatico dello sfuocamento." src="screenshots/frame_00323_333.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo, applicato a una fotografia di un fungo Amanita muscaria in primo piano su sfondo boschivo sfocato. Il testo 'Blur module' è sovrapposto in basso al centro dell'immagine, indicando che si sta dimostrando o testando l'effetto di sfuocatura. L'istogramma e i metadati della foto (X-H2S, 1/40s, f/2.8, 80mm, ISO 160) sono visibili nell'angolo in alto a sinistra. Il cursore del mouse è posizionato sullo sfondo sfocato, suggerendo un'interazione in corso. La descrizione del narratore evidenzia come questo tipo di blur accentui i colori e dia 'pop', a differenza di altri effetti (es. Neo), confermando che si sta valutando l'impatto cromatico dello sfuocamento.</em></p>
+<p><strong>Modulo:</strong> blur</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>overlay</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'Blur module' attivo e selezionato nel pannello sinistro. L'immagine centrale è una fotografia macro di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module' in grande carattere bianco. Sul pannello destro è visibile l'istogramma RGB e la lista dei moduli di sviluppo, tra cui 'sigmoid', 'color balance rgb', 'sharpen', ecc. Il narratore discute dei problemi di perdita di dettaglio e sovraesposizione nei toni chiari derivanti dall'applicazione del blur sopra o sotto il modulo sigmoid, indicando una fase sperimentale di correzione tonale." src="screenshots/frame_00360_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'Blur module' attivo e selezionato nel pannello sinistro. L'immagine centrale è una fotografia macro di un fungo Amanita muscaria con sfondo sfocato; sovrapposto al centro c'è il testo 'Blur module' in grande carattere bianco. Sul pannello destro è visibile l'istogramma RGB e la lista dei moduli di sviluppo, tra cui 'sigmoid', 'color balance rgb', 'sharpen', ecc. Il narratore discute dei problemi di perdita di dettaglio e sovraesposizione nei toni chiari derivanti dall'applicazione del blur sopra o sotto il modulo sigmoid, indicando una fase sperimentale di correzione tonale.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>gaussian blur</li>
+<li>sigmoid</li>
+<li>watermark</li>
+</ul>
+<hr />
+<h2 id="4-metodo-3-modulo-composite-e-flusso-avanzato">4. Metodo 3: Modulo Composite e Flusso Avanzato<a class="headerlink" href="#4-metodo-3-modulo-composite-e-flusso-avanzato" title="Permanent link">&para;</a></h2>
+<p><strong>[07:40 – 14:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=460">Guarda nel video</a></p>
+<p>Spiegazione approfondita del funzionamento della pipeline e del modulo Composite, creazione di un'immagine ausiliaria sfocata e colorata, e composizione in tempo reale con controllo dell'opacità.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un croco viola in primo piano. Il modulo 'color equalizer' è evidenziato nella lista dei moduli a destra, ma non è attivo (non ha parametri visibili né effetti applicati sull'immagine). Il cursore del mouse è posizionato sopra la voce 'composite', indicando che l'utente sta per o ha appena spostato il modulo 'color equalizer' sopra 'composite' nella catena di elaborazione, come descritto nel contesto: ciò fa sì che il color equalizer operi sul risultato composito (due immagini sovrapposte), causando un effetto indesiderato (ad es. blur) perché il modulo non dovrebbe elaborare dati compositi." src="screenshots/frame_00630_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un croco viola in primo piano. Il modulo 'color equalizer' è evidenziato nella lista dei moduli a destra, ma non è attivo (non ha parametri visibili né effetti applicati sull'immagine). Il cursore del mouse è posizionato sopra la voce 'composite', indicando che l'utente sta per o ha appena spostato il modulo 'color equalizer' sopra 'composite' nella catena di elaborazione, come descritto nel contesto: ciò fa sì che il color equalizer operi sul risultato composito (due immagini sovrapposte), causando un effetto indesiderato (ad es. blur) perché il modulo non dovrebbe elaborare dati compositi.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con l'immagine di un fiore rosso sfocato in primo piano e foglie verdi sullo sfondo. Il modulo 'blurs' è espanso nel pannello dei moduli a destra, indicando che l'utente sta lavorando sull'applicazione di effetti di sfocatura. L'istogramma RGB è visibile sopra la lista dei moduli. La descrizione del narratore conferma che sta manipolando l'ordine dei moduli (ad es. spostando 'blur' sopra o sotto altri moduli come 'color equalizer') per osservare come l'ordine influisca sull'output composito — un concetto fondamentale nel flusso di lavoro non lineare di darktable." src="screenshots/frame_00660_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con l'immagine di un fiore rosso sfocato in primo piano e foglie verdi sullo sfondo. Il modulo 'blurs' è espanso nel pannello dei moduli a destra, indicando che l'utente sta lavorando sull'applicazione di effetti di sfocatura. L'istogramma RGB è visibile sopra la lista dei moduli. La descrizione del narratore conferma che sta manipolando l'ordine dei moduli (ad es. spostando 'blur' sopra o sotto altri moduli come 'color equalizer') per osservare come l'ordine influisca sull'output composito — un concetto fondamentale nel flusso di lavoro non lineare di darktable.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' attivo in darktable, con tutti i parametri regolati a zero (valori neutri). È visibile la sezione 'masks' abilitata e l'opzione '4 ways' selezionata, indicando che l'utente sta preparando un'operazione di fusione (blending) con maschere per controllare separatamente ombre, toni medi e luci. L'istogramma RGB sulla destra mostra una distribuzione luminosa con picchi nei toni medi/alti, coerente con una foto di funghi in un ambiente boschivo soleggiato. Il cursore del mouse è posizionato vicino al controllo 'highlights' sotto 'perceptual brilliance grading', suggerendo un intervento imminente su questi valori per aumentare la luminosità e la saturazione selettiva, come descritto nel contesto audio." src="screenshots/frame_00810_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' attivo in darktable, con tutti i parametri regolati a zero (valori neutri). È visibile la sezione 'masks' abilitata e l'opzione '4 ways' selezionata, indicando che l'utente sta preparando un'operazione di fusione (blending) con maschere per controllare separatamente ombre, toni medi e luci. L'istogramma RGB sulla destra mostra una distribuzione luminosa con picchi nei toni medi/alti, coerente con una foto di funghi in un ambiente boschivo soleggiato. Il cursore del mouse è posizionato vicino al controllo 'highlights' sotto 'perceptual brilliance grading', suggerendo un intervento imminente su questi valori per aumentare la luminosità e la saturazione selettiva, come descritto nel contesto audio.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>+0.00°</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>global brilliance</td>
+<td>+0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color correction' attivo, in cui è stata applicata una maschera disegnata (visibile come linea viola orizzontale sull'immagine) per isolare la porzione superiore dell'immagine (fiore e foglie), escludendo il terreno. L'utente sta correggendo una modifica 'sporca' (dirty modification), come indicato dal contesto, e sta preparandosi a applicare un effetto di sfocatura selettiva (lens blur) senza toccare il suolo. L'istogramma RGB e i controlli avanzati di raffinamento della maschera sono visibili a destra." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color correction' attivo, in cui è stata applicata una maschera disegnata (visibile come linea viola orizzontale sull'immagine) per isolare la porzione superiore dell'immagine (fiore e foglie), escludendo il terreno. L'utente sta correggendo una modifica 'sporca' (dirty modification), come indicato dal contesto, e sta preparandosi a applicare un effetto di sfocatura selettiva (lens blur) senza toccare il suolo. L'istogramma RGB e i controlli avanzati di raffinamento della maschera sono visibili a destra.</em></p>
+<p><strong>Modulo:</strong> color correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue curve</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine di un fiore rosso su sfondo verde sfocato. Nel pannello dei moduli a destra, la lista dei moduli del pipeline è visibile e il modulo 'highlight reconstruction' è evidenziato (selezionato), mentre il cursore del mouse si trova sopra di esso. Il narratore sta descrivendo la struttura del pipeline (blur → color equalizer → ecc.) e intende spostare 'color equalizer' più in alto; ciò indica che l'utente sta ottimizzando l'ordine dei moduli per migliorare il flusso di elaborazione. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono riportate le informazioni tecniche della foto (Fujifilm X-H2S, 1/60s, f/7.1, 484.5mm, ISO 800)." src="screenshots/frame_00508_399.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine di un fiore rosso su sfondo verde sfocato. Nel pannello dei moduli a destra, la lista dei moduli del pipeline è visibile e il modulo 'highlight reconstruction' è evidenziato (selezionato), mentre il cursore del mouse si trova sopra di esso. Il narratore sta descrivendo la struttura del pipeline (blur → color equalizer → ecc.) e intende spostare 'color equalizer' più in alto; ciò indica che l'utente sta ottimizzando l'ordine dei moduli per migliorare il flusso di elaborazione. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono riportate le informazioni tecniche della foto (Fujifilm X-H2S, 1/60s, f/7.1, 484.5mm, ISO 800).</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>composite</li>
+<li>gaussian blur</li>
+<li>color equalizer</li>
+<li>exposure</li>
+</ul>
+<hr />
+<h2 id="5-confronto-finale-e-raccomandazioni">5. Confronto Finale e Raccomandazioni<a class="headerlink" href="#5-confronto-finale-e-raccomandazioni" title="Permanent link">&para;</a></h2>
+<p><strong>[14:10 – 16:49]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=850">Guarda nel video</a></p>
+<p>Analisi comparativa dei tre metodi, evidenziazione della superiorità del metodo Composite nel preservare le alte luci e nei dettagli, e conclusioni operative.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'composite' attivo nel pannello destro. L'immagine centrale è un primo piano di un fungo Amanita muscaria con testo sovrimpresso 'Composite'. Il modulo composite mostra parametri di contrasto elevato (2.236) e skew positivo (+0.27), indicando un intervento mirato sulle alte luci e sulla forma della curva tonale. Sono visibili anche controlli avanzati per attenuazione e rotazione dei canali RGB, con predominanza dell'attenuazione rossa (10.8%). A sinistra, la sezione 'snapshots' elenca versioni precedenti dell'elaborazione, tra cui 'Softened', 'Orton effect' e 'Blur module', coerentemente con il contesto narrativo che menziona questi effetti. L'istogramma RGB nella parte superiore destra mostra una distribuzione tonale concentrata nelle medie e alte luci, con picchi verdi e gialli tipici di uno sfondo boschivo sfocato." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'composite' attivo nel pannello destro. L'immagine centrale è un primo piano di un fungo Amanita muscaria con testo sovrimpresso 'Composite'. Il modulo composite mostra parametri di contrasto elevato (2.236) e skew positivo (+0.27), indicando un intervento mirato sulle alte luci e sulla forma della curva tonale. Sono visibili anche controlli avanzati per attenuazione e rotazione dei canali RGB, con predominanza dell'attenuazione rossa (10.8%). A sinistra, la sezione 'snapshots' elenca versioni precedenti dell'elaborazione, tra cui 'Softened', 'Orton effect' e 'Blur module', coerentemente con il contesto narrativo che menziona questi effetti. L'istogramma RGB nella parte superiore destra mostra una distribuzione tonale concentrata nelle medie e alte luci, con picchi verdi e gialli tipici di uno sfondo boschivo sfocato.</em></p>
+<p><strong>Modulo:</strong> composite</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>2.236</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.27</td>
+</tr>
+<tr>
+<td>color_processing</td>
+<td>per channel</td>
+</tr>
+<tr>
+<td>preserve_hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target_black</td>
+<td>0.0000%</td>
+</tr>
+<tr>
+<td>target_white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>working_profile</td>
+<td>base primaries</td>
+</tr>
+<tr>
+<td>red_attenuation</td>
+<td>10.8%</td>
+</tr>
+<tr>
+<td>red_rotation</td>
+<td>+0.1°</td>
+</tr>
+<tr>
+<td>green_attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green_rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue_attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue_rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover_purity</td>
+<td>95%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'composite' attivo in darktable, con un'immagine di un fungo Amanita muscaria al centro. È stata applicata una maschera composita (probabilmente una versione sfocata dell'immagine) in modalità 'multiply' con fulcrum a +0.229 EV e opacità al 100%. L'utente sta descrivendo una tecnica per ottenere effetti di sfuocatura controllata riducendo l'opacità della maschera composita — una strategia avanzata per migliorare la definizione locale senza artefatti. L'istogramma RGB è visibile a destra, e nella barra degli strumenti sono presenti i moduli 'lighttable', 'darkroom' e 'other'." src="screenshots/frame_00920_860.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'composite' attivo in darktable, con un'immagine di un fungo Amanita muscaria al centro. È stata applicata una maschera composita (probabilmente una versione sfocata dell'immagine) in modalità 'multiply' con fulcrum a +0.229 EV e opacità al 100%. L'utente sta descrivendo una tecnica per ottenere effetti di sfuocatura controllata riducendo l'opacità della maschera composita — una strategia avanzata per migliorare la definizione locale senza artefatti. L'istogramma RGB è visibile a destra, e nella barra degli strumenti sono presenti i moduli 'lighttable', 'darkroom' e 'other'.</em></p>
+<p><strong>Modulo:</strong> composite</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>scale on</td>
+<td>image</td>
+</tr>
+<tr>
+<td>x offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>y offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>blend mask mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>fulcrum</td>
+<td>+0.229 EV</td>
+</tr>
+<tr>
+<td>blend mask opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'composite' attivo in darktable, con un'immagine di un fungo Amanita muscaria al centro. È stata applicata una maschera di fusione (blend mask) con modalità 'multiply', fulcrum a +0.229 EV e opacità della maschera al 25%, mentre l'opacità del livello composito è al 100%. L'utente sta riducendo l'opacità della maschera per ottenere un effetto autunnale morbido, come indicato dal contesto narrativo. È visibile anche un istogramma RGB nella parte superiore destra e la barra degli strumenti inferiore con anteprime delle versioni." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'composite' attivo in darktable, con un'immagine di un fungo Amanita muscaria al centro. È stata applicata una maschera di fusione (blend mask) con modalità 'multiply', fulcrum a +0.229 EV e opacità della maschera al 25%, mentre l'opacità del livello composito è al 100%. L'utente sta riducendo l'opacità della maschera per ottenere un effetto autunnale morbido, come indicato dal contesto narrativo. È visibile anche un istogramma RGB nella parte superiore destra e la barra degli strumenti inferiore con anteprime delle versioni.</em></p>
+<p><strong>Modulo:</strong> composite</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>x offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>y offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>fulcrum</td>
+<td>+0.229 EV</td>
+</tr>
+<tr>
+<td>blend mask opacity</td>
+<td>25%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la modalità 'darkroom' con un'immagine di un fungo Amanita muscaria in primo piano, sfondo bokeh verde-giallo. Il modulo 'composite' è evidenziato nel pannello dei moduli a destra, indicando che l'utente sta preparando o confrontando una versione composita dell'immagine, probabilmente per applicare un effetto autunnale e aggiungere un watermark, come menzionato nel contesto. L'istogramma RGB è visibile sopra la lista dei moduli. La barra degli strumenti inferiore mostra anteprime delle versioni precedenti (snapshots), e il pannello sinistro include gestione duplicati e maschere. L'immagine appare leggermente sfocata, coerentemente con l'osservazione dell'utente 'It's not sharp'." src="screenshots/frame_00940_539.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la modalità 'darkroom' con un'immagine di un fungo Amanita muscaria in primo piano, sfondo bokeh verde-giallo. Il modulo 'composite' è evidenziato nel pannello dei moduli a destra, indicando che l'utente sta preparando o confrontando una versione composita dell'immagine, probabilmente per applicare un effetto autunnale e aggiungere un watermark, come menzionato nel contesto. L'istogramma RGB è visibile sopra la lista dei moduli. La barra degli strumenti inferiore mostra anteprime delle versioni precedenti (snapshots), e il pannello sinistro include gestione duplicati e maschere. L'immagine appare leggermente sfocata, coerentemente con l'osservazione dell'utente 'It's not sharp'.</em></p>
+<p><strong>Modulo:</strong> composite</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>module_order</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>histogram_mode</td>
+<td>RGB</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata al centro: un fungo Amanita muscaria in primo piano su sfondo sfocato (bokeh verde-giallo). A sinistra sono visibili i thumbnail delle altre immagini e la sezione 'snapshots', 'history', 'duplicate manager'. A destra, il pannello dei moduli con l'istogramma RGB attivo e una lista di moduli disponibili (watermark, framing, blurs, ecc.). Lo stato indica che è stata selezionata un'immagine RAW DNG (come suggerito dal commento del narratore), e il narratore sta considerando l'applicazione di una curva sigmoid per il contrasto." src="screenshots/frame_00870_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata al centro: un fungo Amanita muscaria in primo piano su sfondo sfocato (bokeh verde-giallo). A sinistra sono visibili i thumbnail delle altre immagini e la sezione 'snapshots', 'history', 'duplicate manager'. A destra, il pannello dei moduli con l'istogramma RGB attivo e una lista di moduli disponibili (watermark, framing, blurs, ecc.). Lo stato indica che è stata selezionata un'immagine RAW DNG (come suggerito dal commento del narratore), e il narratore sta considerando l'applicazione di una curva sigmoid per il contrasto.</em></p>
+<p><strong>Modulo:</strong> darkroom</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_selected</td>
+<td>1 image (#1) selected of 6</td>
+</tr>
+<tr>
+<td>camera_model</td>
+<td>Fujifilm X-H2S</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>1/40</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/2.8</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>80.0 mm</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>160</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>2022-10-22 10h20min20s</td>
+</tr>
+<tr>
+<td>color_profile</td>
+<td>(B,R8,S4)</td>
+</tr>
+<tr>
+<td>opencl</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>composite</li>
+<li>soften</li>
+<li>gaussian blur</li>
+</ul>
+<hr />
+<h2 id="6-introduzione-e-selezione-dei-moduli">6. Introduzione e selezione dei moduli<a class="headerlink" href="#6-introduzione-e-selezione-dei-moduli" title="Permanent link">&para;</a></h2>
+<p><strong>[16:49 – 17:45]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=1009">Guarda nel video</a></p>
+<p>Presentazione della tecnica su un nuovo set di immagini. Discussione sull'uso di Sigmoid e sul modulo candidato AGX. Decisione di evitare il modulo Soften a favore di una combinazione tra sfocatura e composite.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable, con una collezione di 6 immagini selezionate (1 attualmente evidenziata). Le miniature mostrano varianti di un'immagine di funghi con etichette come 'Composite', 'Soften module', 'Blur module' e 'aux', indicando un flusso di lavoro per l'applicazione dell'effetto Orton. Il pannello destro è nella sezione 'selection', con azioni disponibili su immagini e metadati. In basso è visibile la timeline cronologica delle collezioni. Non è attivo alcun modulo di sviluppo (darkroom), ma si tratta di una fase di confronto e selezione tra versioni elaborate." src="screenshots/frame_01013_866.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable, con una collezione di 6 immagini selezionate (1 attualmente evidenziata). Le miniature mostrano varianti di un'immagine di funghi con etichette come 'Composite', 'Soften module', 'Blur module' e 'aux', indicando un flusso di lavoro per l'applicazione dell'effetto Orton. Il pannello destro è nella sezione 'selection', con azioni disponibili su immagini e metadati. In basso è visibile la timeline cronologica delle collezioni. Non è attivo alcun modulo di sviluppo (darkroom), ma si tratta di una fase di confronto e selezione tra versioni elaborate.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con un'immagine paesaggistica (lago circondato da montagne verdi) selezionata. Il modulo 'color calibration' è evidenziato nel pannello dei moduli a destra, con la configurazione 'scene-referred def' attiva. Il cursore del mouse punta al modulo 'color calibration', indicando che l'utente sta cercando o selezionando moduli per il post-processing. Non sono visibili maschere, effetti di sfocatura o watermark; il modulo 'blur' non è ancora attivato, coerentemente con il commento dell'utente che sta cercando dove si trova." src="screenshots/frame_01056_380.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con un'immagine paesaggistica (lago circondato da montagne verdi) selezionata. Il modulo 'color calibration' è evidenziato nel pannello dei moduli a destra, con la configurazione 'scene-referred def' attiva. Il cursore del mouse punta al modulo 'color calibration', indicando che l'utente sta cercando o selezionando moduli per il post-processing. Non sono visibili maschere, effetti di sfocatura o watermark; il modulo 'blur' non è ancora attivato, coerentemente con il commento dell'utente che sta cercando dove si trova.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color calibration</td>
+<td>scene-referred def</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini (5 DNG + 1 NEF). È selezionata l'immagine NEF (paesaggio lacustre), mentre le altre mostrano varianti di elaborazione (Composite, Soften module, Blur module, ORTON EFFECT). Il pannello destro è aperto sulla sezione 'selection', con azioni disponibili su immagini e metadati. Non sono visibili moduli di sviluppo attivi (es. develop), né maschere o istogrammi; la barra temporale in basso indica un'archiviazione cronologica delle collezioni. Il contesto narrativo menziona il modulo 'AGX' (ancora non ufficiale) e 'sigmoid', ma questi non sono visibili nell'interfaccia corrente." src="screenshots/frame_01020_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini (5 DNG + 1 NEF). È selezionata l'immagine NEF (paesaggio lacustre), mentre le altre mostrano varianti di elaborazione (Composite, Soften module, Blur module, ORTON EFFECT). Il pannello destro è aperto sulla sezione 'selection', con azioni disponibili su immagini e metadati. Non sono visibili moduli di sviluppo attivi (es. develop), né maschere o istogrammi; la barra temporale in basso indica un'archiviazione cronologica delle collezioni. Il contesto narrativo menziona il modulo 'AGX' (ancora non ufficiale) e 'sigmoid', ma questi non sono visibili nell'interfaccia corrente.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>1 image (#1) selected of 6 in current collection</td>
+</tr>
+<tr>
+<td>collection_size</td>
+<td>6</td>
+</tr>
+<tr>
+<td>image_format</td>
+<td>NEF</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sigmoid</li>
+<li>AGX</li>
+<li>Soften</li>
+</ul>
+<hr />
+<h2 id="7-applicazione-sfocatura-e-creazione-livello-ausiliario">7. Applicazione sfocatura e creazione livello ausiliario<a class="headerlink" href="#7-applicazione-sfocatura-e-creazione-livello-ausiliario" title="Permanent link">&para;</a></h2>
+<p><strong>[17:45 – 19:45]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=1065">Guarda nel video</a></p>
+<p>Duplicazione dell'immagine, applicazione della sfocatura gaussiana e utilizzo di una maschera in modalità moltiplica con regolazione del fulcro. Creazione di un file ausiliario sfocato fuso in modalità screen e aumento della saturazione.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo. L'immagine principale è un paesaggio lacustre con montagne verdi riflesse sull'acqua, leggermente sfocata. Il pannello destro visualizza i controlli del modulo Blur: raggio di sfocatura impostato a 20 px, tipo di sfocatura 'gaussian', e diverse opzioni avanzate (gradient density, composite, ecc.) disponibili ma non attivate. Sul lato sinistro è visibile la sezione 'Blur module' nel pannello dei moduli, con una miniatura dell'immagine e un indicatore di versione (5). Il cursore del mouse è posizionato sul pulsante 'gradient density'. Non sono presenti maschere attive nell'immagine corrente." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Blur' attivo. L'immagine principale è un paesaggio lacustre con montagne verdi riflesse sull'acqua, leggermente sfocata. Il pannello destro visualizza i controlli del modulo Blur: raggio di sfocatura impostato a 20 px, tipo di sfocatura 'gaussian', e diverse opzioni avanzate (gradient density, composite, ecc.) disponibili ma non attivate. Sul lato sinistro è visibile la sezione 'Blur module' nel pannello dei moduli, con una miniatura dell'immagine e un indicatore di versione (5). Il cursore del mouse è posizionato sul pulsante 'gradient density'. Non sono presenti maschere attive nell'immagine corrente.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>20 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Blur' attivo in darktable, con un effetto di sfocatura gaussiana applicato all'immagine (raggio 20 px) in modalità 'multiply' e fulcrum a +1.963 EV per preservare i dettagli nelle alte luci. La maschera di fusione è attiva con opacità al 100%, e sono visibili opzioni aggiuntive come 'graduated density' e 'composite'. L'immagine sottostante è un paesaggio lacustre con riflessi, e il testo 'Blur module' sovrapposto indica che si tratta di una dimostrazione del modulo." src="screenshots/frame_01092_480.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Blur' attivo in darktable, con un effetto di sfocatura gaussiana applicato all'immagine (raggio 20 px) in modalità 'multiply' e fulcrum a +1.963 EV per preservare i dettagli nelle alte luci. La maschera di fusione è attiva con opacità al 100%, e sono visibili opzioni aggiuntive come 'graduated density' e 'composite'. L'immagine sottostante è un paesaggio lacustre con riflessi, e il testo 'Blur module' sovrapposto indica che si tratta di una dimostrazione del modulo.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>20 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>fulcrum</td>
+<td>+1.963 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista 'darkroom' con un'immagine paesaggistica di un lago circondato da montagne verdi. Sul pannello destro è attivo il modulo 'blur', con il cursore del raggio impostato a 20, indicando che l'utente sta applicando un effetto di sfocatura gaussiana. Nella sezione sinistra, nella gestione delle duplicazioni, sono visibili tre versioni dell'immagine (originale, duplicato e uno con blur), e l'utente sta operando su una copia per rimuovere un watermark e applicare lo sfocamento. L'istogramma in alto a destra mostra la distribuzione dei toni dell'immagine corrente." src="screenshots/frame_01135_599.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista 'darkroom' con un'immagine paesaggistica di un lago circondato da montagne verdi. Sul pannello destro è attivo il modulo 'blur', con il cursore del raggio impostato a 20, indicando che l'utente sta applicando un effetto di sfocatura gaussiana. Nella sezione sinistra, nella gestione delle duplicazioni, sono visibili tre versioni dell'immagine (originale, duplicato e uno con blur), e l'utente sta operando su una copia per rimuovere un watermark e applicare lo sfocamento. L'istogramma in alto a destra mostra la distribuzione dei toni dell'immagine corrente.</em></p>
+<p><strong>Modulo:</strong> blur</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>20.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blur' attivo in darktable, con un raggio di sfocatura di 26 px, tipo gaussian e modalità di fusione impostata su 'screen' con opacità al 63%. È visibile una maschera di fusione circolare (soft brush) applicata sulla parte centrale dell’immagine, che evidenzia l’uso della modalità 'screen' per aumentare la luminosità selettivamente. L’istogramma RGB e la miniatura dell’immagine confermano che si sta lavorando su una foto paesaggistica con riflessi sul lago. Il narratore sta spiegando come combinare modalità di fusione (in particolare 'screen') all’interno del modulo blur per ottenere effetti compositivi non disponibili con una singola modalità." src="screenshots/frame_01170_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blur' attivo in darktable, con un raggio di sfocatura di 26 px, tipo gaussian e modalità di fusione impostata su 'screen' con opacità al 63%. È visibile una maschera di fusione circolare (soft brush) applicata sulla parte centrale dell’immagine, che evidenzia l’uso della modalità 'screen' per aumentare la luminosità selettivamente. L’istogramma RGB e la miniatura dell’immagine confermano che si sta lavorando su una foto paesaggistica con riflessi sul lago. Il narratore sta spiegando come combinare modalità di fusione (in particolare 'screen') all’interno del modulo blur per ottenere effetti compositivi non disponibili con una singola modalità.</em></p>
+<p><strong>Modulo:</strong> blur</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>26 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>screen</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>63%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'Blur' attivo e visibile nella barra laterale destra. L'immagine principale è un paesaggio lacustre con montagne verdi; sullo sfondo si nota un'anteprima dell'immagine originale e di una versione modificata (con watermark e blur). Il testo 'Blur module' è sovrapposto in grande al centro dell'immagine, indicando che l'utente sta dimostrando l'uso del modulo di sfocatura. Nella sezione sinistra, la gestione delle duplicazioni mostra due versioni: una con watermark e blur (selezionata), e una originale. L'utente intende rimuovere il watermark e applicare un blur Gaussiano all'originale, ma ha temporaneamente selezionato la versione già elaborata." src="screenshots/frame_01131_480.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'Blur' attivo e visibile nella barra laterale destra. L'immagine principale è un paesaggio lacustre con montagne verdi; sullo sfondo si nota un'anteprima dell'immagine originale e di una versione modificata (con watermark e blur). Il testo 'Blur module' è sovrapposto in grande al centro dell'immagine, indicando che l'utente sta dimostrando l'uso del modulo di sfocatura. Nella sezione sinistra, la gestione delle duplicazioni mostra due versioni: una con watermark e blur (selezionata), e una originale. L'utente intende rimuovere il watermark e applicare un blur Gaussiano all'originale, ma ha temporaneamente selezionato la versione già elaborata.</em></p>
+<p><strong>Modulo:</strong> Blur module</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>5</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>Gaussian</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura gaussiana</li>
+<li>Maschera</li>
+<li>Colore RGB</li>
+</ul>
+<hr />
+<h2 id="8-configurazione-del-modulo-composite-e-confronto-finale">8. Configurazione del modulo Composite e confronto finale<a class="headerlink" href="#8-configurazione-del-modulo-composite-e-confronto-finale" title="Permanent link">&para;</a></h2>
+<p><strong>[19:45 – 22:41]</strong>
+ | <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM&amp;t=1185">Guarda nel video</a></p>
+<p>Inserimento del modulo Composite sopra Sigmoid, impostazione in modalità moltiplica e regolazione di fulcro, opacità, skew e contrasto. Confronto tra l'effetto blur tradizionale e il composite, evidenziando il miglior controllo sulle alte luci e sui dettagli nonostante il maggiore carico computazionale.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blend mask' attivo in darktable, con una maschera vuota applicata in modalità 'multiply'. L'opacità è al 100%, ma il narratore indica di ridurla successivamente. Il cursore del mouse è posizionato vicino all'opzione 'sigma', confermando l'intenzione di inserire un nuovo elemento sopra 'sigma' senza attendere il calcolo. L'immagine di sfondo è un paesaggio lacustre con montagne verdi riflesse sull'acqua, e lo stato della pipeline mostra che sono già presenti moduli come 'color balance rgb' e 'color calibration'." src="screenshots/frame_01230_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blend mask' attivo in darktable, con una maschera vuota applicata in modalità 'multiply'. L'opacità è al 100%, ma il narratore indica di ridurla successivamente. Il cursore del mouse è posizionato vicino all'opzione 'sigma', confermando l'intenzione di inserire un nuovo elemento sopra 'sigma' senza attendere il calcolo. L'immagine di sfondo è un paesaggio lacustre con montagne verdi riflesse sull'acqua, e lo stato della pipeline mostra che sono già presenti moduli come 'color balance rgb' e 'color calibration'.</em></p>
+<p><strong>Modulo:</strong> blend mask</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>sigma</td>
+<td>non specificato (slider non visibile)</td>
+</tr>
+<tr>
+<td>x offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>y offset</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>+0.00°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'blend mask' attivo nel pannello destro. È stata applicata una maschera vuota in modalità 'multiply', con fulcrum impostato a +1.605 EV e opacità al 100%. L'immagine centrale è un paesaggio lacustre con riflessi, e lo stato 'working...' indica che un'operazione è in corso. Il narratore sta descrivendo l'applicazione di una maschera per controllare l'esposizione e i contrasti, suggerendo successivamente di ridurre l'opacità e regolare lo skew per recuperare dettagli nei toni chiari." src="screenshots/frame_01236_799.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'blend mask' attivo nel pannello destro. È stata applicata una maschera vuota in modalità 'multiply', con fulcrum impostato a +1.605 EV e opacità al 100%. L'immagine centrale è un paesaggio lacustre con riflessi, e lo stato 'working...' indica che un'operazione è in corso. Il narratore sta descrivendo l'applicazione di una maschera per controllare l'esposizione e i contrasti, suggerendo successivamente di ridurre l'opacità e regolare lo skew per recuperare dettagli nei toni chiari.</em></p>
+<p><strong>Modulo:</strong> blend mask</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>fulcrum</td>
+<td>+1.605 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>x offset</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>y offset</td>
+<td>+0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color equalizer' attivo, in particolare nella sezione 'perceptual saturation grading'. L'immagine è un paesaggio lacustre con montagne verdi e un villaggio riflesso sull'acqua. Sono stati applicati aumenti significativi di saturazione globale (+65.45%) e nelle ombre (+50%), mentre i toni chiari sono stati ridotti (-13.62%). Il cursore del mouse è posizionato sullo slider dei highlights, suggerendo un aggiustamento in corso. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore indica che l'immagine è un RAW Nikon D300." src="screenshots/frame_01200_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color equalizer' attivo, in particolare nella sezione 'perceptual saturation grading'. L'immagine è un paesaggio lacustre con montagne verdi e un villaggio riflesso sull'acqua. Sono stati applicati aumenti significativi di saturazione globale (+65.45%) e nelle ombre (+50%), mentre i toni chiari sono stati ridotti (-13.62%). Il cursore del mouse è posizionato sullo slider dei highlights, suggerendo un aggiustamento in corso. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore indica che l'immagine è un RAW Nikon D300.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global saturation</td>
+<td>+65.45%</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>+50.00%</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>-13.62%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista lighttable con un'immagine paesaggistica (villaggio sul lago circondato da montagne verdi) selezionata. Il modulo 'composite' è attivo nel pannello destro, e il narratore menziona l'uso del watermark e l'aggiustamento dello skew e del contrasto per recuperare i dettagli negli highlights. Sono visibili anche altri moduli come 'color balance rgb', 'exposure' e 'white balance', ma non sono espansi. Lo stato indica che si sta preparando un confronto tra tre versioni dell'immagine." src="screenshots/frame_01257_839.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista lighttable con un'immagine paesaggistica (villaggio sul lago circondato da montagne verdi) selezionata. Il modulo 'composite' è attivo nel pannello destro, e il narratore menziona l'uso del watermark e l'aggiustamento dello skew e del contrasto per recuperare i dettagli negli highlights. Sono visibili anche altri moduli come 'color balance rgb', 'exposure' e 'white balance', ma non sono espansi. Lo stato indica che si sta preparando un confronto tra tre versioni dell'immagine.</em></p>
+<p><strong>Modulo:</strong> composite</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>watermark</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con quattro anteprime di immagini identiche (paesaggio lacustre) etichettate come 'Composite module', 'Blur module', 'NEF' e 'ORTON EFFECT'. L'immagine più a destra è selezionata (evidenziata da un bordo viola). Il pannello sinistro mostra una collezione 'youtube (108)', mentre il pannello destro elenca moduli esterni. Lo stato indica che l'utente sta confrontando versioni modificate della stessa foto, probabilmente per valutare effetti diversi; il riferimento al 'Tiffany' e alla rimozione dell'etichetta suggerisce che una delle anteprime era stata contrassegnata con un tag colore (probabilmente rosa), ora rimosso per semplificare il confronto." src="screenshots/frame_01274_400.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con quattro anteprime di immagini identiche (paesaggio lacustre) etichettate come 'Composite module', 'Blur module', 'NEF' e 'ORTON EFFECT'. L'immagine più a destra è selezionata (evidenziata da un bordo viola). Il pannello sinistro mostra una collezione 'youtube (108)', mentre il pannello destro elenca moduli esterni. Lo stato indica che l'utente sta confrontando versioni modificate della stessa foto, probabilmente per valutare effetti diversi; il riferimento al 'Tiffany' e alla rimozione dell'etichetta suggerisce che una delle anteprime era stata contrassegnata con un tag colore (probabilmente rosa), ora rimosso per semplificare il confronto.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images_count</td>
+<td>1 (su 9)</td>
+</tr>
+<tr>
+<td>collection_filter</td>
+<td>youtube (108)</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>filename</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Composite</li>
+<li>Sigmoid</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>soften</strong></td>
+<td>dimensione del bagliore, intensità sfocatura, luminosità, saturazione, mix/opacità</td>
+</tr>
+<tr>
+<td><strong>gaussian blur</strong></td>
+<td>modalità di fusione (Multiply), maschera, raggio di sfocatura</td>
+</tr>
+<tr>
+<td><strong>sigmoid</strong></td>
+<td>fulcro (fulcrum), contrasto, gestione alte/basse luci</td>
+</tr>
+<tr>
+<td><strong>composite</strong></td>
+<td>modalità di fusione, posizione nella pipeline, selezione immagine ausiliaria, opacità</td>
+</tr>
+<tr>
+<td><strong>color equalizer</strong></td>
+<td>tonalità (hue), luminosità per intervalli (ombre, mezzitoni, luci), saturazione</td>
+</tr>
+<tr>
+<td><strong>diffusion sharpen</strong></td>
+<td>disattivazione per ottimizzazione GPU</td>
+</tr>
+<tr>
+<td><strong>Sigmoid</strong></td>
+<td>mappatura tonale di base</td>
+</tr>
+<tr>
+<td><strong>AGX</strong></td>
+<td>modulo candidato futuro, controllo avanzato</td>
+</tr>
+<tr>
+<td><strong>Sfocatura gaussiana</strong></td>
+<td>fulcro, modalità di fusione moltiplica, raggio (15-20), maschera, opacità</td>
+</tr>
+<tr>
+<td><strong>Composite</strong></td>
+<td>fulcro, modalità di fusione moltiplica, skew, maschera vuota, contrasto, opacità</td>
+</tr>
+<tr>
+<td><strong>Colore RGB</strong></td>
+<td>saturazione</td>
+</tr>
+<tr>
+<td><strong>Soften</strong></td>
+<td>modulo evitato per preferenza personale</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Attenzione:</strong> Il modulo Soften applica una sfocatura globale che riduce significativamente la nitidezza dell'immagine. — <em>Quando si cerca un effetto glow rapido ma si desidera mantenere i dettagli strutturali.</em>
+<strong>Importante:</strong> La modalità di fusione Multiply combinata con la sfocatura aumenta drasticamente il contrasto e rischia di bruciare le alte luci. — <em>Durante l'uso del metodo Blur + Multiply, monitorare e correggere il modulo Sigmoid per recuperare la dinamica.</em>
+<strong>Importante:</strong> Il modulo Composite elabora esclusivamente i moduli posizionati sopra di esso nella pipeline. I moduli sottostanti nell'immagine principale non influenzano il risultato composito. — <em>Fondamentale per il corretto funzionamento dell'effetto Orton/Composite e per evitare risultati inattesi.</em>
+- Utilizzare i filigrane (watermark) o note di versione per tracciare le diverse varianti di editing, poiché la cronologia delle versioni potrebbe non persistere correttamente nei metadati. — <em>Gestione del progetto e confronto visivo tra i diversi metodi applicati.</em>
+<strong>Attenzione:</strong> Disabilitare temporaneamente moduli pesanti come Diffusion Sharpen durante i test per ridurre il carico sulla GPU e velocizzare il flusso di lavoro. — <em>Ottimizzazione delle prestazioni durante la fase di sperimentazione e regolazione fine.</em>
+- Il metodo Composite con immagine ausiliaria offre un controllo superiore sulle alte luci e preserva meglio i dettagli rispetto ai metodi Soften e Blur standard. — <em>Scelta del metodo finale per paesaggi autunnali o scene con forte contrasto e necessità di preservare la nitidezza.</em>
+<strong>Importante:</strong> Il modulo Composite offre un controllo superiore su dettagli e alte luci rispetto alla semplice sfocatura, anche se richiede un carico di calcolo significativamente maggiore. — <em>Quando si cerca un effetto glow o di ammorbidimento preservando la dinamica delle alte luci</em>
+- Utilizzare la modalità di fusione 'Screen' su un duplicato sfocato è un metodo efficace per schiarire l'immagine e creare un effetto di luminosità diffusa. — <em>Durante la creazione di livelli ausiliari per effetti di fusione</em>
+- Ridurre il parametro 'skew' e regolare il contrasto all'interno del modulo Composite aiuta a recuperare le alte luci bruciate. — <em>Nelle fasi di regolazione fine del modulo Composite</em>
+<strong>Attenzione:</strong> Il modulo AGX è attualmente in fase di candidatura e non è ancora ufficiale, ma promette un controllo avanzato se integrato con il modulo Composite. — <em>Nella pianificazione del workflow futuro e nell'uso di moduli sperimentali</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:13:04.220370.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

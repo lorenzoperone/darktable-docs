@@ -1,0 +1,4087 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/SmeUXCtNNh0/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Colour balance rgb - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-colour-balance-rgb" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Colour balance rgb
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-concetti-base-grafico-cie-e-cromaticita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e concetti base: grafico CIE e cromaticità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e concetti base: grafico CIE e cromaticità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-chroma-vs-saturazione-definizioni-e-differenze-pratiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Chroma vs Saturazione: definizioni e differenze pratiche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Chroma vs Saturazione: definizioni e differenze pratiche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-luminosita-e-riflettanza-percezione-umana-vs-proprieta-fisiche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Luminosità e Riflettanza: percezione umana vs proprietà fisiche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Luminosità e Riflettanza: percezione umana vs proprietà fisiche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sistema-munsell-e-limiti-del-gamut-per-tonalita-e-luminosita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sistema Munsell e limiti del gamut per tonalità e luminosità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Sistema Munsell e limiti del gamut per tonalità e luminosità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-implementazione-matematica-della-saturazione-in-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Implementazione matematica della saturazione in darktable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Implementazione matematica della saturazione in darktable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-introduzione-al-gamut-e-differenze-tra-cromaticita-saturazione-e-luminosita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Introduzione al Gamut e differenze tra Cromaticità, Saturazione e Luminosità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Introduzione al Gamut e differenze tra Cromaticità, Saturazione e Luminosità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-analisi-dei-cursori-master-cromaticita-saturazione-e-luminosita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Analisi dei cursori Master: Cromaticità, Saturazione e Luminosità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Analisi dei cursori Master: Cromaticità, Saturazione e Luminosità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-gestione-avanzata-delle-maschere-per-ombre-mezzitoni-e-luci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Gestione avanzata delle Maschere per Ombre, Mezzitoni e Luci
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Gestione avanzata delle Maschere per Ombre, Mezzitoni e Luci">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-rotazione-tonalita-vividezza-e-contrasto-con-punto-di-perno" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Rotazione Tonalità, Vividezza e Contrasto con punto di perno
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Rotazione Tonalità, Vividezza e Contrasto con punto di perno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-color-grading-con-la-scheda-quattro-vie-e-tecnica-teal-orange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Color Grading con la scheda Quattro Vie e tecnica Teal &amp; Orange
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Color Grading con la scheda Quattro Vie e tecnica Teal &amp; Orange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-comportamento-anomalo-del-cursore-potenza-e-modello-matematico-delle-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Comportamento anomalo del cursore Potenza e modello matematico delle curve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Comportamento anomalo del cursore Potenza e modello matematico delle curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-teoria-di-gain-power-e-white-fulcrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Teoria di Gain, Power e White Fulcrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Teoria di Gain, Power e White Fulcrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-workflow-pratico-esposizione-e-filmic-rgb-v5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Workflow pratico: Esposizione e Filmic RGB v5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Workflow pratico: Esposizione e Filmic RGB v5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-color-balance-rgb-chroma-vibrance-saturation-e-brilliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Color Balance RGB: Chroma, Vibrance, Saturation e Brilliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Color Balance RGB: Chroma, Vibrance, Saturation e Brilliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-secondo-esempio-e-gestione-del-gamut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Secondo esempio e gestione del Gamut
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Secondo esempio e gestione del Gamut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-analisi-delle-zone-tonali-e-applicazione-del-croma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Analisi delle zone tonali e applicazione del croma
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Analisi delle zone tonali e applicazione del croma">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-regolazione-della-saturazione-per-mezzitoni-e-alte-luci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Regolazione della saturazione per mezzitoni e alte luci
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Regolazione della saturazione per mezzitoni e alte luci">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-utilizzo-della-brillantezza-percettiva-e-color-grading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Utilizzo della brillantezza percettiva e color grading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Utilizzo della brillantezza percettiva e color grading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-confronto-con-la-luminanza-e-anteprima-build-di-sviluppo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Confronto con la luminanza e anteprima build di sviluppo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19. Confronto con la luminanza e anteprima build di sviluppo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-colour-balance-rgb">[ENG] Colour balance rgb<a class="headerlink" href="#eng-colour-balance-rgb" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0">https://www.youtube.com/watch?v=SmeUXCtNNh0</a>
+<strong>Generato:</strong> 2026-04-12T01:23:29.809985
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-concetti-base:-grafico-cie-e-cromaticità">Introduzione e concetti base: grafico CIE e cromaticità</a></li>
+<li><a href="#chroma-vs-saturazione:-definizioni-e-differenze-pratiche">Chroma vs Saturazione: definizioni e differenze pratiche</a></li>
+<li><a href="#luminosità-e-riflettanza:-percezione-umana-vs-proprietà-fisiche">Luminosità e Riflettanza: percezione umana vs proprietà fisiche</a></li>
+<li><a href="#sistema-munsell-e-limiti-del-gamut-per-tonalità-e-luminosità">Sistema Munsell e limiti del gamut per tonalità e luminosità</a></li>
+<li><a href="#implementazione-matematica-della-saturazione-in-darktable">Implementazione matematica della saturazione in darktable</a></li>
+<li><a href="#introduzione-al-gamut-e-differenze-tra-cromaticità,-saturazione-e-luminosità">Introduzione al Gamut e differenze tra Cromaticità, Saturazione e Luminosità</a></li>
+<li><a href="#analisi-dei-cursori-master:-cromaticità,-saturazione-e-luminosità">Analisi dei cursori Master: Cromaticità, Saturazione e Luminosità</a></li>
+<li><a href="#gestione-avanzata-delle-maschere-per-ombre,-mezzitoni-e-luci">Gestione avanzata delle Maschere per Ombre, Mezzitoni e Luci</a></li>
+<li><a href="#rotazione-tonalità,-vividezza-e-contrasto-con-punto-di-perno">Rotazione Tonalità, Vividezza e Contrasto con punto di perno</a></li>
+<li><a href="#color-grading-con-la-scheda-quattro-vie-e-tecnica-teal-&amp;-orange">Color Grading con la scheda Quattro Vie e tecnica Teal &amp; Orange</a></li>
+<li><a href="#comportamento-anomalo-del-cursore-potenza-e-modello-matematico-delle-curve">Comportamento anomalo del cursore Potenza e modello matematico delle curve</a></li>
+<li><a href="#teoria-di-gain,-power-e-white-fulcrum">Teoria di Gain, Power e White Fulcrum</a></li>
+<li><a href="#workflow-pratico:-esposizione-e-filmic-rgb-v5">Workflow pratico: Esposizione e Filmic RGB v5</a></li>
+<li><a href="#color-balance-rgb:-chroma,-vibrance,-saturation-e-brilliance">Color Balance RGB: Chroma, Vibrance, Saturation e Brilliance</a></li>
+<li><a href="#secondo-esempio-e-gestione-del-gamut">Secondo esempio e gestione del Gamut</a></li>
+<li><a href="#analisi-delle-zone-tonali-e-applicazione-del-croma">Analisi delle zone tonali e applicazione del croma</a></li>
+<li><a href="#regolazione-della-saturazione-per-mezzitoni-e-alte-luci">Regolazione della saturazione per mezzitoni e alte luci</a></li>
+<li><a href="#utilizzo-della-brillantezza-percettiva-e-color-grading">Utilizzo della brillantezza percettiva e color grading</a></li>
+<li><a href="#confronto-con-la-luminanza-e-anteprima-build-di-sviluppo">Confronto con la luminanza e anteprima build di sviluppo</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-concetti-base-grafico-cie-e-cromaticita">1. Introduzione e concetti base: grafico CIE e cromaticità<a class="headerlink" href="#1-introduzione-e-concetti-base-grafico-cie-e-cromaticita" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=0">Guarda nel video</a></p>
+<p>Introduzione al modulo colour balance RGB e spiegazione del grafico CIE. Definizione di cromaticità, spazio colore e introduzione al concetto di chroma come distanza dal punto bianco alla stessa luminanza.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra un'applicazione di note (Notability) su macOS, non l'interfaccia di darktable. È presente un diagramma CIE xyY con etichette di lunghezze d'onda (460–620 nm) e due parole scritte a mano: 'chromaticity' e 'chrominance'. Non è visibile alcun modulo di darktable; il contesto indica che il narratore sta preparando una spiegazione teorica prima di passare all'editing in darktable." src="screenshots/frame_00048_381.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione di note (Notability) su macOS, non l'interfaccia di darktable. È presente un diagramma CIE xyY con etichette di lunghezze d'onda (460–620 nm) e due parole scritte a mano: 'chromaticity' e 'chrominance'. Non è visibile alcun modulo di darktable; il contesto indica che il narratore sta preparando una spiegazione teorica prima di passare all'editing in darktable.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli o strumenti del software. Si tratta di un frame di un video didattico, probabilmente introduttivo, in cui il narratore spiega i concetti teorici prima di passare all'uso pratico del software." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli o strumenti del software. Si tratta di un frame di un video didattico, probabilmente introduttivo, in cui il narratore spiega i concetti teorici prima di passare all'uso pratico del software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) in un video, non l'interfaccia di darktable. Non è visibile alcun modulo, pannello o strumento di darktable; l'immagine è un frame del video in cui il narratore introduce il nuovo modulo 'colour balance RGB'. L'interfaccia di darktable non è presente nello screenshot." src="screenshots/frame_00005_320.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) in un video, non l'interfaccia di darktable. Non è visibile alcun modulo, pannello o strumento di darktable; l'immagine è un frame del video in cui il narratore introduce il nuovo modulo 'colour balance RGB'. L'interfaccia di darktable non è presente nello screenshot.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colour balance RGB</li>
+</ul>
+<hr />
+<h2 id="2-chroma-vs-saturazione-definizioni-e-differenze-pratiche">2. Chroma vs Saturazione: definizioni e differenze pratiche<a class="headerlink" href="#2-chroma-vs-saturazione-definizioni-e-differenze-pratiche" title="Permanent link">&para;</a></h2>
+<p><strong>[02:30 – 05:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=150">Guarda nel video</a></p>
+<p>Confronto tra chroma e saturazione utilizzando esempi in Affinity Photo. Spiegazione di come la desaturazione porti al grigio mantenendo tonalità e luminanza, mentre il chroma misura la purezza spettrale.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Gradient' attivo in darktable, con una maschera a gradiente lineare applicata su un'immagine monocromatica blu. È aperta la finestra di selezione colore HSL, dove l'utente ha impostato Hue=201, Saturation=100, Luminance=70. Un cursore è posizionato sullo slider della saturazione, suggerendo un'operazione in corso per ridurla a 0 mantenendo hue e luminanza costanti, come descritto nel contesto. La maschera è visibile come linea orizzontale attraverso il canvas, con i punti di controllo del gradiente evidenziati." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Gradient' attivo in darktable, con una maschera a gradiente lineare applicata su un'immagine monocromatica blu. È aperta la finestra di selezione colore HSL, dove l'utente ha impostato Hue=201, Saturation=100, Luminance=70. Un cursore è posizionato sullo slider della saturazione, suggerendo un'operazione in corso per ridurla a 0 mantenendo hue e luminanza costanti, come descritto nel contesto. La maschera è visibile come linea orizzontale attraverso il canvas, con i punti di controllo del gradiente evidenziati.</em></p>
+<p><strong>Modulo:</strong> gradient</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>Linear</td>
+</tr>
+<tr>
+<td>Position</td>
+<td>0 %</td>
+</tr>
+<tr>
+<td>Mid Point</td>
+<td>50 %</td>
+</tr>
+<tr>
+<td>Opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>201</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Luminance</td>
+<td>70</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo nella scheda 'Colour'. È visibile un gradiente orizzontale che passa da blu ciano a grigio chiaro, con una linea di selezione orizzontale (probabilmente una maschera o un punto di controllo) posizionata a metà altezza. Il selettore HSL indica Hue = 201 (blu), Saturation = 0 (grigio), Lightness = 0 (nero), ma l'immagine appare in tonalità chiare perché la luminanza è gestita dal livello sottostante. L'utente sta dimostrando come ridurre la saturazione a zero trasforma il colore in grigio alla stessa luminanza, evidenziando la differenza tra il concetto comune di 'saturazione' e il modello HSL reale." src="screenshots/frame_00330_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo nella scheda 'Colour'. È visibile un gradiente orizzontale che passa da blu ciano a grigio chiaro, con una linea di selezione orizzontale (probabilmente una maschera o un punto di controllo) posizionata a metà altezza. Il selettore HSL indica Hue = 201 (blu), Saturation = 0 (grigio), Lightness = 0 (nero), ma l'immagine appare in tonalità chiare perché la luminanza è gestita dal livello sottostante. L'utente sta dimostrando come ridurre la saturazione a zero trasforma il colore in grigio alla stessa luminanza, evidenziando la differenza tra il concetto comune di 'saturazione' e il modello HSL reale.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>201</td>
+</tr>
+<tr>
+<td>lightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile un gradiente orizzontale che passa da un blu ciano chiaro (sinistra) a un grigio neutro (destra), con una linea di selezione orizzontale al centro. Il pannello di destra mostra il selettore colore HSL con Hue = 201, Saturation = 0, Lightness = 70%, e opacità al 100%. L'utente sta dimostrando il concetto di saturazione, mostrando come la variazione della saturazione trasforma un colore puro in grigio. Non è attivo alcun modulo di darktable: l'applicazione in uso è chiaramente Affinity Photo, come indicato dal titolo della finestra e dall’icona nel dock." src="screenshots/frame_00279_212.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile un gradiente orizzontale che passa da un blu ciano chiaro (sinistra) a un grigio neutro (destra), con una linea di selezione orizzontale al centro. Il pannello di destra mostra il selettore colore HSL con Hue = 201, Saturation = 0, Lightness = 70%, e opacità al 100%. L'utente sta dimostrando il concetto di saturazione, mostrando come la variazione della saturazione trasforma un colore puro in grigio. Non è attivo alcun modulo di darktable: l'applicazione in uso è chiaramente Affinity Photo, come indicato dal titolo della finestra e dall’icona nel dock.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra un'applicazione di note digitali (Notability), non l'interfaccia di darktable. È presente un diagramma CIE xyY con indicazioni manoscritte su 'chromaticity', 'chrominance', 'chroma' e la relazione 'gray → pure'. Non è visibile alcun modulo o strumento di darktable; il contesto audio descrive concetti teorici sulla saturazione e sul passaggio dal grigio al colore, ma l'immagine non rappresenta l'interfaccia del software di fotoritocco." src="screenshots/frame_00332_799.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione di note digitali (Notability), non l'interfaccia di darktable. È presente un diagramma CIE xyY con indicazioni manoscritte su 'chromaticity', 'chrominance', 'chroma' e la relazione 'gray → pure'. Non è visibile alcun modulo o strumento di darktable; il contesto audio descrive concetti teorici sulla saturazione e sul passaggio dal grigio al colore, ma l'immagine non rappresenta l'interfaccia del software di fotoritocco.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colour balance RGB</li>
+</ul>
+<hr />
+<h2 id="3-luminosita-e-riflettanza-percezione-umana-vs-proprieta-fisiche">3. Luminosità e Riflettanza: percezione umana vs proprietà fisiche<a class="headerlink" href="#3-luminosita-e-riflettanza-percezione-umana-vs-proprieta-fisiche" title="Permanent link">&para;</a></h2>
+<p><strong>[05:50 – 09:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=350">Guarda nel video</a></p>
+<p>Distinzione tra lightness (riflettanza percepita) e brightness (luminanza percepita/emessa). Spiegazione di come la percezione umana separi la quantità di luce dal colore percepito.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra un'applicazione di note digitali (Notability) su macOS, non l'interfaccia di darktable. È presente un diagramma CIE xyY con indicazioni di lunghezze d'onda (460–620 nm), una freccia che indica una direzione cromatica (da blu verso rosso-arancio), e appunti manoscritti in inglese su concetti di cromaticità, crominanza, luce/reflectance (90% bianco, 3% nero), luminanza/brightness, e la nota 'dim ↑ to bright'. Il contesto parlato chiarisce che si sta discutendo della relazione tra luminanza e percezione della luce (da scuro a chiaro). Non è visibile alcun modulo di darktable." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione di note digitali (Notability) su macOS, non l'interfaccia di darktable. È presente un diagramma CIE xyY con indicazioni di lunghezze d'onda (460–620 nm), una freccia che indica una direzione cromatica (da blu verso rosso-arancio), e appunti manoscritti in inglese su concetti di cromaticità, crominanza, luce/reflectance (90% bianco, 3% nero), luminanza/brightness, e la nota 'dim ↑ to bright'. Il contesto parlato chiarisce che si sta discutendo della relazione tra luminanza e percezione della luce (da scuro a chiaro). Non è visibile alcun modulo di darktable.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colour balance RGB</li>
+</ul>
+<hr />
+<h2 id="4-sistema-munsell-e-limiti-del-gamut-per-tonalita-e-luminosita">4. Sistema Munsell e limiti del gamut per tonalità e luminosità<a class="headerlink" href="#4-sistema-munsell-e-limiti-del-gamut-per-tonalita-e-luminosita" title="Permanent link">&para;</a></h2>
+<p><strong>[09:10 – 13:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=550">Guarda nel video</a></p>
+<p>Analisi dei grafici di Munsell: linee di saturazione uniforme, luminosità costante e limiti del chroma in base alla lightness. Spiegazione di come il gamut disponibile vari per ogni tonalità e livello di luminosità.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable in modalità editing, ma una finestra esterna (Notability) contenente due grafici didattici sul colore: a sinistra una griglia di campioni Munsell con linee rosse indicate come 'Line of uniform HSB Saturation' (saturazione costante), e a destra un diagramma tridimensionale che rappresenta lightness, saturation e chroma. Il contesto narrativo spiega che le linee rosse indicano colori con uguale saturazione ma diversa luminosità. Non è presente alcun modulo di darktable attivo; l'applicazione darktable è visibile solo nell’icona della dock, non nella finestra principale." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable in modalità editing, ma una finestra esterna (Notability) contenente due grafici didattici sul colore: a sinistra una griglia di campioni Munsell con linee rosse indicate come 'Line of uniform HSB Saturation' (saturazione costante), e a destra un diagramma tridimensionale che rappresenta lightness, saturation e chroma. Il contesto narrativo spiega che le linee rosse indicano colori con uguale saturazione ma diversa luminosità. Non è presente alcun modulo di darktable attivo; l'applicazione darktable è visibile solo nell’icona della dock, non nella finestra principale.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra un'applicazione di note digitali (Notability) con appunti manoscritti su concetti di cromatica: chromaticity, chroma, lightness/reflectance (90% white, 3% black), brightness/luminance, e saturation (con esempio 'red paint'). È presente un diagramma CIE xy (gamut cromatico) in alto a sinistra. L'interfaccia di darktable non è visibile; al contrario, si vede la barra dei menu di Notability e la dock macOS. Il contesto parlato riguarda la desaturazione del colore tramite diluizione con bianco, ma ciò non è rappresentato nell'interfaccia di darktable." src="screenshots/frame_00621_000.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione di note digitali (Notability) con appunti manoscritti su concetti di cromatica: chromaticity, chroma, lightness/reflectance (90% white, 3% black), brightness/luminance, e saturation (con esempio 'red paint'). È presente un diagramma CIE xy (gamut cromatico) in alto a sinistra. L'interfaccia di darktable non è visibile; al contrario, si vede la barra dei menu di Notability e la dock macOS. Il contesto parlato riguarda la desaturazione del colore tramite diluizione con bianco, ma ciò non è rappresentato nell'interfaccia di darktable.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra una finestra di Notability (app per appunti) su macOS, non l'interfaccia di darktable. Sono visibili due grafici didattici sulla teoria del colore: a sinistra un diagramma Munsell con valori di luminosità (Munsell value) e saturazione (S = 20, 40, 60, ecc.) per tonalità rosse (Hue=0), e a destra una rappresentazione bidimensionale dello spazio HSB/HSV con assi 'lightness', 'chroma' e 'saturation', e una freccia etichettata 'brilliance'. Il contesto narrativo fa riferimento alla teoria del colore di Munsell come strumento per pittori, ma non è presente alcun modulo o interfaccia di darktable." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>Lo screenshot mostra una finestra di Notability (app per appunti) su macOS, non l'interfaccia di darktable. Sono visibili due grafici didattici sulla teoria del colore: a sinistra un diagramma Munsell con valori di luminosità (Munsell value) e saturazione (S = 20, 40, 60, ecc.) per tonalità rosse (Hue=0), e a destra una rappresentazione bidimensionale dello spazio HSB/HSV con assi 'lightness', 'chroma' e 'saturation', e una freccia etichettata 'brilliance'. Il contesto narrativo fa riferimento alla teoria del colore di Munsell come strumento per pittori, ma non è presente alcun modulo o interfaccia di darktable.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colour balance RGB</li>
+</ul>
+<hr />
+<h2 id="5-implementazione-matematica-della-saturazione-in-darktable">5. Implementazione matematica della saturazione in darktable<a class="headerlink" href="#5-implementazione-matematica-della-saturazione-in-darktable" title="Permanent link">&para;</a></h2>
+<p><strong>[13:20 – 16:54]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=800">Guarda nel video</a></p>
+<p>Spiegazione geometrica della saturazione corretta (linea perpendicolare alla linea di brightness). Confronto con altri software e introduzione allo slider di saturazione in darktable per colori più ricchi senza uscire dal gamut.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable in modalità di editing, ma una presentazione o un documento esterno (Notability) contenente due grafici: a sinistra, una griglia di colori dal Munsell Book of Color che illustra la relazione tra valore (lightness) e cromia (chroma) per tonalità con Hue=0 (rosso), con linee di saturazione HSB uniforme; a destra, un diagramma tridimensionale stilizzato che rappresenta la relazione tra lightness, chroma e brillianza (brilliance), con frecce che indicano le direzioni degli assi. Il contesto narrativo discute delle limitazioni dello spazio colore ARGB, in particolare come i verdi chiari possiedono maggiore cromia disponibile rispetto ai verdi scuri, e come i blu primari siano intrinsecamente più scuri (lightness ~20-30%)." src="screenshots/frame_00840_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable in modalità di editing, ma una presentazione o un documento esterno (Notability) contenente due grafici: a sinistra, una griglia di colori dal Munsell Book of Color che illustra la relazione tra valore (lightness) e cromia (chroma) per tonalità con Hue=0 (rosso), con linee di saturazione HSB uniforme; a destra, un diagramma tridimensionale stilizzato che rappresenta la relazione tra lightness, chroma e brillianza (brilliance), con frecce che indicano le direzioni degli assi. Il contesto narrativo discute delle limitazioni dello spazio colore ARGB, in particolare come i verdi chiari possiedono maggiore cromia disponibile rispetto ai verdi scuri, e come i blu primari siano intrinsecamente più scuri (lightness ~20-30%).</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colour balance RGB</li>
+</ul>
+<hr />
+<h2 id="6-introduzione-al-gamut-e-differenze-tra-cromaticita-saturazione-e-luminosita">6. Introduzione al Gamut e differenze tra Cromaticità, Saturazione e Luminosità<a class="headerlink" href="#6-introduzione-al-gamut-e-differenze-tra-cromaticita-saturazione-e-luminosita" title="Permanent link">&para;</a></h2>
+<p><strong>[16:54 – 19:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1014">Guarda nel video</a></p>
+<p>Spiegazione teorica del gamut cromatico e delle differenze fondamentali tra i tre parametri di colore. Presentazione dell'immagine di test con gradienti LAB per dimostrare visivamente gli effetti.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine di prova composta da tre bande orizzontali: una superiore con gradiente LAB (50% saturation and lightness in Lab), una centrale verde primario 'desaturato', e una inferiore grigia. Il modulo attivo è 'color balance rgb' nella tab 'master', con tutti i parametri impostati a zero. A sinistra è visibile il pannello strumenti con opzioni come 'color picker' e 'mask manager'. In alto a destra si nota l'istogramma RGB e la barra dei moduli ('lighttable | darkroom | other'). L'immagine è usata per dimostrare differenze tra saturazione, luminosità e cromanza nel modello LAB." src="screenshots/frame_01054_920.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine di prova composta da tre bande orizzontali: una superiore con gradiente LAB (50% saturation and lightness in Lab), una centrale verde primario 'desaturato', e una inferiore grigia. Il modulo attivo è 'color balance rgb' nella tab 'master', con tutti i parametri impostati a zero. A sinistra è visibile il pannello strumenti con opzioni come 'color picker' e 'mask manager'. In alto a destra si nota l'istogramma RGB e la barra dei moduli ('lighttable | darkroom | other'). L'immagine è usata per dimostrare differenze tra saturazione, luminosità e cromanza nel modello LAB.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>perceptual saturation grading</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>perceptual brilliance grading</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable in modalità di editing, ma una finestra di Notability con due diagrammi colorimetrici: a sinistra il grafico di Munsell (valore vs. cromia, con linee di saturazione HSB e livelli di luminosità B), a destra una rappresentazione polare di spazio colore con assi 'lightness', 'chroma' e annotazioni manoscritte ('brightness', 'saturation'). Il contesto narrativo indica che l'utente sta per introdurre i controlli di colore in darktable (chroma, lightness, brightness, saturation), ma al momento dello screenshot darktable non è attivo o visibile; si vede solo la barra dei dock macOS con l'icona di darktable evidenziata." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable in modalità di editing, ma una finestra di Notability con due diagrammi colorimetrici: a sinistra il grafico di Munsell (valore vs. cromia, con linee di saturazione HSB e livelli di luminosità B), a destra una rappresentazione polare di spazio colore con assi 'lightness', 'chroma' e annotazioni manoscritte ('brightness', 'saturation'). Il contesto narrativo indica che l'utente sta per introdurre i controlli di colore in darktable (chroma, lightness, brightness, saturation), ma al momento dello screenshot darktable non è attivo o visibile; si vede solo la barra dei dock macOS con l'icona di darktable evidenziata.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="7-analisi-dei-cursori-master-cromaticita-saturazione-e-luminosita">7. Analisi dei cursori Master: Cromaticità, Saturazione e Luminosità<a class="headerlink" href="#7-analisi-dei-cursori-master-cromaticita-saturazione-e-luminosita" title="Permanent link">&para;</a></h2>
+<p><strong>[19:00 – 22:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1140">Guarda nel video</a></p>
+<p>Dimostrazione pratica degli effetti dei tre cursori principali. La cromaticità spinge verso colori spettrali puri, la saturazione simula la miscelazione con bianco/nero (pastello/ricco), la luminosità modifica la percezione di emissione luminosa e influenza il gradiente bianco-nero.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra un'immagine di prova con tre bande orizzontali: una superiore con gradiente rosso-violaceo-blu (etichettata '50% saturation and lightness in Lab'), una centrale verde chiaro ('Green primary &quot;desaturated&quot;') e una inferiore grigia. Il modulo attivo è 'color balance rgb', con la tab 'master' selezionata e il parametro 'global saturation' impostato a -25%, che produce i toni pastello descritti dal narratore. L'istogramma RGB sulla destra conferma la riduzione della saturazione e la presenza di valori luminosi (vicini al bianco), coerenti con l'analogia del 'mescolare con il bianco'. La descrizione del narratore evidenzia la capacità di darktable di generare colori pastello o ricchi mantenendo la gamut, grazie a controlli avanzati come la gestione per zone (shadows/midtones/highlights) e le opzioni di grading percettivo." src="screenshots/frame_01200_000.jpg" /></p>
+<p><em>Lo screenshot mostra un'immagine di prova con tre bande orizzontali: una superiore con gradiente rosso-violaceo-blu (etichettata '50% saturation and lightness in Lab'), una centrale verde chiaro ('Green primary "desaturated"') e una inferiore grigia. Il modulo attivo è 'color balance rgb', con la tab 'master' selezionata e il parametro 'global saturation' impostato a -25%, che produce i toni pastello descritti dal narratore. L'istogramma RGB sulla destra conferma la riduzione della saturazione e la presenza di valori luminosi (vicini al bianco), coerenti con l'analogia del 'mescolare con il bianco'. La descrizione del narratore evidenzia la capacità di darktable di generare colori pastello o ricchi mantenendo la gamut, grazie a controlli avanzati come la gestione per zone (shadows/midtones/highlights) e le opzioni di grading percettivo.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global saturation</td>
+<td>-25.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>hue shift</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>perceptual saturation grading</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine di anteprima è un gradiente LAB con una banda centrale verde primario etichettata 'Green primary &quot;desaturated&quot;', e una banda superiore con transizione da rosso a blu indicante '50% saturation and lightness in Lab'. Il valore di 'global saturation' è impostato a -0.33%, coerente con la desaturazione del verde primario. Il narratore enfatizza la presenza di uno slider per colori pastello (probabilmente riferito alla gestione della saturazione percepita o al controllo fine dei canali in modalità '4 ways'), non disponibile in altri software, che consente di ottenere tonalità delicate o ricche senza uscire dal gamut dello spazio colore." src="screenshots/frame_01209_900.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine di anteprima è un gradiente LAB con una banda centrale verde primario etichettata 'Green primary "desaturated"', e una banda superiore con transizione da rosso a blu indicante '50% saturation and lightness in Lab'. Il valore di 'global saturation' è impostato a -0.33%, coerente con la desaturazione del verde primario. Il narratore enfatizza la presenza di uno slider per colori pastello (probabilmente riferito alla gestione della saturazione percepita o al controllo fine dei canali in modalità '4 ways'), non disponibile in altri software, che consente di ottenere tonalità delicate o ricche senza uscire dal gamut dello spazio colore.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>-0.33 %</td>
+</tr>
+<tr>
+<td>shad</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="8-gestione-avanzata-delle-maschere-per-ombre-mezzitoni-e-luci">8. Gestione avanzata delle Maschere per Ombre, Mezzitoni e Luci<a class="headerlink" href="#8-gestione-avanzata-delle-maschere-per-ombre-mezzitoni-e-luci" title="Permanent link">&para;</a></h2>
+<p><strong>[22:10 – 25:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1330">Guarda nel video</a></p>
+<p>Spiegazione delle curve di maschera per le tre zone tonali. Come regolare il punto di grigio, la pendenza (falloff) e l'opacità massima (limitata al 50% per i mezzitoni). Utilizzo del pulsante a scacchiera per visualizzare le aree interessate.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva, in cui è visualizzata una curva a forma di X (due curve incrociate) che rappresenta la maschera per le zone di luminanza: ombre, mezzi toni e luci. La porzione superiore dell’immagine è un gradiente Lab con 50% di saturazione e luminosità, mentre quella centrale è un verde primario 'desaturato'. Il narratore descrive la curva delle ombre, spiegando come essa copra le parti scure e diventi progressivamente più trasparente avvicinandosi alle zone illuminate." src="screenshots/frame_01337_359.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva, in cui è visualizzata una curva a forma di X (due curve incrociate) che rappresenta la maschera per le zone di luminanza: ombre, mezzi toni e luci. La porzione superiore dell’immagine è un gradiente Lab con 50% di saturazione e luminosità, mentre quella centrale è un verde primario 'desaturato'. Il narratore descrive la curva delle ombre, spiegando come essa copra le parti scure e diventi progressivamente più trasparente avvicinandosi alle zone illuminate.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera a scacchiera (checkerboard) in sovrapposizione all'immagine, utilizzata per visualizzare le aree interessate dalla maschera nelle zone d'ombra (shadows). L'immagine principale è un test pattern con testo che indica '50% saturation and lightness in Lab' e 'Green primary &quot;desaturated&quot;', suggerendo un esperimento di correzione cromatica. Gli istogrammi e i controlli delle curve RGB sono visibili a destra, con i valori dei fulcri e dei fall-off impostati per definire la regione tonale della maschera." src="screenshots/frame_01500_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera a scacchiera (checkerboard) in sovrapposizione all'immagine, utilizzata per visualizzare le aree interessate dalla maschera nelle zone d'ombra (shadows). L'immagine principale è un test pattern con testo che indica '50% saturation and lightness in Lab' e 'Green primary "desaturated"', suggerendo un esperimento di correzione cromatica. Gli istogrammi e i controlli delle curve RGB sono visibili a destra, con i valori dei fulcri e dei fall-off impostati per definire la regione tonale della maschera.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_color_1</td>
+<td>white</td>
+</tr>
+<tr>
+<td>checkerboard_color_2</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. L'immagine di anteprima è un test chart con bande orizzontali di colore (rosa, grigio chiaro, grigio scuro) e sovrascritto il testo '50% saturation and lightness in Lab'. Sono visibili le curve di bilanciamento RGB per ombre, mezzi toni e luci, con i fulcri regolati a 18.45% per middle-gray e contrast gray. La maschera è attiva e si vede l'effetto del checkerboard (8px) sulle aree non selezionate. L'istogramma RGB nella barra laterale mostra picchi verdi e viola, coerenti con l'analisi del narratore sui colori presenti (rosso nel blu, verde nelle luci, grigi intermedi)." src="screenshots/frame_01530_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. L'immagine di anteprima è un test chart con bande orizzontali di colore (rosa, grigio chiaro, grigio scuro) e sovrascritto il testo '50% saturation and lightness in Lab'. Sono visibili le curve di bilanciamento RGB per ombre, mezzi toni e luci, con i fulcri regolati a 18.45% per middle-gray e contrast gray. La maschera è attiva e si vede l'effetto del checkerboard (8px) sulle aree non selezionate. L'istogramma RGB nella barra laterale mostra picchi verdi e viola, coerenti con l'analisi del narratore sui colori presenti (rosso nel blu, verde nelle luci, grigi intermedi).</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td>4 ways</td>
+</tr>
+<tr>
+<td>masks</td>
+<td>masks</td>
+</tr>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_color_1</td>
+<td>white</td>
+</tr>
+<tr>
+<td>checkerboard_color_2</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="9-rotazione-tonalita-vividezza-e-contrasto-con-punto-di-perno">9. Rotazione Tonalità, Vividezza e Contrasto con punto di perno<a class="headerlink" href="#9-rotazione-tonalita-vividezza-e-contrasto-con-punto-di-perno" title="Permanent link">&para;</a></h2>
+<p><strong>[25:40 – 28:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1540">Guarda nel video</a></p>
+<p>Uso della rotazione tonale per cambiare colore degli oggetti. La vividezza agisce preferenzialmente sui colori a bassa cromaticità. Il contrasto include un punto di perno (fulcro) regolabile per definire la soglia tra schiarimento e scurimento.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera luminanza con curve di correzione per ombre, mezzi toni e luci; il parametro 'contrast gray fulcrum' è impostato a 27.89%, mentre 'mask middle-gray fulcrum' è a 18.45%. L'immagine di sfondo è un gradiente Lab con testo che indica '50% saturation and lightness in Lab' e 'Green primary &quot;desaturated&quot;', utilizzato per dimostrare l'effetto della modifica del fulcro grigio nel controllo delle maschere." src="screenshots/frame_01650_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera luminanza con curve di correzione per ombre, mezzi toni e luci; il parametro 'contrast gray fulcrum' è impostato a 27.89%, mentre 'mask middle-gray fulcrum' è a 18.45%. L'immagine di sfondo è un gradiente Lab con testo che indica '50% saturation and lightness in Lab' e 'Green primary "desaturated"', utilizzato per dimostrare l'effetto della modifica del fulcro grigio nel controllo delle maschere.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows_fall_off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall_off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>27.89 %</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva, che permette il grading cromatico separato per quattro zone tonali: global offset (toni globali), shadows lift (ombra), highlights gain (luci) e power (mezzi toni). Ogni zona offre controlli indipendenti su luminanza, tonalità (hue) e crominanza (chroma). L'immagine di sfondo è un test pattern con una banda verde primaria etichettata 'desaturated' e una banda superiore con gradiente Lab al 50% di saturazione e luminosità, utilizzata per dimostrare l'effetto del modulo. Gli slider sono tutti a zero, indicando nessuna modifica applicata." src="screenshots/frame_01680_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva, che permette il grading cromatico separato per quattro zone tonali: global offset (toni globali), shadows lift (ombra), highlights gain (luci) e power (mezzi toni). Ogni zona offre controlli indipendenti su luminanza, tonalità (hue) e crominanza (chroma). L'immagine di sfondo è un test pattern con una banda verde primaria etichettata 'desaturated' e una banda superiore con gradiente Lab al 50% di saturazione e luminosità, utilizzata per dimostrare l'effetto del modulo. Gli slider sono tutti a zero, indicando nessuna modifica applicata.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global offset luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global offset hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>global offset chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>shadows lift chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>highlights gain chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>power chroma</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' attivo con tutti i parametri impostati a zero, tranne la selezione della modalità 'master' e l'opzione '4 ways' abilitata. L'immagine di anteprima è un gradiente LAB con testo che indica '50% saturation and lightness in Lab' nella parte superiore (rosso-viola-blu) e 'Green primary &quot;desaturated&quot;' nella sezione centrale verde. A sinistra è visibile il pannello strumenti con 'color picker' attivo e campionamento RGB a zero. A destra, l'istogramma mostra una distribuzione uniforme con picco verde. Il contesto narrativo suggerisce che l'utente sta per applicare una rotazione dell'alone cromatico (hue shift), ma al momento dello screenshot non è ancora stata effettuata alcuna modifica." src="screenshots/frame_01560_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' attivo con tutti i parametri impostati a zero, tranne la selezione della modalità 'master' e l'opzione '4 ways' abilitata. L'immagine di anteprima è un gradiente LAB con testo che indica '50% saturation and lightness in Lab' nella parte superiore (rosso-viola-blu) e 'Green primary "desaturated"' nella sezione centrale verde. A sinistra è visibile il pannello strumenti con 'color picker' attivo e campionamento RGB a zero. A destra, l'istogramma mostra una distribuzione uniforme con picco verde. Il contesto narrativo suggerisce che l'utente sta per applicare una rotazione dell'alone cromatico (hue shift), ma al momento dello screenshot non è ancora stata effettuata alcuna modifica.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>perceptual saturation grading</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>perceptual brilliance grading</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="10-color-grading-con-la-scheda-quattro-vie-e-tecnica-teal-orange">10. Color Grading con la scheda Quattro Vie e tecnica Teal &amp; Orange<a class="headerlink" href="#10-color-grading-con-la-scheda-quattro-vie-e-tecnica-teal-orange" title="Permanent link">&para;</a></h2>
+<p><strong>[28:10 – 30:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1690">Guarda nel video</a></p>
+<p>Applicazione di Luminanza, Tonalità e Cromaticità in modo differenziato per Globale, Ombre, Luci e Potenza. Esempio pratico di grading cinematografico Teal &amp; Orange e regolazione delle maschere per affinare l'effetto.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una curva di bilanciamento RGB con tre curve intersecanti (tipiche della modalità '4 ways'), e i parametri di maschera luminanza sono configurati per controllare l'effetto nelle zone d'ombra, medio-grigio e luci. L'immagine di sfondo è un gradiente LAB con testo che indica '50% saturation and lightness in Lab' e 'Green primary &quot;desaturated&quot;', utilizzato per dimostrare l'effetto del bilanciamento dei colori. Il cursore è posizionato sul parametro 'highlights_fall-off', coerentemente con il commento del narratore che parla di regolare l'attenuazione nelle luci." src="screenshots/frame_01770_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una curva di bilanciamento RGB con tre curve intersecanti (tipiche della modalità '4 ways'), e i parametri di maschera luminanza sono configurati per controllare l'effetto nelle zone d'ombra, medio-grigio e luci. L'immagine di sfondo è un gradiente LAB con testo che indica '50% saturation and lightness in Lab' e 'Green primary "desaturated"', utilizzato per dimostrare l'effetto del bilanciamento dei colori. Il cursore è posizionato sul parametro 'highlights_fall-off', coerentemente con il commento del narratore che parla di regolare l'attenuazione nelle luci.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>56.25 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab '4 ways'. L'immagine principale è un test pattern con una banda superiore a gradiente Lab (50% saturation and lightness in Lab) e una banda centrale verde primario etichettata come 'desaturated'. A sinistra, il color picker è attivo e mostra un campione con valori RGB 63, 192, 63 (verde), ma il narratore sta analizzando un pixel bianco (254,254,254) fuori campo. Il pannello dei parametri mostra tutti i valori al 0%, indicando che nessuna correzione è stata applicata. L'istogramma RGB è visibile a destra, con un picco verticale verde dominante. La descrizione del narratore suggerisce che sta per dimostrare un effetto di 'power' su luminanza nei midtones, ma attualmente non è ancora applicato." src="screenshots/frame_01800_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab '4 ways'. L'immagine principale è un test pattern con una banda superiore a gradiente Lab (50% saturation and lightness in Lab) e una banda centrale verde primario etichettata come 'desaturated'. A sinistra, il color picker è attivo e mostra un campione con valori RGB 63, 192, 63 (verde), ma il narratore sta analizzando un pixel bianco (254,254,254) fuori campo. Il pannello dei parametri mostra tutti i valori al 0%, indicando che nessuna correzione è stata applicata. L'istogramma RGB è visibile a destra, con un picco verticale verde dominante. La descrizione del narratore suggerisce che sta per dimostrare un effetto di 'power' su luminanza nei midtones, ma attualmente non è ancora applicato.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global offset luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global offset hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>global offset chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>shadows lift chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>highlights gain chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>power chroma</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="11-comportamento-anomalo-del-cursore-potenza-e-modello-matematico-delle-curve">11. Comportamento anomalo del cursore Potenza e modello matematico delle curve<a class="headerlink" href="#11-comportamento-anomalo-del-cursore-potenza-e-modello-matematico-delle-curve" title="Permanent link">&para;</a></h2>
+<p><strong>[30:40 – 32:13]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1840">Guarda nel video</a></p>
+<p>Analisi del comportamento controintuitivo del cursore Potenza (Power) sui mezzitoni, che può scurire i pixel quasi bianchi. Introduzione al modello grafico semplificato delle curve Lift, Gain e Power e del loro impatto sull'intera gamma tonale.</p>
+<h3 id="screenshot_10">Screenshot<a class="headerlink" href="#screenshot_10" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di GeoGebra Classic 6 utilizzata all'interno di darktable come strumento didattico per illustrare il comportamento dei parametri lift, gain e power in una curva tonale. È visibile un grafico con assi cartesiani, una curva verde (probabilmente la trasformazione applicata) e una linea diagonale nera (curva lineare di riferimento). I tre slider a sinistra indicano i valori correnti: lift = 0, gain = 0.2, power = 0.5. Sul lato destro è aperto il modulo 'color balance rgb' di darktable, con le sezioni 'shadows lift', 'highlights gain' e 'power' espanso ma tutti i valori impostati a 0.00%. L’uso di GeoGebra suggerisce una spiegazione teorica o matematica del funzionamento delle curve tonali." src="screenshots/frame_01850_782.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di GeoGebra Classic 6 utilizzata all'interno di darktable come strumento didattico per illustrare il comportamento dei parametri lift, gain e power in una curva tonale. È visibile un grafico con assi cartesiani, una curva verde (probabilmente la trasformazione applicata) e una linea diagonale nera (curva lineare di riferimento). I tre slider a sinistra indicano i valori correnti: lift = 0, gain = 0.2, power = 0.5. Sul lato destro è aperto il modulo 'color balance rgb' di darktable, con le sezioni 'shadows lift', 'highlights gain' e 'power' espanso ma tutti i valori impostati a 0.00%. L’uso di GeoGebra suggerisce una spiegazione teorica o matematica del funzionamento delle curve tonali.</em></p>
+<p><strong>Modulo:</strong> GeoGebra Classic 6</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lift</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>gain</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>power</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva e la sezione 'masks' espansa, indicando che le maschere sono abilitate. L'immagine di anteprima visualizza una gradazione LAB con 50% di saturazione e luminosità, e una banda verde primaria etichettata come 'desaturated'. Il pannello a sinistra mostra lo strumento 'color picker' con campionamenti RGB a 254/254/254 (bianco) e 254/254/254 (altro bianco), suggerendo un'analisi cromatica su aree neutre. L'istogramma in alto a destra mostra un picco verticale verde, coerente con la dominanza del canale verde nell'immagine. Il contesto narrativo indica una spiegazione sulle differenze tra 'lift', 'gamma' (qui chiamato 'gain') e 'power', con enfasi sull'impatto maggiore nelle ombre e sull'influenza delle maschere." src="screenshots/frame_01916_981.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva e la sezione 'masks' espansa, indicando che le maschere sono abilitate. L'immagine di anteprima visualizza una gradazione LAB con 50% di saturazione e luminosità, e una banda verde primaria etichettata come 'desaturated'. Il pannello a sinistra mostra lo strumento 'color picker' con campionamenti RGB a 254/254/254 (bianco) e 254/254/254 (altro bianco), suggerendo un'analisi cromatica su aree neutre. L'istogramma in alto a destra mostra un picco verticale verde, coerente con la dominanza del canale verde nell'immagine. Il contesto narrativo indica una spiegazione sulle differenze tra 'lift', 'gamma' (qui chiamato 'gain') e 'power', con enfasi sull'impatto maggiore nelle ombre e sull'influenza delle maschere.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>shadows lift chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>highlights gain chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>power chroma</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di GeoGebra Classic integrata in darktable, utilizzata per visualizzare una curva tonale con tre parametri: lift (0.3), gain (0.0) e power (0.0). La curva verde rappresenta la trasformazione applicata rispetto alla diagonale nera (lineare). A destra è visibile il modulo 'color balance rgb' con le sezioni per luminance, hue e chroma suddivise per ombre, luci e gamma, tutte impostate a 0.0%. Il narratore spiega che il parametro 'lift' influenza principalmente le ombre, mentre 'gain' agisce sulle luci, e che le maschere influenzano l'intensità dell'effetto su diverse zone dell'immagine." src="screenshots/frame_01920_418.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di GeoGebra Classic integrata in darktable, utilizzata per visualizzare una curva tonale con tre parametri: lift (0.3), gain (0.0) e power (0.0). La curva verde rappresenta la trasformazione applicata rispetto alla diagonale nera (lineare). A destra è visibile il modulo 'color balance rgb' con le sezioni per luminance, hue e chroma suddivise per ombre, luci e gamma, tutte impostate a 0.0%. Il narratore spiega che il parametro 'lift' influenza principalmente le ombre, mentre 'gain' agisce sulle luci, e che le maschere influenzano l'intensità dell'effetto su diverse zone dell'immagine.</em></p>
+<p><strong>Modulo:</strong> GeoGebra Classic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lift</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>gain</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>power</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_10">Moduli darktable<a class="headerlink" href="#moduli-darktable_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="12-teoria-di-gain-power-e-white-fulcrum">12. Teoria di Gain, Power e White Fulcrum<a class="headerlink" href="#12-teoria-di-gain-power-e-white-fulcrum" title="Permanent link">&para;</a></h2>
+<p><strong>[32:14 – 34:15]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=1934">Guarda nel video</a></p>
+<p>Spiegazione del comportamento dei parametri Gain (alte luci), Power (toni medi/curva) e del White Fulcrum (punto di perno a 1.0) nel flusso di lavoro scene-referred. Si evidenzia come la luminanza non sia limitata a 1.0 e l'importanza di neutralizzare il pivot prima di intervenire.</p>
+<h3 id="moduli-darktable_11">Moduli darktable<a class="headerlink" href="#moduli-darktable_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+</ul>
+<hr />
+<h2 id="13-workflow-pratico-esposizione-e-filmic-rgb-v5">13. Workflow pratico: Esposizione e Filmic RGB v5<a class="headerlink" href="#13-workflow-pratico-esposizione-e-filmic-rgb-v5" title="Permanent link">&para;</a></h2>
+<p><strong>[34:15 – 37:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=2055">Guarda nel video</a></p>
+<p>Applicazione su un'immagine RAW. Regolazione dell'esposizione con l'indicatore del bianco, seguito dalla configurazione di Filmic RGB v5: impostazione dei punti bianco/nero/grigio, regolazione sicura di contrasto e latitudine, e verifica della morbidezza di toe e shoulder.</p>
+<h3 id="screenshot_11">Screenshot<a class="headerlink" href="#screenshot_11" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. L'immagine di riferimento è un gradiente LAB con due sezioni: una superiore a 50% di saturazione e luminosità (rosso-magenta-blu) e una inferiore verde primario 'desaturato'. Sulla destra è visibile la curva RGB con i punti di fulcro per bianco, grigio medio e contrasto; il valore del white fulcrum è impostato a 0.21 EV, coerente con il commento del narratore che menziona un valore automatico vicino a +0.22 EV. È attiva una maschera (indicata dal pulsante 'masks' evidenziato e dai valori percentuali dei fulcri), e sono visibili le impostazioni per il controllo delle zone d'ombra e luci." src="screenshots/frame_02100_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. L'immagine di riferimento è un gradiente LAB con due sezioni: una superiore a 50% di saturazione e luminosità (rosso-magenta-blu) e una inferiore verde primario 'desaturato'. Sulla destra è visibile la curva RGB con i punti di fulcro per bianco, grigio medio e contrasto; il valore del white fulcrum è impostato a 0.21 EV, coerente con il commento del narratore che menziona un valore automatico vicino a +0.22 EV. È attiva una maschera (indicata dal pulsante 'masks' evidenziato e dai valori percentuali dei fulcri), e sono visibili le impostazioni per il controllo delle zone d'ombra e luci.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white fulcrum</td>
+<td>0.21 EV</td>
+</tr>
+<tr>
+<td>mask middle-gray fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>contrast gray fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>shadows fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>highlights fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>checkerboard size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra l'immagine selezionata nella vista lighttable, con il modulo 'exposure' espanso a destra. L'istogramma RGB è visibile in alto a destra, e il cursore dell'esposizione è impostato su 0.00 EV, mentre la compensazione dell'esposizione della fotocamera è attiva a -0.7 EV. Il narratore sta descrivendo il processo di valutazione dell'esposizione usando il riferimento al 'bulbo bianco' (white point) per determinare quanto aumentare l'esposizione prima di passare al modulo filmic." src="screenshots/frame_02210_241.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra l'immagine selezionata nella vista lighttable, con il modulo 'exposure' espanso a destra. L'istogramma RGB è visibile in alto a destra, e il cursore dell'esposizione è impostato su 0.00 EV, mentre la compensazione dell'esposizione della fotocamera è attiva a -0.7 EV. Il narratore sta descrivendo il processo di valutazione dell'esposizione usando il riferimento al 'bulbo bianco' (white point) per determinare quanto aumentare l'esposizione prima di passare al modulo filmic.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>-0.7 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nella sezione 'other'. È visibile un'immagine di strada con una donna che cammina e una poltrona bianca fuori posto sul marciapiede. L'istogramma RGB è presente in alto a destra, e i controlli dell'esposizione indicano un aumento di +1.12 EV rispetto all'esposizione della fotocamera (-0.7 EV compensato). Il cursore del 'clipping threshold' è impostato a 0.010%, suggerendo un controllo preciso dei punti luminosi. Il testo 'working...' appare sotto l'anteprima, indicando un calcolo in corso. Il narratore sta utilizzando la funzione della lampadina (icona della lampadina accanto al modulo) per identificare i punti bianchi e regolare l'esposizione prima di passare alla correzione con il modulo 'filmic'." src="screenshots/frame_02216_679.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nella sezione 'other'. È visibile un'immagine di strada con una donna che cammina e una poltrona bianca fuori posto sul marciapiede. L'istogramma RGB è presente in alto a destra, e i controlli dell'esposizione indicano un aumento di +1.12 EV rispetto all'esposizione della fotocamera (-0.7 EV compensato). Il cursore del 'clipping threshold' è impostato a 0.010%, suggerendo un controllo preciso dei punti luminosi. Il testo 'working...' appare sotto l'anteprima, indicando un calcolo in corso. Il narratore sta utilizzando la funzione della lampadina (icona della lampadina accanto al modulo) per identificare i punti bianchi e regolare l'esposizione prima di passare alla correzione con il modulo 'filmic'.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>-0.7 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>1.12 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata visibile nel grafico a S. I valori di esposizione relativa bianca e nera sono stati regolati rispettivamente a +4.94 EV e -7.42 EV, indicando un forte aumento dell'esposizione per recuperare dettagli nelle luci (ad esempio la poltrona chiara) e un contrasto elevato. La casella 'look only' è attivata, mostrando solo l'effetto della curva senza applicarlo definitivamente. L'istogramma RGB nella parte superiore destra evidenzia una distribuzione ampia con picchi nelle tonalità chiare, coerente con l’aggiustamento descritto dal narratore per rendere le aree luminose più brillanti." src="screenshots/frame_02227_300.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata visibile nel grafico a S. I valori di esposizione relativa bianca e nera sono stati regolati rispettivamente a +4.94 EV e -7.42 EV, indicando un forte aumento dell'esposizione per recuperare dettagli nelle luci (ad esempio la poltrona chiara) e un contrasto elevato. La casella 'look only' è attivata, mostrando solo l'effetto della curva senza applicarlo definitivamente. L'istogramma RGB nella parte superiore destra evidenzia una distribuzione ampia con picchi nelle tonalità chiare, coerente con l’aggiustamento descritto dal narratore per rendere le aree luminose più brillanti.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+4.94 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-7.42 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva. L'immagine di prova è divisa in tre bande: una superiore con gradiente Lab (50% saturation and lightness in Lab), una centrale verde primario etichettata 'Green primary &quot;desaturated&quot;', e una inferiore grigia con testo 'working...'. Il cursore del parametro 'power luminance' è impostato a -1.15%, coerentemente con il commento del narratore che sta riducendo la luminosità del bianco per verificare il funzionamento manuale della regolazione del fulcro bianco in immagini ad alta gamma dinamica." src="screenshots/frame_02130_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab '4 ways' attiva. L'immagine di prova è divisa in tre bande: una superiore con gradiente Lab (50% saturation and lightness in Lab), una centrale verde primario etichettata 'Green primary "desaturated"', e una inferiore grigia con testo 'working...'. Il cursore del parametro 'power luminance' è impostato a -1.15%, coerentemente con il commento del narratore che sta riducendo la luminosità del bianco per verificare il funzionamento manuale della regolazione del fulcro bianco in immagini ad alta gamma dinamica.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global offset luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global offset hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>global offset chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>shadows lift chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>highlights gain chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power luminance</td>
+<td>-1.15 %</td>
+</tr>
+<tr>
+<td>power hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>power chroma</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_12">Moduli darktable<a class="headerlink" href="#moduli-darktable_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+<li>Filmic RGB</li>
+</ul>
+<hr />
+<h2 id="14-color-balance-rgb-chroma-vibrance-saturation-e-brilliance">14. Color Balance RGB: Chroma, Vibrance, Saturation e Brilliance<a class="headerlink" href="#14-color-balance-rgb-chroma-vibrance-saturation-e-brilliance" title="Permanent link">&para;</a></h2>
+<p><strong>[37:40 – 42:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=2260">Guarda nel video</a></p>
+<p>Analisi dettagliata dei controlli di colore. Differenza tra Vibrance (aree a bassa croma) e Chroma globale. Comportamento della Saturation (miscela con bianco/nero modificando la luminosità) rispetto alla Chroma (scala di grigi alla stessa luminanza). Effetto della Brilliance (superfici emissive).</p>
+<h3 id="screenshot_12">Screenshot<a class="headerlink" href="#screenshot_12" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' in darktable, con la tab 'master' attiva. Il parametro 'global vibrance' è stato aumentato a 10.86%, mentre tutti gli altri parametri di cromia e saturazione sono a 0.00%. L'utente sta esplorando la differenza tra 'vibrance' (che agisce principalmente sulle aree a bassa cromia) e 'global chroma', entrambi relativi alla vivacità dei colori, come indicato dal contesto narrativo. L'istogramma RGB è visibile in alto a destra, e l'immagine mostrata è una scena urbana con una poltrona bianca logora sul marciapiede e una persona che cammina in sfondo." src="screenshots/frame_02400_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' in darktable, con la tab 'master' attiva. Il parametro 'global vibrance' è stato aumentato a 10.86%, mentre tutti gli altri parametri di cromia e saturazione sono a 0.00%. L'utente sta esplorando la differenza tra 'vibrance' (che agisce principalmente sulle aree a bassa cromia) e 'global chroma', entrambi relativi alla vivacità dei colori, come indicato dal contesto narrativo. L'istogramma RGB è visibile in alto a destra, e l'immagine mostrata è una scena urbana con una poltrona bianca logora sul marciapiede e una persona che cammina in sfondo.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>10.86</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>shadows chroma</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>midtones chroma</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>highlights chroma</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>shadows saturation</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>midtones saturation</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>highlights saturation</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista lighttable con un'immagine selezionata (1/23 in collezione). Sul pannello destro, il modulo 'filmic rgb' è evidenziato nel menu dei moduli, ma non è espanso né attivo nella pipeline di sviluppo visibile; gli altri moduli come exposure, white balance e color calibration sono presenti ma disattivati. L'istogramma RGB è visibile in alto a destra. Il narratore sta descrivendo l'uso di filmic rgb per ottenere curve morbide e poi menziona il passaggio al modulo 'colour balance', che però non è ancora attivato nello screenshot." src="screenshots/frame_02370_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista lighttable con un'immagine selezionata (1/23 in collezione). Sul pannello destro, il modulo 'filmic rgb' è evidenziato nel menu dei moduli, ma non è espanso né attivo nella pipeline di sviluppo visibile; gli altri moduli come exposure, white balance e color calibration sono presenti ma disattivati. L'istogramma RGB è visibile in alto a destra. Il narratore sta descrivendo l'uso di filmic rgb per ottenere curve morbide e poi menziona il passaggio al modulo 'colour balance', che però non è ancora attivato nello screenshot.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<h3 id="moduli-darktable_13">Moduli darktable<a class="headerlink" href="#moduli-darktable_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color Balance RGB</li>
+</ul>
+<hr />
+<h2 id="15-secondo-esempio-e-gestione-del-gamut">15. Secondo esempio e gestione del Gamut<a class="headerlink" href="#15-secondo-esempio-e-gestione-del-gamut" title="Permanent link">&para;</a></h2>
+<p><strong>[42:40 – 47:57]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=2560">Guarda nel video</a></p>
+<p>Elaborazione di una seconda immagine piatta. Utilizzo di Filmic RGB per un look contrastato e Color Balance RGB per il recupero del colore. Focus sulla protezione automatica del gamut, regolazioni aggressive della croma e verifica con lo strumento di controllo gamut.</p>
+<h3 id="screenshot_13">Screenshot<a class="headerlink" href="#screenshot_13" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'master'. Tutti i parametri sono impostati a zero o 0.00%, confermando la dichiarazione del narratore che il bilanciamento colore è completamente neutro. È visibile un'immagine di una foresta nebbiosa con raggi di luce, e sulla destra si trova l'istogramma RGB. Il cursore del mouse è posizionato sopra il parametro 'global chroma', suggerendo che l'utente sta per modificarlo per aggiungere cromia, come indicato dal contesto. Il modulo include opzioni avanzate come 'linear chroma grading' e 'perceptual saturation/brilliance grading', con funzionalità di controllo del gamut integrate." src="screenshots/frame_02816_980.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'master'. Tutti i parametri sono impostati a zero o 0.00%, confermando la dichiarazione del narratore che il bilanciamento colore è completamente neutro. È visibile un'immagine di una foresta nebbiosa con raggi di luce, e sulla destra si trova l'istogramma RGB. Il cursore del mouse è posizionato sopra il parametro 'global chroma', suggerendo che l'utente sta per modificarlo per aggiungere cromia, come indicato dal contesto. Il modulo include opzioni avanzate come 'linear chroma grading' e 'perceptual saturation/brilliance grading', con funzionalità di controllo del gamut integrate.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>increase colorfulness at same luminance globally</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights (perceptual saturation grading)</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global (perceptual brilliance grading)</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows (perceptual brilliance grading)</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>midtones (perceptual brilliance grading)</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights (perceptual brilliance grading)</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva tonale personalizzata che applica un forte contrasto: i punti bianco e nero sono spostati rispettivamente a +3.40 EV e -5.06 EV, indicando una compressione dinamica aggressiva per preservare i dettagli nei highlights (come menzionato dal narratore) e ottenere un look contrastato. La casella 'look only' è abilitata, mostrando solo l’effetto della curva senza applicare la trasformazione completa. L’immagine di sfondo è una foresta nebbiosa con luci direzionali che creano effetti di rimbalzo sulla foschia, tipici di scene con alta dinamica. Il narratore sta descrivendo la sua impostazione come punto di partenza dopo calibrazione cromatica." src="screenshots/frame_02785_760.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva tonale personalizzata che applica un forte contrasto: i punti bianco e nero sono spostati rispettivamente a +3.40 EV e -5.06 EV, indicando una compressione dinamica aggressiva per preservare i dettagli nei highlights (come menzionato dal narratore) e ottenere un look contrastato. La casella 'look only' è abilitata, mostrando solo l’effetto della curva senza applicare la trasformazione completa. L’immagine di sfondo è una foresta nebbiosa con luci direzionali che creano effetti di rimbalzo sulla foschia, tipici di scene con alta dinamica. Il narratore sta descrivendo la sua impostazione come punto di partenza dopo calibrazione cromatica.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.40 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-5.06 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable a schermo intero, con una foto di una foresta nebbiosa visualizzata al centro. In alto a sinistra è visibile la scheda metadati dell'immagine (Fujifilm X-Pro3, 1/400s, f/5.6, 90mm, ISO 1000), con valutazione a stelle e icone di flag e rotazione. L'utente sta per passare alla modalità di modifica per applicare il modulo 'colour balance RGB', come indicato dal contesto narrativo; attualmente nessun modulo di sviluppo è aperto e l'immagine appare 'dull' (piatta, con basso contrasto e saturazione)." src="screenshots/frame_02727_758.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable a schermo intero, con una foto di una foresta nebbiosa visualizzata al centro. In alto a sinistra è visibile la scheda metadati dell'immagine (Fujifilm X-Pro3, 1/400s, f/5.6, 90mm, ISO 1000), con valutazione a stelle e icone di flag e rotazione. L'utente sta per passare alla modalità di modifica per applicare il modulo 'colour balance RGB', come indicato dal contesto narrativo; attualmente nessun modulo di sviluppo è aperto e l'immagine appare 'dull' (piatta, con basso contrasto e saturazione).</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<p><img alt="L'interfaccia è nella vista lighttable di darktable, con una foto di una foresta nebbiosa selezionata (1 di 23). Sono visibili due snapshot: 'duplicate' (con 5 stelle) e 'original'. Il modulo di editing non è attivo; la barra laterale mostra i moduli disponibili ma nessuno è espanso. In basso, la barra delle miniature mostra altre immagini della collezione. Il testo 'working...' appare al centro dell'immagine, indicando un processo in corso o una transizione. Il narratore sta descrivendo il processo di duplicazione per preservare un edit precedente e sta per iniziare a regolare l'esposizione." src="screenshots/frame_02750_039.jpg" /></p>
+<p><em>L'interfaccia è nella vista lighttable di darktable, con una foto di una foresta nebbiosa selezionata (1 di 23). Sono visibili due snapshot: 'duplicate' (con 5 stelle) e 'original'. Il modulo di editing non è attivo; la barra laterale mostra i moduli disponibili ma nessuno è espanso. In basso, la barra delle miniature mostra altre immagini della collezione. Il testo 'working...' appare al centro dell'immagine, indicando un processo in corso o una transizione. Il narratore sta descrivendo il processo di duplicazione per preservare un edit precedente e sta per iniziare a regolare l'esposizione.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata (1 di 23) in una collezione. A sinistra, il pannello 'duplicate manager' evidenzia due versioni: una originale e una duplicata (etichettata 'duplicate'), confermando che l'utente ha duplicato l'immagine per preservare le modifiche. Il modulo di editing non è attivo; si è ancora nella fase di gestione delle immagini prima dell'editing. L'istogramma in alto a destra indica una distribuzione tonale centrata con leggera dominanza di ombre, coerente con una scena boschiva nebbiosa. Nessun modulo di correzione (es. exposure, white balance) è espanso o attivo." src="screenshots/frame_02756_360.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata (1 di 23) in una collezione. A sinistra, il pannello 'duplicate manager' evidenzia due versioni: una originale e una duplicata (etichettata 'duplicate'), confermando che l'utente ha duplicato l'immagine per preservare le modifiche. Il modulo di editing non è attivo; si è ancora nella fase di gestione delle immagini prima dell'editing. L'istogramma in alto a destra indica una distribuzione tonale centrata con leggera dominanza di ombre, coerente con una scena boschiva nebbiosa. Nessun modulo di correzione (es. exposure, white balance) è espanso o attivo.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_14">Moduli darktable<a class="headerlink" href="#moduli-darktable_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Filmic RGB</li>
+<li>Color Balance RGB</li>
+<li>Color Calibration</li>
+</ul>
+<hr />
+<h2 id="16-analisi-delle-zone-tonali-e-applicazione-del-croma">16. Analisi delle zone tonali e applicazione del croma<a class="headerlink" href="#16-analisi-delle-zone-tonali-e-applicazione-del-croma" title="Permanent link">&para;</a></h2>
+<p><strong>[47:57 – 49:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=2877">Guarda nel video</a></p>
+<p>Identificazione di ombre, mezzitoni e alte luci nell'immagine. Applicazione iniziale di croma alle alte luci per enfatizzare la luce che filtra tra gli alberi e le foglie arancioni.</p>
+<h3 id="screenshot_14">Screenshot<a class="headerlink" href="#screenshot_14" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È presente una maschera basata su intervalli di luminanza (luminance ranges), con una curva X-shaped nel grafico RGB che indica un aumento della cromia nelle alte luci (highlights) e una riduzione nelle ombre, coerentemente con l'intento del narratore di aggiungere chroma alle aree illuminate (es. foglie arancioni) per enfatizzare la luce che filtra tra gli alberi. La maschera è configurata con un fulcro grigio medio a 18.45% e caduta completa (100%) sia per ombre che per luci, suggerendo un controllo preciso sulle zone estreme della dinamica." src="screenshots/frame_02910_807.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È presente una maschera basata su intervalli di luminanza (luminance ranges), con una curva X-shaped nel grafico RGB che indica un aumento della cromia nelle alte luci (highlights) e una riduzione nelle ombre, coerentemente con l'intento del narratore di aggiungere chroma alle aree illuminate (es. foglie arancioni) per enfatizzare la luce che filtra tra gli alberi. La maschera è configurata con un fulcro grigio medio a 18.45% e caduta completa (100%) sia per ombre che per luci, suggerendo un controllo preciso sulle zone estreme della dinamica.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>master</td>
+<td>curva personalizzata (X-shaped, con aumento della luminanza nelle alte luci)</td>
+</tr>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una curva di bilanciamento RGB con tre curve intersecanti (tipiche della modalità '4 ways'), e i parametri indicano che la maschera è basata sul grigio medio (18.45%) con un forte controllo sui toni scuri e chiari (fall-off al 100%). L'immagine sottostante è una foresta nebbiosa con forti contrasti tra ombre profonde (tronchi, suolo) e zone più illuminate (cielo, rami superiori), coerente con il commento dell’utente che cerca di identificare e regolare i midtones. La presenza della maschera suggerisce che l’utente sta applicando correzioni selettive basate sulla luminanza." src="screenshots/frame_02879_142.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una curva di bilanciamento RGB con tre curve intersecanti (tipiche della modalità '4 ways'), e i parametri indicano che la maschera è basata sul grigio medio (18.45%) con un forte controllo sui toni scuri e chiari (fall-off al 100%). L'immagine sottostante è una foresta nebbiosa con forti contrasti tra ombre profonde (tronchi, suolo) e zone più illuminate (cielo, rami superiori), coerente con il commento dell’utente che cerca di identificare e regolare i midtones. La presenza della maschera suggerisce che l’utente sta applicando correzioni selettive basate sulla luminanza.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask middle-gray fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast gray fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera luminanza applicata all'immagine, con curve di controllo per ombre, mezzi toni e luci; i valori indicano che la maschera è centrata su grigio medio (18.45%) e ha un forte fall-off per luci e ombre (100%). L'immagine principale appare sovraesposta e granulosa, con aree arancioni evidenti nelle luci (probabilmente foglie illuminate), coerentemente con il commento del narratore che intende aggiungere crominanza alle luci per simulare la luce che filtra tra gli alberi." src="screenshots/frame_02910_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'masks' attiva. È visibile una maschera luminanza applicata all'immagine, con curve di controllo per ombre, mezzi toni e luci; i valori indicano che la maschera è centrata su grigio medio (18.45%) e ha un forte fall-off per luci e ombre (100%). L'immagine principale appare sovraesposta e granulosa, con aree arancioni evidenti nelle luci (probabilmente foglie illuminate), coerentemente con il commento del narratore che intende aggiungere crominanza alle luci per simulare la luce che filtra tra gli alberi.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shadows_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>mask_middle-gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>highlights_fall-off</td>
+<td>100.00 %</td>
+</tr>
+<tr>
+<td>white_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>contrast_gray_fulcrum</td>
+<td>18.45 %</td>
+</tr>
+<tr>
+<td>checkerboard_size</td>
+<td>8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine è una scena boschiva illuminata da raggi di sole, con tonalità calde e dettagli nei midtones (foglie secche, tronchi). Il narratore sta descrivendo l'aggiunta di saturazione ai midtones per arricchire i colori, ma nello screenshot il valore di 'midtones' sotto 'perceptual saturation grading' è ancora a 0.00%, mentre 'highlights' è impostato a 89.47%. L'istogramma RGB in alto a destra mostra una distribuzione bilanciata con picco nelle tonalità medie. Non sono attive maschere, e il cursore del mouse è posizionato vicino al controllo dei midtones, suggerendo un'azione imminente." src="screenshots/frame_02940_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine è una scena boschiva illuminata da raggi di sole, con tonalità calde e dettagli nei midtones (foglie secche, tronchi). Il narratore sta descrivendo l'aggiunta di saturazione ai midtones per arricchire i colori, ma nello screenshot il valore di 'midtones' sotto 'perceptual saturation grading' è ancora a 0.00%, mentre 'highlights' è impostato a 89.47%. L'istogramma RGB in alto a destra mostra una distribuzione bilanciata con picco nelle tonalità medie. Non sono attive maschere, e il cursore del mouse è posizionato vicino al controllo dei midtones, suggerendo un'azione imminente.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue shift</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>100.00</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>89.47</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>perceptual saturation grading - midtones</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_15">Moduli darktable<a class="headerlink" href="#moduli-darktable_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color Balance RGB</li>
+</ul>
+<hr />
+<h2 id="17-regolazione-della-saturazione-per-mezzitoni-e-alte-luci">17. Regolazione della saturazione per mezzitoni e alte luci<a class="headerlink" href="#17-regolazione-della-saturazione-per-mezzitoni-e-alte-luci" title="Permanent link">&para;</a></h2>
+<p><strong>[49:05 – 51:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=2945">Guarda nel video</a></p>
+<p>Aumento mirato della saturazione nei mezzitoni (fino al 25%) per arricchire i colori delle felci e nelle alte luci per ottenere una luce più ricca e pastello. Si evita deliberatamente di saturare le ombre.</p>
+<h3 id="moduli-darktable_16">Moduli darktable<a class="headerlink" href="#moduli-darktable_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color Balance RGB</li>
+</ul>
+<hr />
+<h2 id="18-utilizzo-della-brillantezza-percettiva-e-color-grading">18. Utilizzo della brillantezza percettiva e color grading<a class="headerlink" href="#18-utilizzo-della-brillantezza-percettiva-e-color-grading" title="Permanent link">&para;</a></h2>
+<p><strong>[51:00 – 52:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=3060">Guarda nel video</a></p>
+<p>Applicazione della brillantezza alle alte luci per simulare una fonte di luce aggiuntiva. Successivo color grading: aggiunta di tonalità arancione/gialla alle ombre e blu/verde alle alte luci per caratterizzare la scena.</p>
+<h3 id="moduli-darktable_17">Moduli darktable<a class="headerlink" href="#moduli-darktable_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color Balance RGB</li>
+</ul>
+<hr />
+<h2 id="19-confronto-con-la-luminanza-e-anteprima-build-di-sviluppo">19. Confronto con la luminanza e anteprima build di sviluppo<a class="headerlink" href="#19-confronto-con-la-luminanza-e-anteprima-build-di-sviluppo" title="Permanent link">&para;</a></h2>
+<p><strong>[52:30 – 53:26]</strong>
+ | <a href="https://www.youtube.com/watch?v=SmeUXCtNNh0&amp;t=3150">Guarda nel video</a></p>
+<p>Test della luminanza sulle alte luci, scartata perché altera eccessivamente l'intera immagine rispetto alla brillantezza. Mostra del risultato finale e anteprima di un effetto 'dreamy' disponibile nella build di sviluppo 3.7.</p>
+<h3 id="screenshot_15">Screenshot<a class="headerlink" href="#screenshot_15" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine di una foresta illuminata da raggi di sole filtrati tra gli alberi. Il modulo 'graduated density' è evidenziato nella lista dei moduli a destra, indicando che è stato appena utilizzato o sta per essere applicato; tuttavia, i parametri specifici non sono visibili poiché il pannello del modulo non è espanso. L'istogramma RGB in alto a destra mostra una distribuzione bilanciata con leggera predominanza di toni caldi (gialli/arancioni), coerente con l'illuminazione dorata della scena. Lo screenshot cattura un momento di post-produzione in cui l'utente ha appena applicato o sta esaminando l'effetto 'graduated density', probabilmente per controllare l'esposizione in zone illuminate o ombreggiate dell'immagine." src="screenshots/frame_03169_280.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine di una foresta illuminata da raggi di sole filtrati tra gli alberi. Il modulo 'graduated density' è evidenziato nella lista dei moduli a destra, indicando che è stato appena utilizzato o sta per essere applicato; tuttavia, i parametri specifici non sono visibili poiché il pannello del modulo non è espanso. L'istogramma RGB in alto a destra mostra una distribuzione bilanciata con leggera predominanza di toni caldi (gialli/arancioni), coerente con l'illuminazione dorata della scena. Lo screenshot cattura un momento di post-produzione in cui l'utente ha appena applicato o sta esaminando l'effetto 'graduated density', probabilmente per controllare l'esposizione in zone illuminate o ombreggiate dell'immagine.</em></p>
+<p><strong>Modulo:</strong> graduated density</p>
+<h3 id="moduli-darktable_18">Moduli darktable<a class="headerlink" href="#moduli-darktable_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Color Balance RGB</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>colour balance RGB</strong></td>
+<td>lightness, chroma, saturation, brightness</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento colore RGB</strong></td>
+<td>Rotazione tonalità (Hue rotation), Saturazione (Saturation), Potenza (Power), Gain, Luminosità (Brightness), Quattro vie (Luminanza, Tonalità, Cromaticità), Lift, Punto di perno/Fulcro (Pivot), Cromaticità (Chroma), Maschere (Ombre, Mezzitoni, Luci), Vividezza (Vibrance), Contrasto (Contrast)</td>
+</tr>
+<tr>
+<td><strong>Exposure</strong></td>
+<td>white fulcrum, gain, indicatore del bianco (light bulb), power</td>
+</tr>
+<tr>
+<td><strong>Filmic RGB</strong></td>
+<td>grey point, black relative exposure, latitude, contrasting highlights and shadows, contrast, white relative exposure, toe/shoulder, clipping indication</td>
+</tr>
+<tr>
+<td><strong>Color Balance RGB</strong></td>
+<td>brilliance, chroma, saturation, Croma (Chroma), gamut checking, vibrance, Color Grading (ruote colore per ombre e alte luci), Brillantezza percettiva (Perceptual Brilliance), Saturazione (Saturation), Luminanza (Luminance)</td>
+</tr>
+<tr>
+<td><strong>Color Calibration</strong></td>
+<td>profilo di calibrazione colore</td>
+</tr>
+<tr>
+<td><strong>Input Color Profile</strong></td>
+<td>linear Rec. 2020</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> Comprendere la differenza tra chroma (purezza spettrale rispetto al bianco) e saturazione (ricchezza del colore rispetto alla luminosità) è fondamentale per utilizzare correttamente il modulo. — <em>Prima di iniziare a modificare i colori con il modulo colour balance RGB</em>
+<strong>Attenzione:</strong> Il chroma massimo disponibile non è costante: varia in base alla tonalità (hue) e alla luminosità (lightness). Non è possibile aumentare il chroma indefinitamente senza superare i limiti del gamut. — <em>Quando si regola il parametro chroma per evitare clipping o perdita di dettaglio</em>
+- darktable implementa la saturazione secondo le definizioni matematiche ufficiali (Munsell/CIE), a differenza di Lightroom, Capture One o Photoshop. Utilizzare lo slider dedicato per ottenere colori più ricchi e naturali. — <em>Durante la fase di correzione cromatica avanzata</em>
+- Lightness e brightness sono grandezze percettive, mentre luminance e reflectance sono proprietà fisiche. Il modulo lavora principalmente sulla percezione visiva, come avviene nella fotografia e nella pittura. — <em>Nella pianificazione del flusso di lavoro di correzione colore</em>
+- Utilizzare il pulsante a scacchiera nella scheda Maschere per visualizzare esattamente quali zone dell'immagine verranno influenzate dalle regolazioni di ombre, mezzitoni o luci. — <em>Quando si applicano correzioni selettive basate sulla luminanza</em>
+<strong>Attenzione:</strong> La maschera dei mezzitoni ha un'opacità massima intrinseca del 50%. Qualsiasi regolazione applicata ai mezzitoni avrà al massimo metà dell'intensità rispetto a ombre o luci. — <em>Durante la regolazione fine del bilanciamento colore nelle zone intermedie</em>
+<strong>Importante:</strong> Il cursore Potenza (Power) per i mezzitoni può produrre risultati controintuitivi: aumentare la luminanza può scurire i pixel quasi bianchi a causa della natura delle curve di trasformazione. Monitorare i valori con il contagocce. — <em>Quando si regola la luminanza dei mezzitoni in immagini con alte luci vicine al bianco puro</em>
+- Per un effetto Teal &amp; Orange classico, applicare una tonalità verde/blu (Teal) alle ombre e una arancione alle luci, regolando poi la pendenza delle maschere per controllare la transizione. — <em>Durante il color grading cinematografico nella scheda Quattro Vie</em>
+<strong>Attenzione:</strong> I cursori Lift e Gain influenzano l'intera gamma tonale, non solo ombre o luci. Le maschere interne del modulo mitigano parzialmente questo effetto, ma è necessario prestare attenzione al clipping. — <em>Quando si utilizzano le regolazioni globali di luminanza e contrasto</em>
+<strong>Importante:</strong> Nel flusso di lavoro scene-referred, la luminanza non è bloccata a 1.0. Modificare il parametro 'power' senza prima impostare il 'white fulcrum' può causare un comportamento inverso nelle alte luci (valori &gt;1.0 diventano più chiari invece che più scuri). — <em>Prima di regolare il parametro Power nel modulo Exposure</em>
+<strong>Attenzione:</strong> Attiva sempre le opzioni sicure 'contrasting highlights and shadows' in Filmic RGB v5 prima di modificare contrasto e latitudine, per evitare di distruggere la curva a S. — <em>Durante la regolazione di contrasto e latitudine in Filmic RGB</em>
+- Utilizza l'indicatore di clipping quando regoli l'esposizione relativa del nero per evitare di schiacciare le ombre e perdere dettagli. — <em>Regolazione del punto nero in Filmic RGB</em>
+<strong>Attenzione:</strong> La 'saturation' mescola il colore con il bianco (schiarisce) o il nero (scurisce), mentre la 'chroma' sposta il colore verso il grigio mantenendo la stessa luminanza. Fai attenzione a non superare il gamut o clippare al nero con la saturazione. — <em>Utilizzo dei controlli di colore in Color Balance RGB</em>
+- Il modulo Color Balance RGB include una protezione automatica del gamut. Puoi spingere i cursori fino al 100% (tasto destro) senza uscire dal gamut, ma verifica sempre con lo strumento di controllo gamut integrato. — <em>Regolazioni aggressive di croma e saturazione</em>
+<strong>Attenzione:</strong> Evitare di saturare le ombre per mantenerle neutre/grigiastre e prevenire l'insorgere di dominanti di colore indesiderate. — <em>Regolazione della saturazione nelle zone scure dell'immagine</em>
+- Limitare l'aumento di saturazione nei mezzitoni a circa il 25% per ottenere colori ricchi senza perdere il realismo. — <em>Ottimizzazione della saturazione nei mezzitoni</em>
+<strong>Importante:</strong> Preferire la brillantezza percettiva alla luminanza per le alte luci, poiché quest'ultima tende ad alterare in modo eccessivo e uniforme l'intera immagine. — <em>Simulazione di sorgenti luminose e controllo delle alte luci</em>
+- Applicare il color grading con estrema parsimonia per aggiungere carattere alla luce e alle ombre senza rendere l'effetto innaturale o 'fuori scala'. — <em>Regolazione delle ruote colore per ombre e alte luci</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:23:29.809985.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

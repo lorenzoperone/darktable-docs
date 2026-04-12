@@ -1,0 +1,3361 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/YlW1wpoPho0/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] multiply blend mode - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-multiply-blend-mode" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] multiply blend mode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-matematica-della-modalita-moltiplica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e matematica della modalità Moltiplica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e matematica della modalità Moltiplica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dimostrazione-con-modulo-esposizione-e-blend-fulcrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Dimostrazione con modulo Esposizione e Blend Fulcrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Dimostrazione con modulo Esposizione e Blend Fulcrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-applicazione-pratica-su-raw-e-uso-del-modulo-colorizza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Applicazione pratica su RAW e uso del modulo Colorizza
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Applicazione pratica su RAW e uso del modulo Colorizza">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-confronto-con-color-balance-rgb-e-conclusioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Confronto con Color Balance RGB e conclusioni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Confronto con Color Balance RGB e conclusioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-effetto-bloom-con-low-pass-e-modulo-blurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Effetto Bloom con Low Pass e modulo Blurs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Effetto Bloom con Low Pass e modulo Blurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-recupero-dei-raggi-solari-con-tone-equalizer-e-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Recupero dei raggi solari con Tone Equalizer e maschere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Recupero dei raggi solari con Tone Equalizer e maschere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recupero-dettagli-del-cielo-e-correzione-colore-avanzata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Recupero dettagli del cielo e correzione colore avanzata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Recupero dettagli del cielo e correzione colore avanzata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-multiply-blend-mode">[ENG] multiply blend mode<a class="headerlink" href="#eng-multiply-blend-mode" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=YlW1wpoPho0">https://www.youtube.com/watch?v=YlW1wpoPho0</a>
+<strong>Generato:</strong> 2026-04-12T01:21:57.680313
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-matematica-della-modalità-moltiplica">Introduzione e matematica della modalità Moltiplica</a></li>
+<li><a href="#dimostrazione-con-modulo-esposizione-e-blend-fulcrum">Dimostrazione con modulo Esposizione e Blend Fulcrum</a></li>
+<li><a href="#applicazione-pratica-su-raw-e-uso-del-modulo-colorizza">Applicazione pratica su RAW e uso del modulo Colorizza</a></li>
+<li><a href="#confronto-con-color-balance-rgb-e-conclusioni">Confronto con Color Balance RGB e conclusioni</a></li>
+<li><a href="#effetto-bloom-con-low-pass-e-modulo-blurs">Effetto Bloom con Low Pass e modulo Blurs</a></li>
+<li><a href="#recupero-dei-raggi-solari-con-tone-equalizer-e-maschere">Recupero dei raggi solari con Tone Equalizer e maschere</a></li>
+<li><a href="#recupero-dettagli-del-cielo-e-correzione-colore-avanzata">Recupero dettagli del cielo e correzione colore avanzata</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-matematica-della-modalita-moltiplica">1. Introduzione e matematica della modalità Moltiplica<a class="headerlink" href="#1-introduzione-e-matematica-della-modalita-moltiplica" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 03:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=0">Guarda nel video</a></p>
+<p>Spiegazione del funzionamento matematico della modalità di fusione Moltiplica (A x B), normalizzazione dei valori RGB e differenze fondamentali tra flussi di lavoro display-referred e scene-referred.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né moduli, né pannelli, né istogrammi o strumenti di editing. Si tratta di un frame video introduttivo o didattico, probabilmente prima dell'apertura del software." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né moduli, né pannelli, né istogrammi o strumenti di editing. Si tratta di un frame video introduttivo o didattico, probabilmente prima dell'apertura del software.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra l'app Notability su macOS, non l'interfaccia di darktable. È presente una nota manoscritta che spiega il concetto di 'Multiply blend mode' con uno schema a blocchi (source A → module B) e annotazioni testuali ('photo source: a', 'module: b'). Non sono visibili moduli, controlli o elementi dell'interfaccia di darktable; si tratta di un appunto didattico esterno al software." src="screenshots/frame_00083_319.jpg" /></p>
+<p><em>Lo screenshot mostra l'app Notability su macOS, non l'interfaccia di darktable. È presente una nota manoscritta che spiega il concetto di 'Multiply blend mode' con uno schema a blocchi (source A → module B) e annotazioni testuali ('photo source: a', 'module: b'). Non sono visibili moduli, controlli o elementi dell'interfaccia di darktable; si tratta di un appunto didattico esterno al software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera, in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, né pannelli strumenti o istogrammi. Si tratta di un frame video introduttivo o narrativo, probabilmente prima dell'apertura del software." src="screenshots/frame_00011_560.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet a quadri) che parla direttamente alla telecamera, in un ambiente interno con tende chiare sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, né pannelli strumenti o istogrammi. Si tratta di un frame video introduttivo o narrativo, probabilmente prima dell'apertura del software.</em></p>
+<p><strong>Modulo:</strong> non visibile</p>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) in un video, non l'interfaccia di darktable. Non sono visibili moduli, controlli, istogrammi o elementi dell'interfaccia utente di darktable; si tratta di un frame di una registrazione video con sfondo domestico (tende, finestra). Il contesto narrativo parla di blend mode 'multiply' e recupero dei dettagli nei cieli, ma ciò non è rappresentato visivamente nell'immagine." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) in un video, non l'interfaccia di darktable. Non sono visibili moduli, controlli, istogrammi o elementi dell'interfaccia utente di darktable; si tratta di un frame di una registrazione video con sfondo domestico (tende, finestra). Il contesto narrativo parla di blend mode 'multiply' e recupero dei dettagli nei cieli, ma ciò non è rappresentato visivamente nell'immagine.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra l'applicazione Notability, non darktable. L'interfaccia è un foglio di appunti a righe su sfondo chiaro, con la barra degli strumenti in alto e la dock macOS in basso. Non è presente alcun modulo o interfaccia di darktable; il contesto narrativo fa riferimento a darktable e al blend mode 'multiply', ma l'immagine attuale non lo rappresenta." src="screenshots/frame_00031_131.jpg" /></p>
+<p><em>Lo screenshot mostra l'applicazione Notability, non darktable. L'interfaccia è un foglio di appunti a righe su sfondo chiaro, con la barra degli strumenti in alto e la dock macOS in basso. Non è presente alcun modulo o interfaccia di darktable; il contesto narrativo fa riferimento a darktable e al blend mode 'multiply', ma l'immagine attuale non lo rappresenta.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Modalità di fusione (Blend Mode)</li>
+</ul>
+<hr />
+<h2 id="2-dimostrazione-con-modulo-esposizione-e-blend-fulcrum">2. Dimostrazione con modulo Esposizione e Blend Fulcrum<a class="headerlink" href="#2-dimostrazione-con-modulo-esposizione-e-blend-fulcrum" title="Permanent link">&para;</a></h2>
+<p><strong>[03:00 – 06:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=180">Guarda nel video</a></p>
+<p>Test su immagine JPEG per mostrare come la modalità Moltiplica scurisca l'immagine. Introduzione al parametro Blend Fulcrum e dimostrazione pratica che equivale a un offset di esposizione.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia di darktable è nella vista lighttable, con un'immagine selezionata che mostra tre forme sfocate su sfondo bianco: una macchia nera a sinistra, una macchia grigio scuro al centro e una macchia grigio chiaro a destra, più una striscia nera orizzontale in basso. L'immagine sembra essere un esempio artificiale per testare l'elaborazione, come descritto dal narratore (JPEG con sfondo bianco e blob di diversi grigi). Nessun modulo di sviluppo è attivo; la barra laterale mostra i moduli disponibili ma non espansi, e il pannello destro elenca solo profili colore e orientamento." src="screenshots/frame_00349_882.jpg" /></p>
+<p><em>L'interfaccia di darktable è nella vista lighttable, con un'immagine selezionata che mostra tre forme sfocate su sfondo bianco: una macchia nera a sinistra, una macchia grigio scuro al centro e una macchia grigio chiaro a destra, più una striscia nera orizzontale in basso. L'immagine sembra essere un esempio artificiale per testare l'elaborazione, come descritto dal narratore (JPEG con sfondo bianco e blob di diversi grigi). Nessun modulo di sviluppo è attivo; la barra laterale mostra i moduli disponibili ma non espansi, e il pannello destro elenca solo profili colore e orientamento.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra un appunto manoscritto in Notability (non l'interfaccia di darktable), che spiega il funzionamento della modalità di fusione 'Multiply' (moltiplicazione) tra due fonti (a e b), con la formula f(a,b) = a × b. Viene illustrato il processo di normalizzazione dei valori RGB da 0–255 a 0–1, usando l'esempio a = (128, 200, 0) → (128/255, 200/255, 0/255). Non è presente alcun modulo o interfaccia di darktable; si tratta di una spiegazione teorica esterna al software." src="screenshots/frame_00180_000.jpg" /></p>
+<p><em>Lo screenshot mostra un appunto manoscritto in Notability (non l'interfaccia di darktable), che spiega il funzionamento della modalità di fusione 'Multiply' (moltiplicazione) tra due fonti (a e b), con la formula f(a,b) = a × b. Viene illustrato il processo di normalizzazione dei valori RGB da 0–255 a 0–1, usando l'esempio a = (128, 200, 0) → (128/255, 200/255, 0/255). Non è presente alcun modulo o interfaccia di darktable; si tratta di una spiegazione teorica esterna al software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra un appunto manoscritto su Notability (non l'interfaccia di darktable), che spiega il funzionamento della modalità di fusione 'Multiply' in un contesto di elaborazione delle immagini. Viene descritta la formula f(a,b) = a × b, con esempi numerici in RGB normalizzato (0–1), e si discute della differenza tra workflow basati sul display (valori 0–1, risultati più scuri) e workflow basati sulla scena (valori &gt;1 possibili). Non è presente alcuna interfaccia di darktable: l'applicazione attiva è Notability, come indicato dalla barra del titolo e dall'interfaccia dell'app." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>Lo screenshot mostra un appunto manoscritto su Notability (non l'interfaccia di darktable), che spiega il funzionamento della modalità di fusione 'Multiply' in un contesto di elaborazione delle immagini. Viene descritta la formula f(a,b) = a × b, con esempi numerici in RGB normalizzato (0–1), e si discute della differenza tra workflow basati sul display (valori 0–1, risultati più scuri) e workflow basati sulla scena (valori &gt;1 possibili). Non è presente alcuna interfaccia di darktable: l'applicazione attiva è Notability, come indicato dalla barra del titolo e dall'interfaccia dell'app.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione (Exposure)</li>
+<li>Modalità di fusione (Blend Mode)</li>
+</ul>
+<hr />
+<h2 id="3-applicazione-pratica-su-raw-e-uso-del-modulo-colorizza">3. Applicazione pratica su RAW e uso del modulo Colorizza<a class="headerlink" href="#3-applicazione-pratica-su-raw-e-uso-del-modulo-colorizza" title="Permanent link">&para;</a></h2>
+<p><strong>[06:40 – 12:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=400">Guarda nel video</a></p>
+<p>Analisi dei problemi nell'uso di Esposizione in modalità Moltiplica su foto reali (bruciatura delle alte luci). Soluzione alternativa: utilizzo del modulo Colorizza desaturato per aggiungere contrasto preservando i dettagli nelle luci.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="L'immagine visualizzata è il risultato di un'operazione di fusione in modalità 'multiply' tra due livelli identici (A e B), dove B è sovrapposto ad A. Questo produce un'immagine con valori pixel moltiplicati per se stessi, accentuando le aree scure (che tendono a nero) e le aree chiare (che tendono a bianco), mentre i toni medi si comprimono verso i due estremi. Visivamente si osservano tre forme sfocate: una nera intensa (valore ~0), una grigia media (~0.5) e una nera allungata in basso; l'istogramma (non visibile ma descritto nel contesto) mostra picchi a nero e bianco con due picchi intermedi corrispondenti alle forme scure e mediane." src="screenshots/frame_00420_000.jpg" /></p>
+<p><em>L'immagine visualizzata è il risultato di un'operazione di fusione in modalità 'multiply' tra due livelli identici (A e B), dove B è sovrapposto ad A. Questo produce un'immagine con valori pixel moltiplicati per se stessi, accentuando le aree scure (che tendono a nero) e le aree chiare (che tendono a bianco), mentre i toni medi si comprimono verso i due estremi. Visivamente si osservano tre forme sfocate: una nera intensa (valore ~0), una grigia media (~0.5) e una nera allungata in basso; l'istogramma (non visibile ma descritto nel contesto) mostra picchi a nero e bianco con due picchi intermedi corrispondenti alle forme scure e mediane.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine visualizzata è un test grafico in bianco e nero con tre forme sfocate: due ovali (una scura, una grigia media) e una barra orizzontale nera in basso. Il cursore dell'esposizione è a 0.00 EV, ma il blend mode è impostato su 'multiply', il che spiega perché l'immagine appare più scura rispetto all'originale. Il narratore menziona l'istogramma con picchi a nero e bianco corrispondenti alle forme, e osserva che attivando l'esposizione i picchi si abbassano (l'immagine si scurisce), indicando che sta dimostrando l'effetto del modulo exposure sulle tonalità. La sezione 'snapshots' a sinistra mostra uno snapshot preso precedentemente." src="screenshots/frame_00437_459.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine visualizzata è un test grafico in bianco e nero con tre forme sfocate: due ovali (una scura, una grigia media) e una barra orizzontale nera in basso. Il cursore dell'esposizione è a 0.00 EV, ma il blend mode è impostato su 'multiply', il che spiega perché l'immagine appare più scura rispetto all'originale. Il narratore menziona l'istogramma con picchi a nero e bianco corrispondenti alle forme, e osserva che attivando l'esposizione i picchi si abbassano (l'immagine si scurisce), indicando che sta dimostrando l'effetto del modulo exposure sulle tonalità. La sezione 'snapshots' a sinistra mostra uno snapshot preso precedentemente.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo a destra. L'immagine visualizzata è un'immagine di prova con tre forme sfocate (due ovali e una barra orizzontale) su sfondo bianco: una nera (bassa luminanza), una grigia scura (media luminanza) e una nera più estesa (bassa luminanza). L'istogramma RGB nella parte superiore destra mostra picchi corrispondenti ai valori di luminanza descritti nel contesto (spike bianco, due spike scuri/mid-tone). Il modulo exposure è impostato su valori neutri (0.00 EV), ma il blend mode è impostato su 'multiply', il che spiega l'oscuramento visibile dell'immagine rispetto all'originale. Il narratore sta analizzando la distribuzione dei toni e la relazione tra istogramma e valori RGB dei pixel." src="screenshots/frame_00440_600.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo a destra. L'immagine visualizzata è un'immagine di prova con tre forme sfocate (due ovali e una barra orizzontale) su sfondo bianco: una nera (bassa luminanza), una grigia scura (media luminanza) e una nera più estesa (bassa luminanza). L'istogramma RGB nella parte superiore destra mostra picchi corrispondenti ai valori di luminanza descritti nel contesto (spike bianco, due spike scuri/mid-tone). Il modulo exposure è impostato su valori neutri (0.00 EV), ma il blend mode è impostato su 'multiply', il che spiega l'oscuramento visibile dell'immagine rispetto all'originale. Il narratore sta analizzando la distribuzione dei toni e la relazione tra istogramma e valori RGB dei pixel.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo. L'immagine visualizzata è un test pattern con tre forme grigie su sfondo bianco: due ovali (una scura, una più chiara) e una barra orizzontale nera in basso. Nel pannello sinistro, il color picker mostra i valori RGB dei campioni: la zona scura ha valori 77,77,77 (grigio medio-scuro), mentre la zona più chiara ha valori 137,137,137 (grigio chiaro). Il narratore sta spiegando come l'applicazione di una correzione espositiva (probabilmente tramite maschera o calcolo manuale) riduce il valore del grigio chiaro da 137 a 23, indicando un forte scurimento; questo suggerisce l'uso di una trasformazione non lineare (es. gamma o curve) o un'operazione di moltiplicazione (coerente con blend mode = multiply). L'istogramma e i campioni live sono visibili ma non attivi per la modifica in tempo reale." src="screenshots/frame_00460_060.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo. L'immagine visualizzata è un test pattern con tre forme grigie su sfondo bianco: due ovali (una scura, una più chiara) e una barra orizzontale nera in basso. Nel pannello sinistro, il color picker mostra i valori RGB dei campioni: la zona scura ha valori 77,77,77 (grigio medio-scuro), mentre la zona più chiara ha valori 137,137,137 (grigio chiaro). Il narratore sta spiegando come l'applicazione di una correzione espositiva (probabilmente tramite maschera o calcolo manuale) riduce il valore del grigio chiaro da 137 a 23, indicando un forte scurimento; questo suggerisce l'uso di una trasformazione non lineare (es. gamma o curve) o un'operazione di moltiplicazione (coerente con blend mode = multiply). L'istogramma e i campioni live sono visibili ma non attivi per la modifica in tempo reale.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, in modalità manuale e con blend mode impostato su 'multiply'. Al centro è aperta una finestra di calcolo (probabilmente un'applicazione esterna o il calcolatore del sistema) che esegue l'operazione (77/255)*(77/255)*255 = 23,25098..., dimostrando come il valore 23 derivi da una moltiplicazione tra due valori normalizzati (77/255) e la successiva denormalizzazione per 255 — tipico del blending in modalità 'multiply' con colori identici. L'immagine di sfondo è un'anteprima con forme nere sfocate su sfondo bianco, probabilmente usata per testare l'effetto del blending. Il color picker a sinistra mostra valori RGB medi di 74, con campioni live a 23, indicando che il pixel selezionato ha valore ~23 dopo l'applicazione del modulo." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, in modalità manuale e con blend mode impostato su 'multiply'. Al centro è aperta una finestra di calcolo (probabilmente un'applicazione esterna o il calcolatore del sistema) che esegue l'operazione (77/255)</em>(77/255)<em>255 = 23,25098..., dimostrando come il valore 23 derivi da una moltiplicazione tra due valori normalizzati (77/255) e la successiva denormalizzazione per 255 — tipico del blending in modalità 'multiply' con colori identici. L'immagine di sfondo è un'anteprima con forme nere sfocate su sfondo bianco, probabilmente usata per testare l'effetto del blending. Il color picker a sinistra mostra valori RGB medi di 74, con campioni live a 23, indicando che il pixel selezionato ha valore ~23 dopo l'applicazione del modulo.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione (Exposure)</li>
+<li>Colorizza (Colorize)</li>
+<li>Modalità di fusione (Blend Mode)</li>
+</ul>
+<hr />
+<h2 id="4-confronto-con-color-balance-rgb-e-conclusioni">4. Confronto con Color Balance RGB e conclusioni<a class="headerlink" href="#4-confronto-con-color-balance-rgb-e-conclusioni" title="Permanent link">&para;</a></h2>
+<p><strong>[12:30 – 16:41]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=750">Guarda nel video</a></p>
+<p>Confronto tra la tecnica Colorizza+Moltiplica e il modulo Bilanciamento colore RGB per la gestione del contrasto. Considerazioni finali sull'efficacia e sulla scelta dello strumento più adatto.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di macarons selezionata al centro. Sul pannello destro è visibile la lista dei moduli, e il modulo 'exposure' è evidenziato (attivo), indicando che l'utente sta lavorando sulla correzione dell'esposizione. Il cursore del mouse è posizionato sopra il modulo 'exposure', coerentemente con il discorso sul workflow 'scene referred' e gli effetti negativi di aumentare l'esposizione su valori già alti. Il pannello sinistro mostra lo strumento 'color picker' attivo con campioni RGB a 255 (valori massimi), confermando la presenza di aree molto chiare nell'immagine. L'istogramma nella barra inferiore suggerisce una distribuzione luminosa concentrata verso i toni medi-alti." src="screenshots/frame_00760_059.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di macarons selezionata al centro. Sul pannello destro è visibile la lista dei moduli, e il modulo 'exposure' è evidenziato (attivo), indicando che l'utente sta lavorando sulla correzione dell'esposizione. Il cursore del mouse è posizionato sopra il modulo 'exposure', coerentemente con il discorso sul workflow 'scene referred' e gli effetti negativi di aumentare l'esposizione su valori già alti. Il pannello sinistro mostra lo strumento 'color picker' attivo con campioni RGB a 255 (valori massimi), confermando la presenza di aree molto chiare nell'immagine. L'istogramma nella barra inferiore suggerisce una distribuzione luminosa concentrata verso i toni medi-alti.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white</td>
+<td>1</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>scene referred</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure 2' attivo nella sezione dei moduli a destra. Il blend mode è impostato su 'multiply' con opacità al 100% e fulcro a 0.00 EV, mentre l'esposizione è neutra (0.00 EV). L'immagine visualizzata è una fotografia di macarons con forti contrasti tra luci e ombre; il cursore del mouse è posizionato sul centro dell'immagine. A sinistra è visibile il color picker con valori RGB medi (263, 240, 220 per la prima campionatura; 265, 237, 215 per la seconda), indicando tonalità chiare. Il narratore descrive un problema tipico del blending in moltiplicazione: aumentare i valori scuri comporta anche un aumento esponenziale delle luci, rischiando di sovraesporre i highlight. Propone quindi di aggiungere un grigio uniforme come base per mitigare questo effetto, suggerendo una strategia di correzione non lineare per sollevare le ombre senza compromettere i dettagli luminosi." src="screenshots/frame_00780_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure 2' attivo nella sezione dei moduli a destra. Il blend mode è impostato su 'multiply' con opacità al 100% e fulcro a 0.00 EV, mentre l'esposizione è neutra (0.00 EV). L'immagine visualizzata è una fotografia di macarons con forti contrasti tra luci e ombre; il cursore del mouse è posizionato sul centro dell'immagine. A sinistra è visibile il color picker con valori RGB medi (263, 240, 220 per la prima campionatura; 265, 237, 215 per la seconda), indicando tonalità chiare. Il narratore descrive un problema tipico del blending in moltiplicazione: aumentare i valori scuri comporta anche un aumento esponenziale delle luci, rischiando di sovraesporre i highlight. Propone quindi di aggiungere un grigio uniforme come base per mitigare questo effetto, suggerendo una strategia di correzione non lineare per sollevare le ombre senza compromettere i dettagli luminosi.</em></p>
+<p><strong>Modulo:</strong> exposure 2</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è stata sovrapposta con un colore uniforme verde chiaro (tonalità ~86°, saturazione 50%) tramite il modulo 'colorize', che applica una tinta monocromatica su tutta la foto. L'effetto è visibile come un filtro cromatico dominante che nasconde i colori originali dei macarons, rendendoli tutti di tonalità verde-giallastra. Il cursore del mouse è posizionato sullo slider della saturazione, suggerendo un'interazione in corso. Lo stato attuale mostra un'immagine fortemente alterata dal modulo, coerentemente con la spiegazione del narratore: l'uso di 'colorize' aggiunge una tinta uniforme sull'intera immagine, e riducendo la saturazione si otterrebbe un grigio medio/luminoso." src="screenshots/frame_00826_700.jpg" /></p>
+<p><em>L'immagine è stata sovrapposta con un colore uniforme verde chiaro (tonalità ~86°, saturazione 50%) tramite il modulo 'colorize', che applica una tinta monocromatica su tutta la foto. L'effetto è visibile come un filtro cromatico dominante che nasconde i colori originali dei macarons, rendendoli tutti di tonalità verde-giallastra. Il cursore del mouse è posizionato sullo slider della saturazione, suggerendo un'interazione in corso. Lo stato attuale mostra un'immagine fortemente alterata dal modulo, coerentemente con la spiegazione del narratore: l'uso di 'colorize' aggiunge una tinta uniforme sull'intera immagine, e riducendo la saturazione si otterrebbe un grigio medio/luminoso.</em></p>
+<p><strong>Modulo:</strong> colorize</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>86.40°</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>lightness</td>
+<td>50.00%</td>
+</tr>
+<tr>
+<td>source mix</td>
+<td>50.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'colorize' attivo in darktable, con i parametri hue, saturation, lightness e source mix regolati. Il blend mode è impostato su 'multiply' e l'opacità al 100%. L'utente sta discutendo della mancanza del 'blend fulcrum' quando si utilizza il blending in modalità 'multiply' fuori dal workflow 'scene referred', suggerendo di accedere alle opzioni di blending e selezionare 'scene' per ripristinare il fulcro. L'istogramma RGB è visibile a destra, e l'immagine principale è una foto di macarons colorati su superficie legnosa." src="screenshots/frame_00862_799.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'colorize' attivo in darktable, con i parametri hue, saturation, lightness e source mix regolati. Il blend mode è impostato su 'multiply' e l'opacità al 100%. L'utente sta discutendo della mancanza del 'blend fulcrum' quando si utilizza il blending in modalità 'multiply' fuori dal workflow 'scene referred', suggerendo di accedere alle opzioni di blending e selezionare 'scene' per ripristinare il fulcro. L'istogramma RGB è visibile a destra, e l'immagine principale è una foto di macarons colorati su superficie legnosa.</em></p>
+<p><strong>Modulo:</strong> colorize</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>86.40°</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>lightness</td>
+<td>38.08%</td>
+</tr>
+<tr>
+<td>source mix</td>
+<td>50.00%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'colorize' attivo in darktable, con un'immagine di macarons selezionata. Il parametro 'blend fulcrum' è impostato a 1.01 EV, indicando un leggero aumento dell'esposizione per aggiungere contrasto senza sovraesporre gli highlights. La luminosità è regolata al 38.08%, la miscela sorgente al 50% e la saturazione è a zero, suggerendo un intervento mirato alla tonalità e al contrasto piuttosto che al colore. L’utente sta dimostrando come controllare l’interazione tra l’effetto colorize e l’immagine originale tramite blend fulcrum e source mix." src="screenshots/frame_00900_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'colorize' attivo in darktable, con un'immagine di macarons selezionata. Il parametro 'blend fulcrum' è impostato a 1.01 EV, indicando un leggero aumento dell'esposizione per aggiungere contrasto senza sovraesporre gli highlights. La luminosità è regolata al 38.08%, la miscela sorgente al 50% e la saturazione è a zero, suggerendo un intervento mirato alla tonalità e al contrasto piuttosto che al colore. L’utente sta dimostrando come controllare l’interazione tra l’effetto colorize e l’immagine originale tramite blend fulcrum e source mix.</em></p>
+<p><strong>Modulo:</strong> colorize</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>86.40°</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>lightness</td>
+<td>38.08%</td>
+</tr>
+<tr>
+<td>source mix</td>
+<td>50.00%</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>1.01 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Colorizza (Colorize)</li>
+<li>Bilanciamento colore RGB (Color Balance RGB)</li>
+</ul>
+<hr />
+<h2 id="5-effetto-bloom-con-low-pass-e-modulo-blurs">5. Effetto Bloom con Low Pass e modulo Blurs<a class="headerlink" href="#5-effetto-bloom-con-low-pass-e-modulo-blurs" title="Permanent link">&para;</a></h2>
+<p><strong>[16:42 – 21:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=1002">Guarda nel video</a></p>
+<p>Dimostrazione di come la modalità di fusione moltiplica, combinata con la sfocatura, generi un effetto bloom. Viene analizzato il modulo low pass per creare mezzitoni grigi e si anticipa il nuovo modulo blurs (v3.8) per un controllo avanzato della forma della sfocatura.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera parametrica configurata e un effetto di sfocatura a forma di diaframma (5 lamelle, concavità 1.0) applicato all'immagine di macarons. Il blend mode è impostato su 'multiply', che accentua l'effetto di bloom con alta saturazione, come descritto dal narratore. L'istogramma e la preview mostrano chiaramente l'effetto luminoso diffuso sui bordi degli oggetti illuminati." src="screenshots/frame_01169_700.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera parametrica configurata e un effetto di sfocatura a forma di diaframma (5 lamelle, concavità 1.0) applicato all'immagine di macarons. Il blend mode è impostato su 'multiply', che accentua l'effetto di bloom con alta saturazione, come descritto dal narratore. L'istogramma e la preview mostrano chiaramente l'effetto luminoso diffuso sui bordi degli oggetti illuminati.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>46 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>1.94 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>parametric_mask</td>
+<td>input: 9 R, 0 G, 0 B, 0 Jz, 0 Cz, 0 hz; boost_factor: 0.00 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'lowpass' attivo nel pannello dei moduli a destra. L'immagine selezionata è una fotografia di macarons colorati su superficie legnosa, con illuminazione diretta che crea ombre nette e riflessi brillanti. Il modulo lowpass è configurato con raggio 21.45, filtro gaussiano, contrasto +1.00 e luminosità +1.48, generando un effetto di 'bloom' sulle aree illuminate, come descritto dal narratore: le luci appaiono più estese e meno sovraesposte, con un aumento della percezione del contrasto senza perdita di dettaglio nei highlights." src="screenshots/frame_01110_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'lowpass' attivo nel pannello dei moduli a destra. L'immagine selezionata è una fotografia di macarons colorati su superficie legnosa, con illuminazione diretta che crea ombre nette e riflessi brillanti. Il modulo lowpass è configurato con raggio 21.45, filtro gaussiano, contrasto +1.00 e luminosità +1.48, generando un effetto di 'bloom' sulle aree illuminate, come descritto dal narratore: le luci appaiono più estese e meno sovraesposte, con un aumento della percezione del contrasto senza perdita di dettaglio nei highlights.</em></p>
+<p><strong>Modulo:</strong> lowpass</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>21.45</td>
+</tr>
+<tr>
+<td>soring_with</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>+1.48</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>+0.01</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>0.58 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura tipo obiettivo (lens blur) configurato con 5 lamelle del diaframma, concavità e linearità a 1.0, e raggio di 46 px. È attivata una maschera parametrica e la modalità di fusione è impostata su 'multiply', che produce un evidente effetto di bloom con saturazione elevata, come descritto dal narratore. L'immagine di sfondo è una foto ravvicinata di macarons colorati su superficie legnosa, con luce diretta che accentua i riflessi e le ombre." src="screenshots/frame_01177_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura tipo obiettivo (lens blur) configurato con 5 lamelle del diaframma, concavità e linearità a 1.0, e raggio di 46 px. È attivata una maschera parametrica e la modalità di fusione è impostata su 'multiply', che produce un evidente effetto di bloom con saturazione elevata, come descritto dal narratore. L'immagine di sfondo è una foto ravvicinata di macarons colorati su superficie legnosa, con luce diretta che accentua i riflessi e le ombre.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>46 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>1.94 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>parametric_mask</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td>input</td>
+<td>R:0 G:0 B:0 Jz:0 Cz:0 hz:100</td>
+</tr>
+<tr>
+<td>boost_factor</td>
+<td>0.00 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'lowpass' attivo nel pannello dei moduli a destra. L'immagine principale è una foto di macarons con effetto di sfuocatura selettiva (bokeh), e il modulo lowpass è configurato con raggio 21.45, contrasto +1.00 e saturazione +1.00. Il narratore sta commentando l'effetto di riduzione della saturazione per ottenere tonalità più neutre (mid-grays), pur mantenendo la saturazione a +1.00 nell'interfaccia al momento dello screenshot — suggerendo che stia per modificare quel parametro. È visibile anche il cursore del mouse vicino allo slider della saturazione, indicando un'azione imminente." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'lowpass' attivo nel pannello dei moduli a destra. L'immagine principale è una foto di macarons con effetto di sfuocatura selettiva (bokeh), e il modulo lowpass è configurato con raggio 21.45, contrasto +1.00 e saturazione +1.00. Il narratore sta commentando l'effetto di riduzione della saturazione per ottenere tonalità più neutre (mid-grays), pur mantenendo la saturazione a +1.00 nell'interfaccia al momento dello screenshot — suggerendo che stia per modificare quel parametro. È visibile anche il cursore del mouse vicino allo slider della saturazione, indicando un'azione imminente.</em></p>
+<p><strong>Modulo:</strong> lowpass</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>21.45</td>
+</tr>
+<tr>
+<td>soften_with</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>+1.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure 1' attivo nella sezione 'lighttable'. È stata applicata una correzione di esposizione negativa (-0.58 EV) in modalità manuale, con compensazione dell'esposizione della fotocamera a -1.7 EV. Una maschera disegnata è attiva (1 shape used), indicando che la correzione è localizzata — probabilmente sul cielo, come suggerito dal contesto narrativo. Un cursore verticale è posizionato nel cielo nella vista principale, e l'istogramma mostra una distribuzione con picco nelle tonalità chiare (cielo nuvoloso). Il narratore sta preparando un intervento per scurire il cielo senza sovraesporre i dettagli, prima di passare al tone equalizer." src="screenshots/frame_01253_480.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure 1' attivo nella sezione 'lighttable'. È stata applicata una correzione di esposizione negativa (-0.58 EV) in modalità manuale, con compensazione dell'esposizione della fotocamera a -1.7 EV. Una maschera disegnata è attiva (1 shape used), indicando che la correzione è localizzata — probabilmente sul cielo, come suggerito dal contesto narrativo. Un cursore verticale è posizionato nel cielo nella vista principale, e l'istogramma mostra una distribuzione con picco nelle tonalità chiare (cielo nuvoloso). Il narratore sta preparando un intervento per scurire il cielo senza sovraesporre i dettagli, prima di passare al tone equalizer.</em></p>
+<p><strong>Modulo:</strong> exposure 1</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.7 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>-0.58 EV</td>
+</tr>
+<tr>
+<td>clipping</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>colourise</li>
+<li>low pass</li>
+<li>blurs</li>
+<li>RGB scene referred</li>
+</ul>
+<hr />
+<h2 id="6-recupero-dei-raggi-solari-con-tone-equalizer-e-maschere">6. Recupero dei raggi solari con Tone Equalizer e maschere<a class="headerlink" href="#6-recupero-dei-raggi-solari-con-tone-equalizer-e-maschere" title="Permanent link">&para;</a></h2>
+<p><strong>[21:05 – 26:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=1265">Guarda nel video</a></p>
+<p>Applicazione pratica su una foto con cielo coperto per far emergere i raggi del sole. Viene creata un'area di intervento precisa combinando due maschere gradiente in intersezione, applicando il tone equalizer in modalità moltiplica e regolando il fulcro per evitare aloni.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con due gradienti orizzontali (uno verso il basso, uno verso l'alto) che coprono l'intera immagine gialla di prova; la maschera è attiva e visualizzata come sovrapposizione gialla uniforme, indicando che la regione selezionata è l'intera area. Il pannello a destra mostra la curva tonale con punti di controllo e un istogramma sotto. È evidente l'uso di due forme (gradienti) per creare una maschera composita, e l'utente sta preparandosi a ottenere l'intersezione tramite il gestore maschere, come descritto nel contesto." src="screenshots/frame_01314_179.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con due gradienti orizzontali (uno verso il basso, uno verso l'alto) che coprono l'intera immagine gialla di prova; la maschera è attiva e visualizzata come sovrapposizione gialla uniforme, indicando che la regione selezionata è l'intera area. Il pannello a destra mostra la curva tonale con punti di controllo e un istogramma sotto. È evidente l'uso di due forme (gradienti) per creare una maschera composita, e l'utente sta preparandosi a ottenere l'intersezione tramite il gestore maschere, come descritto nel contesto.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. L'immagine principale presenta una maschera a gradiente giallo intensamente evidenziata orizzontalmente nella porzione centrale del cielo, indicando l'applicazione di due gradienti sovrapposti in modalità intersezione (come descritto nel contesto). Sul pannello sinistro, la sezione 'created shapes' elenca diversi gradienti, con 'gradient #4' selezionato. Il grafico dell'equalizzatore tonale mostra una curva piatta (nessuna modifica applicata), ma la maschera è visibile sulle aree interessate. L'istogramma RGB e la visualizzazione della maschera confermano che solo una porzione specifica del cielo è stata selezionata per l'elaborazione successiva (es. passaggio in modalità multiply per creare effetti di raggi luminosi)." src="screenshots/frame_01333_665.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. L'immagine principale presenta una maschera a gradiente giallo intensamente evidenziata orizzontalmente nella porzione centrale del cielo, indicando l'applicazione di due gradienti sovrapposti in modalità intersezione (come descritto nel contesto). Sul pannello sinistro, la sezione 'created shapes' elenca diversi gradienti, con 'gradient #4' selezionato. Il grafico dell'equalizzatore tonale mostra una curva piatta (nessuna modifica applicata), ma la maschera è visibile sulle aree interessate. L'istogramma RGB e la visualizzazione della maschera confermano che solo una porzione specifica del cielo è stata selezionata per l'elaborazione successiva (es. passaggio in modalità multiply per creare effetti di raggi luminosi).</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>2 shapes used</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una maschera disegnata (2 shapes used) applicata alla porzione superiore del cielo per enfatizzare i raggi di luce. La fusione è impostata su 'multiply', e lo strumento viene utilizzato per recuperare la luminosità e la saturazione del cielo dopo aver scurito selettivamente quella zona. L'istogramma RGB e la curva tonale mostrano un intervento mirato sulle alte luci. È visibile una linea orizzontale di maschera e un punto di controllo verticale nel cielo, indicando un'operazione di correzione localizzata." src="screenshots/frame_01350_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una maschera disegnata (2 shapes used) applicata alla porzione superiore del cielo per enfatizzare i raggi di luce. La fusione è impostata su 'multiply', e lo strumento viene utilizzato per recuperare la luminosità e la saturazione del cielo dopo aver scurito selettivamente quella zona. L'istogramma RGB e la curva tonale mostrano un intervento mirato sulle alte luci. È visibile una linea orizzontale di maschera e un punto di controllo verticale nel cielo, indicando un'operazione di correzione localizzata.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>curve smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale personalizzata e la modalità di fusione impostata su 'multiply'. È attiva una maschera disegnata (2 forme utilizzate), visibile nell'anteprima dell'istogramma e nel pannello dei controlli della maschera. L'immagine principale è un paesaggio con cielo nuvoloso e fiume, e l'interfaccia evidenzia l'uso della fusione moltiplicativa per modificare localmente il contrasto o la luminosità, come indicato dal narratore." src="screenshots/frame_01380_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale personalizzata e la modalità di fusione impostata su 'multiply'. È attiva una maschera disegnata (2 forme utilizzate), visibile nell'anteprima dell'istogramma e nel pannello dei controlli della maschera. L'immagine principale è un paesaggio con cielo nuvoloso e fiume, e l'interfaccia evidenzia l'uso della fusione moltiplicativa per modificare localmente il contrasto o la luminosità, come indicato dal narratore.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>curve smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display exposure mask</td>
+<td>False</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>2 shapes used</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale modificata manualmente (punto trascinato verso l'alto nella porzione media delle tonalità) per aumentare il contrasto locale e la vivacità dell'immagine. È attiva una maschera disegnata (2 forme), ma non è applicata alcuna raffinazione. L'immagine principale è un paesaggio con cielo nuvoloso e valle verde, visibilmente migliorata rispetto alla versione originale, come suggerito dal narratore che parla di 'before and after' spettacolare e di ulteriore potenziale con il contrasto locale." src="screenshots/frame_01456_880.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale modificata manualmente (punto trascinato verso l'alto nella porzione media delle tonalità) per aumentare il contrasto locale e la vivacità dell'immagine. È attiva una maschera disegnata (2 forme), ma non è applicata alcuna raffinazione. L'immagine principale è un paesaggio con cielo nuvoloso e valle verde, visibilmente migliorata rispetto alla versione originale, come suggerito dal narratore che parla di 'before and after' spettacolare e di ulteriore potenziale con il contrasto locale.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.35 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>curve smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display exposure mask</td>
+<td>False</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>2 shapes used</td>
+</tr>
+<tr>
+<td>mask refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>tone equalizer</li>
+<li>mask manager</li>
+<li>RGB color balance</li>
+<li>color calibration</li>
+<li>tone curve</li>
+</ul>
+<hr />
+<h2 id="7-recupero-dettagli-del-cielo-e-correzione-colore-avanzata">7. Recupero dettagli del cielo e correzione colore avanzata<a class="headerlink" href="#7-recupero-dettagli-del-cielo-e-correzione-colore-avanzata" title="Permanent link">&para;</a></h2>
+<p><strong>[26:00 – 33:04]</strong>
+ | <a href="https://www.youtube.com/watch?v=YlW1wpoPho0&amp;t=1560">Guarda nel video</a></p>
+<p>Elaborazione di un cielo slavato utilizzando exposure e tone equalizer in modalità moltiplica con maschere parametriche e raster. Viene affrontata la gestione delle dominanti cromatiche, la riduzione degli aloni tramite il fulcro e la correzione finale con color calibration e channel mixer.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="L'immagine mostra un'area selezionata con una maschera parametrica (visibile come rettangolo giallo traslucido a sinistra) applicata al modulo 'exposure 1'. L'utente sta modificando la selezione per isolare il cielo, lasciando inalterati i dettagli in legno e strutture sullo sfondo. La maschera è attiva e si vede chiaramente il suo confine netto; il narratore intende regolare il feathering e il blur per fondere meglio i bordi e coprire eventuali buchi nella selezione." src="screenshots/frame_01590_000.jpg" /></p>
+<p><em>L'immagine mostra un'area selezionata con una maschera parametrica (visibile come rettangolo giallo traslucido a sinistra) applicata al modulo 'exposure 1'. L'utente sta modificando la selezione per isolare il cielo, lasciando inalterati i dettagli in legno e strutture sullo sfondo. La maschera è attiva e si vede chiaramente il suo confine netto; il narratore intende regolare il feathering e il blur per fondere meglio i bordi e coprire eventuali buchi nella selezione.</em></p>
+<p><strong>Modulo:</strong> exposure 1</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>input</td>
+<td>(138.2) 108 115 180 187</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'exposure 1' attivo con la modalità di fusione impostata su 'multiply'. È stata applicata una maschera (visibile dal cursore sull'elenco delle maschere e dai parametri di feathering/blurring), presumibilmente per selezionare il cielo, come indicato dal narratore. L'istogramma a destra mostra una distribuzione concentrata nelle tonalità scure/midtone, coerente con un'immagine sottoesposta o con il cielo selezionato. Il risultato visivo nell'anteprima mostra un cielo più dettagliato ma con un leggero shift cromatico verso il verde, come menzionato nel contesto." src="screenshots/frame_01650_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure 1' attivo con la modalità di fusione impostata su 'multiply'. È stata applicata una maschera (visibile dal cursore sull'elenco delle maschere e dai parametri di feathering/blurring), presumibilmente per selezionare il cielo, come indicato dal narratore. L'istogramma a destra mostra una distribuzione concentrata nelle tonalità scure/midtone, coerente con un'immagine sottoesposta o con il cielo selezionato. Il risultato visivo nell'anteprima mostra un cielo più dettagliato ma con un leggero shift cromatico verso il verde, come menzionato nel contesto.</em></p>
+<p><strong>Modulo:</strong> exposure 1</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>30.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>7.1 px</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale personalizzata visibile nel grafico a destra. L'immagine principale è una scena costiera con strutture in legno su piloni e cielo nuvoloso, con un aspetto prevalentemente grigio-verdastro. Il pannello di sinistra mostra lo storico delle operazioni, con 'tone equalizer' selezionato come passo 27. Il narratore sta descrivendo l'intenzione di usare una maschera parametrica e una versione in bianco e nero per isolare il cielo, ma al momento della cattura non è attiva alcuna maschera (il pulsante 'display exposure mask' è disattivato)." src="screenshots/frame_01673_799.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con una curva tonale personalizzata visibile nel grafico a destra. L'immagine principale è una scena costiera con strutture in legno su piloni e cielo nuvoloso, con un aspetto prevalentemente grigio-verdastro. Il pannello di sinistra mostra lo storico delle operazioni, con 'tone equalizer' selezionato come passo 27. Il narratore sta descrivendo l'intenzione di usare una maschera parametrica e una versione in bianco e nero per isolare il cielo, ma al momento della cattura non è attiva alcuna maschera (il pulsante 'display exposure mask' è disattivato).</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>advanced</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display_exposure_mask</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. È visibile un grafico a curve con punti di controllo orizzontali (nessuna modifica significativa della curva), e un istogramma RGB a destra. Il menu contestuale 'normal &amp; difference modes' è aperto, con l'opzione 'multiply' evidenziata, indicando che l'utente sta sperimentando modalità di fusione come descritto nel contesto. L'immagine principale mostra una scena con cielo nuvoloso e strutture in legno su uno sperone roccioso; il cielo appare particolarmente scuro e saturato, coerentemente con l'applicazione di 'blend mode multiply' in modalità 'scene referred', come menzionato dal narratore." src="screenshots/frame_01720_799.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. È visibile un grafico a curve con punti di controllo orizzontali (nessuna modifica significativa della curva), e un istogramma RGB a destra. Il menu contestuale 'normal &amp; difference modes' è aperto, con l'opzione 'multiply' evidenziata, indicando che l'utente sta sperimentando modalità di fusione come descritto nel contesto. L'immagine principale mostra una scena con cielo nuvoloso e strutture in legno su uno sperone roccioso; il cielo appare particolarmente scuro e saturato, coerentemente con l'applicazione di 'blend mode multiply' in modalità 'scene referred', come menzionato dal narratore.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display_exposure_mask</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' attivo con blend mode impostato su 'multiply', che ha reso il cielo estremamente drammatico e scuro, causando un'eccessiva saturazione dei toni verdi-grigi e un evidente halo intorno alle strutture in primo piano (come le piattaforme di legno). L'istogramma a destra mostra una forte concentrazione di pixel nelle ombre e nei mezzi toni, con pochi dettagli nelle luci. Il cursore del grafico tonale è piatto nella parte centrale, indicando poca variazione dinamica. L'utente sta cercando di ridurre l’effetto troppo marcato usando la maschera di fusione (blend fork), pur volendo preservare i dettagli dell’immagine." src="screenshots/frame_01740_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' attivo con blend mode impostato su 'multiply', che ha reso il cielo estremamente drammatico e scuro, causando un'eccessiva saturazione dei toni verdi-grigi e un evidente halo intorno alle strutture in primo piano (come le piattaforme di legno). L'istogramma a destra mostra una forte concentrazione di pixel nelle ombre e nei mezzi toni, con pochi dettagli nelle luci. Il cursore del grafico tonale è piatto nella parte centrale, indicando poca variazione dinamica. L'utente sta cercando di ridurre l’effetto troppo marcato usando la maschera di fusione (blend fork), pur volendo preservare i dettagli dell’immagine.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend fulcrum</td>
+<td>0.0 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>curve smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display exposure mask</td>
+<td>disattivato</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>exposure</li>
+<li>tone equalizer</li>
+<li>color calibration</li>
+<li>channel mixer</li>
+<li>parametric mask</li>
+<li>drawn mask</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Modalità di fusione (Blend Mode)</strong></td>
+<td>Multiply (Moltiplica), Source Mix (Miscela sorgente), Blend Fulcrum (Fulcro di fusione), Opzioni di fusione (Blending Options)</td>
+</tr>
+<tr>
+<td><strong>Esposizione (Exposure)</strong></td>
+<td>Cursore esposizione</td>
+</tr>
+<tr>
+<td><strong>Colorizza (Colorize)</strong></td>
+<td>Selezione colore uniforme, Desaturazione</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento colore RGB (Color Balance RGB)</strong></td>
+<td>Luminanza, Contrasto</td>
+</tr>
+<tr>
+<td><strong>low pass</strong></td>
+<td>modalità fusione (moltiplica), luminosità, oscurità, saturazione</td>
+</tr>
+<tr>
+<td><strong>blurs</strong></td>
+<td>modalità fusione (moltiplica), concavità, lame del diaframma</td>
+</tr>
+<tr>
+<td><strong>tone equalizer</strong></td>
+<td>modalità fusione (moltiplica), curva tonale semplice, maschera raster, fulcro della fusione, maschera gradiente</td>
+</tr>
+<tr>
+<td><strong>mask manager</strong></td>
+<td>modalità intersezione</td>
+</tr>
+<tr>
+<td><strong>exposure</strong></td>
+<td>modalità fusione (moltiplica), maschera parametrica (luminanza, tonalità)</td>
+</tr>
+<tr>
+<td><strong>color calibration</strong></td>
+<td>riduzione dominanti cromatiche, bilanciamento del bianco automatico</td>
+</tr>
+<tr>
+<td><strong>channel mixer</strong></td>
+<td>maschera parametrica/disegnata, rimozione canali colore (blu/rosso)</td>
+</tr>
+<tr>
+<td><strong>tone curve</strong></td>
+<td>contrasto locale</td>
+</tr>
+<tr>
+<td><strong>RGB scene referred</strong></td>
+<td>modalità fusione (moltiplica), fulcro della fusione</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> Nel flusso di lavoro scene-referred, i valori di luminanza non sono limitati a 1. Moltiplicando valori &gt;1, la luminosità aumenta, permettendo di usare la modalità Moltiplica per aumentare il contrasto (scurisce le ombre, schiarisce le luci). — <em>Quando si lavora con file RAW e si cerca di aumentare il contrasto senza clip.</em>
+- Il parametro Blend Fulcrum agisce come un offset di esposizione: i valori sotto il fulcro si scuriscono, quelli sopra si schiariscono. — <em>Regolazione fine del contrasto tramite modalità di fusione.</em>
+<strong>Attenzione:</strong> Evitare di usare il modulo Esposizione in modalità Moltiplica per compensare l'oscuramento, poiché moltiplicare valori già alti porta rapidamente al clipping delle alte luci. — <em>Correzione dell'esposizione dopo aver applicato la fusione Moltiplica.</em>
+<strong>Importante:</strong> Per aggiungere contrasto preservando le alte luci, utilizzare il modulo Colorizza completamente desaturato (grigio uniforme) in modalità Moltiplica invece del modulo Esposizione. — <em>Workflow alternativo per il controllo del contrasto e della saturazione.</em>
+<strong>Importante:</strong> Se il parametro Blend Fulcrum non è visibile, accedere alle Opzioni di fusione e impostare il flusso di lavoro su 'Scene referred' per renderlo disponibile. — <em>Configurazione dell'interfaccia per accedere ai controlli avanzati di fusione.</em>
+- Il modulo Bilanciamento colore RGB offre generalmente un controllo del contrasto più efficace e naturale rispetto alla combinazione Colorizza+Moltiplica. — <em>Scelta dello strumento ottimale per la regolazione del contrasto.</em>
+- Utilizzare la modalità intersezione nel Mask Manager per combinare più maschere e isolare con precisione l'area di interesse. — <em>Quando si lavora con maschere multiple (es. gradienti opposti) per targeting selettivo.</em>
+<strong>Attenzione:</strong> Scureire leggermente l'area di partenza prima di applicare la modalità moltiplica per evitare il clipping delle alte luci. — <em>Prima di applicare la fusione moltiplica su cieli o aree già luminose.</em>
+- La combinazione di sfocatura e modalità moltiplica genera un effetto bloom, utile per stili vintage o creativi. — <em>Quando si cerca un effetto di diffusione della luce o alone luminoso.</em>
+<strong>Attenzione:</strong> Attenzione alle forti dominanti di colore e falsi colori generati dall'applicazione ripetuta o aggressiva della moltiplica. — <em>Durante l'uso intensivo della modalità moltiplica, specialmente su immagini già sature.</em>
+<strong>Importante:</strong> Regolare il 'fulcro' (blend fulcrum) per controllare l'intensità dell'effetto e ridurre la comparsa di aloni indesiderati. — <em>Quando l'effetto moltiplica risulta troppo aggressivo o crea bordi marcati e innaturali.</em>
+<strong>Attenzione:</strong> Le maschere raster copiano esattamente la maschera di un altro modulo ma non permettono modifiche successive; usare con cautela. — <em>Quando si desidera riutilizzare una maschera complessa senza doverla ricreare manualmente.</em>
+- Utilizzare il feathering e la soglia dettaglio per rifinire le maschere parametriche e disegnate, eliminando buchi e transizioni brusche. — <em>Durante la creazione di maschere per isolare il cielo o aree specifiche con bordi irregolari.</em>
+<strong>Importante:</strong> Correggere sistematicamente le alterazioni cromatiche post-moltiplica con Color Calibration o Channel Mixer per mantenere un aspetto naturale. — <em>Fase finale di correzione colore dopo aver applicato contrasti locali con fusione moltiplica.</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:21:57.680313.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

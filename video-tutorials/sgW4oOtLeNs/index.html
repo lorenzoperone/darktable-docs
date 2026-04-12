@@ -1,0 +1,2874 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/sgW4oOtLeNs/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Darktable first steps EP05 - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-darktable-first-steps-ep05" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Darktable first steps EP05
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-individuazione-del-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e individuazione del modulo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e individuazione del modulo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-funzionamento-del-filtro-di-frequenza-e-schede" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Funzionamento del filtro di frequenza e schede
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Funzionamento del filtro di frequenza e schede">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-applicazione-della-nitidezza-e-gestione-degli-artefatti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Applicazione della nitidezza e gestione degli artefatti
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Applicazione della nitidezza e gestione degli artefatti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mascheramento-disegnato-e-regolazione-fine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Mascheramento disegnato e regolazione fine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mascheramento disegnato e regolazione fine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-utilizzo-dei-preset-e-applicazione-su-un-secondo-scatto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Utilizzo dei preset e applicazione su un secondo scatto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Utilizzo dei preset e applicazione su un secondo scatto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-riduzione-del-rumore-con-il-contrast-equalizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Riduzione del rumore con il Contrast Equalizer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Riduzione del rumore con il Contrast Equalizer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-riduzione-del-rumore-e-nitidezza-locale-con-lequalizzatore-di-contrasto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Riduzione del rumore e nitidezza locale con l'equalizzatore di contrasto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Riduzione del rumore e nitidezza locale con l&#39;equalizzatore di contrasto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-darktable-first-steps-ep05">[ENG] Darktable first steps EP05<a class="headerlink" href="#eng-darktable-first-steps-ep05" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs">https://www.youtube.com/watch?v=sgW4oOtLeNs</a>
+<strong>Generato:</strong> 2026-04-12T01:24:14.116384
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-individuazione-del-modulo">Introduzione e individuazione del modulo</a></li>
+<li><a href="#funzionamento-del-filtro-di-frequenza-e-schede">Funzionamento del filtro di frequenza e schede</a></li>
+<li><a href="#applicazione-della-nitidezza-e-gestione-degli-artefatti">Applicazione della nitidezza e gestione degli artefatti</a></li>
+<li><a href="#mascheramento-disegnato-e-regolazione-fine">Mascheramento disegnato e regolazione fine</a></li>
+<li><a href="#utilizzo-dei-preset-e-applicazione-su-un-secondo-scatto">Utilizzo dei preset e applicazione su un secondo scatto</a></li>
+<li><a href="#riduzione-del-rumore-con-il-contrast-equalizer">Riduzione del rumore con il Contrast Equalizer</a></li>
+<li><a href="#riduzione-del-rumore-e-nitidezza-locale-con-l'equalizzatore-di-contrasto">Riduzione del rumore e nitidezza locale con l'equalizzatore di contrasto</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-individuazione-del-modulo">1. Introduzione e individuazione del modulo<a class="headerlink" href="#1-introduzione-e-individuazione-del-modulo" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del Contrast Equalizer, spiegazione della pipeline di darktable e individuazione del modulo nella scheda degli effetti (workflow scene-referred).</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella sezione destra. È selezionata la scheda 'luma', e sotto è visibile la griglia del grafico dell'equalizzatore con il controllo 'mix' impostato a 1.000. L'istogramma RGB in alto a destra mostra la distribuzione dei toni dell'immagine (lavanda con ape), con i toni scuri a sinistra e chiari a destra, coerentemente con la spiegazione del narratore sulle convenzioni degli istogrammi. Il modulo 'contrast equalizer' presenta una griglia interattiva per regolare il contrasto locale, ma non sono presenti maschere attive né modifiche evidenti applicate all'immagine al momento dello screenshot." src="screenshots/frame_00119_480.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella sezione destra. È selezionata la scheda 'luma', e sotto è visibile la griglia del grafico dell'equalizzatore con il controllo 'mix' impostato a 1.000. L'istogramma RGB in alto a destra mostra la distribuzione dei toni dell'immagine (lavanda con ape), con i toni scuri a sinistra e chiari a destra, coerentemente con la spiegazione del narratore sulle convenzioni degli istogrammi. Il modulo 'contrast equalizer' presenta una griglia interattiva per regolare il contrasto locale, ma non sono presenti maschere attive né modifiche evidenti applicate all'immagine al momento dello screenshot.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: un primo piano di un'ape su un fiore di lavanda. A destra è visibile il pannello dei moduli della pipeline (attualmente in modalità lighttable), con i moduli elencati ma non espansi; nessun modulo è attivo per l'editing. In basso sono presenti le miniature della collezione, e nella barra dello stato si legge '1 image of 3 (#3) in current collection is selected'. Il narratore sta per passare alla darkroom per aggiungere sharpening." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: un primo piano di un'ape su un fiore di lavanda. A destra è visibile il pannello dei moduli della pipeline (attualmente in modalità lighttable), con i moduli elencati ma non espansi; nessun modulo è attivo per l'editing. In basso sono presenti le miniature della collezione, e nella barra dello stato si legge '1 image of 3 (#3) in current collection is selected'. Il narratore sta per passare alla darkroom per aggiungere sharpening.</em></p>
+<p><strong>Modulo:</strong> darkroom</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>white_balance</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>contrast_equalizer</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>tone_equalizer</td>
+<td>non visibile</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella vista 'import', con tre immagini visualizzate in anteprima (spiaggia, cane in corsa, ape su lavanda). Nessuna immagine è selezionata (0/3), quindi il modulo 'darkroom' non è ancora attivato. Il pannello destro mostra la sezione 'select' con opzioni per gestire le immagini (remove, trash, copy, ecc.), ma nessun modulo di ritocco (es. sharpening) è attivo. Il narratore sta per aprire l'immagine dell'ape con la lavanda per applicare lo sharpening con maschera, ma al momento dello screenshot l'operazione non è ancora stata eseguita." src="screenshots/frame_00020_453.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella vista 'import', con tre immagini visualizzate in anteprima (spiaggia, cane in corsa, ape su lavanda). Nessuna immagine è selezionata (0/3), quindi il modulo 'darkroom' non è ancora attivato. Il pannello destro mostra la sezione 'select' con opzioni per gestire le immagini (remove, trash, copy, ecc.), ma nessun modulo di ritocco (es. sharpening) è attivo. Il narratore sta per aprire l'immagine dell'ape con la lavanda per applicare lo sharpening con maschera, ma al momento dello screenshot l'operazione non è ancora stata eseguita.</em></p>
+<p><strong>Modulo:</strong> import</p>
+<p><img alt="Lo screenshot mostra una persona (non l'interfaccia di darktable), probabilmente il narratore del tutorial, mentre parla. Non è visibile alcuna parte dell'interfaccia di darktable: né il modulo 'contrast equalizer', né slider, né maschere, né istogrammi. L'immagine è un frame video con sfondo interno e il soggetto al centro. Il contesto indica che il tutorial sta per introdurre il modulo 'contrast equalizer' per applicare sharpening selettivo, ma l'interfaccia non è ancora mostrata." src="screenshots/frame_00000_920.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (non l'interfaccia di darktable), probabilmente il narratore del tutorial, mentre parla. Non è visibile alcuna parte dell'interfaccia di darktable: né il modulo 'contrast equalizer', né slider, né maschere, né istogrammi. L'immagine è un frame video con sfondo interno e il soggetto al centro. Il contesto indica che il tutorial sta per introdurre il modulo 'contrast equalizer' per applicare sharpening selettivo, ma l'interfaccia non è ancora mostrata.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<p><img alt="Lo screenshot mostra una persona (non l'interfaccia di darktable), probabilmente il narratore del tutorial. Non è visibile alcuna porzione dell'interfaccia di darktable: né il modulo 'contrast equalizer', né slider, né maschere, né istogrammi. L'immagine è un frame video con soggetto umano in primo piano, sfondo interno con tende e finestra. Pertanto, non si possono estrarre dati UI o parametri dallo screenshot stesso." src="screenshots/frame_00005_679.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (non l'interfaccia di darktable), probabilmente il narratore del tutorial. Non è visibile alcuna porzione dell'interfaccia di darktable: né il modulo 'contrast equalizer', né slider, né maschere, né istogrammi. L'immagine è un frame video con soggetto umano in primo piano, sfondo interno con tende e finestra. Pertanto, non si possono estrarre dati UI o parametri dallo screenshot stesso.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+</ul>
+<hr />
+<h2 id="2-funzionamento-del-filtro-di-frequenza-e-schede">2. Funzionamento del filtro di frequenza e schede<a class="headerlink" href="#2-funzionamento-del-filtro-di-frequenza-e-schede" title="Permanent link">&para;</a></h2>
+<p><strong>[02:30 – 05:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=150">Guarda nel video</a></p>
+<p>Spiegazione della differenza tra frequenze basse (coarse) e alte (fine), panoramica sulle schede Luma, Chroma ed Edges e dimostrazione dell'effetto del contrasto sulle diverse aree dell'immagine.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata e una curva di contrasto intensificata (mix a 1.000), che aumenta significativamente il contrasto nelle aree illuminate e scure dello sfondo, mentre la parte superiore del fiore di lavanda rimane invariata — indicando l’uso di una maschera di frequenza (frequency mask) per limitare l’effetto alle zone di bassa frequenza (sfondo sfocato), risparmiando i dettagli ad alta frequenza (fiore e ape). È visibile anche il toggle 'graduated density', suggerendo l’uso di una maschera graduale per affinare l’applicazione." src="screenshots/frame_00240_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata e una curva di contrasto intensificata (mix a 1.000), che aumenta significativamente il contrasto nelle aree illuminate e scure dello sfondo, mentre la parte superiore del fiore di lavanda rimane invariata — indicando l’uso di una maschera di frequenza (frequency mask) per limitare l’effetto alle zone di bassa frequenza (sfondo sfocato), risparmiando i dettagli ad alta frequenza (fiore e ape). È visibile anche il toggle 'graduated density', suggerendo l’uso di una maschera graduale per affinare l’applicazione.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>luma</td>
+<td>curva modificata con aumento della pendenza (alta contrasto)</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>non attivo o neutro</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>non attivo o neutro</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo nella sezione dei moduli a destra, con la tab 'luma' selezionata. È visibile una curva interattiva con due punti di controllo: uno per le frequenze 'coarse' (basse) e uno per le 'fine' (alte), posizionati rispettivamente a sinistra e destra della curva. Lo slider 'smooth' è impostato a circa 0.4 e 'mix' a 1.000. L’immagine centrale è un primo piano di lavanda con un’ape, con sfondo leggermente sfocato. Il narratore sta spiegando come usare questo modulo per ridurre il contrasto nelle basse frequenze (sfondo) e preservare i dettagli nelle alte frequenze, in contrapposizione alla nitidezza tradizionale." src="screenshots/frame_00270_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo nella sezione dei moduli a destra, con la tab 'luma' selezionata. È visibile una curva interattiva con due punti di controllo: uno per le frequenze 'coarse' (basse) e uno per le 'fine' (alte), posizionati rispettivamente a sinistra e destra della curva. Lo slider 'smooth' è impostato a circa 0.4 e 'mix' a 1.000. L’immagine centrale è un primo piano di lavanda con un’ape, con sfondo leggermente sfocato. Il narratore sta spiegando come usare questo modulo per ridurre il contrasto nelle basse frequenze (sfondo) e preservare i dettagli nelle alte frequenze, in contrapposizione alla nitidezza tradizionale.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luma</td>
+<td>attivo (tab selezionato)</td>
+</tr>
+<tr>
+<td>coarse</td>
+<td>circa 0.35 (posizione del punto di controllo nella curva)</td>
+</tr>
+<tr>
+<td>fine</td>
+<td>circa 0.65 (posizione del punto di controllo nella curva)</td>
+</tr>
+<tr>
+<td>smooth</td>
+<td>circa 0.4 (slider visibile sotto la curva)</td>
+</tr>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+</ul>
+<hr />
+<h2 id="3-applicazione-della-nitidezza-e-gestione-degli-artefatti">3. Applicazione della nitidezza e gestione degli artefatti<a class="headerlink" href="#3-applicazione-della-nitidezza-e-gestione-degli-artefatti" title="Permanent link">&para;</a></h2>
+<p><strong>[05:00 – 07:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=300">Guarda nel video</a></p>
+<p>Aumento del contrasto sulle alte frequenze per la nitidezza, identificazione del rumore e delle alterazioni cromatiche indesiderate sullo sfondo quando si applica la nitidezza in modo globale.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. L'immagine visualizzata è un primo piano di un fiore viola su sfondo verde, con evidente rumore (grana) nelle aree verdi sfocate, come menzionato dal narratore. L'istogramma RGB è visibile a destra e lo slider 'mix' è impostato al massimo (1.000), indicando che l'effetto del contrast equalizer è applicato al 100%. Il cursore del mouse è posizionato sullo sfondo verde, dove il narratore indica la presenza di rumore aggiuntivo dovuto all'aumento del contrasto." src="screenshots/frame_00330_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. L'immagine visualizzata è un primo piano di un fiore viola su sfondo verde, con evidente rumore (grana) nelle aree verdi sfocate, come menzionato dal narratore. L'istogramma RGB è visibile a destra e lo slider 'mix' è impostato al massimo (1.000), indicando che l'effetto del contrast equalizer è applicato al 100%. Il cursore del mouse è posizionato sullo sfondo verde, dove il narratore indica la presenza di rumore aggiuntivo dovuto all'aumento del contrasto.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di un fiore viola con dettagli pelosi e una piccola insetto visibile sulla superficie; lo sfondo è sfocato in verde. A destra, l'istogramma RGB e il grafico del contrast equalizer mostrano una curva leggermente modificata (con lieve aumento nei toni medi). Il narratore sta dimostrando l'effetto di attivazione/disattivazione del modulo per valutare il livello di nitidezza, suggerendo che la sharpening è sufficiente senza essere eccessiva. Si notano anche le informazioni tecniche della foto in basso: 1/60s, f/10.0, 60mm, ISO 400." src="screenshots/frame_00313_779.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di un fiore viola con dettagli pelosi e una piccola insetto visibile sulla superficie; lo sfondo è sfocato in verde. A destra, l'istogramma RGB e il grafico del contrast equalizer mostrano una curva leggermente modificata (con lieve aumento nei toni medi). Il narratore sta dimostrando l'effetto di attivazione/disattivazione del modulo per valutare il livello di nitidezza, suggerendo che la sharpening è sufficiente senza essere eccessiva. Si notano anche le informazioni tecniche della foto in basso: 1/60s, f/10.0, 60mm, ISO 400.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. L'immagine principale è un primo piano di lavanda con un'ape, con sfondo sfocato. L'istogramma a destra indica una distribuzione tonale bilanciata con picchi nei toni verdi e viola. Il narratore sta spiegando che ha aggiunto rumore e contrasto fine dettaglio, evidenziando artefatti sullo sfondo (soprattutto nelle aree viola scure), e intende limitare l'effetto di potenziamento del contrasto solo al fiore e all'ape tramite maschere — ma al momento nessuna maschera è attiva." src="screenshots/frame_00358_019.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. L'immagine principale è un primo piano di lavanda con un'ape, con sfondo sfocato. L'istogramma a destra indica una distribuzione tonale bilanciata con picchi nei toni verdi e viola. Il narratore sta spiegando che ha aggiunto rumore e contrasto fine dettaglio, evidenziando artefatti sullo sfondo (soprattutto nelle aree viola scure), e intende limitare l'effetto di potenziamento del contrasto solo al fiore e all'ape tramite maschere — ma al momento nessuna maschera è attiva.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>luma</td>
+<td>attivo (tab selezionato)</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>disattivo</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>disattivo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di lavanda con un'ape in volo, focalizzata sul fiore centrale; lo sfondo è sfocato ma presenta dettagli fini e rumore visibile, soprattutto nelle aree viola più scure. Il narratore intende limitare l'effetto di potenziamento del contrasto (o sharpening) solo al fiore e all'ape, evitando di accentuare il rumore e le imperfezioni nello sfondo. Non sono attive maschere, quindi l'elaborazione è applicata globalmente." src="screenshots/frame_00360_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di lavanda con un'ape in volo, focalizzata sul fiore centrale; lo sfondo è sfocato ma presenta dettagli fini e rumore visibile, soprattutto nelle aree viola più scure. Il narratore intende limitare l'effetto di potenziamento del contrasto (o sharpening) solo al fiore e all'ape, evitando di accentuare il rumore e le imperfezioni nello sfondo. Non sono attive maschere, quindi l'elaborazione è applicata globalmente.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>luma</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>disattivo</td>
+</tr>
+<tr>
+<td>edges</td>
+<td>disattivo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine visualizzata è un primo piano di un fiore viola su sfondo verde sfocato. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra tre miniature di immagini. Il narratore sta discutendo dell'effetto dello sharpening e del rumore introdotto nelle aree verdi, suggerendo che il modulo attivo non sia direttamente lo sharpening ma che una precedente operazione di sharpening abbia lasciato tracce di rumore nel canale verde. Il modulo 'contrast equalizer' è attualmente impostato con mix a 1.000, ma non sembra essere la causa diretta del rumore menzionato." src="screenshots/frame_00326_100.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine visualizzata è un primo piano di un fiore viola su sfondo verde sfocato. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra tre miniature di immagini. Il narratore sta discutendo dell'effetto dello sharpening e del rumore introdotto nelle aree verdi, suggerendo che il modulo attivo non sia direttamente lo sharpening ma che una precedente operazione di sharpening abbia lasciato tracce di rumore nel canale verde. Il modulo 'contrast equalizer' è attualmente impostato con mix a 1.000, ma non sembra essere la causa diretta del rumore menzionato.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+</ul>
+<hr />
+<h2 id="4-mascheramento-disegnato-e-regolazione-fine">4. Mascheramento disegnato e regolazione fine<a class="headerlink" href="#4-mascheramento-disegnato-e-regolazione-fine" title="Permanent link">&para;</a></h2>
+<p><strong>[07:30 – 10:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=450">Guarda nel video</a></p>
+<p>Utilizzo della maschera disegnata (path) per isolare il soggetto, tecniche di chiusura del tracciato, visualizzazione della maschera e regolazione di sfumatura e dimensioni.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con una maschera disegnata a mano (forma libera) attiva sull'immagine, evidenziata in giallo con bordo tratteggiato. La maschera è applicata su una porzione di un fiore (lavanda), mentre il resto dell'immagine appare in bianco e nero. Il modulo 'mask manager' è aperto a destra, con i controlli per la gestione della maschera; lo strumento di modifica della maschera è attivo, come indicato dal cursore all'interno della maschera gialla e dalla descrizione del narratore che spiega come regolare la feathering e la dimensione tramite la rotellina del mouse senza premere tasti. L'istogramma RGB e il grafico tonale sono visibili nella sezione 'mix'." src="screenshots/frame_00600_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con una maschera disegnata a mano (forma libera) attiva sull'immagine, evidenziata in giallo con bordo tratteggiato. La maschera è applicata su una porzione di un fiore (lavanda), mentre il resto dell'immagine appare in bianco e nero. Il modulo 'mask manager' è aperto a destra, con i controlli per la gestione della maschera; lo strumento di modifica della maschera è attivo, come indicato dal cursore all'interno della maschera gialla e dalla descrizione del narratore che spiega come regolare la feathering e la dimensione tramite la rotellina del mouse senza premere tasti. L'istogramma RGB e il grafico tonale sono visibili nella sezione 'mix'.</em></p>
+<p><strong>Modulo:</strong> mask manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>shapes used</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine di lavanda e un'ape in primo piano. È attivo il modulo 'graduated density' nella sezione dei moduli a destra, ma è visibile una maschera disegnata (outline trasparente con bordo grigio) che circonda il fiore e l'ape, indicando che è stata applicata una maschera manuale per limitare l'effetto di un precedente modulo (probabilmente sharpening, come menzionato nel contesto). L'istogramma RGB è visibile in alto a destra, e il pannello delle maschere mostra '1 shape used'. Il cursore è posizionato sul pulsante 'show and edit mask elements' (icona quadrato con freccia), pronto per essere cliccato per modificare la maschera." src="screenshots/frame_00630_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine di lavanda e un'ape in primo piano. È attivo il modulo 'graduated density' nella sezione dei moduli a destra, ma è visibile una maschera disegnata (outline trasparente con bordo grigio) che circonda il fiore e l'ape, indicando che è stata applicata una maschera manuale per limitare l'effetto di un precedente modulo (probabilmente sharpening, come menzionato nel contesto). L'istogramma RGB è visibile in alto a destra, e il pannello delle maschere mostra '1 shape used'. Il cursore è posizionato sul pulsante 'show and edit mask elements' (icona quadrato con freccia), pronto per essere cliccato per modificare la maschera.</em></p>
+<p><strong>Modulo:</strong> graduated density</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>53.9</td>
+</tr>
+<tr>
+<td>mask blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>input image</td>
+<td>53.9</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo con una maschera disegnata (visibile come contorno trasparente) applicata esclusivamente al fiore di lavanda, mentre lo sfondo rimane non modificato. L'istogramma RGB è visibile in alto a destra, e nella sezione maschere si legge '1 shape used', indicando che una sola forma è stata tracciata. Il cursore del mouse è posizionato sopra il fiore, e la maschera è attiva ma non visualizzata in modalità overlay (probabilmente perché il toggle 'show and edit mask elements' è disattivato, come suggerito dal contesto)." src="screenshots/frame_00638_620.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo con una maschera disegnata (visibile come contorno trasparente) applicata esclusivamente al fiore di lavanda, mentre lo sfondo rimane non modificato. L'istogramma RGB è visibile in alto a destra, e nella sezione maschere si legge '1 shape used', indicando che una sola forma è stata tracciata. Il cursore del mouse è posizionato sopra il fiore, e la maschera è attiva ma non visualizzata in modalità overlay (probabilmente perché il toggle 'show and edit mask elements' è disattivato, come suggerito dal contesto).</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>53.9</td>
+</tr>
+<tr>
+<td>mask_blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>input_image</td>
+<td>input image</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo, nella tab 'luma'. L'immagine principale è un primo piano di lavanda con un'ape in volo. Sul pannello destro sono visibili i controlli del modulo, inclusa la sezione 'drawn mask', che indica 'no mask used', confermando che nessuna maschera disegnata è attualmente applicata. Il narratore sta introducendo il concetto di maschera disegnata, ma al momento dello screenshot la maschera non è ancora stata creata. L'istogramma RGB e il grafico Luma sono visibili sopra i controlli." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo, nella tab 'luma'. L'immagine principale è un primo piano di lavanda con un'ape in volo. Sul pannello destro sono visibili i controlli del modulo, inclusa la sezione 'drawn mask', che indica 'no mask used', confermando che nessuna maschera disegnata è attualmente applicata. Il narratore sta introducendo il concetto di maschera disegnata, ma al momento dello screenshot la maschera non è ancora stata creata. L'istogramma RGB e il grafico Luma sono visibili sopra i controlli.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask blur</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+<li>Drawn Mask</li>
+</ul>
+<hr />
+<h2 id="5-utilizzo-dei-preset-e-applicazione-su-un-secondo-scatto">5. Utilizzo dei preset e applicazione su un secondo scatto<a class="headerlink" href="#5-utilizzo-dei-preset-e-applicazione-su-un-secondo-scatto" title="Permanent link">&para;</a></h2>
+<p><strong>[10:50 – 13:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=650">Guarda nel video</a></p>
+<p>Applicazione e modifica di un preset predefinito, creazione di una curva personalizzata per la nitidezza e applicazione del flusso di lavoro su una nuova immagine.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia di darktable mostra la vista 'darkroom' con una foto di un cane Cavalier King Charles in primo piano. Sul pannello destro, il modulo 'contrast equalizer' è evidenziato e attivo, con il cursore del mouse posizionato sopra di esso; il narratore menziona l'uso del preset 'sharpened' incluso in Darktable per applicare un effetto di nitidezza. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono presenti le miniature delle immagini della collezione corrente." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista 'darkroom' con una foto di un cane Cavalier King Charles in primo piano. Sul pannello destro, il modulo 'contrast equalizer' è evidenziato e attivo, con il cursore del mouse posizionato sopra di esso; il narratore menziona l'uso del preset 'sharpened' incluso in Darktable per applicare un effetto di nitidezza. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono presenti le miniature delle immagini della collezione corrente.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>preset</td>
+<td>sharpened</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. Sulla foto di un cane in movimento è visibile una maschera disegnata a mano (un cerchio parziale sopra la testa del cane), indicando che l'utente sta creando una maschera per applicare correzioni locali. Il pannello destro mostra l'istogramma e i controlli della maschera, con tutti i parametri di maschera impostati a zero, tranne 'no mask used' che è attivo, suggerendo che la maschera è stata disegnata ma non ancora applicata o attivata. Lo screenshot corrisponde alla fase descritta nel contesto: l'utente ha appena finito di tracciare una maschera intorno al cane per affinare i dettagli." src="screenshots/frame_00780_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. Sulla foto di un cane in movimento è visibile una maschera disegnata a mano (un cerchio parziale sopra la testa del cane), indicando che l'utente sta creando una maschera per applicare correzioni locali. Il pannello destro mostra l'istogramma e i controlli della maschera, con tutti i parametri di maschera impostati a zero, tranne 'no mask used' che è attivo, suggerendo che la maschera è stata disegnata ma non ancora applicata o attivata. Lo screenshot corrisponde alla fase descritta nel contesto: l'utente ha appena finito di tracciare una maschera intorno al cane per affinare i dettagli.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask_blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. È presente una maschera applicata (indicata da '1 shape used'), e il cursore del mouse è posizionato sopra il pulsante 'show and edit mask elements', che, secondo il contesto narrativo, è stato appena cliccato per nascondere la visualizzazione della maschera. Sullo sfondo si intravede un browser Chrome aperto su Google, ma l'attenzione è focalizzata sul pannello di controllo di darktable a destra, con istogramma RGB visibile in alto e controlli del modulo sotto. Il narratore sta discutendo dell'effetto di sharpening indesiderato fuori dalla maschera e sta riducendo l'intensità del contrast equalizer." src="screenshots/frame_00652_685.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. È presente una maschera applicata (indicata da '1 shape used'), e il cursore del mouse è posizionato sopra il pulsante 'show and edit mask elements', che, secondo il contesto narrativo, è stato appena cliccato per nascondere la visualizzazione della maschera. Sullo sfondo si intravede un browser Chrome aperto su Google, ma l'attenzione è focalizzata sul pannello di controllo di darktable a destra, con istogramma RGB visibile in alto e controlli del modulo sotto. Il narratore sta discutendo dell'effetto di sharpening indesiderato fuori dalla maschera e sta riducendo l'intensità del contrast equalizer.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>luma</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>53.9</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>input image</td>
+<td>53.9</td>
+</tr>
+<tr>
+<td>normal</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>1 shape used</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo nella sezione 'luma', con una maschera disegnata (1 shape used) applicata all'immagine. L'istogramma RGB è visibile in alto a destra, e l'immagine principale è un primo piano di lavanda con un'ape in volo. Il narratore sta discutendo dell'effetto del contrast equalizer, notando che l'attivazione del modulo produce un'eccessiva nitidezza, che successivamente riduce. Il pulsante 'show and edit mask elements' è stato menzionato come scomparso dopo il clic, indicando che la maschera era attiva ma non visibile nel momento dello screenshot." src="screenshots/frame_00658_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo nella sezione 'luma', con una maschera disegnata (1 shape used) applicata all'immagine. L'istogramma RGB è visibile in alto a destra, e l'immagine principale è un primo piano di lavanda con un'ape in volo. Il narratore sta discutendo dell'effetto del contrast equalizer, notando che l'attivazione del modulo produce un'eccessiva nitidezza, che successivamente riduce. Il pulsante 'show and edit mask elements' è stato menzionato come scomparso dopo il clic, indicando che la maschera era attiva ma non visibile nel momento dello screenshot.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>53.9</td>
+</tr>
+<tr>
+<td>mask blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>input image</td>
+<td>input image</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra una foto di lavanda con un'ape in primo piano. Sul pannello destro, la sezione 'other' è espansa e il modulo 'contrast equalizer' è attivo (indicato dal simbolo di accensione acceso). Gli altri moduli (watermark, framing, vignetting, grain, graduated density) sono disattivati. Non sono presenti maschere attive né istogrammi evidenziati. La barra degli strumenti inferiore mostra tre miniature, tra cui quella centrale raffigura un cane, coerentemente con il commento del narratore che menziona 'the photo of the dog'." src="screenshots/frame_00683_299.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra una foto di lavanda con un'ape in primo piano. Sul pannello destro, la sezione 'other' è espansa e il modulo 'contrast equalizer' è attivo (indicato dal simbolo di accensione acceso). Gli altri moduli (watermark, framing, vignetting, grain, graduated density) sono disattivati. Non sono presenti maschere attive né istogrammi evidenziati. La barra degli strumenti inferiore mostra tre miniature, tra cui quella centrale raffigura un cane, coerentemente con il commento del narratore che menziona 'the photo of the dog'.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>preset</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+</ul>
+<hr />
+<h2 id="6-riduzione-del-rumore-con-il-contrast-equalizer">6. Riduzione del rumore con il Contrast Equalizer<a class="headerlink" href="#6-riduzione-del-rumore-con-il-contrast-equalizer" title="Permanent link">&para;</a></h2>
+<p><strong>[13:20 – 15:45]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=800">Guarda nel video</a></p>
+<p>Utilizzo della curva nascosta per ridurre il rumore cromatico e di luminanza in foto ad alto ISO, con spiegazione delle tecniche di manipolazione della curva.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con una maschera disegnata a mano (drawn mask) attiva sull'immagine, visualizzata in giallo brillante su uno sfondo in bianco e nero. La maschera è stata appena creata o modificata, come indicato dal testo 'working...' al centro. Il modulo 'mask manager' è aperto a destra, con i parametri di feathering regolati a 44.6, mentre opacità, contrasto e blur della maschera sono a zero. L'utente sta affinando la maschera per un intervento di ritocco selettivo (probabilmente sharpening), seguendo la pratica di estendere leggermente il feathering per evitare bordi duri e garantire una transizione naturale." src="screenshots/frame_00810_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con una maschera disegnata a mano (drawn mask) attiva sull'immagine, visualizzata in giallo brillante su uno sfondo in bianco e nero. La maschera è stata appena creata o modificata, come indicato dal testo 'working...' al centro. Il modulo 'mask manager' è aperto a destra, con i parametri di feathering regolati a 44.6, mentre opacità, contrasto e blur della maschera sono a zero. L'utente sta affinando la maschera per un intervento di ritocco selettivo (probabilmente sharpening), seguendo la pratica di estendere leggermente il feathering per evitare bordi duri e garantire una transizione naturale.</em></p>
+<p><strong>Modulo:</strong> mask manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering radius</td>
+<td>44.6</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>mask blur</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine di un cane Cavalier King Charles Spaniel al centro. Il modulo attivo è 'sharpen', visibile nel pannello destro, con parametri regolati per un leggero rinforzo dei dettagli (radius 1.0, amount 0.5). Non sono presenti maschere attive, ma è visibile la sezione 'graduated density' come modulo aggiuntivo. L'istogramma RGB e il pannello di ricerca moduli sono attivi. Il narratore sta verificando l'effetto dello sharpening a 100% zoom, confermando che l'immagine è stata appena affinata senza eccessi." src="screenshots/frame_00818_399.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine di un cane Cavalier King Charles Spaniel al centro. Il modulo attivo è 'sharpen', visibile nel pannello destro, con parametri regolati per un leggero rinforzo dei dettagli (radius 1.0, amount 0.5). Non sono presenti maschere attive, ma è visibile la sezione 'graduated density' come modulo aggiuntivo. L'istogramma RGB e il pannello di ricerca moduli sono attivi. Il narratore sta verificando l'effetto dello sharpening a 100% zoom, confermando che l'immagine è stata appena affinata senza eccessi.</em></p>
+<p><strong>Modulo:</strong> sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>0.500</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>clipping</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di un cane Cavalier King Charles Spaniel, con evidente rumore digitale (grana) visibile sul pelo e sul muso, coerentemente con il commento del narratore sulla presenza di rumore e sull'uso di sharpening. È attiva una maschera disegnata (1 shape used), ma non è visibile nell'anteprima poiché la funzione 'invert mask' è disattivata e la maschera non è applicata in modalità preview. L'istogramma RGB in alto a destra indica una distribuzione luminosa bilanciata con leggera dominanza cromatica verde-gialla. Il narratore sta discutendo dell'effetto dello sharpening su un'immagine rumorosa, suggerendo che sia stato applicato un livello moderato di nitidezza." src="screenshots/frame_00827_600.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. L'immagine principale è un primo piano di un cane Cavalier King Charles Spaniel, con evidente rumore digitale (grana) visibile sul pelo e sul muso, coerentemente con il commento del narratore sulla presenza di rumore e sull'uso di sharpening. È attiva una maschera disegnata (1 shape used), ma non è visibile nell'anteprima poiché la funzione 'invert mask' è disattivata e la maschera non è applicata in modalità preview. L'istogramma RGB in alto a destra indica una distribuzione luminosa bilanciata con leggera dominanza cromatica verde-gialla. Il narratore sta discutendo dell'effetto dello sharpening su un'immagine rumorosa, suggerendo che sia stato applicato un livello moderato di nitidezza.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>1 shape used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Contrast Equalizer</li>
+</ul>
+<hr />
+<h2 id="7-riduzione-del-rumore-e-nitidezza-locale-con-lequalizzatore-di-contrasto">7. Riduzione del rumore e nitidezza locale con l'equalizzatore di contrasto<a class="headerlink" href="#7-riduzione-del-rumore-e-nitidezza-locale-con-lequalizzatore-di-contrasto" title="Permanent link">&para;</a></h2>
+<p><strong>[15:46 – 17:12]</strong>
+ | <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs&amp;t=946">Guarda nel video</a></p>
+<p>Dimostrazione dell'uso di una maschera circolare per applicare in modo selettivo l'equalizzatore di contrasto. Vengono regolate le curve per attenuare il rumore nelle aree ad alta frequenza e aumentare la nitidezza, con la precisazione che la riduzione del rumore andrebbe idealmente gestita a livello globale.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. È presente una maschera disegnata (1 shape used) applicata alla foto di un cane in movimento, con opacità al 100% e modalità di fusione 'normal'. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra i metadati dell'immagine (1/1250s, f/5.6, 347mm, ISO 2500). Il narratore sta spiegando che la maschera ha effetto solo all'interno della forma disegnata e che per ridurre il rumore globalmente sarebbe meglio applicare la correzione sull'intera immagine, non tramite maschera locale." src="screenshots/frame_01020_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella tab 'luma'. È presente una maschera disegnata (1 shape used) applicata alla foto di un cane in movimento, con opacità al 100% e modalità di fusione 'normal'. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra i metadati dell'immagine (1/1250s, f/5.6, 347mm, ISO 2500). Il narratore sta spiegando che la maschera ha effetto solo all'interno della forma disegnata e che per ridurre il rumore globalmente sarebbe meglio applicare la correzione sull'intera immagine, non tramite maschera locale.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>mix</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di contrasto</li>
+<li>maschere di disegno</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contrast Equalizer</strong></td>
+<td>Raggio di sfumatura (feathering), Scheda Chroma, Scheda Edges, Grafico di frequenza (nodi coarse/fine), Preset di nitidezza, Cursore di opacità uniforme, Curva nascosta per riduzione rumore, Maschera disegnata (path), Scheda Luma</td>
+</tr>
+<tr>
+<td><strong>equalizzatore di contrasto</strong></td>
+<td>aumento nitidezza, regolazione curve, riduzione rumore (alte frequenze)</td>
+</tr>
+<tr>
+<td><strong>maschere di disegno</strong></td>
+<td>mascheramento selettivo, ridimensionamento con tasto Shift, forma circolare</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Attenzione:</strong> Non applicare la nitidezza alle aree già sfocate o allo sfondo, poiché genera rumore, artefatti e alterazioni cromatiche indesiderate. — <em>Applicazione della nitidezza globale</em>
+- Utilizza il cursore di opacità uniforme sotto ogni modulo per attenuare rapidamente l'effetto sull'intera immagine se risulta troppo intenso. — <em>Regolazione rapida dell'intensità del modulo</em>
+- Per creare una maschera disegnata, usa lo strumento 'add path', clicca per tracciare i punti e fai clic destro per chiudere e applicare la maschera. — <em>Isolamento di aree specifiche per l'elaborazione</em>
+- Per regolare la sfumatura della maschera, tieni premuto Shift e usa la rotella del mouse all'interno della maschera; usa solo la rotella per ridimensionarla. — <em>Raffinamento dei bordi della maschera</em>
+<strong>Importante:</strong> L'accumulo di moduli amplifica gli effetti indesiderati; un mascheramento preciso è fondamentale per mantenere la qualità dell'immagine. — <em>Gestione della pipeline di elaborazione</em>
+<strong>Attenzione:</strong> Per aggiungere nodi alla curva nascosta, clicca leggermente sopra la linea e non direttamente sui triangoli, per evitare errori di selezione. — <em>Modifica manuale delle curve</em>
+- Il Contrast Equalizer può essere utilizzato anche per ridurre il rumore cromatico e di luminanza agendo sulla curva nascosta, utile per scatti ad alto ISO. — <em>Riduzione del rumore alternativa</em>
+- Tenere premuto il tasto Shift durante il trascinamento per ridimensionare uniformemente la maschera circolare. — <em>Creazione e modifica delle maschere di disegno</em>
+<strong>Importante:</strong> Il rumore digitale si concentra principalmente nelle aree ad alta frequenza (dettagli fini); intervenire con cautela per non appiattire o sfocare eccessivamente la foto. — <em>Riduzione del rumore con l'equalizzatore di contrasto</em>
+<strong>Attenzione:</strong> La rimozione del rumore applicata localmente tramite maschera ha efficacia limitata; per risultati ottimali, la riduzione del rumore dovrebbe essere applicata globalmente sull'intera immagine. — <em>Workflow di correzione del rumore</em>
+- Se il risultato appare poco definito dopo la riduzione del rumore, è possibile incrementare ulteriormente la nitidezza agendo sulle curve dell'equalizzatore. — <em>Ottimizzazione finale della nitidezza</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:24:14.116384.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

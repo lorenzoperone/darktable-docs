@@ -1,0 +1,4865 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/TahuhILulgY/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Comparison Darktable vs C1 vs LR - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-comparison-darktable-vs-c1-vs-lr" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Comparison Darktable vs C1 vs LR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-analisi-del-clipping-in-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e analisi del clipping in darktable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e analisi del clipping in darktable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pianificazione-del-workflow-e-correzione-prospettica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pianificazione del workflow e correzione prospettica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pianificazione del workflow e correzione prospettica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-regolazione-globale-dellesposizione-e-bilanciamento-del-bianco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Regolazione globale dell'esposizione e bilanciamento del bianco
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Regolazione globale dell&#39;esposizione e bilanciamento del bianco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recupero-cromatico-nel-sole-sovraesposto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recupero cromatico nel sole sovraesposto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Recupero cromatico nel sole sovraesposto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-gestione-delle-zone-dombra-e-limiti-del-mascheramento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Gestione delle zone d'ombra e limiti del mascheramento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Gestione delle zone d&#39;ombra e limiti del mascheramento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-regolazione-del-cielo-e-affinamento-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Regolazione del cielo e affinamento finale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Regolazione del cielo e affinamento finale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-finalizzazione-dettagli-e-contrasto-locale-in-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Finalizzazione dettagli e contrasto locale in darktable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Finalizzazione dettagli e contrasto locale in darktable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-regolazioni-globali-e-correzione-prospettiva-in-lightroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Regolazioni globali e correzione prospettiva in Lightroom
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Regolazioni globali e correzione prospettiva in Lightroom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-mascheratura-selettiva-recupero-colore-del-sole-e-dettagli-dei-muri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Mascheratura selettiva: recupero colore del sole e dettagli dei muri
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Mascheratura selettiva: recupero colore del sole e dettagli dei muri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-mascheratura-del-cielo-e-finitura-cromatica-in-lightroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Mascheratura del cielo e finitura cromatica in Lightroom
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Mascheratura del cielo e finitura cromatica in Lightroom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-confronto-finale-dei-risultati-in-affinity-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Confronto finale dei risultati in Affinity Photo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Confronto finale dei risultati in Affinity Photo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-confronto-visivo-al-400-e-conclusioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Confronto visivo al 400% e conclusioni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Confronto visivo al 400% e conclusioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-comparison-darktable-vs-c1-vs-lr">[ENG] Comparison Darktable vs C1 vs LR<a class="headerlink" href="#eng-comparison-darktable-vs-c1-vs-lr" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=TahuhILulgY">https://www.youtube.com/watch?v=TahuhILulgY</a>
+<strong>Generato:</strong> 2026-04-12T01:18:26.259019
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-analisi-del-clipping-in-darktable">Introduzione e analisi del clipping in darktable</a></li>
+<li><a href="#pianificazione-del-workflow-e-correzione-prospettica">Pianificazione del workflow e correzione prospettica</a></li>
+<li><a href="#regolazione-globale-dell'esposizione-e-bilanciamento-del-bianco">Regolazione globale dell'esposizione e bilanciamento del bianco</a></li>
+<li><a href="#recupero-cromatico-nel-sole-sovraesposto">Recupero cromatico nel sole sovraesposto</a></li>
+<li><a href="#gestione-delle-zone-d'ombra-e-limiti-del-mascheramento">Gestione delle zone d'ombra e limiti del mascheramento</a></li>
+<li><a href="#regolazione-del-cielo-e-affinamento-finale">Regolazione del cielo e affinamento finale</a></li>
+<li><a href="#finalizzazione-dettagli-e-contrasto-locale-in-darktable">Finalizzazione dettagli e contrasto locale in darktable</a></li>
+<li><a href="#regolazioni-globali-e-correzione-prospettiva-in-lightroom">Regolazioni globali e correzione prospettiva in Lightroom</a></li>
+<li><a href="#mascheratura-selettiva:-recupero-colore-del-sole-e-dettagli-dei-muri">Mascheratura selettiva: recupero colore del sole e dettagli dei muri</a></li>
+<li><a href="#mascheratura-del-cielo-e-finitura-cromatica-in-lightroom">Mascheratura del cielo e finitura cromatica in Lightroom</a></li>
+<li><a href="#confronto-finale-dei-risultati-in-affinity-photo">Confronto finale dei risultati in Affinity Photo</a></li>
+<li><a href="#confronto-visivo-al-400%-e-conclusioni">Confronto visivo al 400% e conclusioni</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-analisi-del-clipping-in-darktable">1. Introduzione e analisi del clipping in darktable<a class="headerlink" href="#1-introduzione-e-analisi-del-clipping-in-darktable" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 01:35]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del confronto tra software e analisi preliminare del file RAW in darktable per identificare i canali clippati (rosso, verde, blu) nelle alte luci.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: una scena urbana al tramonto con riflessi su un canale, architettura storica e una torre campanaria sullo sfondo. A sinistra è visibile il pannello degli strumenti (snapshots, history, ecc.), a destra l'elenco dei moduli attivi nella pipeline di sviluppo, tutti espansi ma senza dettagli specifici dei parametri. In basso è presente la barra delle miniature e le informazioni EXIF. Il modulo attivo è 'lighttable', non uno specifico modulo di sviluppo (es. 'exposure', 'color balance'), indicando che l'utente sta esaminando l'immagine già elaborata, non modificandola in tempo reale." src="screenshots/frame_00042_609.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: una scena urbana al tramonto con riflessi su un canale, architettura storica e una torre campanaria sullo sfondo. A sinistra è visibile il pannello degli strumenti (snapshots, history, ecc.), a destra l'elenco dei moduli attivi nella pipeline di sviluppo, tutti espansi ma senza dettagli specifici dei parametri. In basso è presente la barra delle miniature e le informazioni EXIF. Il modulo attivo è 'lighttable', non uno specifico modulo di sviluppo (es. 'exposure', 'color balance'), indicando che l'utente sta esaminando l'immagine già elaborata, non modificandola in tempo reale.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_count</td>
+<td>1 image of 85 (#84) in current collection is selected</td>
+</tr>
+<tr>
+<td>exif_data</td>
+<td>GFX100S 1/350 • f/5.6 • 50 mm • 100 ISO • Open CL yes</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) che parla direttamente alla telecamera, in un contesto video. Non è visibile alcuna interfaccia di darktable: l'immagine è un frame del video, non uno screenshot dell'applicazione. Il narratore menziona di aver completato l'editing in darktable e di voler analizzare il risultato, ma l'interfaccia del software non appare nell'immagine." src="screenshots/frame_00041_500.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) che parla direttamente alla telecamera, in un contesto video. Non è visibile alcuna interfaccia di darktable: l'immagine è un frame del video, non uno screenshot dell'applicazione. Il narratore menziona di aver completato l'editing in darktable e di voler analizzare il risultato, ma l'interfaccia del software non appare nell'immagine.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) in un video, non l'interfaccia di darktable. Non sono visibili moduli, controlli, istogrammi o elementi dell'interfaccia di darktable. Il contesto indica che il narratore sta parlando di un confronto tra darktable e Capture One, ma l'immagine è un frame del video, non uno screenshot del software." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (uomo con barba, occhiali e gilet a quadri) in un video, non l'interfaccia di darktable. Non sono visibili moduli, controlli, istogrammi o elementi dell'interfaccia di darktable. Il contesto indica che il narratore sta parlando di un confronto tra darktable e Capture One, ma l'immagine è un frame del video, non uno screenshot del software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona (Nicholas) che parla direttamente alla telecamera in un contesto video. Non sono visibili moduli, pannelli, istogrammi, slider o qualsiasi elemento dell'interfaccia di darktable. L'immagine è un frame di un video introduttivo, probabilmente prima dell'inizio della sessione di editing." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona (Nicholas) che parla direttamente alla telecamera in un contesto video. Non sono visibili moduli, pannelli, istogrammi, slider o qualsiasi elemento dell'interfaccia di darktable. L'immagine è un frame di un video introduttivo, probabilmente prima dell'inizio della sessione di editing.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Grafico canali RGB</li>
+<li>Snapshot</li>
+</ul>
+<hr />
+<h2 id="2-pianificazione-del-workflow-e-correzione-prospettica">2. Pianificazione del workflow e correzione prospettica<a class="headerlink" href="#2-pianificazione-del-workflow-e-correzione-prospettica" title="Permanent link">&para;</a></h2>
+<p><strong>[01:35 – 03:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=95">Guarda nel video</a></p>
+<p>Definizione dei 5 obiettivi di editing e correzione della prospettiva e della verticalità della chiesa in Capture One.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra darktable con un file RAW (GFX100S) caricato in Capture One 22, ma l'utente sta utilizzando il modulo 'Style Brushes' di darktable per l'editing. È visibile un'immagine al tramonto con siluette di edifici e un campanile riflesso in un canale; un cursore rosso a forma di croce indica la posizione del puntatore o di una maschera in fase di definizione. Il pannello destro mostra i controlli di bilanciamento del bianco impostati su 'Shot' con Kelvin 4846 e Tint 2.9, suggerendo un tentativo di correggere la temperatura colore tipica di un tramonto. L'istogramma conferma una scena ad alta dinamica con zone molto scure e luci brillanti. Non sono attive maschere, ma il modulo è pronto per interventi locali." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>L'interfaccia mostra darktable con un file RAW (GFX100S) caricato in Capture One 22, ma l'utente sta utilizzando il modulo 'Style Brushes' di darktable per l'editing. È visibile un'immagine al tramonto con siluette di edifici e un campanile riflesso in un canale; un cursore rosso a forma di croce indica la posizione del puntatore o di una maschera in fase di definizione. Il pannello destro mostra i controlli di bilanciamento del bianco impostati su 'Shot' con Kelvin 4846 e Tint 2.9, suggerendo un tentativo di correggere la temperatura colore tipica di un tramonto. L'istogramma conferma una scena ad alta dinamica con zone molto scure e luci brillanti. Non sono attive maschere, ma il modulo è pronto per interventi locali.</em></p>
+<p><strong>Modulo:</strong> Style Brushes</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White Balance Mode</td>
+<td>Shot</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>4846</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>2.9</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze Amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow Tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prospettiva</li>
+<li>Rotazione</li>
+<li>Shift verticale</li>
+</ul>
+<hr />
+<h2 id="3-regolazione-globale-dellesposizione-e-bilanciamento-del-bianco">3. Regolazione globale dell'esposizione e bilanciamento del bianco<a class="headerlink" href="#3-regolazione-globale-dellesposizione-e-bilanciamento-del-bianco" title="Permanent link">&para;</a></h2>
+<p><strong>[03:50 – 06:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=230">Guarda nel video</a></p>
+<p>Creazione di un livello di regolazione globale, campionamento del bilanciamento del bianco e utilizzo della curva luminosa per recuperare dettagli senza alterare i punti di bianco e nero.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Lens Correction' attivo, in particolare la scheda 'Lens'. È visibile una griglia verde sovrapposta all'immagine per aiutare nell'allineamento durante la correzione della distorsione e della rotazione. L'utente sta regolando manualmente il parametro 'Vertical' (5.68) per correggere lo shift verticale, come indicato dal contesto vocale. La foto è un paesaggio urbano al tramonto con riflessi su un canale; la griglia evidenzia le linee verticali degli edifici per facilitare l'allineamento. Il cursore è posizionato sullo slider 'Vertical', suggerendo un'azione in corso." src="screenshots/frame_00240_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Lens Correction' attivo, in particolare la scheda 'Lens'. È visibile una griglia verde sovrapposta all'immagine per aiutare nell'allineamento durante la correzione della distorsione e della rotazione. L'utente sta regolando manualmente il parametro 'Vertical' (5.68) per correggere lo shift verticale, come indicato dal contesto vocale. La foto è un paesaggio urbano al tramonto con riflessi su un canale; la griglia evidenzia le linee verticali degli edifici per facilitare l'allineamento. Il cursore è posizionato sullo slider 'Vertical', suggerendo un'azione in corso.</em></p>
+<p><strong>Modulo:</strong> Lens Correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Distortion</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Light Falloff</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Ratio</td>
+<td>Original</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>36.89 x 27.66</td>
+</tr>
+<tr>
+<td>Angle</td>
+<td>2.29</td>
+</tr>
+<tr>
+<td>Vertical</td>
+<td>5.68</td>
+</tr>
+<tr>
+<td>Horizontal</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Aspect</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Adjustment Layer' attivo nella sezione Layers. È presente un livello chiamato 'Adjustment Layer 1' al 100% di opacità, sovrapposto al livello 'Background'. Il cursore del mouse è posizionato sopra il nome del livello, indicando che l'utente sta per interagire con esso. A destra sono visibili i moduli di correzione (White Balance, Exposure, ecc.), tutti a valori neutri (0 o default), tranne White Balance che mostra Kelvin=6128 e Tint=2.8. L'istogramma in alto a destra mostra una distribuzione luminosa tipica di uno scatto al tramonto con forte contrasto. La maschera non è visibile nell'anteprima principale, ma il narratore menziona che le sue maschere sono magenta per migliorare la visibilità — ciò suggerisce che una maschera è stata creata ma non attualmente visualizzata (es. non è premuto il tasto 'M')." src="screenshots/frame_00280_040.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Adjustment Layer' attivo nella sezione Layers. È presente un livello chiamato 'Adjustment Layer 1' al 100% di opacità, sovrapposto al livello 'Background'. Il cursore del mouse è posizionato sopra il nome del livello, indicando che l'utente sta per interagire con esso. A destra sono visibili i moduli di correzione (White Balance, Exposure, ecc.), tutti a valori neutri (0 o default), tranne White Balance che mostra Kelvin=6128 e Tint=2.8. L'istogramma in alto a destra mostra una distribuzione luminosa tipica di uno scatto al tramonto con forte contrasto. La maschera non è visibile nell'anteprima principale, ma il narratore menziona che le sue maschere sono magenta per migliorare la visibilità — ciò suggerisce che una maschera è stata creata ma non attualmente visualizzata (es. non è premuto il tasto 'M').</em></p>
+<p><strong>Modulo:</strong> Adjustment Layer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>White</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow Tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Tone Curve' attivo nella sezione destra. È selezionata la curva 'Luma', e un punto è stato aggiunto sulla curva (input 106 → output 138), indicando un aumento della luminosità nelle tonalità medie. L'istogramma mostra una distribuzione concentrata a sinistra, con evidente sottoesposizione nelle ombre e possibili zone sovraesposte nei riflessi sull'acqua. Il pannello 'Levels' mostra il canale blu regolato con i punti nero e bianco estremi, ma il punto medio a 0.00 suggerisce nessuna correzione gamma per quel canale. Il narratore sta descrivendo l’uso della curva per recuperare dettagli negli highlight senza toccare i punti nero/bianco, coerentemente con la modifica visibile sulla curva Luma." src="screenshots/frame_00308_639.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Tone Curve' attivo nella sezione destra. È selezionata la curva 'Luma', e un punto è stato aggiunto sulla curva (input 106 → output 138), indicando un aumento della luminosità nelle tonalità medie. L'istogramma mostra una distribuzione concentrata a sinistra, con evidente sottoesposizione nelle ombre e possibili zone sovraesposte nei riflessi sull'acqua. Il pannello 'Levels' mostra il canale blu regolato con i punti nero e bianco estremi, ma il punto medio a 0.00 suggerisce nessuna correzione gamma per quel canale. Il narratore sta descrivendo l’uso della curva per recuperare dettagli negli highlight senza toccare i punti nero/bianco, coerentemente con la modifica visibile sulla curva Luma.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve_type</td>
+<td>Luma</td>
+</tr>
+<tr>
+<td>input_value</td>
+<td>106</td>
+</tr>
+<tr>
+<td>output_value</td>
+<td>138</td>
+</tr>
+<tr>
+<td>vignetting_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>vignetting_method</td>
+<td>Elliptic on Crop</td>
+</tr>
+<tr>
+<td>levels_blue_input</td>
+<td>0</td>
+</tr>
+<tr>
+<td>levels_blue_output</td>
+<td>255</td>
+</tr>
+<tr>
+<td>levels_blue_midpoint</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo, in cui è presente un singolo livello denominato 'Background'. L'immagine è una scena urbana al tramonto con una chiesa verticale sullo sfondo e il suo riflesso in un canale. Il pannello destro visualizza i moduli di correzione (White Balance, Exposure, ecc.) con valori specifici; la temperatura di colore è impostata a 6128 K e il tint a 2.8. È visibile un cursore del mouse sopra gli strumenti di maschera (icona 'M'), confermando l'intenzione dell'utente di lavorare con maschere. L'istogramma indica una distribuzione luminosa con picco nelle tonalità medie-scure, coerente con una scena crepuscolare." src="screenshots/frame_00273_620.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo, in cui è presente un singolo livello denominato 'Background'. L'immagine è una scena urbana al tramonto con una chiesa verticale sullo sfondo e il suo riflesso in un canale. Il pannello destro visualizza i moduli di correzione (White Balance, Exposure, ecc.) con valori specifici; la temperatura di colore è impostata a 6128 K e il tint a 2.8. È visibile un cursore del mouse sopra gli strumenti di maschera (icona 'M'), confermando l'intenzione dell'utente di lavorare con maschere. L'istogramma indica una distribuzione luminosa con picco nelle tonalità medie-scure, coerente con una scena crepuscolare.</em></p>
+<p><strong>Modulo:</strong> Layers</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opacity</td>
+<td>100</td>
+</tr>
+<tr>
+<td>White Balance Mode</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>White</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze Amount</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'global' attivo, in cui l'utente sta lavorando su un'immagine RAW scattata al tramonto (GFX100S, 1/350s, f/5.6, ISO 100). L'istogramma indica una forte compressione nei toni alti (luminosità vicina a 249/255), confermando la presenza di sovraesposizione nelle aree illuminate (es. cielo e riflessi sull'acqua). Il parametro 'Highlight' è impostato a -90 per recuperare dettaglio nei punti luminosi, mentre 'Brightness' è a +25 per migliorare la visibilità delle zone scure. Non sono attive maschere o strumenti di selezione locali; l'operazione è globale. Il cursore dello strumento 'old to erase' è visibile sopra l'immagine, suggerendo che l'utente stava utilizzando lo strumento di cancellazione prima di questa cattura." src="screenshots/frame_00330_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'global' attivo, in cui l'utente sta lavorando su un'immagine RAW scattata al tramonto (GFX100S, 1/350s, f/5.6, ISO 100). L'istogramma indica una forte compressione nei toni alti (luminosità vicina a 249/255), confermando la presenza di sovraesposizione nelle aree illuminate (es. cielo e riflessi sull'acqua). Il parametro 'Highlight' è impostato a -90 per recuperare dettaglio nei punti luminosi, mentre 'Brightness' è a +25 per migliorare la visibilità delle zone scure. Non sono attive maschere o strumenti di selezione locali; l'operazione è globale. Il cursore dello strumento 'old to erase' è visibile sopra l'immagine, suggerendo che l'utente stava utilizzando lo strumento di cancellazione prima di questa cattura.</em></p>
+<p><strong>Modulo:</strong> global</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White Balance Mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>-90</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>White</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze Amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow Tone</td>
+<td>Auto</td>
+</tr>
+<tr>
+<td>Opacity</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento del bianco</li>
+<li>Esposizione</li>
+<li>Curva luminosa</li>
+<li>Livelli di regolazione</li>
+</ul>
+<hr />
+<h2 id="4-recupero-cromatico-nel-sole-sovraesposto">4. Recupero cromatico nel sole sovraesposto<a class="headerlink" href="#4-recupero-cromatico-nel-sole-sovraesposto" title="Permanent link">&para;</a></h2>
+<p><strong>[06:30 – 09:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=390">Guarda nel video</a></p>
+<p>Mascheramento selettivo del sole con pennello e intervallo luminanza. Tentativi di recupero colore tramite pannello colore avanzato e soluzione finale tramite bilanciamento del bianco.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per creare una maschera basata sull’intervallo di luminanza. Una maschera visiva rosa evidenzia le aree ad alta luminosità (sopraesposizione) nel cielo e intorno alla torre campanaria, corrispondenti al range luminoso selezionato (185–235). La checkbox 'Display Mask' è attivata, rendendo visibile la maschera sulle aree bianche/sovrastesse dell’immagine. Il livello 'sun' è attivo nella sezione Layers, indicando che la maschera viene applicata a un effetto specifico su quelle zone, probabilmente per correggere l’esposizione senza alterare il resto dell’immagine." src="screenshots/frame_00450_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per creare una maschera basata sull’intervallo di luminanza. Una maschera visiva rosa evidenzia le aree ad alta luminosità (sopraesposizione) nel cielo e intorno alla torre campanaria, corrispondenti al range luminoso selezionato (185–235). La checkbox 'Display Mask' è attivata, rendendo visibile la maschera sulle aree bianche/sovrastesse dell’immagine. Il livello 'sun' è attivo nella sezione Layers, indicando che la maschera viene applicata a un effetto specifico su quelle zone, probabilmente per correggere l’esposizione senza alterare il resto dell’immagine.</em></p>
+<p><strong>Modulo:</strong> Luma Range</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range</td>
+<td>185–235</td>
+</tr>
+<tr>
+<td>Falloff</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Radius</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Invert Range</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Display Mask</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Color Editor' con la tab 'Advanced' attiva. È selezionata una maschera chiamata 'sun' (100% opacità), che sembra essere stata creata per isolare le aree luminose giallo-arancioni del sole al tramonto. L'utente sta manipolando il colore in quella regione: nonostante il valore di Lightness sia aumentato a +1.3, il narratore chiarisce di non voler ridurre la luminosità delle luci dirette, ma piuttosto correggere l'intonazione cromatica (hue shift) nelle zone circostanti per evitare tonalità gialle innaturali. Il cursore nel cerchio cromatico punta verso il giallo-arancione, confermando la selezione della tonalità del sole." src="screenshots/frame_00510_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Color Editor' con la tab 'Advanced' attiva. È selezionata una maschera chiamata 'sun' (100% opacità), che sembra essere stata creata per isolare le aree luminose giallo-arancioni del sole al tramonto. L'utente sta manipolando il colore in quella regione: nonostante il valore di Lightness sia aumentato a +1.3, il narratore chiarisce di non voler ridurre la luminosità delle luci dirette, ma piuttosto correggere l'intonazione cromatica (hue shift) nelle zone circostanti per evitare tonalità gialle innaturali. Il cursore nel cerchio cromatico punta verso il giallo-arancione, confermando la selezione della tonalità del sole.</em></p>
+<p><strong>Modulo:</strong> Color Editor</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smoothness</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Lightness</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>ΔH</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>ΔL</td>
+<td>1.3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'White Balance' attivo nel pannello destro, sotto la sezione 'Style Brushes'. È visibile una maschera denominata 'sun' attiva (con opacità al 100%) e una maschera 'global' anch'essa attiva. Il valore Kelvin è impostato a 6128 K (caldo, tendente all'arancione) e Tint a +2.8 (leggero spostamento verso il verde/magenta positivo), coerentemente con la descrizione del narratore che aggiunge calore riducendo i toni blu. L'immagine principale è un paesaggio urbano al tramonto con riflessi dorati sull'acqua, e l'istogramma mostra una distribuzione luminosa concentrata nelle tonalità medie-basse." src="screenshots/frame_00551_019.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'White Balance' attivo nel pannello destro, sotto la sezione 'Style Brushes'. È visibile una maschera denominata 'sun' attiva (con opacità al 100%) e una maschera 'global' anch'essa attiva. Il valore Kelvin è impostato a 6128 K (caldo, tendente all'arancione) e Tint a +2.8 (leggero spostamento verso il verde/magenta positivo), coerentemente con la descrizione del narratore che aggiunge calore riducendo i toni blu. L'immagine principale è un paesaggio urbano al tramonto con riflessi dorati sull'acqua, e l'istogramma mostra una distribuzione luminosa concentrata nelle tonalità medie-basse.</em></p>
+<p><strong>Modulo:</strong> white balance</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>2.8</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo nella scheda 'advanced color'. È visibile una maschera denominata 'sun' selezionata (con opacità al 100%) e una maschera 'global' attiva, entrambe applicate all'immagine di un tramonto su un canale con riflessi sull'acqua. L'istogramma indica una forte concentrazione nei toni chiari (highlights), coerentemente con il commento del narratore sulle aree sovraesposte e sui tentativi di ricolorazione. I parametri di esposizione e bilanciamento del bianco sono inalterati, suggerendo che l'utente stia esplorando correzioni cromatiche locali piuttosto che globali." src="screenshots/frame_00493_879.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo nella scheda 'advanced color'. È visibile una maschera denominata 'sun' selezionata (con opacità al 100%) e una maschera 'global' attiva, entrambe applicate all'immagine di un tramonto su un canale con riflessi sull'acqua. L'istogramma indica una forte concentrazione nei toni chiari (highlights), coerentemente con il commento del narratore sulle aree sovraesposte e sui tentativi di ricolorazione. I parametri di esposizione e bilanciamento del bianco sono inalterati, suggerendo che l'utente stia esplorando correzioni cromatiche locali piuttosto che globali.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_balance_mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white</td>
+<td>0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity_method</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_shadow_tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pennello</li>
+<li>Intervallo luminanza</li>
+<li>Colore avanzato</li>
+<li>Bilanciamento del bianco</li>
+</ul>
+<hr />
+<h2 id="5-gestione-delle-zone-dombra-e-limiti-del-mascheramento">5. Gestione delle zone d'ombra e limiti del mascheramento<a class="headerlink" href="#5-gestione-delle-zone-dombra-e-limiti-del-mascheramento" title="Permanent link">&para;</a></h2>
+<p><strong>[09:50 – 13:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=590">Guarda nel video</a></p>
+<p>Schiarimento delle pareti in ombra con pennello e maschere. Discussione sui limiti delle maschere in Capture One rispetto a darktable/Lightroom e uso strategico del contrasto e della chiarezza.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine di una scena urbana al tramonto, in cui è attiva una maschera locale (nome 'walls') visualizzata come area viola opaca sulla destra dell'immagine. È visibile il modulo 'localized Adjustments' con la tab 'Layers' selezionata; la maschera è attiva e si estende dal centro verso il basso a destra, con un cursore circolare per il controllo della forma. Il narratore sta descrivendo l'intenzione di ammorbidire i bordi della maschera e utilizzare il parametro 'Luma Range' per controllare la transizione nelle luci, coerentemente con lo stato visibile del pannello 'Layers' e dei controlli della maschera." src="screenshots/frame_00676_679.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine di una scena urbana al tramonto, in cui è attiva una maschera locale (nome 'walls') visualizzata come area viola opaca sulla destra dell'immagine. È visibile il modulo 'localized Adjustments' con la tab 'Layers' selezionata; la maschera è attiva e si estende dal centro verso il basso a destra, con un cursore circolare per il controllo della forma. Il narratore sta descrivendo l'intenzione di ammorbidire i bordi della maschera e utilizzare il parametro 'Luma Range' per controllare la transizione nelle luci, coerentemente con lo stato visibile del pannello 'Layers' e dei controlli della maschera.</em></p>
+<p><strong>Modulo:</strong> localized Adjustments</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_name</td>
+<td>walls</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>luma_range</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white</td>
+<td>0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow_tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per definire una maschera basata sull’intervallo di luminanza. Una maschera viola intensa è applicata alla parte inferiore dell’immagine (il muro e la sua riflessione), indicando che la selezione è attiva su quella porzione. Nella sezione Layers a destra, sono visibili tre livelli mascherati ('walls', 'sun', 'global'), tutti al 100% di opacità. L’istogramma e i metadati della foto (GFX100S, ISO 100, 1/350s, f/5.6) sono visibili. Il narratore sta spiegando che la maschera Luma Range da sola non è sufficiente per un effetto di dissolvenza naturale, e intende usare un pennello con opacità ridotta e gomma collegata per affinare il bordo." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per definire una maschera basata sull’intervallo di luminanza. Una maschera viola intensa è applicata alla parte inferiore dell’immagine (il muro e la sua riflessione), indicando che la selezione è attiva su quella porzione. Nella sezione Layers a destra, sono visibili tre livelli mascherati ('walls', 'sun', 'global'), tutti al 100% di opacità. L’istogramma e i metadati della foto (GFX100S, ISO 100, 1/350s, f/5.6) sono visibili. Il narratore sta spiegando che la maschera Luma Range da sola non è sufficiente per un effetto di dissolvenza naturale, e intende usare un pennello con opacità ridotta e gomma collegata per affinare il bordo.</em></p>
+<p><strong>Modulo:</strong> Luma Range</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range</td>
+<td>20–202</td>
+</tr>
+<tr>
+<td>Falloff</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Radius</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Display Mask</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Invert Range</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'brush' attivo e una maschera di selezione viola applicata alla parete lungo il canale in primo piano. È visibile un cursore circolare con croce al centro, indicante l'area attiva dello strumento pennello. Nella sezione 'Layers', sono attive tre maschere ('walls', 'sun', 'global'), tutte con opacità al 100%. Il narratore sta descrivendo l’uso di un pennello con opacità ridotta e la funzionalità di collegamento tra pennello ed eraser per affinare la maschera, ma nell’immagine l’opacità è ancora impostata a 100% — suggerendo che stia per effettuare l’aggiustamento. L’istogramma e i metadati della foto (GFX100S, 1/350s, f/5.6, 50mm) confermano che si tratta di un’immagine RAW in fase di ritocco avanzato." src="screenshots/frame_00695_340.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'brush' attivo e una maschera di selezione viola applicata alla parete lungo il canale in primo piano. È visibile un cursore circolare con croce al centro, indicante l'area attiva dello strumento pennello. Nella sezione 'Layers', sono attive tre maschere ('walls', 'sun', 'global'), tutte con opacità al 100%. Il narratore sta descrivendo l’uso di un pennello con opacità ridotta e la funzionalità di collegamento tra pennello ed eraser per affinare la maschera, ma nell’immagine l’opacità è ancora impostata a 100% — suggerendo che stia per effettuare l’aggiustamento. L’istogramma e i metadati della foto (GFX100S, 1/350s, f/5.6, 50mm) confermano che si tratta di un’immagine RAW in fase di ritocco avanzato.</em></p>
+<p><strong>Modulo:</strong> brush</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>luma_range</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white</td>
+<td>0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow_tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Styles' con la sezione 'Style Brushes' attiva. Sono definite tre maschere: 'walls', 'sun' e 'global', tutte con opacità al 100%. L'istogramma indica una scena con forte contrasto dinamico, con luci calde al tramonto riflesse sull'acqua e ombre profonde sulle strutture architettoniche. Il cursore del mouse è posizionato sullo slider 'Saturation', suggerendo un'azione imminente di regolazione. Il narratore sta discutendo di piccoli aggiustamenti alle ombre e all'effetto del contrasto, evidenziando una comprensione intuitiva ma non ancora applicata delle interazioni tra parametri." src="screenshots/frame_00780_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Styles' con la sezione 'Style Brushes' attiva. Sono definite tre maschere: 'walls', 'sun' e 'global', tutte con opacità al 100%. L'istogramma indica una scena con forte contrasto dinamico, con luci calde al tramonto riflesse sull'acqua e ombre profonde sulle strutture architettoniche. Il cursore del mouse è posizionato sullo slider 'Saturation', suggerendo un'azione imminente di regolazione. Il narratore sta discutendo di piccoli aggiustamenti alle ombre e all'effetto del contrasto, evidenziando una comprensione intuitiva ma non ancora applicata delle interazioni tra parametri.</em></p>
+<p><strong>Modulo:</strong> styles</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_balance_mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>high_dynamic_range_highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>high_dynamic_range_shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>high_dynamic_range_white</td>
+<td>0</td>
+</tr>
+<tr>
+<td>high_dynamic_range_black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity_method</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_shadow_tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pennello</li>
+<li>Intervallo luminanza</li>
+<li>Ombre</li>
+<li>Contrasto</li>
+<li>Chiarezza</li>
+</ul>
+<hr />
+<h2 id="6-regolazione-del-cielo-e-affinamento-finale">6. Regolazione del cielo e affinamento finale<a class="headerlink" href="#6-regolazione-del-cielo-e-affinamento-finale" title="Permanent link">&para;</a></h2>
+<p><strong>[13:10 – 16:14]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=790">Guarda nel video</a></p>
+<p>Aumento della saturazione globale per enfatizzare il tramonto e applicazione di un gradiente mascherato con intervallo luminanza per recuperare dettagli e tonalità blu nel cielo.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'gradiente' attivo, in cui è stata applicata una maschera a gradiente orizzontale (tenendo premuto Shift per allineamento perfetto) sul cielo. La maschera è visualizzata come sovrapposizione viola intensa nella parte superiore dell'immagine. Nella sezione 'Layers', sono attive più maschere ('sky', 'walls', 'sun', 'global'), con la maschera 'sky' selezionata e impostata al 100% di opacità. L'utente sta utilizzando la funzione 'Luma Range' per isolare le aree luminose (es. cielo) e escludere quelle scure (es. edifici), come indicato dal contesto verbale." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'gradiente' attivo, in cui è stata applicata una maschera a gradiente orizzontale (tenendo premuto Shift per allineamento perfetto) sul cielo. La maschera è visualizzata come sovrapposizione viola intensa nella parte superiore dell'immagine. Nella sezione 'Layers', sono attive più maschere ('sky', 'walls', 'sun', 'global'), con la maschera 'sky' selezionata e impostata al 100% di opacità. L'utente sta utilizzando la funzione 'Luma Range' per isolare le aree luminose (es. cielo) e escludere quelle scure (es. edifici), come indicato dal contesto verbale.</em></p>
+<p><strong>Modulo:</strong> gradiente</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacità</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>luma_range</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>sky</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>walls</td>
+<td>90 %</td>
+</tr>
+<tr>
+<td>sun</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>global</td>
+<td>100 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per definire una maschera basata sulla luminosità. Sullo sfondo, l'immagine è sovrapposta da una maschera viola che copre le aree più scure (case e muro), lasciando visibili solo le zone luminose (cielo al tramonto e riflessi sull'acqua). L'utente sta regolando la maschera per isolare il cielo, come indicato dal contesto: sta spostando la maschera orizzontalmente tenendo premuto Shift per allinearla perfettamente, e sta riducendo il range di luminosità per escludere le strutture scure. Nella sezione Layers sono attive quattro maschere ('sky', 'walls', 'sun', 'global'), tutte con opacità al 100% tranne 'walls' (90%)." src="screenshots/frame_00941_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Luma Range' aperto in primo piano, utilizzato per definire una maschera basata sulla luminosità. Sullo sfondo, l'immagine è sovrapposta da una maschera viola che copre le aree più scure (case e muro), lasciando visibili solo le zone luminose (cielo al tramonto e riflessi sull'acqua). L'utente sta regolando la maschera per isolare il cielo, come indicato dal contesto: sta spostando la maschera orizzontalmente tenendo premuto Shift per allinearla perfettamente, e sta riducendo il range di luminosità per escludere le strutture scure. Nella sezione Layers sono attive quattro maschere ('sky', 'walls', 'sun', 'global'), tutte con opacità al 100% tranne 'walls' (90%).</em></p>
+<p><strong>Modulo:</strong> Luma Range</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Falloff</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Radius</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Display Mask</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Invert Range</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo (sebbene non esplicitamente etichettato, i controlli visibili — Exposure, Contrast, Brightness, Saturation — appartengono al modulo 'tone curve' o a una sua variante in modalità 'basic adjustments'). Sono presenti tre maschere attive ('walls', 'sun', 'global') con opacità al 100%. L'istogramma indica una scena con prevalenza di toni scuri e medi, pochi highlight, coerentemente con la spiegazione del narratore sul comportamento del contrasto: aumentando il contrasto, le zone sotto il 50% di luminosità vengono scureggiate ulteriormente, mentre le zone più chiare (pochissime) vengono leggermente illuminate. Il cursore del contrasto è impostato su 3, confermando un intervento moderato ma intenzionale per accentuare le ombre." src="screenshots/frame_00806_600.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo (sebbene non esplicitamente etichettato, i controlli visibili — Exposure, Contrast, Brightness, Saturation — appartengono al modulo 'tone curve' o a una sua variante in modalità 'basic adjustments'). Sono presenti tre maschere attive ('walls', 'sun', 'global') con opacità al 100%. L'istogramma indica una scena con prevalenza di toni scuri e medi, pochi highlight, coerentemente con la spiegazione del narratore sul comportamento del contrasto: aumentando il contrasto, le zone sotto il 50% di luminosità vengono scureggiate ulteriormente, mentre le zone più chiare (pochissime) vengono leggermente illuminate. Il cursore del contrasto è impostato su 3, confermando un intervento moderato ma intenzionale per accentuare le ombre.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>3</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra una scena al tramonto con un canale e un ponte, in cui il cielo è stato selezionato tramite una maschera 'sky' al 100% nel modulo Style Brushes. Il bilanciamento del bianco è impostato su Kelvin 6128 e Tint 2.8, indicando una leggera correzione verso il caldo (giallo-arancio), ma il narratore menziona di aver perso il blu nel cielo e di volerlo ripristinare raffreddando l’immagine — suggerendo che la modifica è in corso o appena completata. Le altre regolazioni (esposizione, contrasto, ecc.) sono a zero, quindi l’effetto visivo deriva principalmente dalla maschera e dal bilanciamento del bianco. L’istogramma mostra una distribuzione luminosa concentrata nelle tonalità medie-basse, con roll-off nelle alte luci (cielo) e ombre (acqua e muri)." src="screenshots/frame_00960_000.jpg" /></p>
+<p><em>L'immagine mostra una scena al tramonto con un canale e un ponte, in cui il cielo è stato selezionato tramite una maschera 'sky' al 100% nel modulo Style Brushes. Il bilanciamento del bianco è impostato su Kelvin 6128 e Tint 2.8, indicando una leggera correzione verso il caldo (giallo-arancio), ma il narratore menziona di aver perso il blu nel cielo e di volerlo ripristinare raffreddando l’immagine — suggerendo che la modifica è in corso o appena completata. Le altre regolazioni (esposizione, contrasto, ecc.) sono a zero, quindi l’effetto visivo deriva principalmente dalla maschera e dal bilanciamento del bianco. L’istogramma mostra una distribuzione luminosa concentrata nelle tonalità medie-basse, con roll-off nelle alte luci (cielo) e ombre (acqua e muri).</em></p>
+<p><strong>Modulo:</strong> style brushes</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_balance_mode</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>6128</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white</td>
+<td>0</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity_method</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze_shadow_tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Saturazione</li>
+<li>Gradiente</li>
+<li>Intervallo luminanza</li>
+<li>Temperatura colore</li>
+</ul>
+<hr />
+<h2 id="7-finalizzazione-dettagli-e-contrasto-locale-in-darktable">7. Finalizzazione dettagli e contrasto locale in darktable<a class="headerlink" href="#7-finalizzazione-dettagli-e-contrasto-locale-in-darktable" title="Permanent link">&para;</a></h2>
+<p><strong>[16:14 – 17:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=974">Guarda nel video</a></p>
+<p>Regolazione finale della chiarezza e del contrasto locale sulle nuvole utilizzando la curva tonale e il modulo struttura, seguita dall'esportazione del file.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Clarity' attivo nel pannello destro. Sono presenti tre maschere definite ('sky', 'walls', 'sun'), con la maschera 'sky' selezionata e impostata al 100% di opacità. Il parametro 'Clarity' è regolato a 38, mentre 'Structure' è a 0. Nella sezione 'Layers', si osserva che le maschere sono attive e utilizzate per applicare correzioni locali. In basso, il modulo 'Curve' è visibile con la curva Luma selezionata, coerentemente con il commento del narratore che intende usare la curva per il contrasto locale invece della clarity. L'istogramma mostra una distribuzione bilanciata con predominanza di toni caldi (tramonto)." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Clarity' attivo nel pannello destro. Sono presenti tre maschere definite ('sky', 'walls', 'sun'), con la maschera 'sky' selezionata e impostata al 100% di opacità. Il parametro 'Clarity' è regolato a 38, mentre 'Structure' è a 0. Nella sezione 'Layers', si osserva che le maschere sono attive e utilizzate per applicare correzioni locali. In basso, il modulo 'Curve' è visibile con la curva Luma selezionata, coerentemente con il commento del narratore che intende usare la curva per il contrasto locale invece della clarity. L'istogramma mostra una distribuzione bilanciata con predominanza di toni caldi (tramonto).</em></p>
+<p><strong>Modulo:</strong> clarity</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clarity</td>
+<td>38</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Natural</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione destra. È visibile una curva Luma con un punto di controllo posizionato nella porzione superiore (alto tono), corrispondente alla zona delle nuvole illuminate dal tramonto, come indicato dalla linea arancione sul grafico. Sono attive tre maschere (sky, walls, sun) con opacità specificate. L'istogramma mostra una distribuzione con picco nei toni chiari (cielo) e una coda nei neri (ombre). Il narratore sta discutendo della riduzione della chiarezza (clarity) per evitare aureole e intende usare la curva per regolare il contrasto locale, inserendo punti di controllo nella regione delle nuvole." src="screenshots/frame_01002_360.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione destra. È visibile una curva Luma con un punto di controllo posizionato nella porzione superiore (alto tono), corrispondente alla zona delle nuvole illuminate dal tramonto, come indicato dalla linea arancione sul grafico. Sono attive tre maschere (sky, walls, sun) con opacità specificate. L'istogramma mostra una distribuzione con picco nei toni chiari (cielo) e una coda nei neri (ombre). Il narratore sta discutendo della riduzione della chiarezza (clarity) per evitare aureole e intende usare la curva per regolare il contrasto locale, inserendo punti di controllo nella regione delle nuvole.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve_type</td>
+<td>Luma</td>
+</tr>
+<tr>
+<td>input_value</td>
+<td>151</td>
+</tr>
+<tr>
+<td>output_value</td>
+<td>151</td>
+</tr>
+<tr>
+<td>vignetting_amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>vignetting_method</td>
+<td>Elliptic on Crop</td>
+</tr>
+<tr>
+<td>levels_blue</td>
+<td>255</td>
+</tr>
+<tr>
+<td>levels_blue_offset</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>layers_opacity</td>
+<td>100</td>
+</tr>
+<tr>
+<td>sky_mask_opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>walls_mask_opacity</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>sun_mask_opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Chiarezza (Clarity)</li>
+<li>Curva tonale</li>
+<li>Struttura (Structure)</li>
+</ul>
+<hr />
+<h2 id="8-regolazioni-globali-e-correzione-prospettiva-in-lightroom">8. Regolazioni globali e correzione prospettiva in Lightroom<a class="headerlink" href="#8-regolazioni-globali-e-correzione-prospettiva-in-lightroom" title="Permanent link">&para;</a></h2>
+<p><strong>[17:10 – 20:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=1030">Guarda nel video</a></p>
+<p>Importazione del RAW, correzione automatica della prospettiva e bilanciamento globale di luci, ombre ed esposizione tramite pannello base e curva tonale.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="L'immagine mostra una foto RAW di un canale al tramonto con annotazioni a mano libera in rosso: 'perspective', 'details', 'overexposed', 'dark areas', 'white balance'. Sono attive maschere per cielo, muri e sole nel pannello Layers; il modulo attivo è il gestore delle maschere (mask manager), con livelli di opacità specificati. L'istogramma mostra una distribuzione luminosa bilanciata con picco nei toni medi-alti. Il narratore sta completando il ritocco, indicando che i dettagli e le aree scure sono stati trattati, e sta per esportare l’immagine." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>L'immagine mostra una foto RAW di un canale al tramonto con annotazioni a mano libera in rosso: 'perspective', 'details', 'overexposed', 'dark areas', 'white balance'. Sono attive maschere per cielo, muri e sole nel pannello Layers; il modulo attivo è il gestore delle maschere (mask manager), con livelli di opacità specificati. L'istogramma mostra una distribuzione luminosa bilanciata con picco nei toni medi-alti. Il narratore sta completando il ritocco, indicando che i dettagli e le aree scure sono stati trattati, e sta per esportare l’immagine.</em></p>
+<p><strong>Modulo:</strong> mask manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sky opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>walls opacity</td>
+<td>90 %</td>
+</tr>
+<tr>
+<td>sun opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Clarity method</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>41</td>
+</tr>
+<tr>
+<td>Dehaze amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Levels blue channel</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di sviluppo di darktable con un'immagine di un canale al tramonto, in cui il modulo 'Tone Curve' è attivo sulla destra. L'utente sta regolando i livelli di luminosità, in particolare abbassando i 'Highlights' a -59 per ridurre l'eccesso di esposizione nelle aree chiare, mentre aumenta i 'Whites' a +91 per preservare la brillantezza nelle zone sovraesposte. L'istogramma mostra una distribuzione con picchi nei toni medi e scuri, e l'indicatore di percentuale di luminosità sotto l'istogramma segnala circa il 92–93%, confermando l'osservazione dell'utente sulle aree luminose. La foto presenta riflessi caldi sull'acqua e architetture in ombra, con il campanile al centro illuminato dal sole al tramonto." src="screenshots/frame_01192_759.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di sviluppo di darktable con un'immagine di un canale al tramonto, in cui il modulo 'Tone Curve' è attivo sulla destra. L'utente sta regolando i livelli di luminosità, in particolare abbassando i 'Highlights' a -59 per ridurre l'eccesso di esposizione nelle aree chiare, mentre aumenta i 'Whites' a +91 per preservare la brillantezza nelle zone sovraesposte. L'istogramma mostra una distribuzione con picchi nei toni medi e scuri, e l'indicatore di percentuale di luminosità sotto l'istogramma segnala circa il 92–93%, confermando l'osservazione dell'utente sulle aree luminose. La foto presenta riflessi caldi sull'acqua e architetture in ombra, con il campanile al centro illuminato dal sole al tramonto.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>highlights</td>
+<td>-59</td>
+</tr>
+<tr>
+<td>whites</td>
+<td>+91</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>temp</td>
+<td>6750</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>+21</td>
+</tr>
+<tr>
+<td>histogram_brightness_percentage</td>
+<td>92-93</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di sviluppo di darktable con un'immagine di paesaggio urbano al tramonto, caratterizzata da riflessi su un canale e una torre in controluce. Il modulo attivo è 'Tone Curve', ma i controlli visibili sono quelli del pannello 'Basic adjustments' (esposizione, tonalità, contrasto, ecc.). L'istogramma mostra una distribuzione bilanciata con picchi nelle tonalità medie e scure. Il cursore del mouse è posizionato sul controllo 'Tone' (probabilmente per regolare la curva tonale), coerentemente con il commento del narratore che parla di modifica della curva per gestire luci e ombre senza oscurare artificialmente il resto dell'immagine. La foto appare già elaborata con evidente recupero delle ombre (+91) e riduzione dei dettagli nei punti luminosi (-45 highlights)." src="screenshots/frame_01225_420.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di sviluppo di darktable con un'immagine di paesaggio urbano al tramonto, caratterizzata da riflessi su un canale e una torre in controluce. Il modulo attivo è 'Tone Curve', ma i controlli visibili sono quelli del pannello 'Basic adjustments' (esposizione, tonalità, contrasto, ecc.). L'istogramma mostra una distribuzione bilanciata con picchi nelle tonalità medie e scure. Il cursore del mouse è posizionato sul controllo 'Tone' (probabilmente per regolare la curva tonale), coerentemente con il commento del narratore che parla di modifica della curva per gestire luci e ombre senza oscurare artificialmente il resto dell'immagine. La foto appare già elaborata con evidente recupero delle ombre (+91) e riduzione dei dettagli nei punti luminosi (-45 highlights).</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temp</td>
+<td>6750</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>+21</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>-45</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>+91</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Vibrance</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra una scena in controluce con siluette di edifici e un campanile riflesso in un canale, al tramonto o all'alba. L'interfaccia di Adobe Lightroom Classic è attiva nella scheda 'Develop', con il modulo 'Basic' selezionato. I parametri indicano un bilanciamento del bianco caldo (5400K) e un leggero aumento dei toni chiari (+3 Highlights), mentre esposizione e contrasto sono a zero. L'istogramma mostra una distribuzione concentrata nelle ombre e nei mezzi toni, con pochi dettagli nelle luci. Il narratore sta confrontando il lavoro fatto in darktable con quello in Lightroom su uno stesso file RAW." src="screenshots/frame_01087_886.jpg" /></p>
+<p><em>L'immagine mostra una scena in controluce con siluette di edifici e un campanile riflesso in un canale, al tramonto o all'alba. L'interfaccia di Adobe Lightroom Classic è attiva nella scheda 'Develop', con il modulo 'Basic' selezionato. I parametri indicano un bilanciamento del bianco caldo (5400K) e un leggero aumento dei toni chiari (+3 Highlights), mentre esposizione e contrasto sono a zero. L'istogramma mostra una distribuzione concentrata nelle ombre e nei mezzi toni, con pochi dettagli nelle luci. Il narratore sta confrontando il lavoro fatto in darktable con quello in Lightroom su uno stesso file RAW.</em></p>
+<p><strong>Modulo:</strong> basic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temp</td>
+<td>5400</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>+25</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Vibrance</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'Basic' attivo nella sezione di sviluppo (Develop). È visibile una foto di un canale con edifici storici e un ponte al tramonto, con riflessi sull'acqua. Lo strumento 'Pick a target neutral' è attivato (pipetta), con valori RGB R:28.2, G:29.0, B:33.5% letti da una porzione della parete scura. Gli slider di 'Shadows' sono spinti a +90 per rivelare dettagli nelle zone d'ombra, come indicato dal narratore. L'istogramma mostra una distribuzione bilanciata con leggera predominanza di toni scuri. La barra degli strumenti inferiore mostra la raccolta di immagini con l'immagine corrente selezionata (GFX100S-2022-02-11-19h24min38s.RAF). Il narratore sta preparando l'immagine per correzioni di prospettiva e confronto cromatico con Capture One." src="screenshots/frame_01110_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'Basic' attivo nella sezione di sviluppo (Develop). È visibile una foto di un canale con edifici storici e un ponte al tramonto, con riflessi sull'acqua. Lo strumento 'Pick a target neutral' è attivato (pipetta), con valori RGB R:28.2, G:29.0, B:33.5% letti da una porzione della parete scura. Gli slider di 'Shadows' sono spinti a +90 per rivelare dettagli nelle zone d'ombra, come indicato dal narratore. L'istogramma mostra una distribuzione bilanciata con leggera predominanza di toni scuri. La barra degli strumenti inferiore mostra la raccolta di immagini con l'immagine corrente selezionata (GFX100S-2022-02-11-19h24min38s.RAF). Il narratore sta preparando l'immagine per correzioni di prospettiva e confronto cromatico con Capture One.</em></p>
+<p><strong>Modulo:</strong> basic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WB</td>
+<td>As Shot</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>5400</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>+25</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>+90</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Vibrance</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pannello Base (Basic)</li>
+<li>Curva tonale</li>
+<li>Trasforma (Transform)</li>
+</ul>
+<hr />
+<h2 id="9-mascheratura-selettiva-recupero-colore-del-sole-e-dettagli-dei-muri">9. Mascheratura selettiva: recupero colore del sole e dettagli dei muri<a class="headerlink" href="#9-mascheratura-selettiva-recupero-colore-del-sole-e-dettagli-dei-muri" title="Permanent link">&para;</a></h2>
+<p><strong>[20:50 – 27:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=1250">Guarda nel video</a></p>
+<p>Creazione di maschere con pennello, intervalli di luminanza e colore per isolare il sole e i muri. Applicazione di chiarezza, dehaze e regolazioni di contrasto locale.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Masks' di darktable con una maschera chiamata 'sun' creata con lo strumento pennello. È aperto un menu contestuale che evidenzia l'opzione 'Intersect Mask with &gt; Luminance Range', indicando che l'utente sta tentando di affinare la maschera tramite un intervallo di luminanza. L'istogramma e i controlli della luminanza sono visibili a destra, con il cursore del range luminoso impostato al massimo (100), il che suggerisce un tentativo di isolare solo le aree più brillanti (es. il sole), ma con risultati non ottimali poiché l'intera area scura rimane esclusa. La sovrapposizione è attivata, mostrando la maschera in rosso sulle aree selezionate." src="screenshots/frame_01350_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Masks' di darktable con una maschera chiamata 'sun' creata con lo strumento pennello. È aperto un menu contestuale che evidenzia l'opzione 'Intersect Mask with &gt; Luminance Range', indicando che l'utente sta tentando di affinare la maschera tramite un intervallo di luminanza. L'istogramma e i controlli della luminanza sono visibili a destra, con il cursore del range luminoso impostato al massimo (100), il che suggerisce un tentativo di isolare solo le aree più brillanti (es. il sole), ma con risultati non ottimali poiché l'intera area scura rimane esclusa. La sovrapposizione è attivata, mostrando la maschera in rosso sulle aree selezionate.</em></p>
+<p><strong>Modulo:</strong> masks</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_name</td>
+<td>sun</td>
+</tr>
+<tr>
+<td>mask_type</td>
+<td>Brush</td>
+</tr>
+<tr>
+<td>intersection_with</td>
+<td>Luminance Range</td>
+</tr>
+<tr>
+<td>luminance_range_min</td>
+<td>100</td>
+</tr>
+<tr>
+<td>luminance_range_max</td>
+<td>100</td>
+</tr>
+<tr>
+<td>show_overlay</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella sezione 'Masks', con una maschera denominata 'sun' attiva. È stata applicata una maschera 'New Luminance Range' con intervallo luminanza impostato da 8/33 a 100/100 (massimo), e l'opzione 'Invert' non è selezionata. La sovrapposizione è visibile (Show Overlay attivo), evidenziando in rosso la zona selezionata (il sole al tramonto). L'utente sta tentando di restringere la maschera escludendo le aree scure, ma raggiunge il limite massimo dell'intervallo luminanza disponibile, indicando una difficoltà nell'affinare ulteriormente la selezione." src="screenshots/frame_01357_759.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella sezione 'Masks', con una maschera denominata 'sun' attiva. È stata applicata una maschera 'New Luminance Range' con intervallo luminanza impostato da 8/33 a 100/100 (massimo), e l'opzione 'Invert' non è selezionata. La sovrapposizione è visibile (Show Overlay attivo), evidenziando in rosso la zona selezionata (il sole al tramonto). L'utente sta tentando di restringere la maschera escludendo le aree scure, ma raggiunge il limite massimo dell'intervallo luminanza disponibile, indicando una difficoltà nell'affinare ulteriormente la selezione.</em></p>
+<p><strong>Modulo:</strong> masks</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_name</td>
+<td>sun</td>
+</tr>
+<tr>
+<td>luminance_range_min</td>
+<td>8/33</td>
+</tr>
+<tr>
+<td>luminance_range_max</td>
+<td>100/100</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>False</td>
+</tr>
+<tr>
+<td>show_overlay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>effect</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>temp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>moiré</td>
+<td>0</td>
+</tr>
+<tr>
+<td>defringe</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'Develop', con il modulo 'Local Adjustments' attivo e la tab 'Masks' aperta. È stata creata una maschera denominata 'sun' utilizzando lo strumento picker (indicato dal cursore a pipetta posizionato sull'area sovraesposta del cielo al tramonto), con un range di colore selezionato (Color Range 1) e l'opzione 'Invert' abilitata. La sovrapposizione della maschera è visibile come area scura che copre gran parte dell'immagine, lasciando esposta solo la zona del sole/soleggiamento (in rosso/orange). L'istogramma mostra una forte saturazione nei toni chiari (picco a destra), confermando la sovraesposizione. Il narratore sta descrivendo l'uso dello strumento picker per selezionare le aree bianche sovraesposte e applicare correzioni locali per ripristinare colore, senza rimuovere completamente la maschera." src="screenshots/frame_01405_740.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'Develop', con il modulo 'Local Adjustments' attivo e la tab 'Masks' aperta. È stata creata una maschera denominata 'sun' utilizzando lo strumento picker (indicato dal cursore a pipetta posizionato sull'area sovraesposta del cielo al tramonto), con un range di colore selezionato (Color Range 1) e l'opzione 'Invert' abilitata. La sovrapposizione della maschera è visibile come area scura che copre gran parte dell'immagine, lasciando esposta solo la zona del sole/soleggiamento (in rosso/orange). L'istogramma mostra una forte saturazione nei toni chiari (picco a destra), confermando la sovraesposizione. Il narratore sta descrivendo l'uso dello strumento picker per selezionare le aree bianche sovraesposte e applicare correzioni locali per ripristinare colore, senza rimuovere completamente la maschera.</em></p>
+<p><strong>Modulo:</strong> local adjustments</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>effect</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moiré</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Refine</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Invert</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Masks' attivo. È visibile una maschera rossa traslucida che copre la parte inferiore dell'immagine (il canale e le sue riflessioni), indicando un'area selezionata tramite intersezione con un gradiente lineare, come descritto dal narratore. Sono presenti due maschere definite: 'walls' e 'sun'. L'opzione 'Show Overlay' è abilitata, mostrando l'overlay rosso sulle aree mascherate. Il cursore è posizionato sopra la maschera rossa, suggerendo l'intenzione di modificare ulteriormente la maschera con uno strumento pennello (add/subtract)." src="screenshots/frame_01650_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Masks' attivo. È visibile una maschera rossa traslucida che copre la parte inferiore dell'immagine (il canale e le sue riflessioni), indicando un'area selezionata tramite intersezione con un gradiente lineare, come descritto dal narratore. Sono presenti due maschere definite: 'walls' e 'sun'. L'opzione 'Show Overlay' è abilitata, mostrando l'overlay rosso sulle aree mascherate. Il cursore è posizionato sopra la maschera rossa, suggerendo l'intenzione di modificare ulteriormente la maschera con uno strumento pennello (add/subtract).</em></p>
+<p><strong>Modulo:</strong> masks</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_name_1</td>
+<td>walls</td>
+</tr>
+<tr>
+<td>mask_name_2</td>
+<td>sun</td>
+</tr>
+<tr>
+<td>show_overlay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>overlay_color</td>
+<td>red</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color correction' in modalità sviluppo (Develop) di darktable, con una foto di un canale al tramonto. È attiva una maschera denominata 'sun', visibile nell'area 'Masks' a destra, e l'opzione 'Show Overlay' è abilitata, indicando che l'utente sta applicando correzioni locali su aree sovraesposte (probabilmente il cielo/sorgente luminosa). Lo screenshot riflette un processo di recupero dei dettagli nelle zone bianche e reintegro del colore caldo, come descritto nel contesto narrativo." src="screenshots/frame_01412_480.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color correction' in modalità sviluppo (Develop) di darktable, con una foto di un canale al tramonto. È attiva una maschera denominata 'sun', visibile nell'area 'Masks' a destra, e l'opzione 'Show Overlay' è abilitata, indicando che l'utente sta applicando correzioni locali su aree sovraesposte (probabilmente il cielo/sorgente luminosa). Lo screenshot riflette un processo di recupero dei dettagli nelle zone bianche e reintegro del colore caldo, come descritto nel contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> color correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moire</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Selezioni/Maschere</li>
+<li>Pennello</li>
+<li>Intervallo Luminanza</li>
+<li>Intervallo Colore</li>
+<li>Dehaze</li>
+</ul>
+<hr />
+<h2 id="10-mascheratura-del-cielo-e-finitura-cromatica-in-lightroom">10. Mascheratura del cielo e finitura cromatica in Lightroom<a class="headerlink" href="#10-mascheratura-del-cielo-e-finitura-cromatica-in-lightroom" title="Permanent link">&para;</a></h2>
+<p><strong>[27:30 – 30:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=1650">Guarda nel video</a></p>
+<p>Selezione del cielo con gradiente lineare e intelligenza artificiale, raffinamento con intervallo di luminanza, regolazione di temperatura colore, saturazione e vibranza. Esportazione in TIFF.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Masks' attivo. È visibile una maschera rossa traslucida che copre la parte inferiore dell'immagine (il canale e le sue riflessioni), indicando un'area selezionata tramite intersezione con un gradiente lineare, come descritto dal narratore. Sono presenti due maschere definite: 'walls' e 'sun'. L'opzione 'Show Overlay' è abilitata, mostrando l'overlay rosso sulle aree mascherate. Il cursore è posizionato sopra la maschera rossa, suggerendo l'intenzione di modificare ulteriormente la maschera con uno strumento pennello (add/subtract)." src="screenshots/frame_01650_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Masks' attivo. È visibile una maschera rossa traslucida che copre la parte inferiore dell'immagine (il canale e le sue riflessioni), indicando un'area selezionata tramite intersezione con un gradiente lineare, come descritto dal narratore. Sono presenti due maschere definite: 'walls' e 'sun'. L'opzione 'Show Overlay' è abilitata, mostrando l'overlay rosso sulle aree mascherate. Il cursore è posizionato sopra la maschera rossa, suggerendo l'intenzione di modificare ulteriormente la maschera con uno strumento pennello (add/subtract).</em></p>
+<p><strong>Modulo:</strong> masks</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_name_1</td>
+<td>walls</td>
+</tr>
+<tr>
+<td>mask_name_2</td>
+<td>sun</td>
+</tr>
+<tr>
+<td>show_overlay</td>
+<td>True</td>
+</tr>
+<tr>
+<td>overlay_color</td>
+<td>red</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo di mascheramento attivo. Una maschera rossa copre la parte inferiore dell'immagine (il muro e la sua riflessione sull'acqua), indicando una selezione basata su luminanza. La barra 'Luminance Range' è impostata a 88/88 con l'opzione 'Invert' attivata, il che significa che è stata selezionata solo la porzione più luminosa (probabilmente i cieli o le aree illuminate dal sole) e invertita per ottenere la maschera visibile in rosso. Il cursore del mouse si trova sopra la barra di luminanza, coerentemente con il commento del narratore che parla di 'intersect with a luminance range' e 'get rid of everything that's too dark'. È presente anche un'indicazione di halo sopra il campanile, confermata dal contesto narrativo." src="screenshots/frame_01701_640.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo di mascheramento attivo. Una maschera rossa copre la parte inferiore dell'immagine (il muro e la sua riflessione sull'acqua), indicando una selezione basata su luminanza. La barra 'Luminance Range' è impostata a 88/88 con l'opzione 'Invert' attivata, il che significa che è stata selezionata solo la porzione più luminosa (probabilmente i cieli o le aree illuminate dal sole) e invertita per ottenere la maschera visibile in rosso. Il cursore del mouse si trova sopra la barra di luminanza, coerentemente con il commento del narratore che parla di 'intersect with a luminance range' e 'get rid of everything that's too dark'. È presente anche un'indicazione di halo sopra il campanile, confermata dal contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> masking</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance_range</td>
+<td>88/88</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>True</td>
+</tr>
+<tr>
+<td>show_luminance_map</td>
+<td>True</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>34</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>38</td>
+</tr>
+<tr>
+<td>whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>clarity</td>
+<td>26</td>
+</tr>
+<tr>
+<td>dehaze</td>
+<td>16</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Linear Gradient' attivo con una maschera a gradiente lineare applicata orizzontalmente sull'immagine, evidenziata da una sovrapposizione rossa che copre il cielo e parte degli edifici. La maschera è stata appena creata o modificata: si vede un cursore di selezione (mano) posizionato sul ponte, e due linee guida orizzontali indicano l'estensione del gradiente. L'istogramma mostra una forte dominanza di toni rossi/orange, coerente con la scena al tramonto. Il narratore sta correggendo una maschera inizialmente non allineata, riposizionandola per essere perfettamente orizzontale, mirando a isolare il cielo per successive correzioni." src="screenshots/frame_01770_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Linear Gradient' attivo con una maschera a gradiente lineare applicata orizzontalmente sull'immagine, evidenziata da una sovrapposizione rossa che copre il cielo e parte degli edifici. La maschera è stata appena creata o modificata: si vede un cursore di selezione (mano) posizionato sul ponte, e due linee guida orizzontali indicano l'estensione del gradiente. L'istogramma mostra una forte dominanza di toni rossi/orange, coerente con la scena al tramonto. Il narratore sta correggendo una maschera inizialmente non allineata, riposizionandola per essere perfettamente orizzontale, mirando a isolare il cielo per successive correzioni.</em></p>
+<p><strong>Modulo:</strong> linear gradient</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effect</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moiré</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Use Fine Adjustment</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Reset Sliders Automatically</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Selective Adjustment' attivo, in cui è stata creata una maschera denominata 'sky' (probabilmente generata tramite la funzione AI per la selezione del cielo). La maschera include anche parte del tetto, come indicato dal narratore. È attiva la visualizzazione dell'overlay (rosso trasparente) e la maschera è impostata su 'Invert'. Nella sezione 'Masks', sono visibili altre maschere ('Sky1', 'walls', 'sun') e un gradiente lineare. L'istogramma mostra una distribuzione bilanciata con picchi nei toni chiari (cielo) e scuri (architettura). Il cursore è posizionato sopra l'immagine principale, vicino al tetto della chiesa." src="screenshots/frame_01800_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Selective Adjustment' attivo, in cui è stata creata una maschera denominata 'sky' (probabilmente generata tramite la funzione AI per la selezione del cielo). La maschera include anche parte del tetto, come indicato dal narratore. È attiva la visualizzazione dell'overlay (rosso trasparente) e la maschera è impostata su 'Invert'. Nella sezione 'Masks', sono visibili altre maschere ('Sky1', 'walls', 'sun') e un gradiente lineare. L'istogramma mostra una distribuzione bilanciata con picchi nei toni chiari (cielo) e scuri (architettura). Il cursore è posizionato sopra l'immagine principale, vicino al tetto della chiesa.</em></p>
+<p><strong>Modulo:</strong> selective adjustment</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Effect</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moire</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Use Fine Adjustment</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Reset Sliders Automatically</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo di correzione colore in modalità 'Basic', con tre maschere definite ('sky', 'walls$', 'sun') e l'opzione 'Show Overlay' attiva, evidenziando le aree mascherate sull'immagine. L'istogramma indica una distribuzione tonale bilanciata con leggero predominio di toni caldi (arancioni/gialli) nel cielo al tramonto. Il narratore sta lavorando sulla maschera 'sky', intenzionato a ridurre l'overlay e aggiungere una lieve tonalità blu e texture fine, come suggerito dal contesto." src="screenshots/frame_01830_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo di correzione colore in modalità 'Basic', con tre maschere definite ('sky', 'walls$', 'sun') e l'opzione 'Show Overlay' attiva, evidenziando le aree mascherate sull'immagine. L'istogramma indica una distribuzione tonale bilanciata con leggero predominio di toni caldi (arancioni/gialli) nel cielo al tramonto. Il narratore sta lavorando sulla maschera 'sky', intenzionato a ridurre l'overlay e aggiungere una lieve tonalità blu e texture fine, come suggerito dal contesto.</em></p>
+<p><strong>Modulo:</strong> color correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temp</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Sharpness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Moire</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Defringe</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gradiente Lineare</li>
+<li>Selezione AI Cielo</li>
+<li>Temperatura Colore</li>
+<li>Saturazione/Vibranza</li>
+</ul>
+<hr />
+<h2 id="11-confronto-finale-dei-risultati-in-affinity-photo">11. Confronto finale dei risultati in Affinity Photo<a class="headerlink" href="#11-confronto-finale-dei-risultati-in-affinity-photo" title="Permanent link">&para;</a></h2>
+<p><strong>[30:50 – 34:24]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=1850">Guarda nel video</a></p>
+<p>Confronto visivo dei TIFF esportati da darktable, Lightroom e Capture One. Discussione sulle differenze di prospettiva, resa cromatica e modelli di licenza software.</p>
+<h3 id="screenshot_10">Screenshot<a class="headerlink" href="#screenshot_10" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'Basic' attivo in darktable, con una foto di un canale al tramonto (Bruges) in fase di sviluppo. I valori di esposizione e contrasto sono neutri, mentre highlights sono fortemente ridotti (-45), shadows leggermente aumentati (+9) e whites abbassati (-16), per preservare i dettagli nelle luci e nelle ombre. La temperatura del bianco è impostata su 6750K con tint +21, conferendo una tonalità calda. Il narratore menziona di aver appena aggiunto un po' di saturazione e vibrance in altre app, ma in darktable entrambi i parametri sono ancora a 0 — il cursore di Vibrance è visibile sotto il mouse, suggerendo che l’utente sta per modificarlo." src="screenshots/frame_01890_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Basic' attivo in darktable, con una foto di un canale al tramonto (Bruges) in fase di sviluppo. I valori di esposizione e contrasto sono neutri, mentre highlights sono fortemente ridotti (-45), shadows leggermente aumentati (+9) e whites abbassati (-16), per preservare i dettagli nelle luci e nelle ombre. La temperatura del bianco è impostata su 6750K con tint +21, conferendo una tonalità calda. Il narratore menziona di aver appena aggiunto un po' di saturazione e vibrance in altre app, ma in darktable entrambi i parametri sono ancora a 0 — il cursore di Vibrance è visibile sotto il mouse, suggerendo che l’utente sta per modificarlo.</em></p>
+<p><strong>Modulo:</strong> basic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WB</td>
+<td>Custom</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>6750</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>+21</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlights</td>
+<td>-45</td>
+</tr>
+<tr>
+<td>Shadows</td>
+<td>+9</td>
+</tr>
+<tr>
+<td>Whites</td>
+<td>-16</td>
+</tr>
+<tr>
+<td>Blacks</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Vibrance</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo sulla destra. Sono visibili tre livelli: 'lr (Pixel)', 'c1 (Pixel)' e 'dk (Pixel)', tutti con la visibilità abilitata (checkbox selezionati). L'opacità è al 100% e la modalità di fusione è 'Normal'. La vista principale mostra un'immagine bianca con sfondo a scacchiera trasparente, indicando che i livelli potrebbero essere vuoti o non ancora popolati. Il titolo della finestra indica che il file aperto è 'GFX100S-2022-02-11-19h24min38s-dk_...', suggerendo un workflow di editing con più versioni o strati di elaborazione." src="screenshots/frame_01964_329.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo sulla destra. Sono visibili tre livelli: 'lr (Pixel)', 'c1 (Pixel)' e 'dk (Pixel)', tutti con la visibilità abilitata (checkbox selezionati). L'opacità è al 100% e la modalità di fusione è 'Normal'. La vista principale mostra un'immagine bianca con sfondo a scacchiera trasparente, indicando che i livelli potrebbero essere vuoti o non ancora popolati. Il titolo della finestra indica che il file aperto è 'GFX100S-2022-02-11-19h24min38s-dk_...', suggerendo un workflow di editing con più versioni o strati di elaborazione.</em></p>
+<p><strong>Modulo:</strong> layers</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile un'immagine di una scena urbana al tramonto con un canale e un ponte, caricata come livello principale. A destra si trova il pannello Layers con tre livelli attivi ('lr', 'e1', 'dk'), tutti in modalità Normale e opacità al 100%. La barra del titolo indica che il file proviene da una fotocamera Fujifilm GFX100S (100 MP), confermando il contesto narrativo. L'utente ha appena importato immagini TIFF esportate da darktable per ulteriore editing in Affinity Photo." src="screenshots/frame_01931_663.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile un'immagine di una scena urbana al tramonto con un canale e un ponte, caricata come livello principale. A destra si trova il pannello Layers con tre livelli attivi ('lr', 'e1', 'dk'), tutti in modalità Normale e opacità al 100%. La barra del titolo indica che il file proviene da una fotocamera Fujifilm GFX100S (100 MP), confermando il contesto narrativo. L'utente ha appena importato immagini TIFF esportate da darktable per ulteriore editing in Affinity Photo.</em></p>
+<p><strong>Modulo:</strong> nessuno (interfaccia non è darktable)</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile una foto di un canale al tramonto con edifici storici e un ponte; il pannello a destra mostra la gestione dei livelli (Layers) con tre livelli pixel ('lr', 'c1', 'dk'), di cui 'dk' è selezionato. La barra del menu in alto indica 'Affinity Photo', e nella dock macOS sono presenti icone di altri software (tra cui darktable, Lightroom, Capture One), confermando che l'utente sta confrontando diversi programmi ma al momento sta utilizzando Affinity Photo." src="screenshots/frame_01980_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È visibile una foto di un canale al tramonto con edifici storici e un ponte; il pannello a destra mostra la gestione dei livelli (Layers) con tre livelli pixel ('lr', 'c1', 'dk'), di cui 'dk' è selezionato. La barra del menu in alto indica 'Affinity Photo', e nella dock macOS sono presenti icone di altri software (tra cui darktable, Lightroom, Capture One), confermando che l'utente sta confrontando diversi programmi ma al momento sta utilizzando Affinity Photo.</em></p>
+<p><strong>Modulo:</strong> non applicabile</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È aperta un'immagine di una scena urbana al tramonto con riflessi su un canale; a destra si vede il pannello 'Layers' con tre livelli pixel (lr, c1, dk), di cui 'dk' è selezionato e attivo. La barra del titolo indica 'Affinity Photo', e nella dock macOS sono visibili icone di altri software (tra cui Lightroom, Capture One, darktable), confermando che l'utente sta confrontando applicazioni. Il contesto narrativo menziona esplicitamente il passaggio da Lightroom a Capture One e a darktable, ma l'interfaccia attiva non è quella di darktable." src="screenshots/frame_02040_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable. È aperta un'immagine di una scena urbana al tramonto con riflessi su un canale; a destra si vede il pannello 'Layers' con tre livelli pixel (lr, c1, dk), di cui 'dk' è selezionato e attivo. La barra del titolo indica 'Affinity Photo', e nella dock macOS sono visibili icone di altri software (tra cui Lightroom, Capture One, darktable), confermando che l'utente sta confrontando applicazioni. Il contesto narrativo menziona esplicitamente il passaggio da Lightroom a Capture One e a darktable, ma l'interfaccia attiva non è quella di darktable.</em></p>
+<p><strong>Modulo:</strong> non è darktable</p>
+<h3 id="moduli-darktable_10">Moduli darktable<a class="headerlink" href="#moduli-darktable_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Confronto Livelli (Affinity Photo)</li>
+</ul>
+<hr />
+<h2 id="12-confronto-visivo-al-400-e-conclusioni">12. Confronto visivo al 400% e conclusioni<a class="headerlink" href="#12-confronto-visivo-al-400-e-conclusioni" title="Permanent link">&para;</a></h2>
+<p><strong>[34:25 – 37:44]</strong>
+ | <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=2065">Guarda nel video</a></p>
+<p>Analisi comparativa al 400% di zoom tra Darktable, Lightroom e Capture One per valutare la gestione del rumore e della nitidezza. Si evidenzia che Darktable non applica correzioni automatiche di default. Si conclude con le regole di condivisione sulla community e un invito alla pratica.</p>
+<h3 id="screenshot_11">Screenshot<a class="headerlink" href="#screenshot_11" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo a destra; sono visibili tre livelli pixel ('lr', 'c1', 'dk'), tutti abilitati. L'utente sta tentando di spostare un livello (probabilmente tramite trascinamento nel pannello principale), ma sembra confuso se stia muovendo il livello o l'intera immagine. L'immagine di sfondo è una foto urbana con un cartello degli autobus 'Kontagsbrug'. Non sono presenti maschere attive né istogrammi visibili." src="screenshots/frame_02130_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Layers' attivo a destra; sono visibili tre livelli pixel ('lr', 'c1', 'dk'), tutti abilitati. L'utente sta tentando di spostare un livello (probabilmente tramite trascinamento nel pannello principale), ma sembra confuso se stia muovendo il livello o l'intera immagine. L'immagine di sfondo è una foto urbana con un cartello degli autobus 'Kontagsbrug'. Non sono presenti maschere attive né istogrammi visibili.</em></p>
+<p><strong>Modulo:</strong> layers</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine ingrandita al 400%, focalizzata su un cartello stradale (Königsbrug, linee bus 4, 7, 9, 14, 17, 25, 90). Il pannello laterale destro è aperto sulla scheda 'Layers', con tre livelli pixel visibili ('lr', 'c1', 'dk'), indicando un confronto tra diversi software (probabilmente Lightroom, Capture One e Darktable). Non sono attive maschere o moduli di correzione; l'interfaccia è in modalità visualizzazione/zoom, non editing attivo. L'utente sta confrontando la leggibilità del testo a 400% tra applicazioni." src="screenshots/frame_02190_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine ingrandita al 400%, focalizzata su un cartello stradale (Königsbrug, linee bus 4, 7, 9, 14, 17, 25, 90). Il pannello laterale destro è aperto sulla scheda 'Layers', con tre livelli pixel visibili ('lr', 'c1', 'dk'), indicando un confronto tra diversi software (probabilmente Lightroom, Capture One e Darktable). Non sono attive maschere o moduli di correzione; l'interfaccia è in modalità visualizzazione/zoom, non editing attivo. L'utente sta confrontando la leggibilità del testo a 400% tra applicazioni.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zoom_level</td>
+<td>400%</td>
+</tr>
+<tr>
+<td>units</td>
+<td>Pixels</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: il titolo della finestra è 'Affinity Photo', la barra degli strumenti a sinistra e il pannello 'Layers' a destra sono caratteristici di Affinity. L'immagine visualizzata è una foto di un canale al tramonto con riflessi sull'acqua e un campanile sullo sfondo. Il narratore menziona di zoomare a 100% e poi a 400%, ma nello screenshot lo zoom non è esplicitamente indicato; si vede solo la vista normale dell'immagine nel canvas. Non sono presenti moduli di editing attivi (es. 'exposure', 'color balance'), né controlli tipici di darktable come i moduli nella sidebar destra." src="screenshots/frame_02070_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: il titolo della finestra è 'Affinity Photo', la barra degli strumenti a sinistra e il pannello 'Layers' a destra sono caratteristici di Affinity. L'immagine visualizzata è una foto di un canale al tramonto con riflessi sull'acqua e un campanile sullo sfondo. Il narratore menziona di zoomare a 100% e poi a 400%, ma nello screenshot lo zoom non è esplicitamente indicato; si vede solo la vista normale dell'immagine nel canvas. Non sono presenti moduli di editing attivi (es. 'exposure', 'color balance'), né controlli tipici di darktable come i moduli nella sidebar destra.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: la barra del titolo riporta 'Affinity Photo', il pannello a destra è il gestore dei livelli (Layers) con tre livelli pixel attivi, e lo zoom è impostato al 400%. Non è visibile alcun modulo di darktable; anzi, l'applicazione in esecuzione è chiaramente Affinity Photo, come confermato dall'icona nella dock e dal layout dell'interfaccia. Il narratore menziona darktable per contrasto, ma lo screenshot non lo rappresenta." src="screenshots/frame_02087_800.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: la barra del titolo riporta 'Affinity Photo', il pannello a destra è il gestore dei livelli (Layers) con tre livelli pixel attivi, e lo zoom è impostato al 400%. Non è visibile alcun modulo di darktable; anzi, l'applicazione in esecuzione è chiaramente Affinity Photo, come confermato dall'icona nella dock e dal layout dell'interfaccia. Il narratore menziona darktable per contrasto, ma lo screenshot non lo rappresenta.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zoom_level</td>
+<td>400%</td>
+</tr>
+<tr>
+<td>units</td>
+<td>Pixels</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: è visibile una foto di un canale al tramonto con edifici storici e un ponte, aperta in modalità 'Layers'. Sono presenti tre livelli pixel ('lr', 'c1', 'dk'), con il livello 'lr' attualmente selezionato. L'utente sta cercando di spostare un livello ma sembra confuso, come indicato dal contesto verbale; menziona erroneamente 'darktable' mentre sta usando Affinity Photo. Non ci sono moduli di darktable attivi, né strumenti di sviluppo RAW visibili." src="screenshots/frame_02141_320.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: è visibile una foto di un canale al tramonto con edifici storici e un ponte, aperta in modalità 'Layers'. Sono presenti tre livelli pixel ('lr', 'c1', 'dk'), con il livello 'lr' attualmente selezionato. L'utente sta cercando di spostare un livello ma sembra confuso, come indicato dal contesto verbale; menziona erroneamente 'darktable' mentre sta usando Affinity Photo. Non ci sono moduli di darktable attivi, né strumenti di sviluppo RAW visibili.</em></p>
+<p><strong>Modulo:</strong> non applicabile</p>
+<h3 id="moduli-darktable_11">Moduli darktable<a class="headerlink" href="#moduli-darktable_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Riduzione del rumore</li>
+<li>Nitidezza</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grafico canali RGB (darktable)</strong></td>
+<td>clipping, canale rosso, canale verde, canale blu</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento del bianco</strong></td>
+<td>temperatura, tonalità calda/fredda, campionamento punto neutro</td>
+</tr>
+<tr>
+<td><strong>Prospettiva</strong></td>
+<td>rotazione, correzione automatica, shift verticale</td>
+</tr>
+<tr>
+<td><strong>Esposizione e Curva</strong></td>
+<td>punti di bianco e nero, luminosità globale, mezzitoni</td>
+</tr>
+<tr>
+<td><strong>Maschere e Pennelli</strong></td>
+<td>gomma collegata, durezza, intervallo luminanza (Luma range), opacità</td>
+</tr>
+<tr>
+<td><strong>Colore avanzato</strong></td>
+<td>luminosità, tonalità, saturazione</td>
+</tr>
+<tr>
+<td><strong>Contrasto e Chiarezza</strong></td>
+<td>chiarezza, contrasto locale, struttura</td>
+</tr>
+<tr>
+<td><strong>Gradiente lineare</strong></td>
+<td>transizione lineare, maschera luminanza, allineamento orizzontale</td>
+</tr>
+<tr>
+<td><strong>Chiarezza (Clarity)</strong></td>
+<td>rischio aloni, contrasto locale, quantità</td>
+</tr>
+<tr>
+<td><strong>Curva tonale</strong></td>
+<td>luminanza, punti di controllo, contrasto locale senza aloni</td>
+</tr>
+<tr>
+<td><strong>Struttura (Structure)</strong></td>
+<td>micro-contrasto, dettaglio fine, effetto nebbia/nuvole</td>
+</tr>
+<tr>
+<td><strong>Pannello Base (Basic)</strong></td>
+<td>luci, ombre, esposizione, contrasto</td>
+</tr>
+<tr>
+<td><strong>Trasforma (Transform)</strong></td>
+<td>prospettiva guidata, correzione automatica verticale, allineamento architettura</td>
+</tr>
+<tr>
+<td><strong>Maschere/Selezioni</strong></td>
+<td>intervallo luminanza, intervallo colore, selezione AI cielo, pennello, intersezione maschere, gradiente lineare</td>
+</tr>
+<tr>
+<td><strong>Dehaze</strong></td>
+<td>rimozione foschia, scurimento locale, contrasto atmosferico</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento Colore</strong></td>
+<td>temperatura, vibranza, saturazione, tonalità</td>
+</tr>
+<tr>
+<td><strong>Riduzione del rumore</strong></td>
+<td>applicazione automatica (assente in Darktable), confronto visivo del rumore di fondo</td>
+</tr>
+<tr>
+<td><strong>Nitidezza</strong></td>
+<td>applicazione automatica (assente in Darktable), leggibilità del testo e dei dettagli fini</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Il clipping nei file RAW segue solitamente l'ordine: rosso, verde, blu. Utilizzare il grafico di darktable per identificare le aree perse prima di passare ad altri software. — <em>Analisi iniziale del RAW</em></li>
+<li>Utilizzare livelli di regolazione vuoti e rinominati per mantenere un flusso di lavoro completamente reversibile e organizzato. — <em>Workflow non distruttivo</em><blockquote>
+<p><strong>Attenzione:</strong> Attenzione a non esagerare con saturazione, chiarezza o dehaze in controluce per evitare aloni e artefatti innaturali attorno ai bordi. — <em>Regolazioni locali e globali</em>
+<strong>Importante:</strong> In Capture One le maschere non supportano intersezioni o combinazioni dirette con i gradienti, a differenza di darktable e Lightroom. È necessario simulare le transizioni manualmente con pennelli a bassa opacità. — <em>Limitazioni del software</em>
+<strong>Importante:</strong> Per recuperare colore in un'area completamente bianca (valori RGB a 255), ridurre la luminosità è inefficace. Agire sul bilanciamento del bianco per abbassare i toni freddi (blu) e recuperare le tinte calde. — <em>Recupero alte luci clippate</em></p>
+</blockquote>
+</li>
+<li>Il contrasto può essere usato strategicamente per scurire le aree sotto il 50% di luminosità, funzionando come un controllo di opacità selettivo sulle ombre. — <em>Gestione delle ombre</em><blockquote>
+<p><strong>Attenzione:</strong> Evitare di esagerare con la chiarezza per prevenire la formazione di aloni indesiderati sui bordi ad alto contrasto. — <em>Regolazione del contrasto locale su cieli, nuvole o bordi architettonici.</em>
+<strong>Importante:</strong> Utilizzare la curva tonale con punti di controllo per il contrasto locale invece degli slider di chiarezza, garantendo un risultato più pulito e privo di artefatti. — <em>Miglioramento del dettaglio in aree specifiche senza compromettere la transizione tonale.</em>
+<strong>Attenzione:</strong> Non abbassare eccessivamente il cursore delle luci per non scurire artificialmente il resto dell'immagine e perdere la naturalezza della scena. — <em>Regolazione globale dell'esposizione e recupero delle alte luci.</em></p>
+</blockquote>
+</li>
+<li>Combinare le maschere tramite intersezione con intervalli di luminanza o colore per isolare con precisione le aree target e ridurre le interferenze. — <em>Creazione di selezioni complesse per sole, muri o cielo in software con mascheratura avanzata.</em></li>
+<li>I risultati cromatici e di prospettiva variano significativamente tra i software; la calibrazione del monitor e le impostazioni di visualizzazione influenzano la percezione finale. — <em>Confronto tra darktable, Lightroom e Capture One e valutazione oggettiva dei risultati.</em><blockquote>
+<p><strong>Importante:</strong> Darktable non applica automaticamente riduzione del rumore e nitidezza all'importazione dei RAW, a differenza di Lightroom e Capture One. — <em>Durante l'apertura di nuovi file o il confronto con altri software di sviluppo</em>
+<strong>Attenzione:</strong> Il forum pixel.us è dedicato esclusivamente a software liberi e open source; è vietato pubblicare edit realizzati con Lightroom o Capture One. — <em>Quando si condividono i risultati o si partecipa alle discussioni sulla community</em></p>
+</blockquote>
+</li>
+<li>Scarica il file RAW originale fornito per esercitarti e provare a ottenere risultati migliori rispetto a quelli mostrati. — <em>Per la pratica autonoma e il miglioramento delle tecniche di post-produzione</em></li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:18:26.259019.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -358,6 +358,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../video-tutorials/" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -532,7 +552,7 @@
   <span class="md-ellipsis">
     
   
-    Importazione
+    Importazione e Organizzazione
   
 
     
@@ -560,7 +580,7 @@
   <span class="md-ellipsis">
     
   
-    Esposizione
+    Esposizione e Calibrazione Colore
   
 
     
@@ -588,7 +608,7 @@
   <span class="md-ellipsis">
     
   
-    Gestione Colore
+    Color Grading
   
 
     
@@ -789,7 +809,7 @@
   <span class="md-ellipsis">
     
   
-    Filmic RGB
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
   
 
     
@@ -901,7 +921,7 @@
   <span class="md-ellipsis">
     
   
-    Filmic RGB → Maschere
+    Maschere e Blending
   
 
     
@@ -1392,7 +1412,7 @@
   <span class="md-ellipsis">
     
   
-    Stili di Esportazione
+    Stili e Automazione
   
 
     
@@ -1571,6 +1591,95 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video-tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1615,40 +1724,104 @@
 <tr>
 <th>Termine</th>
 <th>Definizione</th>
+<th>Fonte</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Scene-referred</strong></td>
 <td>Flusso di lavoro che mantiene i dati lineari fino al tone mapping finale</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Display-referred</strong></td>
+<td>Flusso legacy che comprime i dati in [0,1] precocemente</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>Filmic RGB</strong></td>
-<td>Modulo darktable per il tone mapping scene-referred</td>
+<td>Modulo darktable per il tone mapping scene-referred (3 pannelli)</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/filmic-rgb/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>AgX</strong></td>
-<td>Algoritmo di tone mapping alternativo a Filmic, disponibile in darktable 4.4+</td>
+<td>Tone mapper piu' recente, risolve i Notorious 6</td>
+<td><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX</a></td>
+</tr>
+<tr>
+<td><strong>Sigmoid</strong></td>
+<td>Tone mapper minimale con toni pelle naturali</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/sigmoid/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>CAT16</strong></td>
 <td>Chromatic Adaptation Transform usata da Color Calibration</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-calibration/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>EIGF</strong></td>
+<td>Exposure-Independent Guided Filter -- cuore del Tone Equalizer</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/tone-equalizer/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Notorious 6</strong></td>
+<td>Sei colori che virano verso tonalita' sgradevoli nel tone mapping tradizionale</td>
+<td><a href="https://pixls.us/">PIXLS.US</a></td>
+</tr>
+<tr>
+<td><strong>Pixelpipe</strong></td>
+<td>La pipeline interna di elaborazione di darktable</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/program-internals/pixelpipe/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>XMP sidecar</strong></td>
+<td>File XML che contiene le modifiche non distruttive</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/overview/sidecar-files/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Raster mask</strong></td>
+<td>Maschera riutilizzata da un altro modulo della pipeline</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>SAM2</strong></td>
+<td>Segment Anything Model 2 -- modello AI per maschere automatiche (dt 5.6+)</td>
+<td><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks</a></td>
+</tr>
+<tr>
+<td><strong>PFM</strong></td>
+<td>Portable Float Map -- formato per maschere raster esterne</td>
+<td><a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">External masks</a></td>
+</tr>
+<tr>
+<td><strong>ASC CDL</strong></td>
+<td>American Society of Cinematographers Color Decision List -- standard cinema per Color Balance RGB</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-balance-rgb/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>ACES</strong></td>
-<td>Academy Color Encoding System — standard per la gestione del colore</td>
+<td>Academy Color Encoding System -- standard per la gestione del colore</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>LUT</strong></td>
-<td>Look-Up Table — tabella di rimappatura colori</td>
+<td>Look-Up Table -- tabella di rimappatura colori</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/lut-3d/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>EV</strong></td>
-<td>Exposure Value — unità di misura dell'esposizione (stop)</td>
+<td>Exposure Value -- unita' di misura dell'esposizione (stop)</td>
+<td></td>
 </tr>
 <tr>
 <td><strong>SSIM</strong></td>
-<td>Structural Similarity Index — misura di similarità tra immagini</td>
+<td>Structural Similarity Index -- misura di similarita' tra immagini</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Wavelet</strong></td>
+<td>Decomposizione multi-scala usata da Contrast Equalizer e Denoise</td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/contrast-equalizer/">Manual</a></td>
 </tr>
 </tbody>
 </table>

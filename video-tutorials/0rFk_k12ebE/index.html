@@ -1,0 +1,4178 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/0rFk_k12ebE/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Focus stacking from darktable - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-focus-stacking-from-darktable" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Focus stacking from darktable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-al-focus-stacking-e-preparazione-delle-immagini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione al focus stacking e preparazione delle immagini
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione al focus stacking e preparazione delle immagini">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-sviluppo-di-riferimento-e-sincronizzazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Sviluppo di riferimento e sincronizzazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Sviluppo di riferimento e sincronizzazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-esportazione-e-stacking-con-affinity-photo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Esportazione e stacking con Affinity Photo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Esportazione e stacking con Affinity Photo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-soluzione-open-source-focus-stack-e-configurazione-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Soluzione open source: Focus Stack e configurazione macOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Soluzione open source: Focus Stack e configurazione macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-workflow-avanzato-con-helicon-focus-e-script-lua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Workflow avanzato con Helicon Focus e script Lua
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Workflow avanzato con Helicon Focus e script Lua">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-configurazione-del-percorso-eseguibile-di-helicon-focus-su-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Configurazione del percorso eseguibile di Helicon Focus su macOS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Configurazione del percorso eseguibile di Helicon Focus su macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-workflow-di-stacking-con-helicon-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Workflow di stacking con Helicon Focus
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Workflow di stacking con Helicon Focus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-installazione-e-configurazione-dello-script-lua-per-zerene-stacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Installazione e configurazione dello script Lua per Zerene Stacker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Installazione e configurazione dello script Lua per Zerene Stacker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configurazione-avanzata-di-zerene-stacker-in-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Configurazione avanzata di Zerene Stacker in darktable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Configurazione avanzata di Zerene Stacker in darktable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-esecuzione-dello-stacking-con-zerene-stacker-e-gestione-dei-risultati" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Esecuzione dello stacking con Zerene Stacker e gestione dei risultati
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Esecuzione dello stacking con Zerene Stacker e gestione dei risultati">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-focus-stacking-from-darktable">[ENG] Focus stacking from darktable<a class="headerlink" href="#eng-focus-stacking-from-darktable" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=0rFk_k12ebE">https://www.youtube.com/watch?v=0rFk_k12ebE</a>
+<strong>Generato:</strong> 2026-04-12T01:15:25.264742
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-al-focus-stacking-e-preparazione-delle-immagini">Introduzione al focus stacking e preparazione delle immagini</a></li>
+<li><a href="#sviluppo-di-riferimento-e-sincronizzazione">Sviluppo di riferimento e sincronizzazione</a></li>
+<li><a href="#esportazione-e-stacking-con-affinity-photo">Esportazione e stacking con Affinity Photo</a></li>
+<li><a href="#soluzione-open-source:-focus-stack-e-configurazione-macos">Soluzione open source: Focus Stack e configurazione macOS</a></li>
+<li><a href="#workflow-avanzato-con-helicon-focus-e-script-lua">Workflow avanzato con Helicon Focus e script Lua</a></li>
+<li><a href="#configurazione-del-percorso-eseguibile-di-helicon-focus-su-macos">Configurazione del percorso eseguibile di Helicon Focus su macOS</a></li>
+<li><a href="#workflow-di-stacking-con-helicon-focus">Workflow di stacking con Helicon Focus</a></li>
+<li><a href="#installazione-e-configurazione-dello-script-lua-per-zerene-stacker">Installazione e configurazione dello script Lua per Zerene Stacker</a></li>
+<li><a href="#configurazione-avanzata-di-zerene-stacker-in-darktable">Configurazione avanzata di Zerene Stacker in darktable</a></li>
+<li><a href="#esecuzione-dello-stacking-con-zerene-stacker-e-gestione-dei-risultati">Esecuzione dello stacking con Zerene Stacker e gestione dei risultati</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-al-focus-stacking-e-preparazione-delle-immagini">1. Introduzione al focus stacking e preparazione delle immagini<a class="headerlink" href="#1-introduzione-al-focus-stacking-e-preparazione-delle-immagini" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 01:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=0">Guarda nel video</a></p>
+<p>Spiegazione del concetto di focus stacking, necessità di software esterno e presentazione della sequenza di 20 foto della stessa scena.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine macro di un fiore in primo piano e uno sfondo sfocato. È attiva la funzione di focus peaking (indicata dal cerchio rosa intorno al bocciolo), utilizzata per identificare le aree a fuoco. L'utente sta esaminando una serie di 20 foto con diversi piani di messa a fuoco, con l'intento di eseguire un focus stacking per ottenere un'immagine con profondità di campo estesa e interamente nitida. La barra degli strumenti inferiore mostra i controlli per scorrere le immagini (freccia avanti/indietro)." src="screenshots/frame_00090_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine macro di un fiore in primo piano e uno sfondo sfocato. È attiva la funzione di focus peaking (indicata dal cerchio rosa intorno al bocciolo), utilizzata per identificare le aree a fuoco. L'utente sta esaminando una serie di 20 foto con diversi piani di messa a fuoco, con l'intento di eseguire un focus stacking per ottenere un'immagine con profondità di campo estesa e interamente nitida. La barra degli strumenti inferiore mostra i controlli per scorrere le immagini (freccia avanti/indietro).</em></p>
+<p><strong>Modulo:</strong> none</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zoom_level</td>
+<td>1:1</td>
+</tr>
+<tr>
+<td>image_info</td>
+<td>2024-08-29-09h55min40s (32) X-H2S.RAF, 1/500, f/2.8, 80.0mm, ISO 500</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF) di un fiore, selezionata l'immagine #31 su 54. Il pannello destro visualizza le opzioni di esportazione e gestione dei metadati, con impostazioni predefinite per JPEG a qualità 90 e salvataggio su disco locale. Non sono attive maschere né moduli di sviluppo; lo stato indica una fase di selezione e preparazione prima dello stacking o dello sviluppo. Il cursore è evidenziato su un'anteprima, suggerendo un'azione imminente di selezione o navigazione." src="screenshots/frame_00051_533.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF) di un fiore, selezionata l'immagine #31 su 54. Il pannello destro visualizza le opzioni di esportazione e gestione dei metadati, con impostazioni predefinite per JPEG a qualità 90 e salvataggio su disco locale. Non sono attive maschere né moduli di sviluppo; lo stato indica una fase di selezione e preparazione prima dello stacking o dello sviluppo. Il cursore è evidenziato su un'anteprima, suggerendo un'azione imminente di selezione o navigazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>#31</td>
+</tr>
+<tr>
+<td>total_images_in_collection</td>
+<td>54</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>target_storage</td>
+<td>/Volumes/Crucial/photos/gallery/stitch/${FILE_NAME}</td>
+</tr>
+<tr>
+<td>on_conflict</td>
+<td>overwrite</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto macro di un fiore parzialmente fuori fuoco. È visibile il pannello info metadati in alto a sinistra, che riporta le impostazioni di scatto (1/500s, f/2.8, 80mm, ISO 500) e una valutazione a 3 stelle su 5. Al centro è presente il cursore di navigazione tra immagini (freccia play con puntini), indicando che l'utente sta scorrendo una sequenza di 20 foto per la focus stacking. Non sono attivi moduli di sviluppo o maschere; lo stato corrente è pre-sviluppo, prima dell’elaborazione." src="screenshots/frame_00096_319.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto macro di un fiore parzialmente fuori fuoco. È visibile il pannello info metadati in alto a sinistra, che riporta le impostazioni di scatto (1/500s, f/2.8, 80mm, ISO 500) e una valutazione a 3 stelle su 5. Al centro è presente il cursore di navigazione tra immagini (freccia play con puntini), indicando che l'utente sta scorrendo una sequenza di 20 foto per la focus stacking. Non sono attivi moduli di sviluppo o maschere; lo stato corrente è pre-sviluppo, prima dell’elaborazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>1/500</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/2.8</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>80.0mm</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>500</td>
+</tr>
+<tr>
+<td>filename</td>
+<td>2024-08-28-09h55min40s (41) X-H2S.RAF</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di 15 anteprime di immagini RAW (RAF) di fiori in primo piano, sfocati in parte. L'immagine #31 è selezionata (evidenziata con bordo bianco), e si trova nella seconda riga, prima colonna. Il pannello destro mostra le opzioni di esportazione e gestione della collezione; il pannello sinistro include filtri e tag. Il narratore sta descrivendo l'intenzione di combinare più scatti fuori fuoco per creare un'unica immagine a profondità di campo estesa (focus stacking), e ha appena selezionato un'immagine in cui il fiore è visibile e non solo la punta di un elemento irrilevante." src="screenshots/frame_00109_560.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di 15 anteprime di immagini RAW (RAF) di fiori in primo piano, sfocati in parte. L'immagine #31 è selezionata (evidenziata con bordo bianco), e si trova nella seconda riga, prima colonna. Il pannello destro mostra le opzioni di esportazione e gestione della collezione; il pannello sinistro include filtri e tag. Il narratore sta descrivendo l'intenzione di combinare più scatti fuori fuoco per creare un'unica immagine a profondità di campo estesa (focus stacking), e ha appena selezionato un'immagine in cui il fiore è visibile e non solo la punta di un elemento irrilevante.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>#31</td>
+</tr>
+<tr>
+<td>total_images_in_collection</td>
+<td>54</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini, principalmente di fiori viola a profondità di campo ridotta. L'immagine #31 è selezionata e evidenziata da un cerchio rosa attorno al cursore. Nella parte inferiore sono visibili alcune anteprime diverse (farfalla, foto in bianco e nero, finestra, strada), indicando una collezione mista. Il pannello destro mostra le opzioni di esportazione e gestione delle immagini, ma nessun modulo di sviluppo o focus stacking è attivo; si tratta di una fase preliminare di selezione prima dell'elaborazione." src="screenshots/frame_00060_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini, principalmente di fiori viola a profondità di campo ridotta. L'immagine #31 è selezionata e evidenziata da un cerchio rosa attorno al cursore. Nella parte inferiore sono visibili alcune anteprime diverse (farfalla, foto in bianco e nero, finestra, strada), indicando una collezione mista. Il pannello destro mostra le opzioni di esportazione e gestione delle immagini, ma nessun modulo di sviluppo o focus stacking è attivo; si tratta di una fase preliminare di selezione prima dell'elaborazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>#31</td>
+</tr>
+<tr>
+<td>total_images_in_collection</td>
+<td>54</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-sviluppo-di-riferimento-e-sincronizzazione">2. Sviluppo di riferimento e sincronizzazione<a class="headerlink" href="#2-sviluppo-di-riferimento-e-sincronizzazione" title="Permanent link">&para;</a></h2>
+<p><strong>[01:50 – 04:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=110">Guarda nel video</a></p>
+<p>Applicazione delle correzioni di base su una foto campione e copia dello stack di cronologia su tutte le immagini della sequenza.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È visibile una curva tonale personalizzata con un punto di controllo a circa +0.0 EV e un'ampia gamma dinamica (da -2.7 a +2.4 EV). I valori di esposizione relativa bianca e nera sono impostati rispettivamente a +2.43 EV e -2.73 EV, indicando un'elaborazione aggressiva per recuperare dettagli nelle luci e nelle ombre. Il pulsante 'reconstruct' è attivato, suggerendo l'uso della modalità di ricostruzione del colore. L'immagine in anteprima è un primo piano di un fiore viola con sfondo verde sfocato, non ancora ritagliato né ruotato, come specificato dal narratore." src="screenshots/frame_00145_500.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È visibile una curva tonale personalizzata con un punto di controllo a circa +0.0 EV e un'ampia gamma dinamica (da -2.7 a +2.4 EV). I valori di esposizione relativa bianca e nera sono impostati rispettivamente a +2.43 EV e -2.73 EV, indicando un'elaborazione aggressiva per recuperare dettagli nelle luci e nelle ombre. Il pulsante 'reconstruct' è attivato, suggerendo l'uso della modalità di ricostruzione del colore. L'immagine in anteprima è un primo piano di un fiore viola con sfondo verde sfocato, non ancora ritagliato né ruotato, come specificato dal narratore.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>2.43 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-2.73 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>look</td>
+<td>reconstruct</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È visualizzata una foto macro di un fiore viola con sfondo sfocato. L'istogramma RGB è visibile in alto a destra, con curve di tonalità e valori di esposizione relativi bianco e nero impostati rispettivamente a +2.43 EV e -9.65 EV. Il cursore del mouse è posizionato sul parametro 'black relative exposure', indicando un'interazione in corso. Il narratore sta regolando la curva filmica per aumentare l'esposizione nera e aggiungere contrasto, con l'intenzione di applicare uno stile 'vibrant colours' senza ritagli o rotazioni, mantenendo tutti i pixel originali per un successivo stacking." src="screenshots/frame_00150_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È visualizzata una foto macro di un fiore viola con sfondo sfocato. L'istogramma RGB è visibile in alto a destra, con curve di tonalità e valori di esposizione relativi bianco e nero impostati rispettivamente a +2.43 EV e -9.65 EV. Il cursore del mouse è posizionato sul parametro 'black relative exposure', indicando un'interazione in corso. Il narratore sta regolando la curva filmica per aumentare l'esposizione nera e aggiungere contrasto, con l'intenzione di applicare uno stile 'vibrant colours' senza ritagli o rotazioni, mantenendo tutti i pixel originali per un successivo stacking.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>2.43 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-9.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>non esplicitamente visibile, ma menzionato come da aggiungere</td>
+</tr>
+<tr>
+<td>color mode</td>
+<td>vibrant colours (menzionato nel contesto, non visibile direttamente nello screenshot)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista della libreria di darktable con 20 immagini selezionate (su 54 totali) nella collezione 'youtube'. Il pannello destro è aperto sulla scheda 'export', con impostazioni per l'esportazione in JPEG a qualità 90, profilo sRGB e sovrascrittura abilitata. Nella barra degli strumenti inferiore sono visibili i log di script arrestati (ExportToPublish, HeliconFocus, ZereneStacker), indicando attività precedenti o parallele. Un cursore rosso evidenzia il tag 'youtube (54)' nella sezione delle collezioni, suggerendo che l’utente sta operando su questa raccolta." src="screenshots/frame_00262_740.jpg" /></p>
+<p><em>L'interfaccia mostra la vista della libreria di darktable con 20 immagini selezionate (su 54 totali) nella collezione 'youtube'. Il pannello destro è aperto sulla scheda 'export', con impostazioni per l'esportazione in JPEG a qualità 90, profilo sRGB e sovrascrittura abilitata. Nella barra degli strumenti inferiore sono visibili i log di script arrestati (ExportToPublish, HeliconFocus, ZereneStacker), indicando attività precedenti o parallele. Un cursore rosso evidenzia il tag 'youtube (54)' nella sezione delle collezioni, suggerendo che l’utente sta operando su questa raccolta.</em></p>
+<p><strong>Modulo:</strong> export</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>target_storage</td>
+<td>/Volumes/Crucial/photos/gallery/stitch/${FILE_NAME}</td>
+</tr>
+<tr>
+<td>overwrite</td>
+<td>True</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0 px</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità darkroom, con un'immagine macro di un fiore parzialmente sbocciato al centro. È visibile un cerchio rosso disegnato a mano (maschera o indicatore) sulla parte destra del fiore, probabilmente aggiunto dal narratore per evidenziare la zona di interesse. Il pannello dei moduli a destra elenca i moduli attivi, tra cui 'exposure' e 'filmic rgb', entrambi abilitati. In basso è riportata la metadata della foto: Fujifilm X-H2S, 1/500s, f/2.8, 80mm, ISO 500. La barra degli strumenti inferiore mostra la timeline delle miniature della collezione corrente (54 immagini, #43 selezionata)." src="screenshots/frame_00132_979.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità darkroom, con un'immagine macro di un fiore parzialmente sbocciato al centro. È visibile un cerchio rosso disegnato a mano (maschera o indicatore) sulla parte destra del fiore, probabilmente aggiunto dal narratore per evidenziare la zona di interesse. Il pannello dei moduli a destra elenca i moduli attivi, tra cui 'exposure' e 'filmic rgb', entrambi abilitati. In basso è riportata la metadata della foto: Fujifilm X-H2S, 1/500s, f/2.8, 80mm, ISO 500. La barra degli strumenti inferiore mostra la timeline delle miniature della collezione corrente (54 immagini, #43 selezionata).</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>non visibile direttamente, ma indicato come in fase di regolazione con tasto E + rotellina</td>
+</tr>
+<tr>
+<td>filmic_rgb</td>
+<td>attivo (menzionato come 'I have filmic here')</td>
+</tr>
+<tr>
+<td>black_relative_exposure</td>
+<td>menzionato come da regolare 'quite a lot'</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini floreali in formato RAF. Sono selezionate 20 immagini su 54 totali nella collezione 'youtube'. Un'immagine (quarta riga, quarta colonna) è evidenziata da un cerchio rosso con un cursore al centro, indicando che è stata modificata (come confermato dal narratore: 'I've had the red dots... I know which one I actually changed'). Il pannello destro mostra il tab 'lighttable' attivo, con sezioni 'selection', 'images', 'history stack' espansa e opzioni come 'selective paste...', 'paste', 'append'. In basso a sinistra, lo script manager segnala che alcuni script sono stati fermati (es. ExportToPublish stopped)." src="screenshots/frame_00224_460.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini floreali in formato RAF. Sono selezionate 20 immagini su 54 totali nella collezione 'youtube'. Un'immagine (quarta riga, quarta colonna) è evidenziata da un cerchio rosso con un cursore al centro, indicando che è stata modificata (come confermato dal narratore: 'I've had the red dots... I know which one I actually changed'). Il pannello destro mostra il tab 'lighttable' attivo, con sezioni 'selection', 'images', 'history stack' espansa e opzioni come 'selective paste...', 'paste', 'append'. In basso a sinistra, lo script manager segnala che alcuni script sono stati fermati (es. ExportToPublish stopped).</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images</td>
+<td>20 images selected of 54</td>
+</tr>
+<tr>
+<td>collection</td>
+<td>youtube (54)</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>capture time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>esposizione</li>
+<li>filmic rgb</li>
+<li>colori vivaci</li>
+<li>nitidezza</li>
+</ul>
+<hr />
+<h2 id="3-esportazione-e-stacking-con-affinity-photo">3. Esportazione e stacking con Affinity Photo<a class="headerlink" href="#3-esportazione-e-stacking-con-affinity-photo" title="Permanent link">&para;</a></h2>
+<p><strong>[04:50 – 07:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=290">Guarda nel video</a></p>
+<p>Esportazione delle immagini in JPEG e processo di unione automatica tramite Affinity Photo 2.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra la finestra di selezione file di darktable (modalità 'New Focus Merge'), con una ricerca per 'stitch' e 20 file JPEG selezionati in una cartella denominata 'stitch'. L'utente sta preparando un focus stacking, come indicato dal contesto: ha già esportato le immagini in sRGB e ora le sta caricando per l'elaborazione automatica. La finestra è sovrapposta all'interfaccia principale di darktable, che mostra il pannello dei metadati a destra e la barra degli strumenti in alto. Il cursore è posizionato sul pulsante 'Open', pronto a confermare la selezione." src="screenshots/frame_00324_459.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra di selezione file di darktable (modalità 'New Focus Merge'), con una ricerca per 'stitch' e 20 file JPEG selezionati in una cartella denominata 'stitch'. L'utente sta preparando un focus stacking, come indicato dal contesto: ha già esportato le immagini in sRGB e ora le sta caricando per l'elaborazione automatica. La finestra è sovrapposta all'interfaccia principale di darktable, che mostra il pannello dei metadati a destra e la barra degli strumenti in alto. Il cursore è posizionato sul pulsante 'Open', pronto a confermare la selezione.</em></p>
+<p><strong>Modulo:</strong> file_chooser</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search_query</td>
+<td>stitch</td>
+</tr>
+<tr>
+<td>selected_files_count</td>
+<td>20</td>
+</tr>
+<tr>
+<td>file_type_filter</td>
+<td>JPEG image</td>
+</tr>
+<tr>
+<td>folder_path</td>
+<td>stitch</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista di importazione con una finestra del file system sovrapposta, focalizzata sulla cartella 'stitch'. Sono visibili 20 file JPEG con nomi sequenziali (es. '2024-08-28-09h55min40s (25) X-H2S.jpg'), tipici di scatti per focus stacking o panorami. A sinistra, l'albero delle collezioni evidenzia la collezione 'youtube (54)', mentre in basso è attiva la griglia di anteprima delle immagini RAW (RAF). La barra degli strumenti inferiore mostra il pulsante 'import' evidenziato, indicando che l'utente sta preparando l'importazione di questi file per un successivo processo di stacking in Affinity Photo 2." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista di importazione con una finestra del file system sovrapposta, focalizzata sulla cartella 'stitch'. Sono visibili 20 file JPEG con nomi sequenziali (es. '2024-08-28-09h55min40s (25) X-H2S.jpg'), tipici di scatti per focus stacking o panorami. A sinistra, l'albero delle collezioni evidenzia la collezione 'youtube (54)', mentre in basso è attiva la griglia di anteprima delle immagini RAW (RAF). La barra degli strumenti inferiore mostra il pulsante 'import' evidenziato, indicando che l'utente sta preparando l'importazione di questi file per un successivo processo di stacking in Affinity Photo 2.</em></p>
+<p><strong>Modulo:</strong> import</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_collection</td>
+<td>youtube (54)</td>
+</tr>
+<tr>
+<td>import_source</td>
+<td>stitch</td>
+</tr>
+<tr>
+<td>file_count</td>
+<td>20 items</td>
+</tr>
+<tr>
+<td>disk_space</td>
+<td>1.48 TB available</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra una finestra di notifica 'Converted Profile' che indica la conversione del profilo colore in sRGB (IEC61966-2.1), mentre l'area di lavoro è ancora grigia e vuota, suggerendo che le immagini JPEG stanno venendo importate o elaborate in batch. Il pannello Metadata a destra visualizza i dati EXIF di una foto Fujifilm X-H2S con obiettivo XF80mm. Non sono visibili moduli di sviluppo attivi né maschere; lo stato corrisponde all'inizio del flusso di lavoro dopo l'importazione di un gruppo di immagini." src="screenshots/frame_00333_680.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra una finestra di notifica 'Converted Profile' che indica la conversione del profilo colore in sRGB (IEC61966-2.1), mentre l'area di lavoro è ancora grigia e vuota, suggerendo che le immagini JPEG stanno venendo importate o elaborate in batch. Il pannello Metadata a destra visualizza i dati EXIF di una foto Fujifilm X-H2S con obiettivo XF80mm. Non sono visibili moduli di sviluppo attivi né maschere; lo stato corrisponde all'inizio del flusso di lavoro dopo l'importazione di un gruppo di immagini.</em></p>
+<p><strong>Modulo:</strong> nessuno (interfaccia principale in fase di caricamento)</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>profile_conversion</td>
+<td>IEC61966-2.1 (sRGB)</td>
+</tr>
+<tr>
+<td>camera</td>
+<td>X-H2S</td>
+</tr>
+<tr>
+<td>lens</td>
+<td>XF80mmF2.8 R LM OIS WR Macro</td>
+</tr>
+<tr>
+<td>date_shot</td>
+<td>28/08/2024, 09:55:40</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>1/500s</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/2.8</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>500</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>80.0mm</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra una finestra di notifica 'Converted Profile' che indica la conversione del documento nel profilo sRGB IEC61966-2.1. Lo spazio di lavoro è vuoto con un cursore circolare di caricamento al centro, suggerendo che l'immagine è in fase di importazione o conversione. Il pannello Metadata a destra visualizza i dati EXIF della foto (Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, data 28/08/2024, ISO 500, f/2.8, 1/500s). Il pannello Layers mostra un singolo livello 'Pixel' con opacità al 100%. La barra dei menu superiore e il dock macOS indicano che l'applicazione attiva è Affinity Photo 2, non darktable — lo screenshot è quindi fuorviante rispetto al contesto narrativo che parla di darktable." src="screenshots/frame_00330_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra una finestra di notifica 'Converted Profile' che indica la conversione del documento nel profilo sRGB IEC61966-2.1. Lo spazio di lavoro è vuoto con un cursore circolare di caricamento al centro, suggerendo che l'immagine è in fase di importazione o conversione. Il pannello Metadata a destra visualizza i dati EXIF della foto (Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, data 28/08/2024, ISO 500, f/2.8, 1/500s). Il pannello Layers mostra un singolo livello 'Pixel' con opacità al 100%. La barra dei menu superiore e il dock macOS indicano che l'applicazione attiva è Affinity Photo 2, non darktable — lo screenshot è quindi fuorviante rispetto al contesto narrativo che parla di darktable.</em></p>
+<p><strong>Modulo:</strong> nessuno (interfaccia in stato di conversione/ caricamento)</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>conversion_profile</td>
+<td>sRGB IEC61966-2.1</td>
+</tr>
+<tr>
+<td>image_dimensions</td>
+<td>6240 x 4160 px</td>
+</tr>
+<tr>
+<td>color_space</td>
+<td>RGB/8</td>
+</tr>
+<tr>
+<td>working_profile</td>
+<td>sRGB IEC61966-2.1</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo 2, non di darktable. È visibile un'immagine macro di un fiore con dettagli nitidi, probabilmente il risultato di una focus stacking da 20 immagini, come indicato dal contesto. Il pannello 'Sources' elenca tre file: 'Focus merged image' e due immagini原始 con timestamp identici (2024-08-28-09h55min40s), suggerendo che l'immagine mostrata è il risultato della fusione. Il cursore del mouse è evidenziato da un cerchio rosso su un petalo, indicando un'ispezione ravvicinata della qualità dello stacking. I metadati EXIF mostrano fotocamera Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, ISO 500, 1/500s, f/2.8." src="screenshots/frame_00360_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo 2, non di darktable. È visibile un'immagine macro di un fiore con dettagli nitidi, probabilmente il risultato di una focus stacking da 20 immagini, come indicato dal contesto. Il pannello 'Sources' elenca tre file: 'Focus merged image' e due immagini原始 con timestamp identici (2024-08-28-09h55min40s), suggerendo che l'immagine mostrata è il risultato della fusione. Il cursore del mouse è evidenziato da un cerchio rosso su un petalo, indicando un'ispezione ravvicinata della qualità dello stacking. I metadati EXIF mostrano fotocamera Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, ISO 500, 1/500s, f/2.8.</em></p>
+<p><strong>Modulo:</strong> non è darktable, ma Affinity Photo 2</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>64 px</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>hardness</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>stabiliser</td>
+<td>disattivato</td>
+</tr>
+<tr>
+<td>length</td>
+<td>35</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>alignment</td>
+<td>Aligned</td>
+</tr>
+<tr>
+<td>current_layer</td>
+<td>Current Layer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>esporta</li>
+</ul>
+<hr />
+<h2 id="4-soluzione-open-source-focus-stack-e-configurazione-macos">4. Soluzione open source: Focus Stack e configurazione macOS<a class="headerlink" href="#4-soluzione-open-source-focus-stack-e-configurazione-macos" title="Permanent link">&para;</a></h2>
+<p><strong>[07:50 – 11:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=470">Guarda nel video</a></p>
+<p>Utilizzo dell'app gratuita Focus Stack da GitHub, risoluzione dei problemi di permessi su macOS e valutazione del risultato.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF) di fiori viola. È selezionata un'unica immagine (#31 su 54). Il pannello destro è aperto sulla scheda 'export', con le opzioni di esportazione configurate per salvare direttamente nella collezione corrente, utilizzando JPEG a 8-bit con qualità 90 e profilo sRGB. Non sono attive maschere né strumenti di ritocco; lo stato è preparatorio all'esportazione." src="screenshots/frame_00627_720.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF) di fiori viola. È selezionata un'unica immagine (#31 su 54). Il pannello destro è aperto sulla scheda 'export', con le opzioni di esportazione configurate per salvare direttamente nella collezione corrente, utilizzando JPEG a 8-bit con qualità 90 e profilo sRGB. Non sono attive maschere né strumenti di ritocco; lo stato è preparatorio all'esportazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la sezione di esportazione di darktable con 20 immagini selezionate (su 54 totali) nella griglia di visualizzazione. Il pannello destro è aperto sulla scheda 'export', con le opzioni di esportazione configurate per JPEG a qualità 90, profilo sRGB e dimensioni non impostate (0x0). Un cerchio rosso evidenzia il campo 'target storage', indicando l’attenzione del narratore su dove verranno salvati i file. Il contesto audio conferma che l’utente sta preparando l’esportazione di 20 immagini in JPEG per successivo uso in Helicon Focus." src="screenshots/frame_00660_000.jpg" /></p>
+<p><em>L'interfaccia mostra la sezione di esportazione di darktable con 20 immagini selezionate (su 54 totali) nella griglia di visualizzazione. Il pannello destro è aperto sulla scheda 'export', con le opzioni di esportazione configurate per JPEG a qualità 90, profilo sRGB e dimensioni non impostate (0x0). Un cerchio rosso evidenzia il campo 'target storage', indicando l’attenzione del narratore su dove verranno salvati i file. Il contesto audio conferma che l’utente sta preparando l’esportazione di 20 immagini in JPEG per successivo uso in Helicon Focus.</em></p>
+<p><strong>Modulo:</strong> export</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0</td>
+</tr>
+<tr>
+<td>allow_upscaling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>high_quality_resampling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di 54 immagini RAW (RAF) di fiori in primo piano, selezionate nella collezione 'youtube'. Il pannello destro è aperto sulla scheda 'selection', con opzioni per l'esportazione configurate per JPEG a qualità 90 e profilo sRGB. Un cerchio rosso evidenzia il pulsante 'selection' nella barra degli strumenti, indicando che l'utente sta operando sulle selezioni multiple. Non sono attive maschere o moduli di sviluppo; lo stato è preparatorio per l'esportazione verso software esterni di focus stacking come Helicon Focus o Zerene Stack." src="screenshots/frame_00596_233.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di 54 immagini RAW (RAF) di fiori in primo piano, selezionate nella collezione 'youtube'. Il pannello destro è aperto sulla scheda 'selection', con opzioni per l'esportazione configurate per JPEG a qualità 90 e profilo sRGB. Un cerchio rosso evidenzia il pulsante 'selection' nella barra degli strumenti, indicando che l'utente sta operando sulle selezioni multiple. Non sono attive maschere o moduli di sviluppo; lo stato è preparatorio per l'esportazione verso software esterni di focus stacking come Helicon Focus o Zerene Stack.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF), tra cui fiori, farfalla, scena in bianco e nero e finestra. È selezionata un'unica immagine (n. 31 su 54), ma il contesto narrativo indica l'intenzione di selezionare 20 immagini per esportazione in JPEG. Il pannello destro è aperto sulla sezione 'export' con impostazioni predefinite per JPEG a qualità 90, profilo sRGB e senza ridimensionamento. Non sono attive maschere o strumenti di editing avanzato; lo stato è preparatorio all'esportazione." src="screenshots/frame_00657_720.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini RAW (RAF), tra cui fiori, farfalla, scena in bianco e nero e finestra. È selezionata un'unica immagine (n. 31 su 54), ma il contesto narrativo indica l'intenzione di selezionare 20 immagini per esportazione in JPEG. Il pannello destro è aperto sulla sezione 'export' con impostazioni predefinite per JPEG a qualità 90, profilo sRGB e senza ridimensionamento. Non sono attive maschere o strumenti di editing avanzato; lo stato è preparatorio all'esportazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una finestra di dialogo 'focus-stack-gui' in esecuzione, con un indicatore di avanzamento che segnala 'Processing images... 0 of 100', suggerendo l'avvio di un processo di focus stacking su 100 immagini. Sullo sfondo è visibile una pagina GitHub relativa al progetto 'focus-stack', e una finestra del Finder con la cartella 'Downloads' aperta, contenente il binario 'focus-stack'. L'interfaccia non è quella principale di darktable, ma un'applicazione esterna (focus-stack-gui) lanciata probabilmente da darktable o in parallelo per l'elaborazione di stack di fuoco. Il contesto narrativo conferma che l'utente ha selezionato immagini, scelto un nome di output ('output') e avviato l'elaborazione, ma il progresso è ancora allo 0%." src="screenshots/frame_00540_000.jpg" /></p>
+<p><em>Lo screenshot mostra una finestra di dialogo 'focus-stack-gui' in esecuzione, con un indicatore di avanzamento che segnala 'Processing images... 0 of 100', suggerendo l'avvio di un processo di focus stacking su 100 immagini. Sullo sfondo è visibile una pagina GitHub relativa al progetto 'focus-stack', e una finestra del Finder con la cartella 'Downloads' aperta, contenente il binario 'focus-stack'. L'interfaccia non è quella principale di darktable, ma un'applicazione esterna (focus-stack-gui) lanciata probabilmente da darktable o in parallelo per l'elaborazione di stack di fuoco. Il contesto narrativo conferma che l'utente ha selezionato immagini, scelto un nome di output ('output') e avviato l'elaborazione, ma il progresso è ancora allo 0%.</em></p>
+<p><strong>Modulo:</strong> focus-stack-gui</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>processing_progress</td>
+<td>0 of 100</td>
+</tr>
+<tr>
+<td>output_filename</td>
+<td>output</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-workflow-avanzato-con-helicon-focus-e-script-lua">5. Workflow avanzato con Helicon Focus e script Lua<a class="headerlink" href="#5-workflow-avanzato-con-helicon-focus-e-script-lua" title="Permanent link">&para;</a></h2>
+<p><strong>[11:20 – 15:32]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=680">Guarda nel video</a></p>
+<p>Installazione di script Lua per integrare Helicon Focus/Zerene Stacker direttamente in Darktable, esportazione nella collezione e avvio del processo di stacking.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Interfaccia di darktable nella vista lighttable, con 20 immagini selezionate su 54 totali. Il pannello destro mostra la sezione 'export' attiva, con impostazioni per l'esportazione in JPEG a qualità 90, profilo sRGB e senza ridimensionamento. A sinistra è visibile la collezione 'youtube' con 54 elementi. Lo stato del cursore indica che l'esportazione è in corso o appena completata, coerentemente con il narratore che dice di aver esportato 20 foto e le ha reimportate." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>Interfaccia di darktable nella vista lighttable, con 20 immagini selezionate su 54 totali. Il pannello destro mostra la sezione 'export' attiva, con impostazioni per l'esportazione in JPEG a qualità 90, profilo sRGB e senza ridimensionamento. A sinistra è visibile la collezione 'youtube' con 54 elementi. Lo stato del cursore indica che l'esportazione è in corso o appena completata, coerentemente con il narratore che dice di aver esportato 20 foto e le ha reimportate.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0</td>
+</tr>
+<tr>
+<td>allow_upscaling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>high_quality_resampling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Interfaccia di darktable in modalità lighttable, con 20 immagini selezionate su 54 totali. Il pannello destro mostra la sezione 'export' attiva, con impostazioni per l'esportazione in JPEG a qualità 90 e profilo sRGB. In basso a sinistra è visibile lo stato 'script manager: exporting 9 / 20 to collection', coerente con il narratore che descrive l'esportazione in corso e il successivo re-import in libreria. Le miniature mostrano fiori viola con sfondo sfocato, tutte in formato RAF (RAW Fujifilm)." src="screenshots/frame_00695_539.jpg" /></p>
+<p><em>Interfaccia di darktable in modalità lighttable, con 20 immagini selezionate su 54 totali. Il pannello destro mostra la sezione 'export' attiva, con impostazioni per l'esportazione in JPEG a qualità 90 e profilo sRGB. In basso a sinistra è visibile lo stato 'script manager: exporting 9 / 20 to collection', coerente con il narratore che descrive l'esportazione in corso e il successivo re-import in libreria. Le miniature mostrano fiori viola con sfondo sfocato, tutte in formato RAF (RAW Fujifilm).</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>export_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>image_settings</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella vista della libreria (lighttable), con il pannello destro aperto sulla sezione 'script manager'. È evidenziato il pulsante 'configure' all'interno del menu dei script, circondato da un cerchio rosso. Sono selezionate 20 immagini su 20 in una collezione chiamata 'youtube'. Il pannello di destra mostra le opzioni di esportazione e storage, mentre a sinistra si vedono le collezioni e i tag. Il cursore è posizionato sul pulsante 'configure', indicando l'intenzione dell'utente di gestire gli script esterni, come menzionato nel contesto audio." src="screenshots/frame_00750_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella vista della libreria (lighttable), con il pannello destro aperto sulla sezione 'script manager'. È evidenziato il pulsante 'configure' all'interno del menu dei script, circondato da un cerchio rosso. Sono selezionate 20 immagini su 20 in una collezione chiamata 'youtube'. Il pannello di destra mostra le opzioni di esportazione e storage, mentre a sinistra si vedono le collezioni e i tag. Il cursore è posizionato sul pulsante 'configure', indicando l'intenzione dell'utente di gestire gli script esterni, come menzionato nel contesto audio.</em></p>
+<p><strong>Modulo:</strong> script manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0</td>
+</tr>
+<tr>
+<td>allow_upscaling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>high_quality_resampling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). È selezionata una singola immagine (la seconda della seconda riga), evidenziata da un bordo bianco e da un cerchio rosso attorno al cursore. A sinistra, il pannello delle collezioni mostra la collezione 'youtube' con 74 elementi; sotto, è visibile la voce 'history'. A destra, il pannello 'selection' include azioni su selezione e opzioni di esportazione. In basso, nella barra degli strumenti, è visibile l'icona del 'script manager', menzionata nel contesto audio come punto di accesso per gli script Lua. Il filtro in alto è impostato su 'JPEG', confermando che l'utente sta filtrando per formato JPEG prima della selezione." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). È selezionata una singola immagine (la seconda della seconda riga), evidenziata da un bordo bianco e da un cerchio rosso attorno al cursore. A sinistra, il pannello delle collezioni mostra la collezione 'youtube' con 74 elementi; sotto, è visibile la voce 'history'. A destra, il pannello 'selection' include azioni su selezione e opzioni di esportazione. In basso, nella barra degli strumenti, è visibile l'icona del 'script manager', menzionata nel contesto audio come punto di accesso per gli script Lua. Il filtro in alto è impostato su 'JPEG', confermando che l'utente sta filtrando per formato JPEG prima della selezione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>sRGB (web-safe)</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>image settings</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista della libreria di darktable con 20 immagini selezionate (fiori viola su sfondo verde). A sinistra è attivo il 'script manager', con il menu a tendina 'start/stop scripts' aperto e il cursore sull'opzione 'my_lure'. Nella sezione inferiore del pannello sinistro è visibile il messaggio 'ExportToPublish stopped' e 'HeliconFocus stopped', indicando che lo script Helicon Focus è stato caricato ma non è in esecuzione. Il pannello destro mostra le opzioni di esportazione (JPEG, qualità 90, profilo sRGB). Il contesto narrativo conferma che l'utente ha scelto 'my_lure' come script per Helicon Focus, eliminando un duplicato ('new_lure')." src="screenshots/frame_00897_100.jpg" /></p>
+<p><em>L'interfaccia mostra la vista della libreria di darktable con 20 immagini selezionate (fiori viola su sfondo verde). A sinistra è attivo il 'script manager', con il menu a tendina 'start/stop scripts' aperto e il cursore sull'opzione 'my_lure'. Nella sezione inferiore del pannello sinistro è visibile il messaggio 'ExportToPublish stopped' e 'HeliconFocus stopped', indicando che lo script Helicon Focus è stato caricato ma non è in esecuzione. Il pannello destro mostra le opzioni di esportazione (JPEG, qualità 90, profilo sRGB). Il contesto narrativo conferma che l'utente ha scelto 'my_lure' come script per Helicon Focus, eliminando un duplicato ('new_lure').</em></p>
+<p><strong>Modulo:</strong> script manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>script</td>
+<td>my_lure</td>
+</tr>
+<tr>
+<td>status</td>
+<td>HeliconFocus stopped</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>esporta</li>
+<li>gestore script lua</li>
+<li>helicon focus (script lua)</li>
+</ul>
+<hr />
+<h2 id="6-configurazione-del-percorso-eseguibile-di-helicon-focus-su-macos">6. Configurazione del percorso eseguibile di Helicon Focus su macOS<a class="headerlink" href="#6-configurazione-del-percorso-eseguibile-di-helicon-focus-su-macos" title="Permanent link">&para;</a></h2>
+<p><strong>[15:33 – 18:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=933">Guarda nel video</a></p>
+<p>Spiegazione di come risolvere l'errore di mancata individuazione dell'eseguibile di Helicon Focus su macOS modificando manualmente il file di configurazione darktablerc e utilizzando il percorso corretto all'interno del pacchetto .app.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable con il dialogo file aperto per selezionare l'eseguibile di Helicon Focus. L'utente sta navigando nel filesystem macOS (cartella 'MacOS' all'interno dell'applicazione) per individuare il file eseguibile 'HeliconFocus', che appare nell'elenco come file Unix Executable da 21,3 MB, modificato il 30 ottobre 2024. Il cursore è posizionato sopra l'icona del file, evidenziata da un cerchio rosso. Sullo sfondo si vede l'interfaccia principale di darktable con la sezione 'lighttable' attiva e una selezione di 20 immagini." src="screenshots/frame_00943_666.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable con il dialogo file aperto per selezionare l'eseguibile di Helicon Focus. L'utente sta navigando nel filesystem macOS (cartella 'MacOS' all'interno dell'applicazione) per individuare il file eseguibile 'HeliconFocus', che appare nell'elenco come file Unix Executable da 21,3 MB, modificato il 30 ottobre 2024. Il cursore è posizionato sopra l'icona del file, evidenziata da un cerchio rosso. Sullo sfondo si vede l'interfaccia principale di darktable con la sezione 'lighttable' attiva e una selezione di 20 immagini.</em></p>
+<p><strong>Modulo:</strong> preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>executable_for_external_editor_9</td>
+<td>HeliconFocus</td>
+</tr>
+<tr>
+<td>OpenInExplorer: use links</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'editor di testo Brackets aperto sul file di configurazione 'darktablelrc', specificamente nella sezione delle impostazioni Lua per il modulo 'HeliconFocus'. È evidenziata la riga 304, dove il percorso dell'eseguibile Helicon Focus è erroneamente impostato su '/System/Applications/Books.app', un'applicazione non correlata. Il cursore è posizionato su questa riga (colonna 71), indicando che l'utente sta modificando manualmente il file di configurazione per correggere il path. Non sono presenti moduli o interfacce grafiche di darktable attive; si tratta di un'operazione di editing esterno al software principale." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'editor di testo Brackets aperto sul file di configurazione 'darktablelrc', specificamente nella sezione delle impostazioni Lua per il modulo 'HeliconFocus'. È evidenziata la riga 304, dove il percorso dell'eseguibile Helicon Focus è erroneamente impostato su '/System/Applications/Books.app', un'applicazione non correlata. Il cursore è posizionato su questa riga (colonna 71), indicando che l'utente sta modificando manualmente il file di configurazione per correggere il path. Non sono presenti moduli o interfacce grafiche di darktable attive; si tratta di un'operazione di editing esterno al software principale.</em></p>
+<p><strong>Modulo:</strong> Brackets</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lua.module_HeliconFocus/HeliconFocusExe</td>
+<td>/System/Applications/Books.app</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable, con la tab 'JPEG' attiva e un evidenziamento circolare (rosa) sul pulsante 'JPEG' nella barra degli strumenti superiore. È visibile la sezione 'LUA options' e, in particolare, la configurazione degli editor esterni, dove Helicon Focus è configurato come 'HeliconFocus.app', ma il narratore segnala che l'applicazione non viene trovata all'avvio dello stack, indicando un problema di percorso o compatibilità su macOS." src="screenshots/frame_00977_740.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable, con la tab 'JPEG' attiva e un evidenziamento circolare (rosa) sul pulsante 'JPEG' nella barra degli strumenti superiore. È visibile la sezione 'LUA options' e, in particolare, la configurazione degli editor esterni, dove Helicon Focus è configurato come 'HeliconFocus.app', ma il narratore segnala che l'applicazione non viene trovata all'avvio dello stack, indicando un problema di percorso o compatibilità su macOS.</em></p>
+<p><strong>Modulo:</strong> preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Helicon Focus executable</td>
+<td>HeliconFocus.app</td>
+</tr>
+<tr>
+<td>number of quicktag fields</td>
+<td>11</td>
+</tr>
+<tr>
+<td>max. length of button labels</td>
+<td>25</td>
+</tr>
+<tr>
+<td>a pdf viewer</td>
+<td>xdg-open</td>
+</tr>
+<tr>
+<td>align image stack: use GPU for remapping</td>
+<td>true</td>
+</tr>
+<tr>
+<td>show external editors in darkroom</td>
+<td>true</td>
+</tr>
+<tr>
+<td>name of external editor 1</td>
+<td>Affinity photo</td>
+</tr>
+<tr>
+<td>executable for external editor 1</td>
+<td>Affinity Photo 2.app</td>
+</tr>
+<tr>
+<td>name of external editor 2</td>
+<td>Photoshop</td>
+</tr>
+<tr>
+<td>executable for external editor 2</td>
+<td>Adobe Photoshop 2025.app</td>
+</tr>
+<tr>
+<td>name of external editor 3</td>
+<td>Silver Efex</td>
+</tr>
+<tr>
+<td>executable for external editor 3</td>
+<td>Nik 7 Silver Efex.app</td>
+</tr>
+<tr>
+<td>executable for external editor 4</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 5</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 6</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 7</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 8</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 9</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>OpenExplorer: use links</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di 20 immagini selezionate (su 20 totali), tutte JPEG di fiori viola. Nel pannello destro è attiva la sezione 'export', con opzioni di salvataggio configurate per JPEG a qualità 90. Nella barra di stato in basso è visibile il messaggio 'HeliconFocus started', ma il contesto narrativo indica che l'avvio di Helicon Focus è fallito ('can't find helicon focus'). Il modulo attivo è lighttable, non un modulo di sviluppo o correzione, e l'utente sta tentando di esportare le immagini per inviarle a Helicon Focus per lo stacking." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di 20 immagini selezionate (su 20 totali), tutte JPEG di fiori viola. Nel pannello destro è attiva la sezione 'export', con opzioni di salvataggio configurate per JPEG a qualità 90. Nella barra di stato in basso è visibile il messaggio 'HeliconFocus started', ma il contesto narrativo indica che l'avvio di Helicon Focus è fallito ('can't find helicon focus'). Il modulo attivo è lighttable, non un modulo di sviluppo o correzione, e l'utente sta tentando di esportare le immagini per inviarle a Helicon Focus per lo stacking.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>use_original_RAW</td>
+<td>True</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable, con la sezione 'Applications' attiva. È aperto un dialogo del Finder di macOS che naviga nella cartella '/Applications', evidenziando l'applicazione 'HeliconFocus'. Il cursore è posizionato sul nome 'HeliconFocus', indicando che l'utente sta cercando di selezionare o aprire il file eseguibile '.app' per configurarlo come esterno in darktable. Sullo sfondo si intravede l'interfaccia di darktable con i moduli di gestione collezioni e impostazioni, ma l'attenzione è focalizzata sul processo di individuazione del percorso dell'applicazione esterna su macOS." src="screenshots/frame_00960_000.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable, con la sezione 'Applications' attiva. È aperto un dialogo del Finder di macOS che naviga nella cartella '/Applications', evidenziando l'applicazione 'HeliconFocus'. Il cursore è posizionato sul nome 'HeliconFocus', indicando che l'utente sta cercando di selezionare o aprire il file eseguibile '.app' per configurarlo come esterno in darktable. Sullo sfondo si intravede l'interfaccia di darktable con i moduli di gestione collezioni e impostazioni, ma l'attenzione è focalizzata sul processo di individuazione del percorso dell'applicazione esterna su macOS.</em></p>
+<p><strong>Modulo:</strong> preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_application</td>
+<td>HeliconFocus</td>
+</tr>
+<tr>
+<td>application_path</td>
+<td>/Applications/Helicon Focus.app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Helicon Focus</li>
+</ul>
+<hr />
+<h2 id="7-workflow-di-stacking-con-helicon-focus">7. Workflow di stacking con Helicon Focus<a class="headerlink" href="#7-workflow-di-stacking-con-helicon-focus" title="Permanent link">&para;</a></h2>
+<p><strong>[18:00 – 22:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=1080">Guarda nel video</a></p>
+<p>Dimostrazione dell'utilizzo del modulo per esportare le immagini, applicare diversi metodi di stacking (B e C), salvare i risultati in JPEG e gestire i tag per l'organizzazione.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di 15 immagini JPEG di fiori, una selezionata (prima in alto a sinistra) con un cerchio rosso di evidenziazione. Il pannello di destra mostra il modulo 'selection' attivo, con opzioni per azioni su selezione (come 'remove', 'duplicate'), e nella sezione 'settings' è abilitato 'group'. È visibile un menu contestuale sovrapposto che elenca moduli caricati come 'HeliconFocus', indicando che il modulo Helicon Focus è stato avviato. Nel pannello sinistro, i metadati dell'immagine selezionata mostrano dati EXIF (Fujifilm X-H2S, 1/500s, f/2.8, ecc.). In basso, nel pannello 'script manager', si legge 'HeliconFocus started' e 'ExportToPublish stopped'." src="screenshots/frame_01101_960.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di 15 immagini JPEG di fiori, una selezionata (prima in alto a sinistra) con un cerchio rosso di evidenziazione. Il pannello di destra mostra il modulo 'selection' attivo, con opzioni per azioni su selezione (come 'remove', 'duplicate'), e nella sezione 'settings' è abilitato 'group'. È visibile un menu contestuale sovrapposto che elenca moduli caricati come 'HeliconFocus', indicando che il modulo Helicon Focus è stato avviato. Nel pannello sinistro, i metadati dell'immagine selezionata mostrano dati EXIF (Fujifilm X-H2S, 1/500s, f/2.8, ecc.). In basso, nel pannello 'script manager', si legge 'HeliconFocus started' e 'ExportToPublish stopped'.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use_original_RAW</td>
+<td>True</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con 20 immagini JPEG selezionate (su un totale di 20). Il pannello destro è aperto sulla sezione 'selection', dove l'utente sta eseguendo operazioni su gruppo: ha abilitato 'group', 'copy tags', e sta inserendo il tag 'stacked' nel campo 'new tags'. È evidenziato il pulsante 'copy tags' con un cerchio rosso, indicando l'azione in corso. Nella barra laterale sinistra sono visibili i metadati delle immagini selezionate (es. fotocamera Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, esposizione 1/500, EV -1.00). In basso a sinistra si legge 'HeliconFocus started', confermando che il modulo Helicon Focus è stato avviato. L’utente sta preparando le immagini per lo stacking tramite tag, per facilitare ricerche successive." src="screenshots/frame_01110_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con 20 immagini JPEG selezionate (su un totale di 20). Il pannello destro è aperto sulla sezione 'selection', dove l'utente sta eseguendo operazioni su gruppo: ha abilitato 'group', 'copy tags', e sta inserendo il tag 'stacked' nel campo 'new tags'. È evidenziato il pulsante 'copy tags' con un cerchio rosso, indicando l'azione in corso. Nella barra laterale sinistra sono visibili i metadati delle immagini selezionate (es. fotocamera Fujifilm X-H2S, obiettivo XF80mmF2.8 R LM OIS WR Macro, esposizione 1/500, EV -1.00). In basso a sinistra si legge 'HeliconFocus started', confermando che il modulo Helicon Focus è stato avviato. L’utente sta preparando le immagini per lo stacking tramite tag, per facilitare ricerche successive.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use_original_RAW</td>
+<td>true</td>
+</tr>
+<tr>
+<td>group</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>true</td>
+</tr>
+<tr>
+<td>new_tags</td>
+<td>stacked</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il plugin Helicon Focus integrato in darktable, con una lista di 20 immagini sorgente selezionate a destra (file RAW con timestamp identici, indicativi di uno stack per focus stacking). Il modulo è nella scheda 'Rendering', con 'Method B (depth map)' attivato e livello di smoothing impostato a 4. Non sono presenti maschere o istogrammi visibili; lo spazio centrale è vuoto, in attesa del rendering. Il pulsante 'Render' è disponibile in basso a destra." src="screenshots/frame_01134_566.jpg" /></p>
+<p><em>L'interfaccia mostra il plugin Helicon Focus integrato in darktable, con una lista di 20 immagini sorgente selezionate a destra (file RAW con timestamp identici, indicativi di uno stack per focus stacking). Il modulo è nella scheda 'Rendering', con 'Method B (depth map)' attivato e livello di smoothing impostato a 4. Non sono presenti maschere o istogrammi visibili; lo spazio centrale è vuoto, in attesa del rendering. Il pulsante 'Render' è disponibile in basso a destra.</em></p>
+<p><strong>Modulo:</strong> Helicon Focus</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rendering_method</td>
+<td>Method B (depth map)</td>
+</tr>
+<tr>
+<td>smoothing</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Helicon Focus 8.2.18 integrata in darktable, con 20 immagini sorgente elencate a destra, tutte selezionate. Il modulo è nella tab 'Rendering', con il metodo di rendering impostato su 'Method B (depth map)', radius a 8 e smoothing a 4. L'immagine centrale è un primo piano sfocato di un fiore viola su sfondo verde, tipico di una sequenza per focus stacking. Un cerchio rosa evidenzia la selezione del metodo B, coerentemente con il commento del narratore che sceglie Method B per lo stacking, accennando anche alla possibilità di usare Method C." src="screenshots/frame_01140_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Helicon Focus 8.2.18 integrata in darktable, con 20 immagini sorgente elencate a destra, tutte selezionate. Il modulo è nella tab 'Rendering', con il metodo di rendering impostato su 'Method B (depth map)', radius a 8 e smoothing a 4. L'immagine centrale è un primo piano sfocato di un fiore viola su sfondo verde, tipico di una sequenza per focus stacking. Un cerchio rosa evidenzia la selezione del metodo B, coerentemente con il commento del narratore che sceglie Method B per lo stacking, accennando anche alla possibilità di usare Method C.</em></p>
+<p><strong>Modulo:</strong> Helicon Focus</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rendering_method</td>
+<td>Method B (depth map)</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>8</td>
+</tr>
+<tr>
+<td>smoothing</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Finestra di dialogo 'Save all' attiva in darktable, con formato JPEG a qualità 90% e destinazione cartella specificata come '/Volumes/Crucial/photos/shoots/2024/08/28'. Sullo sfondo è visibile l'anteprima di un fiore viola e la lista delle immagini sorgente (20 file), alcune selezionate. L'utente sta preparando l'esportazione di immagini elaborate (probabilmente stack) nella stessa cartella delle originali, seguendo una convenzione di naming basata su data (YYYY-MM-DD)." src="screenshots/frame_01170_000.jpg" /></p>
+<p><em>Finestra di dialogo 'Save all' attiva in darktable, con formato JPEG a qualità 90% e destinazione cartella specificata come '/Volumes/Crucial/photos/shoots/2024/08/28'. Sullo sfondo è visibile l'anteprima di un fiore viola e la lista delle immagini sorgente (20 file), alcune selezionate. L'utente sta preparando l'esportazione di immagini elaborate (probabilmente stack) nella stessa cartella delle originali, seguendo una convenzione di naming basata su data (YYYY-MM-DD).</em></p>
+<p><strong>Modulo:</strong> Save all</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Format</td>
+<td>JPEG (*.jpg)</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>Output folder</td>
+<td>/Volumes/Crucial/photos/shoots/2024/08/28</td>
+</tr>
+<tr>
+<td>Folder option</td>
+<td>specified folder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Helicon Focus</li>
+</ul>
+<hr />
+<h2 id="8-installazione-e-configurazione-dello-script-lua-per-zerene-stacker">8. Installazione e configurazione dello script Lua per Zerene Stacker<a class="headerlink" href="#8-installazione-e-configurazione-dello-script-lua-per-zerene-stacker" title="Permanent link">&para;</a></h2>
+<p><strong>[22:00 – 25:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=1320">Guarda nel video</a></p>
+<p>Guida al download e all'installazione corretta dello script Lua per Zerene Stacker, con avvertenze sul download del file .lua grezzo invece della pagina HTML e sulla necessità di riavviare darktable.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia di darktable è in uno stato iniziale o di caricamento fallito: la finestra principale mostra uno sfondo grigio uniforme senza immagini aperte, moduli attivi o pannelli laterali visibili. Al centro è presente un cursore con un anello rosa (indicatore di caricamento o attesa), suggerendo che l'applicazione è bloccata o in attesa di completare un'operazione (ad esempio, il caricamento di un plugin o script). Il contesto audio conferma che l'utente ha appena riavviato darktable dopo un errore di caricamento di uno script ('zerine stacker'), e l'interfaccia non ha ancora completato l'inizializzazione." src="screenshots/frame_01381_900.jpg" /></p>
+<p><em>L'interfaccia di darktable è in uno stato iniziale o di caricamento fallito: la finestra principale mostra uno sfondo grigio uniforme senza immagini aperte, moduli attivi o pannelli laterali visibili. Al centro è presente un cursore con un anello rosa (indicatore di caricamento o attesa), suggerendo che l'applicazione è bloccata o in attesa di completare un'operazione (ad esempio, il caricamento di un plugin o script). Il contesto audio conferma che l'utente ha appena riavviato darktable dopo un errore di caricamento di uno script ('zerine stacker'), e l'interfaccia non ha ancora completato l'inizializzazione.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori. Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG a qualità 90 e con il tag personalizzato 'stack with Zerene Stacker'. È visibile un cursore del mouse evidenziato da un cerchio rosso su una delle anteprime, indicando selezione o interazione. Nella barra degli strumenti inferiore, lo script 'ZereneStacker' risulta avviato, confermando l'integrazione con l'esterno menzionata nel contesto. Il pannello sinistro mostra informazioni tecniche sull'immagine selezionata (es. modello Fujifilm X-H2S, apertura f/2.8, esposizione -1 EV)." src="screenshots/frame_01470_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori. Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG a qualità 90 e con il tag personalizzato 'stack with Zerene Stacker'. È visibile un cursore del mouse evidenziato da un cerchio rosso su una delle anteprime, indicando selezione o interazione. Nella barra degli strumenti inferiore, lo script 'ZereneStacker' risulta avviato, confermando l'integrazione con l'esterno menzionata nel contesto. Il pannello sinistro mostra informazioni tecniche sull'immagine selezionata (es. modello Fujifilm X-H2S, apertura f/2.8, esposizione -1 EV).</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_metadata</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>True</td>
+</tr>
+<tr>
+<td>new_tags</td>
+<td>stack with Zerene Stacker</td>
+</tr>
+<tr>
+<td>export_script</td>
+<td>ZereneStacker started</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista 'library' di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). Sul pannello destro è attiva la scheda 'lighttable', con le opzioni di importazione e configurazione del formato di output visibili. Il pannello sinistro mostra il 'script manager', dove l'utente sta cercando di installare o aggiornare uno script Lua (probabilmente 'areine stacker.lua'), come indicato dal contesto narrativo. Nessuna maschera è attiva, e lo stato corrente riflette una fase di configurazione/estensione del software, non di editing fotografico." src="screenshots/frame_01365_900.jpg" /></p>
+<p><em>L'interfaccia mostra la vista 'library' di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). Sul pannello destro è attiva la scheda 'lighttable', con le opzioni di importazione e configurazione del formato di output visibili. Il pannello sinistro mostra il 'script manager', dove l'utente sta cercando di installare o aggiornare uno script Lua (probabilmente 'areine stacker.lua'), come indicato dal contesto narrativo. Nessuna maschera è attiva, e lo stato corrente riflette una fase di configurazione/estensione del software, non di editing fotografico.</em></p>
+<p><strong>Modulo:</strong> library</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use_original_RAW</td>
+<td>True</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>True</td>
+</tr>
+<tr>
+<td>new_tags</td>
+<td>stacked</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). Sono selezionate 0 immagini su 20. A sinistra è visibile il pannello 'image information' con metadati della foto attualmente evidenziata (Fujifilm X-H2S, apertura f/2.8, tempo 1/500s, EV -1.00, bilanciamento del bianco Auto). A destra, il pannello 'selection' mostra azioni disponibili e le impostazioni di esportazione, con formato JPEG a qualità 90 e opzioni di copia tag abilitate. In basso, la barra degli strumenti indica che il modulo 'darktable' è attivo e sono presenti notifiche dello script manager ('ExportToPublish stopped', 'HeliconFocus started', 'ZereneStacker started')." src="screenshots/frame_01448_366.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG (fiori viola su sfondo verde). Sono selezionate 0 immagini su 20. A sinistra è visibile il pannello 'image information' con metadati della foto attualmente evidenziata (Fujifilm X-H2S, apertura f/2.8, tempo 1/500s, EV -1.00, bilanciamento del bianco Auto). A destra, il pannello 'selection' mostra azioni disponibili e le impostazioni di esportazione, con formato JPEG a qualità 90 e opzioni di copia tag abilitate. In basso, la barra degli strumenti indica che il modulo 'darktable' è attivo e sono presenti notifiche dello script manager ('ExportToPublish stopped', 'HeliconFocus started', 'ZereneStacker started').</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>use_original_RAW</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>True</td>
+</tr>
+<tr>
+<td>new_tags</td>
+<td>stacked</td>
+</tr>
+<tr>
+<td>target_storage</td>
+<td>collection</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable (versione 5.0.0+git), con la scheda 'general' attiva. È evidenziato il pulsante delle impostazioni (ingranaggio) nella barra degli strumenti della lighttable, e sullo sfondo si vedono le miniature di immagini in modalità lighttable. Il pannello destro mostra le opzioni di esportazione e importazione, con riferimenti a 'Zerene Stacker'. In basso è visibile la barra dei dock macOS con icone di altri software (Lightroom, Photoshop, ecc.)." src="screenshots/frame_01530_000.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable (versione 5.0.0+git), con la scheda 'general' attiva. È evidenziato il pulsante delle impostazioni (ingranaggio) nella barra degli strumenti della lighttable, e sullo sfondo si vedono le miniature di immagini in modalità lighttable. Il pannello destro mostra le opzioni di esportazione e importazione, con riferimenti a 'Zerene Stacker'. In basso è visibile la barra dei dock macOS con icone di altri software (Lightroom, Photoshop, ecc.).</em></p>
+<p><strong>Modulo:</strong> preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>use raw file instead of embedded JPEG from size</td>
+<td>always</td>
+</tr>
+<tr>
+<td>high quality processing from size</td>
+<td>720p</td>
+</tr>
+<tr>
+<td>enable disk backend for thumbnail cache</td>
+<td>True</td>
+</tr>
+<tr>
+<td>enable disk backend for full preview cache</td>
+<td>True</td>
+</tr>
+<tr>
+<td>enable smooth scrolling for lighttable thumbnails</td>
+<td>True</td>
+</tr>
+<tr>
+<td>generate thumbnails in background</td>
+<td>never</td>
+</tr>
+<tr>
+<td>reset cached thumbnails</td>
+<td>120/400</td>
+</tr>
+<tr>
+<td>pattern for the thumbnail extended overlay text</td>
+<td>${FILE_NAME}.${FILE_EXTENSION}${NL}${EXIF_EXPOSURE} f${EXIF_APERTURE} ${EXIF_FOCAL_LENGTH}mm $ {EXIF_ISO} ISO ${SIDECAR_TXT}</td>
+</tr>
+<tr>
+<td>pattern for the thumbnail tooltip</td>
+<td><b>${FILE_NAME}.${FILE_EXTENSION}</b><br>${NL}${EXIF_DATE_REGIONAL} ${EXIF_TIME_REGIONAL}${NL}${EXIF_EXPOSURE} f${EXIF_APERTURE} ${EXIF_FOCAL_LENGTH}mm ${EXIF_ISO} ISO</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Zerene Stacker (script Lua)</li>
+</ul>
+<hr />
+<h2 id="9-configurazione-avanzata-di-zerene-stacker-in-darktable">9. Configurazione avanzata di Zerene Stacker in darktable<a class="headerlink" href="#9-configurazione-avanzata-di-zerene-stacker-in-darktable" title="Permanent link">&para;</a></h2>
+<p><strong>[25:50 – 28:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=1550">Guarda nel video</a></p>
+<p>Procedura dettagliata per configurare il percorso dell'eseguibile Java, la cartella di staging, il percorso della licenza e lo script batch XML nel file darktablerc.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable su macOS, con la tab 'general' attiva. È evidenziata la configurazione della cartella di staging ('stage'), e sono definite tre applicazioni esterne (Affinity Photo, Photoshop, Silver Efex) per l'integrazione con il modulo di elaborazione. Il contesto narrativo suggerisce che l’utente sta configurando il flusso di lavoro con Zerene Stacker e Helicon Focus, e avverte sull’importanza di chiudere darktable prima di apportare modifiche esterne per evitare conflitti di file." src="screenshots/frame_01628_933.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable su macOS, con la tab 'general' attiva. È evidenziata la configurazione della cartella di staging ('stage'), e sono definite tre applicazioni esterne (Affinity Photo, Photoshop, Silver Efex) per l'integrazione con il modulo di elaborazione. Il contesto narrativo suggerisce che l’utente sta configurando il flusso di lavoro con Zerene Stacker e Helicon Focus, e avverte sull’importanza di chiudere darktable prima di apportare modifiche esterne per evitare conflitti di file.</em></p>
+<p><strong>Modulo:</strong> darktable preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stacker Staging Folder</td>
+<td>stage</td>
+</tr>
+<tr>
+<td>Zerene Licence Folder</td>
+<td>ZereneStacker</td>
+</tr>
+<tr>
+<td>Zerene Stacker Java Folder</td>
+<td>Java</td>
+</tr>
+<tr>
+<td>Helicon Focus executable</td>
+<td>HeliconFocus</td>
+</tr>
+<tr>
+<td>number of quicktag fields</td>
+<td>11</td>
+</tr>
+<tr>
+<td>max. length of button labels</td>
+<td>25</td>
+</tr>
+<tr>
+<td>a pdf viewer</td>
+<td>xdg-open</td>
+</tr>
+<tr>
+<td>align image stack: use GPU for remapping</td>
+<td>True</td>
+</tr>
+<tr>
+<td>show external editors in darkroom</td>
+<td>False</td>
+</tr>
+<tr>
+<td>name of external editor 1</td>
+<td>Affinity photo</td>
+</tr>
+<tr>
+<td>executable for external editor 1</td>
+<td>Affinity Photo 2.app</td>
+</tr>
+<tr>
+<td>name of external editor 2</td>
+<td>Photoshop</td>
+</tr>
+<tr>
+<td>executable for external editor 2</td>
+<td>Adobe Photoshop 2025.app</td>
+</tr>
+<tr>
+<td>name of external editor 3</td>
+<td>Silver Efex</td>
+</tr>
+<tr>
+<td>executable for external editor 3</td>
+<td>Nik 7 Silver Efex.app</td>
+</tr>
+<tr>
+<td>name of external editor 4</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 4</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>name of external editor 5</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 5</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>name of external editor 6</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 6</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>name of external editor 7</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 7</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>name of external editor 8</td>
+<td>(None)</td>
+</tr>
+<tr>
+<td>executable for external editor 8</td>
+<td>(None)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'editor di testo Brackets aperto su un file di configurazione di darktable (darktablerc), con una finestra di dialogo 'External Changes' sovrapposta. La finestra avvisa che il file '/Users/nick/.config/darktable/darktablerc' è stato modificato esternamente e contiene anche modifiche non salvate all'interno di Brackets, chiedendo all'utente se desidera ricaricare dal disco o mantenere le modifiche nell'editor. Il cursore del mouse è posizionato sopra il pulsante 'Reload from Disk', evidenziato da un cerchio rosa. Questo riflette il warning descritto nel contesto: modificare il file di configurazione mentre darktable è in esecuzione può causare conflitti e perdita di modifiche." src="screenshots/frame_01639_339.jpg" /></p>
+<p><em>Lo screenshot mostra l'editor di testo Brackets aperto su un file di configurazione di darktable (darktablerc), con una finestra di dialogo 'External Changes' sovrapposta. La finestra avvisa che il file '/Users/nick/.config/darktable/darktablerc' è stato modificato esternamente e contiene anche modifiche non salvate all'interno di Brackets, chiedendo all'utente se desidera ricaricare dal disco o mantenere le modifiche nell'editor. Il cursore del mouse è posizionato sopra il pulsante 'Reload from Disk', evidenziato da un cerchio rosa. Questo riflette il warning descritto nel contesto: modificare il file di configurazione mentre darktable è in esecuzione può causare conflitti e perdita di modifiche.</em></p>
+<p><strong>Modulo:</strong> Brackets</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il file browser aperto nella cartella 'stage' dell'utente 'nick'. È evidenziato il file 'ZereneBatch.xml', che, secondo il contesto fornito, deve essere configurato correttamente per l'integrazione con Zerene Stacker. Sullo sfondo si vedono le miniature delle immagini importate e il pannello dei metadati; in basso è visibile un overlay grafico (freccia e simbolo di collegamento) probabilmente aggiunto durante la registrazione dello schermo. Il modulo attivo non è uno strumento di editing ma il gestore file integrato, utilizzato per localizzare e verificare la presenza del file XML richiesto." src="screenshots/frame_01665_460.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il file browser aperto nella cartella 'stage' dell'utente 'nick'. È evidenziato il file 'ZereneBatch.xml', che, secondo il contesto fornito, deve essere configurato correttamente per l'integrazione con Zerene Stacker. Sullo sfondo si vedono le miniature delle immagini importate e il pannello dei metadati; in basso è visibile un overlay grafico (freccia e simbolo di collegamento) probabilmente aggiunto durante la registrazione dello schermo. Il modulo attivo non è uno strumento di editing ma il gestore file integrato, utilizzato per localizzare e verificare la presenza del file XML richiesto.</em></p>
+<p><strong>Modulo:</strong> filebrowser</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_folder</td>
+<td>stage</td>
+</tr>
+<tr>
+<td>selected_file</td>
+<td>ZereneBatch.xml</td>
+</tr>
+<tr>
+<td>file_location</td>
+<td>/Users/nick/stage/ZereneBatch.xml</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori viola. Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG a qualità 90 e con l'opzione 'stack with Zerene Stacker' abilitata. Nella barra degli strumenti inferiore è evidenziato l'icona di Zerene Stacker, e nel pannello sinistro lo script manager riporta 'ZereneStacker started'. Il contesto indica che l'utente sta preparando l'esportazione per il processo di stacking esterno con Zerene Stacker, richiedendo un file vuoto nella cartella staging." src="screenshots/frame_01715_733.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori viola. Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG a qualità 90 e con l'opzione 'stack with Zerene Stacker' abilitata. Nella barra degli strumenti inferiore è evidenziato l'icona di Zerene Stacker, e nel pannello sinistro lo script manager riporta 'ZereneStacker started'. Il contesto indica che l'utente sta preparando l'esportazione per il processo di stacking esterno con Zerene Stacker, richiedendo un file vuoto nella cartella staging.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>stack_with_Zerene_Stacker</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_metadata</td>
+<td>True</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'editor di testo Brackets aperto sul file di configurazione di darktable (darktablerc), specificamente nella sezione Lua per il modulo ZereneStacker. È evidenziata la riga 'lua.module_ZereneStacker/StackerStagingFolder=/Users/nick/stage', con un cerchio rosa attorno al cursore, indicando che l’utente sta modificando o evidenziando la cartella di staging. Il contesto narrativo conferma che si tratta della configurazione per macOS, con percorsi utente personalizzati. L'interfaccia di darktable non è visibile direttamente; si vede invece un editor esterno usato per modificare i file di configurazione prima del riavvio di darktable." src="screenshots/frame_01620_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'editor di testo Brackets aperto sul file di configurazione di darktable (darktablerc), specificamente nella sezione Lua per il modulo ZereneStacker. È evidenziata la riga 'lua.module_ZereneStacker/StackerStagingFolder=/Users/nick/stage', con un cerchio rosa attorno al cursore, indicando che l’utente sta modificando o evidenziando la cartella di staging. Il contesto narrativo conferma che si tratta della configurazione per macOS, con percorsi utente personalizzati. L'interfaccia di darktable non è visibile direttamente; si vede invece un editor esterno usato per modificare i file di configurazione prima del riavvio di darktable.</em></p>
+<p><strong>Modulo:</strong> config_file_editor</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lua.module_ZereneStacker/StackerStagingFolder</td>
+<td>/Users/nick/stage</td>
+</tr>
+<tr>
+<td>lua.module_ZereneStacker/ZereneJavaFolder</td>
+<td>/Applications/ZereneStacker.app/Contents/Resources/Java</td>
+</tr>
+<tr>
+<td>lua.module_ZereneStacker/ZereneLicFolder</td>
+<td>/Users/nick/Library/Preferences/ZereneStacker</td>
+</tr>
+<tr>
+<td>lua.module_HeliconFocus/use_original</td>
+<td>FALSE</td>
+</tr>
+<tr>
+<td>lua.module_HeliconFocus/group</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>lua.module_HDRMerge/active_size</td>
+<td>half</td>
+</tr>
+<tr>
+<td>lua.module_enfuseAdvanced/active_auto_crop</td>
+<td></td>
+</tr>
+<tr>
+<td>lua.module_enfuseAdvanced/active_contrast_edge_scale_ind</td>
+<td>0</td>
+</tr>
+<tr>
+<td>lua.module_enfuseAdvanced/active_current_preset</td>
+<td>dri-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Zerene Stacker (script Lua)</li>
+</ul>
+<hr />
+<h2 id="10-esecuzione-dello-stacking-con-zerene-stacker-e-gestione-dei-risultati">10. Esecuzione dello stacking con Zerene Stacker e gestione dei risultati<a class="headerlink" href="#10-esecuzione-dello-stacking-con-zerene-stacker-e-gestione-dei-risultati" title="Permanent link">&para;</a></h2>
+<p><strong>[28:50 – 31:11]</strong>
+ | <a href="https://www.youtube.com/watch?v=0rFk_k12ebE&amp;t=1730">Guarda nel video</a></p>
+<p>Avvio del processo di stacking automatico, esportazione in TIFF 16-bit, importazione automatica in darktable e organizzazione tramite tag. Conclusione del tutorial.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori. È selezionata un'immagine (la prima della terza riga, contrassegnata da un bordo bianco e da un cerchio rosso attorno al cursore), e nel pannello destro è aperta la sezione 'export'. Sono abilitate le opzioni per copiare tag e metadati, e il campo 'new tags' contiene 'zerene', con l'opzione 'stack with Zerene Stacker' attivata. Nella barra di stato inferiore si legge 'ZereneStacker started', confermando che lo script esterno è in esecuzione. Il contesto narrativo indica che l’utente sta preparando l’esportazione per il processamento con Zerene Stacker, probabilmente per stacking HDR o focus stacking." src="screenshots/frame_01733_500.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di anteprime di immagini JPEG di fiori. È selezionata un'immagine (la prima della terza riga, contrassegnata da un bordo bianco e da un cerchio rosso attorno al cursore), e nel pannello destro è aperta la sezione 'export'. Sono abilitate le opzioni per copiare tag e metadati, e il campo 'new tags' contiene 'zerene', con l'opzione 'stack with Zerene Stacker' attivata. Nella barra di stato inferiore si legge 'ZereneStacker started', confermando che lo script esterno è in esecuzione. Il contesto narrativo indica che l’utente sta preparando l’esportazione per il processamento con Zerene Stacker, probabilmente per stacking HDR o focus stacking.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_tags</td>
+<td>zerene</td>
+</tr>
+<tr>
+<td>stack_with_Zerene_Stacker</td>
+<td>true</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>export_target</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copy_metadata</td>
+<td>true</td>
+</tr>
+<tr>
+<td>group</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con 20 immagini selezionate (fiori viola in primo piano, sfondo sfocato). Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG 8-bit a qualità 90 e l'uso di 'Zerene Stacker' tramite il tag 'zerene'. Nella barra degli strumenti inferiore è visibile un indicatore di stato che riporta 'ZereneStacker started', confermando che lo script è in esecuzione. Un cerchio rosa evidenzia il cursore sopra il pulsante 'exporting 20 images to Zerene Stacker...', indicando l'avvio del processo di stacking esterno. Il contesto narrativo conferma che l'esportazione avviene in TIFF nella cartella staging e che il flusso è automatizzato." src="screenshots/frame_01740_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con 20 immagini selezionate (fiori viola in primo piano, sfondo sfocato). Sul pannello destro è attiva la sezione 'export', con opzioni configurate per l'esportazione in JPEG 8-bit a qualità 90 e l'uso di 'Zerene Stacker' tramite il tag 'zerene'. Nella barra degli strumenti inferiore è visibile un indicatore di stato che riporta 'ZereneStacker started', confermando che lo script è in esecuzione. Un cerchio rosa evidenzia il cursore sopra il pulsante 'exporting 20 images to Zerene Stacker...', indicando l'avvio del processo di stacking esterno. Il contesto narrativo conferma che l'esportazione avviene in TIFF nella cartella staging e che il flusso è automatizzato.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>export_target_storage</td>
+<td>collection</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>90</td>
+</tr>
+<tr>
+<td>chroma_subsampling</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>new_tags</td>
+<td>zerene</td>
+</tr>
+<tr>
+<td>stack_with_Zerene_Stacker</td>
+<td>true</td>
+</tr>
+<tr>
+<td>copy_metadata</td>
+<td>True</td>
+</tr>
+<tr>
+<td>copy_tags</td>
+<td>True</td>
+</tr>
+<tr>
+<td>group</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Zerene Stacker' in esecuzione, con un confronto a doppio pannello: a sinistra l'immagine di input (non elaborata), a destra l'output corrente in progress. È visibile una lista di file TIFF in elaborazione, con un contatore di tempo rimanente (22 secondi). Il modulo non è un modulo nativo di darktable ma un'estensione o plugin che integra Zerene Stacker per lo stacking focus. Non sono presenti maschere, istogrammi o controlli di ritocco attivi; l'interfaccia è dedicata al processo batch di stacking." src="screenshots/frame_01770_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Zerene Stacker' in esecuzione, con un confronto a doppio pannello: a sinistra l'immagine di input (non elaborata), a destra l'output corrente in progress. È visibile una lista di file TIFF in elaborazione, con un contatore di tempo rimanente (22 secondi). Il modulo non è un modulo nativo di darktable ma un'estensione o plugin che integra Zerene Stacker per lo stacking focus. Non sono presenti maschere, istogrammi o controlli di ritocco attivi; l'interfaccia è dedicata al processo batch di stacking.</em></p>
+<p><strong>Modulo:</strong> Zerene Stacker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remaining_time</td>
+<td>22 seconds remaining</td>
+</tr>
+<tr>
+<td>input_files_count</td>
+<td>44</td>
+</tr>
+<tr>
+<td>current_file</td>
+<td>36 X-H2S.jpg.tif</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra la finestra di dialogo 'Save' di darktable, aperta durante l'esportazione di un'immagine elaborata da Zerene Stacker. L'utente sta salvando un file TIFF a 16 bit con nome 'ZS-Outputimage' nella cartella 'stage'. Sullo sfondo sono visibili due anteprime: a sinistra l'immagine originale (con barra nera inferiore indicante area non renderizzata), a destra l'output elaborato. Il cursore è posizionato sul pulsante 'Save', evidenziato da un cerchio rosso, indicando che l'operazione di salvataggio è in corso o appena eseguita. La descrizione del narratore conferma che il salvataggio è automatico e che il file TIFF verrà generato al termine dell'elaborazione." src="screenshots/frame_01800_000.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra di dialogo 'Save' di darktable, aperta durante l'esportazione di un'immagine elaborata da Zerene Stacker. L'utente sta salvando un file TIFF a 16 bit con nome 'ZS-Outputimage' nella cartella 'stage'. Sullo sfondo sono visibili due anteprime: a sinistra l'immagine originale (con barra nera inferiore indicante area non renderizzata), a destra l'output elaborato. Il cursore è posizionato sul pulsante 'Save', evidenziato da un cerchio rosso, indicando che l'operazione di salvataggio è in corso o appena eseguita. La descrizione del narratore conferma che il salvataggio è automatico e che il file TIFF verrà generato al termine dell'elaborazione.</em></p>
+<p><strong>Modulo:</strong> Save dialog</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Save As</td>
+<td>ZS-Outputimage</td>
+</tr>
+<tr>
+<td>Tags</td>
+<td></td>
+</tr>
+<tr>
+<td>Where</td>
+<td>stage</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Zerene Stacker integrata in darktable, con due anteprime affiancate (input e output) di un'immagine macro di un fiore. È attiva una finestra di dialogo di sistema che avvisa: 'File already exists', chiedendo se sovrascrivere '/Users/nick/stage/ZS-OutputImage.tif'. Questo conferma che il processo di stacking ha già generato automaticamente un file TIFF nell'area di stage, senza necessità di salvataggio manuale da parte dell'utente. Il cursore è posizionato sul pulsante 'Yes, replace it', indicando l’intenzione di sovrascrivere." src="screenshots/frame_01803_019.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Zerene Stacker integrata in darktable, con due anteprime affiancate (input e output) di un'immagine macro di un fiore. È attiva una finestra di dialogo di sistema che avvisa: 'File already exists', chiedendo se sovrascrivere '/Users/nick/stage/ZS-OutputImage.tif'. Questo conferma che il processo di stacking ha già generato automaticamente un file TIFF nell'area di stage, senza necessità di salvataggio manuale da parte dell'utente. Il cursore è posizionato sul pulsante 'Yes, replace it', indicando l’intenzione di sovrascrivere.</em></p>
+<p><strong>Modulo:</strong> Zerene Stacker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output_format</td>
+<td>16-bit TIFF</td>
+</tr>
+<tr>
+<td>output_path</td>
+<td>/Users/nick/stage/ZS-OutputImage.tif</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Zerene Stacker (script Lua)</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>esposizione</strong></td>
+<td>regolazione tramite scorciatoia 'E' + rotella del mouse</td>
+</tr>
+<tr>
+<td><strong>filmic rgb</strong></td>
+<td>esposizione relativa dei neri, contrasto</td>
+</tr>
+<tr>
+<td><strong>colori vivaci</strong></td>
+<td>aumento della saturazione/vividezza</td>
+</tr>
+<tr>
+<td><strong>nitidezza</strong></td>
+<td>istanza 1: demosaicing, istanza 2: sfocatura lente (lens blur)</td>
+</tr>
+<tr>
+<td><strong>esporta</strong></td>
+<td>preset di esportazione, formato file (JPEG/TIFF), destinazione: collezione</td>
+</tr>
+<tr>
+<td><strong>gestore script lua</strong></td>
+<td>creazione categorie personalizzate, installazione via URL</td>
+</tr>
+<tr>
+<td><strong>helicon focus (script lua)</strong></td>
+<td>uso RAW originali, pulsante stack, raggruppamento e copia tag, selezione immagini</td>
+</tr>
+<tr>
+<td><strong>Helicon Focus</strong></td>
+<td>formato output (JPEG), metodi di stacking (B, C), qualità compressione, copia e assegnazione tag, cartella di output, percorso eseguibile</td>
+</tr>
+<tr>
+<td><strong>Zerene Stacker (script Lua)</strong></td>
+<td>formato output (TIFF 16-bit), percorso file licenza, cartella di staging, assegnazione tag automatici, percorso eseguibile Java, script batch XML (zerene_batch.xml)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> Darktable non supporta nativamente il focus stacking; è indispensabile un software esterno. — <em>Pianificazione del workflow di fotoritocco</em>
+<strong>Attenzione:</strong> Evitare di ritagliare o ruotare le immagini prima dello stacking, poiché la variazione della lunghezza focale durante la messa a fuoco causerà un ridimensionamento del frame. — <em>Fase di sviluppo iniziale in Darktable</em>
+<strong>Importante:</strong> Su macOS, le applicazioni scaricate da GitHub potrebbero essere bloccate dal sistema; utilizzare il comando terminale <code>xattr -cr</code> per rimuovere le restrizioni di sicurezza. — <em>Installazione ed esecuzione di Focus Stack</em>
+<strong>Attenzione:</strong> Preferire l'esportazione in JPEG/TIFF rispetto all'uso diretto dei RAW in Helicon Focus/Zerene Stacker per mantenere il pieno controllo sull'editing effettuato in Darktable. — <em>Scelta del formato di esportazione</em>
+- Utilizzare l'opzione di esportazione 'collezione' per mantenere i file esportati nella stessa cartella dei RAW, facilitando il re-import e l'integrazione con gli script Lua. — <em>Configurazione del modulo di esportazione</em>
+- Gli script Lua possono essere installati direttamente incollando l'URL nel gestore script, evitando la manipolazione manuale delle cartelle nascoste. — <em>Installazione di estensioni in Darktable</em>
+<strong>Importante:</strong> Chiudere sempre darktable prima di modificare manualmente il file di configurazione darktablerc per evitare che le modifiche vengano sovrascritte all'uscita del programma. — <em>Configurazione percorsi eseguibili e script Lua</em>
+- Su macOS, per trovare l'eseguibile reale, fare clic destro sull'applicazione .app, selezionare 'Mostra contenuto pacchetto' e navigare nella cartella corretta (es. macOS o Contents/Resources/Java). — <em>Configurazione percorsi su macOS</em>
+- Utilizzare la combinazione Opzione+Clic destro -&gt; 'Copia come nome percorso' per ottenere il percorso esatto senza errori di battitura. — <em>Inserimento percorsi in darktablerc</em>
+<strong>Attenzione:</strong> Assicurarsi di scaricare il file .lua grezzo e non la pagina HTML wrapper, altrimenti lo script non verrà caricato correttamente. — <em>Installazione script Lua per Zerene Stacker</em>
+<strong>Importante:</strong> Creare un file zerene_batch.xml vuoto nella cartella di staging, come richiesto dal plugin per funzionare correttamente. — <em>Configurazione iniziale Zerene Stacker</em>
+<strong>Attenzione:</strong> Chiudere sempre il software di stacking esterno (Helicon Focus o Zerene Stacker) prima di tornare in darktable per garantire l'importazione corretta dei file elaborati. — <em>Flusso di lavoro tra darktable e software esterni</em>
+- Utilizzare una convenzione di denominazione dei file chiara (es. AAAAMMGG) per facilitare il salvataggio e il ritrovamento dei file impilati nella stessa cartella degli originali. — <em>Organizzazione e salvataggio output</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:15:25.264742.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

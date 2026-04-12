@@ -1,0 +1,4260 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/1nPW6WPhhTo/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] The darktable pipeline for beginners - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-the-darktable-pipeline-for-beginners" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] The darktable pipeline for beginners
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-filosofia-della-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e filosofia della pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e filosofia della pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-moduli-tecnici-di-base-punti-neribianchi-e-bilanciamento-del-bianco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Moduli tecnici di base: Punti neri/bianchi e Bilanciamento del bianco
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Moduli tecnici di base: Punti neri/bianchi e Bilanciamento del bianco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ricostruzione-alte-luci-e-demosaicing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ricostruzione alte luci e Demosaicing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ricostruzione alte luci e Demosaicing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-orientamento-e-regolazione-dellesposizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Orientamento e regolazione dell'esposizione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Orientamento e regolazione dell&#39;esposizione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-profilo-colore-di-input-e-calibrazione-colore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Profilo colore di input e Calibrazione colore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Profilo colore di input e Calibrazione colore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aggiunta-di-moduli-creativi-e-conclusione-della-sezione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Aggiunta di moduli creativi e conclusione della sezione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Aggiunta di moduli creativi e conclusione della sezione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-nitidezza-e-contrasto-locale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Nitidezza e Contrasto Locale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Nitidezza e Contrasto Locale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-introduzione-e-configurazione-iniziale-di-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Introduzione e Configurazione Iniziale di AGX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Introduzione e Configurazione Iniziale di AGX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-regolazione-avanzata-curve-e-saturazione-in-agx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Regolazione Avanzata Curve e Saturazione in AGX
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Regolazione Avanzata Curve e Saturazione in AGX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-confronto-e-strategie-di-batch-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Confronto e Strategie di Batch Editing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Confronto e Strategie di Batch Editing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-elaborazione-seconda-foto-gestione-luci-e-ombre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Elaborazione Seconda Foto: Gestione Luci e Ombre
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Elaborazione Seconda Foto: Gestione Luci e Ombre">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-elaborazione-terza-foto-controluce-e-saturazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Elaborazione Terza Foto: Controluce e Saturazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Elaborazione Terza Foto: Controluce e Saturazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-elaborazione-quarta-foto-murale-e-vignettatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Elaborazione Quarta Foto: Murale e Vignettatura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Elaborazione Quarta Foto: Murale e Vignettatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-rifiniture-locali-e-confronto-delle-versioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Rifiniture locali e confronto delle versioni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Rifiniture locali e confronto delle versioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-conclusioni-e-flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Conclusioni e flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Conclusioni e flusso di lavoro consigliato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-the-darktable-pipeline-for-beginners">[ENG] The darktable pipeline for beginners<a class="headerlink" href="#eng-the-darktable-pipeline-for-beginners" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">https://www.youtube.com/watch?v=1nPW6WPhhTo</a>
+<strong>Generato:</strong> 2026-04-12T01:12:47.611370
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-filosofia-della-pipeline">Introduzione e filosofia della pipeline</a></li>
+<li><a href="#moduli-tecnici-di-base:-punti-neribianchi-e-bilanciamento-del-bianco">Moduli tecnici di base: Punti neri/bianchi e Bilanciamento del bianco</a></li>
+<li><a href="#ricostruzione-alte-luci-e-demosaicing">Ricostruzione alte luci e Demosaicing</a></li>
+<li><a href="#orientamento-e-regolazione-dell'esposizione">Orientamento e regolazione dell'esposizione</a></li>
+<li><a href="#profilo-colore-di-input-e-calibrazione-colore">Profilo colore di input e Calibrazione colore</a></li>
+<li><a href="#aggiunta-di-moduli-creativi-e-conclusione-della-sezione">Aggiunta di moduli creativi e conclusione della sezione</a></li>
+<li><a href="#nitidezza-e-contrasto-locale">Nitidezza e Contrasto Locale</a></li>
+<li><a href="#introduzione-e-configurazione-iniziale-di-agx">Introduzione e Configurazione Iniziale di AGX</a></li>
+<li><a href="#regolazione-avanzata-curve-e-saturazione-in-agx">Regolazione Avanzata Curve e Saturazione in AGX</a></li>
+<li><a href="#confronto-e-strategie-di-batch-editing">Confronto e Strategie di Batch Editing</a></li>
+<li><a href="#elaborazione-seconda-foto:-gestione-luci-e-ombre">Elaborazione Seconda Foto: Gestione Luci e Ombre</a></li>
+<li><a href="#elaborazione-terza-foto:-controluce-e-saturazione">Elaborazione Terza Foto: Controluce e Saturazione</a></li>
+<li><a href="#elaborazione-quarta-foto:-murale-e-vignettatura">Elaborazione Quarta Foto: Murale e Vignettatura</a></li>
+<li><a href="#rifiniture-locali-e-confronto-delle-versioni">Rifiniture locali e confronto delle versioni</a></li>
+<li><a href="#conclusioni-e-flusso-di-lavoro-consigliato">Conclusioni e flusso di lavoro consigliato</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-filosofia-della-pipeline">1. Introduzione e filosofia della pipeline<a class="headerlink" href="#1-introduzione-e-filosofia-della-pipeline" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del tutorial per principianti, spiegazione della filosofia di trasparenza di darktable e dell'ordine di applicazione dei moduli (dal basso verso l'alto).</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista Light Table di darktable con quattro immagini RAW (formato NEF) visualizzate come anteprime in griglia. Nessuna immagine è selezionata (0/4). Il pannello destro mostra il modulo 'selection' attivo, con opzioni per azioni su selezione, raggruppamento e stack storico. In basso è visibile la timeline cronologica delle collezioni. L'utente sta preparandosi a iniziare l'editing partendo da una singola immagine, come indicato dal contesto narrativo." src="screenshots/frame_00053_666.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Light Table di darktable con quattro immagini RAW (formato NEF) visualizzate come anteprime in griglia. Nessuna immagine è selezionata (0/4). Il pannello destro mostra il modulo 'selection' attivo, con opzioni per azioni su selezione, raggruppamento e stack storico. In basso è visibile la timeline cronologica delle collezioni. L'utente sta preparandosi a iniziare l'editing partendo da una singola immagine, come indicato dal contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>images_selected</td>
+<td>0</td>
+</tr>
+<tr>
+<td>total_images</td>
+<td>4</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>overwrite</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con il modulo 'raw black/white point' visibile nella pipeline a destra, grigio e non modificabile, confermando che è un modulo obbligatorio. Gli altri moduli fondamentali (demosaic, profili colore, white balance, ecc.) sono attivi ma alcuni sono anch'essi disabilitati per vincoli tecnici del flusso RAW. L'istogramma RGB è visibile in alto a destra, e l'immagine principale mostra una scena all'aperto con persone sedute e in piedi in un parco al crepuscolo. La barra degli strumenti inferiore riporta i metadati della foto: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200." src="screenshots/frame_00090_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con il modulo 'raw black/white point' visibile nella pipeline a destra, grigio e non modificabile, confermando che è un modulo obbligatorio. Gli altri moduli fondamentali (demosaic, profili colore, white balance, ecc.) sono attivi ma alcuni sono anch'essi disabilitati per vincoli tecnici del flusso RAW. L'istogramma RGB è visibile in alto a destra, e l'immagine principale mostra una scena all'aperto con persone sedute e in piedi in un parco al crepuscolo. La barra degli strumenti inferiore riporta i metadati della foto: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200.</em></p>
+<p><strong>Modulo:</strong> raw black/white point</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>raw black/white point</td>
+<td>disabilitato (grigio, non modificabile)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una scena video di un presentatore (Nicholas) che parla davanti a una parete rossa con cornici fotografiche; non è visibile alcuna interfaccia di darktable. Il contesto indica che si sta introducendo l'uso di darktable per l'editing di file RAW e JPEG, ma l'interfaccia del software non è ancora mostrata. Si tratta quindi di un frame introduttivo, probabilmente prima dell'accesso alla Light Table." src="screenshots/frame_00040_799.jpg" /></p>
+<p><em>Lo screenshot mostra una scena video di un presentatore (Nicholas) che parla davanti a una parete rossa con cornici fotografiche; non è visibile alcuna interfaccia di darktable. Il contesto indica che si sta introducendo l'uso di darktable per l'editing di file RAW e JPEG, ma l'interfaccia del software non è ancora mostrata. Si tratta quindi di un frame introduttivo, probabilmente prima dell'accesso alla Light Table.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (un uomo con barba, baffi e occhiali) che parla davanti a una parete rossa con cornici fotografiche; non è visibile alcuna interfaccia di darktable. Si tratta di un frame video del canale YouTube del narratore, non di uno screenshot dell'applicazione darktable stessa. Il contesto indica che sta introducendo un episodio per principianti su darktable, menzionando i moduli tecnici nella pipeline, ma l'immagine non contiene elementi dell'interfaccia software." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (un uomo con barba, baffi e occhiali) che parla davanti a una parete rossa con cornici fotografiche; non è visibile alcuna interfaccia di darktable. Si tratta di un frame video del canale YouTube del narratore, non di uno screenshot dell'applicazione darktable stessa. Il contesto indica che sta introducendo un episodio per principianti su darktable, menzionando i moduli tecnici nella pipeline, ma l'immagine non contiene elementi dell'interfaccia software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una fotografia di un uomo con barba e occhiali, in un ambiente interno con parete rossa e cornici appese; non è visibile alcuna interfaccia di darktable. Si tratta di un frame video del presentatore, non di una schermata del software. Il contesto indica che il video sta introducendo i moduli tecnici della pipeline di darktable, ma l'immagine attuale non mostra l'interfaccia del programma." src="screenshots/frame_00012_439.jpg" /></p>
+<p><em>Lo screenshot mostra una fotografia di un uomo con barba e occhiali, in un ambiente interno con parete rossa e cornici appese; non è visibile alcuna interfaccia di darktable. Si tratta di un frame video del presentatore, non di una schermata del software. Il contesto indica che il video sta introducendo i moduli tecnici della pipeline di darktable, ma l'immagine attuale non mostra l'interfaccia del programma.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<hr />
+<h2 id="2-moduli-tecnici-di-base-punti-neribianchi-e-bilanciamento-del-bianco">2. Moduli tecnici di base: Punti neri/bianchi e Bilanciamento del bianco<a class="headerlink" href="#2-moduli-tecnici-di-base-punti-neribianchi-e-bilanciamento-del-bianco" title="Permanent link">&para;</a></h2>
+<p><strong>[02:00 – 04:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=120">Guarda nel video</a></p>
+<p>Analisi dei moduli iniziali bloccati (raw black white point) e spiegazione del bilanciamento del bianco, del filtro Bayer e del perché l'immagine appare verde senza di esso.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine RAW selezionata (Nikon Z5 II, 26mm, f/7.1, 1/30s, ISO 200). Il modulo 'white balance' è attivo e visibile nella barra dei moduli a destra, con impostazione 'auto'. L'istogramma RGB sopra i moduli mostra una predominanza di verde rispetto a rosso e blu, coerente con il commento del narratore sulla dominante verde in assenza di bilanciamento del bianco. Il modulo 'highlight reconstruction' è presente nell'elenco ma non espanso; il cursore del mouse è vicino alla sua voce. La scena fotografata raffigura un gruppo di persone all'aperto in un parco, con illuminazione crepuscolare e tonalità fredde." src="screenshots/frame_00260_300.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine RAW selezionata (Nikon Z5 II, 26mm, f/7.1, 1/30s, ISO 200). Il modulo 'white balance' è attivo e visibile nella barra dei moduli a destra, con impostazione 'auto'. L'istogramma RGB sopra i moduli mostra una predominanza di verde rispetto a rosso e blu, coerente con il commento del narratore sulla dominante verde in assenza di bilanciamento del bianco. Il modulo 'highlight reconstruction' è presente nell'elenco ma non espanso; il cursore del mouse è vicino alla sua voce. La scena fotografata raffigura un gruppo di persone all'aperto in un parco, con illuminazione crepuscolare e tonalità fredde.</em></p>
+<p><strong>Modulo:</strong> white balance</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input color profile</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>output color profile</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>white balance</td>
+<td>auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una finestra del browser Safari aperta su una pagina Wikipedia riguardante la 'Bayer filter', con testo esplicativo e due figure: una rappresentazione isometrica della disposizione dei filtri colorati (verde, rosso, blu) su un array di fotosensori, e uno schema che illustra come la luce incidente passa attraverso il livello dei filtri per raggiungere i sensori. Sul lato destro è parzialmente visibile l'interfaccia di darktable, ma nessun modulo è attivo o in primo piano; l'utente sta consultando la documentazione esterna per spiegare il concetto di matrice di colore (colour matrix) utilizzata nei sensori delle fotocamere." src="screenshots/frame_00213_533.jpg" /></p>
+<p><em>Lo screenshot mostra una finestra del browser Safari aperta su una pagina Wikipedia riguardante la 'Bayer filter', con testo esplicativo e due figure: una rappresentazione isometrica della disposizione dei filtri colorati (verde, rosso, blu) su un array di fotosensori, e uno schema che illustra come la luce incidente passa attraverso il livello dei filtri per raggiungere i sensori. Sul lato destro è parzialmente visibile l'interfaccia di darktable, ma nessun modulo è attivo o in primo piano; l'utente sta consultando la documentazione esterna per spiegare il concetto di matrice di colore (colour matrix) utilizzata nei sensori delle fotocamere.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra una finestra del browser Safari aperta su una pagina Wikipedia riguardante la 'Bayer filter', con testo esplicativo e due figure: una rappresentazione 3D della disposizione dei filtri colorati (verde, rosso, blu) su un sensore e uno schema di funzionamento con luce incidente e strato filtro. Sul lato destro è parzialmente visibile l'interfaccia di darktable, ma il modulo attivo non è leggibile né selezionato; si vedono solo i riquadri laterali (moduli disponibili) e parte dell'area di visualizzazione immagine, senza alcun pannello di controllo attivo. L'utente sta probabilmente consultando documentazione esterna durante il lavoro in darktable." src="screenshots/frame_00240_000.jpg" /></p>
+<p><em>Lo screenshot mostra una finestra del browser Safari aperta su una pagina Wikipedia riguardante la 'Bayer filter', con testo esplicativo e due figure: una rappresentazione 3D della disposizione dei filtri colorati (verde, rosso, blu) su un sensore e uno schema di funzionamento con luce incidente e strato filtro. Sul lato destro è parzialmente visibile l'interfaccia di darktable, ma il modulo attivo non è leggibile né selezionato; si vedono solo i riquadri laterali (moduli disponibili) e parte dell'area di visualizzazione immagine, senza alcun pannello di controllo attivo. L'utente sta probabilmente consultando documentazione esterna durante il lavoro in darktable.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>raw black white point</li>
+<li>white balance</li>
+</ul>
+<hr />
+<h2 id="3-ricostruzione-alte-luci-e-demosaicing">3. Ricostruzione alte luci e Demosaicing<a class="headerlink" href="#3-ricostruzione-alte-luci-e-demosaicing" title="Permanent link">&para;</a></h2>
+<p><strong>[04:40 – 07:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=280">Guarda nel video</a></p>
+<p>Funzionamento della ricostruzione delle alte luci per recuperare dati bruciati, spiegazione del demosaicing e introduzione alla nitidezza in fase di acquisizione (capture sharpening).</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che presenta evidenti aree sovraesposte visualizzate come maschere colorate (verdi e blu) sul cielo nuvoloso, indicando l'attivazione della funzione 'highlight reconstruction'. L'utente sta interagendo con il modulo 'highlight reconstruction', come confermato dal contesto verbale ('I just clicked on this button... switch that off... highlight reconstruction has done it again'), e le maschere visibili corrispondono alla visualizzazione delle aree ricostruite. Il cursore è posizionato sopra una zona verde, suggerendo un'interazione diretta con la maschera. A destra, l'elenco dei moduli mostra 'highlight reconstruction' attivo (con icona accesa), mentre l'istogramma RGB mostra picchi saturi (rosa/verde/azzurro) nelle alte luci." src="screenshots/frame_00296_279.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che presenta evidenti aree sovraesposte visualizzate come maschere colorate (verdi e blu) sul cielo nuvoloso, indicando l'attivazione della funzione 'highlight reconstruction'. L'utente sta interagendo con il modulo 'highlight reconstruction', come confermato dal contesto verbale ('I just clicked on this button... switch that off... highlight reconstruction has done it again'), e le maschere visibili corrispondono alla visualizzazione delle aree ricostruite. Il cursore è posizionato sopra una zona verde, suggerendo un'interazione diretta con la maschera. A destra, l'elenco dei moduli mostra 'highlight reconstruction' attivo (con icona accesa), mentre l'istogramma RGB mostra picchi saturi (rosa/verde/azzurro) nelle alte luci.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>reconstruct</td>
+</tr>
+<tr>
+<td>clipping</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine di cielo nuvoloso con tonalità violacee e rosa. Il modulo 'highlight reconstruction' è attivo (il cursore del mouse punta su di esso, e il narratore conferma che è stato appena attivato). L'istogramma RGB a destra mostra una distribuzione dei toni concentrata nella parte sinistra (ombre/midtone), con picchi verdi e blu suggerenti sovraesposizione parziale. Il pannello dei moduli a destra elenca i moduli abilitati, tra cui 'exposure', 'white balance', 'demosaic', e 'highlight reconstruction'. Il narratore sta dimostrando l'effetto del modulo 'highlight reconstruction' confrontando lo stato 'off' e 'on', evidenziando come questo modulo ripristini dettagli nelle alte luci." src="screenshots/frame_00308_579.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine di cielo nuvoloso con tonalità violacee e rosa. Il modulo 'highlight reconstruction' è attivo (il cursore del mouse punta su di esso, e il narratore conferma che è stato appena attivato). L'istogramma RGB a destra mostra una distribuzione dei toni concentrata nella parte sinistra (ombre/midtone), con picchi verdi e blu suggerenti sovraesposizione parziale. Il pannello dei moduli a destra elenca i moduli abilitati, tra cui 'exposure', 'white balance', 'demosaic', e 'highlight reconstruction'. Il narratore sta dimostrando l'effetto del modulo 'highlight reconstruction' confrontando lo stato 'off' e 'on', evidenziando come questo modulo ripristini dettagli nelle alte luci.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>highlight_reconstruction</td>
+<td>on</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine ingrandita al 800% al centro. Il modulo 'capture sharpen' è espanso e attivo nel pannello destro, con i parametri visibili: iterations a 8, radius a 0.60 px, contrast sensitivity a 0.28 e corner boost a 0.00 px. L'utente sta dimostrando l'effetto del sharpening su un dettaglio di jeans, evidenziando la differenza tra prima e dopo l'applicazione. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono riportate le informazioni EXIF della foto (Nikon Z5_2, 1/30s, f/7.1, 26.0 mm, ISO 200)." src="screenshots/frame_00443_980.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine ingrandita al 800% al centro. Il modulo 'capture sharpen' è espanso e attivo nel pannello destro, con i parametri visibili: iterations a 8, radius a 0.60 px, contrast sensitivity a 0.28 e corner boost a 0.00 px. L'utente sta dimostrando l'effetto del sharpening su un dettaglio di jeans, evidenziando la differenza tra prima e dopo l'applicazione. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono riportate le informazioni EXIF della foto (Nikon Z5_2, 1/30s, f/7.1, 26.0 mm, ISO 200).</em></p>
+<p><strong>Modulo:</strong> capture sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>0.60 px</td>
+</tr>
+<tr>
+<td>contrast sensitivity</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>corner boost</td>
+<td>0.00 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine selezionata che raffigura un cielo nuvoloso e il bordo di un albero a destra. Il modulo 'highlight reconstruction' è attivo (indicato dal pulsante acceso nella lista dei moduli a destra), e il narratore sta dimostrando l'effetto di attivazione/disattivazione di questo modulo, evidenziando come la ricostruzione degli alti valori luminosi influisca sulla visibilità dei dettagli nelle zone sovraesposte. L'istogramma RGB in alto a destra mostra una distribuzione piatta con picchi nei toni chiari, coerente con un'immagine con aree sovraesposte. La barra di stato inferiore riporta i dati EXIF della foto (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200)." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine selezionata che raffigura un cielo nuvoloso e il bordo di un albero a destra. Il modulo 'highlight reconstruction' è attivo (indicato dal pulsante acceso nella lista dei moduli a destra), e il narratore sta dimostrando l'effetto di attivazione/disattivazione di questo modulo, evidenziando come la ricostruzione degli alti valori luminosi influisca sulla visibilità dei dettagli nelle zone sovraesposte. L'istogramma RGB in alto a destra mostra una distribuzione piatta con picchi nei toni chiari, coerente con un'immagine con aree sovraesposte. La barra di stato inferiore riporta i dati EXIF della foto (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200).</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>highlight_reconstruction</td>
+<td>on</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine RAW selezionata (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200). Sul pannello destro è espanso il modulo 'demosaic', attivo e con la voce 'mosaic' abilitata. L'istogramma RGB sopra il modulo mostra tre picchi distinti (rosso, verde, blu), coerenti con la descrizione del narratore sui colori primari. Il modulo è configurato con impostazioni predefinite; non sono visibili maschere o modifiche attive. La scena fotografata raffigura un gruppo di persone all'aperto in un parco, con illuminazione crepuscolare." src="screenshots/frame_00395_266.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine RAW selezionata (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200). Sul pannello destro è espanso il modulo 'demosaic', attivo e con la voce 'mosaic' abilitata. L'istogramma RGB sopra il modulo mostra tre picchi distinti (rosso, verde, blu), coerenti con la descrizione del narratore sui colori primari. Il modulo è configurato con impostazioni predefinite; non sono visibili maschere o modifiche attive. La scena fotografata raffigura un gruppo di persone all'aperto in un parco, con illuminazione crepuscolare.</em></p>
+<p><strong>Modulo:</strong> demosaic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mosaic</td>
+<td>on</td>
+</tr>
+<tr>
+<td>color_smoothing</td>
+<td>default</td>
+</tr>
+<tr>
+<td>matching_green</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>highlight reconstruction</li>
+<li>demosaic</li>
+<li>capture sharpening</li>
+</ul>
+<hr />
+<h2 id="4-orientamento-e-regolazione-dellesposizione">4. Orientamento e regolazione dell'esposizione<a class="headerlink" href="#4-orientamento-e-regolazione-dellesposizione" title="Permanent link">&para;</a></h2>
+<p><strong>[07:30 – 09:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=450">Guarda nel video</a></p>
+<p>Correzione automatica dell'orientamento e utilizzo del modulo esposizione per impostare il grigio medio, con tecnica di riferimento schermo bianco (Cmd+B).</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'capture sharpen' attivo nel pannello destro di darktable, con i controlli espansi. È visibile un avviso in basso al centro: 'imprecise radius calculation due to cropping or because you are zoomed in too much', che conferma il contesto del narratore riguardo al calcolo impreciso del raggio a causa dello zoom eccessivo. L'istogramma RGB è visibile in alto a destra, e l'immagine principale mostra una scena all'aperto con persone sedute su panche. Il cursore del mouse è posizionato sulle persone, ma non interagisce con alcun controllo specifico." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'capture sharpen' attivo nel pannello destro di darktable, con i controlli espansi. È visibile un avviso in basso al centro: 'imprecise radius calculation due to cropping or because you are zoomed in too much', che conferma il contesto del narratore riguardo al calcolo impreciso del raggio a causa dello zoom eccessivo. L'istogramma RGB è visibile in alto a destra, e l'immagine principale mostra una scena all'aperto con persone sedute su panche. Il cursore del mouse è posizionato sulle persone, ma non interagisce con alcun controllo specifico.</em></p>
+<p><strong>Modulo:</strong> capture sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>13</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>0.50 px</td>
+</tr>
+<tr>
+<td>contrast sensitivity</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>corner boost</td>
+<td>0.00 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo nel pannello destro. L'immagine principale è una scena esterna al crepuscolo con persone sedute e in piedi in un parco. Il modulo exposure mostra che la compensazione dell'esposizione della fotocamera è abilitata (+1.3 EV), mentre l'esposizione manuale è quasi neutra (+0.003 EV). È visibile l'istogramma RGB nella parte superiore del pannello dei moduli, e il cursore del mouse si trova vicino al pulsante 'mode' del modulo exposure. In basso è riportata la metadata della foto: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200." src="screenshots/frame_00548_620.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo nel pannello destro. L'immagine principale è una scena esterna al crepuscolo con persone sedute e in piedi in un parco. Il modulo exposure mostra che la compensazione dell'esposizione della fotocamera è abilitata (+1.3 EV), mentre l'esposizione manuale è quasi neutra (+0.003 EV). È visibile l'istogramma RGB nella parte superiore del pannello dei moduli, e il cursore del mouse si trova vicino al pulsante 'mode' del modulo exposure. In basso è riportata la metadata della foto: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+1.3 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.003 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'capture sharpen' attivo in darktable, con parametri regolati (iterations=8, radius=0.60 px, contrast sensitivity=0.44, corner boost=0.00 px). L'immagine principale è visualizzata in modalità di preview del sharpening, con contorni gialli evidenziati che indicano le aree interessate dall'elaborazione. Il cursore del mouse è posizionato sul parametro 'contrast sensitivity'. A destra sono visibili altri moduli disabilitati (es. demosaic, white balance, highlight reconstruction), coerentemente con il commento del narratore che suggerisce di non toccarli per principianti." src="screenshots/frame_00496_766.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'capture sharpen' attivo in darktable, con parametri regolati (iterations=8, radius=0.60 px, contrast sensitivity=0.44, corner boost=0.00 px). L'immagine principale è visualizzata in modalità di preview del sharpening, con contorni gialli evidenziati che indicano le aree interessate dall'elaborazione. Il cursore del mouse è posizionato sul parametro 'contrast sensitivity'. A destra sono visibili altri moduli disabilitati (es. demosaic, white balance, highlight reconstruction), coerentemente con il commento del narratore che suggerisce di non toccarli per principianti.</em></p>
+<p><strong>Modulo:</strong> capture sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>0.60 px</td>
+</tr>
+<tr>
+<td>contrast sensitivity</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td>corner boost</td>
+<td>0.00 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'capture sharpen' attivo nel pannello destro. Sono visibili i controlli per affinamento della nitidezza: iterations a 8, radius a 0.60 px, contrast sensitivity a 0.28 e corner boost a 0.0. L'immagine principale è una scena esterna con persone in un parco al crepuscolo, esposta in RAW (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200). L'istogramma RGB è visibile in alto a destra, con distribuzione bilanciata ma leggermente scura. Il narratore, nel contesto fornito, sta consigliando ai principianti di non modificare questi parametri avanzati." src="screenshots/frame_00500_033.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'capture sharpen' attivo nel pannello destro. Sono visibili i controlli per affinamento della nitidezza: iterations a 8, radius a 0.60 px, contrast sensitivity a 0.28 e corner boost a 0.0. L'immagine principale è una scena esterna con persone in un parco al crepuscolo, esposta in RAW (Nikon Z5_2, 1/30s, f/7.1, 26mm, ISO 200). L'istogramma RGB è visibile in alto a destra, con distribuzione bilanciata ma leggermente scura. Il narratore, nel contesto fornito, sta consigliando ai principianti di non modificare questi parametri avanzati.</em></p>
+<p><strong>Modulo:</strong> capture sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>0.60 px</td>
+</tr>
+<tr>
+<td>contrast sensitivity</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>corner boost</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'capture sharpen' attivo nel pannello destro. L'immagine principale è visualizzata in una rappresentazione a contrasto estremo (quasi contorno giallo su sfondo scuro), tipica di una visualizzazione temporanea durante l'analisi dello sharpening o di maschere. I parametri dello sharpening sono impostati con 8 iterazioni, raggio di 0.60 px, sensibilità al contrasto a 0.28 e boost angolare a 0.00 px. Il cursore del mouse è posizionato sullo slider di 'corner boost'. Nella barra degli strumenti in alto sono visibili i moduli disponibili ('lighttable', 'darkroom', 'other'), e si trova nella modalità 'darkroom'." src="screenshots/frame_00492_199.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'capture sharpen' attivo nel pannello destro. L'immagine principale è visualizzata in una rappresentazione a contrasto estremo (quasi contorno giallo su sfondo scuro), tipica di una visualizzazione temporanea durante l'analisi dello sharpening o di maschere. I parametri dello sharpening sono impostati con 8 iterazioni, raggio di 0.60 px, sensibilità al contrasto a 0.28 e boost angolare a 0.00 px. Il cursore del mouse è posizionato sullo slider di 'corner boost'. Nella barra degli strumenti in alto sono visibili i moduli disponibili ('lighttable', 'darkroom', 'other'), e si trova nella modalità 'darkroom'.</em></p>
+<p><strong>Modulo:</strong> capture sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>8</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>0.60 px</td>
+</tr>
+<tr>
+<td>contrast sensitivity</td>
+<td>0.28</td>
+</tr>
+<tr>
+<td>corner boost</td>
+<td>0.00 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>orientation</li>
+<li>exposure</li>
+</ul>
+<hr />
+<h2 id="5-profilo-colore-di-input-e-calibrazione-colore">5. Profilo colore di input e Calibrazione colore<a class="headerlink" href="#5-profilo-colore-di-input-e-calibrazione-colore" title="Permanent link">&para;</a></h2>
+<p><strong>[09:40 – 12:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=580">Guarda nel video</a></p>
+<p>Spiegazione del profilo colore di input (linear rec 2020 RGB) e utilizzo della calibrazione colore per correggere dominanti verdi tramite il cursore croma.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'exposure' attivo in darktable, con un forte aumento dell'esposizione (+2.816 EV) applicato manualmente oltre alla compensazione automatica della esposizione della fotocamera (+1.3 EV). L’istogramma RGB a destra indica una distribuzione dei toni spostata verso le ombre, confermando l’underexposure originale. Il cursore dell’esposizione è posizionato molto a destra, coerentemente con la descrizione del narratore che sta correggendo una foto severamente sottoesposta." src="screenshots/frame_00592_820.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure' attivo in darktable, con un forte aumento dell'esposizione (+2.816 EV) applicato manualmente oltre alla compensazione automatica della esposizione della fotocamera (+1.3 EV). L’istogramma RGB a destra indica una distribuzione dei toni spostata verso le ombre, confermando l’underexposure originale. Il cursore dell’esposizione è posizionato molto a destra, coerentemente con la descrizione del narratore che sta correggendo una foto severamente sottoesposta.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+1.3 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+2.816 EV</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine principale visualizzata al centro. Sul pannello destro, il modulo 'input color profile' è espanso e attivo, evidenziato dal cursore del mouse sopra di esso. L'istogramma a destra mostra la distribuzione dei colori (rosso, verde, blu) nell'immagine. Il narratore sta spiegando che questo modulo è tecnico e non disattivabile, e che converte la matrice colore della fotocamera nel profilo di lavoro lineare Rec.2020 RGB, che egli raccomanda di mantenere." src="screenshots/frame_00643_860.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine principale visualizzata al centro. Sul pannello destro, il modulo 'input color profile' è espanso e attivo, evidenziato dal cursore del mouse sopra di esso. L'istogramma a destra mostra la distribuzione dei colori (rosso, verde, blu) nell'immagine. Il narratore sta spiegando che questo modulo è tecnico e non disattivabile, e che converte la matrice colore della fotocamera nel profilo di lavoro lineare Rec.2020 RGB, che egli raccomanda di mantenere.</em></p>
+<p><strong>Modulo:</strong> input color profile</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color profile</td>
+<td>linear rec2020 RGB</td>
+</tr>
+<tr>
+<td>camera matrix</td>
+<td>standard (from camera)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>input color profile</li>
+<li>color calibration</li>
+</ul>
+<hr />
+<h2 id="6-aggiunta-di-moduli-creativi-e-conclusione-della-sezione">6. Aggiunta di moduli creativi e conclusione della sezione<a class="headerlink" href="#6-aggiunta-di-moduli-creativi-e-conclusione-della-sezione" title="Permanent link">&para;</a></h2>
+<p><strong>[12:00 – 14:46]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=720">Guarda nel video</a></p>
+<p>Introduzione dei moduli AGX, color balance RGB e basic colorfulness per gestire toni e saturazione, e accenno alla nitidezza locale per completare il flusso di lavoro iniziale.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color calibration' attivo in darktable, con la scheda 'CAT' selezionata. L'istogramma a destra visualizza le distribuzioni RGB della scena. Il parametro 'CCT' è indicato come '5279 K (invalid)', suggerendo che il bilanciamento del bianco automatico della fotocamera non è stato ritenuto valido dall'utente o dal sistema. È presente una checkbox attiva per 'clip negative RGB from gamut'. La descrizione del narratore conferma che si sta discutendo del bilanciamento del bianco e dell’uso del color picker, criticandone l’affidabilità in assenza di una carta grigia." src="screenshots/frame_00730_200.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color calibration' attivo in darktable, con la scheda 'CAT' selezionata. L'istogramma a destra visualizza le distribuzioni RGB della scena. Il parametro 'CCT' è indicato come '5279 K (invalid)', suggerendo che il bilanciamento del bianco automatico della fotocamera non è stato ritenuto valido dall'utente o dal sistema. È presente una checkbox attiva per 'clip negative RGB from gamut'. La descrizione del narratore conferma che si sta discutendo del bilanciamento del bianco e dell’uso del color picker, criticandone l’affidabilità in assenza di una carta grigia.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>CCT</td>
+<td>5279 K (invalid)</td>
+</tr>
+<tr>
+<td>illuminant</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>296.2°</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>31.7%</td>
+</tr>
+<tr>
+<td>gamut compression</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con l'immagine principale selezionata e il pannello dei moduli a destra. Il modulo 'color calibration' è attivo (indicato dal pulsante acceso e dal cursore del mouse sopra di esso), mentre gli altri moduli come 'exposure', 'white balance', ecc. sono disattivati. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione bilanciata con leggero predominio di verde e blu. Il narratore sta modificando la cromanza per aggiungere una tonalità magenta, come confermato dal contesto verbale." src="screenshots/frame_00839_080.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con l'immagine principale selezionata e il pannello dei moduli a destra. Il modulo 'color calibration' è attivo (indicato dal pulsante acceso e dal cursore del mouse sopra di esso), mentre gli altri moduli come 'exposure', 'white balance', ecc. sono disattivati. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione bilanciata con leggero predominio di verde e blu. Il narratore sta modificando la cromanza per aggiungere una tonalità magenta, come confermato dal contesto verbale.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chroma</td>
+<td>-5.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>agx</li>
+<li>color balance rgb</li>
+<li>basic colorfulness</li>
+<li>local contrast</li>
+</ul>
+<hr />
+<h2 id="7-nitidezza-e-contrasto-locale">7. Nitidezza e Contrasto Locale<a class="headerlink" href="#7-nitidezza-e-contrasto-locale" title="Permanent link">&para;</a></h2>
+<p><strong>[14:47 – 15:35]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=887">Guarda nel video</a></p>
+<p>Confronto tra i moduli per la nitidezza. Si consiglia l'uso del contrast equalizer con una maschera globale e opacità ridotta per un effetto sottile, evitando l'eccessiva durezza del modulo di sharpening standard.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo AGX (Advanced Global eXposure) attivo nella sezione 'settings'. È visibile un istogramma RGB a tre canali in alto a destra, con una curva tonale personalizzata mostrata nel grafico 'show curve' in basso. L'immagine principale è una scena esterna con persone sedute su panche in un parco, sotto cielo nuvoloso. Il modulo AGX è configurato con valori estremi di esposizione (bianco a +6.5 EV, nero a -10 EV), indicando un uso avanzato per gestire ampie gamme dinamiche. Il narratore menziona che AGX è la futura sostituzione di filmic/sigmoid, confermando che si tratta di una demo del nuovo motore di tonemapping." src="screenshots/frame_00934_460.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo AGX (Advanced Global eXposure) attivo nella sezione 'settings'. È visibile un istogramma RGB a tre canali in alto a destra, con una curva tonale personalizzata mostrata nel grafico 'show curve' in basso. L'immagine principale è una scena esterna con persone sedute su panche in un parco, sotto cielo nuvoloso. Il modulo AGX è configurato con valori estremi di esposizione (bianco a +6.5 EV, nero a -10 EV), indicando un uso avanzato per gestire ampie gamme dinamiche. Il narratore menziona che AGX è la futura sostituzione di filmic/sigmoid, confermando che si tratta di una demo del nuovo motore di tonemapping.</em></p>
+<p><strong>Modulo:</strong> agx</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>6.50 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-10.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>2.80</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Diffuse or sharpen</li>
+<li>Contrast equalizer</li>
+</ul>
+<hr />
+<h2 id="8-introduzione-e-configurazione-iniziale-di-agx">8. Introduzione e Configurazione Iniziale di AGX<a class="headerlink" href="#8-introduzione-e-configurazione-iniziale-di-agx" title="Permanent link">&para;</a></h2>
+<p><strong>[15:35 – 17:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=935">Guarda nel video</a></p>
+<p>Presentazione di AGX come evoluzione futura rispetto a filmic e sigmoid. Spiegazione dell'interfaccia e utilizzo del pulsante di regolazione automatica per impostare i punti di bianco e nero.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'local contrast' attivo in darktable, con la tab 'primaries' selezionata. Il pulsante 'auto tune levels' è attivato (checkbox spuntato), e lo slider 'contrast' è posizionato a 2.80. Sono visibili anche gli istogrammi RGB nella parte superiore destra e la curva di tonalità in basso a destra. L'immagine principale raffigura un gruppo di persone all'aperto in un parco, con una composizione equilibrata e illuminazione diffusa. Il narratore sta enfatizzando l'utilità del pulsante 'auto tune levels' come primo passo fondamentale nel flusso di lavoro." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'local contrast' attivo in darktable, con la tab 'primaries' selezionata. Il pulsante 'auto tune levels' è attivato (checkbox spuntato), e lo slider 'contrast' è posizionato a 2.80. Sono visibili anche gli istogrammi RGB nella parte superiore destra e la curva di tonalità in basso a destra. L'immagine principale raffigura un gruppo di persone all'aperto in un parco, con una composizione equilibrata e illuminazione diffusa. Il narratore sta enfatizzando l'utilità del pulsante 'auto tune levels' come primo passo fondamentale nel flusso di lavoro.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>6.50 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-10.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>True</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>2.80</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione 'lighttable'. È visibile una curva tonale S-shaped nel grafico 'show curve', con parametri di contrasto e potenza toe/shoulder regolati. L'immagine principale è una scena esterna con persone sedute su panche in un parco; l'istogramma RGB a destra indica una distribuzione luminosa bilanciata con leggera dominanza verde. Il narratore sta discutendo della regolazione del contrasto tramite zoom e valutazione visiva a distanza, suggerendo di ridurre la dimensione dell'immagine (con Ctrl) per meglio percepire l'impatto globale delle modifiche." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione 'lighttable'. È visibile una curva tonale S-shaped nel grafico 'show curve', con parametri di contrasto e potenza toe/shoulder regolati. L'immagine principale è una scena esterna con persone sedute su panche in un parco; l'istogramma RGB a destra indica una distribuzione luminosa bilanciata con leggera dominanza verde. Il narratore sta discutendo della regolazione del contrasto tramite zoom e valutazione visiva a distanza, suggerendo di ridurre la dimensione dell'immagine (con Ctrl) per meglio percepire l'impatto globale delle modifiche.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>black relative exposure</td>
+<td>-8.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>3.77</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>toe start</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AGX</li>
+</ul>
+<hr />
+<h2 id="9-regolazione-avanzata-curve-e-saturazione-in-agx">9. Regolazione Avanzata Curve e Saturazione in AGX<a class="headerlink" href="#9-regolazione-avanzata-curve-e-saturazione-in-agx" title="Permanent link">&para;</a></h2>
+<p><strong>[17:30 – 19:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1050">Guarda nel video</a></p>
+<p>Regolazione manuale del contrasto attorno al fulcro, gestione indipendente delle ombre (toe power) e delle luci (shoulder power). Aggiunta finale di saturazione per completare la prima immagine.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con la curva tonale visualizzata e un cursore posizionato nella porzione superiore destra della curva (regione delle luci). I parametri 'toe power' e 'shoulder power' sono entrambi impostati a 1.55, indicando un aumento della pendenza nelle zone scure e chiare rispettivamente. L'istogramma RGB è visibile in alto a destra, con evidente sovraesposizione nei canali rosso e verde. Il narratore sta spiegando come il controllo del contrasto agisce principalmente sulle tonalità medie, mentre i parametri 'toe power' permettono di regolare indipendentemente le ombre (parte iniziale della curva)." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con la curva tonale visualizzata e un cursore posizionato nella porzione superiore destra della curva (regione delle luci). I parametri 'toe power' e 'shoulder power' sono entrambi impostati a 1.55, indicando un aumento della pendenza nelle zone scure e chiare rispettivamente. L'istogramma RGB è visibile in alto a destra, con evidente sovraesposizione nei canali rosso e verde. Il narratore sta spiegando come il controllo del contrasto agisce principalmente sulle tonalità medie, mentre i parametri 'toe power' permettono di regolare indipendentemente le ombre (parte iniziale della curva).</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>black relative exposure</td>
+<td>-8.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>2.97</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>toe start</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color zones' attivo in darktable, con l'istogramma a destra che visualizza le componenti cromatiche (rosso, verde, blu) e la curva avanzata dei parametri. Il cursore del mouse è posizionato sullo slider di 'saturation', che è stato aumentato a 161.23%, evidenziando un intervento di potenziamento cromatico esagerato, come confermato dal commento del narratore ('Oh dear. Lost the slider again'). L'immagine di sfondo raffigura una scena all'aperto con persone sedute su panche in un parco, con cielo nuvoloso e vegetazione. La barra degli strumenti inferiore indica che l'immagine è stata scattata con una Nikon Z5 II, 26 mm, f/7.1, 1/30 s, ISO 200." src="screenshots/frame_01140_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color zones' attivo in darktable, con l'istogramma a destra che visualizza le componenti cromatiche (rosso, verde, blu) e la curva avanzata dei parametri. Il cursore del mouse è posizionato sullo slider di 'saturation', che è stato aumentato a 161.23%, evidenziando un intervento di potenziamento cromatico esagerato, come confermato dal commento del narratore ('Oh dear. Lost the slider again'). L'immagine di sfondo raffigura una scena all'aperto con persone sedute su panche in un parco, con cielo nuvoloso e vegetazione. La barra degli strumenti inferiore indica che l'immagine è stata scattata con una Nikon Z5 II, 26 mm, f/7.1, 1/30 s, ISO 200.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation</td>
+<td>161.23%</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>lift</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>curve y gamma</td>
+<td>2.20</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>toe start</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>shoulder start</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione 'lighttable'. È visibile una curva tonale S-shaped nel grafico 'show curve', con parametri di contrasto e potenza toe/shoulder regolati. L'immagine principale è una scena esterna con persone sedute su panche in un parco; l'istogramma RGB a destra indica una distribuzione luminosa bilanciata con leggera dominanza verde. Il narratore sta discutendo della regolazione del contrasto tramite zoom e valutazione visiva a distanza, suggerendo di ridurre la dimensione dell'immagine (con Ctrl) per meglio percepire l'impatto globale delle modifiche." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo nella sezione 'lighttable'. È visibile una curva tonale S-shaped nel grafico 'show curve', con parametri di contrasto e potenza toe/shoulder regolati. L'immagine principale è una scena esterna con persone sedute su panche in un parco; l'istogramma RGB a destra indica una distribuzione luminosa bilanciata con leggera dominanza verde. Il narratore sta discutendo della regolazione del contrasto tramite zoom e valutazione visiva a distanza, suggerendo di ridurre la dimensione dell'immagine (con Ctrl) per meglio percepire l'impatto globale delle modifiche.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>black relative exposure</td>
+<td>-8.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>3.77</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>toe start</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AGX</li>
+</ul>
+<hr />
+<h2 id="10-confronto-e-strategie-di-batch-editing">10. Confronto e Strategie di Batch Editing<a class="headerlink" href="#10-confronto-e-strategie-di-batch-editing" title="Permanent link">&para;</a></h2>
+<p><strong>[19:20 – 21:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1160">Guarda nel video</a></p>
+<p>Confronto visivo con un JPEG di riferimento. Spiegazione del workflow per l'elaborazione in batch: differenza tra l'uso degli stili e la copia/incolla dello stack di cronologia per serie fotografiche omogenee.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine RAW Nikon Z5 selezionata (file Z52-0027.NEF). Il modulo 'framing' è attivo nel pannello destro, indicando che l'utente sta preparando il ritaglio finale. L'istogramma RGB è visibile in alto a destra, con distribuzione bilanciata. Sul pannello sinistro sono presenti i moduli standard (snapshots, history, ecc.), ma nessuno è espanso. La barra inferiore riporta metadati tecnici: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200, OpenCL abilitato. L'utente ha appena completato l'editing con la pipeline AGX e sta confrontando con il JPEG originale." src="screenshots/frame_01170_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine RAW Nikon Z5 selezionata (file Z52-0027.NEF). Il modulo 'framing' è attivo nel pannello destro, indicando che l'utente sta preparando il ritaglio finale. L'istogramma RGB è visibile in alto a destra, con distribuzione bilanciata. Sul pannello sinistro sono presenti i moduli standard (snapshots, history, ecc.), ma nessuno è espanso. La barra inferiore riporta metadati tecnici: Nikon Z5_2, 1/30s, f/7.1, 26.0mm, ISO 200, OpenCL abilitato. L'utente ha appena completato l'editing con la pipeline AGX e sta confrontando con il JPEG originale.</em></p>
+<p><strong>Modulo:</strong> framing</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crop_ratio</td>
+<td>free</td>
+</tr>
+<tr>
+<td>guides</td>
+<td>none</td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>0.0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista lighttable con un'immagine selezionata (1 su 4) in anteprima centrale. Il modulo 'framing' è attivo nel pannello destro, indicando che l'utente sta applicando o preparandosi ad applicare un ritaglio o allineamento. L'istogramma RGB è visibile sopra i moduli, con distribuzione bilanciata. In basso sono riportate le informazioni tecniche della foto: Nikon Z5 II, 1/30s, f/7.1, 26.0mm, ISO 200, file RAW OpenCL abilitato. A sinistra, il pannello dei moduli mostra categorie come snapshots, history, mask manager, ecc., ma nessun modulo di sviluppo è espanso. L'utente sta confrontando il risultato dell'elaborazione AGX con il JPEG originale di Patrick, come indicato dal contesto." src="screenshots/frame_01170_819.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista lighttable con un'immagine selezionata (1 su 4) in anteprima centrale. Il modulo 'framing' è attivo nel pannello destro, indicando che l'utente sta applicando o preparandosi ad applicare un ritaglio o allineamento. L'istogramma RGB è visibile sopra i moduli, con distribuzione bilanciata. In basso sono riportate le informazioni tecniche della foto: Nikon Z5 II, 1/30s, f/7.1, 26.0mm, ISO 200, file RAW OpenCL abilitato. A sinistra, il pannello dei moduli mostra categorie come snapshots, history, mask manager, ecc., ma nessun modulo di sviluppo è espanso. L'utente sta confrontando il risultato dell'elaborazione AGX con il JPEG originale di Patrick, come indicato dal contesto.</em></p>
+<p><strong>Modulo:</strong> framing</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crop_ratio</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>rotate</td>
+<td>0.0°</td>
+</tr>
+<tr>
+<td>flip</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il pannello destro aperto sulla sezione 'styles'. È evidenziato lo stile 'Complete B&amp;W' nella lista degli stili disponibili. Sono visibili quattro anteprime di immagini NEF selezionate (una attiva), e la barra degli strumenti inferiore mostra la timeline delle foto. Il cursore del mouse è posizionato sopra lo stile 'Complete B&amp;W', indicando un'azione imminente di applicazione o selezione dello stile. Non sono attive maschere né moduli di sviluppo; si tratta di una fase preparatoria per l'applicazione batch di uno stile." src="screenshots/frame_01244_140.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il pannello destro aperto sulla sezione 'styles'. È evidenziato lo stile 'Complete B&amp;W' nella lista degli stili disponibili. Sono visibili quattro anteprime di immagini NEF selezionate (una attiva), e la barra degli strumenti inferiore mostra la timeline delle foto. Il cursore del mouse è posizionato sopra lo stile 'Complete B&amp;W', indicando un'azione imminente di applicazione o selezione dello stile. Non sono attive maschere né moduli di sviluppo; si tratta di una fase preparatoria per l'applicazione batch di uno stile.</em></p>
+<p><strong>Modulo:</strong> styles</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_style</td>
+<td>Complete B&amp;W</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto NEF (Z52-0027.NEF) visualizzata al centro. La foto raffigura un gruppo di persone all'aperto su un prato, con alcuni seduti su panche e altri in piedi; sullo sfondo si vedono alberi e strutture da gioco. In alto a sinistra è visibile il pannello delle informazioni EXIF: 1/30s, f/7.1, 26.0mm, ISO 200. Non sono attivi moduli di sviluppo (darkroom), né maschere o strumenti di editing visibili — la foto appare in stato grezzo o minimamente elaborato. Il cursore del mouse è posizionato sopra l’immagine, ma nessun modulo è espanso." src="screenshots/frame_01200_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto NEF (Z52-0027.NEF) visualizzata al centro. La foto raffigura un gruppo di persone all'aperto su un prato, con alcuni seduti su panche e altri in piedi; sullo sfondo si vedono alberi e strutture da gioco. In alto a sinistra è visibile il pannello delle informazioni EXIF: 1/30s, f/7.1, 26.0mm, ISO 200. Non sono attivi moduli di sviluppo (darkroom), né maschere o strumenti di editing visibili — la foto appare in stato grezzo o minimamente elaborato. Il cursore del mouse è posizionato sopra l’immagine, ma nessun modulo è espanso.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>crop</td>
+<td>non attivo (immagine non ritagliata)</td>
+</tr>
+<tr>
+<td>white_balance</td>
+<td>non visibile</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di 10 immagini (formati NEF e JPEG) di cui 2 sono selezionate. La barra laterale destra visualizza il pannello 'selection' con opzioni per operazioni su selezione, stack storico e gestione dei sidecar. In alto è visibile la barra degli strumenti con filtri, ordinamento e icone di rating (stelle). Non sono attivi moduli di sviluppo o maschere; l'utente si trova nella fase di selezione e preparazione per l'editing batch, come indicato dal contesto narrativo." src="screenshots/frame_01217_033.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di 10 immagini (formati NEF e JPEG) di cui 2 sono selezionate. La barra laterale destra visualizza il pannello 'selection' con opzioni per operazioni su selezione, stack storico e gestione dei sidecar. In alto è visibile la barra degli strumenti con filtri, ordinamento e icone di rating (stelle). Non sono attivi moduli di sviluppo o maschere; l'utente si trova nella fase di selezione e preparazione per l'editing batch, come indicato dal contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images</td>
+<td>2</td>
+</tr>
+<tr>
+<td>total_in_collection</td>
+<td>10</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>filename</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>overwrite</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-elaborazione-seconda-foto-gestione-luci-e-ombre">11. Elaborazione Seconda Foto: Gestione Luci e Ombre<a class="headerlink" href="#11-elaborazione-seconda-foto-gestione-luci-e-ombre" title="Permanent link">&para;</a></h2>
+<p><strong>[21:00 – 24:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1260">Guarda nel video</a></p>
+<p>Applicazione dello stack di cronologia, reset di esposizione e AGX. Regolazione dell'esposizione sul soggetto, calibrazione colore per correggere dominanti e uso di AGX per recuperare dettagli nelle alte luci bruciate.</p>
+<h3 id="screenshot_10">Screenshot<a class="headerlink" href="#screenshot_10" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nella scheda CAT. L'immagine è una scena esterna con persone sotto alberi, illuminata da luce naturale con possibile cast verde. Il parametro 'hue' è impostato a +2.1° (leggero shift verso il magenta), coerentemente con il commento del narratore che menziona l'aggiunta di un po' di magenta per correggere i colori della pelle. Il valore CCT appare come 'invalid', indicando che non è stato impostato manualmente o derivato da un profilo specifico. Non sono attive maschere, e il toggle 'clip negative RGB from gamut' è abilitato." src="screenshots/frame_01335_279.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nella scheda CAT. L'immagine è una scena esterna con persone sotto alberi, illuminata da luce naturale con possibile cast verde. Il parametro 'hue' è impostato a +2.1° (leggero shift verso il magenta), coerentemente con il commento del narratore che menziona l'aggiunta di un po' di magenta per correggere i colori della pelle. Il valore CCT appare come 'invalid', indicando che non è stato impostato manualmente o derivato da un profilo specifico. Non sono attive maschere, e il toggle 'clip negative RGB from gamut' è abilitato.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>CCT</td>
+<td>4134 K (invalid)</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>2.1°</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>25.7%</td>
+</tr>
+<tr>
+<td>gamut compression</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>True</td>
+</tr>
+<tr>
+<td>area color mapping</td>
+<td>calibrate with a color checker</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' attivo nella sezione 'primaries', con una curva S-modificata per aumentare il contrasto nelle tonalità scure (toe power = 3.56) e gestire i toni chiari (shoulder power = 1.55). L'istogramma RGB in alto a destra evidenzia sovraesposizione nei canali (taglio superiore), confermando la presenza di highlight bruciati, come menzionato dal narratore. La foto è una scena esterna in ombra con soggetti in primo piano e folla sullo sfondo." src="screenshots/frame_01380_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' attivo nella sezione 'primaries', con una curva S-modificata per aumentare il contrasto nelle tonalità scure (toe power = 3.56) e gestire i toni chiari (shoulder power = 1.55). L'istogramma RGB in alto a destra evidenzia sovraesposizione nei canali (taglio superiore), confermando la presenza di highlight bruciati, come menzionato dal narratore. La foto è una scena esterna in ombra con soggetti in primo piano e folla sullo sfondo.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>5.92 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-5.82 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>2.60</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>3.56</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata al centro. Sul pannello destro sono elencati i moduli di sviluppo; il cursore del mouse è posizionato su 'color calibration', indicando che l'utente sta per interagire con questo modulo. Il contesto narrativo conferma che l'utente ha appena riinizializzato l'esposizione e AGX, attivato contrast equalizer e color balance RGB, e intende rimuovere il framing. L'istogramma in alto a destra mostra una distribuzione luminosa bilanciata con componenti cromatiche visibili (rosso, verde, blu)." src="screenshots/frame_01288_380.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata al centro. Sul pannello destro sono elencati i moduli di sviluppo; il cursore del mouse è posizionato su 'color calibration', indicando che l'utente sta per interagire con questo modulo. Il contesto narrativo conferma che l'utente ha appena riinizializzato l'esposizione e AGX, attivato contrast equalizer e color balance RGB, e intende rimuovere il framing. L'istogramma in alto a destra mostra una distribuzione luminosa bilanciata con componenti cromatiche visibili (rosso, verde, blu).</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color calibration</td>
+<td>non specificato (modulo selezionato ma parametri non visibili)</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>riinizializzato (secondo il contesto)</td>
+</tr>
+<tr>
+<td>AGX</td>
+<td>attivato/riinizializzato</td>
+</tr>
+<tr>
+<td>contrast equalizer</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>color balance rgb</td>
+<td>già presente/attivo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale raffigura una scena esterna con persone in strada; il soggetto principale è un uomo al centro con cappello e occhiali da sole, che tiene una fotocamera. Il modulo exposure è configurato in modalità manuale con un aumento di esposizione di +0.700 EV e correzione del livello nero quasi nulla. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione bilanciata con leggera predominanza di verdi e blu. Il narratore sta discutendo dell'esposizione globale e della necessità di correggere l'esposizione del volto del soggetto centrale, ignorando i punti luminosi estremi." src="screenshots/frame_01304_140.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale raffigura una scena esterna con persone in strada; il soggetto principale è un uomo al centro con cappello e occhiali da sole, che tiene una fotocamera. Il modulo exposure è configurato in modalità manuale con un aumento di esposizione di +0.700 EV e correzione del livello nero quasi nulla. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione bilanciata con leggera predominanza di verdi e blu. Il narratore sta discutendo dell'esposizione globale e della necessità di correggere l'esposizione del volto del soggetto centrale, ignorando i punti luminosi estremi.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>True</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che raffigura una scena all'aperto sotto alberi, con persone in primo piano. Il modulo 'color calibration' è attivo nel pannello destro, con evidenza sulle opzioni 'color balance RGB', 'contrast equalizer' e 'AGX'. L'utente ha aggiunto una leggera correzione magenta per compensare il cast verde tipico dell'ombra sotto gli alberi, ma ha deciso di non intervenire ulteriormente sul bilanciamento del colore o sul contrasto, concentrandosi sull'esposizione del soggetto centrale. L'istogramma RGB in alto a destra mostra una distribuzione relativamente equilibrata con lieve predominanza di verde e blu, coerente con la descrizione del cast ambientale." src="screenshots/frame_01350_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che raffigura una scena all'aperto sotto alberi, con persone in primo piano. Il modulo 'color calibration' è attivo nel pannello destro, con evidenza sulle opzioni 'color balance RGB', 'contrast equalizer' e 'AGX'. L'utente ha aggiunto una leggera correzione magenta per compensare il cast verde tipico dell'ombra sotto gli alberi, ma ha deciso di non intervenire ulteriormente sul bilanciamento del colore o sul contrasto, concentrandosi sull'esposizione del soggetto centrale. L'istogramma RGB in alto a destra mostra una distribuzione relativamente equilibrata con lieve predominanza di verde e blu, coerente con la descrizione del cast ambientale.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color balance RGB</td>
+<td>non modificato (lasciato inalterato)</td>
+</tr>
+<tr>
+<td>magenta shift</td>
+<td>leggermente aumentato</td>
+</tr>
+<tr>
+<td>contrast equalizer</td>
+<td>attivato ma non regolato</td>
+</tr>
+<tr>
+<td>AGX</td>
+<td>auto tune applicato</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+<li>Color calibration</li>
+<li>AGX</li>
+</ul>
+<hr />
+<h2 id="12-elaborazione-terza-foto-controluce-e-saturazione">12. Elaborazione Terza Foto: Controluce e Saturazione<a class="headerlink" href="#12-elaborazione-terza-foto-controluce-e-saturazione" title="Permanent link">&para;</a></h2>
+<p><strong>[24:20 – 26:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1460">Guarda nel video</a></p>
+<p>Nuova regolazione per una scena in controluce. Riduzione del contrasto globale, aumento del toe per le ombre e mantenimento del shoulder basso per preservare i colori del cielo. Incremento della saturazione per enfatizzare la scena.</p>
+<h3 id="screenshot_11">Screenshot<a class="headerlink" href="#screenshot_11" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' in modalità 'basic colorfulness', con un aumento significativo della saturazione (115.08%) applicato all'immagine, come confermato dal commento del narratore che menziona di aver aggiunto 'a bit of saturation' per compensare la percezione dei colori più saturi nell'ombra. L'istogramma RGB a destra mostra una distribuzione bilanciata con leggera predominanza di verde e blu. L'immagine principale raffigura una scena esterna con persone in strada, illuminata da luce solare diretta e ombre nette. Il cursore del mouse è posizionato sullo slider della saturazione, indicando l’ultima modifica apportata." src="screenshots/frame_01470_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' in modalità 'basic colorfulness', con un aumento significativo della saturazione (115.08%) applicato all'immagine, come confermato dal commento del narratore che menziona di aver aggiunto 'a bit of saturation' per compensare la percezione dei colori più saturi nell'ombra. L'istogramma RGB a destra mostra una distribuzione bilanciata con leggera predominanza di verde e blu. L'immagine principale raffigura una scena esterna con persone in strada, illuminata da luce solare diretta e ombre nette. Il cursore del mouse è posizionato sullo slider della saturazione, indicando l’ultima modifica apportata.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation</td>
+<td>115.08%</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>lift</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>curve y gamma</td>
+<td>2.20</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color calibration' attivo in darktable, con l'interfaccia della scheda CAT selezionata. L'utente sta regolando manualmente l'illuminante personalizzato, con un valore di hue vicino a 359° (quasi 0°, cioè rosso/magenta) e chroma al 21.8%. L'istogramma RGB nella parte superiore destra indica una dominante verde moderata nelle ombre e nei mezzi toni, coerente con l'osservazione del narratore sul 'spring green'. Il cursore del mouse è posizionato sullo slider 'chroma', suggerendo un'azione imminente di modifica. La foto mostrata è una scena esterna con foglie verdi vivaci e persone in un parco, dove la correzione cromatica mira a spostare il verde verso il magenta per un aspetto più caldo." src="screenshots/frame_01530_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color calibration' attivo in darktable, con l'interfaccia della scheda CAT selezionata. L'utente sta regolando manualmente l'illuminante personalizzato, con un valore di hue vicino a 359° (quasi 0°, cioè rosso/magenta) e chroma al 21.8%. L'istogramma RGB nella parte superiore destra indica una dominante verde moderata nelle ombre e nei mezzi toni, coerente con l'osservazione del narratore sul 'spring green'. Il cursore del mouse è posizionato sullo slider 'chroma', suggerendo un'azione imminente di modifica. La foto mostrata è una scena esterna con foglie verdi vivaci e persone in un parco, dove la correzione cromatica mira a spostare il verde verso il magenta per un aspetto più caldo.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>CCT</td>
+<td>4282 K (invalid)</td>
+</tr>
+<tr>
+<td>illuminant</td>
+<td>custom</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>358.9°</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>21.8%</td>
+</tr>
+<tr>
+<td>gamut compression</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo AGX attivo in darktable, con l'utente che sta regolando i parametri di esposizione e contrasto su una foto di una scena esterna con persone in un parco. L'istogramma RGB è visibile in alto a destra, e la curva tonale mostra un leggero S-curve con punto di controllo spostato verso le ombre per aumentare il contrasto nelle zone scure (toe). Il cursore del mouse è posizionato sul parametro 'contrast', indicando un intervento in corso. Il narratore menziona di aver ridotto il contrasto e di voler ripristinarne parte tramite 'toe power'." src="screenshots/frame_01560_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo AGX attivo in darktable, con l'utente che sta regolando i parametri di esposizione e contrasto su una foto di una scena esterna con persone in un parco. L'istogramma RGB è visibile in alto a destra, e la curva tonale mostra un leggero S-curve con punto di controllo spostato verso le ombre per aumentare il contrasto nelle zone scure (toe). Il cursore del mouse è posizionato sul parametro 'contrast', indicando un intervento in corso. Il narratore menziona di aver ridotto il contrasto e di voler ripristinarne parte tramite 'toe power'.</em></p>
+<p><strong>Modulo:</strong> agx</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>5.11 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-8.04 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>2.59</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una scena esterna con persone sotto un albero, parzialmente in ombra, e una folla in luce diretta sullo sfondo. L'istogramma RGB è visibile in alto a destra, con evidente sovraesposizione nei toni chiari (picco a destra). L'utente sta regolando l'esposizione a +0.700 EV per bilanciare la luminosità globale, mentre lascia attiva la compensazione dell'esposizione della fotocamera. Il cursore del mouse è posizionato sullo slider dell'esposizione, indicando un intervento in corso." src="screenshots/frame_01500_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una scena esterna con persone sotto un albero, parzialmente in ombra, e una folla in luce diretta sullo sfondo. L'istogramma RGB è visibile in alto a destra, con evidente sovraesposizione nei toni chiari (picco a destra). L'utente sta regolando l'esposizione a +0.700 EV per bilanciare la luminosità globale, mentre lascia attiva la compensazione dell'esposizione della fotocamera. Il cursore del mouse è posizionato sullo slider dell'esposizione, indicando un intervento in corso.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura una scena esterna con persone sotto un albero; il modulo 'color calibration' è evidenziato nel pannello dei moduli a destra, e il cursore del mouse si trova sopra di esso, indicando che l'utente sta per o sta già interagendo con questo modulo. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione luminosa con predominanza di verdi e blu. Il narratore menziona di voler aggiungere magenta, suggerendo un'intenzione di correzione cromatica successiva." src="screenshots/frame_01521_200.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura una scena esterna con persone sotto un albero; il modulo 'color calibration' è evidenziato nel pannello dei moduli a destra, e il cursore del mouse si trova sopra di esso, indicando che l'utente sta per o sta già interagendo con questo modulo. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione luminosa con predominanza di verdi e blu. Il narratore menziona di voler aggiungere magenta, suggerendo un'intenzione di correzione cromatica successiva.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red primary</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>green primary</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>blue primary</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>illuminant</td>
+<td>D65</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+<li>Color calibration</li>
+<li>AGX</li>
+</ul>
+<hr />
+<h2 id="13-elaborazione-quarta-foto-murale-e-vignettatura">13. Elaborazione Quarta Foto: Murale e Vignettatura<a class="headerlink" href="#13-elaborazione-quarta-foto-murale-e-vignettatura" title="Permanent link">&para;</a></h2>
+<p><strong>[26:50 – 30:47]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1610">Guarda nel video</a></p>
+<p>Esposizione mirata per un soggetto in ombra, calibrazione colore in modalità custom e regolazione di AGX per guidare l'attenzione verso il murale. Applicazione di una vignettatura e di una sua variante invertita per il controllo compositivo.</p>
+<h3 id="screenshot_12">Screenshot<a class="headerlink" href="#screenshot_12" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine visualizzata è una fotografia urbana con un murale in primo piano, parzialmente in ombra, e due persone in strada sullo sfondo. L'esposizione è stata aumentata a +0.785 EV manualmente, mentre la correzione del livello nero è quasi neutra (-0.0002). L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione leggermente spostata verso le tonalità scure. Il cursore del mouse è posizionato sullo slider dell'esposizione, indicando un recente aggiustamento. La descrizione del narratore conferma che si sta correggendo l'esposizione per rendere visibile il murale senza sovraesporre." src="screenshots/frame_01656_799.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine visualizzata è una fotografia urbana con un murale in primo piano, parzialmente in ombra, e due persone in strada sullo sfondo. L'esposizione è stata aumentata a +0.785 EV manualmente, mentre la correzione del livello nero è quasi neutra (-0.0002). L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione leggermente spostata verso le tonalità scure. Il cursore del mouse è posizionato sullo slider dell'esposizione, indicando un recente aggiustamento. La descrizione del narratore conferma che si sta correggendo l'esposizione per rendere visibile il murale senza sovraesporre.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.785 EV</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con la curva tonale visualizzata e i parametri di base configurati: contrasto a 4.19, toe power e shoulder power entrambi a 1.55. L’istogramma RGB è visibile in alto a destra, e l’immagine principale raffigura un murale su una parete con due persone in strada sullo sfondo. Il cursore del mouse è posizionato sul controllo 'contrast', indicando un intervento in corso. Il narratore sta regolando i punti bianco e nero e aggiungendo leggero contrasto focalizzandosi sull’oggetto principale (il murale), non sugli highlight." src="screenshots/frame_01770_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con la curva tonale visualizzata e i parametri di base configurati: contrasto a 4.19, toe power e shoulder power entrambi a 1.55. L’istogramma RGB è visibile in alto a destra, e l’immagine principale raffigura un murale su una parete con due persone in strada sullo sfondo. Il cursore del mouse è posizionato sul controllo 'contrast', indicando un intervento in corso. Il narratore sta regolando i punti bianco e nero e aggiungendo leggero contrasto focalizzandosi sull’oggetto principale (il murale), non sugli highlight.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>5.48 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-4.66 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+10.00%</td>
+</tr>
+<tr>
+<td>pivot input shift</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>pivot target output</td>
+<td>18.00%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>4.19</td>
+</tr>
+<tr>
+<td>toe power</td>
+<td>1.55</td>
+</tr>
+<tr>
+<td>shoulder power</td>
+<td>1.55</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nella sottosezione 'vignette'. È presente una maschera disegnata a mano (ellisse viola) intorno alla finestra con il dipinto, che funge da area esclusa dall'effetto: l'esposizione è ridotta (-0.64 EV), creando un effetto di vignettatura inversa (scurezza esterna, area centrale illuminata). L'utente sta utilizzando questa tecnica per enfatizzare il dipinto sulla parete. L'istogramma RGB e i controlli di raffinamento della maschera sono visibili a destra." src="screenshots/frame_01830_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nella sottosezione 'vignette'. È presente una maschera disegnata a mano (ellisse viola) intorno alla finestra con il dipinto, che funge da area esclusa dall'effetto: l'esposizione è ridotta (-0.64 EV), creando un effetto di vignettatura inversa (scurezza esterna, area centrale illuminata). L'utente sta utilizzando questa tecnica per enfatizzare il dipinto sulla parete. L'istogramma RGB e i controlli di raffinamento della maschera sono visibili a destra.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>-0.640 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>blend mask mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, in cui è stata aggiunta una nuova istanza del vignettatura (vignette) per enfatizzare la parte sinistra dell'immagine — specificamente il dipinto murale visibile nella finestra. Il menu contestuale 'new instance' è aperto accanto al modulo exposure, indicando che l'utente sta creando un secondo effetto di vignettatura invertito (ovvero un'area illuminata al centro invece che scura ai bordi), come descritto nel contesto. L'istogramma RGB e la miniatura della foto confermano che si tratta di una foto urbana con dettagli architettonici e figure umane sullo sfondo." src="screenshots/frame_01844_779.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, in cui è stata aggiunta una nuova istanza del vignettatura (vignette) per enfatizzare la parte sinistra dell'immagine — specificamente il dipinto murale visibile nella finestra. Il menu contestuale 'new instance' è aperto accanto al modulo exposure, indicando che l'utente sta creando un secondo effetto di vignettatura invertito (ovvero un'area illuminata al centro invece che scura ai bordi), come descritto nel contesto. L'istogramma RGB e la miniatura della foto confermano che si tratta di una foto urbana con dettagli architettonici e figure umane sullo sfondo.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vignette_amount</td>
+<td>-1.00</td>
+</tr>
+<tr>
+<td>vignette_radius</td>
+<td>0.50</td>
+</tr>
+<tr>
+<td>vignette_feathering</td>
+<td>0.30</td>
+</tr>
+<tr>
+<td>vignette_center_x</td>
+<td>0.35</td>
+</tr>
+<tr>
+<td>vignette_center_y</td>
+<td>0.40</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che raffigura una scena estiva vivace in un parco, con persone, erba verde brillante e foglie giallo-verdi. Il modulo 'color balance rgb' è attivo nel pannello destro, con la saturazione portata a 140.31%, confermando l'intenzione dell'utente di esaltare i colori. L'istogramma RGB mostra una distribuzione ampia e bilanciata, senza clipping evidente. L'utente commenta che l'erba è sufficientemente verde (non magenta) e intende mantenere un alto livello cromatico per evocare una memoria vivida e colorata; tuttavia, nota improvvisamente una perdita di colore, suggerendo un errore o un cambiamento non voluto (forse un reset o un cambio di profilo)." src="screenshots/frame_01612_720.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine selezionata che raffigura una scena estiva vivace in un parco, con persone, erba verde brillante e foglie giallo-verdi. Il modulo 'color balance rgb' è attivo nel pannello destro, con la saturazione portata a 140.31%, confermando l'intenzione dell'utente di esaltare i colori. L'istogramma RGB mostra una distribuzione ampia e bilanciata, senza clipping evidente. L'utente commenta che l'erba è sufficientemente verde (non magenta) e intende mantenere un alto livello cromatico per evocare una memoria vivida e colorata; tuttavia, nota improvvisamente una perdita di colore, suggerendo un errore o un cambiamento non voluto (forse un reset o un cambio di profilo).</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation</td>
+<td>140.31%</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>lift</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>curve y gamma</td>
+<td>2.20</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>shoulder start</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>toe start</td>
+<td>0.00%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_10">Moduli darktable<a class="headerlink" href="#moduli-darktable_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+<li>Color calibration</li>
+<li>AGX</li>
+<li>Vignette</li>
+</ul>
+<hr />
+<h2 id="14-rifiniture-locali-e-confronto-delle-versioni">14. Rifiniture locali e confronto delle versioni<a class="headerlink" href="#14-rifiniture-locali-e-confronto-delle-versioni" title="Permanent link">&para;</a></h2>
+<p><strong>[30:48 – 32:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1848">Guarda nel video</a></p>
+<p>Applicazione di regolazioni locali mirate a evidenziare aree specifiche con parsimonia, garantendo transizioni morbide. Confronto tra l'elaborazione finale e la versione originale tramite la vista Lighttable, con focus sulle differenze minime nei toni della pelle e nella luminosità.</p>
+<h3 id="screenshot_13">Screenshot<a class="headerlink" href="#screenshot_13" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'exposure-2' attivo con una maschera disegnata (ellisse viola) su una porzione della finestra con graffiti, per un leggero aumento di esposizione (+0.299 EV). La maschera è visibile sullo schermo principale e configurata con opacità al 100% e senza sfumatura o sfocatura. L'utente sta applicando un intervento mirato per attirare l'attenzione su un dettaglio specifico, come descritto nel contesto: un lieve brightening con transizione morbida, in linea con la strategia di correzione selettiva." src="screenshots/frame_01860_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure-2' attivo con una maschera disegnata (ellisse viola) su una porzione della finestra con graffiti, per un leggero aumento di esposizione (+0.299 EV). La maschera è visibile sullo schermo principale e configurata con opacità al 100% e senza sfumatura o sfocatura. L'utente sta applicando un intervento mirato per attirare l'attenzione su un dettaglio specifico, come descritto nel contesto: un lieve brightening con transizione morbida, in linea con la strategia di correzione selettiva.</em></p>
+<p><strong>Modulo:</strong> exposure-2</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.299 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>+0.0000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con un'immagine selezionata (la quarta di quattro) visualizzata al centro. A sinistra è presente il pannello laterale con moduli come snapshots, history, duplicate manager, ecc. A destra si vede il pannello dei moduli attivi, con l'istogramma RGB in alto e una lista di moduli (es. framing, color balance rgb, exposure, ecc.) disattivati o non espansi. In basso è visibile la filmstrip con le miniature delle immagini. L'utente sta uscendo dalla modalità di editing per tornare alla vista Lighttable, come indicato dal commento sul rimuovere i filtri per confrontare con l'originale." src="screenshots/frame_01890_000.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con un'immagine selezionata (la quarta di quattro) visualizzata al centro. A sinistra è presente il pannello laterale con moduli come snapshots, history, duplicate manager, ecc. A destra si vede il pannello dei moduli attivi, con l'istogramma RGB in alto e una lista di moduli (es. framing, color balance rgb, exposure, ecc.) disattivati o non espansi. In basso è visibile la filmstrip con le miniature delle immagini. L'utente sta uscendo dalla modalità di editing per tornare alla vista Lighttable, come indicato dal commento sul rimuovere i filtri per confrontare con l'originale.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>1 image (#4) selected of 4</td>
+</tr>
+<tr>
+<td>filmstrip_mode</td>
+<td>v5.0 RAW</td>
+</tr>
+<tr>
+<td>opencl</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con una singola immagine RAW (Z52-0027.NEF) visualizzata al centro. L'overlay in alto a sinistra riporta i dati EXIF e le valutazioni stellari (3 stelle assegnate). Non sono attivi moduli di sviluppo o maschere; l'utente sta confrontando la propria versione editata con un JPEG inviato da Patrick, ma il file RAW è l'unico presente nell'interfaccia. Lo stato indica che l'utente ha appena completato un editing e sta per rimuovere i filtri per il confronto." src="screenshots/frame_01906_233.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con una singola immagine RAW (Z52-0027.NEF) visualizzata al centro. L'overlay in alto a sinistra riporta i dati EXIF e le valutazioni stellari (3 stelle assegnate). Non sono attivi moduli di sviluppo o maschere; l'utente sta confrontando la propria versione editata con un JPEG inviato da Patrick, ma il file RAW è l'unico presente nell'interfaccia. Lo stato indica che l'utente ha appena completato un editing e sta per rimuovere i filtri per il confronto.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_filename</td>
+<td>Z52-0027.NEF</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>1/30</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/7.1</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>26.0mm</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto JPEG (Z52-0435.jpg) visualizzata al centro. La foto raffigura un edificio moderno con quattro persone che camminano in primo piano, sotto un forte sole che crea un effetto di flare sulla sinistra. Non sono visibili moduli di sviluppo attivi né maschere; la barra degli strumenti inferiore mostra icone per la gestione delle immagini, ma nessun modulo è espanso. Il contesto narrativo indica che l'utente sta confrontando due versioni dell'immagine: la propria edit e quella inviata da Patrick, entrambe in formato JPEG, senza accesso al file RAW." src="screenshots/frame_01915_740.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto JPEG (Z52-0435.jpg) visualizzata al centro. La foto raffigura un edificio moderno con quattro persone che camminano in primo piano, sotto un forte sole che crea un effetto di flare sulla sinistra. Non sono visibili moduli di sviluppo attivi né maschere; la barra degli strumenti inferiore mostra icone per la gestione delle immagini, ma nessun modulo è espanso. Il contesto narrativo indica che l'utente sta confrontando due versioni dell'immagine: la propria edit e quella inviata da Patrick, entrambe in formato JPEG, senza accesso al file RAW.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una singola immagine visualizzata al centro. L'immagine è una scena esterna luminosa e soleggiata, con persone in un parco, fogliame in primo piano e un cielo azzurro. In alto a sinistra è visibile il pannello metadati della foto (Z52-0680.NEF, 1/250s, f/16.0, 40.0mm, ISO 400) e una valutazione a stelle (3 stelle riempite). Non sono attivi moduli di sviluppo o maschere; l'utente sta confrontando due versioni dell'immagine (la propria e quella di Patrick), come indicato dal contesto narrativo, ma nello screenshot è mostrata solo una versione. La barra degli strumenti inferiore mostra icone per la gestione delle immagini, ma nessun modulo di editing è aperto." src="screenshots/frame_01950_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una singola immagine visualizzata al centro. L'immagine è una scena esterna luminosa e soleggiata, con persone in un parco, fogliame in primo piano e un cielo azzurro. In alto a sinistra è visibile il pannello metadati della foto (Z52-0680.NEF, 1/250s, f/16.0, 40.0mm, ISO 400) e una valutazione a stelle (3 stelle riempite). Non sono attivi moduli di sviluppo o maschere; l'utente sta confrontando due versioni dell'immagine (la propria e quella di Patrick), come indicato dal contesto narrativo, ma nello screenshot è mostrata solo una versione. La barra degli strumenti inferiore mostra icone per la gestione delle immagini, ma nessun modulo di editing è aperto.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_11">Moduli darktable<a class="headerlink" href="#moduli-darktable_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>maschere locali</li>
+<li>contrasto e colore</li>
+<li>lighttable</li>
+</ul>
+<hr />
+<h2 id="15-conclusioni-e-flusso-di-lavoro-consigliato">15. Conclusioni e flusso di lavoro consigliato<a class="headerlink" href="#15-conclusioni-e-flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
+<p><strong>[32:40 – 33:55]</strong>
+ | <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=1960">Guarda nel video</a></p>
+<p>Chiusura della dimostrazione del pipeline di base. Raccomandazioni su come approfondire l'uso di darktable e indicazione chiara dell'ordine iniziale dei moduli da attivare per un flusso di lavoro ottimale.</p>
+<h3 id="screenshot_14">Screenshot<a class="headerlink" href="#screenshot_14" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine principale visualizzata al centro. Sul pannello destro è visibile l'elenco dei moduli, tra cui 'denoise (profiled)' e 'lens correction' sono attivati (indicato dal pulsante acceso), ma il modulo 'lens correction' appare disabilitato o non applicabile a causa della mancata rilevazione della lente/camera, come confermato dal contesto narrativo. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra le miniature delle immagini nella collezione. Nessuna maschera è attiva." src="screenshots/frame_02005_460.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con l'immagine principale visualizzata al centro. Sul pannello destro è visibile l'elenco dei moduli, tra cui 'denoise (profiled)' e 'lens correction' sono attivati (indicato dal pulsante acceso), ma il modulo 'lens correction' appare disabilitato o non applicabile a causa della mancata rilevazione della lente/camera, come confermato dal contesto narrativo. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra le miniature delle immagini nella collezione. Nessuna maschera è attiva.</em></p>
+<p><strong>Modulo:</strong> module list</p>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una griglia di 10 immagini, di cui 2 selezionate (identificate come #2). Le miniature includono scene urbane e murali, coerenti con il riferimento al 'mural' nel contesto narrativo. Non sono visibili moduli di sviluppo (darkroom) né maschere attive; lo stato è pre-editing, con focus sulla selezione e confronto delle immagini. La timeline in basso indica un archivio cronologico esteso (2011–2025), suggerendo un flusso di lavoro consolidato." src="screenshots/frame_01964_766.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una griglia di 10 immagini, di cui 2 selezionate (identificate come #2). Le miniature includono scene urbane e murali, coerenti con il riferimento al 'mural' nel contesto narrativo. Non sono visibili moduli di sviluppo (darkroom) né maschere attive; lo stato è pre-editing, con focus sulla selezione e confronto delle immagini. La timeline in basso indica un archivio cronologico esteso (2011–2025), suggerendo un flusso di lavoro consolidato.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images</td>
+<td>2</td>
+</tr>
+<tr>
+<td>total_in_collection</td>
+<td>10</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>filename</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_12">Moduli darktable<a class="headerlink" href="#moduli-darktable_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>denoise</li>
+<li>lens correction</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>raw black white point</strong></td>
+<td>black points, white point</td>
+</tr>
+<tr>
+<td><strong>white balance</strong></td>
+<td>as shot to reference, tint, temperature</td>
+</tr>
+<tr>
+<td><strong>highlight reconstruction</strong></td>
+<td>metodi (segmentation, guided Laplacians, inpaint opposed)</td>
+</tr>
+<tr>
+<td><strong>demosaic</strong></td>
+<td>matching green, color smoothing</td>
+</tr>
+<tr>
+<td><strong>capture sharpening</strong></td>
+<td>radius, contrast sensitivity, measure automatically</td>
+</tr>
+<tr>
+<td><strong>orientation</strong></td>
+<td>correzione automatica</td>
+</tr>
+<tr>
+<td><strong>exposure</strong></td>
+<td>punto medio tonale, compensazione esposizione fotocamera</td>
+</tr>
+<tr>
+<td><strong>input color profile</strong></td>
+<td>linear rec 2020 RGB</td>
+</tr>
+<tr>
+<td><strong>color calibration</strong></td>
+<td>tonalità (hue), selettore grigio, croma</td>
+</tr>
+<tr>
+<td><strong>agx</strong></td>
+<td>gestione toni</td>
+</tr>
+<tr>
+<td><strong>color balance rgb</strong></td>
+<td>bilanciamento colore</td>
+</tr>
+<tr>
+<td><strong>basic colorfulness</strong></td>
+<td>standard, vibrant</td>
+</tr>
+<tr>
+<td><strong>local contrast</strong></td>
+<td>nitidezza locale</td>
+</tr>
+<tr>
+<td><strong>Contrast equalizer</strong></td>
+<td>modalità sharpen, maschera globale, opacità</td>
+</tr>
+<tr>
+<td><strong>AGX</strong></td>
+<td>shoulder power, auto tune levels, contrast (fulcro/pivot), toe power, saturation</td>
+</tr>
+<tr>
+<td><strong>Exposure</strong></td>
+<td>re-initialize/reset, esposizione globale</td>
+</tr>
+<tr>
+<td><strong>Color calibration</strong></td>
+<td>tinta (magenta/verde), daylight/black body, modalità custom, temperatura</td>
+</tr>
+<tr>
+<td><strong>Vignette</strong></td>
+<td>istanza invertita, feathering (sfumatura), selezione area</td>
+</tr>
+<tr>
+<td><strong>denoise</strong></td>
+<td>modalità automatica, riduzione rumore di base</td>
+</tr>
+<tr>
+<td><strong>lens correction</strong></td>
+<td>riconoscimento profilo fotocamera, correzione distorsione/vignettatura</td>
+</tr>
+<tr>
+<td><strong>maschere locali</strong></td>
+<td>aumento luminosità selettivo, transizione morbida</td>
+</tr>
+<tr>
+<td><strong>contrasto e colore</strong></td>
+<td>aumento contrasto locale, regolazione toni della pelle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> Non modificare i moduli tecnici disattivati (grigiati) come raw black white point e i profili di input/output: sono essenziali per il funzionamento della pipeline. — <em>Apertura iniziale di qualsiasi file RAW</em>
+- Lascia il bilanciamento del bianco su 'as shot to reference' e ignoralo inizialmente; serve solo a correggere la dominante verde del sensore Bayer. — <em>Fase di preparazione tecnica del RAW</em>
+<strong>Attenzione:</strong> Mantieni la ricostruzione delle alte luci attiva con il metodo predefinito (inpaint opposed). Non toccare i metodi matematici complessi se non necessario. — <em>Recupero dettagli nelle zone sovraesposte</em>
+<strong>Attenzione:</strong> Nel demosaicing, attiva 'capture sharpening' per una nitidezza precoce, ma evita di modificare eccessivamente il raggio per non introdurre artefatti. — <em>Elaborazione iniziale del colore e nitidezza</em>
+<strong>Importante:</strong> Usa la scorciatoia Cmd+B (schermo bianco) come riferimento visivo per regolare l'esposizione. Concentrati solo sul punto medio tonale, ignorando temporaneamente alte luci e ombre: il flusso lineare di darktable preserva i dati. — <em>Regolazione dell'esposizione iniziale</em>
+<strong>Importante:</strong> Mantieni il profilo colore di input su 'linear rec 2020 RGB' per garantire la compatibilità con il flusso di lavoro scene-referred. — <em>Configurazione del profilo colore</em>
+<strong>Attenzione:</strong> Nella calibrazione colore, evita il cursore 'hue' (troppo sensibile). Usa il selettore su un'area neutra o regola leggermente il 'croma' per correggere dominanti verdi aggiungendo magenta. — <em>Correzione del bilanciamento del bianco e della tinta</em>
+- Aggiungi sempre 'color balance rgb' e 'basic colorfulness' (impostato su standard) dopo la calibrazione per compensare il profilo piatto dei file RAW. — <em>Fase di sviluppo creativo iniziale</em>
+<strong>Attenzione:</strong> Preferire il contrast equalizer al modulo di sharpening standard per evitare un effetto eccessivamente duro e artificiale. — <em>Quando si desidera aumentare la nitidezza o il contrasto locale in modo sottile.</em>
+- Ridurre lo zoom dell'anteprima durante la regolazione del contrasto per valutarne l'impatto complessivo sull'immagine. — <em>Fase di regolazione del parametro contrast in AGX o moduli simili.</em>
+- Non preoccuparsi del clipping di bianchi e neri durante la regolazione del contrasto centrale, poiché la gestione delle estremità della curva è delegata a toe e shoulder. — <em>Regolazione del contrasto in AGX.</em>
+<strong>Importante:</strong> Utilizzare il pulsante 'auto tune levels' come punto di partenza affidabile per l'esposizione relativa di bianchi e neri. — <em>Inizio del workflow con il modulo AGX.</em>
+- Per serie di scatti simili, copiare e incollare lo stack di cronologia è spesso più rapido e semplice rispetto alla creazione di stili personalizzati. — <em>Workflow di elaborazione in batch (batch editing).</em>
+- Durante la regolazione dell'esposizione, concentrarsi sulla corretta esposizione del soggetto principale (es. volto) piuttosto che ottimizzare luci e ombre estreme. — <em>Regolazione iniziale del modulo Exposure.</em>
+- Aumentare il valore di shoulder power per simulare un'atmosfera molto luminosa e gestire in modo naturale le alte luci bruciate, accettando una leggera perdita di dettaglio. — <em>Gestione di scene con alte luci difficili o clipping nell'istogramma.</em>
+- Ridurre il shoulder power per de-enfatizzare le aree luminose e guidare lo sguardo dell'osservatore verso il soggetto principale. — <em>Composizione e controllo dell'attenzione visiva tramite AGX.</em>
+- Utilizzare un'istanza invertita della vignettatura per schiarire o evidenziare selettivamente il centro dell'inquadratura. — <em>Ritocco compositivo finale per dirigere l'attenzione.</em>
+<strong>Attenzione:</strong> Applicare la luminosità locale con grande parsimonia, aumentandola solo leggermente per guidare l'occhio senza compromettere i dettagli. — <em>Durante l'uso di maschere o pennelli per evidenziare zone specifiche dell'immagine.</em>
+<strong>Importante:</strong> Cercare sempre di ottenere transizioni morbide e naturali tra le aree modificate e il resto della fotografia. — <em>Nella fase di affinamento delle maschere e dei gradienti.</em>
+<strong>Importante:</strong> Iniziare sempre il flusso di lavoro attivando i moduli di riduzione del rumore e correzione dell'obiettivo come base tecnica. — <em>All'avvio della pipeline di sviluppo, prima di qualsiasi regolazione creativa.</em>
+- Il modulo Denoise può operare in modalità automatica anche quando darktable non riesce a identificare il profilo specifico della fotocamera o dell'obiettivo. — <em>Quando si elaborano file RAW di dispositivi non presenti nel database interno.</em>
+<strong>Attenzione:</strong> Lavorare su file JPEG limita il recupero dinamico rispetto al RAW, ma è comunque possibile ottenere risultati validi con un pipeline semplice. — <em>Durante il confronto o l'editing di immagini già compresse.</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:12:47.611370.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3673 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/HI05rl53iA0/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] darktable Blurs module - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-darktable-blurs-module" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] darktable Blurs module
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-al-modulo-blur-e-panoramica-dellinterfaccia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione al modulo Blur e panoramica dell'interfaccia
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione al modulo Blur e panoramica dell&#39;interfaccia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-parametri-avanzati-del-lens-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Parametri avanzati del Lens Blur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Parametri avanzati del Lens Blur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-applicazione-pratica-e-limiti-con-le-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Applicazione pratica e limiti con le maschere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Applicazione pratica e limiti con le maschere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-gestione-del-rumore-e-integrazione-con-il-modulo-grain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Gestione del rumore e integrazione con il modulo Grain
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Gestione del rumore e integrazione con il modulo Grain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-introduzione-al-motion-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Introduzione al Motion Blur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Introduzione al Motion Blur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ottimizzazione-della-maschera-e-regolazione-del-raggio-di-sfocatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Ottimizzazione della maschera e regolazione del raggio di sfocatura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Ottimizzazione della maschera e regolazione del raggio di sfocatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sfocatura-di-movimento-curva-per-simulare-le-onde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Sfocatura di movimento curva per simulare le onde
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sfocatura di movimento curva per simulare le onde">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-sfocatura-gaussiana-e-usi-creativi-con-le-modalita-di-fusione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Sfocatura Gaussiana e usi creativi con le modalità di fusione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Sfocatura Gaussiana e usi creativi con le modalità di fusione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-darktable-blurs-module">[ENG] darktable Blurs module<a class="headerlink" href="#eng-darktable-blurs-module" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=HI05rl53iA0">https://www.youtube.com/watch?v=HI05rl53iA0</a>
+<strong>Generato:</strong> 2026-04-12T01:19:34.569319
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-al-modulo-blur-e-panoramica-dell'interfaccia">Introduzione al modulo Blur e panoramica dell'interfaccia</a></li>
+<li><a href="#parametri-avanzati-del-lens-blur">Parametri avanzati del Lens Blur</a></li>
+<li><a href="#applicazione-pratica-e-limiti-con-le-maschere">Applicazione pratica e limiti con le maschere</a></li>
+<li><a href="#gestione-del-rumore-e-integrazione-con-il-modulo-grain">Gestione del rumore e integrazione con il modulo Grain</a></li>
+<li><a href="#introduzione-al-motion-blur">Introduzione al Motion Blur</a></li>
+<li><a href="#ottimizzazione-della-maschera-e-regolazione-del-raggio-di-sfocatura">Ottimizzazione della maschera e regolazione del raggio di sfocatura</a></li>
+<li><a href="#sfocatura-di-movimento-curva-per-simulare-le-onde">Sfocatura di movimento curva per simulare le onde</a></li>
+<li><a href="#sfocatura-gaussiana-e-usi-creativi-con-le-modalità-di-fusione">Sfocatura Gaussiana e usi creativi con le modalità di fusione</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-al-modulo-blur-e-panoramica-dellinterfaccia">1. Introduzione al modulo Blur e panoramica dell'interfaccia<a class="headerlink" href="#1-introduzione-al-modulo-blur-e-panoramica-dellinterfaccia" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del nuovo modulo Blur in darktable 3.8, spiegazione del raggio di sfocatura e delle tre tipologie disponibili (lens, motion, Gaussian).</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera a forma di stella (6 punte) applicata sull'immagine. L'effetto di sfocatura è impostato su 'lens' con 6 lamelle del diaframma, concavità elevata (2.93) e linearità standard (1.00), generando uno sfocamento non fisicamente realistico ma stilizzato, visibile come forme geometriche intorno ai dettagli dell'uccello (un pettirosso) e delle foglie. L'istogramma RGB e la barra degli strumenti indicano che si sta lavorando in modalità lighttable con 73 immagini selezionate." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera a forma di stella (6 punte) applicata sull'immagine. L'effetto di sfocatura è impostato su 'lens' con 6 lamelle del diaframma, concavità elevata (2.93) e linearità standard (1.00), generando uno sfocamento non fisicamente realistico ma stilizzato, visibile come forme geometriche intorno ai dettagli dell'uccello (un pettirosso) e delle foglie. L'istogramma RGB e la barra degli strumenti indicano che si sta lavorando in modalità lighttable con 73 immagini selezionate.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>83 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>6</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>2.93</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera poligonale pentagonale (simulante un diaframma a 5 lamelle) applicata sull'immagine di un pettirosso su neve. I parametri indicano un raggio di sfocatura di 8 px, tipo 'diaphragm blades', 5 lamelle, concavità e linearità a 1.00, rotazione a 0°. L'istogramma RGB è visibile a destra, e la barra degli strumenti inferiore mostra che l'immagine è in formato RAW. Il narratore menziona valori diversi (44 px e 92 px), ma nello screenshot i valori effettivi sono quelli letti." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera poligonale pentagonale (simulante un diaframma a 5 lamelle) applicata sull'immagine di un pettirosso su neve. I parametri indicano un raggio di sfocatura di 8 px, tipo 'diaphragm blades', 5 lamelle, concavità e linearità a 1.00, rotazione a 0°. L'istogramma RGB è visibile a destra, e la barra degli strumenti inferiore mostra che l'immagine è in formato RAW. Il narratore menziona valori diversi (44 px e 92 px), ma nello screenshot i valori effettivi sono quelli letti.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>diaphragm blades</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (probabilmente il narratore) in un video tutorial, non l'interfaccia di darktable. Sullo sfondo sono visibili due cornici con foto appese alla parete. Non è presente alcun elemento dell'interfaccia di darktable (moduli, pannelli, istogrammi, slider, ecc.). Il contesto indica che il video tratta del nuovo modulo 'blur' di darktable 3.8, ma questa immagine è un frame del presentatore, non dello schermo del software." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (probabilmente il narratore) in un video tutorial, non l'interfaccia di darktable. Sullo sfondo sono visibili due cornici con foto appese alla parete. Non è presente alcun elemento dell'interfaccia di darktable (moduli, pannelli, istogrammi, slider, ecc.). Il contesto indica che il video tratta del nuovo modulo 'blur' di darktable 3.8, ma questa immagine è un frame del presentatore, non dello schermo del software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) che parla in un video tutorial, non l'interfaccia di darktable. Sullo sfondo sono visibili due cornici con foto appese a una parete. Non è presente alcuna porzione dell'interfaccia di darktable: né moduli, né pannelli, né istogrammi o controlli. Il contesto indica che il video tratterà del nuovo modulo 'blur' in darktable 3.8, ma questa immagine è un frame introduttivo fuori dall'applicazione." src="screenshots/frame_00006_719.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) che parla in un video tutorial, non l'interfaccia di darktable. Sullo sfondo sono visibili due cornici con foto appese a una parete. Non è presente alcuna porzione dell'interfaccia di darktable: né moduli, né pannelli, né istogrammi o controlli. Il contesto indica che il video tratterà del nuovo modulo 'blur' in darktable 3.8, ma questa immagine è un frame introduttivo fuori dall'applicazione.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura (Blur)</li>
+</ul>
+<hr />
+<h2 id="2-parametri-avanzati-del-lens-blur">2. Parametri avanzati del Lens Blur<a class="headerlink" href="#2-parametri-avanzati-del-lens-blur" title="Permanent link">&para;</a></h2>
+<p><strong>[02:30 – 05:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=150">Guarda nel video</a></p>
+<p>Analisi dei controlli per simulare il diaframma: numero di lamelle, concavità, linearità e rotazione. Spiegazione di come aumentare le lamelle o ridurre la linearità renda la sfocatura più morbida.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un pettirosso su sfondo sfocato. È selezionato il tipo di sfocatura 'diaphragm blades' con 5 lamelle e raggio 49 px. Sul pannello destro è visibile la maschera poligonale bianca (forma pentagonale) che definisce l'area di applicazione dello sfocamento. L'istogramma RGB in alto a destra indica una distribuzione tonale bilanciata. Il cursore del mouse è posizionato sul pulsante 'take snapshot' nel pannello sinistro, suggerendo che l'utente sta per catturare uno stato per confronto. Il contesto narrativo conferma che l'utente sta dimostrando l'effetto del numero di lamelle dell'iride sul livello di smoothness dello sfocamento." src="screenshots/frame_00174_340.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un pettirosso su sfondo sfocato. È selezionato il tipo di sfocatura 'diaphragm blades' con 5 lamelle e raggio 49 px. Sul pannello destro è visibile la maschera poligonale bianca (forma pentagonale) che definisce l'area di applicazione dello sfocamento. L'istogramma RGB in alto a destra indica una distribuzione tonale bilanciata. Il cursore del mouse è posizionato sul pulsante 'take snapshot' nel pannello sinistro, suggerendo che l'utente sta per catturare uno stato per confronto. Il contesto narrativo conferma che l'utente sta dimostrando l'effetto del numero di lamelle dell'iride sul livello di smoothness dello sfocamento.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>49 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>diaphragm blades</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera poligonale (ottagonale) applicata su una foglia sfocata a destra, mentre l'immagine originale a sinistra mostra un pettirosso con sfondo relativamente nitido. Il confronto a doppio schermo evidenzia l'effetto di sfocatura artificiale simulata con tipo 'lens' e raggio 49 px, utilizzando 10 lamelle del diaframma per creare un bokeh più realistico. L'utente sta dimostrando come aggiungere sfocatura sullo sfondo per migliorare la profondità di campo in foto scattate con obiettivi non molto luminosi o con soggetti vicini allo sfondo." src="screenshots/frame_00224_960.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera poligonale (ottagonale) applicata su una foglia sfocata a destra, mentre l'immagine originale a sinistra mostra un pettirosso con sfondo relativamente nitido. Il confronto a doppio schermo evidenzia l'effetto di sfocatura artificiale simulata con tipo 'lens' e raggio 49 px, utilizzando 10 lamelle del diaframma per creare un bokeh più realistico. L'utente sta dimostrando come aggiungere sfocatura sullo sfondo per migliorare la profondità di campo in foto scattate con obiettivi non molto luminosi o con soggetti vicini allo sfondo.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>49 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>10</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a mano (1 shape used) evidenziata in giallo su un uccello (un pettirosso) in primo piano. La maschera è stata ridimensionata per preservare i dettagli delle piume sul lato destro, come indicato dal narratore. L'istogramma RGB e la vista in bianco e nero dell'immagine suggeriscono un lavoro di selezione mirata prima dell'applicazione del bokeh o del soft focus. Il cursore è posizionato vicino ai controlli della maschera, indicando un'interazione in corso." src="screenshots/frame_00320_060.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a mano (1 shape used) evidenziata in giallo su un uccello (un pettirosso) in primo piano. La maschera è stata ridimensionata per preservare i dettagli delle piume sul lato destro, come indicato dal narratore. L'istogramma RGB e la vista in bianco e nero dell'immagine suggeriscono un lavoro di selezione mirata prima dell'applicazione del bokeh o del soft focus. Il cursore è posizionato vicino ai controlli della maschera, indicando un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>73.2 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'blurs' attivo con una maschera disegnata a forma pentagonale (simulazione di diaframma a 5 lamelle) applicata sull'immagine di un pettirosso su un ramo innevato. La maschera è visibile come area bianca traslucida sul pannello destro, indicando che l'utente sta preparando o applicando un effetto di sfocatura selettiva. Lo screenshot riflette la fase iniziale di un intervento per ridurre la distrazione dello sfondo, coerentemente con il commento del narratore che intende creare una maschera manuale attorno all'uccello e al tronco." src="screenshots/frame_00270_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'blurs' attivo con una maschera disegnata a forma pentagonale (simulazione di diaframma a 5 lamelle) applicata sull'immagine di un pettirosso su un ramo innevato. La maschera è visibile come area bianca traslucida sul pannello destro, indicando che l'utente sta preparando o applicando un effetto di sfocatura selettiva. Lo screenshot riflette la fase iniziale di un intervento per ridurre la distrazione dello sfondo, coerentemente con il commento del narratore che intende creare una maschera manuale attorno all'uccello e al tronco.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>diaphragm blades</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura (Blur)</li>
+</ul>
+<hr />
+<h2 id="3-applicazione-pratica-e-limiti-con-le-maschere">3. Applicazione pratica e limiti con le maschere<a class="headerlink" href="#3-applicazione-pratica-e-limiti-con-le-maschere" title="Permanent link">&para;</a></h2>
+<p><strong>[05:50 – 10:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=350">Guarda nel video</a></p>
+<p>Esempio di sfocatura dello sfondo usando una maschera disegnata. Evidenziazione del problema dell'alone (halo) e della fuoriuscita di colori ai bordi a causa dell'ordine di elaborazione del modulo.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a mano (una forma irregolare gialla) applicata su una porzione dell'immagine che include lo sfondo dietro un uccello. La maschera è visibile in giallo brillante e presenta un bordo sfumato (feathering), indicando l'applicazione di un raggio di sfumatura di 64,3 px per evitare artefatti al confine tra area sfocata e non sfocata. Il tipo di sfocatura è 'lens' con raggio 46 px e 5 lame del diaframma. L'opacità della maschera è al 0%, il che significa che la maschera stessa non è visibile come overlay opaco, ma solo come indicatore di selezione; la sfocatura viene applicata solo all'area coperta dalla maschera. Il cursore del mouse è posizionato vicino all'opzione 'spatial blur of feathering', confermando l'attenzione dell'utente sulla gestione dello sfumato della maschera." src="screenshots/frame_00570_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a mano (una forma irregolare gialla) applicata su una porzione dell'immagine che include lo sfondo dietro un uccello. La maschera è visibile in giallo brillante e presenta un bordo sfumato (feathering), indicando l'applicazione di un raggio di sfumatura di 64,3 px per evitare artefatti al confine tra area sfocata e non sfocata. Il tipo di sfocatura è 'lens' con raggio 46 px e 5 lame del diaframma. L'opacità della maschera è al 0%, il che significa che la maschera stessa non è visibile come overlay opaco, ma solo come indicatore di selezione; la sfocatura viene applicata solo all'area coperta dalla maschera. Il cursore del mouse è posizionato vicino all'opzione 'spatial blur of feathering', confermando l'attenzione dell'utente sulla gestione dello sfumato della maschera.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>46 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>64.3 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un uccello al centro su sfondo giallo. È presente una maschera disegnata a mano (forma pentagonale irregolare) che circonda l'uccello, ma non è ancora invertita. Il cursore del mouse è posizionato sul toggle 'invert mask', indicando l'intenzione dell'utente di invertire la maschera per applicare il bokeh all'esterno dell'uccello anziché all'interno. L'istogramma RGB e i controlli di raffinamento della maschera sono visibili a destra; la maschera attuale ha bordi leggermente sfumati (feathering radius 73.2 px), e l'utente sta commentando la necessità di ingrandire la maschera dopo l'inversione per evitare transizioni indesiderate all'interno dell'oggetto." src="screenshots/frame_00353_553.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un uccello al centro su sfondo giallo. È presente una maschera disegnata a mano (forma pentagonale irregolare) che circonda l'uccello, ma non è ancora invertita. Il cursore del mouse è posizionato sul toggle 'invert mask', indicando l'intenzione dell'utente di invertire la maschera per applicare il bokeh all'esterno dell'uccello anziché all'interno. L'istogramma RGB e i controlli di raffinamento della maschera sono visibili a destra; la maschera attuale ha bordi leggermente sfumati (feathering radius 73.2 px), e l'utente sta commentando la necessità di ingrandire la maschera dopo l'inversione per evitare transizioni indesiderate all'interno dell'oggetto.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>33 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>invert_mask</td>
+<td>off</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>73.2 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+31%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+18%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un pettirosso su cui è applicata una maschera disegnata a mano (linea tratteggiata) che circonda l'uccello. La maschera è utilizzata per applicare un effetto di sfocatura selettiva sullo sfondo, ma si osserva un alone (halo) visibile lungo i bordi della maschera, soprattutto sul lato destro dell'uccello, come indicato dal narratore. I parametri indicano uno sfocamento tipo 'lens' con raggio 33 px e una maschera affinata con opacità +31% e contrasto +18%, ma la funzione 'mask refinement' è disattivata, contribuendo all'effetto halo." src="screenshots/frame_00384_117.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di un pettirosso su cui è applicata una maschera disegnata a mano (linea tratteggiata) che circonda l'uccello. La maschera è utilizzata per applicare un effetto di sfocatura selettiva sullo sfondo, ma si osserva un alone (halo) visibile lungo i bordi della maschera, soprattutto sul lato destro dell'uccello, come indicato dal narratore. I parametri indicano uno sfocamento tipo 'lens' con raggio 33 px e una maschera affinata con opacità +31% e contrasto +18%, ma la funzione 'mask refinement' è disattivata, contribuendo all'effetto halo.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>33 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>73.2 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+31%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+18%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo con una maschera disegnata (forma pentagonale bianca) applicata all'esterno di un uccello, lasciando l'uccello non sfocato. Tuttavia, si osserva un evidente alone giallo intorno al contorno dell'uccello, indicativo di un effetto halo dovuto allo sfocamento del colore dell'uccello che viene propagato nel fondo attraverso la maschera. L'istogramma RGB è visibile a destra e la miniatura della foto originale è in alto a sinistra. Il cursore del mouse è posizionato vicino al corpo dell'uccello." src="screenshots/frame_00415_848.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo con una maschera disegnata (forma pentagonale bianca) applicata all'esterno di un uccello, lasciando l'uccello non sfocato. Tuttavia, si osserva un evidente alone giallo intorno al contorno dell'uccello, indicativo di un effetto halo dovuto allo sfocamento del colore dell'uccello che viene propagato nel fondo attraverso la maschera. L'istogramma RGB è visibile a destra e la miniatura della foto originale è in alto a sinistra. Il cursore del mouse è posizionato vicino al corpo dell'uccello.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>62 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+31%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+18%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>73.2 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a forma di pentagono (probabilmente creata manualmente) applicata all'immagine di un pettirosso. La maschera è visibile come area bianca nel pannello dei controlli, e i parametri indicano un forte effetto di sfocatura (62 px) con tipo 'lens'. L'utente sta osservando che lo sfondo è stato sfocato includendo colori del soggetto (il pettirosso), suggerendo che la maschera non è stata applicata correttamente prima dello sfocamento — ovvero lo sfocamento è stato eseguito sull’intera immagine e poi è stata sovrapposta la maschera, causando un leakage cromatico. Il cursore del mouse è posizionato sul petto dell’uccello, evidenziando l’area problematica." src="screenshots/frame_00428_261.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a forma di pentagono (probabilmente creata manualmente) applicata all'immagine di un pettirosso. La maschera è visibile come area bianca nel pannello dei controlli, e i parametri indicano un forte effetto di sfocatura (62 px) con tipo 'lens'. L'utente sta osservando che lo sfondo è stato sfocato includendo colori del soggetto (il pettirosso), suggerendo che la maschera non è stata applicata correttamente prima dello sfocamento — ovvero lo sfocamento è stato eseguito sull’intera immagine e poi è stata sovrapposta la maschera, causando un leakage cromatico. Il cursore del mouse è posizionato sul petto dell’uccello, evidenziando l’area problematica.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>62 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>73.2 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+31%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+18%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura (Blur)</li>
+<li>Maschera disegnata (Drawn Mask)</li>
+</ul>
+<hr />
+<h2 id="4-gestione-del-rumore-e-integrazione-con-il-modulo-grain">4. Gestione del rumore e integrazione con il modulo Grain<a class="headerlink" href="#4-gestione-del-rumore-e-integrazione-con-il-modulo-grain" title="Permanent link">&para;</a></h2>
+<p><strong>[10:00 – 13:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=600">Guarda nel video</a></p>
+<p>Strategia per compensare la perdita di grana nelle aree sfocate. Utilizzo di maschere raster dal modulo Blur applicate al modulo Grain, con attenzione all'ordine nella pipeline di sviluppo.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a forma di pentagono (simulazione di bokeh a 5 lamelle) applicata sullo sfondo dell'immagine. Il pappagallo rosso è in primo piano e nitido, mentre lo sfondo è intenzionalmente sfocato per ridurre la sua presenza visiva e attenuare il rumore. La maschera è attiva e non invertita, con opacità al 100% e un raggio di sfocatura di 46 px. L’istogramma RGB in alto a destra indica una buona distribuzione tonale, con prevalenza di verdi e toni scuri nello sfondo." src="screenshots/frame_00600_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata a forma di pentagono (simulazione di bokeh a 5 lamelle) applicata sullo sfondo dell'immagine. Il pappagallo rosso è in primo piano e nitido, mentre lo sfondo è intenzionalmente sfocato per ridurre la sua presenza visiva e attenuare il rumore. La maschera è attiva e non invertita, con opacità al 100% e un raggio di sfocatura di 46 px. L’istogramma RGB in alto a destra indica una buona distribuzione tonale, con prevalenza di verdi e toni scuri nello sfondo.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>46 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>lens</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>feathering_guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>55.4 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>11.1 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un pettirosso su uno sfondo sfocato. Il modulo 'blurs' è espanso nel pannello dei moduli a destra, ma non sono visibili parametri specifici (slider o valori) — il modulo è semplicemente selezionato/espanso. L'istogramma RGB è visibile in alto a destra. A sinistra, il pannello 'image information' mostra i metadati della foto RAW (Fujifilm X-Pro3, 560 mm, ISO 6400, f/8.0, 1/4000 s). Il cursore del mouse è posizionato sopra la voce 'blurs', indicando che l'utente sta discutendo di tale modulo. Non ci sono maschere attive né modifiche applicate visibilmente all'immagine." src="screenshots/frame_00630_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di un pettirosso su uno sfondo sfocato. Il modulo 'blurs' è espanso nel pannello dei moduli a destra, ma non sono visibili parametri specifici (slider o valori) — il modulo è semplicemente selezionato/espanso. L'istogramma RGB è visibile in alto a destra. A sinistra, il pannello 'image information' mostra i metadati della foto RAW (Fujifilm X-Pro3, 560 mm, ISO 6400, f/8.0, 1/4000 s). Il cursore del mouse è posizionato sopra la voce 'blurs', indicando che l'utente sta discutendo di tale modulo. Non ci sono maschere attive né modifiche applicate visibilmente all'immagine.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'grain' attivo nel pannello destro. L'immagine principale è un primo piano di un pettirosso, con uno sfondo sfocato e una foglia verde in evidenza. Il cursore è posizionato sul parametro 'mid-tones bias', e il tooltip spiega che un valore più alto accentua la caduta tonale verso gli highlights. A sinistra sono visibili i metadati dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400, ecc.). In basso è presente la timeline delle miniature e lo stato 'working...' indica che un'operazione è in corso. Il narratore commenta l'uso della maschera raster ('Rasta masks'), esprimendo sorpresa per averla utilizzata nonostante le sue precedenti critiche sulla mancanza di controllo." src="screenshots/frame_00780_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'grain' attivo nel pannello destro. L'immagine principale è un primo piano di un pettirosso, con uno sfondo sfocato e una foglia verde in evidenza. Il cursore è posizionato sul parametro 'mid-tones bias', e il tooltip spiega che un valore più alto accentua la caduta tonale verso gli highlights. A sinistra sono visibili i metadati dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400, ecc.). In basso è presente la timeline delle miniature e lo stato 'working...' indica che un'operazione è in corso. Il narratore commenta l'uso della maschera raster ('Rasta masks'), esprimendo sorpresa per averla utilizzata nonostante le sue precedenti critiche sulla mancanza di controllo.</em></p>
+<p><strong>Modulo:</strong> grain</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>coarseness</td>
+<td>1076 ISO</td>
+</tr>
+<tr>
+<td>strength</td>
+<td>19%</td>
+</tr>
+<tr>
+<td>mid-tones bias</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'blurs' attivo nel pannello destro; il cursore del mouse è posizionato sopra la voce 'blurs', che è espansa e mostra i parametri di sfocatura. Il modulo 'grain' è visibile sopra 'blurs' e appare attivato (icona accesa), indicando che condivide la stessa maschera, come suggerito dal narratore. La sezione 'image information' a sinistra mostra i metadati dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400, ecc.). L'istogramma RGB è visibile in alto a destra. Il testo 'working...' sotto l'immagine indica un processo in corso. Il narratore sta spiegando che la maschera per 'grain' e 'blurs' è condivisa e ora visibile, contrariamente alla sua precedente opinione negativa sulle 'Rasta masks'." src="screenshots/frame_00799_240.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'blurs' attivo nel pannello destro; il cursore del mouse è posizionato sopra la voce 'blurs', che è espansa e mostra i parametri di sfocatura. Il modulo 'grain' è visibile sopra 'blurs' e appare attivato (icona accesa), indicando che condivide la stessa maschera, come suggerito dal narratore. La sezione 'image information' a sinistra mostra i metadati dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400, ecc.). L'istogramma RGB è visibile in alto a destra. Il testo 'working...' sotto l'immagine indica un processo in corso. Il narratore sta spiegando che la maschera per 'grain' e 'blurs' è condivisa e ora visibile, contrariamente alla sua precedente opinione negativa sulle 'Rasta masks'.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>pixelation radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>output blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>noise level</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura (Blur)</li>
+<li>Grana (Grain)</li>
+<li>Sensorize</li>
+<li>Maschera Raster (Raster Mask)</li>
+</ul>
+<hr />
+<h2 id="5-introduzione-al-motion-blur">5. Introduzione al Motion Blur<a class="headerlink" href="#5-introduzione-al-motion-blur" title="Permanent link">&para;</a></h2>
+<p><strong>[13:20 – 16:19]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=800">Guarda nel video</a></p>
+<p>Passaggio alla seconda tipologia di sfocatura: il motion blur. Spiegazione del parametro di direzione e preparazione della maschera per evitare artefatti sui bordi del soggetto.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera di visualizzazione gialla sovrapposta all'immagine che evidenzia l'area interessata dalla maschera condivisa (come indicato dal narratore). L'uccello è in primo piano in bianco e nero, mentre lo sfondo è parzialmente coperto da un'area gialla brillante, tipica della preview della maschera. Il cursore è posizionato sul modulo 'blurs', confermando che la maschera è stata applicata a questo modulo e, come spiegato dal narratore, condivisa anche con il modulo 'grain'." src="screenshots/frame_00810_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera di visualizzazione gialla sovrapposta all'immagine che evidenzia l'area interessata dalla maschera condivisa (come indicato dal narratore). L'uccello è in primo piano in bianco e nero, mentre lo sfondo è parzialmente coperto da un'area gialla brillante, tipica della preview della maschera. Il cursore è posizionato sul modulo 'blurs', confermando che la maschera è stata applicata a questo modulo e, come spiegato dal narratore, condivisa anche con il modulo 'grain'.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>pixelation radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>output blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>noise level</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata (2 forme) applicata su una porzione sfocata di foglie verdi sullo sfondo dell'immagine di un pettirosso. La maschera è visibile come contorno bianco sottile sulla sinistra. Il pannello dei parametri indica un raggio di sfocatura di 46 px con tipo 'diaphragm blades' e 5 lamelle. L'utente sta dimostrando che, dopo aver aggiunto una nuova forma alla maschera, le modifiche successive (es. aggiunta di grana) vengono automaticamente ricalcolate e applicate rispettando la stessa maschera rasterizzata, senza bisogno di riapplicarla manualmente." src="screenshots/frame_00839_419.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera disegnata (2 forme) applicata su una porzione sfocata di foglie verdi sullo sfondo dell'immagine di un pettirosso. La maschera è visibile come contorno bianco sottile sulla sinistra. Il pannello dei parametri indica un raggio di sfocatura di 46 px con tipo 'diaphragm blades' e 5 lamelle. L'utente sta dimostrando che, dopo aver aggiunto una nuova forma alla maschera, le modifiche successive (es. aggiunta di grana) vengono automaticamente ricalcolate e applicate rispettando la stessa maschera rasterizzata, senza bisogno di riapplicarla manualmente.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>46 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>diaphragm blades</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>2 shapes used</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>55.4 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>11.1 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'grain' attivo nel pannello destro di darktable, con parametri impostati per simulare il grano fotografico a 6010 ISO, intensità al 92% e bias sui toni medi al 100%. È attiva una maschera raster (raster mask) con opzione 'blurs' selezionata. L'immagine principale è un primo piano di un pettirosso su neve, con evidente effetto grana applicato. Il cursore del mouse è posizionato sopra il parametro 'coarseness', suggerendo un'interazione in corso. Il narratore commenta l'aggiornamento in tempo reale dell'effetto e l'uso combinato di moduli, menzionando esplicitamente 'Rastermask' come strumento utile." src="screenshots/frame_00870_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'grain' attivo nel pannello destro di darktable, con parametri impostati per simulare il grano fotografico a 6010 ISO, intensità al 92% e bias sui toni medi al 100%. È attiva una maschera raster (raster mask) con opzione 'blurs' selezionata. L'immagine principale è un primo piano di un pettirosso su neve, con evidente effetto grana applicato. Il cursore del mouse è posizionato sopra il parametro 'coarseness', suggerendo un'interazione in corso. Il narratore commenta l'aggiornamento in tempo reale dell'effetto e l'uso combinato di moduli, menzionando esplicitamente 'Rastermask' come strumento utile.</em></p>
+<p><strong>Modulo:</strong> grain</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>coarseness</td>
+<td>6010 ISO</td>
+</tr>
+<tr>
+<td>strength</td>
+<td>92%</td>
+</tr>
+<tr>
+<td>mid-tones bias</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'blurs' attivo con un'immagine che presenta un effetto di motion blur orizzontale (direzione 0°), ottenuto con una lunga esposizione: una donna con due cani cammina su una superficie riflettente (probabilmente bagnata), con sfondo sfocato e striature dinamiche. Il modulo è configurato per un blur di tipo 'motion', raggio 8 px, direzione 0° (orizzontale), senza curvatura né offset. L'utente sta valutando di ridurre la distrazione dello sfondo utilizzando questo strumento." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'blurs' attivo con un'immagine che presenta un effetto di motion blur orizzontale (direzione 0°), ottenuto con una lunga esposizione: una donna con due cani cammina su una superficie riflettente (probabilmente bagnata), con sfondo sfocato e striature dinamiche. Il modulo è configurato per un blur di tipo 'motion', raggio 8 px, direzione 0° (orizzontale), senza curvatura né offset. L'utente sta valutando di ridurre la distrazione dello sfondo utilizzando questo strumento.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'grain' attivo nel pannello destro; il cursore è posizionato sopra l'opzione 'simulate silver grains from film'. L'immagine centrale è un primo piano di un pettirosso su neve, con foglie sfocate sullo sfondo. Il narratore spiega che, dopo aver applicato un effetto di sfocatura (blur), l'aggiunta di grain viene automaticamente ricalcolata e riapplicata tenendo conto della maschera raster (Rastermask), anche se i parametri visibili sono ancora a zero — suggerendo che la modifica sia stata appena attivata o che il grain sia visibile solo in anteprima o in output. L'istogramma RGB è visibile in alto a destra, e il pannello sinistro mostra le informazioni tecniche dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400)." src="screenshots/frame_00852_580.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'grain' attivo nel pannello destro; il cursore è posizionato sopra l'opzione 'simulate silver grains from film'. L'immagine centrale è un primo piano di un pettirosso su neve, con foglie sfocate sullo sfondo. Il narratore spiega che, dopo aver applicato un effetto di sfocatura (blur), l'aggiunta di grain viene automaticamente ricalcolata e riapplicata tenendo conto della maschera raster (Rastermask), anche se i parametri visibili sono ancora a zero — suggerendo che la modifica sia stata appena attivata o che il grain sia visibile solo in anteprima o in output. L'istogramma RGB è visibile in alto a destra, e il pannello sinistro mostra le informazioni tecniche dell'immagine (Fujifilm X-Pro3, 560 mm, ISO 6400).</em></p>
+<p><strong>Modulo:</strong> grain</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>simulate silver grains from film</td>
+<td>false</td>
+</tr>
+<tr>
+<td>purpose</td>
+<td>creative</td>
+</tr>
+<tr>
+<td>input</td>
+<td>non-linear, Lab, display-referred</td>
+</tr>
+<tr>
+<td>process</td>
+<td>non-linear, Lab</td>
+</tr>
+<tr>
+<td>output</td>
+<td>non-linear, Lab, display-referred</td>
+</tr>
+<tr>
+<td>input blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>pixelation radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>output blur radius</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>noise level</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sfocatura (Blur)</li>
+<li>Maschera disegnata (Drawn Mask)</li>
+</ul>
+<hr />
+<h2 id="6-ottimizzazione-della-maschera-e-regolazione-del-raggio-di-sfocatura">6. Ottimizzazione della maschera e regolazione del raggio di sfocatura<a class="headerlink" href="#6-ottimizzazione-della-maschera-e-regolazione-del-raggio-di-sfocatura" title="Permanent link">&para;</a></h2>
+<p><strong>[16:20 – 17:35]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=980">Guarda nel video</a></p>
+<p>Regolazione dell'angolo e aumento del raggio di sfocatura per ammorbidire i bordi della maschera, eliminare forme indesiderate e garantire una transizione naturale tra soggetto e sfondo.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="L'immagine mostra un modulo 'blurs' attivo con una maschera disegnata a mano che delimita la figura di una persona in movimento (con effetto motion blur) e il suo cane; lo sfondo è stato sostituito da un colore giallo brillante per evidenziare la maschera. La maschera ha un bordo sfumato (feathering radius 49,1 px) e il tipo di sfocatura applicata è 'motion' con raggio 8 px e direzione 0°. È visibile un istogramma RGB nella barra laterale destra e la miniatura dell'immagine originale nella colonna sinistra." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>L'immagine mostra un modulo 'blurs' attivo con una maschera disegnata a mano che delimita la figura di una persona in movimento (con effetto motion blur) e il suo cane; lo sfondo è stato sostituito da un colore giallo brillante per evidenziare la maschera. La maschera ha un bordo sfumato (feathering radius 49,1 px) e il tipo di sfocatura applicata è 'motion' con raggio 8 px e direzione 0°. È visibile un istogramma RGB nella barra laterale destra e la miniatura dell'immagine originale nella colonna sinistra.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0,00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0,00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>49,1 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra un effetto di motion blur applicato a una scena con una persona e un cane in movimento su uno sfondo sfocato. È attiva una maschera disegnata a mano (contorno bianco) che seleziona la figura principale, lasciando il resto dell'immagine soggetta all'effetto di sfocatura. Il modulo 'blurs' è configurato con tipo 'motion', raggio 8 px e direzione 0°, ma l'utente esprime il desiderio di poter impostare l'angolo di motion blur tramite clic destro per allinearlo alla direzione del movimento visibile nell'immagine." src="screenshots/frame_00993_559.jpg" /></p>
+<p><em>L'immagine mostra un effetto di motion blur applicato a una scena con una persona e un cane in movimento su uno sfondo sfocato. È attiva una maschera disegnata a mano (contorno bianco) che seleziona la figura principale, lasciando il resto dell'immagine soggetta all'effetto di sfocatura. Il modulo 'blurs' è configurato con tipo 'motion', raggio 8 px e direzione 0°, ma l'utente esprime il desiderio di poter impostare l'angolo di motion blur tramite clic destro per allinearlo alla direzione del movimento visibile nell'immagine.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0,00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0,00</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>49,1 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>10,0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Motion Blur</li>
+</ul>
+<hr />
+<h2 id="7-sfocatura-di-movimento-curva-per-simulare-le-onde">7. Sfocatura di movimento curva per simulare le onde<a class="headerlink" href="#7-sfocatura-di-movimento-curva-per-simulare-le-onde" title="Permanent link">&para;</a></h2>
+<p><strong>[17:35 – 20:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=1055">Guarda nel video</a></p>
+<p>Applicazione del motion blur orizzontale su un'immagine marina con maschera a gradiente. Utilizzo dei parametri curvatura e offset per imitare il movimento organico delle onde, confrontando il risultato con la sfocatura rettilinea.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, applicato a una foto di tramonto sul mare. È visibile una maschera pentagonale (tipica della forma del diaframma) sovrapposta all’immagine, indicando che il blur è applicato selettivamente con una maschera geometrica. I parametri sono impostati su un raggio di 8 px e tipo 'diaphragm blades' con 5 lame, concavità e linearità a 1.00, senza rotazione. L’istogramma RGB in alto a destra mostra una distribuzione ampia con picchi nei toni caldi (arancioni/rossi) e freddi (blu), coerente con una scena al crepuscolo. La descrizione del narratore conferma l’uso intenzionale del blur per rendere il mare più fluido, grazie a una lunga esposizione (1/3 s) e all’elaborazione successiva." src="screenshots/frame_01056_955.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, applicato a una foto di tramonto sul mare. È visibile una maschera pentagonale (tipica della forma del diaframma) sovrapposta all’immagine, indicando che il blur è applicato selettivamente con una maschera geometrica. I parametri sono impostati su un raggio di 8 px e tipo 'diaphragm blades' con 5 lame, concavità e linearità a 1.00, senza rotazione. L’istogramma RGB in alto a destra mostra una distribuzione ampia con picchi nei toni caldi (arancioni/rossi) e freddi (blu), coerente con una scena al crepuscolo. La descrizione del narratore conferma l’uso intenzionale del blur per rendere il mare più fluido, grazie a una lunga esposizione (1/3 s) e all’elaborazione successiva.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>diaphragm blades</td>
+</tr>
+<tr>
+<td>diaphragm_blades</td>
+<td>5</td>
+</tr>
+<tr>
+<td>concavity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>linearity</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>rotation</td>
+<td>0°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine in bianco e nero di un cielo nuvoloso e una banda gialla evidenziata in basso (probabile maschera disegnata). È attiva una maschera disegnata (1 shape used) che copre la porzione inferiore dell’immagine. Il tipo di sfocatura è 'motion' con raggio 43 px e direzione 0° (orizzontale), mentre i parametri 'curvature' e 'offset' sono entrambi a +0.00. Il cursore del mouse si trova sopra la maschera gialla, suggerendo un’interazione imminente per modificare la forma della sfocatura tramite la curvatura, come indicato dal contesto narrativo." src="screenshots/frame_01140_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine in bianco e nero di un cielo nuvoloso e una banda gialla evidenziata in basso (probabile maschera disegnata). È attiva una maschera disegnata (1 shape used) che copre la porzione inferiore dell’immagine. Il tipo di sfocatura è 'motion' con raggio 43 px e direzione 0° (orizzontale), mentre i parametri 'curvature' e 'offset' sono entrambi a +0.00. Il cursore del mouse si trova sopra la maschera gialla, suggerendo un’interazione imminente per modificare la forma della sfocatura tramite la curvatura, come indicato dal contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>43 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di paesaggio marino al tramonto. Il tipo di sfocatura è impostato su 'motion', con raggio 43 px e direzione 0° (orizzontale). I parametri 'curvature' e 'offset' sono entrambi a +0.00, ma il narratore sta spiegando come regolare la 'curvature' per ottenere uno sfocamento curvilineo che simuli il movimento ondulatorio del mare, migliorando l'effetto rispetto allo sfocamento rettilineo standard. È presente una maschera disegnata (1 shape used), indicando che lo sfocamento è applicato selettivamente." src="screenshots/frame_01154_819.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di paesaggio marino al tramonto. Il tipo di sfocatura è impostato su 'motion', con raggio 43 px e direzione 0° (orizzontale). I parametri 'curvature' e 'offset' sono entrambi a +0.00, ma il narratore sta spiegando come regolare la 'curvature' per ottenere uno sfocamento curvilineo che simuli il movimento ondulatorio del mare, migliorando l'effetto rispetto allo sfocamento rettilineo standard. È presente una maschera disegnata (1 shape used), indicando che lo sfocamento è applicato selettivamente.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>43 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0°</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura motion impostato a 43 px e direzione 0°. È presente una maschera graduale (graduated density) attiva, ma il narratore chiarisce che non sta utilizzando la maschera gradient per l'effetto mostrato; invece, l'effetto di sfocatura è applicato globalmente o su una porzione non specificata (probabilmente la lettera 'C' menzionata), risultando poco realistico secondo il narratore. L'immagine principale è un paesaggio marino al tramonto con cielo nuvoloso." src="screenshots/frame_01110_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura motion impostato a 43 px e direzione 0°. È presente una maschera graduale (graduated density) attiva, ma il narratore chiarisce che non sta utilizzando la maschera gradient per l'effetto mostrato; invece, l'effetto di sfocatura è applicato globalmente o su una porzione non specificata (probabilmente la lettera 'C' menzionata), risultando poco realistico secondo il narratore. L'immagine principale è un paesaggio marino al tramonto con cielo nuvoloso.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>43 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>motion</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>curvature</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>+0.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Motion Blur</li>
+</ul>
+<hr />
+<h2 id="8-sfocatura-gaussiana-e-usi-creativi-con-le-modalita-di-fusione">8. Sfocatura Gaussiana e usi creativi con le modalità di fusione<a class="headerlink" href="#8-sfocatura-gaussiana-e-usi-creativi-con-le-modalita-di-fusione" title="Permanent link">&para;</a></h2>
+<p><strong>[20:20 – 23:33]</strong>
+ | <a href="https://www.youtube.com/watch?v=HI05rl53iA0&amp;t=1220">Guarda nel video</a></p>
+<p>Introduzione alla sfocatura gaussiana uniforme. Esplorazione di effetti creativi tramite modalità di fusione (sottrai, differenza, moltiplica) per esaltare dettagli come i raggi solari, con indicazioni sulla gestione del fulcro di fusione e della saturazione.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di paesaggio marino al tramonto visualizzata nella vista principale. È applicato un effetto di sfocatura gaussiana con raggio di 65 px; una maschera disegnata (1 shape used) è visibile come cerchio luminoso sulla destra, indicando che lo sfocamento è limitato a una regione specifica dell'immagine. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra i metadati della foto (1/3.1, f/8.0, 18 mm, ISO 160). Il cursore del mouse è posizionato vicino alla maschera, suggerendo un'interazione in corso." src="screenshots/frame_01241_240.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un'immagine di paesaggio marino al tramonto visualizzata nella vista principale. È applicato un effetto di sfocatura gaussiana con raggio di 65 px; una maschera disegnata (1 shape used) è visibile come cerchio luminoso sulla destra, indicando che lo sfocamento è limitato a una regione specifica dell'immagine. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra i metadati della foto (1/3.1, f/8.0, 18 mm, ISO 160). Il cursore del mouse è posizionato vicino alla maschera, suggerendo un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>65 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'blurs' attivo nella scheda 'darkroom', con un raggio di sfocatura impostato a 18 pixel e tipo di sfocatura 'gaussian'. L'immagine principale è un paesaggio con cielo nuvoloso e valle verde, visualizzata senza maschere applicate. Il cursore del mouse è posizionato sul menu a tendina 'blur type', indicando che l'utente sta selezionando o ha appena selezionato il tipo di sfocatura. Lo storico delle operazioni mostra più istanze di 'blurs' e 'exposure multiply', suggerendo un flusso di lavoro iterativo." src="screenshots/frame_01275_759.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'blurs' attivo nella scheda 'darkroom', con un raggio di sfocatura impostato a 18 pixel e tipo di sfocatura 'gaussian'. L'immagine principale è un paesaggio con cielo nuvoloso e valle verde, visualizzata senza maschere applicate. Il cursore del mouse è posizionato sul menu a tendina 'blur type', indicando che l'utente sta selezionando o ha appena selezionato il tipo di sfocatura. Lo storico delle operazioni mostra più istanze di 'blurs' e 'exposure multiply', suggerendo un flusso di lavoro iterativo.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>18 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo con la modalità di fusione impostata su 'difference', che visualizza la differenza tra l'immagine originale e una versione sfocata (gaussian blur, raggio 32 px). Il risultato è un'immagine ad alto contrasto che evidenzia i bordi e i dettagli fini, simile all'output di un filtro Laplaciano o di un operatore di rilevamento dei contorni. L'interfaccia indica che il processo è in esecuzione ('working...'), e l'istogramma a destra mostra una distribuzione centrata con picchi ai valori estremi, coerente con un'immagine di differenza. Il narratore conferma che sta esplorando questa tecnica per simulare effetti basati su Laplacian, utili per il sharpening diffuso." src="screenshots/frame_01310_676.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo con la modalità di fusione impostata su 'difference', che visualizza la differenza tra l'immagine originale e una versione sfocata (gaussian blur, raggio 32 px). Il risultato è un'immagine ad alto contrasto che evidenzia i bordi e i dettagli fini, simile all'output di un filtro Laplaciano o di un operatore di rilevamento dei contorni. L'interfaccia indica che il processo è in esecuzione ('working...'), e l'istogramma a destra mostra una distribuzione centrata con picchi ai valori estremi, coerente con un'immagine di differenza. Il narratore conferma che sta esplorando questa tecnica per simulare effetti basati su Laplacian, utili per il sharpening diffuso.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>32 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>difference</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera di visualizzazione attiva che evidenzia i contorni dell'immagine come linee bianche su sfondo nero — tipico di una visualizzazione della differenza o di un filtro Laplaciano. L'immagine appare fortemente contrastata e stilizzata, suggerendo l'applicazione di un effetto di rilevamento dei bordi (ad esempio tramite sottrazione di una versione sfocata, simile a un operatore Laplaciano). Il cursore del mouse è posizionato sul pulsante di selezione della maschera, confermando l’uso attivo delle maschere per la modifica selettiva." src="screenshots/frame_01317_039.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con una maschera di visualizzazione attiva che evidenzia i contorni dell'immagine come linee bianche su sfondo nero — tipico di una visualizzazione della differenza o di un filtro Laplaciano. L'immagine appare fortemente contrastata e stilizzata, suggerendo l'applicazione di un effetto di rilevamento dei bordi (ad esempio tramite sottrazione di una versione sfocata, simile a un operatore Laplaciano). Il cursore del mouse è posizionato sul pulsante di selezione della maschera, confermando l’uso attivo delle maschere per la modifica selettiva.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>32 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>drawn &amp; parametric mask</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura gaussiana applicato a una foto paesaggistica con cielo nuvoloso e raggi di sole. È stata creata una maschera disegnata (2 forme) per limitare l’effetto alle zone dei raggi solari, come indicato dal narratore. Il blend mode è impostato su 'multiply' con fulcro a 1.48 EV, per aumentare il contrasto locale senza oscurare eccessivamente le aree illuminate. L’interfaccia mostra anche lo stack storico con più istanze di 'blurs' e 'exposure multiply', suggerendo un workflow iterativo per la correzione creativa della luce." src="screenshots/frame_01374_380.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'blurs' attivo in darktable, con un effetto di sfocatura gaussiana applicato a una foto paesaggistica con cielo nuvoloso e raggi di sole. È stata creata una maschera disegnata (2 forme) per limitare l’effetto alle zone dei raggi solari, come indicato dal narratore. Il blend mode è impostato su 'multiply' con fulcro a 1.48 EV, per aumentare il contrasto locale senza oscurare eccessivamente le aree illuminate. L’interfaccia mostra anche lo stack storico con più istanze di 'blurs' e 'exposure multiply', suggerendo un workflow iterativo per la correzione creativa della luce.</em></p>
+<p><strong>Modulo:</strong> blurs</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur_radius</td>
+<td>32 px</td>
+</tr>
+<tr>
+<td>blur_type</td>
+<td>gaussian</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>multiply</td>
+</tr>
+<tr>
+<td>blend_fulcrum</td>
+<td>1.48 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>2 shapes used</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gaussian Blur</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sfocatura (Blur)</strong></td>
+<td>offset (offset), rotazione (rotation), tipologia (lens, motion, gaussian), curvatura (curvature), raggio (radius), direzione (direction), lamelle del diaframma (diaphragm blades), linearità (linearity), concavità (concavity)</td>
+</tr>
+<tr>
+<td><strong>Maschera disegnata (Drawn Mask)</strong></td>
+<td>inversione (invert), raggio di sfumatura (feathering radius), espansione della forma (shape expansion)</td>
+</tr>
+<tr>
+<td><strong>Grana (Grain)</strong></td>
+<td>intensità (strength), grana (coarseness), input maschera raster</td>
+</tr>
+<tr>
+<td><strong>Sensorize</strong></td>
+<td>posizionamento nella pipeline</td>
+</tr>
+<tr>
+<td><strong>Maschera Raster (Raster Mask)</strong></td>
+<td>aggiornamento automatico, dipendenza dall'ordine della pipeline</td>
+</tr>
+<tr>
+<td><strong>Motion Blur</strong></td>
+<td>offset, angolo, curvatura, raggio di sfocatura, maschera a gradiente</td>
+</tr>
+<tr>
+<td><strong>Gaussian Blur</strong></td>
+<td>modalità di fusione (sottrai, differenza, moltiplica), fulcro di fusione</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Aumentare il numero di lamelle del diaframma o ridurre la linearità a zero rende la sfocatura visivamente più morbida e uniforme. — <em>Quando si cerca un effetto estetico più gradevole senza vincoli di realismo fisico.</em><blockquote>
+<p><strong>Attenzione:</strong> Invertire una maschera sposta la zona di transizione all'interno del soggetto. È necessario espandere la maschera per evitare aloni indesiderati. — <em>Durante la creazione di maschere per sfocare lo sfondo mantenendo il soggetto nitido.</em>
+<strong>Importante:</strong> Il modulo Blur applica l'effetto prima della maschera, causando una fuoriuscita di colori (halo) sui bordi netti. Attualmente non esiste un'opzione nativa per escludere le aree mascherate dal calcolo della sfocatura. — <em>Quando si lavora su soggetti con bordi definiti contro sfondi complessi.</em>
+<strong>Importante:</strong> La sfocatura elimina il rumore digitale, creando transizioni visibili tra aree lisce e aree rumorose. Aggiungere grana alle zone sfocate uniforma il risultato. — <em>Dopo aver applicato una sfocatura selettiva su immagini ad alto ISO.</em>
+<strong>Importante:</strong> L'ordine nella pipeline è cruciale per le maschere raster: il modulo Grain si trova dopo Blur di default e può ereditarne la maschera, mentre Sensorize va spostato manualmente (Ctrl+Shift+trascina) se si vuole usare la stessa maschera. — <em>Quando si collegano moduli tramite maschere raster per un flusso di lavoro coerente.</em></p>
+</blockquote>
+</li>
+<li>Le maschere raster si aggiornano automaticamente quando si modifica la maschera sorgente, garantendo coerenza senza interventi manuali. — <em>Durante la regolazione fine delle maschere disegnate o parametriche.</em><blockquote>
+<p><strong>Attenzione:</strong> Con il Motion Blur, mantenere un margine ampio tra il soggetto e il bordo della maschera per prevenire artefatti e aloni. — <em>Quando si applica sfocatura di movimento per isolare un soggetto in primo piano.</em></p>
+</blockquote>
+</li>
+<li>Aumenta il raggio di sfocatura per ammorbidire i bordi della maschera e rendere impercettibile la transizione tra le aree modificate e lo sfondo. — <em>Quando si applicano maschere con moduli di sfocatura per evitare aloni o transizioni nette</em><blockquote>
+<p><strong>Importante:</strong> Utilizza i parametri 'curvatura' e 'offset' al posto della sfocatura rettilinea per simulare movimenti naturali e organici, come il flusso delle onde. — <em>Ritocco di elementi dinamici o naturali con il modulo Motion Blur</em>
+<strong>Attenzione:</strong> L'uso della modalità di fusione 'moltiplica' con la sfocatura gaussiana può esaltare i raggi di luce, ma tende a causare problemi di saturazione e scurimento eccessivo; regola il fulcro di fusione per mitigare l'effetto. — <em>Applicazione di effetti creativi con Gaussian Blur e modalità di fusione</em></p>
+</blockquote>
+</li>
+<li>La sfocatura gaussiana è uniforme e non rappresenta la soluzione ottimale per la levigatura della pelle; è più indicata per esperimenti creativi tramite blend modes. — <em>Scelta del modulo di sfocatura più adatto al soggetto</em></li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:19:34.569319.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

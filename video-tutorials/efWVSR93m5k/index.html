@@ -1,0 +1,4483 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/efWVSR93m5k/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] darktable Black&White photography - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-darktable-blackwhite-photography" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] darktable Black&amp;White photography
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-teoria-della-percezione-visiva-e-del-contrasto-in-bianco-e-nero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Teoria della percezione visiva e del contrasto in bianco e nero
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Teoria della percezione visiva e del contrasto in bianco e nero">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-preparazione-del-file-raw-e-correzioni-geometriche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Preparazione del file RAW e correzioni geometriche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preparazione del file RAW e correzioni geometriche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-conversione-in-bianco-e-nero-limiti-degli-strumenti-legacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Conversione in bianco e nero: limiti degli strumenti legacy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Conversione in bianco e nero: limiti degli strumenti legacy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calibrazione-colore-e-regolazione-manuale-dei-canali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Calibrazione colore e regolazione manuale dei canali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Calibrazione colore e regolazione manuale dei canali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-contrasto-locale-e-modellazione-della-luce-con-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Contrasto locale e modellazione della luce con maschere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Contrasto locale e modellazione della luce con maschere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mascheramento-con-gradienti-e-bilanciamento-tonale-iniziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Mascheramento con gradienti e bilanciamento tonale iniziale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Mascheramento con gradienti e bilanciamento tonale iniziale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-gestione-del-contrasto-locale-e-nitidezza-selettiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Gestione del contrasto locale e nitidezza selettiva
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Gestione del contrasto locale e nitidezza selettiva">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ritocco-finale-e-chiusura-della-prima-immagine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ritocco finale e chiusura della prima immagine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ritocco finale e chiusura della prima immagine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-workflow-seconda-immagine-profilo-esposizione-e-simulazione-pellicola" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Workflow seconda immagine: profilo, esposizione e simulazione pellicola
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Workflow seconda immagine: profilo, esposizione e simulazione pellicola">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-conversione-in-bianco-e-nero-e-bilanciamento-cromatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Conversione in bianco e nero e bilanciamento cromatico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Conversione in bianco e nero e bilanciamento cromatico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-gestione-del-contrasto-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Gestione del contrasto globale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Gestione del contrasto globale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-applicazione-del-contrasto-locale-e-recupero-dettagli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Applicazione del contrasto locale e recupero dettagli
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Applicazione del contrasto locale e recupero dettagli">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-rifinitura-della-chiarezza-e-aggiunta-cornice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Rifinitura della chiarezza e aggiunta cornice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Rifinitura della chiarezza e aggiunta cornice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-darktable-blackwhite-photography">[ENG] darktable Black&amp;White photography<a class="headerlink" href="#eng-darktable-blackwhite-photography" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=efWVSR93m5k">https://www.youtube.com/watch?v=efWVSR93m5k</a>
+<strong>Generato:</strong> 2026-04-12T01:20:34.105160
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#teoria-della-percezione-visiva-e-del-contrasto-in-bianco-e-nero">Teoria della percezione visiva e del contrasto in bianco e nero</a></li>
+<li><a href="#preparazione-del-file-raw-e-correzioni-geometriche">Preparazione del file RAW e correzioni geometriche</a></li>
+<li><a href="#conversione-in-bianco-e-nero:-limiti-degli-strumenti-legacy">Conversione in bianco e nero: limiti degli strumenti legacy</a></li>
+<li><a href="#calibrazione-colore-e-regolazione-manuale-dei-canali">Calibrazione colore e regolazione manuale dei canali</a></li>
+<li><a href="#contrasto-locale-e-modellazione-della-luce-con-maschere">Contrasto locale e modellazione della luce con maschere</a></li>
+<li><a href="#mascheramento-con-gradienti-e-bilanciamento-tonale-iniziale">Mascheramento con gradienti e bilanciamento tonale iniziale</a></li>
+<li><a href="#gestione-del-contrasto-locale-e-nitidezza-selettiva">Gestione del contrasto locale e nitidezza selettiva</a></li>
+<li><a href="#ritocco-finale-e-chiusura-della-prima-immagine">Ritocco finale e chiusura della prima immagine</a></li>
+<li><a href="#workflow-seconda-immagine:-profilo,-esposizione-e-simulazione-pellicola">Workflow seconda immagine: profilo, esposizione e simulazione pellicola</a></li>
+<li><a href="#conversione-in-bianco-e-nero-e-bilanciamento-cromatico">Conversione in bianco e nero e bilanciamento cromatico</a></li>
+<li><a href="#gestione-del-contrasto-globale">Gestione del contrasto globale</a></li>
+<li><a href="#applicazione-del-contrasto-locale-e-recupero-dettagli">Applicazione del contrasto locale e recupero dettagli</a></li>
+<li><a href="#rifinitura-della-chiarezza-e-aggiunta-cornice">Rifinitura della chiarezza e aggiunta cornice</a></li>
+</ol>
+<hr />
+<h2 id="1-teoria-della-percezione-visiva-e-del-contrasto-in-bianco-e-nero">1. Teoria della percezione visiva e del contrasto in bianco e nero<a class="headerlink" href="#1-teoria-della-percezione-visiva-e-del-contrasto-in-bianco-e-nero" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 03:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=0">Guarda nel video</a></p>
+<p>Introduzione ai principi di luminosità e contrasto (globale e locale) nella percezione umana. Analisi di esempi fotografici di maestri come Henri Cartier-Bresson, Jean-Paul Sartre e Robert Frank per comprendere come il cervello interpreta forme, dettagli e gerarchie visive in scala di grigi.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra una fotografia fisica di una pagina del libro 'Images à la Sauvette' di Henri Cartier-Bresson, con illustrazioni stilizzate in bianco e nero, verde e blu su sfondo bianco. Non è visibile alcuna interfaccia di darktable: l'immagine è un'inquadratura reale di un oggetto (il libro) su uno sfondo scuro, probabilmente durante una presentazione video. L'interfaccia di darktable non è attiva né visibile in questo frame." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una fotografia fisica di una pagina del libro 'Images à la Sauvette' di Henri Cartier-Bresson, con illustrazioni stilizzate in bianco e nero, verde e blu su sfondo bianco. Non è visibile alcuna interfaccia di darktable: l'immagine è un'inquadratura reale di un oggetto (il libro) su uno sfondo scuro, probabilmente durante una presentazione video. L'interfaccia di darktable non è attiva né visibile in questo frame.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una mano che sfoglia un libro fotografico in bianco e nero. Le immagini mostrano scene urbane con forti contrasti luminosi, figure umane in scala ridotta e composizioni geometriche. Il contesto narrativo parla di luminosità e contrasto (globale vs locale), ma l'immagine è puramente illustrativa e non raffigura alcun elemento dell'interfaccia software di darktable." src="screenshots/frame_00090_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una mano che sfoglia un libro fotografico in bianco e nero. Le immagini mostrano scene urbane con forti contrasti luminosi, figure umane in scala ridotta e composizioni geometriche. Il contesto narrativo parla di luminosità e contrasto (globale vs locale), ma l'immagine è puramente illustrativa e non raffigura alcun elemento dell'interfaccia software di darktable.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un libro fotografico aperto con due immagini in bianco e nero: a sinistra una figura in movimento riflessa in una pozzanghera davanti a una recinzione con scritte 'RAYLOWSKY', a destra un uomo in cappotto e cilindro che cammina su un viale alberato bagnato. Il contesto narrativo fa riferimento a tecniche di elaborazione analogica (dodging e burning) e all’uso del contrasto per guidare lo sguardo, ma l’interfaccia di darktable non è visibile." src="screenshots/frame_00171_139.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un libro fotografico aperto con due immagini in bianco e nero: a sinistra una figura in movimento riflessa in una pozzanghera davanti a una recinzione con scritte 'RAYLOWSKY', a destra un uomo in cappotto e cilindro che cammina su un viale alberato bagnato. Il contesto narrativo fa riferimento a tecniche di elaborazione analogica (dodging e burning) e all’uso del contrasto per guidare lo sguardo, ma l’interfaccia di darktable non è visibile.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona che sfoglia un libro fotografico in bianco e nero. Le pagine contengono tre immagini: una vista dall'alto di un edificio con tetto a cupola e figure umane in ombra; una scena con una parete e una figura in lontananza accanto a un cannone; e una terza immagine con tavoli allineati e due persone in bicicletta. Una mano è visibile mentre tocca la pagina destra, suggerendo un'analisi visiva del contrasto tra luci e ombre, coerentemente con il discorso del narratore sulle prime percezioni percettive (luce, oscurità, forma)." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona che sfoglia un libro fotografico in bianco e nero. Le pagine contengono tre immagini: una vista dall'alto di un edificio con tetto a cupola e figure umane in ombra; una scena con una parete e una figura in lontananza accanto a un cannone; e una terza immagine con tavoli allineati e due persone in bicicletta. Una mano è visibile mentre tocca la pagina destra, suggerendo un'analisi visiva del contrasto tra luci e ombre, coerentemente con il discorso del narratore sulle prime percezioni percettive (luce, oscurità, forma).</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una pagina aperta di un libro o catalogo fotografico in bianco e nero. La pagina presenta tre immagini: a sinistra, una veduta dall'alto di uno spazio architettonico con una struttura a cupola e figure umane in scala ridotta; a destra, due foto sovrapposte — la superiore mostra una figura solitaria accanto a un cannone contro un muro, la inferiore una piazza con tavoli, sedie e una persona in bicicletta. L'immagine è utilizzata per illustrare il concetto di percezione visiva, contrasto luminoso e categorizzazione cognitiva nell'osservazione fotografica in bianco e nero." src="screenshots/frame_00060_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una pagina aperta di un libro o catalogo fotografico in bianco e nero. La pagina presenta tre immagini: a sinistra, una veduta dall'alto di uno spazio architettonico con una struttura a cupola e figure umane in scala ridotta; a destra, due foto sovrapposte — la superiore mostra una figura solitaria accanto a un cannone contro un muro, la inferiore una piazza con tavoli, sedie e una persona in bicicletta. L'immagine è utilizzata per illustrare il concetto di percezione visiva, contrasto luminoso e categorizzazione cognitiva nell'osservazione fotografica in bianco e nero.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<hr />
+<h2 id="2-preparazione-del-file-raw-e-correzioni-geometriche">2. Preparazione del file RAW e correzioni geometriche<a class="headerlink" href="#2-preparazione-del-file-raw-e-correzioni-geometriche" title="Permanent link">&para;</a></h2>
+<p><strong>[03:00 – 05:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=180">Guarda nel video</a></p>
+<p>Analisi dell'esposizione iniziale del file RAW, verifica del profilo colore in ingresso, correzione delle linee verticali e applicazione di un ritaglio artistico in formato quadrato per impostare la composizione di base.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una scena reale: due mani stanno sfogliando un libro d'arte o un portfolio fotografico su sfondo nero. Una pagina aperta mostra una fotografia in bianco e nero di Robert Frank (riconoscibile per lo stile e il soggetto: uno strumento musicale, forse un trombone, con bandiera americana sullo sfondo). Attorno al libro sono disposte altre pagine con grafica stilizzata in bianco e nero (montagne, foglie, forme astratte), probabilmente parte di un layout artistico o di presentazione. Il contesto narrativo fa riferimento all’uso di darktable per migliorare il contrasto nelle foto in bianco e nero, ma l’immagine stessa è pre-software, pur mostrando il materiale che verrà successivamente elaborato." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una scena reale: due mani stanno sfogliando un libro d'arte o un portfolio fotografico su sfondo nero. Una pagina aperta mostra una fotografia in bianco e nero di Robert Frank (riconoscibile per lo stile e il soggetto: uno strumento musicale, forse un trombone, con bandiera americana sullo sfondo). Attorno al libro sono disposte altre pagine con grafica stilizzata in bianco e nero (montagne, foglie, forme astratte), probabilmente parte di un layout artistico o di presentazione. Il contesto narrativo fa riferimento all’uso di darktable per migliorare il contrasto nelle foto in bianco e nero, ma l’immagine stessa è pre-software, pur mostrando il materiale che verrà successivamente elaborato.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene aperto un libro fotografico in bianco e nero. Le due pagine mostrano: a sinistra, Jean-Paul Sartre a letto con coperta a righe; a destra, una scena urbana nebbiosa con Sartre in primo piano, probabilmente a Parigi. Le mani della persona sono visibili mentre tengono il libro. Non è presente alcun elemento dell'interfaccia di darktable (moduli, slider, istogrammi, ecc.). Il contesto narrativo descrive la foto come a basso contrasto e focalizzata sui dettagli, ma l'immagine fornita è un'istantanea reale del libro, non uno screenshot del software." src="screenshots/frame_00210_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene aperto un libro fotografico in bianco e nero. Le due pagine mostrano: a sinistra, Jean-Paul Sartre a letto con coperta a righe; a destra, una scena urbana nebbiosa con Sartre in primo piano, probabilmente a Parigi. Le mani della persona sono visibili mentre tengono il libro. Non è presente alcun elemento dell'interfaccia di darktable (moduli, slider, istogrammi, ecc.). Il contesto narrativo descrive la foto come a basso contrasto e focalizzata sui dettagli, ma l'immagine fornita è un'istantanea reale del libro, non uno screenshot del software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un libro fotografico aperto tenuto da due mani. A sinistra, una foto in bianco e nero di Jean-Paul Sartre a letto, avvolto in una coperta a righe; a destra, una scena urbana nebbiosa con due uomini in primo piano, uno dei quali fuma una pipa, con una cupola sfocata sullo sfondo. L'immagine è presentata come esempio di fotografia a basso contrasto, dove i dettagli guidano lo sguardo dell’osservatore in assenza di forti differenze tonali." src="screenshots/frame_00219_840.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un libro fotografico aperto tenuto da due mani. A sinistra, una foto in bianco e nero di Jean-Paul Sartre a letto, avvolto in una coperta a righe; a destra, una scena urbana nebbiosa con due uomini in primo piano, uno dei quali fuma una pipa, con una cupola sfocata sullo sfondo. L'immagine è presentata come esempio di fotografia a basso contrasto, dove i dettagli guidano lo sguardo dell’osservatore in assenza di forti differenze tonali.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene in mano il libro fotografico 'Les Américains' di Robert Frank. Sullo sfondo è visibile un altro volume con grafica stilizzata (montagne e foglie). Le mani tengono aperto il libro, mostrando la copertina con la fotografia in bianco e nero di persone su un autobus. Non sono presenti elementi dell'interfaccia di darktable come moduli, slider, istogrammi o maschere." src="screenshots/frame_00240_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene in mano il libro fotografico 'Les Américains' di Robert Frank. Sullo sfondo è visibile un altro volume con grafica stilizzata (montagne e foglie). Le mani tengono aperto il libro, mostrando la copertina con la fotografia in bianco e nero di persone su un autobus. Non sono presenti elementi dell'interfaccia di darktable come moduli, slider, istogrammi o maschere.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene aperto un libro d'arte o un portfolio fotografico su sfondo nero. Al centro è visibile una fotografia in bianco e nero di una strada buia con linee centrali che convergono verso l'orizzonte, caratterizzata da forti contrasti tra luci e ombre. Sullo sfondo del libro si intravedono disegni stilizzati in bianco e nero (montagne, foglie, forme organiche), probabilmente ispirati allo stile di Henri Matisse. Le mani della persona tengono il libro aperto; sulle dita sono visibili anelli. Il contesto narrativo fa riferimento all'analisi dei contrasti nella fotografia, ma l'interfaccia di darktable non è presente nell'immagine." src="screenshots/frame_00270_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona che tiene aperto un libro d'arte o un portfolio fotografico su sfondo nero. Al centro è visibile una fotografia in bianco e nero di una strada buia con linee centrali che convergono verso l'orizzonte, caratterizzata da forti contrasti tra luci e ombre. Sullo sfondo del libro si intravedono disegni stilizzati in bianco e nero (montagne, foglie, forme organiche), probabilmente ispirati allo stile di Henri Matisse. Le mani della persona tengono il libro aperto; sulle dita sono visibili anelli. Il contesto narrativo fa riferimento all'analisi dei contrasti nella fotografia, ma l'interfaccia di darktable non è presente nell'immagine.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione</li>
+<li>Profilo colore in ingresso</li>
+<li>Rotazione e prospettiva</li>
+<li>Ritaglio</li>
+</ul>
+<hr />
+<h2 id="3-conversione-in-bianco-e-nero-limiti-degli-strumenti-legacy">3. Conversione in bianco e nero: limiti degli strumenti legacy<a class="headerlink" href="#3-conversione-in-bianco-e-nero-limiti-degli-strumenti-legacy" title="Permanent link">&para;</a></h2>
+<p><strong>[05:20 – 08:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=320">Guarda nel video</a></p>
+<p>Confronto tra il vecchio equalizzatore B&amp;W (deprecato) e i moduli moderni. Dimostrazione dei rischi di perdita di dettaglio e introduzione di artefatti quando si utilizzano regolazioni estreme sui canali con strumenti obsoleti.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con una raccolta di 73 immagini RAW (formato RAF). È selezionata una sola immagine (la #68), visibile con un bordo bianco. Il pannello a destra mostra le opzioni per le immagini selezionate, tra cui 'remove', 'delete (trash)', 'copy', 'duplicate', 'create HDR', ecc. Il pannello sinistro elenca le collezioni e i roll cinematografici. Nessun modulo di editing è attivo; l'utente si trova nella fase preliminare prima di passare all'editor per ripristinare lo stato raw e ricostruire la correzione." src="screenshots/frame_00340_073.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con una raccolta di 73 immagini RAW (formato RAF). È selezionata una sola immagine (la #68), visibile con un bordo bianco. Il pannello a destra mostra le opzioni per le immagini selezionate, tra cui 'remove', 'delete (trash)', 'copy', 'duplicate', 'create HDR', ecc. Il pannello sinistro elenca le collezioni e i roll cinematografici. Nessun modulo di editing è attivo; l'utente si trova nella fase preliminare prima di passare all'editor per ripristinare lo stato raw e ricostruire la correzione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image_count</td>
+<td>1</td>
+</tr>
+<tr>
+<td>total_images_in_collection</td>
+<td>73</td>
+</tr>
+<tr>
+<td>current_collection</td>
+<td>FR darktable video (73)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'rotate and perspective' attivo con una griglia di punti di controllo verdi sovrapposta all'immagine, indicante l'applicazione di correzioni prospettiche. È visibile la selezione della modalità 'fit' per la struttura e l'opzione 'automatically correct for vertical perspective distortion' attivata. Lo strumento sta correggendo le verticali dell'immagine (es. colonne e bordi delle sedie), con un leggero rotazione di 1.95° e uno spostamento verticale minimo della lente. Sullo sfondo si intravede l'anteprima dell'immagine originale nella barra laterale sinistra." src="screenshots/frame_00437_230.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'rotate and perspective' attivo con una griglia di punti di controllo verdi sovrapposta all'immagine, indicante l'applicazione di correzioni prospettiche. È visibile la selezione della modalità 'fit' per la struttura e l'opzione 'automatically correct for vertical perspective distortion' attivata. Lo strumento sta correggendo le verticali dell'immagine (es. colonne e bordi delle sedie), con un leggero rotazione di 1.95° e uno spostamento verticale minimo della lente. Sullo sfondo si intravede l'anteprima dell'immagine originale nella barra laterale sinistra.</em></p>
+<p><strong>Modulo:</strong> rotate and perspective</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rotation</td>
+<td>1.95°</td>
+</tr>
+<tr>
+<td>automatic cropping</td>
+<td>original format</td>
+</tr>
+<tr>
+<td>lens shift (vertical)</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td>lens shift (horizontal)</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>shear</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>lens model</td>
+<td>generic</td>
+</tr>
+<tr>
+<td>structure</td>
+<td>fit</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'crop' attivo sulla destra; è stato applicato un ritaglio quadrato (aspect ratio 1:1) sull'immagine principale, che raffigura tre persone sedute a un tavolo all'aperto in una luce dorata. Una guida visiva del crop è evidenziata sullo sfondo dell'immagine, e la dimensione del crop è indicata come 3958 × 3958 pixel. Il pannello sinistro mostra i moduli disponibili, mentre in basso è presente la filmstrip con le miniature delle immagini. L'utente sta preparando l'immagine per una conversione in bianco e nero ad alto contrasto." src="screenshots/frame_00450_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'crop' attivo sulla destra; è stato applicato un ritaglio quadrato (aspect ratio 1:1) sull'immagine principale, che raffigura tre persone sedute a un tavolo all'aperto in una luce dorata. Una guida visiva del crop è evidenziata sullo sfondo dell'immagine, e la dimensione del crop è indicata come 3958 × 3958 pixel. Il pannello sinistro mostra i moduli disponibili, mentre in basso è presente la filmstrip con le miniature delle immagini. L'utente sta preparando l'immagine per una conversione in bianco e nero ad alto contrasto.</em></p>
+<p><strong>Modulo:</strong> crop</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aspect</td>
+<td>square 1.00</td>
+</tr>
+<tr>
+<td>margins</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'crop' attivo nel pannello destro; l'utente sta applicando un ritaglio artistico a formato quadrato, come indicato dal cursore posizionato su 'crop' e dal contesto narrativo. L'immagine principale è una scena esterna in un caffè, con tre persone sedute; la composizione è già parzialmente ritagliata. Il pannello sinistro mostra la libreria delle immagini, mentre in basso è visibile la barra delle miniature. Non sono attive maschere né moduli di conversione B/N in questo momento." src="screenshots/frame_00446_490.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'crop' attivo nel pannello destro; l'utente sta applicando un ritaglio artistico a formato quadrato, come indicato dal cursore posizionato su 'crop' e dal contesto narrativo. L'immagine principale è una scena esterna in un caffè, con tre persone sedute; la composizione è già parzialmente ritagliata. Il pannello sinistro mostra la libreria delle immagini, mentre in basso è visibile la barra delle miniature. Non sono attive maschere né moduli di conversione B/N in questo momento.</em></p>
+<p><strong>Modulo:</strong> crop</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aspect_ratio</td>
+<td>square</td>
+</tr>
+<tr>
+<td>crop_mode</td>
+<td>artistic</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Color Editor' attivo nella scheda 'Basic'. È abilitata l'opzione 'Enable Black &amp; White', ma tutti i cursori della sezione 'Black &amp; White' (Red, Yellow, ecc.) sono a zero, indicando che non è stata applicata alcuna conversione in bianco e nero personalizzata. L'utente sta confrontando questa interfaccia con quella di Capture One, evidenziando la mancanza di un mixer canali analogo a quello di Lightroom per il controllo fine delle tonalità in bianco e nero." src="screenshots/frame_00479_011.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Color Editor' attivo nella scheda 'Basic'. È abilitata l'opzione 'Enable Black &amp; White', ma tutti i cursori della sezione 'Black &amp; White' (Red, Yellow, ecc.) sono a zero, indicando che non è stata applicata alcuna conversione in bianco e nero personalizzata. L'utente sta confrontando questa interfaccia con quella di Capture One, evidenziando la mancanza di un mixer canali analogo a quello di Lightroom per il controllo fine delle tonalità in bianco e nero.</em></p>
+<p><strong>Modulo:</strong> Color Editor</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White Balance Mode</td>
+<td>Shot</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>4426</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>Hue</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Lightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Enable Black &amp; White</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calibrazione colore</li>
+<li>Equalizzatore bianco e nero (deprecato)</li>
+</ul>
+<hr />
+<h2 id="4-calibrazione-colore-e-regolazione-manuale-dei-canali">4. Calibrazione colore e regolazione manuale dei canali<a class="headerlink" href="#4-calibrazione-colore-e-regolazione-manuale-dei-canali" title="Permanent link">&para;</a></h2>
+<p><strong>[08:20 – 11:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=500">Guarda nel video</a></p>
+<p>Utilizzo di un'istanza dedicata di Calibrazione Colore per la conversione in B&amp;N. Selezione di preset (Fuji Acros, Ilford), regolazione manuale dei canali RGB per ottimizzare la resa della pelle e del contrasto, e uso della luminosità per affinare il risultato.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Color Balance' con la tab 'Black &amp; White' attiva e l'opzione 'Enable Black &amp; White' abilitata. Il canale Magenta è impostato a -100, causando una forte desaturazione dei toni violacei e una perdita di dettaglio nelle aree della camicia dell'uomo (visibile in primo piano), che appare piatta e priva di texture. L'immagine è in bianco e nero, con un istogramma a sinistra che mostra una distribuzione concentrata verso le tonalità medie-scure. Il narratore sta dimostrando come un valore estremo di Magenta possa introdurre artefatti e ridurre la definizione dei dettagli tessili." src="screenshots/frame_00540_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Color Balance' con la tab 'Black &amp; White' attiva e l'opzione 'Enable Black &amp; White' abilitata. Il canale Magenta è impostato a -100, causando una forte desaturazione dei toni violacei e una perdita di dettaglio nelle aree della camicia dell'uomo (visibile in primo piano), che appare piatta e priva di texture. L'immagine è in bianco e nero, con un istogramma a sinistra che mostra una distribuzione concentrata verso le tonalità medie-scure. Il narratore sta dimostrando come un valore estremo di Magenta possa introdurre artefatti e ridurre la definizione dei dettagli tessili.</em></p>
+<p><strong>Modulo:</strong> Color Balance</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable Black &amp; White</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Yellow</td>
+<td>-41</td>
+</tr>
+<tr>
+<td>Green</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>Cyan</td>
+<td>-32</td>
+</tr>
+<tr>
+<td>Blue</td>
+<td>-20</td>
+</tr>
+<tr>
+<td>Magenta</td>
+<td>-100</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata e valori di esposizione estremamente alti per il bianco (+5.20 EV) e molto bassi per il nero (-7.25 EV), indicando un tentativo di recupero dinamico su un'immagine sovraesposta. L'opzione 'look only' è abilitata, mostrando solo l'effetto visivo senza applicare modifiche permanenti. L'utente sta regolando manualmente i punti bianchi per ridurre la sovraesposizione e guadagnare spazio per il contrasto nei toni chiari, come descritto nel contesto vocale." src="screenshots/frame_00609_929.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata e valori di esposizione estremamente alti per il bianco (+5.20 EV) e molto bassi per il nero (-7.25 EV), indicando un tentativo di recupero dinamico su un'immagine sovraesposta. L'opzione 'look only' è abilitata, mostrando solo l'effetto visivo senza applicare modifiche permanenti. L'utente sta regolando manualmente i punti bianchi per ridurre la sovraesposizione e guadagnare spazio per il contrasto nei toni chiari, come descritto nel contesto vocale.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+5.20 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-7.25 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>+0.0</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata al centro. Sul pannello destro, il modulo 'raw black/white point' è espanso e attivo, con il toggle 'automatic white point' acceso. L'utente sta correggendo l'esposizione dopo aver notato un sovraesposizione, riducendo il punto bianco per recuperare dettagli nei toni chiari. Il cursore del mouse è posizionato sopra il modulo 'color calibration', ma il modulo attivo rimane 'raw black/white point'." src="screenshots/frame_00598_197.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata al centro. Sul pannello destro, il modulo 'raw black/white point' è espanso e attivo, con il toggle 'automatic white point' acceso. L'utente sta correggendo l'esposizione dopo aver notato un sovraesposizione, riducendo il punto bianco per recuperare dettagli nei toni chiari. Il cursore del mouse è posizionato sopra il modulo 'color calibration', ma il modulo attivo rimane 'raw black/white point'.</em></p>
+<p><strong>Modulo:</strong> raw black/white point</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>automatic white point</td>
+<td>attivato (toggle acceso)</td>
+</tr>
+<tr>
+<td>white point</td>
+<td>ridotto (valore non leggibile ma descritto come 'brought down quite a bit')</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una scena esterna con persone sedute a un tavolo, leggermente sovraesposta. Il cursore del mouse è posizionato sul parametro 'clipping threshold', indicando che l'utente sta regolando i livelli di esposizione. Nella barra inferiore sono visibili i metadati della foto: 1/320s, f/4.5, 90mm, ISO 500. Il narratore commenta di aver dimenticato di correggere l'esposizione prima di procedere, e intende ridurre il 'automatic white point' (riferito qui al clipping threshold o alla correzione del bianco) per recuperare dettagli nei toni chiari." src="screenshots/frame_00600_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una scena esterna con persone sedute a un tavolo, leggermente sovraesposta. Il cursore del mouse è posizionato sul parametro 'clipping threshold', indicando che l'utente sta regolando i livelli di esposizione. Nella barra inferiore sono visibili i metadati della foto: 1/320s, f/4.5, 90mm, ISO 500. Il narratore commenta di aver dimenticato di correggere l'esposizione prima di procedere, e intende ridurre il 'automatic white point' (riferito qui al clipping threshold o alla correzione del bianco) per recuperare dettagli nei toni chiari.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.50 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in bianco e nero, risultato dell'applicazione del modulo 'color calibration' con l'opzione 'bw' attivata, che equalizza i canali RGB per ottenere una conversione monocromatica. L'interfaccia mostra la vista darkroom con il modulo 'color calibration' espanso a destra; il cursore del mouse è posizionato sul pulsante di attivazione di 'color calibration bw'. Il narratore spiega che questa operazione equivale a un mixer canali con tutti i canali impostati uguali, producendo una foto in bianco e nero senza uso di filtri tonali specifici (es. Accros o Elferd)." src="screenshots/frame_00660_000.jpg" /></p>
+<p><em>L'immagine è in bianco e nero, risultato dell'applicazione del modulo 'color calibration' con l'opzione 'bw' attivata, che equalizza i canali RGB per ottenere una conversione monocromatica. L'interfaccia mostra la vista darkroom con il modulo 'color calibration' espanso a destra; il cursore del mouse è posizionato sul pulsante di attivazione di 'color calibration bw'. Il narratore spiega che questa operazione equivale a un mixer canali con tutti i canali impostati uguali, producendo una foto in bianco e nero senza uso di filtri tonali specifici (es. Accros o Elferd).</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color calibration bw</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calibrazione colore</li>
+</ul>
+<hr />
+<h2 id="5-contrasto-locale-e-modellazione-della-luce-con-maschere">5. Contrasto locale e modellazione della luce con maschere<a class="headerlink" href="#5-contrasto-locale-e-modellazione-della-luce-con-maschere" title="Permanent link">&para;</a></h2>
+<p><strong>[11:40 – 15:22]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=700">Guarda nel video</a></p>
+<p>Applicazione di maschere sfumate con il modulo Esposizione per scurire selettivamente lo sfondo e creare un fascio di luce diagonale. Tecnica di dodging &amp; burning per guidare l'attenzione dello spettatore e definire la tridimensionalità.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura tre persone sedute a un tavolo all'aperto. Sul pannello destro, il modulo 'color calibration bw' è attivo (indicato dal pulsante acceso e dall'icona di spunta), mentre i moduli 'color calibration' e 'white balance' sono disattivati. Il cursore del mouse è posizionato sopra 'color calibration bw', coerentemente con il commento del narratore che sta discutendo dell'effetto della rimozione di questa correzione per confrontare l'immagine in bianco e nero con quella a colori. L'istogramma circolare in alto a destra mostra una distribuzione cromatica ridotta, tipica di un'immagine in scala di grigi o fortemente desaturata." src="screenshots/frame_00753_730.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura tre persone sedute a un tavolo all'aperto. Sul pannello destro, il modulo 'color calibration bw' è attivo (indicato dal pulsante acceso e dall'icona di spunta), mentre i moduli 'color calibration' e 'white balance' sono disattivati. Il cursore del mouse è posizionato sopra 'color calibration bw', coerentemente con il commento del narratore che sta discutendo dell'effetto della rimozione di questa correzione per confrontare l'immagine in bianco e nero con quella a colori. L'istogramma circolare in alto a destra mostra una distribuzione cromatica ridotta, tipica di un'immagine in scala di grigi o fortemente desaturata.</em></p>
+<p><strong>Modulo:</strong> color calibration bw</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color calibration bw</td>
+<td>attivo (con icona di attivazione evidenziata)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è visualizzata in bianco e nero all'interno dell'interfaccia di darktable, con il modulo 'color calibration bw' attivo e abilitato. Il cursore del mouse è posizionato sopra l'opzione 'color calibration bw', con un tooltip che conferma 'color calibration bw is switched on'. L'immagine mostra tre persone sedute a un tavolo in un ambiente esterno al crepuscolo; la conversione in bianco e nero enfatizza i contrasti e le texture, come le sedie intrecciate e i volti. La barra degli strumenti inferiore mostra una raccolta di anteprime, e lo stato della fotocamera indica: 1/320 s, f/4.5, 90 mm, ISO 500, RAW aperto." src="screenshots/frame_00758_210.jpg" /></p>
+<p><em>L'immagine è visualizzata in bianco e nero all'interno dell'interfaccia di darktable, con il modulo 'color calibration bw' attivo e abilitato. Il cursore del mouse è posizionato sopra l'opzione 'color calibration bw', con un tooltip che conferma 'color calibration bw is switched on'. L'immagine mostra tre persone sedute a un tavolo in un ambiente esterno al crepuscolo; la conversione in bianco e nero enfatizza i contrasti e le texture, come le sedie intrecciate e i volti. La barra degli strumenti inferiore mostra una raccolta di anteprime, e lo stato della fotocamera indica: 1/320 s, f/4.5, 90 mm, ISO 500, RAW aperto.</em></p>
+<p><strong>Modulo:</strong> color calibration bw</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable</td>
+<td>on</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'exposure gradients' attivo in darktable, con una maschera a gradiente diagonale applicata sull'immagine. L'area selezionata è sovrapposta da un rettangolo giallo brillante che indica la regione interessata dal gradiente; una linea diagonale continua (con punti di controllo) definisce il percorso del gradiente, mentre linee tratteggiate mostrano i bordi della transizione. L'utente sta modificando l'esposizione negativa (-1.0 EV) per scurire selettivamente parti dell'immagine, lasciando intatta una 'traccia di luce' lungo la diagonale — coerentemente con il commento sul rimuovere l'esposizione e creare una seconda maschera opposta." src="screenshots/frame_00870_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure gradients' attivo in darktable, con una maschera a gradiente diagonale applicata sull'immagine. L'area selezionata è sovrapposta da un rettangolo giallo brillante che indica la regione interessata dal gradiente; una linea diagonale continua (con punti di controllo) definisce il percorso del gradiente, mentre linee tratteggiate mostrano i bordi della transizione. L'utente sta modificando l'esposizione negativa (-1.0 EV) per scurire selettivamente parti dell'immagine, lasciando intatta una 'traccia di luce' lungo la diagonale — coerentemente con il commento sul rimuovere l'esposizione e creare una seconda maschera opposta.</em></p>
+<p><strong>Modulo:</strong> exposure gradients</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>2 shapes used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'exposure gradients' attivo con una maschera disegnata a forma di fascio luminoso diagonale (una 'shaft of light') che attraversa l'immagine da alto-sinistra a basso-destra. La maschera è visualizzata in giallo fluorescente e copre una porzione centrale della scena, corrispondente alla zona che l’utente intende oscurare. Il cursore del mouse è posizionato all’interno della maschera, suggerendo un’operazione di modifica in corso. L’immagine sottostante è in bianco e nero, con tre persone sedute a un tavolo; la maschera sta già applicando un effetto di riduzione dell’esposizione nella zona selezionata, come indicato dal valore 'compensate camera exposure (-1.0 EV)' e dalla descrizione del narratore che parla di 'darken that quite a lot' e 'removing some of the background'." src="screenshots/frame_00900_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure gradients' attivo con una maschera disegnata a forma di fascio luminoso diagonale (una 'shaft of light') che attraversa l'immagine da alto-sinistra a basso-destra. La maschera è visualizzata in giallo fluorescente e copre una porzione centrale della scena, corrispondente alla zona che l’utente intende oscurare. Il cursore del mouse è posizionato all’interno della maschera, suggerendo un’operazione di modifica in corso. L’immagine sottostante è in bianco e nero, con tre persone sedute a un tavolo; la maschera sta già applicando un effetto di riduzione dell’esposizione nella zona selezionata, come indicato dal valore 'compensate camera exposure (-1.0 EV)' e dalla descrizione del narratore che parla di 'darken that quite a lot' e 'removing some of the background'.</em></p>
+<p><strong>Modulo:</strong> exposure gradients</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.0000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>3 shapes used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in bianco e nero e mostra un uomo con occhiali che legge un giornale, seduto a un tavolo con altre persone sullo sfondo. Il modulo 'color calibration bw' è attivo con il canale blu (B) abbassato a -0.604, indicando una riduzione della componente blu per aumentare il contrasto o scurire le tonalità fredde, coerentemente con il commento del narratore che parla di 'muovere giù i blu per ottenere contrasto'. Il canale verde (G) è a 0.000, ma il narratore menziona di voler scurire leggermente i verdi, suggerendo un intervento imminente non ancora applicato. L'interfaccia mostra lo stato corrente dopo un primo aggiustamento sui canali cromatici in modalità B&amp;W." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>L'immagine è in bianco e nero e mostra un uomo con occhiali che legge un giornale, seduto a un tavolo con altre persone sullo sfondo. Il modulo 'color calibration bw' è attivo con il canale blu (B) abbassato a -0.604, indicando una riduzione della componente blu per aumentare il contrasto o scurire le tonalità fredde, coerentemente con il commento del narratore che parla di 'muovere giù i blu per ottenere contrasto'. Il canale verde (G) è a 0.000, ma il narratore menziona di voler scurire leggermente i verdi, suggerendo un intervento imminente non ancora applicato. L'interfaccia mostra lo stato corrente dopo un primo aggiustamento sui canali cromatici in modalità B&amp;W.</em></p>
+<p><strong>Modulo:</strong> color calibration bw</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>-0.604</td>
+</tr>
+<tr>
+<td>colorfulness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>gray</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione</li>
+<li>Maschera disegnata</li>
+</ul>
+<hr />
+<h2 id="6-mascheramento-con-gradienti-e-bilanciamento-tonale-iniziale">6. Mascheramento con gradienti e bilanciamento tonale iniziale<a class="headerlink" href="#6-mascheramento-con-gradienti-e-bilanciamento-tonale-iniziale" title="Permanent link">&para;</a></h2>
+<p><strong>[15:24 – 19:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=924">Guarda nel video</a></p>
+<p>Applicazione di gradienti diagonali per attenuare elementi di disturbo e primo utilizzo dell'equalizzatore tonale per il dodging &amp; burning globale e locale su soggetti specifici.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'exposure gradient 2' attivo in darktable, con una maschera a gradiente diagonale applicata all'immagine in bianco e nero. Una linea diagonale visibile sullo schermo indica la direzione e l'inclinazione del gradiente, coerentemente con il commento del narratore che chiede di renderlo 'più ripido' e 'a diagonale'. La maschera è attiva (1 shape used), con opacità al 100% e senza inversione o raffinamento. L'immagine mostra tre persone sedute in un ambiente notturno, con l'effetto del gradiente che modifica l'esposizione in modo graduale da un angolo all'altro." src="screenshots/frame_00960_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure gradient 2' attivo in darktable, con una maschera a gradiente diagonale applicata all'immagine in bianco e nero. Una linea diagonale visibile sullo schermo indica la direzione e l'inclinazione del gradiente, coerentemente con il commento del narratore che chiede di renderlo 'più ripido' e 'a diagonale'. La maschera è attiva (1 shape used), con opacità al 100% e senza inversione o raffinamento. L'immagine mostra tre persone sedute in un ambiente notturno, con l'effetto del gradiente che modifica l'esposizione in modo graduale da un angolo all'altro.</em></p>
+<p><strong>Modulo:</strong> exposure gradient 2</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>-0.81 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>1 shape used</td>
+<td>True</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata (advanced), con una curva tonale personalizzata visibile nell'istogramma: la curva è stata modificata per abbassare i toni scuri (valori negativi, intorno a -4) e sollevare i toni chiari (valori positivi). L'utente sta regolando il punto di intersezione con lo zero per spostare l'accento tonale, specificamente per scurire la camicia dell'uomo in primo piano, che appare attorno a -4 EV. La foto è in bianco e nero, con un forte contrasto e dettagli visibili nelle ombre e nei mezzi toni." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata (advanced), con una curva tonale personalizzata visibile nell'istogramma: la curva è stata modificata per abbassare i toni scuri (valori negativi, intorno a -4) e sollevare i toni chiari (valori positivi). L'utente sta regolando il punto di intersezione con lo zero per spostare l'accento tonale, specificamente per scurire la camicia dell'uomo in primo piano, che appare attorno a -4 EV. La foto è in bianco e nero, con un forte contrasto e dettagli visibili nelle ombre e nei mezzi toni.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display_exposure_mask</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con una maschera disegnata a mano attorno alla figura di un uomo seduto a destra (visibile come area più chiara all'interno di un contorno bianco tratteggiato). La maschera è attiva e applicata localmente, come indicato dallo stato '1 shape used' e dall'indicatore 'display exposure mask' attivato. L'utente sta modificando la tonalità localmente su quella porzione dell'immagine per ridurne la visibilità, in linea con il commento sul 'person too visible'. L'istogramma del tone equalizer mostra una curva piatta (nessuna modifica applicata ancora), suggerendo che l'utente sta per abbassare i valori dopo aver definito la maschera." src="screenshots/frame_01140_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con una maschera disegnata a mano attorno alla figura di un uomo seduto a destra (visibile come area più chiara all'interno di un contorno bianco tratteggiato). La maschera è attiva e applicata localmente, come indicato dallo stato '1 shape used' e dall'indicatore 'display exposure mask' attivato. L'utente sta modificando la tonalità localmente su quella porzione dell'immagine per ridurne la visibilità, in linea con il commento sul 'person too visible'. L'istogramma del tone equalizer mostra una curva piatta (nessuna modifica applicata ancora), suggerendo che l'utente sta per abbassare i valori dopo aver definito la maschera.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>advanced</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>1 shape used</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'exposure' attivo con esposizione impostata a 0.00 EV e compensazione dell'esposizione della fotocamera a -1.0 EV. Il cursore del mouse è posizionato sull'immagine in anteprima, che è in bianco e nero e raffigura tre persone sedute a un tavolo; l'utente sta descrivendo l'intenzione di aggiungere gradienti per oscurare una gamba di una sedia troppo visibile. Il modulo 'exposure gradients' è espanso (visibile nell'elenco moduli), indicando che l'utente sta lavorando con maschere graduate, anche se nessuna maschera è attualmente applicata o visualizzata sull'immagine." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'exposure' attivo con esposizione impostata a 0.00 EV e compensazione dell'esposizione della fotocamera a -1.0 EV. Il cursore del mouse è posizionato sull'immagine in anteprima, che è in bianco e nero e raffigura tre persone sedute a un tavolo; l'utente sta descrivendo l'intenzione di aggiungere gradienti per oscurare una gamba di una sedia troppo visibile. Il modulo 'exposure gradients' è espanso (visibile nell'elenco moduli), indicando che l'utente sta lavorando con maschere graduate, anche se nessuna maschera è attualmente applicata o visualizzata sull'immagine.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.0000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una singola immagine in bianco e nero selezionata (1/74). L'immagine raffigura tre persone sedute a un tavolo in un ambiente scuro; il soggetto principale è un uomo calvo con occhiali sulla destra, mentre una coppia è visibile sullo sfondo a sinistra. Il pannello dei moduli a destra elenca tutti i moduli disponibili (es. 'exposure gradient', 'tone equalizer', 'dodge &amp; burn'), ma nessuno è espanso o attivo. Il narratore sta descrivendo l'intenzione di usare il 'tone equalizer' per effettuare dodging e burning su aree specifiche (l'uomo a destra e la coppia), ma al momento dello screenshot non è ancora stato attivato alcun modulo di correzione tonale. Lo stato corrente è preparatorio: si è nella fase di selezione dell'immagine prima dell'editing." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una singola immagine in bianco e nero selezionata (1/74). L'immagine raffigura tre persone sedute a un tavolo in un ambiente scuro; il soggetto principale è un uomo calvo con occhiali sulla destra, mentre una coppia è visibile sullo sfondo a sinistra. Il pannello dei moduli a destra elenca tutti i moduli disponibili (es. 'exposure gradient', 'tone equalizer', 'dodge &amp; burn'), ma nessuno è espanso o attivo. Il narratore sta descrivendo l'intenzione di usare il 'tone equalizer' per effettuare dodging e burning su aree specifiche (l'uomo a destra e la coppia), ma al momento dello screenshot non è ancora stato attivato alcun modulo di correzione tonale. Lo stato corrente è preparatorio: si è nella fase di selezione dell'immagine prima dell'editing.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera sfumata (Gradiente)</li>
+<li>Equalizzatore tonale</li>
+</ul>
+<hr />
+<h2 id="7-gestione-del-contrasto-locale-e-nitidezza-selettiva">7. Gestione del contrasto locale e nitidezza selettiva<a class="headerlink" href="#7-gestione-del-contrasto-locale-e-nitidezza-selettiva" title="Permanent link">&para;</a></h2>
+<p><strong>[19:10 – 23:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=1150">Guarda nel video</a></p>
+<p>Utilizzo del modulo contrasto locale e transizione al modulo diffondi o nitidezza con preset de-haze, applicato selettivamente sulle luci del soggetto tramite maschere disegnate e parametriche.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con una maschera disegnata a mano attorno a due persone sullo sfondo (la coppia seduta), mentre un uomo in primo piano è escluso dalla maschera. La curva tonale è stata modificata con un punto di controllo selezionato per ridurre l'esposizione (probabilmente intorno a -1.4 EV, come indicato dal contesto vocale), e la maschera ha un raggio di feathering elevato (47.3 px) per evitare transizioni dure. La maschera è visibile come contorno bianco sottile e semitrasparente. L'immagine è in bianco e nero, con esposizione originale 1/320s, f/4.5, 90mm, ISO 500." src="screenshots/frame_01260_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con una maschera disegnata a mano attorno a due persone sullo sfondo (la coppia seduta), mentre un uomo in primo piano è escluso dalla maschera. La curva tonale è stata modificata con un punto di controllo selezionato per ridurre l'esposizione (probabilmente intorno a -1.4 EV, come indicato dal contesto vocale), e la maschera ha un raggio di feathering elevato (47.3 px) per evitare transizioni dure. La maschera è visibile come contorno bianco sottile e semitrasparente. L'immagine è in bianco e nero, con esposizione originale 1/320s, f/4.5, 90mm, ISO 500.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering_radius</td>
+<td>47.3 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>input_after_blur</td>
+<td>47.3 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine in bianco e nero selezionata. Sul pannello destro, nella sezione 'other', sono visibili due istanze attive del modulo 'tone equalizer': 'tone equalizer people behind' e 'tone equalizer person right'. Il narratore sta descrivendo un intervento di dodging/burning locale per ridurre la luminosità su specifiche aree (le persone sullo sfondo e a destra), mantenendo i dettagli — evidenziando il vantaggio del tone equalizer rispetto al modulo exposure per correzioni locali precise. L'immagine mostra una scena con tre persone sedute, illuminazione contrastante e dettagli conservati nelle zone ombreggiate." src="screenshots/frame_01288_529.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine in bianco e nero selezionata. Sul pannello destro, nella sezione 'other', sono visibili due istanze attive del modulo 'tone equalizer': 'tone equalizer people behind' e 'tone equalizer person right'. Il narratore sta descrivendo un intervento di dodging/burning locale per ridurre la luminosità su specifiche aree (le persone sullo sfondo e a destra), mantenendo i dettagli — evidenziando il vantaggio del tone equalizer rispetto al modulo exposure per correzioni locali precise. L'immagine mostra una scena con tre persone sedute, illuminazione contrastante e dettagli conservati nelle zone ombreggiate.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tone equalizer people behind</td>
+<td>attivo (con icona di attivazione visibile)</td>
+</tr>
+<tr>
+<td>tone equalizer person right</td>
+<td>attivo (con icona di attivazione visibile)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer bag' attivo nella scheda 'masking'. L'immagine è in bianco e nero e mostra una scena con tre persone sedute a un tavolo; sul lato destro sono visibili i controlli avanzati per la mascheratura, inclusi parametri di esposizione e contrasto della maschera, e opzioni per il raffinamento. È evidente che l'utente sta lavorando su una maschera espositiva (come indicato da 'display exposure mask' attivato e dai valori di compensazione), probabilmente per isolare e modificare selettivamente aree dell'immagine. La presenza del cursore sopra la sezione delle maschere e il testo 'working...' suggerisce un'operazione in corso." src="screenshots/frame_01320_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer bag' attivo nella scheda 'masking'. L'immagine è in bianco e nero e mostra una scena con tre persone sedute a un tavolo; sul lato destro sono visibili i controlli avanzati per la mascheratura, inclusi parametri di esposizione e contrasto della maschera, e opzioni per il raffinamento. È evidente che l'utente sta lavorando su una maschera espositiva (come indicato da 'display exposure mask' attivato e dai valori di compensazione), probabilmente per isolare e modificare selettivamente aree dell'immagine. La presenza del cursore sopra la sezione delle maschere e il testo 'working...' suggerisce un'operazione in corso.</em></p>
+<p><strong>Modulo:</strong> tone equalizer bag</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance estimator</td>
+<td>RGB euclidean norm</td>
+</tr>
+<tr>
+<td>preserve details</td>
+<td>eigf</td>
+</tr>
+<tr>
+<td>filter diffusion</td>
+<td>1</td>
+</tr>
+<tr>
+<td>smoothing diameter</td>
+<td>5.00 %</td>
+</tr>
+<tr>
+<td>edges refinement/feathering</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>mask quantization</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>mask exposure compensation</td>
+<td>-2.16 EV</td>
+</tr>
+<tr>
+<td>mask contrast compensation</td>
+<td>-0.20 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' selezionato nel pannello destro. È aperto il menu contestuale per il modulo 'exposure', con l'opzione 'new instance' evidenziata, indicando che l'utente sta per creare una nuova istanza del modulo per applicare un'ulteriore correzione espositiva localizzata (probabilmente con una maschera a gradiente, come menzionato nel contesto). L'immagine centrale è in bianco e nero e mostra tre persone sedute a un tavolo; la parte superiore dell'immagine appare più scura, coerentemente con l'intenzione dell'utente di modificare quella zona. Il cursore è posizionato sul menu 'new instance', confermando l’azione imminente." src="screenshots/frame_01370_170.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' selezionato nel pannello destro. È aperto il menu contestuale per il modulo 'exposure', con l'opzione 'new instance' evidenziata, indicando che l'utente sta per creare una nuova istanza del modulo per applicare un'ulteriore correzione espositiva localizzata (probabilmente con una maschera a gradiente, come menzionato nel contesto). L'immagine centrale è in bianco e nero e mostra tre persone sedute a un tavolo; la parte superiore dell'immagine appare più scura, coerentemente con l'intenzione dell'utente di modificare quella zona. Il cursore è posizionato sul menu 'new instance', confermando l’azione imminente.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>black</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>white</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'utente sta applicando una maschera a gradiente per oscurare la parte superiore dell'immagine in bianco e nero. È visibile un'istanza del modulo 'exposure' con una maschera disegnata (gradiente verticale) attiva, impostata su 'hardish transition', che rende completamente nera la porzione superiore della foto. Il cursore è posizionato sopra l'area da correggere, e lo stato 'working...' indica che l'operazione è in corso o appena completata." src="screenshots/frame_01380_000.jpg" /></p>
+<p><em>L'utente sta applicando una maschera a gradiente per oscurare la parte superiore dell'immagine in bianco e nero. È visibile un'istanza del modulo 'exposure' con una maschera disegnata (gradiente verticale) attiva, impostata su 'hardish transition', che rende completamente nera la porzione superiore della foto. Il cursore è posizionato sopra l'area da correggere, e lo stato 'working...' indica che l'operazione è in corso o appena completata.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>-1.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione</li>
+<li>Contrasto locale</li>
+<li>Diffondi o nitidezza</li>
+</ul>
+<hr />
+<h2 id="8-ritocco-finale-e-chiusura-della-prima-immagine">8. Ritocco finale e chiusura della prima immagine<a class="headerlink" href="#8-ritocco-finale-e-chiusura-della-prima-immagine" title="Permanent link">&para;</a></h2>
+<p><strong>[23:20 – 25:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=1400">Guarda nel video</a></p>
+<p>Disattivazione temporanea dei moduli pesanti per ottimizzare le prestazioni, rimozione di riflessi e imperfezioni con il modulo ritocco, e verifica finale dell'immagine in bianco e nero ad alto contrasto.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'local contrast' attivo nel pannello dei moduli a destra. L'immagine visualizzata è in bianco e nero, con un soggetto principale (uomo con occhiali) seduto a un tavolo; il modulo è configurato con 'local laplacian filter' abilitato, i toni chiari al 50%, le ombre al 108% (sottolineando un rinforzo delle ombre), e un raggio di tonalità media di 0.500. Il cursore del mouse è posizionato sopra il toggle del modulo, confermando che è attivo. A sinistra sono visibili i moduli della pipeline (history, color picker, ecc.), mentre in basso la barra delle miniature mostra altre immagini della collezione." src="screenshots/frame_01419_829.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con il modulo 'local contrast' attivo nel pannello dei moduli a destra. L'immagine visualizzata è in bianco e nero, con un soggetto principale (uomo con occhiali) seduto a un tavolo; il modulo è configurato con 'local laplacian filter' abilitato, i toni chiari al 50%, le ombre al 108% (sottolineando un rinforzo delle ombre), e un raggio di tonalità media di 0.500. Il cursore del mouse è posizionato sopra il toggle del modulo, confermando che è attivo. A sinistra sono visibili i moduli della pipeline (history, color picker, ecc.), mentre in basso la barra delle miniature mostra altre immagini della collezione.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>local laplacian filter</td>
+<td>enable</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>108%</td>
+</tr>
+<tr>
+<td>midtone range</td>
+<td>0.500</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'diffuse or sharpen' attivo nella sezione 'lighttable'. L'immagine centrale è in bianco e nero, raffigurante tre persone sedute a un tavolo in un ambiente scuro; il modulo è configurato con parametri di diffusione al valore neutro (0% o 0 px), indicando che non è ancora stata applicata alcuna modifica. Il cursore del mouse è posizionato sopra il titolo del modulo, suggerendo che l’utente sta per interagire con esso. A sinistra sono visibili i moduli disponibili, tra cui 'local contrast' (non attivo), confermando il contesto narrativo sul passaggio da 'local contrast' a 'diffuse or sharpen'." src="screenshots/frame_01426_430.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'diffuse or sharpen' attivo nella sezione 'lighttable'. L'immagine centrale è in bianco e nero, raffigurante tre persone sedute a un tavolo in un ambiente scuro; il modulo è configurato con parametri di diffusione al valore neutro (0% o 0 px), indicando che non è ancora stata applicata alcuna modifica. Il cursore del mouse è posizionato sopra il titolo del modulo, suggerendo che l’utente sta per interagire con esso. A sinistra sono visibili i moduli disponibili, tra cui 'local contrast' (non attivo), confermando il contesto narrativo sul passaggio da 'local contrast' a 'diffuse or sharpen'.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>central radius</td>
+<td>0 px</td>
+</tr>
+<tr>
+<td>radius span</td>
+<td>8 px</td>
+</tr>
+<tr>
+<td>1st order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'diffuse or sharpen' attivo, utilizzato per un aggiustamento locale del contrasto e della nitidezza. L'immagine è in bianco e nero e raffigura tre persone sedute in un ambiente scuro, con l'uomo anziano in primo piano come soggetto principale. I parametri indicano un forte aumento dell'anisotropia del 3° ordine (+500%), suggerendo un'intensificazione selettiva dei contorni e delle strutture locali, mentre la velocità del 3° ordine è ridotta (-50%) per controllare la diffusione. Non sono attive maschere, e il modulo è applicato all'intera immagine, coerentemente con quanto descritto dal narratore riguardo all'uso di un ajustamento locale su tutta l'immagine prima di focalizzarsi sui soggetti." src="screenshots/frame_01443_089.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'diffuse or sharpen' attivo, utilizzato per un aggiustamento locale del contrasto e della nitidezza. L'immagine è in bianco e nero e raffigura tre persone sedute in un ambiente scuro, con l'uomo anziano in primo piano come soggetto principale. I parametri indicano un forte aumento dell'anisotropia del 3° ordine (+500%), suggerendo un'intensificazione selettiva dei contorni e delle strutture locali, mentre la velocità del 3° ordine è ridotta (-50%) per controllare la diffusione. Non sono attive maschere, e il modulo è applicato all'intera immagine, coerentemente con quanto descritto dal narratore riguardo all'uso di un ajustamento locale su tutta l'immagine prima di focalizzarsi sui soggetti.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>central radius</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>radius span</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>1st order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>-50.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+500.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.05</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con l'immagine in bianco e nero selezionata. Il modulo è configurato per un effetto di de-haze tramite la riduzione della velocità del 3° ordine (-50%) e un forte aumento dell'anisotropia del 3° ordine (+500%), tipico per migliorare il contrasto locale su dettagli fini senza appiattire l'intera immagine. L'utente sta esplorando i preset, come indicato dal menu a tendina 'presets' aperto e dal commento sul de-haze per foto in bianco e nero." src="screenshots/frame_01516_390.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con l'immagine in bianco e nero selezionata. Il modulo è configurato per un effetto di de-haze tramite la riduzione della velocità del 3° ordine (-50%) e un forte aumento dell'anisotropia del 3° ordine (+500%), tipico per migliorare il contrasto locale su dettagli fini senza appiattire l'intera immagine. L'utente sta esplorando i preset, come indicato dal menu a tendina 'presets' aperto e dal commento sul de-haze per foto in bianco e nero.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>central radius</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>radius span</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>1st order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>-50.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+500.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.05</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine in bianco e nero selezionata (1/74). Il modulo 'local contrast' è visibile nella sezione dei moduli a destra, espanso e attivo (indicato dal pulsante acceso), ma non sono visibili i dettagli dei parametri all'interno del modulo stesso; tuttavia, il contesto narrativo indica che l'utente sta per utilizzarlo per aggiungere contrasto locale e successivamente affinare la nitidezza su aree specifiche. Non ci sono maschere attive né istogrammi evidenti; l'immagine è visualizzata al centro con la barra degli strumenti inferiore che mostra anteprime delle immagini della collezione." src="screenshots/frame_01440_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine in bianco e nero selezionata (1/74). Il modulo 'local contrast' è visibile nella sezione dei moduli a destra, espanso e attivo (indicato dal pulsante acceso), ma non sono visibili i dettagli dei parametri all'interno del modulo stesso; tuttavia, il contesto narrativo indica che l'utente sta per utilizzarlo per aggiungere contrasto locale e successivamente affinare la nitidezza su aree specifiche. Non ci sono maschere attive né istogrammi evidenti; l'immagine è visualizzata al centro con la barra degli strumenti inferiore che mostra anteprime delle immagini della collezione.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>sharpen</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Diffondi o nitidezza</li>
+<li>Ritocco</li>
+</ul>
+<hr />
+<h2 id="9-workflow-seconda-immagine-profilo-esposizione-e-simulazione-pellicola">9. Workflow seconda immagine: profilo, esposizione e simulazione pellicola<a class="headerlink" href="#9-workflow-seconda-immagine-profilo-esposizione-e-simulazione-pellicola" title="Permanent link">&para;</a></h2>
+<p><strong>[25:50 – 32:13]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=1550">Guarda nel video</a></p>
+<p>Inizio editing di una seconda foto a basso contrasto: impostazione profilo colore, ritaglio, regolazione esposizione e applicazione di look 3D per la conversione in bianco e nero, con attenzione alla posizione nella pipeline.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'graduated density' attivo nella sezione 'other'. È visibile una maschera disegnata a mano (linea bianca irregolare) intorno al volto e alla testa di un uomo in primo piano, in una foto in bianco e nero. La maschera è stata creata per isolare il soggetto da elaborazioni successive, come indicato dal contesto: l’utente intende usarla come maschera parametrica e disegnata nel canale JZ per rimuovere le aree più scure. Gli slider dei parametri mostrano valori estremi per l'anisotropia del 1° e 3° ordine (+200%), suggerendo un'intensa manipolazione della struttura direzionale dell'immagine. L'istogramma circolare in alto a destra indica un'immagine prevalentemente scura con pochi dettagli nelle luci. Il cursore è posizionato sopra la maschera, confermando che l'utente sta ancora definendola." src="screenshots/frame_01585_170.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'graduated density' attivo nella sezione 'other'. È visibile una maschera disegnata a mano (linea bianca irregolare) intorno al volto e alla testa di un uomo in primo piano, in una foto in bianco e nero. La maschera è stata creata per isolare il soggetto da elaborazioni successive, come indicato dal contesto: l’utente intende usarla come maschera parametrica e disegnata nel canale JZ per rimuovere le aree più scure. Gli slider dei parametri mostrano valori estremi per l'anisotropia del 1° e 3° ordine (+200%), suggerendo un'intensa manipolazione della struttura direzionale dell'immagine. L'istogramma circolare in alto a destra indica un'immagine prevalentemente scura con pochi dettagli nelle luci. Il cursore è posizionato sopra la maschera, confermando che l'utente sta ancora definendola.</em></p>
+<p><strong>Modulo:</strong> graduated density</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.25</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>-20.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra un modulo 'graduated density' attivo con una maschera disegnata a mano (drawn mask) attorno alla testa e alle spalle di un uomo in primo piano; la maschera è visibile come contorno bianco irregolare. È attiva la scheda 'parametric mask', con i parametri di feathering radius impostati a 47.3 px per evitare artefatti ai bordi, come indicato dal narratore. La maschera è esclusiva e combinata, e il boost factor è a 0.00 EV, suggerendo che l’effetto de-hazing o chiarificazione è ancora da applicare o è temporaneamente disattivato. Lo screenshot è in scala di grigi, con esposizione bassa e contrasto elevato." src="screenshots/frame_01620_000.jpg" /></p>
+<p><em>L'immagine mostra un modulo 'graduated density' attivo con una maschera disegnata a mano (drawn mask) attorno alla testa e alle spalle di un uomo in primo piano; la maschera è visibile come contorno bianco irregolare. È attiva la scheda 'parametric mask', con i parametri di feathering radius impostati a 47.3 px per evitare artefatti ai bordi, come indicato dal narratore. La maschera è esclusiva e combinata, e il boost factor è a 0.00 EV, suggerendo che l’effetto de-hazing o chiarificazione è ancora da applicare o è temporaneamente disattivato. Lo screenshot è in scala di grigi, con esposizione bassa e contrasto elevato.</em></p>
+<p><strong>Modulo:</strong> graduated density</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering radius</td>
+<td>47.3 px</td>
+</tr>
+<tr>
+<td>blur radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>boost factor</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>input</td>
+<td>0.60, 0.79, 1.0, 1.0</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.25</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'retouch' attivo, con la scheda 'retouch tools' selezionata. L'immagine è in bianco e nero e raffigura tre persone sedute a un tavolo; l'utente sta per rimuovere una piccola imperfezione (descritta come 'little blood') utilizzando lo strumento di ritocco. Nessuna forma è stata ancora creata (shapes: 0), e l'algoritmo selezionato è 'wavelet decompose'. Il cursore del mouse è posizionato sopra il pulsante 'retouch tools', indicando che l'utente sta per iniziare a disegnare una maschera. Non sono presenti maschere attive, ma è abilitata l'opzione 'show guides'." src="screenshots/frame_01671_670.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'retouch' attivo, con la scheda 'retouch tools' selezionata. L'immagine è in bianco e nero e raffigura tre persone sedute a un tavolo; l'utente sta per rimuovere una piccola imperfezione (descritta come 'little blood') utilizzando lo strumento di ritocco. Nessuna forma è stata ancora creata (shapes: 0), e l'algoritmo selezionato è 'wavelet decompose'. Il cursore del mouse è posizionato sopra il pulsante 'retouch tools', indicando che l'utente sta per iniziare a disegnare una maschera. Non sono presenti maschere attive, ma è abilitata l'opzione 'show guides'.</em></p>
+<p><strong>Modulo:</strong> retouch</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shapes</td>
+<td>0</td>
+</tr>
+<tr>
+<td>algorithms</td>
+<td>wavelet decompose</td>
+</tr>
+<tr>
+<td>scales</td>
+<td>0</td>
+</tr>
+<tr>
+<td>current</td>
+<td>0</td>
+</tr>
+<tr>
+<td>merge from</td>
+<td>0</td>
+</tr>
+<tr>
+<td>shape selected</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'crop' attivo con un rapporto d'aspetto impostato su 'square 1.00'. L'immagine visualizzata è un primo piano della mano di una persona che stringe qualcosa, con fumo o vapore visibile; la composizione è già stata ritagliata in modo da enfatizzare il gesto della mano. Il cursore è posizionato sullo strumento di ritaglio (icona croce direzionale) nell'angolo inferiore destro dell'anteprima. A sinistra sono visibili i moduli del pannello laterale, tra cui 'history', 'color picker', e 'mask manager'; a destra, la lista dei moduli con 'crop' evidenziato e attivo. Lo screenshot riflette un processo di ritaglio intenzionale per isolare il gesto della mano, come indicato dal contesto narrativo." src="screenshots/frame_01786_349.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'crop' attivo con un rapporto d'aspetto impostato su 'square 1.00'. L'immagine visualizzata è un primo piano della mano di una persona che stringe qualcosa, con fumo o vapore visibile; la composizione è già stata ritagliata in modo da enfatizzare il gesto della mano. Il cursore è posizionato sullo strumento di ritaglio (icona croce direzionale) nell'angolo inferiore destro dell'anteprima. A sinistra sono visibili i moduli del pannello laterale, tra cui 'history', 'color picker', e 'mask manager'; a destra, la lista dei moduli con 'crop' evidenziato e attivo. Lo screenshot riflette un processo di ritaglio intenzionale per isolare il gesto della mano, come indicato dal contesto narrativo.</em></p>
+<p><strong>Modulo:</strong> crop</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aspect</td>
+<td>square 1.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con la tab 'scene' selezionata. È visibile una curva di tonalità personalizzata nel grafico '% display', con i punti bianco e nero impostati rispettivamente a +4.66 EV e -7.59 EV. L'opzione 'look only' è attivata, indicando che la visualizzazione è limitata all'aspetto finale senza modifiche permanenti. L'immagine centrale è un primo piano di una mano chiusa a pugno con anello, su sfondo neutro, e l'istogramma circolare in alto a destra mostra una distribuzione cromatica bilanciata. Il narratore sta verificando l'esposizione confrontandola con un rettangolo bianco (probabilmente il bordo bianco dell'anteprima), e commenta che il punto nero appare anomalo e il contrasto non varia significativamente." src="screenshots/frame_01827_329.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con la tab 'scene' selezionata. È visibile una curva di tonalità personalizzata nel grafico '% display', con i punti bianco e nero impostati rispettivamente a +4.66 EV e -7.59 EV. L'opzione 'look only' è attivata, indicando che la visualizzazione è limitata all'aspetto finale senza modifiche permanenti. L'immagine centrale è un primo piano di una mano chiusa a pugno con anello, su sfondo neutro, e l'istogramma circolare in alto a destra mostra una distribuzione cromatica bilanciata. Il narratore sta verificando l'esposizione confrontandola con un rettangolo bianco (probabilmente il bordo bianco dell'anteprima), e commenta che il punto nero appare anomalo e il contrasto non varia significativamente.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>white relative exposure</td>
+<td>+4.66 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-7.59 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Profilo colore di input</li>
+<li>Ritaglia e ruota</li>
+<li>Esposizione</li>
+<li>3D LUT</li>
+<li>Calibrazione colore</li>
+</ul>
+<hr />
+<h2 id="10-conversione-in-bianco-e-nero-e-bilanciamento-cromatico">10. Conversione in bianco e nero e bilanciamento cromatico<a class="headerlink" href="#10-conversione-in-bianco-e-nero-e-bilanciamento-cromatico" title="Permanent link">&para;</a></h2>
+<p><strong>[32:14 – 34:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=1934">Guarda nel video</a></p>
+<p>Applicazione del profilo Fuji Acros 100 per la conversione in scala di grigi. Regolazione fine dei canali colore (verdi e rossi) per ottimizzare la luminosità della pelle e dei dettagli, con successivo ripristino delle impostazioni iniziali per preservare la tonalità naturale.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo, specificamente nella sottosezione 'color calibration bw'. L'immagine è in bianco e nero, e l'utente sta regolando i canali di ingresso (R, G, B) per modificare il bilanciamento cromatico: il canale verde (G) è stato aumentato a 0.317, mentre rosso e blu sono a zero, indicando un tentativo di ridurre la componente verde (come confermato dal contesto verbale). Non sono presenti maschere attive, e il modulo è utilizzato per correggere il contrasto cromatico e luminoso globale, coerentemente con le osservazioni dell’utente su basso contrasto cromatico e di luminosità." src="screenshots/frame_01980_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo, specificamente nella sottosezione 'color calibration bw'. L'immagine è in bianco e nero, e l'utente sta regolando i canali di ingresso (R, G, B) per modificare il bilanciamento cromatico: il canale verde (G) è stato aumentato a 0.317, mentre rosso e blu sono a zero, indicando un tentativo di ridurre la componente verde (come confermato dal contesto verbale). Non sono presenti maschere attive, e il modulo è utilizzato per correggere il contrasto cromatico e luminoso globale, coerentemente con le osservazioni dell’utente su basso contrasto cromatico e di luminosità.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>0.317</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>colorfulness</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>normalize channels</td>
+<td>False</td>
+</tr>
+<tr>
+<td>calibrate with a color checker</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in scala di grigi, con contrasto globale ridotto e dettagli morbidi; il modulo 'color calibration' è attivo con la scheda 'adaptation' selezionata e l'opzione CAT16 (CIECAM16) scelta. L'utente sta esplorando regolazioni di calibrazione del colore, ma ha appena resettato i parametri, confermando una preferenza per una versione più scura e meno contrastata dell'immagine originale." src="screenshots/frame_02040_000.jpg" /></p>
+<p><em>L'immagine è in scala di grigi, con contrasto globale ridotto e dettagli morbidi; il modulo 'color calibration' è attivo con la scheda 'adaptation' selezionata e l'opzione CAT16 (CIECAM16) scelta. L'utente sta esplorando regolazioni di calibrazione del colore, ma ha appena resettato i parametri, confermando una preferenza per una versione più scura e meno contrastata dell'immagine originale.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>True</td>
+</tr>
+<tr>
+<td>calibrate with a color checker</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calibrazione colore</li>
+</ul>
+<hr />
+<h2 id="11-gestione-del-contrasto-globale">11. Gestione del contrasto globale<a class="headerlink" href="#11-gestione-del-contrasto-globale" title="Permanent link">&para;</a></h2>
+<p><strong>[34:00 – 35:35]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=2040">Guarda nel video</a></p>
+<p>Utilizzo dell'equalizzatore di tono per aggiungere contrasto generale senza alterare eccessivamente la foto. Creazione di una maschera tonale per scurire leggermente la manica e bilanciare la composizione, rispettando il basso contrasto originale dell'immagine.</p>
+<h3 id="screenshot_10">Screenshot<a class="headerlink" href="#screenshot_10" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. L'immagine è in scala di grigi, con basso contrasto globale; la mano è la zona più chiara, mentre lo sfondo è più scuro e sfocato. È attivata l'opzione 'masking', indicando che l'utente sta lavorando su una maschera per il bilanciamento dell'esposizione locale, probabilmente per aumentare il contrasto selettivamente senza alterare globalmente l'immagine. La curva del tone equalizer appare piatta (valore di smoothing a 0.00), suggerendo che non sono ancora state applicate modifiche significative alla tonalità." src="screenshots/frame_02060_050.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. L'immagine è in scala di grigi, con basso contrasto globale; la mano è la zona più chiara, mentre lo sfondo è più scuro e sfocato. È attivata l'opzione 'masking', indicando che l'utente sta lavorando su una maschera per il bilanciamento dell'esposizione locale, probabilmente per aumentare il contrasto selettivamente senza alterare globalmente l'immagine. La curva del tone equalizer appare piatta (valore di smoothing a 0.00), suggerendo che non sono ancora state applicate modifiche significative alla tonalità.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tab</td>
+<td>advanced</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>display_exposure_mask</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con l'opzione 'dehaze' selezionata nel menu a discesa 'denoise'. L'immagine è in bianco e nero e raffigura una mano chiusa a pugno con dettagli di cenere o fumo; l'utente sta applicando il dehaze per migliorare il contrasto locale e recuperare dettagli nelle aree sfocate o nebbiose. Il cursore del mouse è posizionato sul menu a discesa delle opzioni di denoise, evidenziando 'denoise: fine', mentre le impostazioni di base (sharpness, edge sensitivity, ecc.) sono a zero, indicando che l’effetto è appena stato attivato ma non ancora intensificato." src="screenshots/frame_02130_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con l'opzione 'dehaze' selezionata nel menu a discesa 'denoise'. L'immagine è in bianco e nero e raffigura una mano chiusa a pugno con dettagli di cenere o fumo; l'utente sta applicando il dehaze per migliorare il contrasto locale e recuperare dettagli nelle aree sfocate o nebbiose. Il cursore del mouse è posizionato sul menu a discesa delle opzioni di denoise, evidenziando 'denoise: fine', mentre le impostazioni di base (sharpness, edge sensitivity, ecc.) sono a zero, indicando che l’effetto è appena stato attivato ma non ancora intensificato.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>central radius</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>radius span</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>denoise</td>
+<td>fine</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in scala di grigi, con contrasto globale ridotto e dettagli morbidi; il modulo 'color calibration' è attivo con la scheda 'adaptation' selezionata e l'opzione CAT16 (CIECAM16) scelta. L'utente sta esplorando regolazioni di calibrazione del colore, ma ha appena resettato i parametri, confermando una preferenza per una versione più scura e meno contrastata dell'immagine originale." src="screenshots/frame_02040_000.jpg" /></p>
+<p><em>L'immagine è in scala di grigi, con contrasto globale ridotto e dettagli morbidi; il modulo 'color calibration' è attivo con la scheda 'adaptation' selezionata e l'opzione CAT16 (CIECAM16) scelta. L'utente sta esplorando regolazioni di calibrazione del colore, ma ha appena resettato i parametri, confermando una preferenza per una versione più scura e meno contrastata dell'immagine originale.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>True</td>
+</tr>
+<tr>
+<td>calibrate with a color checker</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equalizzatore di tono</li>
+</ul>
+<hr />
+<h2 id="12-applicazione-del-contrasto-locale-e-recupero-dettagli">12. Applicazione del contrasto locale e recupero dettagli<a class="headerlink" href="#12-applicazione-del-contrasto-locale-e-recupero-dettagli" title="Permanent link">&para;</a></h2>
+<p><strong>[35:35 – 37:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=2135">Guarda nel video</a></p>
+<p>Impiego del modulo Diffondi o nitidezza con algoritmo 'dehaze' per aumentare il contrasto locale e far risaltare i dettagli della mano e delle ceneri. Creazione di una maschera mirata e ottimizzazione delle iterazioni per bilanciare nitidezza e controllo del rumore.</p>
+<h3 id="screenshot_11">Screenshot<a class="headerlink" href="#screenshot_11" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'diffuse or sharpen' attivo con iterazioni ridotte a 1 per velocizzare i test, come indicato dal narratore. L'immagine è in bianco e nero e mostra una mano chiusa con cenere o fumo che si disperde; sullo sfondo è visibile un cursore con una linea diagonale, probabilmente un tentativo di creare una maschera manuale (ma non ancora applicata, dato che 'no mask used' è selezionato). Il narratore sta preparando una maschera intorno alla mano per applicare l'effetto di de-haze selettivamente." src="screenshots/frame_02157_489.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'diffuse or sharpen' attivo con iterazioni ridotte a 1 per velocizzare i test, come indicato dal narratore. L'immagine è in bianco e nero e mostra una mano chiusa con cenere o fumo che si disperde; sullo sfondo è visibile un cursore con una linea diagonale, probabilmente un tentativo di creare una maschera manuale (ma non ancora applicata, dato che 'no mask used' è selezionato). Il narratore sta preparando una maschera intorno alla mano per applicare l'effetto di de-haze selettivamente.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>1</td>
+</tr>
+<tr>
+<td>central radius</td>
+<td>0 px</td>
+</tr>
+<tr>
+<td>radius span</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>1st order speed</td>
+<td>-20.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>-20.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.25</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in bianco e nero e mostra una mano chiusa a pugno con un anello, su cui è applicato il modulo 'diffuse or sharpen' con maschera attiva. Il processo di diffusione è in esecuzione (indicato da 'working...' al centro dell'immagine), con 17 iterazioni configurate. L'utente sta sperimentando con alte iterazioni per evidenziare il soggetto (la mano), ottenendo un effetto di rivelazione improvvisa del dettaglio dopo l'elaborazione." src="screenshots/frame_02190_000.jpg" /></p>
+<p><em>L'immagine è in bianco e nero e mostra una mano chiusa a pugno con un anello, su cui è applicato il modulo 'diffuse or sharpen' con maschera attiva. Il processo di diffusione è in esecuzione (indicato da 'working...' al centro dell'immagine), con 17 iterazioni configurate. L'utente sta sperimentando con alte iterazioni per evidenziare il soggetto (la mano), ottenendo un effetto di rivelazione improvvisa del dettaglio dopo l'elaborazione.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iterations</td>
+<td>17</td>
+</tr>
+<tr>
+<td>central_radius</td>
+<td>0 px</td>
+</tr>
+<tr>
+<td>radius_span</td>
+<td>512 px</td>
+</tr>
+<tr>
+<td>1st order speed</td>
+<td>-20.00 %</td>
+</tr>
+<tr>
+<td>2nd order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>3rd order speed</td>
+<td>-20.00 %</td>
+</tr>
+<tr>
+<td>4th order speed</td>
+<td>+10.00 %</td>
+</tr>
+<tr>
+<td>1st order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>2nd order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>3rd order anisotropy</td>
+<td>+200.00 %</td>
+</tr>
+<tr>
+<td>4th order anisotropy</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>sharpness</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>edge sensitivity</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>edge threshold</td>
+<td>+0.25</td>
+</tr>
+<tr>
+<td>luminance masking threshold</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. L'immagine principale è in bianco e nero e raffigura una mano chiusa a pugno con anello, su cui l'utente intende applicare un effetto di chiarità localizzato tramite maschera disegnata (ancora non creata). Gli slider del modulo sono impostati al valore predefinito (mix +1.00, soglia dettagli 0%, nessuna maschera attiva). Il cursore del mouse è posizionato sopra la mano, indicando l’intenzione di definire una maschera manuale per enfatizzare rughe e texture cutanee." src="screenshots/frame_02250_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. L'immagine principale è in bianco e nero e raffigura una mano chiusa a pugno con anello, su cui l'utente intende applicare un effetto di chiarità localizzato tramite maschera disegnata (ancora non creata). Gli slider del modulo sono impostati al valore predefinito (mix +1.00, soglia dettagli 0%, nessuna maschera attiva). Il cursore del mouse è posizionato sopra la mano, indicando l’intenzione di definire una maschera manuale per enfatizzare rughe e texture cutanee.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in bianco e nero e mostra una mano chiusa a pugno con anello, che tiene fibre sottili (forse lana o fumo). L'interfaccia di darktable è nella vista lighttable, con il modulo 'diffuse or sharpen' attivo nel pannello destro. Il narratore sta descrivendo l'uso simultaneo di sfocatura e nitidezza per controllare il rumore, e accenna alla possibilità di applicare un equalizzatore del contrasto selettivamente alla mano tramite una maschera, ma al momento nessuna maschera è attiva." src="screenshots/frame_02235_750.jpg" /></p>
+<p><em>L'immagine è in bianco e nero e mostra una mano chiusa a pugno con anello, che tiene fibre sottili (forse lana o fumo). L'interfaccia di darktable è nella vista lighttable, con il modulo 'diffuse or sharpen' attivo nel pannello destro. Il narratore sta descrivendo l'uso simultaneo di sfocatura e nitidezza per controllare il rumore, e accenna alla possibilità di applicare un equalizzatore del contrasto selettivamente alla mano tramite una maschera, ma al momento nessuna maschera è attiva.</em></p>
+<p><strong>Modulo:</strong> diffuse or sharpen</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>second_order_speeder</td>
+<td>positive</td>
+</tr>
+<tr>
+<td>blurring</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td>sharpening</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_10">Moduli darktable<a class="headerlink" href="#moduli-darktable_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Diffondi o nitidezza</li>
+</ul>
+<hr />
+<h2 id="13-rifinitura-della-chiarezza-e-aggiunta-cornice">13. Rifinitura della chiarezza e aggiunta cornice<a class="headerlink" href="#13-rifinitura-della-chiarezza-e-aggiunta-cornice" title="Permanent link">&para;</a></h2>
+<p><strong>[37:30 – 39:03]</strong>
+ | <a href="https://www.youtube.com/watch?v=efWVSR93m5k&amp;t=2250">Guarda nel video</a></p>
+<p>Aggiunta di chiarezza grossolana e ruvidità alla pelle della mano tramite l'equalizzatore di contrasto. Applicazione di una cornice quadrata come tocco finale, senza utilizzare la vignettatura.</p>
+<h3 id="screenshot_12">Screenshot<a class="headerlink" href="#screenshot_12" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. L'immagine principale è in bianco e nero e raffigura una mano chiusa a pugno con anello, su cui l'utente intende applicare un effetto di chiarità localizzato tramite maschera disegnata (ancora non creata). Gli slider del modulo sono impostati al valore predefinito (mix +1.00, soglia dettagli 0%, nessuna maschera attiva). Il cursore del mouse è posizionato sopra la mano, indicando l’intenzione di definire una maschera manuale per enfatizzare rughe e texture cutanee." src="screenshots/frame_02250_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'contrast equalizer' attivo con la tab 'luma' selezionata. L'immagine principale è in bianco e nero e raffigura una mano chiusa a pugno con anello, su cui l'utente intende applicare un effetto di chiarità localizzato tramite maschera disegnata (ancora non creata). Gli slider del modulo sono impostati al valore predefinito (mix +1.00, soglia dettagli 0%, nessuna maschera attiva). Il cursore del mouse è posizionato sopra la mano, indicando l’intenzione di definire una maschera manuale per enfatizzare rughe e texture cutanee.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine è in bianco e nero e mostra una mano chiusa a pugno con anello, su cui è stata applicata un'elaborazione con il modulo 'contrast equalizer' nella tab 'luma'. È attiva una maschera disegnata (1 forma) che enfatizza la mano con un forte aumento del contrasto locale, come descritto dal narratore ('very coarse local contrast to the hand'). L'istogramma luma mostra una curva modificata con un picco centrale e una leggera espansione delle tonalità medie. Non sono presenti vignettatura né cornice; l'elaborazione è completa e l'utente ha deciso di non aggiungere ulteriori effetti." src="screenshots/frame_02310_000.jpg" /></p>
+<p><em>L'immagine è in bianco e nero e mostra una mano chiusa a pugno con anello, su cui è stata applicata un'elaborazione con il modulo 'contrast equalizer' nella tab 'luma'. È attiva una maschera disegnata (1 forma) che enfatizza la mano con un forte aumento del contrasto locale, come descritto dal narratore ('very coarse local contrast to the hand'). L'istogramma luma mostra una curva modificata con un picco centrale e una leggera espansione delle tonalità medie. Non sono presenti vignettatura né cornice; l'elaborazione è completa e l'utente ha deciso di non aggiungere ulteriori effetti.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>92.9 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra una foto in bianco e nero al centro, con il modulo 'graduated density' attivo nel pannello destro. L'immagine raffigura una mano anziana che stringe fili di lana o fumo, con forte contrasto e dettagli texture. Il pannello sinistro mostra la lista dei moduli (history, duplicate manager, ecc.), mentre in basso è visibile la timeline delle miniature. Non sono presenti maschere attive né modifiche evidenti ai parametri del modulo 'graduated density', che appare selezionato ma non configurato. Lo screenshot corrisponde alla conclusione di un tutorial sul ritocco in bianco e nero." src="screenshots/frame_02340_000.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra una foto in bianco e nero al centro, con il modulo 'graduated density' attivo nel pannello destro. L'immagine raffigura una mano anziana che stringe fili di lana o fumo, con forte contrasto e dettagli texture. Il pannello sinistro mostra la lista dei moduli (history, duplicate manager, ecc.), mentre in basso è visibile la timeline delle miniature. Non sono presenti maschere attive né modifiche evidenti ai parametri del modulo 'graduated density', che appare selezionato ma non configurato. Lo screenshot corrisponde alla conclusione di un tutorial sul ritocco in bianco e nero.</em></p>
+<p><strong>Modulo:</strong> graduated density</p>
+<p><img alt="L'immagine è in bianco e nero, con un primo piano di una mano rugosa che stringe un oggetto sottile (forse filo o fumo), resa più definita tramite l'uso del modulo 'local contrast' per aumentare il contrasto locale nella zona della mano. L'interfaccia mostra la vista lighttable con un'unica immagine selezionata; il pannello dei moduli a destra evidenzia 'local contrast' come attivo, mentre altri moduli (come filmic rgb, exposure, white balance) sono presenti ma non espansi. Non sono visibili maschere o vignettature applicate." src="screenshots/frame_02317_030.jpg" /></p>
+<p><em>L'immagine è in bianco e nero, con un primo piano di una mano rugosa che stringe un oggetto sottile (forse filo o fumo), resa più definita tramite l'uso del modulo 'local contrast' per aumentare il contrasto locale nella zona della mano. L'interfaccia mostra la vista lighttable con un'unica immagine selezionata; il pannello dei moduli a destra evidenzia 'local contrast' come attivo, mentre altri moduli (come filmic rgb, exposure, white balance) sono presenti ma non espansi. Non sono visibili maschere o vignettature applicate.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>radius</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>detail</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>sharpen</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_11">Moduli darktable<a class="headerlink" href="#moduli-darktable_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equalizzatore di contrasto</li>
+<li>Cornice</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Esposizione</strong></td>
+<td>maschere sfumate (gradient), transizione netta, punti bianco/nero, regolazione manuale, punto bianco automatico, esposizione relativa, scurimento selettivo, maschera sfumata con gradiente</td>
+</tr>
+<tr>
+<td><strong>Calibrazione colore</strong></td>
+<td>preset (Fuji Acros, Ilford), bilanciamento del bianco (tonalità rossa/viola), profilo Fuji Acros 100, regolazione toni, luminosità (brightness), mix canali RGB, crominanza, miscelatore canali (verdi, rossi, blu)</td>
+</tr>
+<tr>
+<td><strong>Rotazione e prospettiva</strong></td>
+<td>correzione verticali, ricrop automatico</td>
+</tr>
+<tr>
+<td><strong>Ritaglio</strong></td>
+<td>formato quadrato, composizione artistica</td>
+</tr>
+<tr>
+<td><strong>Maschera disegnata</strong></td>
+<td>strumento gradiente, maschere multiple opposte, sfumatura (feathering)</td>
+</tr>
+<tr>
+<td><strong>Profilo colore in ingresso</strong></td>
+<td>verifica profilo (es. Rec2020)</td>
+</tr>
+<tr>
+<td><strong>Ricostruzione alte luci</strong></td>
+<td>non applicabile in questo caso specifico</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore tonale</strong></td>
+<td>regolazione contrasto, maschera disegnata, raggio di sfumatura maschera, compensazione esposizione automatica, istogramma, duplicazione istanza</td>
+</tr>
+<tr>
+<td><strong>Contrasto locale</strong></td>
+<td>nitidezza, scurimento ombre</td>
+</tr>
+<tr>
+<td><strong>Diffondi o nitidezza</strong></td>
+<td>numero di iterazioni, maschera con raggio di sfumatura, maschera disegnata, algoritmo dehaze, raggio di sfumatura, preset de-haze, maschera parametrica (canale Jz)</td>
+</tr>
+<tr>
+<td><strong>Ritocco</strong></td>
+<td>forma di rimozione, clonazione/riparazione</td>
+</tr>
+<tr>
+<td><strong>3D LUT</strong></td>
+<td>caricamento look B/N, gestione punto bianco, posizione nella pipeline</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore di tono</strong></td>
+<td>compensazione esposizione maschera, maschera tonale</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore di contrasto</strong></td>
+<td>luma (zone medie), raggio di sfumatura, maschera forma</td>
+</tr>
+<tr>
+<td><strong>Cornice</strong></td>
+<td>formato quadrato</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Attenzione:</strong> Controllare sempre il profilo colore in ingresso dopo l'importazione, poiché software esterni potrebbero applicare automaticamente un profilo errato. — <em>All'apertura iniziale del file RAW in darktable</em>
+<strong>Importante:</strong> Regolare sempre esposizione e bilanciamento del bianco prima di applicare qualsiasi conversione in bianco e nero. — <em>Fase iniziale del workflow di sviluppo</em>
+- Creare un'istanza separata del modulo Calibrazione Colore per il bianco e nero, così da poter confrontare facilmente la versione a colori e regolare finemente il bilanciamento senza alterare la conversione. — <em>Durante la fase di conversione in scala di grigi</em>
+<strong>Attenzione:</strong> Evitare di abbassare eccessivamente i canali nel vecchio equalizzatore B&amp;W deprecato, poiché si rischia di perdere dettagli fini e introdurre artefatti indesiderati. — <em>Utilizzo di strumenti di conversione B&amp;W legacy o equalizzatori di canale</em>
+- Non trascurare il contrasto locale e la nitidezza; utilizzare tecniche di schiarita e bruciatura (dodging &amp; burning) per guidare intenzionalmente l'attenzione dello spettatore verso il soggetto principale. — <em>Fase di ritocco locale e finitura dell'immagine</em>
+- Disattivare temporaneamente l'istanza di conversione B&amp;W per verificare se la versione a colori risulta più efficace o per valutare l'impatto reale delle regolazioni applicate. — <em>Valutazione comparativa durante lo sviluppo</em>
+- Duplicare l'istanza di un modulo per mantenere la maschera già creata e modificarne i parametri separatamente senza perdere il lavoro di mascheramento. — <em>Quando si passa da un'applicazione globale a una locale dello stesso effetto.</em>
+<strong>Attenzione:</strong> Disegnare la maschera DOPO aver selezionato un preset nel modulo 'Diffondi o nitidezza', altrimenti il preset sovrascriverà e cancellerà la maschera disegnata. — <em>Utilizzo del modulo Diffondi o nitidezza con preset predefiniti.</em>
+<strong>Importante:</strong> Ridurre le iterazioni a 1 durante la creazione della maschera in 'Diffondi o nitidezza' per velocizzare il calcolo in tempo reale, per poi riportarle a 10 o 11 per il rendering finale. — <em>Ottimizzazione delle prestazioni durante la fase di mascheramento di moduli computazionalmente pesanti.</em>
+<strong>Attenzione:</strong> Disattivare temporaneamente moduli pesanti come 'Diffondi o nitidezza' mentre si utilizzano altri moduli (es. Ritocco) per evitare ricalcoli continui e rallentamenti dell'interfaccia. — <em>Fase di ritocco fine o mascheramento complesso.</em>
+<strong>Importante:</strong> Il modulo '3D LUT' può distruggere il punto bianco se posizionato dopo moduli di mappatura tonale come 'Filmic'. Spostarlo a monte nella pipeline (Ctrl+Shift+trascina) e ricalibrare l'esposizione. — <em>Workflow scene-referred e applicazione di look o simulazioni pellicola.</em>
+- Utilizzare il canale Jz nelle maschere parametriche per isolare selettivamente le aree chiare ed evitare artefatti o aloni sui bordi scuri durante l'applicazione di nitidezza o de-haze. — <em>Mascheramento parametrico avanzato per preservare la qualità dei dettagli.</em>
+- Impostare temporaneamente le iterazioni a 1 durante la creazione della maschera per velocizzare il calcolo, per poi riportarle al valore desiderato (es. 20) una volta definita la maschera. — <em>Utilizzo del modulo Diffondi o nitidezza</em>
+<strong>Importante:</strong> Il modulo Diffondi o nitidezza (algoritmo dehaze) controlla meglio il rumore rispetto al Contrasto locale, poiché combina simultaneamente operazioni di nitidezza (primo ordine) e sfocatura (secondo ordine). — <em>Scelta del modulo per il contrasto locale</em>
+<strong>Attenzione:</strong> Non forzare un alto contrasto globale se l'immagine originale è a basso contrasto; è preferibile seguire la tonalità naturale della foto per evitare risultati innaturali. — <em>Regolazione del contrasto globale</em>
+- Per enfatizzare la grana o la ruvidità della pelle, utilizzare il parametro Luma nelle zone medie dell'Equalizzatore di contrasto. — <em>Aggiunta di chiarezza locale</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:20:34.105160.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

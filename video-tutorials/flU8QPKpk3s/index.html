@@ -1,0 +1,2723 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/flU8QPKpk3s/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] What does Filmic do? - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-what-does-filmic-do" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] What does Filmic do?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-a-filmic-e-concetto-di-gamma-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione a Filmic e concetto di gamma dinamica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione a Filmic e concetto di gamma dinamica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-workflow-display-referred-limiti-e-clipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Workflow display-referred: limiti e clipping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Workflow display-referred: limiti e clipping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-workflow-scene-referred-e-ruolo-di-filmic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Workflow scene-referred e ruolo di Filmic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Workflow scene-referred e ruolo di Filmic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-funzionamento-della-curva-di-filmic-ed-esempi-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Funzionamento della curva di Filmic ed esempi pratici
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Funzionamento della curva di Filmic ed esempi pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validazione-della-curva-e-avvertenze-finali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Validazione della curva e avvertenze finali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Validazione della curva e avvertenze finali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-interazione-tra-esposizione-e-filmic-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Interazione tra Esposizione e Filmic RGB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Interazione tra Esposizione e Filmic RGB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-what-does-filmic-do">[ENG] What does Filmic do?<a class="headerlink" href="#eng-what-does-filmic-do" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=flU8QPKpk3s">https://www.youtube.com/watch?v=flU8QPKpk3s</a>
+<strong>Generato:</strong> 2026-04-12T01:24:23.786130
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-a-filmic-e-concetto-di-gamma-dinamica">Introduzione a Filmic e concetto di gamma dinamica</a></li>
+<li><a href="#workflow-display-referred:-limiti-e-clipping">Workflow display-referred: limiti e clipping</a></li>
+<li><a href="#workflow-scene-referred-e-ruolo-di-filmic">Workflow scene-referred e ruolo di Filmic</a></li>
+<li><a href="#funzionamento-della-curva-di-filmic-ed-esempi-pratici">Funzionamento della curva di Filmic ed esempi pratici</a></li>
+<li><a href="#validazione-della-curva-e-avvertenze-finali">Validazione della curva e avvertenze finali</a></li>
+<li><a href="#interazione-tra-esposizione-e-filmic-rgb">Interazione tra Esposizione e Filmic RGB</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-a-filmic-e-concetto-di-gamma-dinamica">1. Introduzione a Filmic e concetto di gamma dinamica<a class="headerlink" href="#1-introduzione-a-filmic-e-concetto-di-gamma-dinamica" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 03:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del modulo Filmic (introdotto in darktable 3), spiegazione della differenza tra gamma dinamica della scena e della fotocamera, concetto di esposizione e saturazione del sensore (clipping).</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un'applicazione di note digitali (simile a GoodNotes o Notability) su macOS. È presente un'immagine di una scena al tramonto con annotazioni a mano: 'dark' indicata su una zona ombreggiata (montagna), 'bright' su una zona illuminata (sole sull'orizzonte), e una linea orizzontale etichettata 'scene' che rappresenta la gamma dinamica della scena. Non è visibile alcun modulo di darktable né controlli del software." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un'applicazione di note digitali (simile a GoodNotes o Notability) su macOS. È presente un'immagine di una scena al tramonto con annotazioni a mano: 'dark' indicata su una zona ombreggiata (montagna), 'bright' su una zona illuminata (sole sull'orizzonte), e una linea orizzontale etichettata 'scene' che rappresenta la gamma dinamica della scena. Non è visibile alcun modulo di darktable né controlli del software.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot mostra un'applicazione che NON è darktable, ma sembra essere un'app di note (ad esempio Apple Notes) con uno sfondo a righe e un'immagine incollata di un tramonto. L'interfaccia di darktable non è visibile: mancano la barra laterale dei moduli, il pannello di sviluppo, l'istogramma, i controlli di esposizione, ecc. Il titolo 'Filmic' appare come testo nel documento, non come nome di un modulo attivo in darktable. La data/ora '2 Jun 2021 at 17:3' suggerisce un timestamp del documento, non dell'interfaccia software." src="screenshots/frame_00026_059.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione che NON è darktable, ma sembra essere un'app di note (ad esempio Apple Notes) con uno sfondo a righe e un'immagine incollata di un tramonto. L'interfaccia di darktable non è visibile: mancano la barra laterale dei moduli, il pannello di sviluppo, l'istogramma, i controlli di esposizione, ecc. Il titolo 'Filmic' appare come testo nel documento, non come nome di un modulo attivo in darktable. La data/ora '2 Jun 2021 at 17:3' suggerisce un timestamp del documento, non dell'interfaccia software.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="2-workflow-display-referred-limiti-e-clipping">2. Workflow display-referred: limiti e clipping<a class="headerlink" href="#2-workflow-display-referred-limiti-e-clipping" title="Permanent link">&para;</a></h2>
+<p><strong>[03:00 – 07:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=180">Guarda nel video</a></p>
+<p>Analisi del tradizionale workflow display-referred, dove lo spazio di lavoro è limitato tra 0 e 100%. Viene spiegato come le regolazioni di esposizione in questo ambiente causino inevitabilmente clipping nelle alte luci e nelle ombre, con perdita di informazioni.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Exposure' attivo e un'esposizione fortemente ridotta (-4 EV), che causa una perdita di dettagli nelle ombre (area blu intensa a sinistra, indicativa di clipping nero). È attiva una maschera 'Luma Range' applicata al livello 'Background', e si osserva un'immagine RAW Fujifilm con cielo notturno e orizzonte illuminato. L'istogramma a sinistra mostra un accumulo massiccio a sinistra (nere saturate), confermando la perdita di informazione nelle ombre, coerentemente con il commento del narratore sul 'brick wall on the left'." src="screenshots/frame_00420_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Exposure' attivo e un'esposizione fortemente ridotta (-4 EV), che causa una perdita di dettagli nelle ombre (area blu intensa a sinistra, indicativa di clipping nero). È attiva una maschera 'Luma Range' applicata al livello 'Background', e si osserva un'immagine RAW Fujifilm con cielo notturno e orizzonte illuminato. L'istogramma a sinistra mostra un accumulo massiccio a sinistra (nere saturate), confermando la perdita di informazione nelle ombre, coerentemente con il commento del narratore sul 'brick wall on the left'.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>white_balance_mode</td>
+<td>Shot</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>5781</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Exposure' attivo in darktable con un'immagine in visualizzazione di clipping rosso (highlight clipping), indicante sovraesposizione estrema nelle aree luminose. Il valore di exposure è impostato a +3.65, causando la perdita di dettaglio nei toni chiari (come confermato dal contesto del narratore). La maschera 'Luma Range...' è attiva e visibile nel pannello Layers, e lo strumento Style Brushes è selezionato. L'istogramma mostra saturazione massima a destra, confermando il clipping. Il file RAW Fujifilm X-Pro3 è aperto e si sta eseguendo un'analisi critica dei limiti dinamici del workflow." src="screenshots/frame_00430_830.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Exposure' attivo in darktable con un'immagine in visualizzazione di clipping rosso (highlight clipping), indicante sovraesposizione estrema nelle aree luminose. Il valore di exposure è impostato a +3.65, causando la perdita di dettaglio nei toni chiari (come confermato dal contesto del narratore). La maschera 'Luma Range...' è attiva e visibile nel pannello Layers, e lo strumento Style Brushes è selezionato. L'istogramma mostra saturazione massima a destra, confermando il clipping. Il file RAW Fujifilm X-Pro3 è aperto e si sta eseguendo un'analisi critica dei limiti dinamici del workflow.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>3.65</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>kelvin</td>
+<td>5781</td>
+</tr>
+<tr>
+<td>tint</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Exposure' attivo, ma la scheda 'White Balance' selezionata nella sezione Style Brushes. È visibile una maschera rossa applicata alla porzione orizzontale del cielo e della superficie acquatica, indicante un'area selezionata per correzioni locali (probabilmente tramite lo strumento 'brush'). L'istogramma in alto a sinistra mostra una distribuzione con picchi verso le alte luci, suggerendo sovraesposizione nelle zone rosse mascherate. Il cursore dell'esposizione è impostato a +0.45 EV, mentre contrasto, luminosità e saturazione sono a zero. Il contesto narrativo indica che l'utente sta esplorando i limiti dinamici dell'immagine, notando la perdita di dettaglio nelle alte luci (il 'brick wall' a sinistra nell'istogramma), coerentemente con la maschera rossa che evidenzia clipping nei toni chiari." src="screenshots/frame_00427_860.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Exposure' attivo, ma la scheda 'White Balance' selezionata nella sezione Style Brushes. È visibile una maschera rossa applicata alla porzione orizzontale del cielo e della superficie acquatica, indicante un'area selezionata per correzioni locali (probabilmente tramite lo strumento 'brush'). L'istogramma in alto a sinistra mostra una distribuzione con picchi verso le alte luci, suggerendo sovraesposizione nelle zone rosse mascherate. Il cursore dell'esposizione è impostato a +0.45 EV, mentre contrasto, luminosità e saturazione sono a zero. Il contesto narrativo indica che l'utente sta esplorando i limiti dinamici dell'immagine, notando la perdita di dettaglio nelle alte luci (il 'brick wall' a sinistra nell'istogramma), coerentemente con la maschera rossa che evidenzia clipping nei toni chiari.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exposure</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>5781</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0.6</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Style Brushes' attivo sulla sinistra; al centro è visualizzata una foto paesaggistica al tramonto con un evidente warning di sovraesposizione (aree rosse) sulle nuvole e sull'orizzonte, indicante clipping nei canali RGB. L'istogramma in alto a sinistra mostra una distribuzione con picchi a destra, confermando la saturazione dei toni chiari. Sul pannello destro sono visibili tre preset di correzione colore (cc1.tif, cc2.tif, cc5.tif) e un'anteprima del file RAW originale. Il narratore menziona di essere in Capture One, ma lo screenshot è chiaramente di darktable, suggerendo un confronto tra i due software o un errore nel riferimento verbale. La presenza del warning rosso corrisponde alla sua descrizione di 'under exposure warning' (probabilmente un lapsus: intende *over*exposure warning)." src="screenshots/frame_00374_374.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Style Brushes' attivo sulla sinistra; al centro è visualizzata una foto paesaggistica al tramonto con un evidente warning di sovraesposizione (aree rosse) sulle nuvole e sull'orizzonte, indicante clipping nei canali RGB. L'istogramma in alto a sinistra mostra una distribuzione con picchi a destra, confermando la saturazione dei toni chiari. Sul pannello destro sono visibili tre preset di correzione colore (cc1.tif, cc2.tif, cc5.tif) e un'anteprima del file RAW originale. Il narratore menziona di essere in Capture One, ma lo screenshot è chiaramente di darktable, suggerendo un confronto tra i due software o un errore nel riferimento verbale. La presenza del warning rosso corrisponde alla sua descrizione di 'under exposure warning' (probabilmente un lapsus: intende </em>over<em>exposure warning).</em></p>
+<p><strong>Modulo:</strong> style brushes</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>White Balance Mode</td>
+<td>Shot</td>
+</tr>
+<tr>
+<td>Kelvin</td>
+<td>5781</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Exposure</td>
+<td>-0.13</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Brightness</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Saturation</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td>-93</td>
+</tr>
+<tr>
+<td>Shadow</td>
+<td>0</td>
+</tr>
+<tr>
+<td>White</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Clarity Method</td>
+<td>Natural</td>
+</tr>
+<tr>
+<td>Clarity</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Dehaze Amount</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Shadow Tone</td>
+<td>Auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un'applicazione di note digitali (probabilmente Apple Notes) con uno schizzo manuale: una foto in miniatura di una scena fluviale in alto a sinistra, una linea orizzontale etichettata 'scene', una porzione sottostante etichettata 'camera' con una scala graduata, e una freccia che indica 'dark' verso la parte sinistra dell'asse. Il disegno illustra concetti teorici sulla dinamica tonale (es. gamma della scena vs gamma del dispositivo di uscita), probabilmente in relazione al workflow 'display-referred' menzionato nel contesto. Non è presente alcun modulo o controllo di darktable." src="screenshots/frame_00238_560.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un'applicazione di note digitali (probabilmente Apple Notes) con uno schizzo manuale: una foto in miniatura di una scena fluviale in alto a sinistra, una linea orizzontale etichettata 'scene', una porzione sottostante etichettata 'camera' con una scala graduata, e una freccia che indica 'dark' verso la parte sinistra dell'asse. Il disegno illustra concetti teorici sulla dinamica tonale (es. gamma della scena vs gamma del dispositivo di uscita), probabilmente in relazione al workflow 'display-referred' menzionato nel contesto. Non è presente alcun modulo o controllo di darktable.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>esposizione</li>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="3-workflow-scene-referred-e-ruolo-di-filmic">3. Workflow scene-referred e ruolo di Filmic<a class="headerlink" href="#3-workflow-scene-referred-e-ruolo-di-filmic" title="Permanent link">&para;</a></h2>
+<p><strong>[07:30 – 12:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=450">Guarda nel video</a></p>
+<p>Introduzione al workflow scene-referred a luminosità illimitata. Spiegazione di come Filmic funga da ponte per la visualizzazione su schermo, definendo il punto grigio (18%), la latitudine e la scelta dei punti di bianco e nero.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe (probabilmente in una app come Notes o GoodNotes) che illustra concetti teorici di fotografia e rendering: confronto tra 'display referred' e 'scene referred' con rappresentazioni grafiche della gamma dinamica, della camera e dell'immagine. Sono presenti disegni schematici con etichette come 'camera', 'image', '0%', '100%', e una freccia verso infinito per indicare la luminosità illimitata nel dominio scene-referred. In basso è visibile la barra delle applicazioni macOS con l'icona di darktable evidenziata, ma il programma stesso non è aperto né visibile." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe (probabilmente in una app come Notes o GoodNotes) che illustra concetti teorici di fotografia e rendering: confronto tra 'display referred' e 'scene referred' con rappresentazioni grafiche della gamma dinamica, della camera e dell'immagine. Sono presenti disegni schematici con etichette come 'camera', 'image', '0%', '100%', e una freccia verso infinito per indicare la luminosità illimitata nel dominio scene-referred. In basso è visibile la barra delle applicazioni macOS con l'icona di darktable evidenziata, ma il programma stesso non è aperto né visibile.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe che illustra il concetto di 'display referred' vs 'scene referred' workflow. Sono presenti due diagrammi: a sinistra, un'immagine scalata tra 0% e 100% sul display con una rappresentazione della camera; a destra, lo stesso schema in un contesto 'scene referred' dove l'asse è esteso oltre il 100% (verso infinito), indicando che i valori luminosi non sono limitati al range display. In basso è visibile la barra delle applicazioni macOS con icone di vari software (tra cui Lightroom, GIMP, RawTherapee), ma nessuna finestra di darktable è aperta o attiva." src="screenshots/frame_00570_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe che illustra il concetto di 'display referred' vs 'scene referred' workflow. Sono presenti due diagrammi: a sinistra, un'immagine scalata tra 0% e 100% sul display con una rappresentazione della camera; a destra, lo stesso schema in un contesto 'scene referred' dove l'asse è esteso oltre il 100% (verso infinito), indicando che i valori luminosi non sono limitati al range display. In basso è visibile la barra delle applicazioni macOS con icone di vari software (tra cui Lightroom, GIMP, RawTherapee), ma nessuna finestra di darktable è aperta o attiva.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un disegno a mano su carta quadrettata che illustra concetti di mappatura luminosa tra 'scene referred' e 'display referred', con riferimenti a una griglia di esposizione, una linea di luminosità (0%–100%), e un punto grigio al 18% collegato alla rappresentazione dell'immagine sullo schermo. È presente un overlay di una palette colori (probabilmente da un'app di annotazione), ma nessun modulo di darktable è visibile. Il contesto parlato riguarda la percezione della luminosità del grigio 18% come equivalente a 50% percettivo, e la mappatura lineare della luminosità dell'immagine allo schermo." src="screenshots/frame_00630_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un disegno a mano su carta quadrettata che illustra concetti di mappatura luminosa tra 'scene referred' e 'display referred', con riferimenti a una griglia di esposizione, una linea di luminosità (0%–100%), e un punto grigio al 18% collegato alla rappresentazione dell'immagine sullo schermo. È presente un overlay di una palette colori (probabilmente da un'app di annotazione), ma nessun modulo di darktable è visibile. Il contesto parlato riguarda la percezione della luminosità del grigio 18% come equivalente a 50% percettivo, e la mappatura lineare della luminosità dell'immagine allo schermo.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un disegno a mano su carta quadrettata che illustra concetti di fotografia: confronto tra 'display referred' e 'scene referred', con indicazione di latitudine tonale (18% luminosità), posizione della camera, dell'immagine e delle scale percentuali. È presente una palette di colori e forme (probabilmente estratta da un'app di annotazione), ma nessun modulo di darktable è attivo o visibile. Il contesto parlato si riferisce alla luminosità al 18% e alla latitudine tonale, concetti teorici, non a un'operazione in darktable." src="screenshots/frame_00660_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un disegno a mano su carta quadrettata che illustra concetti di fotografia: confronto tra 'display referred' e 'scene referred', con indicazione di latitudine tonale (18% luminosità), posizione della camera, dell'immagine e delle scale percentuali. È presente una palette di colori e forme (probabilmente estratta da un'app di annotazione), ma nessun modulo di darktable è attivo o visibile. Il contesto parlato si riferisce alla luminosità al 18% e alla latitudine tonale, concetti teorici, non a un'operazione in darktable.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe (probabilmente in una app di note come Notes o GoodNotes) che illustra concetti di proiezione ottica: confronto tra 'display referred' e 'scene referred', con schemi di camera, immagine e luminosità. Sono presenti annotazioni a mano come '0%', '100%', '18%', 'luminance', e frecce che indicano relazioni geometriche. In basso è visibile la barra delle applicazioni macOS con icone di vari software (tra cui Lightroom, RawTherapee, GIMP), ma darktable non è attivo né visibile." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma un appunto manoscritto su carta a righe (probabilmente in una app di note come Notes o GoodNotes) che illustra concetti di proiezione ottica: confronto tra 'display referred' e 'scene referred', con schemi di camera, immagine e luminosità. Sono presenti annotazioni a mano come '0%', '100%', '18%', 'luminance', e frecce che indicano relazioni geometriche. In basso è visibile la barra delle applicazioni macOS con icone di vari software (tra cui Lightroom, RawTherapee, GIMP), ma darktable non è attivo né visibile.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="4-funzionamento-della-curva-di-filmic-ed-esempi-pratici">4. Funzionamento della curva di Filmic ed esempi pratici<a class="headerlink" href="#4-funzionamento-della-curva-di-filmic-ed-esempi-pratici" title="Permanent link">&para;</a></h2>
+<p><strong>[12:30 – 16:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=750">Guarda nel video</a></p>
+<p>Dettaglio tecnico della curva di risposta: mappatura lineare 1:1 all'interno della latitudine, compressione/espansione nelle zone di ombra e alta luce. Dimostrazione pratica su immagini con diversa gamma dinamica.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra uno schizzo manuale su carta a righe che illustra il modello di mappatura tonale del modulo Filmic RGB in darktable. A sinistra, una rappresentazione lineare dell'intervallo dinamico dell'immagine (da 0% a 100%), con indicazioni di 'image' e frecce direzionali. A destra, un grafico a forma di trapezio invertito che rappresenta la curva di risposta: l'asse orizzontale indica i valori EV (da -∞ a +∞), con il punto grigio (0 EV) al centro, il black point a -12 EV e il white point a +6 EV; sotto, una barra graduata mostra le percentuali di copertura (0%, 18%, 100%) corrispondenti ai punti chiave della curva. Il disegno chiarisce come Filmic mappa i valori RAW in uno spazio tonale visibile, comprimendo l'alto dinamico in modo non lineare." src="screenshots/frame_00827_340.jpg" /></p>
+<p><em>Lo screenshot mostra uno schizzo manuale su carta a righe che illustra il modello di mappatura tonale del modulo Filmic RGB in darktable. A sinistra, una rappresentazione lineare dell'intervallo dinamico dell'immagine (da 0% a 100%), con indicazioni di 'image' e frecce direzionali. A destra, un grafico a forma di trapezio invertito che rappresenta la curva di risposta: l'asse orizzontale indica i valori EV (da -∞ a +∞), con il punto grigio (0 EV) al centro, il black point a -12 EV e il white point a +6 EV; sotto, una barra graduata mostra le percentuali di copertura (0%, 18%, 100%) corrispondenti ai punti chiave della curva. Il disegno chiarisce come Filmic mappa i valori RAW in uno spazio tonale visibile, comprimendo l'alto dinamico in modo non lineare.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>black_point_ev</td>
+<td>-12</td>
+</tr>
+<tr>
+<td>white_point_ev</td>
+<td>+6</td>
+</tr>
+<tr>
+<td>grey_point_ev</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una mappatura dinamica del range tonale applicata a una foto di tramonto. La curva di mapping è visibile nel grafico: la porzione nera (scena) parte da -14.0 EV e si estende fino a +3.7 EV sul display, con una zona centrale lineare e compressione nelle alte luci, coerentemente con la descrizione del narratore. L'istogramma RGB in alto a destra conferma una distribuzione ampia con picchi nei toni caldi del sole al tramonto. Il valore di 'white relative exposure' è leggermente superiore a +3 EV (+3.73), mentre 'black relative exposure' corrisponde esattamente a -14.00 EV, come indicato." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una mappatura dinamica del range tonale applicata a una foto di tramonto. La curva di mapping è visibile nel grafico: la porzione nera (scena) parte da -14.0 EV e si estende fino a +3.7 EV sul display, con una zona centrale lineare e compressione nelle alte luci, coerentemente con la descrizione del narratore. L'istogramma RGB in alto a destra conferma una distribuzione ampia con picchi nei toni caldi del sole al tramonto. Il valore di 'white relative exposure' è leggermente superiore a +3 EV (+3.73), mentre 'black relative exposure' corrisponde esattamente a -14.00 EV, come indicato.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.73 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-14.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>scene (EV)</td>
+<td>-14.0</td>
+</tr>
+<tr>
+<td>display</td>
+<td>+3.7</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine di tramonto selezionata. Il modulo 'exposure' è espanso a destra, con valori attuali di esposizione +0.72 EV e correzione del livello nero -0.0002. L'istogramma RGB è visibile in alto a destra. Il narratore menziona impostazioni estreme (white point +3, black point -14), ma tali valori non sono visibili nell'interfaccia corrente: i parametri mostrati sono moderati, suggerendo che lo screenshot sia stato catturato prima o dopo l'applicazione delle modifiche descritte." src="screenshots/frame_00982_681.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine di tramonto selezionata. Il modulo 'exposure' è espanso a destra, con valori attuali di esposizione +0.72 EV e correzione del livello nero -0.0002. L'istogramma RGB è visibile in alto a destra. Il narratore menziona impostazioni estreme (white point +3, black point -14), ma tali valori non sono visibili nell'interfaccia corrente: i parametri mostrati sono moderati, suggerendo che lo screenshot sia stato catturato prima o dopo l'applicazione delle modifiche descritte.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.72 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="5-validazione-della-curva-e-avvertenze-finali">5. Validazione della curva e avvertenze finali<a class="headerlink" href="#5-validazione-della-curva-e-avvertenze-finali" title="Permanent link">&para;</a></h2>
+<p><strong>[16:40 – 18:25]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=1000">Guarda nel video</a></p>
+<p>Importanza di monitorare la curva di Filmic per assicurarsi che rimanga entro i limiti 0-100%, evitando errori di mappatura e valori negativi non compatibili con il display.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo con una mappatura dinamica in uso: l'esposizione relativa bianca è impostata a +3.73 EV e quella nera a -14.00 EV, indicando una compressione estrema delle alte luci e delle ombre (coerente con la dichiarazione del narratore di 'highlights compressed 200%'). L'istogramma RGB nella parte superiore destra mostra una distribuzione concentrata verso i toni medi/scuri, con pochi dati nelle zone estreme, suggerendo un'immagine con bassa gamma dinamica dopo l'elaborazione. Il cursore 'working...' al centro dell'immagine indica che il rendering è in corso." src="screenshots/frame_01020_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo con una mappatura dinamica in uso: l'esposizione relativa bianca è impostata a +3.73 EV e quella nera a -14.00 EV, indicando una compressione estrema delle alte luci e delle ombre (coerente con la dichiarazione del narratore di 'highlights compressed 200%'). L'istogramma RGB nella parte superiore destra mostra una distribuzione concentrata verso i toni medi/scuri, con pochi dati nelle zone estreme, suggerendo un'immagine con bassa gamma dinamica dopo l'elaborazione. Il cursore 'working...' al centro dell'immagine indica che il rendering è in corso.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.73 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-14.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' in darktable con la scheda 'scene' attiva. È visibile una curva di mappatura dinamica (dynamic range mapping) che espande la gamma tonale: il punto bianco è spostato a +2.91 EV rispetto al grigio medio, mentre il nero relativo è a -4.26 EV, confermando un'immagine con bassa dinamica originale ma con espansione significativa nelle ombre e leggera compressione nei toni chiari. L'istogramma RGB in alto a destra mostra una distribuzione concentrata verso i toni medi-bassi, coerente con la descrizione del narratore." src="screenshots/frame_01035_740.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' in darktable con la scheda 'scene' attiva. È visibile una curva di mappatura dinamica (dynamic range mapping) che espande la gamma tonale: il punto bianco è spostato a +2.91 EV rispetto al grigio medio, mentre il nero relativo è a -4.26 EV, confermando un'immagine con bassa dinamica originale ma con espansione significativa nelle ombre e leggera compressione nei toni chiari. L'istogramma RGB in alto a destra mostra una distribuzione concentrata verso i toni medi-bassi, coerente con la descrizione del narratore.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+2.91 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-4.26 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata che espande le ombre e comprime leggermente gli alti luci, come descritto dal narratore. La curva ha un punto arancione a 18% (latitudine 0), segmento lineare nella zona media e curvature separate per ombre e luci. L'istogramma RGB è visibile in alto a destra, e l'immagine è una scena costiera con cielo nuvoloso e onde su una spiaggia rocciosa." src="screenshots/frame_01063_400.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una curva di tonalità personalizzata che espande le ombre e comprime leggermente gli alti luci, come descritto dal narratore. La curva ha un punto arancione a 18% (latitudine 0), segmento lineare nella zona media e curvature separate per ombre e luci. L'istogramma RGB è visibile in alto a destra, e l'immagine è una scena costiera con cielo nuvoloso e onde su una spiaggia rocciosa.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+2.91 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-4.26 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>0</td>
+</tr>
+<tr>
+<td>orange point</td>
+<td>18%</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="6-interazione-tra-esposizione-e-filmic-rgb">6. Interazione tra Esposizione e Filmic RGB<a class="headerlink" href="#6-interazione-tra-esposizione-e-filmic-rgb" title="Permanent link">&para;</a></h2>
+<p><strong>[18:25 – 19:48]</strong>
+ | <a href="https://www.youtube.com/watch?v=flU8QPKpk3s&amp;t=1105">Guarda nel video</a></p>
+<p>Dimostrazione pratica di come il modulo Filmic gestisca la gamma dinamica e prevenga gli avvertimenti di clipping quando si modifica l'esposizione. Viene chiarito che i due moduli operano in modo indipendente e che Filmic lavora in modo relativo al punto zero dell'esposizione, comprimendo i valori nello schermo.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella sezione destra. È visibile una curva di tonalità personalizzata nel grafico '% display', con due punti di controllo (uno giallo, uno bianco) e un'area di sovraesposizione evidenziata a destra della curva. Gli indicatori di avviso per le luci (highlight warnings) sono attivi, come indicato dai triangoli gialli nell'istogramma. In basso, la barra delle miniature mostra 7 immagini, di cui una selezionata (#3). Il messaggio 'working... loading...' indica che l'immagine RAW Fujifilm X-Pro3 sta venendo caricata. Il narratore sta dimostrando come Filmic RGB gestisce l'esposizione dinamica, contrastando con lo stato di sovraesposizione che si verificherebbe senza questo modulo." src="screenshots/frame_01109_808.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella sezione destra. È visibile una curva di tonalità personalizzata nel grafico '% display', con due punti di controllo (uno giallo, uno bianco) e un'area di sovraesposizione evidenziata a destra della curva. Gli indicatori di avviso per le luci (highlight warnings) sono attivi, come indicato dai triangoli gialli nell'istogramma. In basso, la barra delle miniature mostra 7 immagini, di cui una selezionata (#3). Il messaggio 'working... loading...' indica che l'immagine RAW Fujifilm X-Pro3 sta venendo caricata. Il narratore sta dimostrando come Filmic RGB gestisce l'esposizione dinamica, contrastando con lo stato di sovraesposizione che si verificherebbe senza questo modulo.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.73 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-14.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro; l'esposizione è impostata a +3.00 EV, con la correzione dell'esposizione della fotocamera disattivata (+0.0 EV). L'immagine centrale è una scena marina al tramonto con cielo nuvoloso e riflessi sull'acqua, apparentemente ben esposta senza avvisi di sovraesposizione visibili (nonostante il valore elevato di exposure), suggerendo che il modulo 'filmic rgb' (visibile nella lista ma non espanso) stia gestendo dinamicamente i toni per evitare clipping. Il cursore del mouse è posizionato sullo slider 'exposure', con un tooltip che indica 'adjust the exposure correction'. A sinistra sono visibili i moduli 'color picker' e 'mask manager', mentre in basso la barra delle miniature mostra altre immagini della collezione." src="screenshots/frame_01130_859.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro; l'esposizione è impostata a +3.00 EV, con la correzione dell'esposizione della fotocamera disattivata (+0.0 EV). L'immagine centrale è una scena marina al tramonto con cielo nuvoloso e riflessi sull'acqua, apparentemente ben esposta senza avvisi di sovraesposizione visibili (nonostante il valore elevato di exposure), suggerendo che il modulo 'filmic rgb' (visibile nella lista ma non espanso) stia gestendo dinamicamente i toni per evitare clipping. Il cursore del mouse è posizionato sullo slider 'exposure', con un tooltip che indica 'adjust the exposure correction'. A sinistra sono visibili i moduli 'color picker' e 'mask manager', mentre in basso la barra delle miniature mostra altre immagini della collezione.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.000%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>-0.000%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro; l'immagine principale è un paesaggio marino al tramonto con nuvole scure e riflessi dorati sull'acqua. L'esposizione è stata ridotta a -0.25 EV, ma non compaiono avvisi di sovra- o sotto-esposizione, come spiegato dal narratore in riferimento all'azione del modulo Filmic RGB (visibile nella lista dei moduli, disattivato in questo momento). L'istogramma in alto a destra mostra una distribuzione ampia senza clipping evidente. Il cursore del mouse è posizionato sul parametro 'clipping threshold', con un tooltip che dice 'adjust the exposure correction'." src="screenshots/frame_01140_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro; l'immagine principale è un paesaggio marino al tramonto con nuvole scure e riflessi dorati sull'acqua. L'esposizione è stata ridotta a -0.25 EV, ma non compaiono avvisi di sovra- o sotto-esposizione, come spiegato dal narratore in riferimento all'azione del modulo Filmic RGB (visibile nella lista dei moduli, disattivato in questo momento). L'istogramma in alto a destra mostra una distribuzione ampia senza clipping evidente. Il cursore del mouse è posizionato sul parametro 'clipping threshold', con un tooltip che dice 'adjust the exposure correction'.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>-0.25 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.0400%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile un'immagine di paesaggio marino al tramonto, con cielo nuvoloso e riflessi dorati sull'acqua. L'istogramma RGB in alto a destra indica una distribuzione dinamica con picchi nei toni scuri e medi. Il grafico del mapping dinamico mostra una curva lineare con estremi fissati a -14.0 EV (nero) e +3.7 EV (bianco), confermando che il modulo opera in modo relativo all'esposizione di riferimento (0 EV). Il narratore chiarisce che modifiche all'esposizione globale non influenzano il risultato del filmic rgb perché questo modulo è progettato per lavorare su una scala relativa fissa, indipendentemente dal valore assoluto dell'esposizione." src="screenshots/frame_01164_160.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile un'immagine di paesaggio marino al tramonto, con cielo nuvoloso e riflessi dorati sull'acqua. L'istogramma RGB in alto a destra indica una distribuzione dinamica con picchi nei toni scuri e medi. Il grafico del mapping dinamico mostra una curva lineare con estremi fissati a -14.0 EV (nero) e +3.7 EV (bianco), confermando che il modulo opera in modo relativo all'esposizione di riferimento (0 EV). Il narratore chiarisce che modifiche all'esposizione globale non influenzano il risultato del filmic rgb perché questo modulo è progettato per lavorare su una scala relativa fissa, indipendentemente dal valore assoluto dell'esposizione.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.73 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-14.00 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è un paesaggio marino al tramonto con nuvole drammatiche e riflessi dorati sull'acqua. L'istogramma a destra visualizza una distribuzione dinamica dei toni, con picchi nei toni medi e nelle luci. Il modulo exposure mostra un valore di esposizione manuale di +1.44 EV, mentre 'compensate camera exposure' è abilitato a +0.0 EV, indicando che la correzione automatica della fotocamera è disattivata. Il narratore spiega che il modulo non modifica l'istogramma visibile perché quest'ultimo è relativo all'esposizione di riferimento (0 EV), evidenziando l'indipendenza tra il modulo exposure e la rappresentazione dell'istogramma." src="screenshots/frame_01170_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è un paesaggio marino al tramonto con nuvole drammatiche e riflessi dorati sull'acqua. L'istogramma a destra visualizza una distribuzione dinamica dei toni, con picchi nei toni medi e nelle luci. Il modulo exposure mostra un valore di esposizione manuale di +1.44 EV, mentre 'compensate camera exposure' è abilitato a +0.0 EV, indicando che la correzione automatica della fotocamera è disattivata. Il narratore spiega che il modulo non modifica l'istogramma visibile perché quest'ultimo è relativo all'esposizione di riferimento (0 EV), evidenziando l'indipendenza tra il modulo exposure e la rappresentazione dell'istogramma.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>1.44 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione</li>
+<li>Filmic RGB</li>
+<li>Avvertimenti di sovra/sottoesposizione</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>filmic rgb</strong></td>
+<td>latitudine (latitude), compressione alte luci, compressione ombre, punto di nero (black point), punto di bianco (white point), punto grigio (grey point), curva di risposta tonale</td>
+</tr>
+<tr>
+<td><strong>esposizione</strong></td>
+<td>regolazione esposizione (contesto display-referred), punto di riferimento grigio medio</td>
+</tr>
+<tr>
+<td><strong>Esposizione</strong></td>
+<td>valore di esposizione (su/giù)</td>
+</tr>
+<tr>
+<td><strong>Filmic RGB</strong></td>
+<td>compressione gamma dinamica, punto di riferimento relativo (zero)</td>
+</tr>
+<tr>
+<td><strong>Avvertimenti di sovra/sottoesposizione</strong></td>
+<td>indicatore di clipping (on/off)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nel workflow scene-referred non esistono un nero o un bianco assoluti; la luminosità è sempre relativa al punto grigio scelto. — <em>Durante la fase iniziale di impostazione dell'esposizione e del punto grigio in Filmic.</em><blockquote>
+<p><strong>Importante:</strong> Il punto grigio dell'immagine viene mappato al 18% di grigio sul display, che corrisponde percettivamente al 50% di luminosità. — <em>Calibrazione del punto grigio per garantire una resa tonale naturale e corretta.</em></p>
+</blockquote>
+</li>
+<li>La zona di latitudine viene mappata linearmente (1:1), mentre le aree esterne vengono compresse o espanse per adattarsi ai limiti del display. — <em>Comprensione del comportamento della curva per preservare i dettagli senza introdurre artefatti.</em><blockquote>
+<p><strong>Attenzione:</strong> La curva di Filmic deve rimanere rigorosamente all'interno del range 0-100%. Valori negativi o superiori al 100% indicano errori di mappatura e clipping indesiderato. — <em>Quando si regolano i parametri di punto di bianco, punto di nero e latitudine.</em></p>
+</blockquote>
+</li>
+<li>Filmic comprime automaticamente la gamma dinamica nello schermo, nascondendo gli avvertimenti di clipping anche quando si aumenta significativamente l'esposizione. — <em>Quando si regola l'esposizione con Filmic attivo</em><blockquote>
+<p><strong>Importante:</strong> I moduli Esposizione e Filmic sono completamente indipendenti; le regolazioni di uno non alterano il punto di riferimento interno o il comportamento dell'altro. — <em>Durante la costruzione del flusso di lavoro di base</em>
+<strong>Attenzione:</strong> Non fare affidamento esclusivo sugli avvertimenti di sovraesposizione quando Filmic è attivo, poiché il modulo maschera intenzionalmente il clipping per preservare i dettagli nelle alte luci. — <em>Valutazione dell'istogramma e dei warning di clipping</em></p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:24:23.786130.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

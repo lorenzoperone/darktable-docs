@@ -1,0 +1,3174 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/QX_HItCqDtE/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Channel Mixer Part 2 - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-channel-mixer-part-2" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Channel Mixer Part 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-recap-e-fondamenti-matematici-del-mixer-di-canali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Recap e fondamenti matematici del Mixer di canali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Recap e fondamenti matematici del Mixer di canali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-preparazione-dellimmagine-e-calibrazione-iniziale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Preparazione dell'immagine e calibrazione iniziale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Preparazione dell&#39;immagine e calibrazione iniziale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-esperimento-pratico-viraggio-del-cielo-verso-il-ciano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Esperimento pratico: viraggio del cielo verso il ciano
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Esperimento pratico: viraggio del cielo verso il ciano">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-analisi-matematica-e-scelta-del-canale-di-input-ottimale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Analisi matematica e scelta del canale di input ottimale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Analisi matematica e scelta del canale di input ottimale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-filosofia-di-workflow-e-gestione-delle-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Filosofia di workflow e gestione delle maschere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Filosofia di workflow e gestione delle maschere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-viraggio-del-cielo-verso-il-magenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Viraggio del cielo verso il magenta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Viraggio del cielo verso il magenta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-confronto-tra-metodi-di-viraggio-cromatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Confronto tra metodi di viraggio cromatico
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Confronto tra metodi di viraggio cromatico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-applicazione-di-una-tonalita-marrone-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Applicazione di una tonalità marrone globale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Applicazione di una tonalità marrone globale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-gestione-della-luminosita-e-ritocchi-finali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Gestione della luminosità e ritocchi finali
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Gestione della luminosità e ritocchi finali">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-channel-mixer-part-2">[ENG] Channel Mixer Part 2<a class="headerlink" href="#eng-channel-mixer-part-2" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=QX_HItCqDtE">https://www.youtube.com/watch?v=QX_HItCqDtE</a>
+<strong>Generato:</strong> 2026-04-12T01:22:32.445372
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#recap-e-fondamenti-matematici-del-mixer-di-canali">Recap e fondamenti matematici del Mixer di canali</a></li>
+<li><a href="#preparazione-dell'immagine-e-calibrazione-iniziale">Preparazione dell'immagine e calibrazione iniziale</a></li>
+<li><a href="#esperimento-pratico:-viraggio-del-cielo-verso-il-ciano">Esperimento pratico: viraggio del cielo verso il ciano</a></li>
+<li><a href="#analisi-matematica-e-scelta-del-canale-di-input-ottimale">Analisi matematica e scelta del canale di input ottimale</a></li>
+<li><a href="#filosofia-di-workflow-e-gestione-delle-maschere">Filosofia di workflow e gestione delle maschere</a></li>
+<li><a href="#viraggio-del-cielo-verso-il-magenta">Viraggio del cielo verso il magenta</a></li>
+<li><a href="#confronto-tra-metodi-di-viraggio-cromatico">Confronto tra metodi di viraggio cromatico</a></li>
+<li><a href="#applicazione-di-una-tonalità-marrone-globale">Applicazione di una tonalità marrone globale</a></li>
+<li><a href="#gestione-della-luminosità-e-ritocchi-finali">Gestione della luminosità e ritocchi finali</a></li>
+</ol>
+<hr />
+<h2 id="1-recap-e-fondamenti-matematici-del-mixer-di-canali">1. Recap e fondamenti matematici del Mixer di canali<a class="headerlink" href="#1-recap-e-fondamenti-matematici-del-mixer-di-canali" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:25]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=0">Guarda nel video</a></p>
+<p>Ripasso del funzionamento del mixer di canali come moltiplicazione matriciale. Spiegazione dei 9 cursori, delle infinite soluzioni possibili per trasformare i colori e dell'impatto globale su ogni pixel dell'immagine, collegandolo al modulo di bilanciamento del bianco.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) che parla in un video tutorial, non l'interfaccia di darktable. Non è visibile alcun modulo, pannello o strumento di darktable; lo sfondo è una stanza con tende e finestra. Il contesto indica che il video sta introducendo la seconda parte su 'channel mixer', ma l'interfaccia del software non è ancora mostrata." src="screenshots/frame_00004_599.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) che parla in un video tutorial, non l'interfaccia di darktable. Non è visibile alcun modulo, pannello o strumento di darktable; lo sfondo è una stanza con tende e finestra. Il contesto indica che il video sta introducendo la seconda parte su 'channel mixer', ma l'interfaccia del software non è ancora mostrata.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) che parla direttamente alla telecamera in un contesto video, non l'interfaccia di darktable. Non sono visibili moduli, pannelli, istogrammi o controlli di darktable; l'immagine è un frame del video tutorial, probabilmente introduttivo, prima dell'apertura del software. Il contesto indica che si tratta della seconda parte di un tutorial sul 'channel mixer', ma l'interfaccia di darktable non è ancora mostrata." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) che parla direttamente alla telecamera in un contesto video, non l'interfaccia di darktable. Non sono visibili moduli, pannelli, istogrammi o controlli di darktable; l'immagine è un frame del video tutorial, probabilmente introduttivo, prima dell'apertura del software. Il contesto indica che si tratta della seconda parte di un tutorial sul 'channel mixer', ma l'interfaccia di darktable non è ancora mostrata.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra un'applicazione di appunti (Notability) su macOS, non l'interfaccia di darktable. È presente una spiegazione manoscritta del funzionamento del 'channel mixer', con matrici di trasformazione RGB, equazioni esplicite per R_out, G_out, B_out e quattro punti chiave sulle proprietà della trasformazione. Non sono visibili moduli, controlli o strumenti di darktable; l'immagine è puramente didattica e contestuale al video tutorial." src="screenshots/frame_00012_178.jpg" /></p>
+<p><em>Lo screenshot mostra un'applicazione di appunti (Notability) su macOS, non l'interfaccia di darktable. È presente una spiegazione manoscritta del funzionamento del 'channel mixer', con matrici di trasformazione RGB, equazioni esplicite per R_out, G_out, B_out e quattro punti chiave sulle proprietà della trasformazione. Non sono visibili moduli, controlli o strumenti di darktable; l'immagine è puramente didattica e contestuale al video tutorial.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mixer di canali</li>
+<li>Calibrazione colore</li>
+</ul>
+<hr />
+<h2 id="2-preparazione-dellimmagine-e-calibrazione-iniziale">2. Preparazione dell'immagine e calibrazione iniziale<a class="headerlink" href="#2-preparazione-dellimmagine-e-calibrazione-iniziale" title="Permanent link">&para;</a></h2>
+<p><strong>[02:25 – 05:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=145">Guarda nel video</a></p>
+<p>Impostazione dei parametri base sulla prima foto: bilanciamento del bianco su riferimento fotocamera, leggera correzione dell'esposizione, profilo colore in ingresso Linear Rec 2020 e regolazioni minime in Filmic. Passaggio all'uso del vettorscopio e creazione di una nuova istanza per la calibrazione colore.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia di darktable mostra la vista lighttable con un'immagine paesaggistica delle montagne del Massiccio Centrale (Francia) selezionata. Il modulo 'white balance' è visibile nel pannello destro e attivo, con l'impostazione 'camera reference' selezionata, come confermato dal contesto narrativo. Nessuna maschera è attiva, e il cursore è posizionato sul pannello dei moduli a destra. La barra degli strumenti inferiore mostra la sequenza di anteprime delle immagini nella collezione corrente." src="screenshots/frame_00238_371.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista lighttable con un'immagine paesaggistica delle montagne del Massiccio Centrale (Francia) selezionata. Il modulo 'white balance' è visibile nel pannello destro e attivo, con l'impostazione 'camera reference' selezionata, come confermato dal contesto narrativo. Nessuna maschera è attiva, e il cursore è posizionato sul pannello dei moduli a destra. La barra degli strumenti inferiore mostra la sequenza di anteprime delle immagini nella collezione corrente.</em></p>
+<p><strong>Modulo:</strong> white balance</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_balance</td>
+<td>camera reference</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'filmic rgb' attivo con una curva di tonalità personalizzata; l'istogramma è sostituito dal vettorscopio (visibile in alto a destra), indicando un approccio avanzato al bilanciamento del colore e dell'esposizione. L'immagine è un paesaggio montuoso con toni naturali, e i parametri di esposizione sono stati leggermente regolati mantenendo un aspetto realistico. Il profilo colore d'ingresso è impostato su 'Linear Rec 2020', coerentemente con quanto dichiarato dal narratore." src="screenshots/frame_00270_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'filmic rgb' attivo con una curva di tonalità personalizzata; l'istogramma è sostituito dal vettorscopio (visibile in alto a destra), indicando un approccio avanzato al bilanciamento del colore e dell'esposizione. L'immagine è un paesaggio montuoso con toni naturali, e i parametri di esposizione sono stati leggermente regolati mantenendo un aspetto realistico. Il profilo colore d'ingresso è impostato su 'Linear Rec 2020', coerentemente con quanto dichiarato dal narratore.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.51 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-5.6 EV</td>
+</tr>
+<tr>
+<td>middle grey to pure white steps</td>
+<td>57 EV</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+<tr>
+<td>input color profile</td>
+<td>Linear Rec 2020</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra darktable in modalità lighttable con un'immagine paesaggistica selezionata. Il modulo 'color picker' è attivo nel pannello sinistro, con la voce 'display samples on image/vectorscope' abilitata, indicando che lo strumento di analisi visiva è impostato su vectorscope (come confermato dal contesto). Sul lato destro, la lista dei moduli mostra 'filmicrgb' attivo (con icona di accensione), e il vectorscope circolare è visibile in alto a destra. L'utente ha applicato solo regolazioni base di bianco, nero e punto (white/black/point), mantenendo un profilo Linear Rec.2020 e un approccio minimalista per preservare la naturalezza dell'immagine." src="screenshots/frame_00278_699.jpg" /></p>
+<p><em>L'interfaccia mostra darktable in modalità lighttable con un'immagine paesaggistica selezionata. Il modulo 'color picker' è attivo nel pannello sinistro, con la voce 'display samples on image/vectorscope' abilitata, indicando che lo strumento di analisi visiva è impostato su vectorscope (come confermato dal contesto). Sul lato destro, la lista dei moduli mostra 'filmicrgb' attivo (con icona di accensione), e il vectorscope circolare è visibile in alto a destra. L'utente ha applicato solo regolazioni base di bianco, nero e punto (white/black/point), mantenendo un profilo Linear Rec.2020 e un approccio minimalista per preservare la naturalezza dell'immagine.</em></p>
+<p><strong>Modulo:</strong> color picker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mean</td>
+<td>0</td>
+</tr>
+<tr>
+<td>RGB</td>
+<td>0, 0, 0</td>
+</tr>
+<tr>
+<td>live samples</td>
+<td>false</td>
+</tr>
+<tr>
+<td>display samples on image/vectorscope</td>
+<td>true</td>
+</tr>
+<tr>
+<td>restrict scope to selection</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Bilanciamento del bianco</li>
+<li>Esposizione</li>
+<li>Profilo colore in ingresso</li>
+<li>Filmic RGB</li>
+<li>Vettorscopio</li>
+<li>Calibrazione colore</li>
+</ul>
+<hr />
+<h2 id="3-esperimento-pratico-viraggio-del-cielo-verso-il-ciano">3. Esperimento pratico: viraggio del cielo verso il ciano<a class="headerlink" href="#3-esperimento-pratico-viraggio-del-cielo-verso-il-ciano" title="Permanent link">&para;</a></h2>
+<p><strong>[05:40 – 09:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=340">Guarda nel video</a></p>
+<p>Applicazione pratica per trasformare il cielo da blu a ciano aggiungendo verde. Utilizzo del contagocce con campioni attivi per monitorare i valori RGB. Confronto tra l'aggiunta di verde tramite i canali di input rosso, verde e blu, e osservazione degli effetti collaterali sugli altri colori.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color calibration 2' attivo in darktable, con l'immagine di una veduta montana selezionata. Il color picker è aperto a sinistra e mostra due campioni RGB: uno con valori (86, 100, 159) e l'altro (60, 59, 31). Il narratore sta descrivendo come modificare i valori di input R e G per spostare il colore del cielo verso il ciano, indicando che attualmente input R è a 100 e intende portare input G a 120. L'istogramma e il color checker sono visibili nel pannello destro, ma non sono attivi. La barra degli strumenti inferiore mostra la sequenza delle miniature della collezione." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color calibration 2' attivo in darktable, con l'immagine di una veduta montana selezionata. Il color picker è aperto a sinistra e mostra due campioni RGB: uno con valori (86, 100, 159) e l'altro (60, 59, 31). Il narratore sta descrivendo come modificare i valori di input R e G per spostare il colore del cielo verso il ciano, indicando che attualmente input R è a 100 e intende portare input G a 120. L'istogramma e il color checker sono visibili nel pannello destro, ma non sono attivi. La barra degli strumenti inferiore mostra la sequenza delle miniature della collezione.</em></p>
+<p><strong>Modulo:</strong> color calibration 2</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>100.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>CAT R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>CAT G</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>CAT B</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>colorfulness</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>gray</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mixer di canali</li>
+<li>Contagocce / Campione attivo</li>
+<li>Vettorscopio</li>
+</ul>
+<hr />
+<h2 id="4-analisi-matematica-e-scelta-del-canale-di-input-ottimale">4. Analisi matematica e scelta del canale di input ottimale<a class="headerlink" href="#4-analisi-matematica-e-scelta-del-canale-di-input-ottimale" title="Permanent link">&para;</a></h2>
+<p><strong>[09:40 – 13:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=580">Guarda nel video</a></p>
+<p>Confronto dettagliato tra l'uso dell'input rosso e dell'input blu per ottenere il ciano. Spiegazione matematica del perché l'input blu genera meno alterazioni indesiderate sui verdi. Regola pratica per minimizzare gli effetti secondari scegliendo il canale con il maggior differenziale di valori.</p>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mixer di canali</li>
+<li>Contagocce / Campione attivo</li>
+</ul>
+<hr />
+<h2 id="5-filosofia-di-workflow-e-gestione-delle-maschere">5. Filosofia di workflow e gestione delle maschere<a class="headerlink" href="#5-filosofia-di-workflow-e-gestione-delle-maschere" title="Permanent link">&para;</a></h2>
+<p><strong>[13:30 – 15:56]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=810">Guarda nel video</a></p>
+<p>Discussione sull'uso delle maschere con il mixer di canali. Sconsigliata la mascheratura all'interno del modulo di calibrazione colore/bilanciamento del bianco per evitare squilibri cromatici innaturali. Preferenza per correzioni globali e sottili. Transizione alla seconda immagine.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine è un paesaggio marino al tramonto con nuvole drammatiche e riflessi dorati sull'acqua. I parametri indicano un leggero aumento di vibranza, cromia e saturazione globale, ma nessuna correzione specifica per ombre, toni medi o luci. Il color picker a sinistra mostra un campione di colore medio (RGB 86, 100, 159). Il narratore menziona che questa configurazione sostituisce una precedente correzione di bilanciamento del colore e intende aggiungere un modulo 'color calibration' con 'channel mixer' per modificare l'atmosfera del cielo." src="screenshots/frame_00944_539.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella tab 'master'. L'immagine è un paesaggio marino al tramonto con nuvole drammatiche e riflessi dorati sull'acqua. I parametri indicano un leggero aumento di vibranza, cromia e saturazione globale, ma nessuna correzione specifica per ombre, toni medi o luci. Il color picker a sinistra mostra un campione di colore medio (RGB 86, 100, 159). Il narratore menziona che questa configurazione sostituisce una precedente correzione di bilanciamento del colore e intende aggiungere un modulo 'color calibration' con 'channel mixer' per modificare l'atmosfera del cielo.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global grading</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global vibrance</td>
+<td>15.96</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global chroma</td>
+<td>21.63</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>9.04</td>
+</tr>
+<tr>
+<td>global brilliance</td>
+<td>4.26</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra darktable in modalità lighttable con un'immagine di paesaggio marino al tramonto selezionata. Il modulo 'color calibration' è attivo nel pannello destro, insieme a 'color balance rgb', coerentemente con il narratore che intende modificare il cielo tramite il channel mixer per aggiungere atmosfera. È presente uno snapshot nella sezione sinistra, confermando l’uso di versioni precedenti per confronto. L’istogramma e il color picker indicano valori RGB medi (86, 100, 159) su un campione blu-cielo." src="screenshots/frame_00949_659.jpg" /></p>
+<p><em>L'interfaccia mostra darktable in modalità lighttable con un'immagine di paesaggio marino al tramonto selezionata. Il modulo 'color calibration' è attivo nel pannello destro, insieme a 'color balance rgb', coerentemente con il narratore che intende modificare il cielo tramite il channel mixer per aggiungere atmosfera. È presente uno snapshot nella sezione sinistra, confermando l’uso di versioni precedenti per confronto. L’istogramma e il color picker indicano valori RGB medi (86, 100, 159) su un campione blu-cielo.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input color profile</td>
+<td>Adobe RGB (1998)</td>
+</tr>
+<tr>
+<td>output color profile</td>
+<td>sRGB</td>
+</tr>
+<tr>
+<td>filmic rgb</td>
+<td>disabled</td>
+</tr>
+<tr>
+<td>color balance rgb</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine paesaggistica al tramonto selezionata. Il modulo 'color picker' è attivo nel pannello sinistro, con un campione di colore bluastro (RGB 86, 100, 159) selezionato sull'immagine. Il pannello destro elenca i moduli disponibili, tra cui 'color balance rgb' e 'color calibration', entrambi disattivati. Il narratore menziona che questa foto è stata modificata in una versione precedente di darktable, prima dell'introduzione del modulo 'color balance', e sta ora esplorando sostituzioni con parametri come chroma e saturazione." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine paesaggistica al tramonto selezionata. Il modulo 'color picker' è attivo nel pannello sinistro, con un campione di colore bluastro (RGB 86, 100, 159) selezionato sull'immagine. Il pannello destro elenca i moduli disponibili, tra cui 'color balance rgb' e 'color calibration', entrambi disattivati. Il narratore menziona che questa foto è stata modificata in una versione precedente di darktable, prima dell'introduzione del modulo 'color balance', e sta ora esplorando sostituzioni con parametri come chroma e saturazione.</em></p>
+<p><strong>Modulo:</strong> color picker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mean</td>
+<td>86, 100, 159</td>
+</tr>
+<tr>
+<td>RGB</td>
+<td>86, 100, 159</td>
+</tr>
+<tr>
+<td>live samples</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Calibrazione colore</li>
+<li>Mixer di canali</li>
+</ul>
+<hr />
+<h2 id="6-viraggio-del-cielo-verso-il-magenta">6. Viraggio del cielo verso il magenta<a class="headerlink" href="#6-viraggio-del-cielo-verso-il-magenta" title="Permanent link">&para;</a></h2>
+<p><strong>[15:56 – 19:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=956">Guarda nel video</a></p>
+<p>Utilizzo del mixer di canali per modificare il colore del cielo da blu a magenta, sfruttando il vettorscopio e i campioni live per isolare le tonalità del tramonto senza alterare i gialli e gli arancioni.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'color calibration 3' attivo nel pannello destro, con i cursori RGB impostati su input R=0.000, G=1.000, B=0.000 (cioè solo il canale verde attivo). Il vettore scope in alto a destra visualizza la distribuzione cromatica dell'immagine, che raffigura un tramonto con cielo nuvoloso e riflessi dorati sull'acqua. L'utente sta cercando di correggere il colore del cielo aggiungendo una componente magenta senza alterare i toni gialli/arancioni del sole, come indicato dal contesto. La foto è selezionata nella raccolta (1 di 35), e lo stato della barra degli strumenti inferiore mostra metadati: 3&quot; f/0.0 50 mm 400 ISO, Open CL yes." src="screenshots/frame_00972_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color calibration 3' attivo nel pannello destro, con i cursori RGB impostati su input R=0.000, G=1.000, B=0.000 (cioè solo il canale verde attivo). Il vettore scope in alto a destra visualizza la distribuzione cromatica dell'immagine, che raffigura un tramonto con cielo nuvoloso e riflessi dorati sull'acqua. L'utente sta cercando di correggere il colore del cielo aggiungendo una componente magenta senza alterare i toni gialli/arancioni del sole, come indicato dal contesto. La foto è selezionata nella raccolta (1 di 35), e lo stato della barra degli strumenti inferiore mostra metadati: 3" f/0.0 50 mm 400 ISO, Open CL yes.</em></p>
+<p><strong>Modulo:</strong> color calibration 3</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>G</td>
+</tr>
+<tr>
+<td>normalize channels</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mixer di canali</li>
+<li>vettorscopio</li>
+</ul>
+<hr />
+<h2 id="7-confronto-tra-metodi-di-viraggio-cromatico">7. Confronto tra metodi di viraggio cromatico<a class="headerlink" href="#7-confronto-tra-metodi-di-viraggio-cromatico" title="Permanent link">&para;</a></h2>
+<p><strong>[19:40 – 23:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=1180">Guarda nel video</a></p>
+<p>Sperimentazione con diverse combinazioni di canali (aggiunta di rosso vs rimozione di verde/blu) per ottenere la stessa tonalità magenta, evidenziando le differenze di luminosità e impatto visivo risultanti.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra darktable in modalità di editing con un'immagine paesaggistica al tramonto selezionata. Il modulo attivo è 'color calibration', ma la scheda 'other' è espansa a destra, dove è visibile lo strumento 'vector scope' (cerchio cromatico) con indicazioni per la modifica dell'altezza del display (ctrl+scroll / shift+cmd+h). Il cursore è posizionato sopra il vector scope, suggerendo che l'utente stia esplorando le opzioni di calibrazione cromatica. La barra degli strumenti inferiore mostra una raccolta di anteprime di altre immagini, e nella parte superiore è indicato che è selezionata 1 immagine su 35." src="screenshots/frame_01290_000.jpg" /></p>
+<p><em>L'interfaccia mostra darktable in modalità di editing con un'immagine paesaggistica al tramonto selezionata. Il modulo attivo è 'color calibration', ma la scheda 'other' è espansa a destra, dove è visibile lo strumento 'vector scope' (cerchio cromatico) con indicazioni per la modifica dell'altezza del display (ctrl+scroll / shift+cmd+h). Il cursore è posizionato sopra il vector scope, suggerendo che l'utente stia esplorando le opzioni di calibrazione cromatica. La barra degli strumenti inferiore mostra una raccolta di anteprime di altre immagini, e nella parte superiore è indicato che è selezionata 1 immagine su 35.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb</td>
+</tr>
+<tr>
+<td>color balance rgb</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>color calibration 3</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>attivo</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È in corso la correzione di bilanciamento del colore su una foto RAW di strada con un divano bianco usurato sul marciapiede; l'utente intende correggere il bilanciamento per rendere il selciato grigio neutro. La curva di tonalità è stata leggermente modificata tramite i parametri white/black relative exposure, mentre gli altri moduli (color calibration, input color profile) sono ancora ai valori di default. Non sono presenti maschere attive." src="screenshots/frame_01350_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella tab 'scene'. È in corso la correzione di bilanciamento del colore su una foto RAW di strada con un divano bianco usurato sul marciapiede; l'utente intende correggere il bilanciamento per rendere il selciato grigio neutro. La curva di tonalità è stata leggermente modificata tramite i parametri white/black relative exposure, mentre gli altri moduli (color calibration, input color profile) sono ancora ai valori di default. Non sono presenti maschere attive.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+3.64 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-6.18 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+<tr>
+<td>input color profile</td>
+<td>X-Rite ColorChecker Digital SG (o simile, non leggibile con precisione ma indicato come 'XX20 20 20' nel contesto)</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>non modificato (valori predefiniti)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nel pannello destro. L'immagine principale raffigura una strada urbana con un divano bianco usurato sul marciapiede e una persona che cammina in lontananza. Il narratore sta descrivendo l'intenzione di correggere il bilanciamento del colore basandosi su una superficie grigia (il selciato), indicando che non ha ancora modificato la calibrazione dei colori, ma vuole impostare un bianco/nero neutro per ottenere un grigio corretto sul pavimento. Il modulo 'color calibration' è aperto, ma nessuna calibrazione è stata applicata (nessun color checker utilizzato, gamut compression a 1.0)." src="screenshots/frame_01358_259.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nel pannello destro. L'immagine principale raffigura una strada urbana con un divano bianco usurato sul marciapiede e una persona che cammina in lontananza. Il narratore sta descrivendo l'intenzione di correggere il bilanciamento del colore basandosi su una superficie grigia (il selciato), indicando che non ha ancora modificato la calibrazione dei colori, ma vuole impostare un bianco/nero neutro per ottenere un grigio corretto sul pavimento. Il modulo 'color calibration' è aperto, ma nessuna calibrazione è stata applicata (nessun color checker utilizzato, gamut compression a 1.0).</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb</td>
+</tr>
+<tr>
+<td>adaptation</td>
+<td>CAT16 (CIECAM16)</td>
+</tr>
+<tr>
+<td>CCT</td>
+<td>4130 K (daylight)</td>
+</tr>
+<tr>
+<td>illuminant temperature</td>
+<td>4130 K</td>
+</tr>
+<tr>
+<td>gamut compression</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>clip negative RGB from gamut</td>
+<td>False</td>
+</tr>
+<tr>
+<td>calibrate with a color checker</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color picker' attivo nella barra laterale sinistra. L'utente ha selezionato un punto sull'immagine (una zona grigia del marciapiede) e il color picker visualizza i valori RGB medi (61,62,61) e i campioni live (66,66,67), indicando una tonalità neutra vicina al grigio. Il narratore commenta che la scena è troppo blu e sta cercando un grigio neutro per la correzione del bilanciamento del bianco o per l'adattamento cromatico. Sul lato destro sono visibili i moduli attivi nella pipeline, tra cui white balance, color calibration e channel mixer (non espanso). L'immagine principale mostra una donna che cammina accanto a una poltrona bianca usurata su un marciapiede urbano." src="screenshots/frame_01408_319.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color picker' attivo nella barra laterale sinistra. L'utente ha selezionato un punto sull'immagine (una zona grigia del marciapiede) e il color picker visualizza i valori RGB medi (61,62,61) e i campioni live (66,66,67), indicando una tonalità neutra vicina al grigio. Il narratore commenta che la scena è troppo blu e sta cercando un grigio neutro per la correzione del bilanciamento del bianco o per l'adattamento cromatico. Sul lato destro sono visibili i moduli attivi nella pipeline, tra cui white balance, color calibration e channel mixer (non espanso). L'immagine principale mostra una donna che cammina accanto a una poltrona bianca usurata su un marciapiede urbano.</em></p>
+<p><strong>Modulo:</strong> color picker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mean_R</td>
+<td>61</td>
+</tr>
+<tr>
+<td>mean_G</td>
+<td>62</td>
+</tr>
+<tr>
+<td>mean_B</td>
+<td>61</td>
+</tr>
+<tr>
+<td>live_samples_R</td>
+<td>66</td>
+</tr>
+<tr>
+<td>live_samples_G</td>
+<td>66</td>
+</tr>
+<tr>
+<td>live_samples_B</td>
+<td>67</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: una poltrona logora abbandonata su un marciapiede parigino, con una donna in cappotto verde che cammina sullo sfondo. Il modulo 'color calibration' è visibile nel pannello destro, ma non è ancora attivo per l'editing; il narratore sta introducendo l'intenzione di applicare un effetto 'brownish tinge' tramite il channel mixer per dare un aspetto vecchio e sporco all'immagine." src="screenshots/frame_01309_319.jpg" /></p>
+<p><em>L'interfaccia mostra la vista lighttable di darktable con un'immagine selezionata: una poltrona logora abbandonata su un marciapiede parigino, con una donna in cappotto verde che cammina sullo sfondo. Il modulo 'color calibration' è visibile nel pannello destro, ma non è ancora attivo per l'editing; il narratore sta introducendo l'intenzione di applicare un effetto 'brownish tinge' tramite il channel mixer per dare un aspetto vecchio e sporco all'immagine.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input color profile</td>
+<td>Adobe RGB (1998)</td>
+</tr>
+<tr>
+<td>output color profile</td>
+<td>sRGB</td>
+</tr>
+<tr>
+<td>filmic rgb</td>
+<td>disabled</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mixer di canali</li>
+<li>vettorscopio</li>
+</ul>
+<hr />
+<h2 id="8-applicazione-di-una-tonalita-marrone-globale">8. Applicazione di una tonalità marrone globale<a class="headerlink" href="#8-applicazione-di-una-tonalita-marrone-globale" title="Permanent link">&para;</a></h2>
+<p><strong>[23:40 – 27:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=1420">Guarda nel video</a></p>
+<p>Esempio pratico su una foto di un marciapiede: bilanciamento del grigio tramite campionamento e applicazione di una tinta marrone uniforme modificando i canali di input verde e rosso.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Color' attivo nel pannello destro. Sono visibili i valori RGB (R=161, G=106, B=64), che corrispondono a un colore marrone caldo con predominanza di rosso, coerente con la descrizione del narratore ('quite a lot of red, but a bit less green and even less blue'). L'immagine principale mostra tre forme sfocate di tonalità marrone su sfondo bianco, probabilmente campioni di colore in fase di definizione. Il livello attivo è etichettato '(Pixel)' e l'opacità è al 100%. La barra degli strumenti superiore indica che lo strumento 'Paint' è selezionato, con parametri come Width=285.9 px, Opacity=100%, Flow=100%, Hardness=7%." src="screenshots/frame_01470_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Color' attivo nel pannello destro. Sono visibili i valori RGB (R=161, G=106, B=64), che corrispondono a un colore marrone caldo con predominanza di rosso, coerente con la descrizione del narratore ('quite a lot of red, but a bit less green and even less blue'). L'immagine principale mostra tre forme sfocate di tonalità marrone su sfondo bianco, probabilmente campioni di colore in fase di definizione. Il livello attivo è etichettato '(Pixel)' e l'opacità è al 100%. La barra degli strumenti superiore indica che lo strumento 'Paint' è selezionato, con parametri come Width=285.9 px, Opacity=100%, Flow=100%, Hardness=7%.</em></p>
+<p><strong>Modulo:</strong> color</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R</td>
+<td>161</td>
+</tr>
+<tr>
+<td>G</td>
+<td>106</td>
+</tr>
+<tr>
+<td>B</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Blend Mode</td>
+<td>Normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color calibration' attivo, con i parametri di correzione cromatica impostati per modificare solo il canale rosso (input R = 1.000), mentre verde e blu sono a zero. L'utente sta lavorando su una foto urbana con un divano bianco usurato sul marciapiede e una persona in movimento sullo sfondo; il contesto narrativo indica l'intenzione di aggiungere rosso e verde al selciato per ottenere tonalità marroni, mantenendo invariato il blu. Non sono attive maschere o selezioni specifiche." src="screenshots/frame_01478_877.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color calibration' attivo, con i parametri di correzione cromatica impostati per modificare solo il canale rosso (input R = 1.000), mentre verde e blu sono a zero. L'utente sta lavorando su una foto urbana con un divano bianco usurato sul marciapiede e una persona in movimento sullo sfondo; il contesto narrativo indica l'intenzione di aggiungere rosso e verde al selciato per ottenere tonalità marroni, mantenendo invariato il blu. Non sono attive maschere o selezioni specifiche.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>R</td>
+</tr>
+<tr>
+<td>colorfulness</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>gray</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'brush' attivo in darktable, con un cerchio disegnato su uno sfondo bianco. Il pannello laterale destro è nella tab 'Colour', con i cursori RGB impostati a 0 (nero selezionato), opacità al 100% e una maschera attiva (layer '(Pixel)' selezionato e abilitato). Lo strumento pennello è configurato per applicare modifiche cromatiche, coerentemente con il discorso del narratore che descrive come ottenere un colore marrone combinando rosso, verde e blu in proporzioni specifiche." src="screenshots/frame_01431_430.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'brush' attivo in darktable, con un cerchio disegnato su uno sfondo bianco. Il pannello laterale destro è nella tab 'Colour', con i cursori RGB impostati a 0 (nero selezionato), opacità al 100% e una maschera attiva (layer '(Pixel)' selezionato e abilitato). Lo strumento pennello è configurato per applicare modifiche cromatiche, coerentemente con il discorso del narratore che descrive come ottenere un colore marrone combinando rosso, verde e blu in proporzioni specifiche.</em></p>
+<p><strong>Modulo:</strong> brush</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>285.9 px</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>hardness</td>
+<td>7 %</td>
+</tr>
+<tr>
+<td>stabiliser</td>
+<td>More</td>
+</tr>
+<tr>
+<td>length</td>
+<td>35</td>
+</tr>
+<tr>
+<td>symmetry</td>
+<td>1</td>
+</tr>
+<tr>
+<td>mirror</td>
+<td>Mirror</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>Lock</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>wet_edges</td>
+<td>False</td>
+</tr>
+<tr>
+<td>protect_alpha</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Color' di darktable in modalità pittura (brush), con un pennello attivo (indicato dal cerchio vuoto a destra) e una tela bianca al centro. Il pannello laterale destro visualizza il selettore colore RGB con valori a zero (nero selezionato), opacità al 100% e livello 'Pixel' attivo. Non è presente alcuna immagine caricata, solo un canvas bianco, suggerendo che l'utente stia preparando o dimostrando tecniche di colorazione manuale, probabilmente per creare un effetto 'brown' come descritto nel contesto." src="screenshots/frame_01429_661.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Color' di darktable in modalità pittura (brush), con un pennello attivo (indicato dal cerchio vuoto a destra) e una tela bianca al centro. Il pannello laterale destro visualizza il selettore colore RGB con valori a zero (nero selezionato), opacità al 100% e livello 'Pixel' attivo. Non è presente alcuna immagine caricata, solo un canvas bianco, suggerendo che l'utente stia preparando o dimostrando tecniche di colorazione manuale, probabilmente per creare un effetto 'brown' come descritto nel contesto.</em></p>
+<p><strong>Modulo:</strong> color</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opacity</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Hardness</td>
+<td>7 %</td>
+</tr>
+<tr>
+<td>Symmetry</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Mirror</td>
+<td>off</td>
+</tr>
+<tr>
+<td>Blend Mode</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Wet Edges</td>
+<td>off</td>
+</tr>
+<tr>
+<td>Protect Alpha</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: è aperta una nuova istanza con un canvas bianco vuoto. Il pannello strumenti a sinistra indica che lo strumento 'Pixel' (pennello) è selezionato, con parametri di pennello configurati (Hardness 7%, Length 35). Il pannello colore a destra mostra il selettore RGB con valori R=0, G=0, B=0 (nero), ma l'opacità del colore è al 100%. La barra degli strumenti superiore mostra opzioni tipiche di Affinity Photo (Stabiliser, Symmetry, Mirror, ecc.). Non è presente alcun modulo di darktable; il contesto narrativo menziona erroneamente 'darktable', ma l'interfaccia visibile è chiaramente quella di Affinity Photo." src="screenshots/frame_01428_827.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di Affinity Photo, non di darktable: è aperta una nuova istanza con un canvas bianco vuoto. Il pannello strumenti a sinistra indica che lo strumento 'Pixel' (pennello) è selezionato, con parametri di pennello configurati (Hardness 7%, Length 35). Il pannello colore a destra mostra il selettore RGB con valori R=0, G=0, B=0 (nero), ma l'opacità del colore è al 100%. La barra degli strumenti superiore mostra opzioni tipiche di Affinity Photo (Stabiliser, Symmetry, Mirror, ecc.). Non è presente alcun modulo di darktable; il contesto narrativo menziona erroneamente 'darktable', ma l'interfaccia visibile è chiaramente quella di Affinity Photo.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>flow</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>hardness</td>
+<td>7%</td>
+</tr>
+<tr>
+<td>length</td>
+<td>35</td>
+</tr>
+<tr>
+<td>symmetry</td>
+<td>1</td>
+</tr>
+<tr>
+<td>mirror</td>
+<td>off</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>wet_edges</td>
+<td>off</td>
+</tr>
+<tr>
+<td>protect_alpha</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mixer di canali</li>
+<li>profilo colore di input</li>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="9-gestione-della-luminosita-e-ritocchi-finali">9. Gestione della luminosità e ritocchi finali<a class="headerlink" href="#9-gestione-della-luminosita-e-ritocchi-finali" title="Permanent link">&para;</a></h2>
+<p><strong>[27:30 – 29:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=QX_HItCqDtE&amp;t=1650">Guarda nel video</a></p>
+<p>Tecniche per controllare la luminosità durante il viraggio bilanciando aggiunte e sottrazioni di canali, e utilizzo del bilanciamento colore RGB per affinamenti finali nelle alte luci e nelle ombre.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nel pannello destro. L'immagine principale raffigura una poltrona beige consumata su un marciapiede cittadino, con una persona che cammina sullo sfondo. I parametri RGB mostrano un leggero shift verso il verde (G negativo) e un forte aumento del blu (B a 1.000), mentre il rosso è neutro. Il narratore suggerisce di aggiungere un tono rossastro-arancione per completare la correzione cromatica, indicando che la fase attuale è di affinamento finale dopo un'eventuale calibrazione iniziale." src="screenshots/frame_01710_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nel pannello destro. L'immagine principale raffigura una poltrona beige consumata su un marciapiede cittadino, con una persona che cammina sullo sfondo. I parametri RGB mostrano un leggero shift verso il verde (G negativo) e un forte aumento del blu (B a 1.000), mentre il rosso è neutro. Il narratore suggerisce di aggiungere un tono rossastro-arancione per completare la correzione cromatica, indicando che la fase attuale è di affinamento finale dopo un'eventuale calibrazione iniziale.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>-0.142</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nella sezione destra. È visibile la scheda 'color calibration 1', con i valori dei canali di input regolati (G leggermente negativo, B a 1.0), indicando un intervento sul bilanciamento dei colori, probabilmente per correggere una dominante cromatica o simulare un effetto di miscelazione canali. L'immagine principale è una scena urbana con una poltrona consumata sul marciapiede e una persona in movimento sullo sfondo. Nella barra laterale sinistra sono presenti strumenti come 'color picker' con campioni RGB visualizzati, e nella parte inferiore la timeline delle miniature. Il narratore menziona esplicitamente l'uso del 'channel mixer', anche se nel modulo visibile si tratta di 'color calibration', che in darktable svolge funzioni analoghe alla miscelazione canali tramite i parametri input R/G/B." src="screenshots/frame_01746_299.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color calibration' attivo nella sezione destra. È visibile la scheda 'color calibration 1', con i valori dei canali di input regolati (G leggermente negativo, B a 1.0), indicando un intervento sul bilanciamento dei colori, probabilmente per correggere una dominante cromatica o simulare un effetto di miscelazione canali. L'immagine principale è una scena urbana con una poltrona consumata sul marciapiede e una persona in movimento sullo sfondo. Nella barra laterale sinistra sono presenti strumenti come 'color picker' con campioni RGB visualizzati, e nella parte inferiore la timeline delle miniature. Il narratore menziona esplicitamente l'uso del 'channel mixer', anche se nel modulo visibile si tratta di 'color calibration', che in darktable svolge funzioni analoghe alla miscelazione canali tramite i parametri input R/G/B.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>input G</td>
+<td>-0.142</td>
+</tr>
+<tr>
+<td>input B</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>RGB</td>
+</tr>
+<tr>
+<td>colorfulness</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>gray</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'master'. Sono visibili regolazioni di luminanza (-0.53%), tonalità (43.40°) e crominanza (0.25%) applicate globalmente all'immagine. L'immagine principale raffigura una poltrona beige consumata su un marciapiede urbano, con una persona che cammina sullo sfondo. Il narratore menziona l'intenzione di usare il 'channel mixer', ma nel momento catturato il modulo attivo è 'color balance rgb', non il channel mixer; ciò suggerisce che la dimostrazione stia passando da una tecnica all'altra o che si stia mostrando un approccio alternativo prima di introdurre il channel mixer." src="screenshots/frame_01737_059.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'master'. Sono visibili regolazioni di luminanza (-0.53%), tonalità (43.40°) e crominanza (0.25%) applicate globalmente all'immagine. L'immagine principale raffigura una poltrona beige consumata su un marciapiede urbano, con una persona che cammina sullo sfondo. Il narratore menziona l'intenzione di usare il 'channel mixer', ma nel momento catturato il modulo attivo è 'color balance rgb', non il channel mixer; ciò suggerisce che la dimostrazione stia passando da una tecnica all'altra o che si stia mostrando un approccio alternativo prima di introdurre il channel mixer.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance</td>
+<td>-0.53 %</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>43.40 °</td>
+</tr>
+<tr>
+<td>chroma</td>
+<td>0.25 %</td>
+</tr>
+<tr>
+<td>shadows lift luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows lift hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>shadows lift chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights gain hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>highlights gain chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power luminance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>power hue</td>
+<td>0.00 °</td>
+</tr>
+<tr>
+<td>power chroma</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>mixer di canali</li>
+<li>bilanciamento colore rgb</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mixer di canali</strong></td>
+<td>valori positivi vs negativi, moltiplicazione matriciale, tab di output, slider di input rosso/verde/blu</td>
+</tr>
+<tr>
+<td><strong>Calibrazione colore</strong></td>
+<td>istanze multiple, adattamento cromatico, bilanciamento del bianco globale</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento del bianco</strong></td>
+<td>misura su tutta l'immagine, riferimento fotocamera, regolazione temperatura/tonalità</td>
+</tr>
+<tr>
+<td><strong>Esposizione</strong></td>
+<td>compensazione esposizione</td>
+</tr>
+<tr>
+<td><strong>Profilo colore in ingresso</strong></td>
+<td>Linear Rec 2020</td>
+</tr>
+<tr>
+<td><strong>Filmic RGB</strong></td>
+<td>esposizione relativa punto nero, esposizione relativa punto bianco</td>
+</tr>
+<tr>
+<td><strong>Vettorscopio</strong></td>
+<td>identificazione miscele additive, analisi cromatica</td>
+</tr>
+<tr>
+<td><strong>Contagocce / Campione attivo</strong></td>
+<td>campionamento in tempo reale, target numerico, monitoraggio valori RGB</td>
+</tr>
+<tr>
+<td><strong>mixer di canali</strong></td>
+<td>valori di output per canale, somma dei coefficienti &gt; 1, luminosità, canali di input (rosso, verde, blu)</td>
+</tr>
+<tr>
+<td><strong>vettorscopio</strong></td>
+<td>cerchio cromatico, campioni live, monitoraggio tonalità</td>
+</tr>
+<tr>
+<td><strong>filmic rgb</strong></td>
+<td>esposizione relativa bianco e nero</td>
+</tr>
+<tr>
+<td><strong>profilo colore di input</strong></td>
+<td>profilo di input grezzo</td>
+</tr>
+<tr>
+<td><strong>bilanciamento colore rgb</strong></td>
+<td>luminanza, tonalità per alte luci e ombre</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Iniziare le regolazioni utilizzando solo valori positivi (aggiunta di colore) per facilitare il targeting cromatico tramite la ruota dei colori. — <em>Quando si approccia per la prima volta una modifica creativa con il mixer di canali.</em><blockquote>
+<p><strong>Attenzione:</strong> I valori RGB mostrati dal contagocce possono variare leggermente anche quando si modifica un solo canale di output, a causa delle trasformazioni tra spazi colore. Il colore effettivo rimane invariato; ignorare queste minime fluttuazioni. — <em>Durante il monitoraggio dei campioni attivi mentre si regolano i cursori del mixer.</em>
+<strong>Importante:</strong> Per minimizzare gli effetti collaterali su altri colori, scegliere il canale di input in cui la differenza tra il valore del colore target e quello dei colori da preservare è massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica. — <em>Quando si deve selezionare quale canale di input (R, G o B) utilizzare per modificare un colore specifico senza alterare il resto della foto.</em>
+<strong>Importante:</strong> Evitare di mascherare il mixer di canali all'interno del modulo di calibrazione colore/bilanciamento del bianco. Differenze di bilanciamento del bianco artificiali e localizzate possono risultare innaturali. Preferire correzioni globali e sottili. — <em>Nella pianificazione del flusso di lavoro e nell'uso delle maschere parametriche/disegnate.</em>
+<strong>Attenzione:</strong> L'aggiunta di valori positivi nei canali aumenta la luminosità complessiva dell'immagine quando la somma dei coefficienti supera 1. — <em>Quando si aggiungono colori nel mixer di canali per virare le tonalità</em>
+<strong>Importante:</strong> La sottrazione di valori dai canali scurisce l'immagine. Per mantenere la luminosità originale, bilanciare l'aggiunta di alcuni canali con la sottrazione di altri. — <em>Durante l'applicazione di tinte globali o locali</em>
+<strong>Importante:</strong> Utilizzare i campioni live per monitorare in tempo reale i valori RGB delle aree target e isolare le modifiche dai colori indesiderati. — <em>Fase di selezione dei canali di input e regolazione dei parametri</em>
+<strong>Attenzione:</strong> Il mixer di canali agisce sui valori dei canali di input, quindi colori con valori RGB simili verranno influenzati allo stesso modo. Verificare sempre l'impatto sulle altre aree dell'immagine. — <em>Quando si selezionano i canali di input per modifiche mirate</em></p>
+</blockquote>
+</li>
+<li>Non esiste un'unica combinazione corretta di canali; sperimentare diverse configurazioni e fare affidamento sul giudizio visivo e sul vettorscopio per scegliere il risultato preferito. — <em>Fase creativa di post-produzione e viraggio cromatico</em></li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:22:32.445372.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

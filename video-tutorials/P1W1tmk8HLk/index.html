@@ -1,0 +1,3266 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/P1W1tmk8HLk/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] darktable masking episode 2 - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-darktable-masking-episode-2" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] darktable masking episode 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-allo-strumento-tracciato-e-controlli-di-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione allo strumento Tracciato e controlli di base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione allo strumento Tracciato e controlli di base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-manipolazione-avanzata-dei-nodi-e-modalita-sicura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Manipolazione avanzata dei nodi e modalità sicura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Manipolazione avanzata dei nodi e modalità sicura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-rifinitura-della-maschera-feathering-sfocatura-e-contrasto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rifinitura della maschera: Feathering, Sfocatura e Contrasto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Rifinitura della maschera: Feathering, Sfocatura e Contrasto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-applicazione-pratica-su-foto-reale-e-ottimizzazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Applicazione pratica su foto reale e ottimizzazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Applicazione pratica su foto reale e ottimizzazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-raffinamento-di-maschere-disegnate-per-selezioni-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Raffinamento di maschere disegnate per selezioni precise
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Raffinamento di maschere disegnate per selezioni precise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-selezione-basata-sulla-frequenza-dei-dettagli-per-la-nitidezza" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Selezione basata sulla frequenza dei dettagli per la nitidezza
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Selezione basata sulla frequenza dei dettagli per la nitidezza">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-isolamento-delle-aree-a-bassa-frequenza-e-correzione-colore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Isolamento delle aree a bassa frequenza e correzione colore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Isolamento delle aree a bassa frequenza e correzione colore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-darktable-masking-episode-2">[ENG] darktable masking episode 2<a class="headerlink" href="#eng-darktable-masking-episode-2" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk">https://www.youtube.com/watch?v=P1W1tmk8HLk</a>
+<strong>Generato:</strong> 2026-04-12T01:21:34.505823
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-allo-strumento-tracciato-e-controlli-di-base">Introduzione allo strumento Tracciato e controlli di base</a></li>
+<li><a href="#manipolazione-avanzata-dei-nodi-e-modalità-sicura">Manipolazione avanzata dei nodi e modalità sicura</a></li>
+<li><a href="#rifinitura-della-maschera:-feathering,-sfocatura-e-contrasto">Rifinitura della maschera: Feathering, Sfocatura e Contrasto</a></li>
+<li><a href="#applicazione-pratica-su-foto-reale-e-ottimizzazione">Applicazione pratica su foto reale e ottimizzazione</a></li>
+<li><a href="#raffinamento-di-maschere-disegnate-per-selezioni-precise">Raffinamento di maschere disegnate per selezioni precise</a></li>
+<li><a href="#selezione-basata-sulla-frequenza-dei-dettagli-per-la-nitidezza">Selezione basata sulla frequenza dei dettagli per la nitidezza</a></li>
+<li><a href="#isolamento-delle-aree-a-bassa-frequenza-e-correzione-colore">Isolamento delle aree a bassa frequenza e correzione colore</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-allo-strumento-tracciato-e-controlli-di-base">1. Introduzione allo strumento Tracciato e controlli di base<a class="headerlink" href="#1-introduzione-allo-strumento-tracciato-e-controlli-di-base" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 03:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione dello strumento Tracciato (Path) come metodo principale per creare maschere. Spiegazione dell'aggiunta di nodi, chiusura della forma e controlli rapidi con rotella del mouse e tasti modificatori.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'exposure' attivo con una maschera disegnata (tipo 'path') applicata a un'immagine stilizzata non fotografica (forma astratta viola su sfondo verde). Nella sezione sinistra è visibile lo stack della cronologia con l'entry 'mask manager' espansa, indicando che la maschera è stata creata e applicata. L'istogramma RGB in alto a destra mostra picchi colorati coerenti con i colori dell'immagine. Il cursore del mouse è posizionato nella zona vuota del pannello destro, sotto la sezione 'orientation'." src="screenshots/frame_00023_623.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'exposure' attivo con una maschera disegnata (tipo 'path') applicata a un'immagine stilizzata non fotografica (forma astratta viola su sfondo verde). Nella sezione sinistra è visibile lo stack della cronologia con l'entry 'mask manager' espansa, indicando che la maschera è stata creata e applicata. L'istogramma RGB in alto a destra mostra picchi colorati coerenti con i colori dell'immagine. Il cursore del mouse è posizionato nella zona vuota del pannello destro, sotto la sezione 'orientation'.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con il modulo 'mask manager' attivo. È visibile una maschera disegnata a mano (path) su un'immagine, evidenziata in giallo traslucido per indicare la regione selezionata. La maschera presenta bordi con feathering controllabile tramite i nodi di controllo lungo il percorso, come descritto dal narratore. L'istogramma RGB e la barra degli strumenti inferiore mostrano che l'immagine è in formato RAW (v3.0 RAW). Il cursore è posizionato all'interno della maschera, e lo stato dei parametri indica che la maschera ha opacità al 100% e nessun blur o feathering applicato (0.0 px), nonostante il narratore menzioni che shift+mouse permette di regolare il feathering e il controllo del mouse modifica l'opacità." src="screenshots/frame_00096_120.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella modalità 'darkroom', con il modulo 'mask manager' attivo. È visibile una maschera disegnata a mano (path) su un'immagine, evidenziata in giallo traslucido per indicare la regione selezionata. La maschera presenta bordi con feathering controllabile tramite i nodi di controllo lungo il percorso, come descritto dal narratore. L'istogramma RGB e la barra degli strumenti inferiore mostrano che l'immagine è in formato RAW (v3.0 RAW). Il cursore è posizionato all'interno della maschera, e lo stato dei parametri indica che la maschera ha opacità al 100% e nessun blur o feathering applicato (0.0 px), nonostante il narratore menzioni che shift+mouse permette di regolare il feathering e il controllo del mouse modifica l'opacità.</em></p>
+<p><strong>Modulo:</strong> mask manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo e una maschera disegnata a mano (path-based) su un'immagine astratta verde con forme blu e gialle. La maschera è visibile come contorno tratteggiato con nodi editabili, coerentemente con la descrizione del narratore che spiega come trascinare i nodi, aggiungere nuovi punti con Ctrl+clic e rimuoverli. È attiva una sola forma disegnata ('1 shape used'), con opacità e contrasto della maschera al 0%. L'istogramma RGB è visibile a destra, e nella history stack si vede che l'ultimo passo è 'exposure' (numero 11)." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo e una maschera disegnata a mano (path-based) su un'immagine astratta verde con forme blu e gialle. La maschera è visibile come contorno tratteggiato con nodi editabili, coerentemente con la descrizione del narratore che spiega come trascinare i nodi, aggiungere nuovi punti con Ctrl+clic e rimuoverli. È attiva una sola forma disegnata ('1 shape used'), con opacità e contrasto della maschera al 0%. L'istogramma RGB è visibile a destra, e nella history stack si vede che l'ultimo passo è 'exposure' (numero 11).</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (probabilmente il presentatore) in un video tutorial, non l'interfaccia di darktable. Non sono visibili moduli, strumenti, slider o pannelli di controllo di darktable; l'immagine è un frame video con sfondo chiaro e soggetto al centro. Il contesto indica che si sta parlando dello strumento 'path tool' per le maschere, ma l'interfaccia del software non è mostrata in questo frame." src="screenshots/frame_00000_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (probabilmente il presentatore) in un video tutorial, non l'interfaccia di darktable. Non sono visibili moduli, strumenti, slider o pannelli di controllo di darktable; l'immagine è un frame video con sfondo chiaro e soggetto al centro. Il contesto indica che si sta parlando dello strumento 'path tool' per le maschere, ma l'interfaccia del software non è mostrata in questo frame.</em></p>
+<p><strong>Modulo:</strong> non visibile</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata (Tracciato)</li>
+</ul>
+<hr />
+<h2 id="2-manipolazione-avanzata-dei-nodi-e-modalita-sicura">2. Manipolazione avanzata dei nodi e modalità sicura<a class="headerlink" href="#2-manipolazione-avanzata-dei-nodi-e-modalita-sicura" title="Permanent link">&para;</a></h2>
+<p><strong>[03:00 – 06:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=180">Guarda nel video</a></p>
+<p>Come aggiungere, rimuovere e spostare i nodi. Utilizzo delle maniglie per regolare le curve. Attivazione della modalità di modifica sicura con Ctrl+click per evitare la cancellazione accidentale dell'intera forma. Creazione di angoli netti e transizioni morbide.</p>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata (Tracciato)</li>
+</ul>
+<hr />
+<h2 id="3-rifinitura-della-maschera-feathering-sfocatura-e-contrasto">3. Rifinitura della maschera: Feathering, Sfocatura e Contrasto<a class="headerlink" href="#3-rifinitura-della-maschera-feathering-sfocatura-e-contrasto" title="Permanent link">&para;</a></h2>
+<p><strong>[06:40 – 10:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=400">Guarda nel video</a></p>
+<p>Analisi dei parametri di rifinitura della maschera. Il raggio di sfumatura (feathering radius) agisce come decontaminazione cromatica. Differenze tra sfocatura prima/dopo l'elaborazione. Uso del contrasto per pulire le perdite di maschera e recupero dell'opacità.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'color balance rgb' con una maschera disegnata (una forma irregolare rosa-arancione) applicata su una porzione di un'immagine astratta (forma viola su sfondo verde). La maschera è attiva e visibile con bordo tratteggiato; il parametro 'hue_shift' è impostato a -110.07, indicando una forte rotazione del tono verso il blu/viola. Il cursore è sull'etichetta 'rotate all hues by an angle, at the same luminance', confermando l'uso della correzione cromatica locale tramite maschera. La sezione 'masks' mostra che è stata usata una sola forma disegnata, con feathering radius a 0.0 px, coerentemente con la spiegazione del narratore sul 'color decontamination' e sulla funzione del feathering." src="screenshots/frame_00507_480.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color balance rgb' con una maschera disegnata (una forma irregolare rosa-arancione) applicata su una porzione di un'immagine astratta (forma viola su sfondo verde). La maschera è attiva e visibile con bordo tratteggiato; il parametro 'hue_shift' è impostato a -110.07, indicando una forte rotazione del tono verso il blu/viola. Il cursore è sull'etichetta 'rotate all hues by an angle, at the same luminance', confermando l'uso della correzione cromatica locale tramite maschera. La sezione 'masks' mostra che è stata usata una sola forma disegnata, con feathering radius a 0.0 px, coerentemente con la spiegazione del narratore sul 'color decontamination' e sulla funzione del feathering.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue_shift</td>
+<td>-110.07</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global_chroma</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global_saturation</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>global_brilliance</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine astratta composta da forme geometriche su sfondo verde: una grande forma viola e una piccola forma gialla. Il modulo 'color balance rgb' è selezionato nella pipeline a destra, ma non è ancora configurato per modificare il colore della forma gialla. La cronologia delle operazioni a sinistra mostra che 'color balance rgb' è stato applicato come passo 17, ma non sono visibili maschere o selezioni attive. L'istogramma RGB è visibile in alto a destra, con picchi corrispondenti ai colori dominanti (verde, viola, giallo)." src="screenshots/frame_00457_879.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità 'darkroom', con un'immagine astratta composta da forme geometriche su sfondo verde: una grande forma viola e una piccola forma gialla. Il modulo 'color balance rgb' è selezionato nella pipeline a destra, ma non è ancora configurato per modificare il colore della forma gialla. La cronologia delle operazioni a sinistra mostra che 'color balance rgb' è stato applicato come passo 17, ma non sono visibili maschere o selezioni attive. L'istogramma RGB è visibile in alto a destra, con picchi corrispondenti ai colori dominanti (verde, viola, giallo).</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue_shift</td>
+<td>non visibile (slider non in primo piano)</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>non specificato</td>
+</tr>
+<tr>
+<td>lightness</td>
+<td>non specificato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color balance rgb' attivo, ma il narratore sta descrivendo l'uso della funzione 'draw on mask' per creare una maschera a mano libera (path) attorno a una forma stilizzata (blu su sfondo verde). Nella barra laterale destra sono visibili i controlli della maschera disegnata, con 'drawn mask' impostato su 'no mask used', indicando che la maschera è stata appena creata o non ancora applicata. Lo storico delle operazioni mostra 'color balance rgb' come passo 17, con precedenti passi di esposizione e gestione maschere. L'immagine principale è un grafico astratto con forme geometriche colorate, utilizzato come esempio per dimostrare la selezione rapida tramite path invece di dettagliate regolazioni manuali." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color balance rgb' attivo, ma il narratore sta descrivendo l'uso della funzione 'draw on mask' per creare una maschera a mano libera (path) attorno a una forma stilizzata (blu su sfondo verde). Nella barra laterale destra sono visibili i controlli della maschera disegnata, con 'drawn mask' impostato su 'no mask used', indicando che la maschera è stata appena creata o non ancora applicata. Lo storico delle operazioni mostra 'color balance rgb' come passo 17, con precedenti passi di esposizione e gestione maschere. L'immagine principale è un grafico astratto con forme geometriche colorate, utilizzato come esempio per dimostrare la selezione rapida tramite path invece di dettagliate regolazioni manuali.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global chroma</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>global brilliance</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' in modalità darkroom con una maschera disegnata attiva (una forma gialla evidenziata con contorno nero) su uno sfondo grigio. La maschera è stata raffinata utilizzando il parametro 'feathering radius' impostato a 53.8 px, che espande progressivamente la selezione in base al colore, come descritto dal narratore. L'istogramma RGB e i controlli di gradazione cromatica sono visibili a destra, ma non modificati (tutti a 0.0%). La maschera appare ben definita e concentrata su una porzione specifica dell'immagine, indicando un'ottimizzazione della selezione basata sul colore." src="screenshots/frame_00540_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' in modalità darkroom con una maschera disegnata attiva (una forma gialla evidenziata con contorno nero) su uno sfondo grigio. La maschera è stata raffinata utilizzando il parametro 'feathering radius' impostato a 53.8 px, che espande progressivamente la selezione in base al colore, come descritto dal narratore. L'istogramma RGB e i controlli di gradazione cromatica sono visibili a destra, ma non modificati (tutti a 0.0%). La maschera appare ben definita e concentrata su una porzione specifica dell'immagine, indicando un'ottimizzazione della selezione basata sul colore.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering_radius</td>
+<td>53.8 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn_mask</td>
+<td>1 shape used</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata (Tracciato)</li>
+<li>Rifiniture maschera</li>
+</ul>
+<hr />
+<h2 id="4-applicazione-pratica-su-foto-reale-e-ottimizzazione">4. Applicazione pratica su foto reale e ottimizzazione<a class="headerlink" href="#4-applicazione-pratica-su-foto-reale-e-ottimizzazione" title="Permanent link">&para;</a></h2>
+<p><strong>[10:50 – 15:48]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=650">Guarda nel video</a></p>
+<p>Dimostrazione su una fotografia reale per schiarire un edificio. Creazione di un tracciato approssimativo combinato con le rifiniture per ottenere una selezione pulita e naturale senza il bisogno di un tracciamento pixel-perfect.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'exposure' attivo con una maschera disegnata a mano (segmento curvilineo) che segue la forma superiore dell'edificio 'sesam-vitale', probabilmente per isolare o correggere l'esposizione della parte superiore del cielo e della struttura. La maschera è visibile come linea tratteggiata con nodi di controllo, indicando che l'utente sta modificando manualmente la forma della maschera, in linea con il commento sul 'hard angle' e sulla possibilità di seguire il muro grigio con una grande feathering. L'istogramma RGB e i controlli di fusione sono visibili a destra, ma non sono stati modificati." src="screenshots/frame_00810_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'exposure' attivo con una maschera disegnata a mano (segmento curvilineo) che segue la forma superiore dell'edificio 'sesam-vitale', probabilmente per isolare o correggere l'esposizione della parte superiore del cielo e della struttura. La maschera è visibile come linea tratteggiata con nodi di controllo, indicando che l'utente sta modificando manualmente la forma della maschera, in linea con il commento sul 'hard angle' e sulla possibilità di seguire il muro grigio con una grande feathering. L'istogramma RGB e i controlli di fusione sono visibili a destra, ma non sono stati modificati.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra un'immagine in fase di editing su darktable, con un maschera disegnata attorno a una struttura cilindrica gialla intensa (probabilmente un edificio o installazione artistica). La maggior parte dell'immagine è in bianco e nero, mentre la zona mascherata è resa in giallo vivido, indicando l'applicazione selettiva di un effetto (es. esposizione o saturazione). Il modulo 'exposure 1' è attivo con una maschera personalizzata: si nota un raggio di sfumatura elevato (95.5 px) e un raggio di sfocatura (11.1 px), oltre a un'opacità della maschera al +40%. Il narratore sta correggendo un 'bleeding' del giallo fuori dai confini della maschera, regolando opacità e contrasto della maschera per contenere l’effetto." src="screenshots/frame_00900_000.jpg" /></p>
+<p><em>Lo screenshot mostra un'immagine in fase di editing su darktable, con un maschera disegnata attorno a una struttura cilindrica gialla intensa (probabilmente un edificio o installazione artistica). La maggior parte dell'immagine è in bianco e nero, mentre la zona mascherata è resa in giallo vivido, indicando l'applicazione selettiva di un effetto (es. esposizione o saturazione). Il modulo 'exposure 1' è attivo con una maschera personalizzata: si nota un raggio di sfumatura elevato (95.5 px) e un raggio di sfocatura (11.1 px), oltre a un'opacità della maschera al +40%. Il narratore sta correggendo un 'bleeding' del giallo fuori dai confini della maschera, regolando opacità e contrasto della maschera per contenere l’effetto.</em></p>
+<p><strong>Modulo:</strong> exposure 1</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>95.5 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>11.1 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+40%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'exposure' attivo in darktable, con una maschera disegnata applicata alla foto di un edificio curvo (Gebäude der 'Sesam-Vitale'). La maschera è visibile come area selezionata con bordi sfumati (feathering), e i parametri indicano un'alta opacità della maschera (+25%) e contrasto (+27%), con un raggio di feathering elevato (95.5 px). L'istogramma a destra mostra una distribuzione luminosa bilanciata. Il narratore sta testando l'efficacia della maschera aumentando l'esposizione e osservando il 'bleeding' ai bordi, suggerendo che il feathering è eccessivo." src="screenshots/frame_00932_820.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure' attivo in darktable, con una maschera disegnata applicata alla foto di un edificio curvo (Gebäude der 'Sesam-Vitale'). La maschera è visibile come area selezionata con bordi sfumati (feathering), e i parametri indicano un'alta opacità della maschera (+25%) e contrasto (+27%), con un raggio di feathering elevato (95.5 px). L'istogramma a destra mostra una distribuzione luminosa bilanciata. Il narratore sta testando l'efficacia della maschera aumentando l'esposizione e osservando il 'bleeding' ai bordi, suggerendo che il feathering è eccessivo.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>95.5 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>11.1 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+25%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+27%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto selezionata (edificio curvo 'sesam-vitale') visualizzata al centro. A sinistra è presente il pannello di navigazione con voci come 'snapshots', 'history', 'mask manager'. A destra è visibile il pannello dei moduli con la lista completa dei moduli disponibili (es. 'exposure', 'tone equalizer', 'color balance rgb'), ma nessun modulo è espanso o attivo. In basso è presente la barra delle miniature della collezione. Il narratore sta descrivendo un flusso di lavoro futuro per selezionare e illuminare l'edificio, ma al momento dello screenshot non è stata ancora applicata alcuna maschera né attivato alcun modulo di correzione." src="screenshots/frame_00750_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una foto selezionata (edificio curvo 'sesam-vitale') visualizzata al centro. A sinistra è presente il pannello di navigazione con voci come 'snapshots', 'history', 'mask manager'. A destra è visibile il pannello dei moduli con la lista completa dei moduli disponibili (es. 'exposure', 'tone equalizer', 'color balance rgb'), ma nessun modulo è espanso o attivo. In basso è presente la barra delle miniature della collezione. Il narratore sta descrivendo un flusso di lavoro futuro per selezionare e illuminare l'edificio, ma al momento dello screenshot non è stata ancora applicata alcuna maschera né attivato alcun modulo di correzione.</em></p>
+<p><strong>Modulo:</strong> none</p>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Esposizione</li>
+<li>Maschera disegnata (Tracciato)</li>
+<li>Rifiniture maschera</li>
+</ul>
+<hr />
+<h2 id="5-raffinamento-di-maschere-disegnate-per-selezioni-precise">5. Raffinamento di maschere disegnate per selezioni precise<a class="headerlink" href="#5-raffinamento-di-maschere-disegnate-per-selezioni-precise" title="Permanent link">&para;</a></h2>
+<p><strong>[15:52 – 20:45]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=952">Guarda nel video</a></p>
+<p>Dimostrazione pratica del perfezionamento di una maschera disegnata su un'area di piccole dimensioni. Vengono illustrati i compromessi tra sfumatura, opacità e contrasto per ottenere bordi puliti ed evitare artefatti visibili.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'exposure' attivo nella vista darkroom di darktable, con un'immagine di un edificio moderno (CCTV Headquarters o simile) fortemente sovraesposta al centro. È applicata una maschera disegnata (1 forma usata) con feathering elevato (62.7 px), leggero blur (19.3 px), e contrasto della maschera aumentato a +27%. L'esposizione è stata portata a +3.90 EV, con soglia di clipping molto bassa (0.010%). Il cursore del mouse si trova vicino al controllo 'mask contrast', coerentemente con il commento del narratore che suggerisce di aumentare il contrasto della maschera per valutarne la pulizia." src="screenshots/frame_00958_840.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure' attivo nella vista darkroom di darktable, con un'immagine di un edificio moderno (CCTV Headquarters o simile) fortemente sovraesposta al centro. È applicata una maschera disegnata (1 forma usata) con feathering elevato (62.7 px), leggero blur (19.3 px), e contrasto della maschera aumentato a +27%. L'esposizione è stata portata a +3.90 EV, con soglia di clipping molto bassa (0.010%). Il cursore del mouse si trova vicino al controllo 'mask contrast', coerentemente con il commento del narratore che suggerisce di aumentare il contrasto della maschera per valutarne la pulizia.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>3.90 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>62.7 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>19.3 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+3%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+27%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra un'architettura moderna con cupola bianca fortemente sovraesposta, risultato di un aumento estremo dell'esposizione (+3.9 EV) nel modulo 'exposure'. È attiva una maschera disegnata (1 forma), con alta opacità e contrasto della maschera (+81%), e parametri di sfumatura e sfocatura elevati. L'istogramma a destra indica saturazione dei toni chiari. Il narratore commenta l'effetto drammatico ma controllato dell'aumento di esposizione, notando che segue i bordi dell'oggetto e che valori così alti sono rari in pratica." src="screenshots/frame_00986_860.jpg" /></p>
+<p><em>L'immagine mostra un'architettura moderna con cupola bianca fortemente sovraesposta, risultato di un aumento estremo dell'esposizione (+3.9 EV) nel modulo 'exposure'. È attiva una maschera disegnata (1 forma), con alta opacità e contrasto della maschera (+81%), e parametri di sfumatura e sfocatura elevati. L'istogramma a destra indica saturazione dei toni chiari. Il narratore commenta l'effetto drammatico ma controllato dell'aumento di esposizione, notando che segue i bordi dell'oggetto e che valori così alti sono rari in pratica.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>3.90 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+3%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+81%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>62.7 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>19.3 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'immagine mostra un edificio curvo sovraesposto, con l'istogramma spostato fortemente a destra; il modulo 'exposure' è attivo con un valore estremo di +3.90 EV, indicando un'intenzionale sovraesposizione drastica. È attiva una maschera disegnata con alta opacità e contrasto, e guida di feathering visibile, suggerendo un intervento mirato su una porzione dell'immagine. Lo screenshot riflette un esperimento di correzione espositiva estrema, probabilmente per evidenziare i limiti del recupero tonale o per creare un effetto artistico." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>L'immagine mostra un edificio curvo sovraesposto, con l'istogramma spostato fortemente a destra; il modulo 'exposure' è attivo con un valore estremo di +3.90 EV, indicando un'intenzionale sovraesposizione drastica. È attiva una maschera disegnata con alta opacità e contrasto, e guida di feathering visibile, suggerendo un intervento mirato su una porzione dell'immagine. Lo screenshot riflette un esperimento di correzione espositiva estrema, probabilmente per evidenziare i limiti del recupero tonale o per creare un effetto artistico.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>3.90 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+3%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+81%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>52.7 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>19.3 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'exposure' attivo nella scheda 'lighttable'. Sul pannello destro sono visibili i controlli dell'esposizione e, sotto la sezione 'drawn mask', è evidenziato lo strumento di disegno maschera (icona della matita), con il cursore posizionato sull'opzione 'path'. Lo screenshot cattura il momento immediatamente successivo alla creazione di una maschera disegnata a mano (probabilmente un quadrilatero) su un segnale stradale sfocato, come descritto dal narratore che sta per regolare il feathering. L'istogramma RGB e la miniatura dell'immagine sono visibili in alto a destra e a sinistra rispettivamente." src="screenshots/frame_01121_920.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'exposure' attivo nella scheda 'lighttable'. Sul pannello destro sono visibili i controlli dell'esposizione e, sotto la sezione 'drawn mask', è evidenziato lo strumento di disegno maschera (icona della matita), con il cursore posizionato sull'opzione 'path'. Lo screenshot cattura il momento immediatamente successivo alla creazione di una maschera disegnata a mano (probabilmente un quadrilatero) su un segnale stradale sfocato, come descritto dal narratore che sta per regolare il feathering. L'istogramma RGB e la miniatura dell'immagine sono visibili in alto a destra e a sinistra rispettivamente.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>mask_refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details_threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring_radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'exposure' attivo con una maschera disegnata su un segnale giallo nel centro dell'immagine. La maschera è visibile come area gialla luminosa, indicando che è attiva e selezionata. Il parametro 'feathering radius' è impostato a 35.6 px, coerentemente con il commento del narratore che discute dell’effetto di feathering eccessivo su una piccola area. L’istogramma RGB è visibile a destra, e la history stack mostra 17 operazioni, con 'exposure 1' selezionato. La foto è in modalità monocromatica tranne per la maschera gialla, suggerendo l’uso di una maschera colorata per evidenziare la selezione." src="screenshots/frame_01170_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'exposure' attivo con una maschera disegnata su un segnale giallo nel centro dell'immagine. La maschera è visibile come area gialla luminosa, indicando che è attiva e selezionata. Il parametro 'feathering radius' è impostato a 35.6 px, coerentemente con il commento del narratore che discute dell’effetto di feathering eccessivo su una piccola area. L’istogramma RGB è visibile a destra, e la history stack mostra 17 operazioni, con 'exposure 1' selezionato. La foto è in modalità monocromatica tranne per la maschera gialla, suggerendo l’uso di una maschera colorata per evidenziare la selezione.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>feathering_radius</td>
+<td>35.6 px</td>
+</tr>
+<tr>
+<td>spatial_radius_of_feathering</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata (Percorso)</li>
+<li>Esposizione</li>
+</ul>
+<hr />
+<h2 id="6-selezione-basata-sulla-frequenza-dei-dettagli-per-la-nitidezza">6. Selezione basata sulla frequenza dei dettagli per la nitidezza<a class="headerlink" href="#6-selezione-basata-sulla-frequenza-dei-dettagli-per-la-nitidezza" title="Permanent link">&para;</a></h2>
+<p><strong>[20:45 – 25:45]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=1245">Guarda nel video</a></p>
+<p>Utilizzo del parametro 'Soglia dettagli' per isolare le alte frequenze (dettagli fini) di un soggetto. Applicazione della nitidezza in modo selettivo per migliorare i dettagli senza introdurre rumore nelle aree uniformi.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo. È stata creata una maschera disegnata a mano (path) che delimita accuratamente una libellula su uno sfondo sfocato. La maschera è visibile come contorno nero con bordo sfumato (feathering) e si estende attorno al corpo e alle ali dell'insetto. Il pannello dei parametri indica che la maschera è attiva (1 shape used), con mix a +1.00 e opacità al 100%, mentre le opzioni di raffinamento della maschera sono disattivate. L'istogramma RGB e il grafico del contrast equalizer mostrano la distribuzione tonale dell'immagine. Il narratore sta spiegando come utilizzare la maschera per applicare un miglioramento locale del contrasto/sharpness solo sull'oggetto selezionato." src="screenshots/frame_01359_200.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo. È stata creata una maschera disegnata a mano (path) che delimita accuratamente una libellula su uno sfondo sfocato. La maschera è visibile come contorno nero con bordo sfumato (feathering) e si estende attorno al corpo e alle ali dell'insetto. Il pannello dei parametri indica che la maschera è attiva (1 shape used), con mix a +1.00 e opacità al 100%, mentre le opzioni di raffinamento della maschera sono disattivate. L'istogramma RGB e il grafico del contrast equalizer mostrano la distribuzione tonale dell'immagine. Il narratore sta spiegando come utilizzare la maschera per applicare un miglioramento locale del contrasto/sharpness solo sull'oggetto selezionato.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>1 shape used</td>
+</tr>
+<tr>
+<td>invert mask</td>
+<td>off</td>
+</tr>
+<tr>
+<td>mask refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, applicato a una foto architettonica della sede Sesam-Vitale. È stata creata una maschera disegnata (drawn mask) con alta opacità e contrasto per selezionare specificamente la facciata dell'edificio, permettendo un'elaborazione localizzata dell'esposizione (-0.38 EV). L'istogramma RGB è visibile a destra, e lo storico delle modifiche indica che questa è la versione 17 ('exposure 1'). Il narratore sta dimostrando come regolare l'esposizione in modo selettivo senza introdurre artefatti visibili ai bordi della maschera." src="screenshots/frame_01320_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo, applicato a una foto architettonica della sede Sesam-Vitale. È stata creata una maschera disegnata (drawn mask) con alta opacità e contrasto per selezionare specificamente la facciata dell'edificio, permettendo un'elaborazione localizzata dell'esposizione (-0.38 EV). L'istogramma RGB è visibile a destra, e lo storico delle modifiche indica che questa è la versione 17 ('exposure 1'). Il narratore sta dimostrando come regolare l'esposizione in modo selettivo senza introdurre artefatti visibili ai bordi della maschera.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>-0.38 EV</td>
+</tr>
+<tr>
+<td>clipping_threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>manual</td>
+</tr>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>+0.0 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. È visibile un'immagine macro di una libellula (damselfly) su uno sfondo sfocato. Il parametro 'mix' è impostato a +1.00, indicando un'applicazione completa dell'effetto. Nella history stack, il modulo 'contrast equalizer' è selezionato (riga 15), e il cursore è posizionato sullo strumento di maschera disegnata (icona penna), coerentemente con il commento del narratore che intende creare una selezione manuale per affinare il contrasto locale sulla libellula. Non è ancora presente una maschera attiva nell'area di lavoro, ma lo strumento è pronto all'uso." src="screenshots/frame_01344_720.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'contrast equalizer' attivo nella scheda 'luma'. È visibile un'immagine macro di una libellula (damselfly) su uno sfondo sfocato. Il parametro 'mix' è impostato a +1.00, indicando un'applicazione completa dell'effetto. Nella history stack, il modulo 'contrast equalizer' è selezionato (riga 15), e il cursore è posizionato sullo strumento di maschera disegnata (icona penna), coerentemente con il commento del narratore che intende creare una selezione manuale per affinare il contrasto locale sulla libellula. Non è ancora presente una maschera attiva nell'area di lavoro, ma lo strumento è pronto all'uso.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo nella scheda 'luma', con una maschera disegnata (1 shape used) applicata alla foto di una libellula. La maschera è stata raffinata con soglia dettagli al 24%, raggio di sfumatura a 12.5 px e contrasto della maschera aumentato del +26%. L’istogramma RGB e la visualizzazione della curva di contrasto indicano un intervento mirato sulle zone luminose. Il narratore menziona di usare questa tecnica per applicare nitidezza selettivamente, proteggendo le aree non desiderate, anche se dichiara di utilizzare meno spesso questo modulo in favore di 'diffuse or sharpened' nelle versioni più recenti." src="screenshots/frame_01521_920.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo nella scheda 'luma', con una maschera disegnata (1 shape used) applicata alla foto di una libellula. La maschera è stata raffinata con soglia dettagli al 24%, raggio di sfumatura a 12.5 px e contrasto della maschera aumentato del +26%. L’istogramma RGB e la visualizzazione della curva di contrasto indicano un intervento mirato sulle zone luminose. Il narratore menziona di usare questa tecnica per applicare nitidezza selettivamente, proteggendo le aree non desiderate, anche se dichiara di utilizzare meno spesso questo modulo in favore di 'diffuse or sharpened' nelle versioni più recenti.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>24%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>12.5 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+19%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+26%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata</li>
+<li>Equalizzatore di contrasto</li>
+<li>Diffondi o nitidezza</li>
+</ul>
+<hr />
+<h2 id="7-isolamento-delle-aree-a-bassa-frequenza-e-correzione-colore">7. Isolamento delle aree a bassa frequenza e correzione colore<a class="headerlink" href="#7-isolamento-delle-aree-a-bassa-frequenza-e-correzione-colore" title="Permanent link">&para;</a></h2>
+<p><strong>[25:45 – 28:27]</strong>
+ | <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=1545">Guarda nel video</a></p>
+<p>Tecnica inversa per selezionare le aree a bassa frequenza (sfondo e zone sfocate) tramite la 'Soglia dettagli'. Applicazione di saturazione tramite Bilanciamento colore RGB e conclusione del tutorial con anticipazione del prossimo episodio.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' attivo in darktable, con una maschera disegnata (drawn mask) attiva ma non ancora definita (stato 'no mask used'). Il parametro 'details threshold' è impostato a 0%, coerentemente con la descrizione del narratore che intende rimuovere le aree ad alta frequenza mantenendo solo quelle a bassa frequenza. L'immagine di sfondo è un primo piano di una libellula su uno sfondo sfocato, e l'istogramma RGB è visibile a destra. La history stack indica che il modulo 'color balance rgb' è stato aggiunto come istanza numero 18." src="screenshots/frame_01590_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' attivo in darktable, con una maschera disegnata (drawn mask) attiva ma non ancora definita (stato 'no mask used'). Il parametro 'details threshold' è impostato a 0%, coerentemente con la descrizione del narratore che intende rimuovere le aree ad alta frequenza mantenendo solo quelle a bassa frequenza. L'immagine di sfondo è un primo piano di una libellula su uno sfondo sfocato, e l'istogramma RGB è visibile a destra. La history stack indica che il modulo 'color balance rgb' è stato aggiunto come istanza numero 18.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>details threshold</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>global saturation</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>mid-tones</td>
+<td>0.00 %</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>0.00 %</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'contrast equalizer' attivo in darktable, con una maschera disegnata (1 shape used) applicata all'immagine di una libellula. La tab 'luma' è selezionata e la curva di contrasto è stata modificata per aumentare i dettagli locali senza introdurre artefatti visibili, come confermato dal narratore che parla di un miglioramento netto della nitidezza ('sharpened up quite well') e assenza di artefatti. L'istogramma RGB e l'anteprima dell'immagine indicano un'elaborazione fine su toni chiari e medi." src="screenshots/frame_01563_740.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'contrast equalizer' attivo in darktable, con una maschera disegnata (1 shape used) applicata all'immagine di una libellula. La tab 'luma' è selezionata e la curva di contrasto è stata modificata per aumentare i dettagli locali senza introdurre artefatti visibili, come confermato dal narratore che parla di un miglioramento netto della nitidezza ('sharpened up quite well') e assenza di artefatti. L'istogramma RGB e l'anteprima dell'immagine indicano un'elaborazione fine su toni chiari e medi.</em></p>
+<p><strong>Modulo:</strong> contrast equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mix</td>
+<td>+1.00</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>24%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>12.5 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+19%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+26%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella sezione dei moduli a destra. È visibile una maschera disegnata (drawn mask) con inversione attiva ('invert mask' on), e il parametro 'details_threshold' è impostato a -87%, indicando che la maschera seleziona aree con dettagli bassi (bassa frequenza), coerentemente con il commento del narratore che sta rimuovendo le aree ad alta frequenza per mantenere solo quelle a bassa frequenza. L'immagine centrale mostra un soggetto (un insetto) su sfondo giallo uniforme, con una maschera parzialmente applicata. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra la collezione di immagini." src="screenshots/frame_01611_920.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella sezione dei moduli a destra. È visibile una maschera disegnata (drawn mask) con inversione attiva ('invert mask' on), e il parametro 'details_threshold' è impostato a -87%, indicando che la maschera seleziona aree con dettagli bassi (bassa frequenza), coerentemente con il commento del narratore che sta rimuovendo le aree ad alta frequenza per mantenere solo quelle a bassa frequenza. L'immagine centrale mostra un soggetto (un insetto) su sfondo giallo uniforme, con una maschera parzialmente applicata. L'istogramma RGB è visibile in alto a destra, e la barra degli strumenti inferiore mostra la collezione di immagini.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>details_threshold</td>
+<td>-87%</td>
+</tr>
+<tr>
+<td>mask_opacity</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>mask_contrast</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>blend_mode</td>
+<td>normal</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'mask manager' attivo sul pannello destro, mentre l'immagine centrale è una macrofotografia di una libellula su un gambo verde. Il pannello sinistro elenca lo stack storico delle operazioni, con 'color balance rgb 1' selezionato. Nella barra degli strumenti inferiore sono visibili le miniature della collezione. Il narratore sta concludendo una dimostrazione sull'uso delle maschere disegnate (in particolare le maschere a tracciato) per selezionare aree lisce dell'immagine, anticipando future lezioni su unioni, intersezioni e differenze tra maschere." src="screenshots/frame_01689_240.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'mask manager' attivo sul pannello destro, mentre l'immagine centrale è una macrofotografia di una libellula su un gambo verde. Il pannello sinistro elenca lo stack storico delle operazioni, con 'color balance rgb 1' selezionato. Nella barra degli strumenti inferiore sono visibili le miniature della collezione. Il narratore sta concludendo una dimostrazione sull'uso delle maschere disegnate (in particolare le maschere a tracciato) per selezionare aree lisce dell'immagine, anticipando future lezioni su unioni, intersezioni e differenze tra maschere.</em></p>
+<p><strong>Modulo:</strong> mask manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blend mode</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>drawn mask</td>
+<td>no mask used</td>
+</tr>
+<tr>
+<td>invert mask</td>
+<td>off</td>
+</tr>
+<tr>
+<td>mask refinement</td>
+<td>off</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>-87%</td>
+</tr>
+<tr>
+<td>feathering guide</td>
+<td>input after blur</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>35.7 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la vista darkroom con un'immagine macro di una libellula. Il modulo 'color balance rgb' è evidenziato nella lista dei moduli a destra, e il cursore del mouse è posizionato sopra l'icona del modulo, indicando che l'utente sta per o ha appena selezionato/creato un'istanza di questo modulo. Nella history stack a sinistra, 'contrast equalizer' è selezionato (riga 16), ma il contesto narrativo indica che l'utente intende passare a 'color balance rgb' e creare una nuova istanza con una maschera disegnata. Non sono visibili i controlli dettagliati del modulo né la maschera stessa, ma lo stato dell'interfaccia suggerisce un'operazione in corso di aggiunta/modifica della maschera per il color balance." src="screenshots/frame_01582_440.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la vista darkroom con un'immagine macro di una libellula. Il modulo 'color balance rgb' è evidenziato nella lista dei moduli a destra, e il cursore del mouse è posizionato sopra l'icona del modulo, indicando che l'utente sta per o ha appena selezionato/creato un'istanza di questo modulo. Nella history stack a sinistra, 'contrast equalizer' è selezionato (riga 16), ma il contesto narrativo indica che l'utente intende passare a 'color balance rgb' e creare una nuova istanza con una maschera disegnata. Non sono visibili i controlli dettagliati del modulo né la maschera stessa, ma lo stato dell'interfaccia suggerisce un'operazione in corso di aggiunta/modifica della maschera per il color balance.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>green</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>shadows</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>midtones</td>
+<td>non visibile</td>
+</tr>
+<tr>
+<td>highlights</td>
+<td>non visibile</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera disegnata</li>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maschera disegnata (Tracciato)</strong></td>
+<td>maniglie di curvatura, raggio di sfocatura (blurring radius), opacità maschera, raggio di sfumatura (feathering radius), modalità fusione sfocatura (input/output before/after), contrasto maschera, aggiunta/rimozione nodi</td>
+</tr>
+<tr>
+<td><strong>Esposizione</strong></td>
+<td>applicazione selettiva tramite maschera, Compensazione EV</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento colore RGB</strong></td>
+<td>Saturazione, spostamento tonalità (hue shift)</td>
+</tr>
+<tr>
+<td><strong>Maschera disegnata (Percorso)</strong></td>
+<td>Opacità, Raggio di sfumatura, Contrasto, Sfocatura, Soglia dettagli</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore di contrasto</strong></td>
+<td>Nitidezza selettiva</td>
+</tr>
+<tr>
+<td><strong>Diffondi o nitidezza</strong></td>
+<td>Applicazione mirata</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Attenzione:</strong> Utilizzare la modalità di modifica sicura (Ctrl+click) per aggiungere o rimuovere nodi senza rischiare di cancellare accidentalmente l'intera forma con il tasto destro. — <em>Durante la modifica di tracciati complessi o già definiti</em>
+<strong>Importante:</strong> Il raggio di sfumatura (feathering radius) non sfoca semplicemente i bordi, ma agisce come decontaminazione cromatica, affinando la selezione in base alle differenze di colore. — <em>Quando si selezionano oggetti con bordi complessi o contrasti cromatici definiti</em>
+- Per pulire le perdite (bleeding) della maschera, aumentare il parametro di contrasto nelle rifiniture per creare una curva a S sulla maschera, isolando meglio l'area selezionata. — <em>Dopo aver applicato la sfocatura o quando la maschera sborda sui bordi</em>
+<strong>Importante:</strong> Non è necessario tracciare il contorno con precisione millimetrica. Un tracciato approssimativo combinato con le rifiniture (feathering e contrasto) è più veloce e spesso più efficace. — <em>Flusso di lavoro generale per la creazione di maschere</em>
+- Tenere premuto Ctrl durante il click per creare angoli netti (linee rette). Cliccare nuovamente con Ctrl su un nodo esistente per convertirlo da angolo a curva e viceversa. — <em>Durante la creazione o modifica della forma del tracciato</em>
+- Impostare la modalità di sfocatura su 'output after blur' per applicare la sfocatura dopo il calcolo del feathering, ottenendo risultati più prevedibili. — <em>Configurazione dei parametri di rifinitura della maschera</em>
+- Per maschere di piccole dimensioni, aumentare la sfumatura con cautela e compensare con opacità e contrasto per pulire i bordi senza perdere la selezione. — <em>Quando si lavora su aree ristrette o dettagli fini.</em>
+<strong>Attenzione:</strong> Non applicare mai una maschera con bordi troppo netti; aggiungere sempre un po' di sfumatura per evitare artefatti visibili e transizioni innaturali. — <em>Durante la creazione e il raffinamento di qualsiasi maschera disegnata.</em>
+<strong>Importante:</strong> Utilizzare la 'Soglia dettagli' per selezionare in base alla frequenza: spostare a destra per i dettagli (alte frequenze), a sinistra per le aree uniformi (basse frequenze). — <em>Quando si desidera isolare nitidezza o colore in base alla struttura dell'immagine.</em>
+<strong>Importante:</strong> Proteggere le aree a bassa frequenza durante la nitidezza per evitare l'introduzione di rumore digitale inutile. — <em>Workflow di sharpening selettivo.</em>
+- Se si crea un'istanza di maschera disegnata senza tracciare forme, verrà selezionata automaticamente l'intera immagine. — <em>Quando si desidera applicare un effetto globale prima di filtrarlo con la soglia dettagli.</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:21:34.505823.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

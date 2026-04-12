@@ -1,0 +1,4380 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/4KV9Ic-mPj0/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] Filmic & Sigmoid Part 4 - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-filmic-sigmoid-part-4" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] Filmic &amp; Sigmoid Part 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-preparazione-del-flusso-di-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e preparazione del flusso di lavoro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e preparazione del flusso di lavoro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fondamenti-di-filmic-rgb-e-teoria-del-tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Fondamenti di Filmic RGB e teoria del tone mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Fondamenti di Filmic RGB e teoria del tone mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-gestione-della-curva-e-ricostruzione-delle-alte-luci-in-filmic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Gestione della curva e ricostruzione delle alte luci in Filmic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Gestione della curva e ricostruzione delle alte luci in Filmic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-confronto-con-il-modulo-dedicato-e-limiti-di-filmic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Confronto con il modulo dedicato e limiti di Filmic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Confronto con il modulo dedicato e limiti di Filmic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-introduzione-a-sigmoid-e-primi-parametri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Introduzione a Sigmoid e primi parametri
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Introduzione a Sigmoid e primi parametri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-funzionamento-della-curva-sigmoid-e-parametro-skew" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Funzionamento della curva Sigmoid e parametro Skew
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Funzionamento della curva Sigmoid e parametro Skew">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conservazione-del-colore-e-gestione-dei-primari" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Conservazione del colore e gestione dei primari
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Conservazione del colore e gestione dei primari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-confronto-output-standard-e-gestione-delle-alte-luci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Confronto output standard e gestione delle alte luci
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Confronto output standard e gestione delle alte luci">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-esempio-pratico-su-immagine-paesaggistica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Esempio pratico su immagine paesaggistica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Esempio pratico su immagine paesaggistica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-conclusioni-e-integrazione-nel-flusso-di-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Conclusioni e integrazione nel flusso di lavoro
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Conclusioni e integrazione nel flusso di lavoro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-conclusione-e-saluti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Conclusione e saluti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-filmic-sigmoid-part-4">[ENG] Filmic &amp; Sigmoid Part 4<a class="headerlink" href="#eng-filmic-sigmoid-part-4" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0">https://www.youtube.com/watch?v=4KV9Ic-mPj0</a>
+<strong>Generato:</strong> 2026-04-12T01:16:19.811690
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-preparazione-del-flusso-di-lavoro">Introduzione e preparazione del flusso di lavoro</a></li>
+<li><a href="#fondamenti-di-filmic-rgb-e-teoria-del-tone-mapping">Fondamenti di Filmic RGB e teoria del tone mapping</a></li>
+<li><a href="#gestione-della-curva-e-ricostruzione-delle-alte-luci-in-filmic">Gestione della curva e ricostruzione delle alte luci in Filmic</a></li>
+<li><a href="#confronto-con-il-modulo-dedicato-e-limiti-di-filmic">Confronto con il modulo dedicato e limiti di Filmic</a></li>
+<li><a href="#introduzione-a-sigmoid-e-primi-parametri">Introduzione a Sigmoid e primi parametri</a></li>
+<li><a href="#funzionamento-della-curva-sigmoid-e-parametro-skew">Funzionamento della curva Sigmoid e parametro Skew</a></li>
+<li><a href="#conservazione-del-colore-e-gestione-dei-primari">Conservazione del colore e gestione dei primari</a></li>
+<li><a href="#confronto-output-standard-e-gestione-delle-alte-luci">Confronto output standard e gestione delle alte luci</a></li>
+<li><a href="#esempio-pratico-su-immagine-paesaggistica">Esempio pratico su immagine paesaggistica</a></li>
+<li><a href="#conclusioni-e-integrazione-nel-flusso-di-lavoro">Conclusioni e integrazione nel flusso di lavoro</a></li>
+<li><a href="#conclusione-e-saluti">Conclusione e saluti</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-preparazione-del-flusso-di-lavoro">1. Introduzione e preparazione del flusso di lavoro<a class="headerlink" href="#1-introduzione-e-preparazione-del-flusso-di-lavoro" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 01:50]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del confronto tra Filmic RGB e Sigmoid. Preparazione dell'immagine duplicata, verifica dell'esposizione con il bordo bianco e impostazione del profilo colore corretto.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale personalizzata visibile nel grafico % display. L'immagine è una scena notturna di un'attrazione da luna park con luci al neon e motion blur, tipica di esposizione lunga. Sono presenti due campioni di colore selezionati nel pannello 'color picker' a sinistra (HSL: 211,79 90,42 92,37 e 211,79 59,71 74,09). Il messaggio in basso indica che è stato importato il profilo colore d'ingresso. Il modulo è configurato per un workflow scene-referred con controllo preciso della mappatura tonale." src="screenshots/frame_00054_340.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale personalizzata visibile nel grafico % display. L'immagine è una scena notturna di un'attrazione da luna park con luci al neon e motion blur, tipica di esposizione lunga. Sono presenti due campioni di colore selezionati nel pannello 'color picker' a sinistra (HSL: 211,79 90,42 92,37 e 211,79 59,71 74,09). Il messaggio in basso indica che è stato importato il profilo colore d'ingresso. Il modulo è configurato per un workflow scene-referred con controllo preciso della mappatura tonale.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb • scene-referred default</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>white relative exposure</td>
+<td>6.16 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-6.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata selezionata. Il modulo 'exposure' è attivo nel pannello destro, con esposizione regolata a +0.700 EV e correzione del livello nero a -0.0002. È visibile un bordo bianco attorno all'anteprima dell'immagine (attivato dal tasto B), utilizzato per valutare il livello di luminosità rispetto al bianco puro. L'istogramma RGB è presente in alto a destra, e lo stato 'working...' indica che un'operazione è in corso. Il cursore è posizionato sul pulsante rosa circolare in basso a destra, probabilmente per attivare/disattivare la visualizzazione del bordo bianco." src="screenshots/frame_00087_033.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata selezionata. Il modulo 'exposure' è attivo nel pannello destro, con esposizione regolata a +0.700 EV e correzione del livello nero a -0.0002. È visibile un bordo bianco attorno all'anteprima dell'immagine (attivato dal tasto B), utilizzato per valutare il livello di luminosità rispetto al bianco puro. L'istogramma RGB è presente in alto a destra, e lo stato 'working...' indica che un'operazione è in corso. Il cursore è posizionato sul pulsante rosa circolare in basso a destra, probabilmente per attivare/disattivare la visualizzazione del bordo bianco.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate_camera_exposure</td>
+<td>-2.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>black_level_correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci colorate. In basso a destra, il cursore del mouse punta sull'icona del modulo 'ISO 12646 color assessment conditions' (etichettata erroneamente come 'ISO 1266' nel contesto vocale), che attiva un bordo bianco intorno all'immagine per valutare la luminosità rispetto al bianco puro. L'istogramma RGB è visibile nel pannello superiore destro, e lo stato della fotocamera indica ISO 125, apertura f/2.6, tempo di posa 1/2s." src="screenshots/frame_00084_640.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci colorate. In basso a destra, il cursore del mouse punta sull'icona del modulo 'ISO 12646 color assessment conditions' (etichettata erroneamente come 'ISO 1266' nel contesto vocale), che attiva un bordo bianco intorno all'immagine per valutare la luminosità rispetto al bianco puro. L'istogramma RGB è visibile nel pannello superiore destro, e lo stato della fotocamera indica ISO 125, apertura f/2.6, tempo di posa 1/2s.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>-2.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con una griglia di anteprime di immagini RAW. L'immagine #11 è selezionata e contrassegnata con 4 stelle; sopra di essa è visibile un cursore con un cerchio rosa, indicante probabilmente un'azione di selezione o un'annotazione temporanea. Il pannello destro mostra le opzioni della lighttable (selection, actions on selection, history stack, ecc.), mentre il pannello sinistro include il gestore script con vari moduli fermati. Non è attivo alcun modulo di sviluppo (es. Filmic), poiché l'utente sta ancora nella fase di selezione delle immagini." src="screenshots/frame_00036_183.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con una griglia di anteprime di immagini RAW. L'immagine #11 è selezionata e contrassegnata con 4 stelle; sopra di essa è visibile un cursore con un cerchio rosa, indicante probabilmente un'azione di selezione o un'annotazione temporanea. Il pannello destro mostra le opzioni della lighttable (selection, actions on selection, history stack, ecc.), mentre il pannello sinistro include il gestore script con vari moduli fermati. Non è attivo alcun modulo di sviluppo (es. Filmic), poiché l'utente sta ancora nella fase di selezione delle immagini.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>1 image (#11) selected of 24</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>capture time</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>4 stars (for selected image)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una scena video di un uomo (Nicholas) che parla davanti a una parete rossa con un quadro di un cane sullo sfondo; non è visibile alcuna interfaccia di darktable. Il contesto narrativo indica che si trova nella lighttable con due immagini identiche, ma l'interfaccia stessa non appare nell'immagine. Si tratta quindi di un frame estratto da un video tutorial, non di uno screenshot dell'interfaccia software." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una scena video di un uomo (Nicholas) che parla davanti a una parete rossa con un quadro di un cane sullo sfondo; non è visibile alcuna interfaccia di darktable. Il contesto narrativo indica che si trova nella lighttable con due immagini identiche, ma l'interfaccia stessa non appare nell'immagine. Si tratta quindi di un frame estratto da un video tutorial, non di uno screenshot dell'interfaccia software.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>esposizione</li>
+<li>profilo colore</li>
+<li>bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="2-fondamenti-di-filmic-rgb-e-teoria-del-tone-mapping">2. Fondamenti di Filmic RGB e teoria del tone mapping<a class="headerlink" href="#2-fondamenti-di-filmic-rgb-e-teoria-del-tone-mapping" title="Permanent link">&para;</a></h2>
+<p><strong>[01:50 – 05:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=110">Guarda nel video</a></p>
+<p>Analisi dei primi controlli di Filmic RGB (esposizione relativa, auto-tune). Spiegazione teorica della curva di tone mapping (toe, straight line, shoulder) e funzione di latitudine, contrasto e bilanciamento.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile la curva tonale EV scene centrata su 0.0, con valori di esposizione relativa bianco a +6.16 EV e nero a -6.65 EV. L'immagine è una scena notturna di un'attrazione da luna park con luci al neon vivaci e motion blur; lo strumento color picker indica un campione medio HSL (211,79,90,42) e live samples vari. Sulla destra sono presenti gli istogrammi RGB e il pannello dei moduli attivi, tra cui 'color balance rgb' e 'color calibration', confermando il contesto di bilanciamento del colore e mappatura tonale descritto dal narratore." src="screenshots/frame_00137_259.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile la curva tonale EV scene centrata su 0.0, con valori di esposizione relativa bianco a +6.16 EV e nero a -6.65 EV. L'immagine è una scena notturna di un'attrazione da luna park con luci al neon vivaci e motion blur; lo strumento color picker indica un campione medio HSL (211,79,90,42) e live samples vari. Sulla destra sono presenti gli istogrammi RGB e il pannello dei moduli attivi, tra cui 'color balance rgb' e 'color calibration', confermando il contesto di bilanciamento del colore e mappatura tonale descritto dal narratore.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EV scene</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>white relative exposure</td>
+<td>6.16 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-6.65 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>disattivato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una foto notturna di una giostra illuminata a colori vivaci. La curva di tonalità è stata modificata per aumentare l'esposizione relativa bianca fino a +7.32 EV, mentre quella nera è impostata a -7.10 EV, per preservare i dettagli nel cielo scuro e ridurre il glow. Il cursore è posizionato sulla curva, e appare il messaggio 'working...', indicando che la funzione 'auto tune levels' è in esecuzione o appena applicata. L'istogramma RGB a destra mostra una distribuzione ampia con picchi nei colori primari, coerente con la scena luminosa e cromatica." src="screenshots/frame_00179_719.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con una foto notturna di una giostra illuminata a colori vivaci. La curva di tonalità è stata modificata per aumentare l'esposizione relativa bianca fino a +7.32 EV, mentre quella nera è impostata a -7.10 EV, per preservare i dettagli nel cielo scuro e ridurre il glow. Il cursore è posizionato sulla curva, e appare il messaggio 'working...', indicando che la funzione 'auto tune levels' è in esecuzione o appena applicata. L'istogramma RGB a destra mostra una distribuzione ampia con picchi nei colori primari, coerente con la scena luminosa e cromatica.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>7.32 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-7.10 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>attivato (indicato dal cursore posizionato su un punto della curva e dal testo 'working...' in basso)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con un'immagine notturna di una giostra illuminata. La curva di esposizione è stata regolata per aumentare la luminosità delle luci (white relative exposure a +7.32 EV) mantenendo un cielo scuro, mentre black relative exposure è impostato a -3.28 EV. L'opzione 'auto tune levels' è attiva, come indicato dall'icona della freccia. Il cursore del mouse è posizionato sul pulsante 'color balance rgb', con un menu contestuale aperto che mostra opzioni come 'corrective or creative'. L'istogramma RGB nella parte superiore destra mostra una distribuzione ampia con picchi nei colori vivaci, coerente con una scena notturna ad alta dinamica." src="screenshots/frame_00192_819.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo in darktable, con un'immagine notturna di una giostra illuminata. La curva di esposizione è stata regolata per aumentare la luminosità delle luci (white relative exposure a +7.32 EV) mantenendo un cielo scuro, mentre black relative exposure è impostato a -3.28 EV. L'opzione 'auto tune levels' è attiva, come indicato dall'icona della freccia. Il cursore del mouse è posizionato sul pulsante 'color balance rgb', con un menu contestuale aperto che mostra opzioni come 'corrective or creative'. L'istogramma RGB nella parte superiore destra mostra una distribuzione ampia con picchi nei colori vivaci, coerente con una scena notturna ad alta dinamica.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>7.32 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-3.28 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>auto tune levels</td>
+<td>attivato (icona freccia verso l'alto visibile)</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>curva S-shaped con punto di controllo a ~+0.0 EV e +1.8 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale S-shaped visibile nel grafico a destra, che illustra la mappatura tonale con toe (parte iniziale piatta), regione lineare centrale e shoulder (parte finale compressa). Il parametro 'latitude' è impostato a 0.01%, indicando un'ampia gamma dinamica compressa; il contrasto è a 1.000, corrispondente alla linea retta di riferimento (1:1) menzionata nel contesto. L'istogramma RGB sovrapposto mostra distribuzione dei colori con picchi nelle zone luminose. L'immagine sottostante è una scena notturna con luci al neon e motion blur, tipica per testare la gestione delle alte luci e della dinamica." src="screenshots/frame_00327_733.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale S-shaped visibile nel grafico a destra, che illustra la mappatura tonale con toe (parte iniziale piatta), regione lineare centrale e shoulder (parte finale compressa). Il parametro 'latitude' è impostato a 0.01%, indicando un'ampia gamma dinamica compressa; il contrasto è a 1.000, corrispondente alla linea retta di riferimento (1:1) menzionata nel contesto. L'istogramma RGB sovrapposto mostra distribuzione dei colori con picchi nelle zone luminose. L'immagine sottostante è una scena notturna con luci al neon e motion blur, tipica per testare la gestione delle alte luci e della dinamica.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights saturation mix</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>+7.3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata. Il modulo 'color calibration' è espanso a destra, con il parametro 'input color profile' evidenziato (selezionato) e impostato su 'standard color matrix', mentre il 'working profile' è 'linear Rec709 RGB'. L'istogramma RGB è visibile in alto a destra. A sinistra, il pannello 'color picker' mostra valori HSL per due campioni: media (211,79,90,42,92,37) e live samples (211,80,68,12,77,30). Il narratore sta discutendo di regolazioni di colore, menzionando la correzione del profilo colore da Rec709 a Rec2020 e l'uso di sigmoid per lo sviluppo." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata. Il modulo 'color calibration' è espanso a destra, con il parametro 'input color profile' evidenziato (selezionato) e impostato su 'standard color matrix', mentre il 'working profile' è 'linear Rec709 RGB'. L'istogramma RGB è visibile in alto a destra. A sinistra, il pannello 'color picker' mostra valori HSL per due campioni: media (211,79,90,42,92,37) e live samples (211,80,68,12,77,30). Il narratore sta discutendo di regolazioni di colore, menzionando la correzione del profilo colore da Rec709 a Rec2020 e l'uso di sigmoid per lo sviluppo.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input color profile</td>
+<td>standard color matrix</td>
+</tr>
+<tr>
+<td>working profile</td>
+<td>linear Rec709 RGB</td>
+</tr>
+<tr>
+<td>gamut clipping</td>
+<td>off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="3-gestione-della-curva-e-ricostruzione-delle-alte-luci-in-filmic">3. Gestione della curva e ricostruzione delle alte luci in Filmic<a class="headerlink" href="#3-gestione-della-curva-e-ricostruzione-delle-alte-luci-in-filmic" title="Permanent link">&para;</a></h2>
+<p><strong>[05:40 – 10:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=340">Guarda nel video</a></p>
+<p>Impostazione della modalità 'safe' per evitare clipping. Utilizzo della scheda di ricostruzione delle alte luci: regolazione di soglia, transizione, texture/bloom, iterazioni e aggiunta di rumore.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale personalizzata visibile nel grafico a destra. Il cursore del parametro 'shadows → highlights balance' è evidenziato da un cerchio rosa, indicando che l’utente sta interagendo con esso. L’immagine principale è una foto notturna di un’attrazione da luna park con luci al neon e motion blur, già elaborata con un forte contrasto e saturazione. Sulla sinistra sono visibili i pannelli laterali con lo strumento color picker attivo e i valori HSL dei campioni. L’istogramma RGB in alto a destra mostra una distribuzione ampia con picchi nei canali rosso, verde e blu, coerente con la vivacità cromatica dell’immagine." src="screenshots/frame_00360_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva tonale personalizzata visibile nel grafico a destra. Il cursore del parametro 'shadows → highlights balance' è evidenziato da un cerchio rosa, indicando che l’utente sta interagendo con esso. L’immagine principale è una foto notturna di un’attrazione da luna park con luci al neon e motion blur, già elaborata con un forte contrasto e saturazione. Sulla sinistra sono visibili i pannelli laterali con lo strumento color picker attivo e i valori HSL dei campioni. L’istogramma RGB in alto a destra mostra una distribuzione ampia con picchi nei canali rosso, verde e blu, coerente con la vivacità cromatica dell’immagine.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.260</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>49.10%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' con profilo di uscita 'filmic rgb' e la curva tonale attiva nella tab 'look'. I parametri 'contrast in highlights' e 'contrast in shadows' sono impostati su 'safe', coerentemente con il discorso del narratore sulle modalità di contrasto che evitano il clipping. È visibile un'immagine notturna di una giostra illuminata con effetti di motion blur, e l'istogramma RGB a destra mostra distribuzione dei colori con picchi nei toni luminosi. Il cursore del mouse è posizionato sopra un elemento circolare rosso (probabile maschera o strumento di selezione), ma nessuna maschera è attiva nel pannello laterale." src="screenshots/frame_00455_819.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' con profilo di uscita 'filmic rgb' e la curva tonale attiva nella tab 'look'. I parametri 'contrast in highlights' e 'contrast in shadows' sono impostati su 'safe', coerentemente con il discorso del narratore sulle modalità di contrasto che evitano il clipping. È visibile un'immagine notturna di una giostra illuminata con effetti di motion blur, e l'istogramma RGB a destra mostra distribuzione dei colori con picchi nei toni luminosi. Il cursore del mouse è posizionato sopra un elemento circolare rosso (probabile maschera o strumento di selezione), ma nessuna maschera è attiva nel pannello laterale.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>+7.3</td>
+</tr>
+<tr>
+<td>contrast in highlights</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>contrast in shadows</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>auto adjust hardness</td>
+<td>True</td>
+</tr>
+<tr>
+<td>iterations of high-quality reconstruction</td>
+<td>1</td>
+</tr>
+<tr>
+<td>add noise in highlights</td>
+<td>0.20</td>
+</tr>
+<tr>
+<td>type of noise</td>
+<td>gaussian</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con una curva tonale personalizzata (punto di controllo spostato verso l’alto a destra) e parametri di contrasto elevato (2.843) e latitudine al massimo (90%). L’output è impostato su 'filmic rgb' e la visualizzazione su 'EV scene'. L’immagine è una scena notturna di un’attrazione da luna park con luci al neon e motion blur, elaborata per evitare clipping grazie all’alta latitudine e alla modalità 'safe'." src="screenshots/frame_00469_360.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con una curva tonale personalizzata (punto di controllo spostato verso l’alto a destra) e parametri di contrasto elevato (2.843) e latitudine al massimo (90%). L’output è impostato su 'filmic rgb' e la visualizzazione su 'EV scene'. L’immagine è una scena notturna di un’attrazione da luna park con luci al neon e motion blur, elaborata per evitare clipping grazie all’alta latitudine e alla modalità 'safe'.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>2.843</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>90.00%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights saturation mix</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb</td>
+</tr>
+<tr>
+<td>display</td>
+<td>EV scene</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'highlight reconstruction' attivo nella scheda 'reconstruct', con la ricostruzione evidenziata su una scena notturna con luci fortemente sovraesposte (ad esempio i fari bianchi in alto). Si osserva un evidente cast magenta nelle aree di highlight saturate, tipico dell' clipping nei sensori RAW, che l'utente intende correggere per ottenere tonalità più neutre o leggermente gialle. Lo strumento 'color picker' è attivo e punta a un'area con magenta, confermando l'analisi del problema. L'istogramma RGB a destra mostra sovraccarico nei canali rosso e blu, mentre il verde è meno coinvolto, spiegando il colore magenta." src="screenshots/frame_00510_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'highlight reconstruction' attivo nella scheda 'reconstruct', con la ricostruzione evidenziata su una scena notturna con luci fortemente sovraesposte (ad esempio i fari bianchi in alto). Si osserva un evidente cast magenta nelle aree di highlight saturate, tipico dell' clipping nei sensori RAW, che l'utente intende correggere per ottenere tonalità più neutre o leggermente gialle. Lo strumento 'color picker' è attivo e punta a un'area con magenta, confermando l'analisi del problema. L'istogramma RGB a destra mostra sovraccarico nei canali rosso e blu, mentre il verde è meno coinvolto, spiegando il colore magenta.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>threshold</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>enable highlight reconstruction</td>
+<td>True</td>
+</tr>
+<tr>
+<td>display highlight reconstruction mask</td>
+<td>False</td>
+</tr>
+<tr>
+<td>structure → texture</td>
+<td>balance</td>
+</tr>
+<tr>
+<td>bloom → reconstruct</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>gray → colorful details</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'highlight reconstruction' attivo con la maschera di visualizzazione abilitata (indicata dal cerchio rosso sul pulsante 'display highlight reconstruction mask'). L'immagine principale è in bianco e nero, con le aree illuminate (come i due rettangoli luminosi del cartello e le luci sparse sulla struttura) evidenziate in bianco, indicando dove la ricostruzione degli highlights sta venendo applicata. Il cursore del threshold è impostato a +3.00 EV, e la maschera mostra che solo le zone più sovraesposte sono selezionate per la correzione. L'istogramma RGB a destra conferma la presenza di picchi nei canali rossi, verdi e blu nelle alte luci." src="screenshots/frame_00549_916.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'highlight reconstruction' attivo con la maschera di visualizzazione abilitata (indicata dal cerchio rosso sul pulsante 'display highlight reconstruction mask'). L'immagine principale è in bianco e nero, con le aree illuminate (come i due rettangoli luminosi del cartello e le luci sparse sulla struttura) evidenziate in bianco, indicando dove la ricostruzione degli highlights sta venendo applicata. Il cursore del threshold è impostato a +3.00 EV, e la maschera mostra che solo le zone più sovraesposte sono selezionate per la correzione. L'istogramma RGB a destra conferma la presenza di picchi nei canali rossi, verdi e blu nelle alte luci.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable highlight reconstruction</td>
+<td>True</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>+3.00 EV</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>display highlight reconstruction mask</td>
+<td>True</td>
+</tr>
+<tr>
+<td>structure → texture</td>
+<td>balance</td>
+</tr>
+<tr>
+<td>bloom → reconstruct</td>
+<td>+100.00%</td>
+</tr>
+<tr>
+<td>gray → colorful details</td>
+<td>+100.00%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+</ul>
+<hr />
+<h2 id="4-confronto-con-il-modulo-dedicato-e-limiti-di-filmic">4. Confronto con il modulo dedicato e limiti di Filmic<a class="headerlink" href="#4-confronto-con-il-modulo-dedicato-e-limiti-di-filmic" title="Permanent link">&para;</a></h2>
+<p><strong>[10:20 – 13:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=620">Guarda nel video</a></p>
+<p>Confronto tra la ricostruzione interna di Filmic e il modulo 'Ricostruzione alte luci' (inpaint opposed, laplaciani guidati). Evidenziazione della perdita di dettaglio nelle alte luci causata da Filmic.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'highlight reconstruction' attivo nella scheda 'reconstruct', con la funzione abilitata e parametri regolati per una forte ricostruzione dei dettagli luminosi (bloom e texture elevati). L'immagine è una scena notturna con luci al neon vivide e motion blur, tipica di un'attrazione da luna park; si osservano evidenti riflessi sovraesposti che il modulo sta cercando di recuperare. L'istogramma RGB a destra mostra saturazione cromatica estrema nei toni rosa, verde e blu. Il cursore del mouse è posizionato sul toggle 'enable highlight reconstruction', indicando che l'utente sta discutendo dell'attivazione/disattivazione di questa funzione per migliorare i dettagli nelle luci." src="screenshots/frame_00659_320.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'highlight reconstruction' attivo nella scheda 'reconstruct', con la funzione abilitata e parametri regolati per una forte ricostruzione dei dettagli luminosi (bloom e texture elevati). L'immagine è una scena notturna con luci al neon vivide e motion blur, tipica di un'attrazione da luna park; si osservano evidenti riflessi sovraesposti che il modulo sta cercando di recuperare. L'istogramma RGB a destra mostra saturazione cromatica estrema nei toni rosa, verde e blu. Il cursore del mouse è posizionato sul toggle 'enable highlight reconstruction', indicando che l'utente sta discutendo dell'attivazione/disattivazione di questa funzione per migliorare i dettagli nelle luci.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable highlight reconstruction</td>
+<td>True</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>structure → texture</td>
+<td>+98.75%</td>
+</tr>
+<tr>
+<td>bloom → reconstruct</td>
+<td>+96.24%</td>
+</tr>
+<tr>
+<td>gray → colorful details</td>
+<td>+100.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'demosaic' attivo, specificamente configurato con la modalità 'high light reconstruction'. L'immagine in anteprima è una scena notturna di un'attrazione da luna park con luci al neon e motion blur; si nota un indicatore 'working...' al centro dell'immagine, suggerendo che un processo (probabilmente la ricostruzione filmica o l'inpainting) è in corso. Il pannello a destra elenca i moduli attivi, con 'demosaic' evidenziato e selezionato. Il color picker mostra valori HSL per un campione medio (347.97, 14.58, 9.56) e live samples. L'istogramma RGB è visibile in alto a destra." src="screenshots/frame_00757_539.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'demosaic' attivo, specificamente configurato con la modalità 'high light reconstruction'. L'immagine in anteprima è una scena notturna di un'attrazione da luna park con luci al neon e motion blur; si nota un indicatore 'working...' al centro dell'immagine, suggerendo che un processo (probabilmente la ricostruzione filmica o l'inpainting) è in corso. Il pannello a destra elenca i moduli attivi, con 'demosaic' evidenziato e selezionato. Il color picker mostra valori HSL per un campione medio (347.97, 14.58, 9.56) e live samples. L'istogramma RGB è visibile in alto a destra.</em></p>
+<p><strong>Modulo:</strong> demosaic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>high light reconstruction</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>noise level</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>iterations</td>
+<td>30</td>
+</tr>
+<tr>
+<td>inpaint a flat color</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>diameter of reconstruction</td>
+<td>256 px (slow)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo, specificamente nella tab 'reconstruct'. È visibile una foto notturna di un'attrazione da luna park con luci al neon sfocate per effetto di movimento (motion blur). Il cursore è posizionato sul controllo '% display' impostato a 100, e la casella 'enable highlight reconstruction' è attivata. L'istogramma RGB in alto a destra mostra una forte saturazione nei toni verdi e ciano, con sovraesposizione nelle luci più brillanti (es. segno 'ZIPO' e luci gialle menzionate nel contesto). La maschera di ricostruzione non è visualizzata, ma l'opzione è abilitata." src="screenshots/frame_00766_299.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo, specificamente nella tab 'reconstruct'. È visibile una foto notturna di un'attrazione da luna park con luci al neon sfocate per effetto di movimento (motion blur). Il cursore è posizionato sul controllo '% display' impostato a 100, e la casella 'enable highlight reconstruction' è attivata. L'istogramma RGB in alto a destra mostra una forte saturazione nei toni verdi e ciano, con sovraesposizione nelle luci più brillanti (es. segno 'ZIPO' e luci gialle menzionate nel contesto). La maschera di ricostruzione non è visualizzata, ma l'opzione è abilitata.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>structure ~ texture</td>
+<td>0</td>
+</tr>
+<tr>
+<td>bloom ~ reconstruct</td>
+<td>0</td>
+</tr>
+<tr>
+<td>gray ~ colorful details</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo, specificamente nella scheda 'reconstruct'. L'immagine è una fotografia notturna di un'attrazione illuminata con luci al neon multicolori (rosa, giallo, verde), con evidente effetto di motion blur e sovraesposizione controllata. Il cursore del mouse è posizionato su una singola lampadina all'interno dell'immagine principale, indicando un'analisi puntuale dei valori RGB (HSL: 38,49 54,17 73,84). A destra, la curva tonale è modificata per migliorare i dettagli nelle luci, con parametri 'structure → texture', 'bloom → reconstruct' e 'gray → colorful details' impostati al massimo (+100%). L'istogramma RGB mostra saturazione elevata nei canali rosso e verde. Il narratore sta discutendo del bilanciamento tra conservazione dei dettagli cromatici e riduzione della texture artificiale, confermando l'uso di 'reconstruct' per gestire le luci sovraesposte senza appiattirle completamente." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone curve' attivo, specificamente nella scheda 'reconstruct'. L'immagine è una fotografia notturna di un'attrazione illuminata con luci al neon multicolori (rosa, giallo, verde), con evidente effetto di motion blur e sovraesposizione controllata. Il cursore del mouse è posizionato su una singola lampadina all'interno dell'immagine principale, indicando un'analisi puntuale dei valori RGB (HSL: 38,49 54,17 73,84). A destra, la curva tonale è modificata per migliorare i dettagli nelle luci, con parametri 'structure → texture', 'bloom → reconstruct' e 'gray → colorful details' impostati al massimo (+100%). L'istogramma RGB mostra saturazione elevata nei canali rosso e verde. Il narratore sta discutendo del bilanciamento tra conservazione dei dettagli cromatici e riduzione della texture artificiale, confermando l'uso di 'reconstruct' per gestire le luci sovraesposte senza appiattirle completamente.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>filmic rgb</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>3.00 EV</td>
+</tr>
+<tr>
+<td>structure → texture</td>
+<td>+100.00%</td>
+</tr>
+<tr>
+<td>bloom → reconstruct</td>
+<td>+100.00%</td>
+</tr>
+<tr>
+<td>gray → colorful details</td>
+<td>+100.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata selezionata. Il modulo 'highlight reconstruction' è attivo nel pannello destro, con il parametro 'clipping threshold' impostato a 1.000. L'istogramma RGB è visibile in alto a destra, e il color picker nella barra laterale sinistra mostra valori HSL per un campione selezionato (media: 347,97°, 14,50%, 9,56%). La descrizione del narratore indica che si sta discutendo dell'uso alternativo del modulo 'highlight reconstruction' invece della ricostruzione integrata in Painter Pose, suggerendo un flusso di lavoro avanzato per la gestione degli alti luci." src="screenshots/frame_00719_960.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con un'immagine notturna di una giostra illuminata selezionata. Il modulo 'highlight reconstruction' è attivo nel pannello destro, con il parametro 'clipping threshold' impostato a 1.000. L'istogramma RGB è visibile in alto a destra, e il color picker nella barra laterale sinistra mostra valori HSL per un campione selezionato (media: 347,97°, 14,50%, 9,56%). La descrizione del narratore indica che si sta discutendo dell'uso alternativo del modulo 'highlight reconstruction' invece della ricostruzione integrata in Painter Pose, suggerendo un flusso di lavoro avanzato per la gestione degli alti luci.</em></p>
+<p><strong>Modulo:</strong> highlight reconstruction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clipping threshold</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>filmic rgb</li>
+<li>ricostruzione alte luci</li>
+</ul>
+<hr />
+<h2 id="5-introduzione-a-sigmoid-e-primi-parametri">5. Introduzione a Sigmoid e primi parametri<a class="headerlink" href="#5-introduzione-a-sigmoid-e-primi-parametri" title="Permanent link">&para;</a></h2>
+<p><strong>[13:10 – 15:53]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=790">Guarda nel video</a></p>
+<p>Passaggio al modulo Sigmoid. Analisi dei risultati predefiniti e spiegazione dei due slider principali: contrasto e skew, con riferimento alla documentazione ufficiale del creatore.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nel pannello destro, mentre nella sezione 'duplicate manager' a sinistra sono visibili due duplicati: uno con il profilo 'filmic' e uno con 'sigmoid'. L'immagine centrale è una foto notturna di un'attrazione da luna park con luci al neon e motion blur; il cursore del mouse è posizionato su una zona luminosa dell'attrazione, suggerendo un'analisi dei dettagli nei toni chiari. Il narratore sta evidenziando la perdita di dettaglio nei highlights tipica del profilo filmic, anticipando il passaggio al profilo sigmoid per confronto." src="screenshots/frame_00819_820.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nel pannello destro, mentre nella sezione 'duplicate manager' a sinistra sono visibili due duplicati: uno con il profilo 'filmic' e uno con 'sigmoid'. L'immagine centrale è una foto notturna di un'attrazione da luna park con luci al neon e motion blur; il cursore del mouse è posizionato su una zona luminosa dell'attrazione, suggerendo un'analisi dei dettagli nei toni chiari. Il narratore sta evidenziando la perdita di dettaglio nei highlights tipica del profilo filmic, anticipando il passaggio al profilo sigmoid per confronto.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, applicato a una foto notturna di un'attrazione da luna park con luci al neon e motion blur. Il cursore del parametro 'contrast' è evidenziato da un cerchio rosa, indicando che è stato appena modificato o sta per esserlo. L'istogramma RGB sopra il modulo mostra una distribuzione ampia con picchi nei toni medi e alti, senza saturazione estrema nei canali. La foto appare vivida ma non sovraesposta, coerentemente con il commento del narratore sul recupero dei dettagli negli highlights. A sinistra sono visibili i snapshot con due versioni: 'filmic' e 'sigmoid', quest’ultima selezionata." src="screenshots/frame_00893_460.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, applicato a una foto notturna di un'attrazione da luna park con luci al neon e motion blur. Il cursore del parametro 'contrast' è evidenziato da un cerchio rosa, indicando che è stato appena modificato o sta per esserlo. L'istogramma RGB sopra il modulo mostra una distribuzione ampia con picchi nei toni medi e alti, senza saturazione estrema nei canali. La foto appare vivida ma non sovraesposta, coerentemente con il commento del narratore sul recupero dei dettagli negli highlights. A sinistra sono visibili i snapshot con due versioni: 'filmic' e 'sigmoid', quest’ultima selezionata.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con l'immagine #12 di una giostra notturna selezionata. Il modulo 'sigmoid' è attivo nel pannello destro, con parametri di contrasto elevato (421) e skew leggermente positivo (1.03), indicando una forte compressione tonale verso le ombre o i toni medi. L'istogramma RGB mostra una distribuzione ampia con picchi nelle zone luminose e colorate. Sono visibili due snapshot nella sezione 'duplicate manager': uno con il profilo 'filmic' e uno con 'sigmoid', quest'ultimo contrassegnato da 5 stelle. Il cursore del mouse è posizionato sopra il nome del modulo 'sigmoid', evidenziato da un cerchio rosso, suggerendo che l'utente sta interagendo con esso o ne sta spiegando la funzionalità." src="screenshots/frame_00929_100.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable con l'immagine #12 di una giostra notturna selezionata. Il modulo 'sigmoid' è attivo nel pannello destro, con parametri di contrasto elevato (421) e skew leggermente positivo (1.03), indicando una forte compressione tonale verso le ombre o i toni medi. L'istogramma RGB mostra una distribuzione ampia con picchi nelle zone luminose e colorate. Sono visibili due snapshot nella sezione 'duplicate manager': uno con il profilo 'filmic' e uno con 'sigmoid', quest'ultimo contrassegnato da 5 stelle. Il cursore del mouse è posizionato sopra il nome del modulo 'sigmoid', evidenziato da un cerchio rosso, suggerendo che l'utente sta interagendo con esso o ne sta spiegando la funzionalità.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>421</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>1.03</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>base primaries</td>
+<td>working profile</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia del modulo 'sigmoid' di darktable, con i parametri di regolazione della curva log-logistica visibili a sinistra e due grafici a destra: uno che rappresenta la curva sigmoidale (luminanza di output vs input) e uno che mostra la derivata (Slope Graph). Il modulo è utilizzato per il mapping tonale avanzato, e l'utente sta confrontando la visualizzazione grafica esterna (web page) con l'interfaccia di darktable, evidenziando la mancanza di una preview grafica integrata nel modulo stesso. È attiva la visualizzazione log-logistica, ma non la modalità Filmic." src="screenshots/frame_00938_616.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia del modulo 'sigmoid' di darktable, con i parametri di regolazione della curva log-logistica visibili a sinistra e due grafici a destra: uno che rappresenta la curva sigmoidale (luminanza di output vs input) e uno che mostra la derivata (Slope Graph). Il modulo è utilizzato per il mapping tonale avanzato, e l'utente sta confrontando la visualizzazione grafica esterna (web page) con l'interfaccia di darktable, evidenziando la mancanza di una preview grafica integrata nel modulo stesso. È attiva la visualizzazione log-logistica, ma non la modalità Filmic.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View Scaling</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>Slope Base</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>View Resolution</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.06</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine notturna di una giostra illuminata a luci al neon, caratterizzata da forti sovraesposizioni nei punti luminosi (highlights). Il modulo 'filmic' è attivo nel pannello destro, e il narratore commenta la perdita di dettaglio negli highlights quando si applica filmic, suggerendo che riducendo l'esposizione si recupera qualche informazione. È visibile anche lo snapshot 'filmic' nella sezione 'duplicate manager', indicando un confronto tra versioni. L'istogramma RGB in alto a destra mostra saturazione estrema nei canali rosso e verde, confermando la presenza di clipping nei highlights." src="screenshots/frame_00840_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine notturna di una giostra illuminata a luci al neon, caratterizzata da forti sovraesposizioni nei punti luminosi (highlights). Il modulo 'filmic' è attivo nel pannello destro, e il narratore commenta la perdita di dettaglio negli highlights quando si applica filmic, suggerendo che riducendo l'esposizione si recupera qualche informazione. È visibile anche lo snapshot 'filmic' nella sezione 'duplicate manager', indicando un confronto tra versioni. L'istogramma RGB in alto a destra mostra saturazione estrema nei canali rosso e verde, confermando la presenza di clipping nei highlights.</em></p>
+<p><strong>Modulo:</strong> filmic</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>-0.586 EV</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+<tr>
+<td>compensate camera exposure</td>
+<td>-2.0 EV</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>sigmoid</li>
+</ul>
+<hr />
+<h2 id="6-funzionamento-della-curva-sigmoid-e-parametro-skew">6. Funzionamento della curva Sigmoid e parametro Skew<a class="headerlink" href="#6-funzionamento-della-curva-sigmoid-e-parametro-skew" title="Permanent link">&para;</a></h2>
+<p><strong>[15:53 – 19:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=953">Guarda nel video</a></p>
+<p>Analisi della curva logistica Sigmoid, con spiegazione di toe (ombre) e shoulder (alte luci). Viene chiarito il comportamento del parametro 'skew', che modifica principalmente la compressione delle alte luci senza alterare significativamente le ombre.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Filmic RGB' in darktable con l'interfaccia 'Filmic Settings' attiva. Sono visibili due grafici: 'Value Graph', che confronta la curva Log-Logistic (sigmoidale) con quella 'darktable Filmic', e 'Slope Graph', che mostra le derivate delle curve. I parametri Contrast (2.06) e Skew (-0.98) sono regolati, e entrambe le opzioni 'Show Log-Logistic' e 'Show Filmic' sono abilitate, permettendo il confronto visivo tra le due curve. Il narratore sta spiegando come la curva log-logistica corrisponde alla sigmoidale e come il contrasto influenzi la forma della curva." src="screenshots/frame_00959_659.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Filmic RGB' in darktable con l'interfaccia 'Filmic Settings' attiva. Sono visibili due grafici: 'Value Graph', che confronta la curva Log-Logistic (sigmoidale) con quella 'darktable Filmic', e 'Slope Graph', che mostra le derivate delle curve. I parametri Contrast (2.06) e Skew (-0.98) sono regolati, e entrambe le opzioni 'Show Log-Logistic' e 'Show Filmic' sono abilitate, permettendo il confronto visivo tra le due curve. Il narratore sta spiegando come la curva log-logistica corrisponde alla sigmoidale e come il contrasto influenzi la forma della curva.</em></p>
+<p><strong>Modulo:</strong> Filmic RGB</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View Scaling</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>Slope Base</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>View Resolution</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.06</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+<tr>
+<td>Show Log-Logistic</td>
+<td>True</td>
+</tr>
+<tr>
+<td>Show Filmic</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' in darktable con l'interfaccia della curva log-logistica attiva. Sono visibili due grafici: uno S-curve (sigmoidale) nella sezione 'Slope Graph' e una curva di trasferimento principale che mostra un toe (parte iniziale piatta), una regione lineare centrale e una spalla (parte finale compressa), tipica di una curva log-logistica. I parametri Contrast e Skew sono regolati rispettivamente a 2.06 e -0.98, influenzando la forma della curva. Il cursore rosa indica l’area interattiva per modificare la curva. Il narratore sta spiegando le caratteristiche della curva sigmoidale e come i parametri alterano toe, linea centrale e spalla." src="screenshots/frame_00964_200.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' in darktable con l'interfaccia della curva log-logistica attiva. Sono visibili due grafici: uno S-curve (sigmoidale) nella sezione 'Slope Graph' e una curva di trasferimento principale che mostra un toe (parte iniziale piatta), una regione lineare centrale e una spalla (parte finale compressa), tipica di una curva log-logistica. I parametri Contrast e Skew sono regolati rispettivamente a 2.06 e -0.98, influenzando la forma della curva. Il cursore rosa indica l’area interattiva per modificare la curva. Il narratore sta spiegando le caratteristiche della curva sigmoidale e come i parametri alterano toe, linea centrale e spalla.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>View Scaling</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>Slope Base</td>
+<td>EV (log2)</td>
+</tr>
+<tr>
+<td>View Resolution</td>
+<td>400</td>
+</tr>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.06</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visualizzata una curva log-logistica (sigmoidale) nel grafico principale, con asse X che rappresenta l'intensità della scena e asse Y la luminanza di visualizzazione. Sotto, il grafico della pendenza (Slope Graph) mostra un picco simmetrico tipico della curva sigmoidale. I parametri Contrast e Skew sono regolati rispettivamente a 2.06 e -0.98, indicando un aumento del contrasto e una leggera asimmetria verso le ombre. Il cursore rosa indica l’interazione utente sulla curva. Il contesto spiega che questa curva è usata per simulare il comportamento di pellicole analogiche (toe e shoulder), coerentemente con i valori impostati." src="screenshots/frame_00969_580.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visualizzata una curva log-logistica (sigmoidale) nel grafico principale, con asse X che rappresenta l'intensità della scena e asse Y la luminanza di visualizzazione. Sotto, il grafico della pendenza (Slope Graph) mostra un picco simmetrico tipico della curva sigmoidale. I parametri Contrast e Skew sono regolati rispettivamente a 2.06 e -0.98, indicando un aumento del contrasto e una leggera asimmetria verso le ombre. Il cursore rosa indica l’interazione utente sulla curva. Il contesto spiega che questa curva è usata per simulare il comportamento di pellicole analogiche (toe e shoulder), coerentemente con i valori impostati.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.06</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visibile una curva S-shaped nel grafico principale (X: intensità della scena, Y: luminanza di visualizzazione) e un grafico della pendenza ('Slope Graph') sotto. Il cursore del parametro 'Contrast' è evidenziato da un cerchio rosa mentre viene regolato a ~2.47; il valore di 'Skew' è impostato a -0.98. Il testo descrittivo a destra spiega il comportamento della curva log-logistica, menzionando toe, shoulder e l’effetto non intuitivo dello skew (non una traslazione pura ma una deformazione asimmetrica della curva)." src="screenshots/frame_00988_500.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visibile una curva S-shaped nel grafico principale (X: intensità della scena, Y: luminanza di visualizzazione) e un grafico della pendenza ('Slope Graph') sotto. Il cursore del parametro 'Contrast' è evidenziato da un cerchio rosa mentre viene regolato a ~2.47; il valore di 'Skew' è impostato a -0.98. Il testo descrittivo a destra spiega il comportamento della curva log-logistica, menzionando toe, shoulder e l’effetto non intuitivo dello skew (non una traslazione pura ma una deformazione asimmetrica della curva).</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.47</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visibile una curva log-logistica S-shaped nel grafico principale, con un cursore evidenziato (cerchio rosa) intorno a x≈1.0, y≈0.5, che indica un punto di modifica interattiva. Sotto, il grafico 'Slope Graph' mostra la derivata della curva, con un picco centrale che riflette la variazione di contrasto. I parametri mostrano un contrasto aumentato (2.32) e uno skew negativo (-0.98), coerentemente con l’osservazione del narratore che uno skew positivo appiattirebbe la spalla nelle luci e altererebbe il contrasto, non semplicemente traslerebbe la curva." src="screenshots/frame_00998_659.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia del modulo 'tone curve' in darktable, con la sezione 'Log-Logistic Settings' attiva. È visibile una curva log-logistica S-shaped nel grafico principale, con un cursore evidenziato (cerchio rosa) intorno a x≈1.0, y≈0.5, che indica un punto di modifica interattiva. Sotto, il grafico 'Slope Graph' mostra la derivata della curva, con un picco centrale che riflette la variazione di contrasto. I parametri mostrano un contrasto aumentato (2.32) e uno skew negativo (-0.98), coerentemente con l’osservazione del narratore che uno skew positivo appiattirebbe la spalla nelle luci e altererebbe il contrasto, non semplicemente traslerebbe la curva.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target Black Luminance</td>
+<td>-13.00</td>
+</tr>
+<tr>
+<td>Target White Luminance</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>Contrast</td>
+<td>2.32</td>
+</tr>
+<tr>
+<td>Skew</td>
+<td>-0.98</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sigmoid</li>
+</ul>
+<hr />
+<h2 id="7-conservazione-del-colore-e-gestione-dei-primari">7. Conservazione del colore e gestione dei primari<a class="headerlink" href="#7-conservazione-del-colore-e-gestione-dei-primari" title="Permanent link">&para;</a></h2>
+<p><strong>[19:05 – 22:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=1145">Guarda nel video</a></p>
+<p>Confronto tra i metodi di conservazione della crominanza in Filmic (v6) e Sigmoid. Analisi delle opzioni 'per canale' e 'rapporto RGB', e spiegazione dei cursori dei primari per attenuare o recuperare cromaticità nelle alte luci.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'sigmoid' attivo in darktable, con un'immagine notturna di una giostra illuminata. Il parametro 'RGB ratio' è abilitato (come indicato dal toggle e dal contesto narrativo), il che implica che le modifiche al contrasto e allo skew vengono applicate mantenendo il rapporto RGB per preservare la tonalità (hue). L'istogramma a destra visualizza i canali RGB separati, confermando l'uso di elaborazione basata su rapporti cromatici. Il cursore del mouse si trova sopra il campo 'target black', con un tooltip visibile che spiega la luminanza nera del display di destinazione." src="screenshots/frame_01200_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'sigmoid' attivo in darktable, con un'immagine notturna di una giostra illuminata. Il parametro 'RGB ratio' è abilitato (come indicato dal toggle e dal contesto narrativo), il che implica che le modifiche al contrasto e allo skew vengono applicate mantenendo il rapporto RGB per preservare la tonalità (hue). L'istogramma a destra visualizza i canali RGB separati, confermando l'uso di elaborazione basata su rapporti cromatici. Il cursore del mouse si trova sopra il campo 'target black', con un tooltip visibile che spiega la luminanza nera del display di destinazione.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.421</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>-0.02</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>RGB ratio</td>
+<td>attivato</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color processing' attivo in darktable, con la tab 'per channel RGB' selezionata. Sono visibili i controlli per le primarie (rosso, verde, blu), inclusi attenuation e rotation, tutti impostati a zero. L'istogramma RGB è visibile in alto a destra, e l'immagine principale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci colorate. Il cursore del mouse è posizionato sul pulsante 'per channel RGB', evidenziandolo." src="screenshots/frame_01230_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color processing' attivo in darktable, con la tab 'per channel RGB' selezionata. Sono visibili i controlli per le primarie (rosso, verde, blu), inclusi attenuation e rotation, tutti impostati a zero. L'istogramma RGB è visibile in alto a destra, e l'immagine principale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci colorate. Il cursore del mouse è posizionato sul pulsante 'per channel RGB', evidenziandolo.</em></p>
+<p><strong>Modulo:</strong> color processing</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.421</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>-0.02</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color calibration' in darktable, con la tab 'primaries' attiva. L'utente sta interagendo con i controlli di rotazione e attenuazione dei primari RGB (rosso, verde, blu), evidenziati da un cerchio rosa attorno al cursore su 'red rotation'. L'immagine di sfondo è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci vivide. Sulla destra sono visibili gli istogrammi RGB e il pannello dei parametri, mentre a sinistra si trova il gestore delle snapshot e dei moduli. Il contesto audio suggerisce che l'utente stia spiegando come le rotazioni dei toni primari influenzano la mappatura del colore nelle alte luci, non essendo un semplice bilanciamento cromatico ma un'operazione legata alla tone mapping." src="screenshots/frame_01261_700.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color calibration' in darktable, con la tab 'primaries' attiva. L'utente sta interagendo con i controlli di rotazione e attenuazione dei primari RGB (rosso, verde, blu), evidenziati da un cerchio rosa attorno al cursore su 'red rotation'. L'immagine di sfondo è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci vivide. Sulla destra sono visibili gli istogrammi RGB e il pannello dei parametri, mentre a sinistra si trova il gestore delle snapshot e dei moduli. Il contesto audio suggerisce che l'utente stia spiegando come le rotazioni dei toni primari influenzano la mappatura del colore nelle alte luci, non essendo un semplice bilanciamento cromatico ma un'operazione legata alla tone mapping.</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.421</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>-0.02</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'primaries'. L'immagine elaborata è una scena notturna di un'attrazione da luna park con effetti di motion blur e luci al neon vivaci. Sono visibili gli istogrammi RGB nella parte superiore destra, e il cursore del mouse è posizionato sull'icona di reset del modulo. Tutti i parametri di rotazione e attenuazione dei canali primari sono a zero, indicando nessuna modifica applicata ai toni cromatici fondamentali. Il narratore sta spiegando come le rotazioni dell'alone cromatico (hue rotation) influenzano la mappatura tonale, specialmente nei toni chiari, evidenziando che questo modulo agisce come un tone mapping piuttosto che una semplice correzione cromatica lineare." src="screenshots/frame_01260_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color balance rgb' attivo nella scheda 'primaries'. L'immagine elaborata è una scena notturna di un'attrazione da luna park con effetti di motion blur e luci al neon vivaci. Sono visibili gli istogrammi RGB nella parte superiore destra, e il cursore del mouse è posizionato sull'icona di reset del modulo. Tutti i parametri di rotazione e attenuazione dei canali primari sono a zero, indicando nessuna modifica applicata ai toni cromatici fondamentali. Il narratore sta spiegando come le rotazioni dell'alone cromatico (hue rotation) influenzano la mappatura tonale, specialmente nei toni chiari, evidenziando che questo modulo agisce come un tone mapping piuttosto che una semplice correzione cromatica lineare.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>per channel</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sigmoid</li>
+<li>Filmic</li>
+<li>Primari RGB</li>
+</ul>
+<hr />
+<h2 id="8-confronto-output-standard-e-gestione-delle-alte-luci">8. Confronto output standard e gestione delle alte luci<a class="headerlink" href="#8-confronto-output-standard-e-gestione-delle-alte-luci" title="Permanent link">&para;</a></h2>
+<p><strong>[22:20 – 25:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=1340">Guarda nel video</a></p>
+<p>Analisi comparativa degli output base di Filmic e Sigmoid. Sigmoid gestisce meglio le alte luci estreme senza necessità di ricostruzione, mentre Filmic preserva colori più vividi. Viene introdotta la compensazione per recuperare dettagli cromatici.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, utilizzato per regolare la curva tonale in modo non lineare per migliorare contrasto e dettagli nelle luci. L'immagine principale è una foto notturna di un'attrazione da luna park con effetti di motion blur luminoso; lo strumento sigmoid è stato appena regolato (slider 'sigmoid' evidenziato) per ridurre leggermente le alte luci e recuperare dettaglio, come descritto dal narratore. Sono visibili anche i parametri di attenuazione cromatica e la sezione 'color processing'." src="screenshots/frame_01402_460.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, utilizzato per regolare la curva tonale in modo non lineare per migliorare contrasto e dettagli nelle luci. L'immagine principale è una foto notturna di un'attrazione da luna park con effetti di motion blur luminoso; lo strumento sigmoid è stato appena regolato (slider 'sigmoid' evidenziato) per ridurre leggermente le alte luci e recuperare dettaglio, come descritto dal narratore. Sono visibili anche i parametri di attenuazione cromatica e la sezione 'color processing'.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sigmoid</td>
+<td>0.0152</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>-0.02</td>
+</tr>
+<tr>
+<td>target_black</td>
+<td>0.0152</td>
+</tr>
+<tr>
+<td>target_white</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>red_attenuation</td>
+<td>10.9</td>
+</tr>
+<tr>
+<td>green_attenuation</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>blue_attenuation</td>
+<td>18.7</td>
+</tr>
+<tr>
+<td>recover_purity</td>
+<td>7.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, utilizzato per regolare la curva tonale e il contrasto dell'immagine. L'immagine centrale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci vivaci. Il modulo sigmoid è configurato con attenuazioni cromatiche personalizzate (rosso 10.9%, verde 12.0%, blu 18.7%) e rotazioni nulle, con recupero della purezza al 7%. Il cursore del mouse è posizionato sopra l'opzione 'color processing', evidenziata da un cerchio rosso. A sinistra sono visibili i moduli accessori come history, duplicate manager e mask manager. In basso è riportata la scheda tecnica dell'immagine: 1/2.6s, f/0.0, ISO 125, RAW non elaborato." src="screenshots/frame_01410_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'sigmoid' attivo nel pannello destro, utilizzato per regolare la curva tonale e il contrasto dell'immagine. L'immagine centrale è una foto notturna di un'attrazione da luna park con effetti di motion blur e luci vivaci. Il modulo sigmoid è configurato con attenuazioni cromatiche personalizzate (rosso 10.9%, verde 12.0%, blu 18.7%) e rotazioni nulle, con recupero della purezza al 7%. Il cursore del mouse è posizionato sopra l'opzione 'color processing', evidenziata da un cerchio rosso. A sinistra sono visibili i moduli accessori come history, duplicate manager e mask manager. In basso è riportata la scheda tecnica dell'immagine: 1/2.6s, f/0.0, ISO 125, RAW non elaborato.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color_processing</td>
+<td>per channel</td>
+</tr>
+<tr>
+<td>preserve_hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target_black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target_white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red_attenuation</td>
+<td>10.9%</td>
+</tr>
+<tr>
+<td>red_rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green_attenuation</td>
+<td>12.0%</td>
+</tr>
+<tr>
+<td>green_rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue_attenuation</td>
+<td>18.7%</td>
+</tr>
+<tr>
+<td>blue_rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover_purity</td>
+<td>7%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine notturna di una giostra illuminata, caratterizzata da effetti di motion blur e vivaci luci al neon. Il modulo 'sigmoid' è attivo e selezionato nel pannello destro, indicando che si sta applicando una curva sigmoidale per la gestione delle tonalità finali nel workflow scene-referred. L'istogramma RGB sopra il modulo conferma la distribuzione dei valori luminosi. La barra inferiore riporta i dati EXIF: 1/2.6s, f/0.0 (probabile errore di lettura), ISO 125, RAW non elaborato. Il narratore sta descrivendo l’uso del modulo sigmoid come passo finale per recuperare dettagli negli highlight, analogamente a filmic." src="screenshots/frame_01421_019.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine notturna di una giostra illuminata, caratterizzata da effetti di motion blur e vivaci luci al neon. Il modulo 'sigmoid' è attivo e selezionato nel pannello destro, indicando che si sta applicando una curva sigmoidale per la gestione delle tonalità finali nel workflow scene-referred. L'istogramma RGB sopra il modulo conferma la distribuzione dei valori luminosi. La barra inferiore riporta i dati EXIF: 1/2.6s, f/0.0 (probabile errore di lettura), ISO 125, RAW non elaborato. Il narratore sta descrivendo l’uso del modulo sigmoid come passo finale per recuperare dettagli negli highlight, analogamente a filmic.</em></p>
+<p><strong>Modulo:</strong> sigmoid</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>sRGB</td>
+</tr>
+<tr>
+<td>color balance rgb</td>
+<td>basic colorfulness: standard</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>input color profile</td>
+<td>Adobe RGB (1998)</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>demosaic</td>
+<td>default</td>
+</tr>
+<tr>
+<td>highlight reconstruction</td>
+<td>reconstruct in LCh</td>
+</tr>
+<tr>
+<td>white balance</td>
+<td>as shot</td>
+</tr>
+<tr>
+<td>raw black/white point</td>
+<td>auto</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva di tonalità personalizzata visibile nel grafico a destra. L'immagine principale è una scena notturna di un'attrazione da luna park con luci al neon vivaci e motion blur; si nota un forte controllo sui colori nei toni chiari (highlights), come evidenziato dal parametro 'highlights saturation mix' impostato a +26.18%. Il cursore del mouse è posizionato sopra la voce 'filmic rgb' nel pannello dei moduli, e l'istogramma RGB mostra picchi nelle zone luminose. Il narratore sta commentando l'effetto del modulo filmic sulle tonalità chiare e il confronto con la curva sigmoid." src="screenshots/frame_01517_240.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'filmic rgb' attivo nella scheda 'look', con una curva di tonalità personalizzata visibile nel grafico a destra. L'immagine principale è una scena notturna di un'attrazione da luna park con luci al neon vivaci e motion blur; si nota un forte controllo sui colori nei toni chiari (highlights), come evidenziato dal parametro 'highlights saturation mix' impostato a +26.18%. Il cursore del mouse è posizionato sopra la voce 'filmic rgb' nel pannello dei moduli, e l'istogramma RGB mostra picchi nelle zone luminose. Il narratore sta commentando l'effetto del modulo filmic sulle tonalità chiare e il confronto con la curva sigmoid.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.605</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>3.96%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights saturation mix</td>
+<td>+26.18%</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>+7.3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'local contrast' con la tab 'look' attiva, in cui è visualizzata una curva tonale sigmoidale (S-shaped) nel grafico EV scene: un punto di controllo è posizionato nella zona delle ombre (intorno a -6.7 EV), uno nella zona medie (+0.0 EV) e uno nelle luci (+6.2 EV), creando una transizione morbida verso il bianco nelle alte luci, coerentemente con la descrizione del narratore riguardo alla desaturazione graduale verso il bianco con l'aumentare della luminosità." src="screenshots/frame_01527_440.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'local contrast' con la tab 'look' attiva, in cui è visualizzata una curva tonale sigmoidale (S-shaped) nel grafico EV scene: un punto di controllo è posizionato nella zona delle ombre (intorno a -6.7 EV), uno nella zona medie (+0.0 EV) e uno nelle luci (+6.2 EV), creando una transizione morbida verso il bianco nelle alte luci, coerentemente con la descrizione del narratore riguardo alla desaturazione graduale verso il bianco con l'aumentare della luminosità.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights saturation mix</td>
+<td>+0.00%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sigmoid</li>
+<li>Filmic</li>
+</ul>
+<hr />
+<h2 id="9-esempio-pratico-su-immagine-paesaggistica">9. Esempio pratico su immagine paesaggistica<a class="headerlink" href="#9-esempio-pratico-su-immagine-paesaggistica" title="Permanent link">&para;</a></h2>
+<p><strong>[25:40 – 29:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=1540">Guarda nel video</a></p>
+<p>Applicazione pratica su una foto a gamma dinamica inferiore. Regolazione di Filmic (livelli, latitudine, esposizione relativa neri) e Sigmoid (contrasto, skew). Confronto visivo dei risultati e delle caratteristiche tonali finali.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità darkroom con un'immagine notturna di una giostra illuminata, caratterizzata da luci vivide e sovraesposizioni estreme nei punti luminosi. Il modulo 'filmic rgb' è attivo nella barra dei moduli a destra, e l'istogramma RGB evidenzia saturazione cromatica nelle alte luci (verde, rosa, blu). Un cursore del mouse è posizionato su una zona di highlight colorato della giostra, suggerendo un'analisi visiva delle aree luminose. Il pannello sinistro mostra lo snapshot 'tone equalizer' selezionato, indicando un confronto tra moduli. Il contesto narrativo conferma che si sta valutando la gestione degli highlight estremi da parte di filmic rgb vs sigmoid." src="screenshots/frame_01597_599.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità darkroom con un'immagine notturna di una giostra illuminata, caratterizzata da luci vivide e sovraesposizioni estreme nei punti luminosi. Il modulo 'filmic rgb' è attivo nella barra dei moduli a destra, e l'istogramma RGB evidenzia saturazione cromatica nelle alte luci (verde, rosa, blu). Un cursore del mouse è posizionato su una zona di highlight colorato della giostra, suggerendo un'analisi visiva delle aree luminose. Il pannello sinistro mostra lo snapshot 'tone equalizer' selezionato, indicando un confronto tra moduli. Il contesto narrativo conferma che si sta valutando la gestione degli highlight estremi da parte di filmic rgb vs sigmoid.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>high contrast</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>black point</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>white point</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>reconstruction</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con una curva tonale personalizzata visibile nel grafico a destra. L'utente sta modificando il parametro 'latitude', che influenza la pendenza della spalla e del piede della curva, aumentando il contrasto nelle zone scure dell'immagine (come indicato dal contesto narrativo). L'istogramma RGB è visibile sopra la curva, e la tab 'look' è selezionata. Non sono presenti maschere attive. Il cursore è posizionato sulla curva tonale, suggerendo un'interazione in corso." src="screenshots/frame_01680_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone curve' attivo in darktable, con una curva tonale personalizzata visibile nel grafico a destra. L'utente sta modificando il parametro 'latitude', che influenza la pendenza della spalla e del piede della curva, aumentando il contrasto nelle zone scure dell'immagine (come indicato dal contesto narrativo). L'istogramma RGB è visibile sopra la curva, e la tab 'look' è selezionata. Non sono presenti maschere attive. Il cursore è posizionato sulla curva tonale, suggerendo un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> tone curve</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.174</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>52.76%</td>
+</tr>
+<tr>
+<td>shadows → highlights balance</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>highlights saturation mix</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>EV scene</td>
+<td>+0.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra darktable in modalità lighttable con un'immagine selezionata (n. 20 su 24) che raffigura un faro su una scogliera rocciosa. Il modulo 'filmic rgb' è attivo nel pannello destro, con profilo di uscita sRGB e impostazioni predefinite per bilanciamento del colore e calibrazione. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione tonale bilanciata con leggera predominanza nelle ombre. Un cursore del mouse è evidenziato da un cerchio rosa nell'area marina, indicando un'interazione in corso. A sinistra sono presenti i thumbnail delle immagini e la gestione dei duplicati. Il narratore sta descrivendo l'uso di 'filmic rgb' per controllare ombre e luci, confermando che il modulo è al centro dell'operazione." src="screenshots/frame_01737_380.jpg" /></p>
+<p><em>L'interfaccia mostra darktable in modalità lighttable con un'immagine selezionata (n. 20 su 24) che raffigura un faro su una scogliera rocciosa. Il modulo 'filmic rgb' è attivo nel pannello destro, con profilo di uscita sRGB e impostazioni predefinite per bilanciamento del colore e calibrazione. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione tonale bilanciata con leggera predominanza nelle ombre. Un cursore del mouse è evidenziato da un cerchio rosa nell'area marina, indicando un'interazione in corso. A sinistra sono presenti i thumbnail delle immagini e la gestione dei duplicati. Il narratore sta descrivendo l'uso di 'filmic rgb' per controllare ombre e luci, confermando che il modulo è al centro dell'operazione.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>output color profile</td>
+<td>sRGB</td>
+</tr>
+<tr>
+<td>filmic rgb</td>
+<td>enabled</td>
+</tr>
+<tr>
+<td>color balance rgb</td>
+<td>basic colorfulness: vibrant colors</td>
+</tr>
+<tr>
+<td>color calibration</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>input color profile</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>demosaic</td>
+<td>disabled (not explicitly shown, but not expanded)</td>
+</tr>
+<tr>
+<td>highlight reconstruction</td>
+<td>disabled</td>
+</tr>
+<tr>
+<td>white balance</td>
+<td>disabled</td>
+</tr>
+<tr>
+<td>raw black/white point</td>
+<td>disabled</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. È visibile una curva di tonalità piatta (linea orizzontale a 0 EV) su una griglia, con un indicatore di esposizione +3 EV posizionato sulle luci dell'attrazione illuminata al centro dell'immagine. L'utente sta lavorando su una foto notturna di un'attrazione da luna park con luci vivide e motion blur; sta cercando di recuperare dettagli nei highlights utilizzando il tone equalizer, come indicato dal contesto narrativo. Sul pannello sinistro è selezionato lo snapshot 'sigmoid', e in basso sono visibili i metadati della foto (125 ISO, 1/2.6s, obiettivo 10mm)." src="screenshots/frame_01560_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'tone equalizer' attivo nella scheda 'advanced'. È visibile una curva di tonalità piatta (linea orizzontale a 0 EV) su una griglia, con un indicatore di esposizione +3 EV posizionato sulle luci dell'attrazione illuminata al centro dell'immagine. L'utente sta lavorando su una foto notturna di un'attrazione da luna park con luci vivide e motion blur; sta cercando di recuperare dettagli nei highlights utilizzando il tone equalizer, come indicato dal contesto narrativo. Sul pannello sinistro è selezionato lo snapshot 'sigmoid', e in basso sono visibili i metadati della foto (125 ISO, 1/2.6s, obiettivo 10mm).</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mode</td>
+<td>advanced</td>
+</tr>
+<tr>
+<td>curve_smoothing</td>
+<td>+0.00</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine notturna di una giostra illuminata selezionata (immagine #12 su 24). Il modulo 'tone equalizer' è attivo nella sezione sinistra, con 22 snapshot disponibili. Sul pannello destro sono visibili i moduli abilitati, tra cui 'filmic rgb' e 'sigmoid', coerentemente con il commento del narratore che confronta le prestazioni di questi due moduli nell'elaborazione degli highlight estremi. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione con picchi nei toni luminosi (blu/viola) e colori vivaci (verde/rosso), indicando forti luci artificiali e saturazione elevata. Un cerchio rosa evidenzia la zona dell'istogramma o dello strumento di analisi, probabilmente usato per valutare i dettagli negli highlight." src="screenshots/frame_01577_240.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine notturna di una giostra illuminata selezionata (immagine #12 su 24). Il modulo 'tone equalizer' è attivo nella sezione sinistra, con 22 snapshot disponibili. Sul pannello destro sono visibili i moduli abilitati, tra cui 'filmic rgb' e 'sigmoid', coerentemente con il commento del narratore che confronta le prestazioni di questi due moduli nell'elaborazione degli highlight estremi. L'istogramma RGB è visibile in alto a destra, mostrando una distribuzione con picchi nei toni luminosi (blu/viola) e colori vivaci (verde/rosso), indicando forti luci artificiali e saturazione elevata. Un cerchio rosa evidenzia la zona dell'istogramma o dello strumento di analisi, probabilmente usato per valutare i dettagli negli highlight.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>snapshots</td>
+<td>22</td>
+</tr>
+<tr>
+<td>selected_snapshot</td>
+<td>tone equalizer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Filmic</li>
+<li>Sigmoid</li>
+<li>Bilanciamento colore RGB</li>
+</ul>
+<hr />
+<h2 id="10-conclusioni-e-integrazione-nel-flusso-di-lavoro">10. Conclusioni e integrazione nel flusso di lavoro<a class="headerlink" href="#10-conclusioni-e-integrazione-nel-flusso-di-lavoro" title="Permanent link">&para;</a></h2>
+<p><strong>[29:05 – 33:01]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=1745">Guarda nel video</a></p>
+<p>Raccomandazioni sulla scelta tra i due moduli in base al genere fotografico (paesaggi vs bianco e nero). Entrambi forniscono un punto di partenza valido da affinare successivamente con altri moduli di correzione.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'local contrast' attivo. È evidenziato il toggle 'sigmoid', che è stato appena attivato (cerchio rosa), mentre 'filmic rgb' è ancora presente ma non attivo come operazione principale. Lo slider 'contrast' è impostato a 1.500 e 'skew' a +0.00, coerentemente con il commento del narratore che intende regolare il contrasto e osservare gli effetti sulle ombre senza modificare significativamente le luci tramite skew. L'istogramma RGB a destra mostra la distribuzione dei canali, e l'immagine centrale è una scena costiera con un faro su un promontorio roccioso, in condizioni di luce diffusa." src="screenshots/frame_01765_759.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'local contrast' attivo. È evidenziato il toggle 'sigmoid', che è stato appena attivato (cerchio rosa), mentre 'filmic rgb' è ancora presente ma non attivo come operazione principale. Lo slider 'contrast' è impostato a 1.500 e 'skew' a +0.00, coerentemente con il commento del narratore che intende regolare il contrasto e osservare gli effetti sulle ombre senza modificare significativamente le luci tramite skew. L'istogramma RGB a destra mostra la distribuzione dei canali, e l'immagine centrale è una scena costiera con un faro su un promontorio roccioso, in condizioni di luce diffusa.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filmic rgb</td>
+<td>scene-referred default</td>
+</tr>
+<tr>
+<td>sigmoid</td>
+<td>True</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'filmic rgb' attivo con i parametri di contrasto impostati a 1.580 e skew a +0.00, indicando che l'utente ha appena corretto una leggera distorsione cromatica o geometrica senza spostare lo skew verso destra, come suggerito nel contesto. Sono visibili tre istogrammi RGB separati (rosso, verde, blu) nella sezione superiore destra, e il cursore del mouse è posizionato sul controllo 'skew', evidenziato da un cerchio rosso. L'immagine di sfondo è un paesaggio costiero con faro su scogliera, in fase di elaborazione RAW. Il pannello sinistro mostra due snapshot (etichettati '0' e '1'), confermando che l'utente ha già creato uno snapshot per confronto, in linea con il commento sulle differenze tra filmic e sigmoid." src="screenshots/frame_01800_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'filmic rgb' attivo con i parametri di contrasto impostati a 1.580 e skew a +0.00, indicando che l'utente ha appena corretto una leggera distorsione cromatica o geometrica senza spostare lo skew verso destra, come suggerito nel contesto. Sono visibili tre istogrammi RGB separati (rosso, verde, blu) nella sezione superiore destra, e il cursore del mouse è posizionato sul controllo 'skew', evidenziato da un cerchio rosso. L'immagine di sfondo è un paesaggio costiero con faro su scogliera, in fase di elaborazione RAW. Il pannello sinistro mostra due snapshot (etichettati '0' e '1'), confermando che l'utente ha già creato uno snapshot per confronto, in linea con il commento sulle differenze tra filmic e sigmoid.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.580</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>base primaries</td>
+<td>working profile</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'local contrast' attivo sul pannello destro. Sulla destra sono visibili tre istogrammi RGB sovrapposti (rosso, verde, blu) e un cursore circolare rosa che indica una maschera attiva sull'immagine. Il pannello sinistro mostra la miniatura dell'immagine selezionata (#20 su 24) e la sezione 'snapshots' con uno snapshot denominato '15_sigmoid'. Il contesto narrativo indica che l'utente sta confrontando due stili: sigmoid a sinistra e filmic a destra, utilizzando la maschera per applicare modifiche locali. La presenza dei toggle 'filmic rgb' e 'sigmoid' attivi suggerisce che entrambi i moduli sono abilitati contemporaneamente per un confronto diretto." src="screenshots/frame_01830_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'local contrast' attivo sul pannello destro. Sulla destra sono visibili tre istogrammi RGB sovrapposti (rosso, verde, blu) e un cursore circolare rosa che indica una maschera attiva sull'immagine. Il pannello sinistro mostra la miniatura dell'immagine selezionata (#20 su 24) e la sezione 'snapshots' con uno snapshot denominato '15_sigmoid'. Il contesto narrativo indica che l'utente sta confrontando due stili: sigmoid a sinistra e filmic a destra, utilizzando la maschera per applicare modifiche locali. La presenza dei toggle 'filmic rgb' e 'sigmoid' attivi suggerisce che entrambi i moduli sono abilitati contemporaneamente per un confronto diretto.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella sezione 'lighttable'. È visibile un'immagine paesaggistica con un faro su una scogliera, e il pannello a destra mostra i parametri del modulo filmic rgb configurati per una gestione avanzata delle tonalità, con EV scene impostato a -7.6 e EV display a +3.1. Sono attivi i toggle per 'auto adjust hardness' e 'use custom middle-gray values', mentre la scheda 'options' è selezionata. L'istogramma RGB a tre canali (rosso, verde, blu) è visibile in alto a destra. Il narratore menziona l’uso frequente di filmic per il lavoro in bianco e nero e il controllo della curva tonale, confermando l’uso intenzionale di questo modulo come punto di partenza nel flusso di lavoro." src="screenshots/frame_01919_720.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella sezione 'lighttable'. È visibile un'immagine paesaggistica con un faro su una scogliera, e il pannello a destra mostra i parametri del modulo filmic rgb configurati per una gestione avanzata delle tonalità, con EV scene impostato a -7.6 e EV display a +3.1. Sono attivi i toggle per 'auto adjust hardness' e 'use custom middle-gray values', mentre la scheda 'options' è selezionata. L'istogramma RGB a tre canali (rosso, verde, blu) è visibile in alto a destra. Il narratore menziona l’uso frequente di filmic per il lavoro in bianco e nero e il controllo della curva tonale, confermando l’uso intenzionale di questo modulo come punto di partenza nel flusso di lavoro.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EV scene</td>
+<td>-7.6</td>
+</tr>
+<tr>
+<td>EV display</td>
+<td>+3.1</td>
+</tr>
+<tr>
+<td>contrast in highlights</td>
+<td>hard</td>
+</tr>
+<tr>
+<td>contrast in shadows</td>
+<td>safe</td>
+</tr>
+<tr>
+<td>use custom middle-gray values</td>
+<td>False</td>
+</tr>
+<tr>
+<td>auto adjust hardness</td>
+<td>True</td>
+</tr>
+<tr>
+<td>iterations of high-quality reconstruction</td>
+<td>1</td>
+</tr>
+<tr>
+<td>add noise in highlights</td>
+<td>0.20</td>
+</tr>
+<tr>
+<td>type of noise</td>
+<td>gaussian</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra il modulo 'local contrast' attivo con due profili di tonalità abilitati: 'filmic rgb' e 'sigmoid'. È visibile una miniatura dell'immagine nella sezione snapshot (etichettata '15 - sigmoid'), indicando che è stata salvata una versione con la curva sigmoid. Lo stato 'working...' e il cursore circolare suggeriscono che l'immagine è in fase di caricamento o aggiornamento dopo un cambio di profilo. Il contesto narrativo conferma che l'utente sta confrontando visivamente i risultati di 'filmic' e 'sigmoid' su una stessa foto, utilizzando snapshot per sovrapporre i due look." src="screenshots/frame_01820_380.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra il modulo 'local contrast' attivo con due profili di tonalità abilitati: 'filmic rgb' e 'sigmoid'. È visibile una miniatura dell'immagine nella sezione snapshot (etichettata '15 - sigmoid'), indicando che è stata salvata una versione con la curva sigmoid. Lo stato 'working...' e il cursore circolare suggeriscono che l'immagine è in fase di caricamento o aggiornamento dopo un cambio di profilo. Il contesto narrativo conferma che l'utente sta confrontando visivamente i risultati di 'filmic' e 'sigmoid' su una stessa foto, utilizzando snapshot per sovrapporre i due look.</em></p>
+<p><strong>Modulo:</strong> local contrast</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contrast</td>
+<td>1.500</td>
+</tr>
+<tr>
+<td>skew</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>preserve hue</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>target black</td>
+<td>0.0152%</td>
+</tr>
+<tr>
+<td>target white</td>
+<td>100.00%</td>
+</tr>
+<tr>
+<td>base primaries</td>
+<td>working profile</td>
+</tr>
+<tr>
+<td>red attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>red rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>green attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>green rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>blue attenuation</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>blue rotation</td>
+<td>+0.0°</td>
+</tr>
+<tr>
+<td>recover purity</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sigmoid</li>
+<li>Filmic</li>
+</ul>
+<hr />
+<h2 id="11-conclusione-e-saluti">11. Conclusione e saluti<a class="headerlink" href="#11-conclusione-e-saluti" title="Permanent link">&para;</a></h2>
+<p><strong>[33:03 – 33:05]</strong>
+ | <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0&amp;t=1983">Guarda nel video</a></p>
+<p>Il relatore conclude il tutorial e saluta gli spettatori.</p>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>esposizione</strong></td>
+<td>scorciatoia ISO 12664/1266, bordo bianco di riferimento, compensazione +1 EV</td>
+</tr>
+<tr>
+<td><strong>profilo colore</strong></td>
+<td>Rec. 709, Rec. 2020</td>
+</tr>
+<tr>
+<td><strong>bilanciamento colore RGB</strong></td>
+<td>colorfulness di base</td>
+</tr>
+<tr>
+<td><strong>filmic rgb</strong></td>
+<td>esposizione relativa bianco/nero, dynamic range, auto-tune levels, contrasto, latitudine, bilanciamento ombre/luci, ricostruzione alte luci (soglia, transizione, texture, bloom, iterazioni, rumore), costruzione curva (hard/soft/safe)</td>
+</tr>
+<tr>
+<td><strong>ricostruzione alte luci</strong></td>
+<td>raggio/dimensione, laplaciani guidati, inpaint opposed</td>
+</tr>
+<tr>
+<td><strong>sigmoid</strong></td>
+<td>skew (inclinazione), contrasto</td>
+</tr>
+<tr>
+<td><strong>Sigmoid</strong></td>
+<td>conservazione colore (per canale, rapporto RGB), skew, contrast, compensazione, primari (purezza tonalità rosso/verde/blu, attenuazione)</td>
+</tr>
+<tr>
+<td><strong>Filmic</strong></td>
+<td>black relative exposure, look tab, latitude, highlight saturation mix, preserve chrominance, auto tune levels</td>
+</tr>
+<tr>
+<td><strong>Bilanciamento colore RGB</strong></td>
+<td>colori vivaci</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore tonale</strong></td>
+<td>regolazione tonale generale</td>
+</tr>
+<tr>
+<td><strong>Saturazione</strong></td>
+<td>intensità colore</td>
+</tr>
+<tr>
+<td><strong>Primari RGB</strong></td>
+<td>rotazione tonalità, attenuazione cromaticità</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Utilizzare la scorciatoia Cmd/Ctrl+B (ISO 12664) per visualizzare un bordo bianco e valutare correttamente l'esposizione rispetto al bianco puro. — <em>Fase iniziale di sviluppo, prima di applicare il tone mapping.</em><blockquote>
+<p><strong>Importante:</strong> Verificare sempre che il profilo colore di input sia impostato su Rec. 2020, poiché a volte il software potrebbe caricare erroneamente Rec. 709. — <em>Preparazione del flusso di lavoro in camera oscura.</em>
+<strong>Attenzione:</strong> Evitare di applicare moduli successivi a Filmic che potrebbero alterare o bruciare le alte luci già mappate. — <em>Dopo aver regolato la curva di tone mapping.</em>
+<strong>Attenzione:</strong> Il cursore 'Dynamic Range' in Filmic è sconsigliato: sposta simultaneamente i punti di nero e bianco. È preferibile regolarli separatamente. — <em>Regolazione dei livelli relativi in Filmic RGB.</em>
+<strong>Importante:</strong> Impostare la costruzione della curva su 'Safe' per prevenire valori negativi o superiori a 1 e evitare clipping indesiderati quando si aumentano contrasto e latitudine. — <em>Regolazione avanzata della curva di tone mapping in Filmic.</em></p>
+</blockquote>
+</li>
+<li>Aumentare il numero di iterazioni nella ricostruzione delle alte luci per ottenere una distribuzione cromatica più naturale e uniforme. — <em>Ricostruzione di luci clipate con dominante magenta.</em><blockquote>
+<p><strong>Attenzione:</strong> Filmic tende a perdere dettaglio nelle alte luci per natura della sua curva; valutare l'uso di Sigmoid o del modulo dedicato se il recupero del dettaglio è prioritario. — <em>Scelta del modulo di tone mapping per immagini con alte luci critiche.</em></p>
+</blockquote>
+</li>
+<li>In Sigmoid, ridurre il contrasto per recuperare dettagli nelle alte luci, ma monitorare attentamente la perdita di dettaglio nelle ombre. — <em>Regolazione iniziale del modulo Sigmoid.</em><blockquote>
+<p><strong>Attenzione:</strong> Il parametro 'skew' in Sigmoid agisce principalmente sulla spalla (alte luci) e non modifica significativamente la punta (ombre). Evitare di spostarlo eccessivamente verso destra per non appiattire i dettagli luminosi. — <em>Quando si regola il contrasto e la compressione delle alte luci in Sigmoid</em>
+<strong>Importante:</strong> Non utilizzare i cursori dei primari di Sigmoid per correzioni creative o di look. Il modulo è progettato esclusivamente per il tone mapping; per modifiche cromatiche avanzate usare Equalizzatore tonale o Bilanciamento colore. — <em>Durante la regolazione dei colori e della cromaticità in Sigmoid</em></p>
+</blockquote>
+</li>
+<li>Sigmoid e Filmic si posizionano alla fine della pipeline scene-referred. Impostarli all'inizio del flusso di lavoro per ottenere una base tonale solida, poi procedere con la rifinitura tramite altri moduli. — <em>Pianificazione del flusso di lavoro in darktable</em></li>
+<li>Per paesaggi e scene con alte luci estreme, Sigmoid è spesso un punto di partenza migliore grazie alla desaturazione naturale verso il bianco. Per il bianco e nero o quando serve controllo preciso sulla curva tonale, preferire Filmic. — <em>Scelta del modulo di mappatura tonale in base al soggetto fotografico</em></li>
+<li>Filmic tende a mantenere colori più saturi nelle alte luci, mentre Sigmoid li desatura gradualmente. Utilizzare la scheda 'compensazione' o 'look' per recuperare vivacità se il risultato appare troppo spento. — <em>Gestione della cromaticità e del recupero dettagli nelle alte luci</em></li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:16:19.811690.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

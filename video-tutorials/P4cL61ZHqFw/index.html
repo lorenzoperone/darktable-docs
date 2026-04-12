@@ -1,0 +1,2731 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/P4cL61ZHqFw/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] darktable first steps ep01 - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-darktable-first-steps-ep01" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] darktable first steps ep01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-installazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e Installazione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e Installazione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurazione-iniziale-delle-preferenze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configurazione Iniziale delle Preferenze
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Configurazione Iniziale delle Preferenze">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-importazione-e-navigazione-nella-lighttable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Importazione e Navigazione nella Lighttable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Importazione e Navigazione nella Lighttable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-panoramica-della-darkroom-e-della-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Panoramica della Darkroom e della Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Panoramica della Darkroom e della Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-regolazione-dellesposizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Regolazione dell'Esposizione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Regolazione dell&#39;Esposizione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gestione-del-contrasto-con-filmic-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Gestione del Contrasto con Filmic RGB
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Gestione del Contrasto con Filmic RGB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-esportazione-dellimmagine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Esportazione dell'Immagine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Esportazione dell&#39;Immagine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-darktable-first-steps-ep01">[ENG] darktable first steps ep01<a class="headerlink" href="#eng-darktable-first-steps-ep01" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">https://www.youtube.com/watch?v=P4cL61ZHqFw</a>
+<strong>Generato:</strong> 2026-04-12T01:24:57.189311
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-installazione">Introduzione e Installazione</a></li>
+<li><a href="#configurazione-iniziale-delle-preferenze">Configurazione Iniziale delle Preferenze</a></li>
+<li><a href="#importazione-e-navigazione-nella-lighttable">Importazione e Navigazione nella Lighttable</a></li>
+<li><a href="#panoramica-della-darkroom-e-della-pipeline">Panoramica della Darkroom e della Pipeline</a></li>
+<li><a href="#regolazione-dell'esposizione">Regolazione dell'Esposizione</a></li>
+<li><a href="#gestione-del-contrasto-con-filmic-rgb">Gestione del Contrasto con Filmic RGB</a></li>
+<li><a href="#esportazione-dell'immagine">Esportazione dell'Immagine</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-installazione">1. Introduzione e Installazione<a class="headerlink" href="#1-introduzione-e-installazione" title="Permanent link">&para;</a></h2>
+<p><strong>[00:04 – 00:55]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=4">Guarda nel video</a></p>
+<p>Presentazione di darktable come alternativa open-source a Lightroom e Capture One, con istruzioni per il download e l'installazione su Mac/Windows.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini RAW (formato RW2). È evidenziata un'immagine di un coleottero rosso con 5 stelle di valutazione e metadati visibili (data, apertura, focale, ISO). Sullo sfondo si intravede una finestra OBS in registrazione, con il presentatore in video-inserzione e una pagina web del sito di darktable aperta nel browser. Non sono attive maschere o moduli di sviluppo; l'interfaccia è in fase di esplorazione delle immagini, non di editing avanzato." src="screenshots/frame_00052_886.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini RAW (formato RW2). È evidenziata un'immagine di un coleottero rosso con 5 stelle di valutazione e metadati visibili (data, apertura, focale, ISO). Sullo sfondo si intravede una finestra OBS in registrazione, con il presentatore in video-inserzione e una pagina web del sito di darktable aperta nel browser. Non sono attive maschere o moduli di sviluppo; l'interfaccia è in fase di esplorazione delle immagini, non di editing avanzato.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image</td>
+<td>2020-05-30-Bièvre-0306.RW2</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>5 stars</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>f/8.0, 60mm, ISO 400</td>
+</tr>
+<tr>
+<td>date</td>
+<td>2020-05-30</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (uomo con barba, occhiali e gilet) in un ambiente interno, probabilmente un frame di un video tutorial. Non è visibile alcuna interfaccia di darktable: né la barra laterale dei moduli, né l'area di lavoro, né gli strumenti di editing. L'immagine è un frame video fuori dall'applicazione, utilizzato per introdurre il tutorial." src="screenshots/frame_00016_859.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (uomo con barba, occhiali e gilet) in un ambiente interno, probabilmente un frame di un video tutorial. Non è visibile alcuna interfaccia di darktable: né la barra laterale dei moduli, né l'area di lavoro, né gli strumenti di editing. L'immagine è un frame video fuori dall'applicazione, utilizzato per introdurre il tutorial.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet) che parla direttamente alla telecamera in un ambiente interno, con tende e luce naturale sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli o strumenti del software. Si tratta chiaramente di un frame video introduttivo o narrativo di un tutorial, non di uno screenshot dell'interfaccia software." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet) che parla direttamente alla telecamera in un ambiente interno, con tende e luce naturale sullo sfondo. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli o strumenti del software. Si tratta chiaramente di un frame video introduttivo o narrativo di un tutorial, non di uno screenshot dell'interfaccia software.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet) che parla direttamente alla telecamera in un ambiente interno, probabilmente durante una registrazione video tutorial. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli, istogrammi o strumenti di editing. L'immagine è un frame del video introduttivo, non uno screenshot dell'applicazione stessa." src="screenshots/frame_00032_259.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (un uomo con barba, occhiali e gilet) che parla direttamente alla telecamera in un ambiente interno, probabilmente durante una registrazione video tutorial. Non è visibile alcuna interfaccia di darktable: né la finestra principale, né moduli, pannelli, istogrammi o strumenti di editing. L'immagine è un frame del video introduttivo, non uno screenshot dell'applicazione stessa.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<hr />
+<h2 id="2-configurazione-iniziale-delle-preferenze">2. Configurazione Iniziale delle Preferenze<a class="headerlink" href="#2-configurazione-iniziale-delle-preferenze" title="Permanent link">&para;</a></h2>
+<p><strong>[00:55 – 01:55]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=55">Guarda nel video</a></p>
+<p>Impostazione delle preferenze globali per garantire l'utilizzo del flusso di lavoro più recente e dei moduli aggiornati.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia di darktable mostra la schermata iniziale con il modulo 'import' attivo. Al centro è presente un'area grigia con il messaggio 'there are no images in this collection', indicando che nessuna immagine è stata ancora importata. A sinistra, il pannello di navigazione mostra le opzioni per l'importazione da cartella o da dispositivi collegati (rilevato una fotocamera USB PTP). A destra, il pannello 'selected image(s)' è disabilitato poiché non ci sono immagini selezionate. In basso, la barra dello stato indica '0 images of 0 in current collection are selected'. La finestra è eseguita su macOS, come evidenziato dall'icona nel Dock e dal design dell'interfaccia." src="screenshots/frame_00084_751.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la schermata iniziale con il modulo 'import' attivo. Al centro è presente un'area grigia con il messaggio 'there are no images in this collection', indicando che nessuna immagine è stata ancora importata. A sinistra, il pannello di navigazione mostra le opzioni per l'importazione da cartella o da dispositivi collegati (rilevato una fotocamera USB PTP). A destra, il pannello 'selected image(s)' è disabilitato poiché non ci sono immagini selezionate. In basso, la barra dello stato indica '0 images of 0 in current collection are selected'. La finestra è eseguita su macOS, come evidenziato dall'icona nel Dock e dal design dell'interfaccia.</em></p>
+<p><strong>Modulo:</strong> import</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collection_status</td>
+<td>no images in this collection</td>
+</tr>
+<tr>
+<td>camera_detected</td>
+<td>USB PTP Class Camera on usb:020,048</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini RAW (formato RW2). È selezionata una sola immagine su 20 nella collezione corrente. Sullo sfondo è visibile il sito web darktable.org, con il narratore che spiega come scaricare l'applicazione per macOS. L'interfaccia include pannelli laterali per l'importazione, la selezione e lo stack della cronologia, ma nessun modulo di sviluppo o maschera è attivo. In basso è presente una piccola finestra video del presentatore." src="screenshots/frame_00060_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con una griglia di anteprime di immagini RAW (formato RW2). È selezionata una sola immagine su 20 nella collezione corrente. Sullo sfondo è visibile il sito web darktable.org, con il narratore che spiega come scaricare l'applicazione per macOS. L'interfaccia include pannelli laterali per l'importazione, la selezione e lo stack della cronologia, ma nessun modulo di sviluppo o maschera è attivo. In basso è presente una piccola finestra video del presentatore.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_image_count</td>
+<td>1 image of 20 (2) in current collection is selected</td>
+</tr>
+<tr>
+<td>view_mode</td>
+<td>all except rejected</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>filename</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra la pagina web di installazione di darktable (darktable.org), non l'interfaccia del software stesso. È visibile la sezione 'Choose your OS' con icone per diverse distribuzioni Linux, macOS, Windows e altre piattaforme. In primo piano si nota una finestra del browser Safari su macOS, con un video in sovrimpressione in basso a sinistra che mostra il narratore. L'interfaccia di darktable non è attiva; si tratta di una guida all'installazione esterna." src="screenshots/frame_00066_166.jpg" /></p>
+<p><em>Lo screenshot mostra la pagina web di installazione di darktable (darktable.org), non l'interfaccia del software stesso. È visibile la sezione 'Choose your OS' con icone per diverse distribuzioni Linux, macOS, Windows e altre piattaforme. In primo piano si nota una finestra del browser Safari su macOS, con un video in sovrimpressione in basso a sinistra che mostra il narratore. L'interfaccia di darktable non è attiva; si tratta di una guida all'installazione esterna.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable in esecuzione, ma una sessione di screen sharing con OBS Studio attivo. È visibile una finestra di OBS che riprende un'altra finestra (probabilmente un browser o un editor), e sullo sfondo si intravede il Finder di macOS con file video e immagini. Il narratore sta descrivendo la prima schermata di darktable (area grigia con scritto 'Darktable', senza immagini), ma tale interfaccia non è effettivamente presente nello screenshot. L'interfaccia di darktable non è visibile in alcun punto dell'immagine." src="screenshots/frame_00083_883.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable in esecuzione, ma una sessione di screen sharing con OBS Studio attivo. È visibile una finestra di OBS che riprende un'altra finestra (probabilmente un browser o un editor), e sullo sfondo si intravede il Finder di macOS con file video e immagini. Il narratore sta descrivendo la prima schermata di darktable (area grigia con scritto 'Darktable', senza immagini), ma tale interfaccia non è effettivamente presente nello screenshot. L'interfaccia di darktable non è visibile in alcun punto dell'immagine.</em></p>
+<p><strong>Modulo:</strong> nessuno</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Preferenze globali</li>
+</ul>
+<hr />
+<h2 id="3-importazione-e-navigazione-nella-lighttable">3. Importazione e Navigazione nella Lighttable<a class="headerlink" href="#3-importazione-e-navigazione-nella-lighttable" title="Permanent link">&para;</a></h2>
+<p><strong>[01:55 – 02:55]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=115">Guarda nel video</a></p>
+<p>Importazione di una cartella di immagini RAW e panoramica dell'interfaccia della Lighttable per la selezione delle foto.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra la finestra delle preferenze di darktable, con il tab 'general' attivo. Il cursore è posizionato su 'auto-apply chromatic adaptation defaults', che è impostato su 'modern'. L'opzione 'auto-apply pixel workflow defaults' è impostata su 'scene-referred', come raccomandato dal narratore. La finestra è sovrapposta all'interfaccia principale in modalità import, con una piccola videocamera in basso a sinistra che mostra il presentatore." src="screenshots/frame_00120_000.jpg" /></p>
+<p><em>Lo screenshot mostra la finestra delle preferenze di darktable, con il tab 'general' attivo. Il cursore è posizionato su 'auto-apply chromatic adaptation defaults', che è impostato su 'modern'. L'opzione 'auto-apply pixel workflow defaults' è impostata su 'scene-referred', come raccomandato dal narratore. La finestra è sovrapposta all'interfaccia principale in modalità import, con una piccola videocamera in basso a sinistra che mostra il presentatore.</em></p>
+<p><strong>Modulo:</strong> darktable preferences</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auto-apply pixel workflow defaults</td>
+<td>scene-referred</td>
+</tr>
+<tr>
+<td>auto-apply chromatic adaptation defaults</td>
+<td>modern</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella vista 'lighttable', con nessuna immagine importata nella collezione corrente. Il pannello sinistro è attivo sulla sezione 'import', con un dispositivo di acquisizione (camera USB PTP) rilevato ma senza immagini selezionate. Al centro è visualizzato il messaggio 'there are no images in this collection'. Il pannello destro mostra i moduli disponibili (history stack, styles, ecc.) e le azioni per le immagini selezionate (attualmente disabilitate). In basso è visibile una piccola finestra video del narratore che spiega il processo di importazione." src="screenshots/frame_00150_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella vista 'lighttable', con nessuna immagine importata nella collezione corrente. Il pannello sinistro è attivo sulla sezione 'import', con un dispositivo di acquisizione (camera USB PTP) rilevato ma senza immagini selezionate. Al centro è visualizzato il messaggio 'there are no images in this collection'. Il pannello destro mostra i moduli disponibili (history stack, styles, ecc.) e le azioni per le immagini selezionate (attualmente disabilitate). In basso è visibile una piccola finestra video del narratore che spiega il processo di importazione.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>collection_status</td>
+<td>0 images of 0 in current collection are selected</td>
+</tr>
+<tr>
+<td>import_source</td>
+<td>USB PTP Class Camera on usb:020,048</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-panoramica-della-darkroom-e-della-pipeline">4. Panoramica della Darkroom e della Pipeline<a class="headerlink" href="#4-panoramica-della-darkroom-e-della-pipeline" title="Permanent link">&para;</a></h2>
+<p><strong>[02:55 – 04:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=175">Guarda nel video</a></p>
+<p>Introduzione all'interfaccia della Darkroom e spiegazione della pipeline di elaborazione, dall'alto verso il basso, con i moduli di base predefiniti.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella modalità 'lighttable', con tre immagini visualizzate in anteprima (paesaggio marino, cane in corsa, e fiore di lavanda con ape). Nessuna immagine è selezionata (0/3), come indicato dalla barra di stato. Il pannello destro mostra le opzioni per la gestione delle immagini selezionate, ma non sono attive. In basso a sinistra è visibile una piccola finestra video del narratore che descrive il processo di selezione. L'utente sta per passare alla modalità 'darkroom' dopo aver selezionato l'immagine dell'ape." src="screenshots/frame_00180_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella modalità 'lighttable', con tre immagini visualizzate in anteprima (paesaggio marino, cane in corsa, e fiore di lavanda con ape). Nessuna immagine è selezionata (0/3), come indicato dalla barra di stato. Il pannello destro mostra le opzioni per la gestione delle immagini selezionate, ma non sono attive. In basso a sinistra è visibile una piccola finestra video del narratore che descrive il processo di selezione. L'utente sta per passare alla modalità 'darkroom' dopo aver selezionato l'immagine dell'ape.</em></p>
+<p><strong>Modulo:</strong> file manager</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images_count</td>
+<td>0</td>
+</tr>
+<tr>
+<td>total_images_in_collection</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella modalità 'lighttable', con un'immagine selezionata (la terza di tre) che raffigura un'ape su un fiore di lavanda. A destra è visibile il pannello dei moduli, con la sezione 'pipeline' parzialmente mostrata e i moduli disponibili elencati (es. white balance, exposure, color calibration). In basso è presente la barra delle miniature e le informazioni tecniche della foto (1/60, f/10.0, 60 mm, ISO 400). Il narratore sta introducendo la transizione alla modalità 'darkroom' per l'editing." src="screenshots/frame_00189_439.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella modalità 'lighttable', con un'immagine selezionata (la terza di tre) che raffigura un'ape su un fiore di lavanda. A destra è visibile il pannello dei moduli, con la sezione 'pipeline' parzialmente mostrata e i moduli disponibili elencati (es. white balance, exposure, color calibration). In basso è presente la barra delle miniature e le informazioni tecniche della foto (1/60, f/10.0, 60 mm, ISO 400). Il narratore sta introducendo la transizione alla modalità 'darkroom' per l'editing.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>1/60</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/10.0</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>60 mm</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Raw black white point</li>
+<li>White balance</li>
+<li>Highlight reconstruction</li>
+<li>De-mosaic</li>
+<li>Orientation</li>
+</ul>
+<hr />
+<h2 id="5-regolazione-dellesposizione">5. Regolazione dell'Esposizione<a class="headerlink" href="#5-regolazione-dellesposizione" title="Permanent link">&para;</a></h2>
+<p><strong>[04:20 – 07:40]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=260">Guarda nel video</a></p>
+<p>Utilizzo del modulo Exposure per correggere la luminosità globale, spiegazione della natura non distruttiva delle modifiche e uso del bordo bianco per una percezione accurata dei toni.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una fotografia macro di un'ape su un fiore di lavanda, con profondità di campo ridotta. Il modulo esposizione mostra valori specifici: compensazione esposizione della fotocamera a +0.0 EV (con checkbox attivata), esposizione globale impostata a +0.50 EV, soglia di clipping a 0.010% e correzione del livello nero a -0.0002. Sulla sinistra sono visibili i moduli laterali (snapshots, history, ecc.), in basso la barra delle miniature e la barra degli strumenti macOS. In basso a sinistra è presente un'inserzione video del narratore che spiega il funzionamento del modulo." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una fotografia macro di un'ape su un fiore di lavanda, con profondità di campo ridotta. Il modulo esposizione mostra valori specifici: compensazione esposizione della fotocamera a +0.0 EV (con checkbox attivata), esposizione globale impostata a +0.50 EV, soglia di clipping a 0.010% e correzione del livello nero a -0.0002. Sulla sinistra sono visibili i moduli laterali (snapshots, history, ecc.), in basso la barra delle miniature e la barra degli strumenti macOS. In basso a sinistra è presente un'inserzione video del narratore che spiega il funzionamento del modulo.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.50 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una macrofotografia di lavanda con un'ape, visualizzata con un bordo bianco che funge da riferimento neutro per la valutazione dell'esposizione. Il narratore sta spiegando come il bordo bianco aiuti a percepire correttamente i livelli di luminosità e a regolare l'esposizione globale in modo più preciso. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono mostrati i dati EXIF (1/60s, f/10.0, 60mm, ISO 400)." src="screenshots/frame_00417_329.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è una macrofotografia di lavanda con un'ape, visualizzata con un bordo bianco che funge da riferimento neutro per la valutazione dell'esposizione. Il narratore sta spiegando come il bordo bianco aiuti a percepire correttamente i livelli di luminosità e a regolare l'esposizione globale in modo più preciso. L'istogramma RGB è visibile in alto a destra, e nella barra inferiore sono mostrati i dati EXIF (1/60s, f/10.0, 60mm, ISO 400).</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>+0.0 EV</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.27 EV</td>
+</tr>
+<tr>
+<td>clipping threshold</td>
+<td>0.010%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è un primo piano di una lavanda con un'ape in volo; il modulo esposizione è stato appena regolato (esposizione +0.23 EV), come confermato dal narratore che dice di aver 'spinto a destra' e che ora l'esposizione è 'fatta'. Il cursore dell'esposizione è visibilmente spostato verso destra rispetto al valore neutro. Non sono presenti maschere attive, e il modulo è in modalità manuale. In basso si vedono le miniature della collezione corrente (3 immagini), e nella barra degli strumenti inferiore sono visibili i metadati della foto: 1/60s, f/10.0, 60mm, ISO 400." src="screenshots/frame_00450_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'exposure' attivo nel pannello destro. L'immagine centrale è un primo piano di una lavanda con un'ape in volo; il modulo esposizione è stato appena regolato (esposizione +0.23 EV), come confermato dal narratore che dice di aver 'spinto a destra' e che ora l'esposizione è 'fatta'. Il cursore dell'esposizione è visibilmente spostato verso destra rispetto al valore neutro. Non sono presenti maschere attive, e il modulo è in modalità manuale. In basso si vedono le miniature della collezione corrente (3 immagini), e nella barra degli strumenti inferiore sono visibili i metadati della foto: 1/60s, f/10.0, 60mm, ISO 400.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compensate camera exposure</td>
+<td>true</td>
+</tr>
+<tr>
+<td>exposure</td>
+<td>0.23 EV</td>
+</tr>
+<tr>
+<td>adjust the exposure correction</td>
+<td>0.063%</td>
+</tr>
+<tr>
+<td>black level correction</td>
+<td>-0.0002</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di lavanda e un'ape al centro. Il modulo 'exposure' è evidenziato nel pannello dei moduli a destra, indicando che l'utente sta lavorando sull'esposizione dell'immagine. L'istogramma RGB è visibile in alto a destra. Il narratore commenta che l'immagine originale era troppo scura e che l'aggiustamento dell'esposizione ha migliorato la luminosità; menziona anche il profilo colore di input come passo successivo." src="screenshots/frame_00456_449.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine di lavanda e un'ape al centro. Il modulo 'exposure' è evidenziato nel pannello dei moduli a destra, indicando che l'utente sta lavorando sull'esposizione dell'immagine. L'istogramma RGB è visibile in alto a destra. Il narratore commenta che l'immagine originale era troppo scura e che l'aggiustamento dell'esposizione ha migliorato la luminosità; menziona anche il profilo colore di input come passo successivo.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>non leggibile (slider non visibile in dettaglio)</td>
+</tr>
+<tr>
+<td>black</td>
+<td>non leggibile</td>
+</tr>
+<tr>
+<td>white</td>
+<td>non leggibile</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>non leggibile</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Exposure</li>
+<li>Input color profile</li>
+</ul>
+<hr />
+<h2 id="6-gestione-del-contrasto-con-filmic-rgb">6. Gestione del Contrasto con Filmic RGB<a class="headerlink" href="#6-gestione-del-contrasto-con-filmic-rgb" title="Permanent link">&para;</a></h2>
+<p><strong>[07:40 – 12:20]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=460">Guarda nel video</a></p>
+<p>Configurazione del modulo Filmic RGB per adattare le alte e basse luci al display, regolazione dei punti di bianco e nero e importanza di evitare valori negativi nella curva.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile una curva tonale con due curve sovrapposte: quella luminosa (filmic tone mapping) e quella scura (desaturation), con nodi posizionati per regolare le esposizioni relative bianca e nera. L'immagine centrale è un primo piano di lavanda con un'ape in volo, già elaborata con valori di esposizione estremi (+4.40 EV e -7.75 EV), indicando un'ampia dinamica gestita dal modulo Filmic. Il toggle 'look only' è attivato, suggerendo che le modifiche sono visualizzate solo a scopo di anteprima senza applicazione permanente." src="screenshots/frame_00512_549.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'filmic rgb' attivo nella scheda 'scene'. È visibile una curva tonale con due curve sovrapposte: quella luminosa (filmic tone mapping) e quella scura (desaturation), con nodi posizionati per regolare le esposizioni relative bianca e nera. L'immagine centrale è un primo piano di lavanda con un'ape in volo, già elaborata con valori di esposizione estremi (+4.40 EV e -7.75 EV), indicando un'ampia dinamica gestita dal modulo Filmic. Il toggle 'look only' è attivato, suggerendo che le modifiche sono visualizzate solo a scopo di anteprima senza applicazione permanente.</em></p>
+<p><strong>Modulo:</strong> filmic rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white relative exposure</td>
+<td>+4.40 EV</td>
+</tr>
+<tr>
+<td>black relative exposure</td>
+<td>-7.75 EV</td>
+</tr>
+<tr>
+<td>dynamic range scaling</td>
+<td>+0.00 %</td>
+</tr>
+<tr>
+<td>% display</td>
+<td>100</td>
+</tr>
+<tr>
+<td>look only</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Filmic RGB</li>
+</ul>
+<hr />
+<h2 id="7-esportazione-dellimmagine">7. Esportazione dell'Immagine<a class="headerlink" href="#7-esportazione-dellimmagine" title="Permanent link">&para;</a></h2>
+<p><strong>[12:20 – 15:42]</strong>
+ | <a href="https://www.youtube.com/watch?v=P4cL61ZHqFw&amp;t=740">Guarda nel video</a></p>
+<p>Procedura di esportazione in JPEG dalla Lighttable, configurazione del percorso, del formato e della compressione, con verifica dell'opzione di sovrascrittura.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con tre miniature di immagini; l'immagine centrale (cane in corsa) è selezionata. Sul pannello destro, la sezione 'export selected' è espansa, indicando che l'utente sta per esportare l'immagine selezionata. Il narratore spiega che il simbolo '$' rappresenta una variabile per la cartella di destinazione e che verrà generato un file JPEG. In basso è visibile la barra del gestore file e la dock macOS con icone di applicazioni." src="screenshots/frame_00833_509.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con tre miniature di immagini; l'immagine centrale (cane in corsa) è selezionata. Sul pannello destro, la sezione 'export selected' è espansa, indicando che l'utente sta per esportare l'immagine selezionata. Il narratore spiega che il simbolo '$' rappresenta una variabile per la cartella di destinazione e che verrà generato un file JPEG. In basso è visibile la barra del gestore file e la dock macOS con icone di applicazioni.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected_images_count</td>
+<td>1 image of 3</td>
+</tr>
+<tr>
+<td>export_destination</td>
+<td>$ (variable for folder)</td>
+</tr>
+<tr>
+<td>export_format</td>
+<td>JPEG</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella vista 'lighttable', con l'immagine selezionata (un primo piano di lavanda) evidenziata. Il pannello destro è aperto sulla sezione 'export selected', dove sono configurate le opzioni per l'esportazione: salvataggio nella stessa cartella del file originale tramite la variabile ${FILE_FOLDER}, formato JPEG a 8 bit con qualità 85, senza ridimensionamento né upscaling. È visibile anche il file manager in basso e una piccola finestra video in sovrimpressione in basso a sinistra." src="screenshots/frame_00835_610.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella vista 'lighttable', con l'immagine selezionata (un primo piano di lavanda) evidenziata. Il pannello destro è aperto sulla sezione 'export selected', dove sono configurate le opzioni per l'esportazione: salvataggio nella stessa cartella del file originale tramite la variabile ${FILE_FOLDER}, formato JPEG a 8 bit con qualità 85, senza ridimensionamento né upscaling. È visibile anche il file manager in basso e una piccola finestra video in sovrimpressione in basso a sinistra.</em></p>
+<p><strong>Modulo:</strong> export selected</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target_storage</td>
+<td>file on disk</td>
+</tr>
+<tr>
+<td>target_path</td>
+<td>${FILE_FOLDER}/${FILE_NAME}</td>
+</tr>
+<tr>
+<td>file_format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>85</td>
+</tr>
+<tr>
+<td>set_size</td>
+<td>0 x 0</td>
+</tr>
+<tr>
+<td>allow_upscaling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>high_quality_resampling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>store_masks</td>
+<td>no</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>intent</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>replace history</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la sezione 'export selected' di darktable, con tre immagini nella vista a griglia: una scena costiera, un cane in movimento e un primo piano di lavanda. L'immagine centrale (il cane) è evidenziata come selezionata (1 di 3). A destra, il pannello di esportazione è configurato per salvare in JPEG 8-bit con qualità 85, senza ridimensionamento né upscaling. Non sono attive maschere o modifiche in corso; lo stato indica che l'esportazione è pronta o appena completata, coerentemente con il commento del narratore che menziona l'esportazione di un JPEG da un file RAW già elaborato." src="screenshots/frame_00925_590.jpg" /></p>
+<p><em>L'interfaccia mostra la sezione 'export selected' di darktable, con tre immagini nella vista a griglia: una scena costiera, un cane in movimento e un primo piano di lavanda. L'immagine centrale (il cane) è evidenziata come selezionata (1 di 3). A destra, il pannello di esportazione è configurato per salvare in JPEG 8-bit con qualità 85, senza ridimensionamento né upscaling. Non sono attive maschere o modifiche in corso; lo stato indica che l'esportazione è pronta o appena completata, coerentemente con il commento del narratore che menziona l'esportazione di un JPEG da un file RAW già elaborato.</em></p>
+<p><strong>Modulo:</strong> export selected</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target storage</td>
+<td>file on disk</td>
+</tr>
+<tr>
+<td>file format</td>
+<td>JPEG (8-bit)</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>85</td>
+</tr>
+<tr>
+<td>set size</td>
+<td>0 x 0</td>
+</tr>
+<tr>
+<td>allow upscaling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>high quality resampling</td>
+<td>no</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>none</td>
+</tr>
+<tr>
+<td>intent</td>
+<td>none</td>
+</tr>
+<tr>
+<td>style</td>
+<td>none</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>replace history</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra la vista Lighttable di darktable con un'immagine selezionata di lavanda con un'ape in volo. Sulla destra è visibile il pannello dei moduli attivi, tra cui 'filmic rgb', 'color calibration' e 'white balance'. In basso è presente la barra delle miniature con tre immagini, di cui quella centrale (lavanda) è selezionata. L'istogramma RGB è visibile nell'angolo superiore destro. Il narratore sta descrivendo il completamento del processo di correzione tonale con Filmic e si prepara ad esportare l'immagine." src="screenshots/frame_00826_389.jpg" /></p>
+<p><em>L'interfaccia mostra la vista Lighttable di darktable con un'immagine selezionata di lavanda con un'ape in volo. Sulla destra è visibile il pannello dei moduli attivi, tra cui 'filmic rgb', 'color calibration' e 'white balance'. In basso è presente la barra delle miniature con tre immagini, di cui quella centrale (lavanda) è selezionata. L'istogramma RGB è visibile nell'angolo superiore destro. Il narratore sta descrivendo il completamento del processo di correzione tonale con Filmic e si prepara ad esportare l'immagine.</em></p>
+<p><strong>Modulo:</strong> lighttable</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>1/60</td>
+</tr>
+<tr>
+<td>aperture</td>
+<td>f/10.0</td>
+</tr>
+<tr>
+<td>focal_length</td>
+<td>60 mm</td>
+</tr>
+<tr>
+<td>iso</td>
+<td>400</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura un'ape su un fiore di lavanda. Il modulo 'exposure' è visibile nel pannello destro e appare disattivato (‘exposure is switched off’), come indicato dal tooltip e dal toggle spento. Il narratore sta commentando il risultato ottenuto con il modulo Filmic RGB (non visibile nello screenshot ma menzionato), sottolineando come l’immagine appaia già ben esposta e vivida, a differenza di come sarebbe senza l’elaborazione di Filmic. L’istogramma in alto a destra mostra una distribuzione luminosa bilanciata con picchi nei toni chiari, coerente con un’immagine correttamente esposta dopo l’uso di Filmic." src="screenshots/frame_00793_669.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable in modalità lighttable, con un'immagine selezionata che raffigura un'ape su un fiore di lavanda. Il modulo 'exposure' è visibile nel pannello destro e appare disattivato (‘exposure is switched off’), come indicato dal tooltip e dal toggle spento. Il narratore sta commentando il risultato ottenuto con il modulo Filmic RGB (non visibile nello screenshot ma menzionato), sottolineando come l’immagine appaia già ben esposta e vivida, a differenza di come sarebbe senza l’elaborazione di Filmic. L’istogramma in alto a destra mostra una distribuzione luminosa bilanciata con picchi nei toni chiari, coerente con un’immagine correttamente esposta dopo l’uso di Filmic.</em></p>
+<p><strong>Modulo:</strong> exposure</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure_is_switched_off</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Export</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Preferenze globali</strong></td>
+<td>auto apply pixel workflow defaults, chromatic adaptation defaults</td>
+</tr>
+<tr>
+<td><strong>Raw black white point</strong></td>
+<td>valori predefiniti dalla fotocamera</td>
+</tr>
+<tr>
+<td><strong>White balance</strong></td>
+<td>regolazione colore base</td>
+</tr>
+<tr>
+<td><strong>Highlight reconstruction</strong></td>
+<td>recupero dati nelle alte luci sovraesposte</td>
+</tr>
+<tr>
+<td><strong>De-mosaic</strong></td>
+<td>demosaicizzazione del sensore</td>
+</tr>
+<tr>
+<td><strong>Orientation</strong></td>
+<td>rotazione automatica in base ai metadati</td>
+</tr>
+<tr>
+<td><strong>Exposure</strong></td>
+<td>compensate camera exposure, slider luminosità globale</td>
+</tr>
+<tr>
+<td><strong>Input color profile</strong></td>
+<td>working profile (Linear REC 2020)</td>
+</tr>
+<tr>
+<td><strong>Filmic RGB</strong></td>
+<td>indicatore di avviso valori negativi, white exposure, curva di risposta tonale, black exposure</td>
+</tr>
+<tr>
+<td><strong>Export</strong></td>
+<td>filename ($FILE_NAME), file format, compressione, target folder ($FILE_FOLDER), overwrite files</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Importante:</strong> Impostare 'auto apply pixel workflow defaults' su 'scene referred' e 'chromatic adaptation defaults' su 'modern' per utilizzare i moduli più recenti e il flusso di lavoro consigliato. — <em>Alla prima apertura di darktable o nella configurazione iniziale</em>
+- Attivare l'icona della lampadina in basso per visualizzare un bordo bianco attorno all'anteprima. Questo aiuta l'occhio ad adattarsi e a percepire correttamente il bianco reale e i grigi. — <em>Durante la regolazione dell'esposizione e del bilanciamento del bianco</em>
+- Le modifiche in darktable sono completamente non distruttive. I dati originali del file RAW vengono sempre preservati, permettendo di tornare indietro in qualsiasi momento. — <em>Durante qualsiasi fase di modifica nella Darkroom</em>
+<strong>Attenzione:</strong> Nel modulo Filmic RGB, assicurarsi che la curva non scenda sotto lo 0% (indicata dal colore arancione). I valori negativi possono causare errori di calcolo e artefatti nei moduli successivi della pipeline. — <em>Durante la regolazione dei parametri 'white exposure' e 'black exposure'</em>
+- Per l'esportazione in JPEG, una compressione impostata all'85% rappresenta un ottimo compromesso tra qualità visiva e dimensione del file. — <em>Nella finestra di dialogo di esportazione</em>
+<strong>Attenzione:</strong> Verificare attentamente l'opzione 'sovrascrivi file' prima di confermare l'esportazione per evitare la perdita accidentale di immagini già elaborate. — <em>Prima di cliccare sul pulsante 'Esporta'</em></p>
+</blockquote>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:24:57.189311.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

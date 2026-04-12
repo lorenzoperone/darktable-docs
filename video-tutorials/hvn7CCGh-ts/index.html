@@ -1,0 +1,4022 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/hvn7CCGh-ts/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>[ENG] The Colour Equaliser in depth - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eng-the-colour-equaliser-in-depth" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [ENG] The Colour Equaliser in depth
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-interfaccia-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e interfaccia base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e interfaccia base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-curve-di-tonalita-saturazione-e-luminosita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Curve di Tonalità, Saturazione e Luminosità
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Curve di Tonalità, Saturazione e Luminosità">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modalita-hsl-e-immagini-di-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modalità HSL e immagini di test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modalità HSL e immagini di test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-soglia-di-saturazione-contrasto-e-livello-bianco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Soglia di saturazione, contrasto e livello bianco
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Soglia di saturazione, contrasto e livello bianco">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-raggio-delleffetto-e-filtro-guidato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Raggio dell'effetto e filtro guidato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Raggio dell&#39;effetto e filtro guidato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-analisi-della-tonalita-e-gestione-del-rumore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Analisi della tonalità e gestione del rumore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Analisi della tonalità e gestione del rumore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-esempio-pratico-isolamento-dei-colori" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Esempio pratico: isolamento dei colori
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Esempio pratico: isolamento dei colori">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-regolazione-di-contrasto-e-raggio-deffetto-sulla-prima-immagine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Regolazione di contrasto e raggio d'effetto sulla prima immagine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Regolazione di contrasto e raggio d&#39;effetto sulla prima immagine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-gestione-del-rumore-e-correzione-dei-toni-della-pelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Gestione del rumore e correzione dei toni della pelle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Gestione del rumore e correzione dei toni della pelle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-isolamento-del-soggetto-e-importanza-del-pre-trattamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Isolamento del soggetto e importanza del pre-trattamento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Isolamento del soggetto e importanza del pre-trattamento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="eng-the-colour-equaliser-in-depth">[ENG] The Colour Equaliser in depth<a class="headerlink" href="#eng-the-colour-equaliser-in-depth" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> A Dabble in Photography<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts">https://www.youtube.com/watch?v=hvn7CCGh-ts</a>
+<strong>Generato:</strong> 2026-04-12T01:15:14.189628
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-interfaccia-base">Introduzione e interfaccia base</a></li>
+<li><a href="#curve-di-tonalità,-saturazione-e-luminosità">Curve di Tonalità, Saturazione e Luminosità</a></li>
+<li><a href="#modalità-hsl-e-immagini-di-test">Modalità HSL e immagini di test</a></li>
+<li><a href="#soglia-di-saturazione,-contrasto-e-livello-bianco">Soglia di saturazione, contrasto e livello bianco</a></li>
+<li><a href="#raggio-dell'effetto-e-filtro-guidato">Raggio dell'effetto e filtro guidato</a></li>
+<li><a href="#analisi-della-tonalità-e-gestione-del-rumore">Analisi della tonalità e gestione del rumore</a></li>
+<li><a href="#esempio-pratico:-isolamento-dei-colori">Esempio pratico: isolamento dei colori</a></li>
+<li><a href="#regolazione-di-contrasto-e-raggio-d'effetto-sulla-prima-immagine">Regolazione di contrasto e raggio d'effetto sulla prima immagine</a></li>
+<li><a href="#gestione-del-rumore-e-correzione-dei-toni-della-pelle">Gestione del rumore e correzione dei toni della pelle</a></li>
+<li><a href="#isolamento-del-soggetto-e-importanza-del-pre-trattamento">Isolamento del soggetto e importanza del pre-trattamento</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-interfaccia-base">1. Introduzione e interfaccia base<a class="headerlink" href="#1-introduzione-e-interfaccia-base" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 02:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione del modulo equalizzatore di colore, spiegazione delle tre schede (tonalità, saturazione, luminosità), uso del selettore colore e posizionamento preciso dei nodi sulla curva.</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' in darktable 5.1.0, con la tab 'hue' attiva. È visibile una griglia colorata per la selezione del tono, un cursore di esposizione impostato a +1.00 EV e vari controlli per regolare l'analisi dell'alone cromatico (radius), la soglia di saturazione (10.0%) e il raggio dell'effetto (1.0 px). Un cursore rosso evidenzia l'interazione con il selettore di colore nella griglia hue. A sinistra, il pannello 'image information' mostra metadati dell'immagine, mentre in basso è presente la timeline delle miniature. L'immagine di sfondo è un gradiente blu-verde artificiale, probabilmente usato per dimostrare le modifiche cromatiche." src="screenshots/frame_00031_500.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' in darktable 5.1.0, con la tab 'hue' attiva. È visibile una griglia colorata per la selezione del tono, un cursore di esposizione impostato a +1.00 EV e vari controlli per regolare l'analisi dell'alone cromatico (radius), la soglia di saturazione (10.0%) e il raggio dell'effetto (1.0 px). Un cursore rosso evidenzia l'interazione con il selettore di colore nella griglia hue. A sinistra, il pannello 'image information' mostra metadati dell'immagine, mentre in basso è presente la timeline delle miniature. L'immagine di sfondo è un gradiente blu-verde artificiale, probabilmente usato per dimostrare le modifiche cromatiche.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exposure</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue curve</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra una persona (Nicholas) che parla davanti alla telecamera, con uno sfondo di parete rossa e cornici fotografiche; non è visibile l'interfaccia di darktable né il modulo 'colour equalizer'. Il contesto narrativo descrive il modulo e le sue tre schede (hue, saturation, brightness), ma l'immagine stessa è un frame video del presentatore, non uno screenshot dell'interfaccia software." src="screenshots/frame_00030_000.jpg" /></p>
+<p><em>Lo screenshot mostra una persona (Nicholas) che parla davanti alla telecamera, con uno sfondo di parete rossa e cornici fotografiche; non è visibile l'interfaccia di darktable né il modulo 'colour equalizer'. Il contesto narrativo descrive il modulo e le sue tre schede (hue, saturation, brightness), ma l'immagine stessa è un frame video del presentatore, non uno screenshot dell'interfaccia software.</em></p>
+<p><strong>Modulo:</strong> colour equalizer</p>
+<p><img alt="Lo screenshot non mostra l'interfaccia di darktable, ma una persona (probabilmente il presentatore) in un ambiente interno con pareti rosse e cornici fotografiche sullo sfondo. Non è visibile alcun elemento dell'interfaccia di darktable: né moduli, né slider, né istogrammi. Il contesto narrativo indica che si sta introducendo il modulo 'color equalizer', ma l'immagine è una ripresa video del conduttore, non uno screenshot del software." src="screenshots/frame_00002_980.jpg" /></p>
+<p><em>Lo screenshot non mostra l'interfaccia di darktable, ma una persona (probabilmente il presentatore) in un ambiente interno con pareti rosse e cornici fotografiche sullo sfondo. Non è visibile alcun elemento dell'interfaccia di darktable: né moduli, né slider, né istogrammi. Il contesto narrativo indica che si sta introducendo il modulo 'color equalizer', ma l'immagine è una ripresa video del conduttore, non uno screenshot del software.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="2-curve-di-tonalita-saturazione-e-luminosita">2. Curve di Tonalità, Saturazione e Luminosità<a class="headerlink" href="#2-curve-di-tonalita-saturazione-e-luminosita" title="Permanent link">&para;</a></h2>
+<p><strong>[02:00 – 05:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=120">Guarda nel video</a></p>
+<p>Differenze tra le curve: la tonalità permette di regolare l'ampiezza dell'effetto, mentre saturazione e luminosità no. Spiegazione dei valori positivi (rosso) e negativi (blu) e attivazione del filtro guidato.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'hue' selezionata. È visibile una curva di correzione cromatica a griglia (hue curve) con un nodo posizionato a +18° e un livello bianco impostato a +1.00 EV. Il cursore del mouse è sopra la curva hue, e il pulsante 'use guided filter' è attivato. Sullo sfondo, l’immagine visualizzata è un gradiente blu-verde che evidenzia l’effetto della correzione: il verde è spostato verso il giallo-arancio (a causa del +18°), mentre il blu rimane relativamente inalterato, coerentemente con il commento del narratore ('not affecting the blues')." src="screenshots/frame_00204_139.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'hue' selezionata. È visibile una curva di correzione cromatica a griglia (hue curve) con un nodo posizionato a +18° e un livello bianco impostato a +1.00 EV. Il cursore del mouse è sopra la curva hue, e il pulsante 'use guided filter' è attivato. Sullo sfondo, l’immagine visualizzata è un gradiente blu-verde che evidenzia l’effetto della correzione: il verde è spostato verso il giallo-arancio (a causa del +18°), mentre il blu rimane relativamente inalterato, coerentemente con il commento del narratore ('not affecting the blues').</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>+18°</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo con la tab 'brightness' selezionata. È visibile una griglia HSL (Hue-Saturation-Lightness) con nodi posizionati lungo l'asse della luminosità; un cursore è evidenziato sul controllo del canale 'green', indicando un'interazione in corso. Il cursore del mouse è sovrapposto al selettore del canale verde, coerentemente con il commento del narratore che parla di selezionare il terzo canale (verde) per regolare hue, saturation e brightness. L'immagine di sfondo è un gradiente blu-verde, probabilmente usato per testare le correzioni cromatiche." src="screenshots/frame_00270_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo con la tab 'brightness' selezionata. È visibile una griglia HSL (Hue-Saturation-Lightness) con nodi posizionati lungo l'asse della luminosità; un cursore è evidenziato sul controllo del canale 'green', indicando un'interazione in corso. Il cursore del mouse è sovrapposto al selettore del canale verde, coerentemente con il commento del narratore che parla di selezionare il terzo canale (verde) per regolare hue, saturation e brightness. L'immagine di sfondo è un gradiente blu-verde, probabilmente usato per testare le correzioni cromatiche.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>node_placement</td>
+<td>+18°</td>
+</tr>
+<tr>
+<td>red</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>orange</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>yellow</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>green</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>cyan</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>lavender</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>magenta</td>
+<td>+0.00%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'saturation' selezionata. È visibile una griglia HSL (Hue-Saturation-Lightness) con un cursore posizionato su una zona giallo-verde; un cerchio rosso evidenzia l'area di interazione del mouse sul grafico. Il parametro 'use guided filter' è abilitato, e lo slider 'white level' è impostato a +1.00 EV. Sul pannello sinistro sono visibili i metadati dell'immagine (gradiente sintetico, ID immagine 77852) e la miniatura della collezione. L'istogramma RGB in alto a destra mostra curve colorate sovrapposte, tipiche della correzione cromatica avanzata." src="screenshots/frame_00240_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'saturation' selezionata. È visibile una griglia HSL (Hue-Saturation-Lightness) con un cursore posizionato su una zona giallo-verde; un cerchio rosso evidenzia l'area di interazione del mouse sul grafico. Il parametro 'use guided filter' è abilitato, e lo slider 'white level' è impostato a +1.00 EV. Sul pannello sinistro sono visibili i metadati dell'immagine (gradiente sintetico, ID immagine 77852) e la miniatura della collezione. L'istogramma RGB in alto a destra mostra curve colorate sovrapposte, tipiche della correzione cromatica avanzata.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color equalizer' attivo con la tab 'saturation' selezionata. L'immagine visualizzata è un gradiente verde artificiale (TIF), probabilmente creato in Affinity Photo per testare strumenti di correzione cromatica. È visibile una maschera circolare rossa al centro dell'immagine, indicante l'area di analisi o applicazione del tool, ma non è attiva alcuna maschera definita nel gestore maschere. Gli istogrammi RGB e la griglia cromatica mostrano la distribuzione dei colori. Il cursore del mouse è posizionato all'interno della maschera circolare, suggerendo un'interazione in corso." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color equalizer' attivo con la tab 'saturation' selezionata. L'immagine visualizzata è un gradiente verde artificiale (TIF), probabilmente creato in Affinity Photo per testare strumenti di correzione cromatica. È visibile una maschera circolare rossa al centro dell'immagine, indicante l'area di analisi o applicazione del tool, ma non è attiva alcuna maschera definita nel gestore maschere. Gli istogrammi RGB e la griglia cromatica mostrano la distribuzione dei colori. Il cursore del mouse è posizionato all'interno della maschera circolare, suggerendo un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.6 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="3-modalita-hsl-e-immagini-di-test">3. Modalità HSL e immagini di test<a class="headerlink" href="#3-modalita-hsl-e-immagini-di-test" title="Permanent link">&para;</a></h2>
+<p><strong>[05:00 – 07:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=300">Guarda nel video</a></p>
+<p>Come accedere agli slider HSL stile Lightroom tramite Ctrl+clic. Introduzione alle immagini artificiali TIF create per testare il comportamento dei parametri in condizioni controllate.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'colorzones' in darktable con la tab 'saturation' attiva. L'immagine visualizzata è un gradiente verde uniforme, utilizzato per dimostrare l'effetto della regolazione della saturazione. È evidenziato il parametro 'saturation_threshold' impostato al 10.0%, che, come spiegato dal narratore, definisce il limite oltre il quale le modifiche non vengono applicate, agendo da clipping sulla maschera di selezione dei toni. La casella 'use guided filter' è attivata, mentre gli altri parametri (contrast, effect_radius) sono a valori neutri. L'istogramma e la mappa cromatica mostrano una distribuzione concentrata nella gamma verde." src="screenshots/frame_00360_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'colorzones' in darktable con la tab 'saturation' attiva. L'immagine visualizzata è un gradiente verde uniforme, utilizzato per dimostrare l'effetto della regolazione della saturazione. È evidenziato il parametro 'saturation_threshold' impostato al 10.0%, che, come spiegato dal narratore, definisce il limite oltre il quale le modifiche non vengono applicate, agendo da clipping sulla maschera di selezione dei toni. La casella 'use guided filter' è attivata, mentre gli altri parametri (contrast, effect_radius) sono a valori neutri. L'istogramma e la mappa cromatica mostrano una distribuzione concentrata nella gamma verde.</em></p>
+<p><strong>Modulo:</strong> colorzones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation_threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect_radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' con la tab 'saturation' attiva. È visibile una maschera di selezione tonale applicata all'immagine: le aree rosse indicano aumento della saturazione (valori positivi), le aree blu indicano riduzione (valori negativi), mentre il grigio/nero indica nessun cambiamento. Un cursore circolare è posizionato sull'immagine, e un grafico a nodi nella sezione saturation mostra la curva di modifica. A sinistra, l'anteprima della maschera evidenzia la regione selezionata con un cerchio rosa. L'istogramma RGB e la visualizzazione della maschera confermano che si sta eseguendo un'operazione di correzione selettiva della saturazione basata su tonalità." src="screenshots/frame_00384_800.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' con la tab 'saturation' attiva. È visibile una maschera di selezione tonale applicata all'immagine: le aree rosse indicano aumento della saturazione (valori positivi), le aree blu indicano riduzione (valori negativi), mentre il grigio/nero indica nessun cambiamento. Un cursore circolare è posizionato sull'immagine, e un grafico a nodi nella sezione saturation mostra la curva di modifica. A sinistra, l'anteprima della maschera evidenzia la regione selezionata con un cerchio rosa. L'istogramma RGB e la visualizzazione della maschera confermano che si sta eseguendo un'operazione di correzione selettiva della saturazione basata su tonalità.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>+18°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo nella tab 'saturation', con un'immagine di prova a gradiente verde che evidenzia l'effetto del parametro 'saturation_threshold' impostato al 30%. È visibile una maschera circolare rossa attiva sul canvas, indicante un'area selezionata per l'applicazione locale delle correzioni. L'istogramma e la curva di saturazione mostrano modifiche selettive alle tonalità, coerenti con la spiegazione del narratore riguardo all'esclusione delle colori meno saturi (più vicini al grigio) dall'effetto quando il threshold aumenta. Il cursore del mouse si trova all'interno della maschera rossa, suggerendo un'interazione in corso." src="screenshots/frame_00420_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo nella tab 'saturation', con un'immagine di prova a gradiente verde che evidenzia l'effetto del parametro 'saturation_threshold' impostato al 30%. È visibile una maschera circolare rossa attiva sul canvas, indicante un'area selezionata per l'applicazione locale delle correzioni. L'istogramma e la curva di saturazione mostrano modifiche selettive alle tonalità, coerenti con la spiegazione del narratore riguardo all'esclusione delle colori meno saturi (più vicini al grigio) dall'effetto quando il threshold aumenta. Il cursore del mouse si trova all'interno della maschera rossa, suggerendo un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation_threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect_radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node_placement</td>
+<td>+18°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color equalizer' attivo con la tab 'saturation' selezionata. L'immagine visualizzata è un gradiente verde artificiale (TIF), probabilmente creato in Affinity Photo per testare strumenti di correzione cromatica. È visibile una maschera circolare rossa al centro dell'immagine, indicante l'area di analisi o applicazione del tool, ma non è attiva alcuna maschera definita nel gestore maschere. Gli istogrammi RGB e la griglia cromatica mostrano la distribuzione dei colori. Il cursore del mouse è posizionato all'interno della maschera circolare, suggerendo un'interazione in corso." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color equalizer' attivo con la tab 'saturation' selezionata. L'immagine visualizzata è un gradiente verde artificiale (TIF), probabilmente creato in Affinity Photo per testare strumenti di correzione cromatica. È visibile una maschera circolare rossa al centro dell'immagine, indicante l'area di analisi o applicazione del tool, ma non è attiva alcuna maschera definita nel gestore maschere. Gli istogrammi RGB e la griglia cromatica mostrano la distribuzione dei colori. Il cursore del mouse è posizionato all'interno della maschera circolare, suggerendo un'interazione in corso.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.6 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'interfaccia centrata sulla tab 'saturation'. È visibile una curva verde nel grafico a destra che rappresenta la trasformazione della saturazione in funzione dell'angolo cromatico (hue). Sul canvas principale si osserva una maschera di selezione (cerchio rosa con cursore al centro) applicata su una porzione rossa dell'immagine, mentre la zona blu a destra rimane esclusa dalla modifica. La curva gialla nel grafico centrale è la curva di tonalità (luminanza o LCH-L), e il cursore verde indica il punto attuale di interazione. Il narratore spiega che la modifica non è una semplice spinta verso l’alto/basso, ma un’alterazione selettiva basata sulla maschera e sulle proprietà cromatiche, evidenziando come il contrasto influenzi visivamente l’effetto della maschera." src="screenshots/frame_00447_540.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'interfaccia centrata sulla tab 'saturation'. È visibile una curva verde nel grafico a destra che rappresenta la trasformazione della saturazione in funzione dell'angolo cromatico (hue). Sul canvas principale si osserva una maschera di selezione (cerchio rosa con cursore al centro) applicata su una porzione rossa dell'immagine, mentre la zona blu a destra rimane esclusa dalla modifica. La curva gialla nel grafico centrale è la curva di tonalità (luminanza o LCH-L), e il cursore verde indica il punto attuale di interazione. Il narratore spiega che la modifica non è una semplice spinta verso l’alto/basso, ma un’alterazione selettiva basata sulla maschera e sulle proprietà cromatiche, evidenziando come il contrasto influenzi visivamente l’effetto della maschera.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation_threshold</td>
+<td>17.9%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect_radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node_placement</td>
+<td>+18°</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="4-soglia-di-saturazione-contrasto-e-livello-bianco">4. Soglia di saturazione, contrasto e livello bianco<a class="headerlink" href="#4-soglia-di-saturazione-contrasto-e-livello-bianco" title="Permanent link">&para;</a></h2>
+<p><strong>[07:30 – 10:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=450">Guarda nel video</a></p>
+<p>Funzionamento della soglia di saturazione per escludere le aree meno sature, utilizzo della curva di contrasto per ammorbidire o indurire la transizione della maschera, e ruolo del livello bianco.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="L'interfaccia mostra il modulo 'color equalizer' con la tab 'brightness' attiva. L'immagine di anteprima è un quadrato verde uniforme al centro su uno sfondo radiale che gradua dal verde al blu. È visibile un cursore circolare rosso al centro del quadrato verde, indicante la posizione del campionamento colore. Il parametro 'saturation threshold' è impostato a 10.0%, e 'white level' a +1.00 EV, coerentemente con la spiegazione del narratore sul controllo della luminosità massima dei pixel. Non sono attive maschere, ma è abilitato 'use guided filter'." src="screenshots/frame_00505_740.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color equalizer' con la tab 'brightness' attiva. L'immagine di anteprima è un quadrato verde uniforme al centro su uno sfondo radiale che gradua dal verde al blu. È visibile un cursore circolare rosso al centro del quadrato verde, indicante la posizione del campionamento colore. Il parametro 'saturation threshold' è impostato a 10.0%, e 'white level' a +1.00 EV, coerentemente con la spiegazione del narratore sul controllo della luminosità massima dei pixel. Non sono attive maschere, ma è abilitato 'use guided filter'.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' con la tab 'brightness' attiva. L'immagine di anteprima è un gradiente circolare con un rettangolo centrale verde brillante, utilizzato per dimostrare l'effetto della regolazione del 'white level', che è stato abbassato a -1.87 EV. Il cursore del white level è evidenziato da un cerchio rosso, indicando che sta venendo modificato in tempo reale. L'istogramma RGB e il grafico HSV sono visibili nella parte superiore del modulo, mostrando la distribuzione dei colori. Il narratore spiega che riducendo il white level si limita il valore massimo di luminosità consentito per i pixel modificati, specialmente nei toni verdi molto luminosi." src="screenshots/frame_00535_740.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' con la tab 'brightness' attiva. L'immagine di anteprima è un gradiente circolare con un rettangolo centrale verde brillante, utilizzato per dimostrare l'effetto della regolazione del 'white level', che è stato abbassato a -1.87 EV. Il cursore del white level è evidenziato da un cerchio rosso, indicando che sta venendo modificato in tempo reale. L'istogramma RGB e il grafico HSV sono visibili nella parte superiore del modulo, mostrando la distribuzione dei colori. Il narratore spiega che riducendo il white level si limita il valore massimo di luminosità consentito per i pixel modificati, specialmente nei toni verdi molto luminosi.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>-1.87 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'radial' attivo in darktable, con una maschera radiale applicata a un'immagine che presenta un rettangolo rosso al centro circondato da un alone sfumato. Il cursore del mouse è posizionato sul parametro 'effect_radius', evidenziato da un cerchio rosa, indicando che l'utente sta per modificarlo o lo ha appena modificato. La casella 'use guided filter' è selezionata, e l'istogramma RGB e la mappa dei colori nella sezione destra confermano l'applicazione di un effetto di filtraggio guidato. L'immagine di anteprima mostra chiaramente il bordo netto del rettangolo prima dell'aumento del raggio, coerentemente con la spiegazione del narratore." src="screenshots/frame_00568_980.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'radial' attivo in darktable, con una maschera radiale applicata a un'immagine che presenta un rettangolo rosso al centro circondato da un alone sfumato. Il cursore del mouse è posizionato sul parametro 'effect_radius', evidenziato da un cerchio rosa, indicando che l'utente sta per modificarlo o lo ha appena modificato. La casella 'use guided filter' è selezionata, e l'istogramma RGB e la mappa dei colori nella sezione destra confermano l'applicazione di un effetto di filtraggio guidato. L'immagine di anteprima mostra chiaramente il bordo netto del rettangolo prima dell'aumento del raggio, coerentemente con la spiegazione del narratore.</em></p>
+<p><strong>Modulo:</strong> radial</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>effect_radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation_threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con l'indicatore 'masking' evidenziato da un cerchio rosso. L'immagine principale visualizza una maschera radiale verde brillante su sfondo blu, indicativa di un'elaborazione con filtro radiale attivo. Nell'angolo superiore destro è visibile l'istogramma 3D del tono, e nella barra inferiore si nota che il modulo 'radial' è attivo con OpenCL abilitato. Il cursore del mouse punta sul pulsante 'masking', coerentemente con il commento del narratore che sta cambiando da EIGF a guided filter e abilitando la visualizzazione della maschera." src="screenshots/frame_00584_019.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata, con l'indicatore 'masking' evidenziato da un cerchio rosso. L'immagine principale visualizza una maschera radiale verde brillante su sfondo blu, indicativa di un'elaborazione con filtro radiale attivo. Nell'angolo superiore destro è visibile l'istogramma 3D del tono, e nella barra inferiore si nota che il modulo 'radial' è attivo con OpenCL abilitato. Il cursore del mouse punta sul pulsante 'masking', coerentemente con il commento del narratore che sta cambiando da EIGF a guided filter e abilitando la visualizzazione della maschera.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance estimator</td>
+<td>RGB gradient norm</td>
+</tr>
+<tr>
+<td>preserve details</td>
+<td>EIGF</td>
+</tr>
+<tr>
+<td>filter diffusion</td>
+<td>1</td>
+</tr>
+<tr>
+<td>smoothing diameter</td>
+<td>5.00%</td>
+</tr>
+<tr>
+<td>edges refinement/feathering</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>mask quantization</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>mask exposure compensation</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>mask contrast compensation</td>
+<td>+0.00 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' con la tab 'masking' attiva. È stata selezionata l'opzione 'guided filter' per 'preserve details', con 'filter diffusion' impostato a 1 e 'smoothing diameter' al 5%. La maschera di esposizione è visualizzata (indicata dal pulsante 'display exposure mask' premuto e dall'indicatore rosso circolare evidenziato), mostrando una maschera radiale verde brillante nella vista anteprima a sinistra. L'istogramma a destra visualizza la distribuzione tonale della maschera. Il cursore del mouse punta al pulsante di attivazione della maschera di esposizione, confermando che l'utente sta esaminando l'effetto della maschera applicata con i parametri correnti." src="screenshots/frame_00595_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' con la tab 'masking' attiva. È stata selezionata l'opzione 'guided filter' per 'preserve details', con 'filter diffusion' impostato a 1 e 'smoothing diameter' al 5%. La maschera di esposizione è visualizzata (indicata dal pulsante 'display exposure mask' premuto e dall'indicatore rosso circolare evidenziato), mostrando una maschera radiale verde brillante nella vista anteprima a sinistra. L'istogramma a destra visualizza la distribuzione tonale della maschera. Il cursore del mouse punta al pulsante di attivazione della maschera di esposizione, confermando che l'utente sta esaminando l'effetto della maschera applicata con i parametri correnti.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>luminance estimator</td>
+<td>RGB euclidean norm</td>
+</tr>
+<tr>
+<td>preserve details</td>
+<td>guided filter</td>
+</tr>
+<tr>
+<td>filter diffusion</td>
+<td>1</td>
+</tr>
+<tr>
+<td>smoothing diameter</td>
+<td>5.00%</td>
+</tr>
+<tr>
+<td>edges refinement/feathering</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>mask quantization</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>mask exposure compensation</td>
+<td>-2.99 EV</td>
+</tr>
+<tr>
+<td>mask contrast compensation</td>
+<td>+0.00 EV</td>
+</tr>
+<tr>
+<td>display exposure mask</td>
+<td>attivato</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="5-raggio-delleffetto-e-filtro-guidato">5. Raggio dell'effetto e filtro guidato<a class="headerlink" href="#5-raggio-delleffetto-e-filtro-guidato" title="Permanent link">&para;</a></h2>
+<p><strong>[10:00 – 12:00]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=600">Guarda nel video</a></p>
+<p>Spiegazione del raggio dell'effetto e del filtro guidato per gestire i bordi. Attenzione al fenomeno di traboccamento dell'effetto su entrambi i lati dei bordi.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'masking' attivo in darktable, con una maschera radiale applicata all'immagine (visibile come anello scuro con transizione sfumata intorno a un rettangolo centrale chiaro). L'anteprima della maschera è visualizzata in sovrapposizione sull'immagine principale, mentre il pannello di destra mostra i parametri di mascheramento, inclusi compensi di esposizione e contrasto per la maschera stessa. Un cursore del mouse è posizionato sul controllo 'mask quantization', indicando che l'utente sta interagendo con questo parametro. A sinistra, il pannello 'image information' conferma che l'immagine è un file TIFF radiale, e l'istogramma RGB nella parte superiore destra mostra una distribuzione piatta, coerente con una maschera in scala di grigi. Il commento dell'utente suggerisce insoddisfazione per la qualità della maschera, attribuendola a effetti di diffusione del filtro o a un raggio di smoothing troppo piccolo." src="screenshots/frame_00600_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'masking' attivo in darktable, con una maschera radiale applicata all'immagine (visibile come anello scuro con transizione sfumata intorno a un rettangolo centrale chiaro). L'anteprima della maschera è visualizzata in sovrapposizione sull'immagine principale, mentre il pannello di destra mostra i parametri di mascheramento, inclusi compensi di esposizione e contrasto per la maschera stessa. Un cursore del mouse è posizionato sul controllo 'mask quantization', indicando che l'utente sta interagendo con questo parametro. A sinistra, il pannello 'image information' conferma che l'immagine è un file TIFF radiale, e l'istogramma RGB nella parte superiore destra mostra una distribuzione piatta, coerente con una maschera in scala di grigi. Il commento dell'utente suggerisce insoddisfazione per la qualità della maschera, attribuendola a effetti di diffusione del filtro o a un raggio di smoothing troppo piccolo.</em></p>
+<p><strong>Modulo:</strong> masking</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>smoothing diameter</td>
+<td>5.00%</td>
+</tr>
+<tr>
+<td>edges refinement/feathering</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>mask quantization</td>
+<td>0.00 EV</td>
+</tr>
+<tr>
+<td>mask exposure compensation</td>
+<td>-2.99 EV</td>
+</tr>
+<tr>
+<td>mask contrast compensation</td>
+<td>+5.89 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con la maschera attiva (indicata dal cerchio rosso intorno al pulsante 'masking' e dall'attivazione di 'display exposure mask'). L'immagine centrale visualizza una maschera radiale con un gradiente concentrico che enfatizza i bordi, tipico dell'uso del filtro guidato (guided filter) per il controllo locale della tonalità. Il cursore 'smoothing diameter' è impostato a 0.01%, confermando l'osservazione del narratore su valori molto piccoli e la difficoltà nel portarlo a zero senza disabilitare il guided filter. L'istogramma RGB nella parte superiore destra mostra una distribuzione bilanciata con picchi centrali, mentre il pannello sinistro mostra informazioni tecniche sull'immagine selezionata." src="screenshots/frame_00623_419.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'tone equalizer' in modalità avanzata con la maschera attiva (indicata dal cerchio rosso intorno al pulsante 'masking' e dall'attivazione di 'display exposure mask'). L'immagine centrale visualizza una maschera radiale con un gradiente concentrico che enfatizza i bordi, tipico dell'uso del filtro guidato (guided filter) per il controllo locale della tonalità. Il cursore 'smoothing diameter' è impostato a 0.01%, confermando l'osservazione del narratore su valori molto piccoli e la difficoltà nel portarlo a zero senza disabilitare il guided filter. L'istogramma RGB nella parte superiore destra mostra una distribuzione bilanciata con picchi centrali, mentre il pannello sinistro mostra informazioni tecniche sull'immagine selezionata.</em></p>
+<p><strong>Modulo:</strong> tone equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>smoothing diameter</td>
+<td>0.01%</td>
+</tr>
+<tr>
+<td>edges refinement/feathering</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td>mask exposure compensation</td>
+<td>-2.99 EV</td>
+</tr>
+<tr>
+<td>mask contrast compensation</td>
+<td>+5.89 EV</td>
+</tr>
+<tr>
+<td>mask quantization</td>
+<td>0.00 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'radial' attivo in darktable, con una maschera circolare applicata su un'immagine a sfondo gradiente blu-verde e un rettangolo centrale verde brillante. La maschera ha bordi sfumati (effetto radius ~34 px), evidenziando lo 'spill' dell'effetto su entrambi i lati del bordo, come descritto nel contesto. È visibile l'istogramma RGB, la curva di luminosità e i controlli per hue/saturation/brightness. Il cursore è posizionato all'interno della maschera, indicando un'interazione in corso. La presenza di 'guided filter' attivato suggerisce un affinamento della transizione della maschera." src="screenshots/frame_00660_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'radial' attivo in darktable, con una maschera circolare applicata su un'immagine a sfondo gradiente blu-verde e un rettangolo centrale verde brillante. La maschera ha bordi sfumati (effetto radius ~34 px), evidenziando lo 'spill' dell'effetto su entrambi i lati del bordo, come descritto nel contesto. È visibile l'istogramma RGB, la curva di luminosità e i controlli per hue/saturation/brightness. Il cursore è posizionato all'interno della maschera, indicando un'interazione in corso. La presenza di 'guided filter' attivato suggerisce un affinamento della transizione della maschera.</em></p>
+<p><strong>Modulo:</strong> radial</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>effect radius</td>
+<td>34.1 px</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>+18°</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'brightness', con una maschera visiva centrata sull'immagine che evidenzia una regione verde brillante su sfondo ciano. È attiva l'opzione 'use guided filter', e i parametri indicano che la maschera è generata tramite analisi del colore (raggio di 1.5 px), con un filtro basato sulla saturazione (soglia al 10%) e un raggio di effetto di 1.0 px per smussare i bordi della maschera. L'istogramma a destra visualizza la distribuzione dei valori di luminosità e colore, confermando l’uso di una selezione basata su zone cromatiche." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'brightness', con una maschera visiva centrata sull'immagine che evidenzia una regione verde brillante su sfondo ciano. È attiva l'opzione 'use guided filter', e i parametri indicano che la maschera è generata tramite analisi del colore (raggio di 1.5 px), con un filtro basato sulla saturazione (soglia al 10%) e un raggio di effetto di 1.0 px per smussare i bordi della maschera. L'istogramma a destra visualizza la distribuzione dei valori di luminosità e colore, confermando l’uso di una selezione basata su zone cromatiche.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>+23°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'color equalizer' attivo nella tab 'brightness', con un cursore del mouse posizionato al centro dell'immagine (area verde-azzurra) che indica una selezione per l'analisi del colore. L'istogramma a onde colorate in alto a destra visualizza la distribuzione cromatica; sotto, la griglia HSL mostra i punti di controllo lungo l'asse della saturazione. L'utente sta eseguendo un'analisi locale del colore (mediante il raggio di analisi hue = 1.5 px) su una zona con rumore visibile, per bilanciare tonalità e luminosità senza alterare eccessivamente la struttura del rumore. Il valore di white level è aumentato a +1.00 EV, mentre contrast e effect radius sono ai valori minimi." src="screenshots/frame_00690_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'color equalizer' attivo nella tab 'brightness', con un cursore del mouse posizionato al centro dell'immagine (area verde-azzurra) che indica una selezione per l'analisi del colore. L'istogramma a onde colorate in alto a destra visualizza la distribuzione cromatica; sotto, la griglia HSL mostra i punti di controllo lungo l'asse della saturazione. L'utente sta eseguendo un'analisi locale del colore (mediante il raggio di analisi hue = 1.5 px) su una zona con rumore visibile, per bilanciare tonalità e luminosità senza alterare eccessivamente la struttura del rumore. Il valore di white level è aumentato a +1.00 EV, mentre contrast e effect radius sono ai valori minimi.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+<li>equalizzatore di tono</li>
+</ul>
+<hr />
+<h2 id="6-analisi-della-tonalita-e-gestione-del-rumore">6. Analisi della tonalità e gestione del rumore<a class="headerlink" href="#6-analisi-della-tonalita-e-gestione-del-rumore" title="Permanent link">&para;</a></h2>
+<p><strong>[12:00 – 13:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=720">Guarda nel video</a></p>
+<p>Utilizzo del raggio di analisi della tonalità per mediare i colori in presenza di rumore digitale o texture, evitando selezioni erratiche e migliorando la coerenza della maschera.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'brightness', con una maschera visiva centrata sull'immagine che evidenzia una regione verde brillante su sfondo ciano. È attiva l'opzione 'use guided filter', e i parametri indicano che la maschera è generata tramite analisi del colore (raggio di 1.5 px), con un filtro basato sulla saturazione (soglia al 10%) e un raggio di effetto di 1.0 px per smussare i bordi della maschera. L'istogramma a destra visualizza la distribuzione dei valori di luminosità e colore, confermando l’uso di una selezione basata su zone cromatiche." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'brightness', con una maschera visiva centrata sull'immagine che evidenzia una regione verde brillante su sfondo ciano. È attiva l'opzione 'use guided filter', e i parametri indicano che la maschera è generata tramite analisi del colore (raggio di 1.5 px), con un filtro basato sulla saturazione (soglia al 10%) e un raggio di effetto di 1.0 px per smussare i bordi della maschera. L'istogramma a destra visualizza la distribuzione dei valori di luminosità e colore, confermando l’uso di una selezione basata su zone cromatiche.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>+23°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con una curva di correzione luminosa (tab 'brightness') applicata a un'immagine sintetica a gradiente verde-ciano. L'immagine presenta rumore granulare e un evidente effetto di selezione tonale centrata sul verde, coerente con la descrizione del narratore che parla di aumento della selezione di pixel verdi e dell'effetto 'blocky' quando il raggio o la soglia vengono modificati. Il cursore è posizionato al centro dell'immagine, e l'istogramma RGB nella parte superiore destra mostra picchi nei canali verde e blu. La presenza del toggle 'use guided filter' suggerisce che l'utente sta sperimentando tecniche di fusione morbida per integrare le correzioni cromatiche con i toni circostanti, ad esempio per pelli." src="screenshots/frame_00750_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con una curva di correzione luminosa (tab 'brightness') applicata a un'immagine sintetica a gradiente verde-ciano. L'immagine presenta rumore granulare e un evidente effetto di selezione tonale centrata sul verde, coerente con la descrizione del narratore che parla di aumento della selezione di pixel verdi e dell'effetto 'blocky' quando il raggio o la soglia vengono modificati. Il cursore è posizionato al centro dell'immagine, e l'istogramma RGB nella parte superiore destra mostra picchi nei canali verde e blu. La presenza del toggle 'use guided filter' suggerisce che l'utente sta sperimentando tecniche di fusione morbida per integrare le correzioni cromatiche con i toni circostanti, ad esempio per pelli.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>non specificato (curva visibile ma valore numerico non leggibile)</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>non specificato</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>non specificato</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>10.0 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>+23°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia di darktable mostra la modalità 'darkroom' con un'immagine selezionata (#73 su 81) che raffigura tre monaci buddhisti in abiti arancioni in una via di un mercato tailandese al mattino, mentre interagiscono con un uomo locale; sul pannello destro è attivo il modulo 'color calibration' con la presenza di un istogramma RGB e una maschera circolare rosa (probabilmente un cursore o strumento di analisi del colore) posizionato sulla spalla dell'uomo in maglietta viola. Il pannello sinistro mostra i metadati dell'immagine scattata con Fujifilm X-Pro2 (1/125s, f/2.0, 23mm, ISO 640)." src="screenshots/frame_00801_100.jpg" /></p>
+<p><em>L'interfaccia di darktable mostra la modalità 'darkroom' con un'immagine selezionata (#73 su 81) che raffigura tre monaci buddhisti in abiti arancioni in una via di un mercato tailandese al mattino, mentre interagiscono con un uomo locale; sul pannello destro è attivo il modulo 'color calibration' con la presenza di un istogramma RGB e una maschera circolare rosa (probabilmente un cursore o strumento di analisi del colore) posizionato sulla spalla dell'uomo in maglietta viola. Il pannello sinistro mostra i metadati dell'immagine scattata con Fujifilm X-Pro2 (1/125s, f/2.0, 23mm, ISO 640).</em></p>
+<p><strong>Modulo:</strong> color calibration</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scene-referred default</td>
+<td>enabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="7-esempio-pratico-isolamento-dei-colori">7. Esempio pratico: isolamento dei colori<a class="headerlink" href="#7-esempio-pratico-isolamento-dei-colori" title="Permanent link">&para;</a></h2>
+<p><strong>[13:30 – 15:30]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=810">Guarda nel video</a></p>
+<p>Applicazione su una foto reale di monaci. Aumento di luminosità e saturazione sulle vesti arancioni e utilizzo della soglia di saturazione per proteggere la pelle dai cambiamenti indesiderati.</p>
+<h3 id="screenshot_6">Screenshot<a class="headerlink" href="#screenshot_6" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con un nodo di correzione posizionato sulla porzione arancione dei paramenti monastici. L’utente ha selezionato una tonalità arancione centrale (intorno a 30–40 gradi nell’istogramma cromatico) e ha aumentato la luminosità del nodo a +1.00 EV, mantenendo saturazione e contrasto inalterati. È attiva la maschera guidata (guided filter), e si vede il cursore del mouse sopra il nodo rosso applicato all’immagine, indicando un intervento in corso per migliorare visivamente i colori degli abiti dei monaci." src="screenshots/frame_00840_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con un nodo di correzione posizionato sulla porzione arancione dei paramenti monastici. L’utente ha selezionato una tonalità arancione centrale (intorno a 30–40 gradi nell’istogramma cromatico) e ha aumentato la luminosità del nodo a +1.00 EV, mantenendo saturazione e contrasto inalterati. È attiva la maschera guidata (guided filter), e si vede il cursore del mouse sopra il nodo rosso applicato all’immagine, indicando un intervento in corso per migliorare visivamente i colori degli abiti dei monaci.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>circa 30-40° (tonalità arancione centrale)</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>0.00%</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'utente che sta regolando la saturazione e la luminosità per evitare di alterare la pelle dei monaci sullo sfondo, concentrandosi invece sulle tonalità saturo-arancioni delle vesti. È evidente l'uso della maschera 'saturation threshold' (soglia di saturazione al 10.0%) per isolare le aree altamente saturate (le vesti) e applicare correzioni selettive. L'istogramma a destra mostra la distribuzione dei colori, e il cursore del grafico HSV è posizionato su una curva di correzione che modifica la luminosità (brightness) senza toccare i toni più neutri della pelle. Un cerchio rosa evidenzia il pulsante 'color equalizer' nella barra dei moduli, indicando che è il modulo attivo." src="screenshots/frame_00900_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'utente che sta regolando la saturazione e la luminosità per evitare di alterare la pelle dei monaci sullo sfondo, concentrandosi invece sulle tonalità saturo-arancioni delle vesti. È evidente l'uso della maschera 'saturation threshold' (soglia di saturazione al 10.0%) per isolare le aree altamente saturate (le vesti) e applicare correzioni selettive. L'istogramma a destra mostra la distribuzione dei colori, e il cursore del grafico HSV è posizionato su una curva di correzione che modifica la luminosità (brightness) senza toccare i toni più neutri della pelle. Un cerchio rosa evidenzia il pulsante 'color equalizer' nella barra dei moduli, indicando che è il modulo attivo.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'colorzones' in darktable con la tab 'brightness' attiva. L'immagine è visualizzata in modalità maschera di saturazione (indicata dal colore blu dominante), dove le aree altamente saturate (come le vesti arancioni dei monaci) appaiono in rosso/arancione non mascherate, mentre le zone meno saturo sono blu (mascherate). Il cursore del parametro 'saturation_threshold' è evidenziato da un cerchio rosso e si trova a 0.0, ma il narratore sta spiegando che aumentandolo si escluderebbero le aree blu (meno saturo) dalla modifica, lasciando agire solo sulle robe rosse/orange. È visibile anche l'istogramma RGB e la curva di luminosità nella sezione del modulo." src="screenshots/frame_00922_700.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'colorzones' in darktable con la tab 'brightness' attiva. L'immagine è visualizzata in modalità maschera di saturazione (indicata dal colore blu dominante), dove le aree altamente saturate (come le vesti arancioni dei monaci) appaiono in rosso/arancione non mascherate, mentre le zone meno saturo sono blu (mascherate). Il cursore del parametro 'saturation_threshold' è evidenziato da un cerchio rosso e si trova a 0.0, ma il narratore sta spiegando che aumentandolo si escluderebbero le aree blu (meno saturo) dalla modifica, lasciando agire solo sulle robe rosse/orange. È visibile anche l'istogramma RGB e la curva di luminosità nella sezione del modulo.</em></p>
+<p><strong>Modulo:</strong> colorzones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation_threshold</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>effect_radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color zones' in darktable con la tab 'brightness' attiva. L'immagine è visualizzata con una maschera di selezione cromatica: le aree blu (non interessate dalla modifica) sono evidenziate in blu intenso, mentre le zone arancioni (monaci) rimangono non alterate. Un cursore è posizionato sullo slider 'saturation threshold' a 30.0%, e il narratore sta spiegando che aumentare ulteriormente questo valore non è possibile oltre un certo limite, anche usando Shift per incrementi fini. È visibile anche una curva di correzione luminosità con nodi posizionati, e l'istogramma RGB nella parte superiore destra." src="screenshots/frame_00930_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color zones' in darktable con la tab 'brightness' attiva. L'immagine è visualizzata con una maschera di selezione cromatica: le aree blu (non interessate dalla modifica) sono evidenziate in blu intenso, mentre le zone arancioni (monaci) rimangono non alterate. Un cursore è posizionato sullo slider 'saturation threshold' a 30.0%, e il narratore sta spiegando che aumentare ulteriormente questo valore non è possibile oltre un certo limite, anche usando Shift per incrementi fini. È visibile anche una curva di correzione luminosità con nodi posizionati, e l'istogramma RGB nella parte superiore destra.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation_threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>use_guided_filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color balance rgb' con la tab 'saturation' attiva. È visibile una maschera circolare rosa applicata alla veste arancione di un monaco, ma l'effetto di saturazione esagerata (+10%) sta anche influenzando la pelle del volto dell'uomo in abiti civili a destra, come evidenziato dal narratore. L'istogramma RGB e la mappa cromatica mostrano un aumento della saturazione nei toni arancioni e gialli. La presenza del toggle 'use guided filter' indica che l'effetto è stato limitato tramite filtro guidato, ma non sufficientemente per isolare solo le vesti." src="screenshots/frame_00870_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color balance rgb' con la tab 'saturation' attiva. È visibile una maschera circolare rosa applicata alla veste arancione di un monaco, ma l'effetto di saturazione esagerata (+10%) sta anche influenzando la pelle del volto dell'uomo in abiti civili a destra, come evidenziato dal narratore. L'istogramma RGB e la mappa cromatica mostrano un aumento della saturazione nei toni arancioni e gialli. La presenza del toggle 'use guided filter' indica che l'effetto è stato limitato tramite filtro guidato, ma non sufficientemente per isolare solo le vesti.</em></p>
+<p><strong>Modulo:</strong> color balance rgb</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>saturation</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_6">Moduli darktable<a class="headerlink" href="#moduli-darktable_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>equalizzatore di colore</li>
+</ul>
+<hr />
+<h2 id="8-regolazione-di-contrasto-e-raggio-deffetto-sulla-prima-immagine">8. Regolazione di contrasto e raggio d'effetto sulla prima immagine<a class="headerlink" href="#8-regolazione-di-contrasto-e-raggio-deffetto-sulla-prima-immagine" title="Permanent link">&para;</a></h2>
+<p><strong>[15:31 – 19:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=931">Guarda nel video</a></p>
+<p>Analisi dell'impatto del contrasto e del raggio d'effetto sui dettagli e sulla transizione tra pelle e abito. Introduzione all'uso combinato di maschere guidate, di tonalità e parametriche per limitare l'effetto e preservare le zone non interessate.</p>
+<h3 id="screenshot_7">Screenshot<a class="headerlink" href="#screenshot_7" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color correction' con la tab 'brightness' attiva. È visibile una curva di correzione luminosa (S-curve) applicata all'immagine, con un contrasto ridotto a -0.860 e raggio di 1.0 px. Una maschera è attiva (evidenziata dal cerchio rosso intorno al controllo 'radius'), indicando che l'utente sta regolando l'effetto locale sulla transizione tra pelle e veste rossa. L'istogramma a destra mostra la distribuzione dei colori, e la preview evidenzia un confine netto tra i toni blu (sfondo/veste) e rosso (robe), coerentemente con il commento sul 'very defined line'." src="screenshots/frame_00960_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color correction' con la tab 'brightness' attiva. È visibile una curva di correzione luminosa (S-curve) applicata all'immagine, con un contrasto ridotto a -0.860 e raggio di 1.0 px. Una maschera è attiva (evidenziata dal cerchio rosso intorno al controllo 'radius'), indicando che l'utente sta regolando l'effetto locale sulla transizione tra pelle e veste rossa. L'istogramma a destra mostra la distribuzione dei colori, e la preview evidenzia un confine netto tra i toni blu (sfondo/veste) e rosso (robe), coerentemente con il commento sul 'very defined line'.</em></p>
+<p><strong>Modulo:</strong> color correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-0.860</td>
+</tr>
+<tr>
+<td>radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'colorzones' attivo nella tab 'brightness', con un'immagine ingrandita al 400% che evidenzia un tessuto arancione (probabilmente una veste monastica) e una spalla. L'utente sta regolando il parametro 'effect_radius' (attualmente a 1.8 px), come indicato dal cursore del mouse circondato da un cerchio rosso e dal testo 'working...' sullo schermo. L'istogramma RGB e la mappa cromatica sono visibili sopra i controlli, e si nota un leggero effetto di sovraesposizione ai bordi del tessuto arancione, coerente con la descrizione del narratore riguardo allo 'spill' dell'effetto verso i margini. Il modulo è applicato a un file RAW Fujifilm X-Pro2." src="screenshots/frame_01020_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'colorzones' attivo nella tab 'brightness', con un'immagine ingrandita al 400% che evidenzia un tessuto arancione (probabilmente una veste monastica) e una spalla. L'utente sta regolando il parametro 'effect_radius' (attualmente a 1.8 px), come indicato dal cursore del mouse circondato da un cerchio rosso e dal testo 'working...' sullo schermo. L'istogramma RGB e la mappa cromatica sono visibili sopra i controlli, e si nota un leggero effetto di sovraesposizione ai bordi del tessuto arancione, coerente con la descrizione del narratore riguardo allo 'spill' dell'effetto verso i margini. Il modulo è applicato a un file RAW Fujifilm X-Pro2.</em></p>
+<p><strong>Modulo:</strong> colorzones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white_level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue_analysis_radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation_threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-1.000</td>
+</tr>
+<tr>
+<td>effect_radius</td>
+<td>1.8 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con un'immagine selezionata che raffigura monaci buddhisti in abiti arancioni in un mercato. Il modulo attivo è 'color correction', con una maschera circolare rosa evidenziata sullo sfondo (intorno alla vita di un monaco), indicando un'area di correzione selettiva. L'utente ha impostato un raggio d'effetto elevato (111.9 px), come confermato dal commento sullo 'spill' controllato all'interno della maschera ma non sulla pelle. L'istogramma e le curve HSV sono visibili a destra, e la barra degli strumenti inferiore mostra anteprime di altre immagini. La maschera è stata creata con precisione (come indicato da 'very sharp mask'), ma l'alto raggio causa un effetto diffuso all'interno dell'area mascherata, escludendo intenzionalmente la pelle." src="screenshots/frame_01050_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con un'immagine selezionata che raffigura monaci buddhisti in abiti arancioni in un mercato. Il modulo attivo è 'color correction', con una maschera circolare rosa evidenziata sullo sfondo (intorno alla vita di un monaco), indicando un'area di correzione selettiva. L'utente ha impostato un raggio d'effetto elevato (111.9 px), come confermato dal commento sullo 'spill' controllato all'interno della maschera ma non sulla pelle. L'istogramma e le curve HSV sono visibili a destra, e la barra degli strumenti inferiore mostra anteprime di altre immagini. La maschera è stata creata con precisione (come indicato da 'very sharp mask'), ma l'alto raggio causa un effetto diffuso all'interno dell'area mascherata, escludendo intenzionalmente la pelle.</em></p>
+<p><strong>Modulo:</strong> color correction</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-1.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>111.9 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+<tr>
+<td>hue</td>
+<td>non specificato (curva personalizzata visibile)</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>non specificato (curva personalizzata visibile)</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>non specificato (curva personalizzata visibile)</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo nella vista lighttable di darktable, con un'immagine selezionata che raffigura monaci buddhisti in abiti arancioni su una strada. Il cursore del mouse è posizionato sul pulsante 'white level', evidenziato da un cerchio rosa, indicando un intervento in corso. Sono visibili parametri avanzati come 'hue analysis radius', 'saturation threshold' e 'effect radius', e la checkbox 'use guided filter' è attivata, confermando l’uso di una maschera guidata. L’istogramma a destra mostra la distribuzione dei colori dell’immagine. Il narratore menziona esplicitamente l’uso di una maschera guidata e la possibilità di applicarla a diversi moduli, incluso l’uso di una 'hue mask', coerentemente con le opzioni visibili." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo nella vista lighttable di darktable, con un'immagine selezionata che raffigura monaci buddhisti in abiti arancioni su una strada. Il cursore del mouse è posizionato sul pulsante 'white level', evidenziato da un cerchio rosa, indicando un intervento in corso. Sono visibili parametri avanzati come 'hue analysis radius', 'saturation threshold' e 'effect radius', e la checkbox 'use guided filter' è attivata, confermando l’uso di una maschera guidata. L’istogramma a destra mostra la distribuzione dei colori dell’immagine. Il narratore menziona esplicitamente l’uso di una maschera guidata e la possibilità di applicarla a diversi moduli, incluso l’uso di una 'hue mask', coerentemente con le opzioni visibili.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-1.00</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>111.9 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo, in particolare la sezione 'parametric mask'. L'utente sta creando una maschera basata sull'intervallo di tonalità (hue) per selezionare i colori arancioni delle vesti dei monaci, come indicato dal cursore posizionato sulla banda Cz (cromaticità) e dall'indicatore visivo circolare rosso che evidenzia la selezione della tonalità. È attiva una maschera parametrica con modalità 'normal' e opacità al 100%. Sullo sfondo è visibile l'immagine originale scattata con Fujifilm X-Pro2, con informazioni tecniche in basso e pannello a sinistra con metadati e gestione delle maschere." src="screenshots/frame_01089_160.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'color zones' attivo, in particolare la sezione 'parametric mask'. L'utente sta creando una maschera basata sull'intervallo di tonalità (hue) per selezionare i colori arancioni delle vesti dei monaci, come indicato dal cursore posizionato sulla banda Cz (cromaticità) e dall'indicatore visivo circolare rosso che evidenzia la selezione della tonalità. È attiva una maschera parametrica con modalità 'normal' e opacità al 100%. Sullo sfondo è visibile l'immagine originale scattata con Fujifilm X-Pro2, con informazioni tecniche in basso e pannello a sinistra con metadati e gestione delle maschere.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Cz</td>
+<td>89</td>
+</tr>
+<tr>
+<td>hz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>boost factor</td>
+<td>0.000 EV</td>
+</tr>
+<tr>
+<td>details threshold</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>feathering radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>blurring radius</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>mask opacity</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>mask contrast</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_7">Moduli darktable<a class="headerlink" href="#moduli-darktable_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equalizzatore di colore</li>
+<li>Filtro guidato</li>
+<li>Maschera di tonalità</li>
+<li>Maschera parametrica</li>
+</ul>
+<hr />
+<h2 id="9-gestione-del-rumore-e-correzione-dei-toni-della-pelle">9. Gestione del rumore e correzione dei toni della pelle<a class="headerlink" href="#9-gestione-del-rumore-e-correzione-dei-toni-della-pelle" title="Permanent link">&para;</a></h2>
+<p><strong>[19:10 – 24:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=1150">Guarda nel video</a></p>
+<p>Dimostrazione su come il rumore ad alto ISO causi artefatti e macchie nell'equalizzatore di colore. Uso dell'analisi della tonalità e della soglia di saturazione per isolare la pelle e ridurre le sbavature vicino agli occhiali.</p>
+<h3 id="screenshot_8">Screenshot<a class="headerlink" href="#screenshot_8" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'hue', con una curva di tonalità modificata per selezionare e manipolare i toni rosa dei fiori. È visibile un punto di controllo spostato verso il basso sulla curva nel range del rosa (indicato dal cerchio rosa evidenziato), suggerendo un tentativo di ridurre la saturazione o spostare il tono dei fiori senza influenzare altre aree rosa nell'immagine (es. sacchi di plastica, scatole). L'istogramma RGB e l'anteprima dell'immagine mostrano una forte dominanza cromatica rosa. Il narratore sta dimostrando come affinare la selezione cromatica per evitare 'spillover' di colore su elementi non desiderati." src="screenshots/frame_01229_720.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color zones' attivo nella scheda 'hue', con una curva di tonalità modificata per selezionare e manipolare i toni rosa dei fiori. È visibile un punto di controllo spostato verso il basso sulla curva nel range del rosa (indicato dal cerchio rosa evidenziato), suggerendo un tentativo di ridurre la saturazione o spostare il tono dei fiori senza influenzare altre aree rosa nell'immagine (es. sacchi di plastica, scatole). L'istogramma RGB e l'anteprima dell'immagine mostrano una forte dominanza cromatica rosa. Il narratore sta dimostrando come affinare la selezione cromatica per evitare 'spillover' di colore su elementi non desiderati.</em></p>
+<p><strong>Modulo:</strong> color zones</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue curve</td>
+<td>1.00</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo nella scheda 'hue', con una maschera visiva applicata sulle fioriture rosa al centro dell'immagine. L'utente sta regolando il raggio di analisi della tonalità (6.0 px) e la soglia di saturazione (10.0%) per migliorare la precisione della maschera, in particolare per gestire le variazioni cromatiche tra i petali rosa e i centri giallastri dei fiori. È visibile un cursore attivo sul controllo del raggio di analisi della tonalità, indicando un intervento in corso. L'istogramma a destra mostra la distribuzione dei colori nell'immagine, con un picco predominante nella gamma magenta/rosso." src="screenshots/frame_01260_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo nella scheda 'hue', con una maschera visiva applicata sulle fioriture rosa al centro dell'immagine. L'utente sta regolando il raggio di analisi della tonalità (6.0 px) e la soglia di saturazione (10.0%) per migliorare la precisione della maschera, in particolare per gestire le variazioni cromatiche tra i petali rosa e i centri giallastri dei fiori. È visibile un cursore attivo sul controllo del raggio di analisi della tonalità, indicando un intervento in corso. L'istogramma a destra mostra la distribuzione dei colori nell'immagine, con un picco predominante nella gamma magenta/rosso.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue curve</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>6.0 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' in darktable con la tab 'hue' attiva. L'immagine è fortemente alterata da una maschera di analisi cromatica: le aree saturate (principalmente i fiori viola) appaiono in viola intenso, mentre il resto è desaturato o in scala di grigi. Il cursore del mouse punta al campo numerico del 'saturation threshold' (15.9%), evidenziando l’interazione descritta dal narratore. L’istogramma RGB e la curva hue sono visibili, ma la curva verde menzionata nel discorso non è presente nell’interfaccia corrente, suggerendo che sia stata disattivata o che si riferisca a uno stato precedente. I controlli 'saturation threshold' e 'effect radius' sono impostati, ma il narratore osserva che non producono effetti visibili significativi." src="screenshots/frame_01285_619.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' in darktable con la tab 'hue' attiva. L'immagine è fortemente alterata da una maschera di analisi cromatica: le aree saturate (principalmente i fiori viola) appaiono in viola intenso, mentre il resto è desaturato o in scala di grigi. Il cursore del mouse punta al campo numerico del 'saturation threshold' (15.9%), evidenziando l’interazione descritta dal narratore. L’istogramma RGB e la curva hue sono visibili, ma la curva verde menzionata nel discorso non è presente nell’interfaccia corrente, suggerendo che sia stata disattivata o che si riferisca a uno stato precedente. I controlli 'saturation threshold' e 'effect radius' sono impostati, ma il narratore osserva che non producono effetti visibili significativi.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue curve</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>10.0 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>15.9%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'brightness' selezionata e un cursore del mouse posizionato sopra la mappa cromatica nella sezione hue/saturation/brightness. L'utente sta interagendo con il selettore di tonalità per identificare un colore della pelle, come descritto nel contesto: intende selezionare un tono cutaneo medio, posizionare un nodo e aumentare luminosità e saturazione localmente. L'istogramma RGB è visibile in alto a destra, e l'immagine principale raffigura una donna che lavora con fiori gialli su un pavimento di legno." src="screenshots/frame_01320_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'brightness' selezionata e un cursore del mouse posizionato sopra la mappa cromatica nella sezione hue/saturation/brightness. L'utente sta interagendo con il selettore di tonalità per identificare un colore della pelle, come descritto nel contesto: intende selezionare un tono cutaneo medio, posizionare un nodo e aumentare luminosità e saturazione localmente. L'istogramma RGB è visibile in alto a destra, e l'immagine principale raffigura una donna che lavora con fiori gialli su un pavimento di legno.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'saturation' selezionata. È visibile un grafico a nodi per la correzione della saturazione, e l'utente sta regolando il parametro 'hue analysis radius', evidenziato da un cerchio rosso attorno al cursore. L'istogramma RGB e l'anteprima dell'immagine (scattata a 4000 ISO con una Fujifilm X-Pro2) mostrano artefatti cromatici, in particolare macchie gialle e spillover intorno agli occhiali. Il cursore è posizionato sul controllo del raggio di analisi della tonalità, mentre il testo 'working...' indica che l'elaborazione è in corso." src="screenshots/frame_01380_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'saturation' selezionata. È visibile un grafico a nodi per la correzione della saturazione, e l'utente sta regolando il parametro 'hue analysis radius', evidenziato da un cerchio rosso attorno al cursore. L'istogramma RGB e l'anteprima dell'immagine (scattata a 4000 ISO con una Fujifilm X-Pro2) mostrano artefatti cromatici, in particolare macchie gialle e spillover intorno agli occhiali. Il cursore è posizionato sul controllo del raggio di analisi della tonalità, mentre il testo 'working...' indica che l'elaborazione è in corso.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue analysis radius</td>
+<td>3.8 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>-11°</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_8">Moduli darktable<a class="headerlink" href="#moduli-darktable_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equalizzatore di colore</li>
+<li>Riduzione rumore</li>
+<li>Maschera di tonalità</li>
+<li>Maschera disegnata</li>
+</ul>
+<hr />
+<h2 id="10-isolamento-del-soggetto-e-importanza-del-pre-trattamento">10. Isolamento del soggetto e importanza del pre-trattamento<a class="headerlink" href="#10-isolamento-del-soggetto-e-importanza-del-pre-trattamento" title="Permanent link">&para;</a></h2>
+<p><strong>[24:10 – 29:57]</strong>
+ | <a href="https://www.youtube.com/watch?v=hvn7CCGh-ts&amp;t=1450">Guarda nel video</a></p>
+<p>Applicazione dell'equalizzatore per illuminare un'ape. Enfatizzazione cruciale della necessità di applicare il denoise prima di qualsiasi regolazione cromatica per evitare granulosità. Uso di maschere disegnate e parametriche per escludere lo sfondo e le foglie.</p>
+<h3 id="screenshot_9">Screenshot<a class="headerlink" href="#screenshot_9" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'utente che sta applicando una maschera basata sull'alone cromatico (hue mask) su una zona del volto della donna per controllare selettivamente la saturazione e l'effetto sulle zone gialle dei fiori. È visibile l'istogramma a colori, la curva di correzione hue/saturation/brightness e i parametri di mascheramento (radius, feathering). Il cursore è posizionato sopra la voce 'color equalizer', indicando che l’utente sta interagendo con questo modulo per affinare il colore locale senza alterare l’intera immagine." src="screenshots/frame_01500_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'utente che sta applicando una maschera basata sull'alone cromatico (hue mask) su una zona del volto della donna per controllare selettivamente la saturazione e l'effetto sulle zone gialle dei fiori. È visibile l'istogramma a colori, la curva di correzione hue/saturation/brightness e i parametri di mascheramento (radius, feathering). Il cursore è posizionato sopra la voce 'color equalizer', indicando che l’utente sta interagendo con questo modulo per affinare il colore locale senza alterare l’intera immagine.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue analysis radius</td>
+<td>2.8 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>20.9%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-0.701</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>74.6 px</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'colorchecker' attivo nella sezione 'other'. È visibile un'immagine di una donna che lavora con fiori gialli su un pavimento di legno; sul pannello destro sono presenti gli strumenti per la correzione del colore, inclusa una curva RGB e un istogramma a colori. Un cursore è evidenziato (cerchiato in rosa) sul pulsante 'drawn mask' o 'parametric mask', indicando che l'utente sta interagendo con le maschere per limitare l'effetto a zone specifiche (es. tonalità della pelle), coerentemente con il commento del narratore sull'uso di maschere disegnate/parametriche per isolare l'effetto." src="screenshots/frame_01544_940.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'colorchecker' attivo nella sezione 'other'. È visibile un'immagine di una donna che lavora con fiori gialli su un pavimento di legno; sul pannello destro sono presenti gli strumenti per la correzione del colore, inclusa una curva RGB e un istogramma a colori. Un cursore è evidenziato (cerchiato in rosa) sul pulsante 'drawn mask' o 'parametric mask', indicando che l'utente sta interagendo con le maschere per limitare l'effetto a zone specifiche (es. tonalità della pelle), coerentemente con il commento del narratore sull'uso di maschere disegnate/parametriche per isolare l'effetto.</em></p>
+<p><strong>Modulo:</strong> colorchecker</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>2.8 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>20.9%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-0.701</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>74.6 px</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'hue' selezionata e una maschera circolare disegnata manualmente sull'immagine che copre la pelle della donna (toni carnagione). L'istogramma a destra visualizza la distribuzione dei colori dell'immagine. I parametri indicano un aumento del livello bianco (+1.00 EV) e l'uso di un filtro guidato per affinare l'effetto. La descrizione contestuale conferma che l'utente sta utilizzando il color equalizer per modificare selettivamente i toni della pelle e successivamente per illuminare le marigold (fiori gialli), evidenziandone il contrasto rispetto allo sfondo." src="screenshots/frame_01560_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con la tab 'hue' selezionata e una maschera circolare disegnata manualmente sull'immagine che copre la pelle della donna (toni carnagione). L'istogramma a destra visualizza la distribuzione dei colori dell'immagine. I parametri indicano un aumento del livello bianco (+1.00 EV) e l'uso di un filtro guidato per affinare l'effetto. La descrizione contestuale conferma che l'utente sta utilizzando il color equalizer per modificare selettivamente i toni della pelle e successivamente per illuminare le marigold (fiori gialli), evidenziandone il contrasto rispetto allo sfondo.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>2.8 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>20.9%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>-0.701</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>74.6 px</td>
+</tr>
+<tr>
+<td>use guided filter</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con un'immagine di una ape in volo vicino a un fiore viola. L'utente sta manipolando i parametri di correzione del colore, in particolare il canale 'hue', come indicato dal cursore posizionato sul grafico circolare. Il pannello destro mostra l'istogramma RGB e i controlli avanzati per il filtro guidato, il raggio di analisi dell'alone cromatico (1.5 px) e la soglia di saturazione (10%). Il contesto narrativo descrive problemi di artefatti (speckling e blotchyness) derivanti dall'aumento della luminosità e del raggio di analisi, evidenziando la delicatezza del bilanciamento tra precisione e qualità visiva nel modulo." src="screenshots/frame_01590_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con un'immagine di una ape in volo vicino a un fiore viola. L'utente sta manipolando i parametri di correzione del colore, in particolare il canale 'hue', come indicato dal cursore posizionato sul grafico circolare. Il pannello destro mostra l'istogramma RGB e i controlli avanzati per il filtro guidato, il raggio di analisi dell'alone cromatico (1.5 px) e la soglia di saturazione (10%). Il contesto narrativo descrive problemi di artefatti (speckling e blotchyness) derivanti dall'aumento della luminosità e del raggio di analisi, evidenziando la delicatezza del bilanciamento tra precisione e qualità visiva nel modulo.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hue</td>
+<td>valore non leggibile (puntatore sul grafico hue, circa 0°)</td>
+</tr>
+<tr>
+<td>saturation</td>
+<td>non specificato (slider visibile ma valore non leggibile)</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>non specificato (slider visibile ma valore non leggibile)</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>1.5 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>effect radius</td>
+<td>1.0 px</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>-12°</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'immagine di un'ape e un fiore viola in primo piano. L'utente sta regolando il parametro 'effect radius' (attualmente a 114.2 px), evidenziato da un cerchio rosso, per controllare la diffusione dell'effetto sullo sfondo. Si osserva un leggero alone (halo) intorno al petalo del fiore, indicativo di un raggio eccessivo. A sinistra sono visibili le informazioni tecniche dell'immagine RAW Fujifilm X-Pro3, e in basso la timeline delle miniature. Il pannello destro mostra l'istogramma RGB e i nodi della curva HSL per la luminosità." src="screenshots/frame_01620_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'color equalizer' attivo in darktable, con l'immagine di un'ape e un fiore viola in primo piano. L'utente sta regolando il parametro 'effect radius' (attualmente a 114.2 px), evidenziato da un cerchio rosso, per controllare la diffusione dell'effetto sullo sfondo. Si osserva un leggero alone (halo) intorno al petalo del fiore, indicativo di un raggio eccessivo. A sinistra sono visibili le informazioni tecniche dell'immagine RAW Fujifilm X-Pro3, e in basso la timeline delle miniature. Il pannello destro mostra l'istogramma RGB e i nodi della curva HSL per la luminosità.</em></p>
+<p><strong>Modulo:</strong> color equalizer</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>effect radius</td>
+<td>114.2 px</td>
+</tr>
+<tr>
+<td>white level</td>
+<td>+1.00 EV</td>
+</tr>
+<tr>
+<td>hue analysis radius</td>
+<td>8.9 px</td>
+</tr>
+<tr>
+<td>saturation threshold</td>
+<td>10.0%</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>+0.000</td>
+</tr>
+<tr>
+<td>node placement</td>
+<td>-12°</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_9">Moduli darktable<a class="headerlink" href="#moduli-darktable_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Equalizzatore di colore</li>
+<li>Riduzione rumore</li>
+<li>Maschera disegnata</li>
+<li>Maschera parametrica</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>equalizzatore di colore</strong></td>
+<td>filtro guidato, visualizzazione maschera, modalità slider HSL (Ctrl+clic), raggio dell'effetto, curva di tonalità (ampiezza), soglia di saturazione, livello bianco, curva di saturazione, raggio di analisi della tonalità, selettore colore, posizionamento nodo, curva di contrasto, curva di luminosità</td>
+</tr>
+<tr>
+<td><strong>equalizzatore di tono</strong></td>
+<td>filtro guidato (confronto)</td>
+</tr>
+<tr>
+<td><strong>Equalizzatore di colore</strong></td>
+<td>raggio d'effetto, analisi della tonalità, saturazione, contrasto, soglia di saturazione, curva di tonalità, luminosità</td>
+</tr>
+<tr>
+<td><strong>Filtro guidato</strong></td>
+<td>maschera di protezione, transizione</td>
+</tr>
+<tr>
+<td><strong>Maschera di tonalità</strong></td>
+<td>sfumatura, selezione cromatica</td>
+</tr>
+<tr>
+<td><strong>Maschera parametrica</strong></td>
+<td>cursori di selezione, transizione graduale</td>
+</tr>
+<tr>
+<td><strong>Maschera disegnata</strong></td>
+<td>selezione geometrica, limitazione area</td>
+</tr>
+<tr>
+<td><strong>Riduzione rumore</strong></td>
+<td>prevenzione artefatti, denoise, gestione ISO</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fare doppio clic sul nodo dopo aver selezionato un colore per allinearlo perfettamente alla tonalità desiderata prima di modificare la curva. — <em>Configurazione iniziale del modulo</em></li>
+<li>Premere Ctrl+clic sul modulo per passare dall'interfaccia a curve a quella con slider HSL, simile al workflow di Lightroom. — <em>Preferenza di interfaccia utente</em><blockquote>
+<p><strong>Attenzione:</strong> Il raggio dell'effetto (filtro guidato) causa un traboccamento dell'aggiustamento su entrambi i lati dei bordi. Regolare con cautela per evitare alterazioni indesiderate nelle aree adiacenti. — <em>Gestione dei bordi e transizioni</em>
+<strong>Importante:</strong> Utilizzare la soglia di saturazione per isolare le aree altamente sature e proteggere automaticamente le tonalità della pelle o le zone meno sature. — <em>Editing selettivo su soggetti reali</em></p>
+</blockquote>
+</li>
+<li>Il parametro 'livello bianco' limita la luminosità massima dei pixel modificati, ma nella pratica fotografica reale risulta raramente utile. — <em>Parametri avanzati poco utilizzati</em><blockquote>
+<p><strong>Importante:</strong> Aumentare il raggio di analisi della tonalità su immagini rumorose o con texture per mediare i colori e creare maschere più uniformi, riducendolo invece per selezioni precise. — <em>Gestione di rumore e texture complesse</em>
+<strong>Importante:</strong> Applicare sempre la riduzione del rumore prima o durante l'uso dell'equalizzatore di colore, specialmente con foto ad alto ISO, per evitare artefatti e macchie. — <em>Workflow iniziale su immagini rumorose</em>
+<strong>Attenzione:</strong> Ridurre il contrasto nell'equalizzatore di colore preserva i dettagli e evita l'appiattimento dell'immagine, mentre valori alti aumentano la saturazione ma riducono la tridimensionalità. — <em>Regolazione del modulo Equalizzatore di colore</em></p>
+</blockquote>
+</li>
+<li>Il raggio d'effetto ammorbidisce le transizioni e riduce le sbavature ai bordi, ma un valore eccessivo può creare aloni e perdita di nitidezza. — <em>Affinamento delle maschere e dei bordi</em></li>
+<li>Combinare più tipi di maschere (guidata, parametrica, di tonalità, disegnata) permette un controllo chirurgico dell'effetto, evitando di influenzare aree indesiderate. — <em>Mascheramento avanzato</em></li>
+<li>L'analisi della tonalità migliora la selezione per cambi di colore, ma ha un impatto minimo quando si regolano solo luminosità e saturazione. — <em>Selezione cromatica mirata</em></li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:15:14.189628.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

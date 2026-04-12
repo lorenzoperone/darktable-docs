@@ -1,0 +1,3545 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+      
+      
+        <meta name="author" content="Lorenzo Perone">
+      
+      
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/video-tutorials/OxAF-EsDmPE/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Darktable: Maschere Parametriche per un Fotoritocco Professionale - Guida al Post-Processing con darktable</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#darktable-maschere-parametriche-per-un-fotoritocco-professionale" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guida al Post-Processing con darktable
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Darktable: Maschere Parametriche per un Fotoritocco Professionale
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
+          
+  
+  
+  Flusso di lavoro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+  Moduli
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../color/" class="md-tabs__link">
+          
+  
+  
+  Colore
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../masking/" class="md-tabs__link">
+          
+  
+  
+  Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../appendix/glossary/" class="md-tabs__link">
+          
+  
+  
+  Appendice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Video Tutorial
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+
+    </a>
+    Guida al Post-Processing con darktable
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lorenzoperone/darktable-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flusso di lavoro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso di lavoro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importazione e Organizzazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esposizione e Calibrazione Colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Grading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflow/export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Moduli
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Moduli darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/exposure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Filmic RGB, AgX, Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/color-calibration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/denoise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e Blending
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Colore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestione del colore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/scene-referred/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flusso Scene-Referred
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bilanciamento del Bianco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../color/icc-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Profili ICC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Maschere
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere e selezioni
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/parametric/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Parametriche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/drawn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maschere Disegnate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../masking/combining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combinare le Maschere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendice
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendice
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shortcut da tastiera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../appendix/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risorse esterne
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Tutorial
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Video Tutorial
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial Video darktable
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduzione-e-attivazione-delle-maschere-parametriche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduzione e attivazione delle maschere parametriche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Introduzione e attivazione delle maschere parametriche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-funzionamento-dei-cursori-e-gestione-delle-transizioni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Funzionamento dei cursori e gestione delle transizioni
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Funzionamento dei cursori e gestione delle transizioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-canali-colore-e-utilizzo-della-pipetta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Canali colore e utilizzo della pipetta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Canali colore e utilizzo della pipetta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fattore-di-incremento-e-esempio-pratico-di-mascheratura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Fattore di incremento e esempio pratico di mascheratura
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Fattore di incremento e esempio pratico di mascheratura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-combinazione-maschere-e-workflow-finale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Combinazione maschere e workflow finale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Combinazione maschere e workflow finale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-regolazione-dei-parametri-delle-maschere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Regolazione dei parametri delle maschere
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Regolazione dei parametri delle maschere">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screenshot_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduli-darktable_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moduli darktable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indice-dei-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indice dei Moduli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli-e-avvertimenti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli e Avvertimenti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="darktable-maschere-parametriche-per-un-fotoritocco-professionale">Darktable: Maschere Parametriche per un Fotoritocco Professionale<a class="headerlink" href="#darktable-maschere-parametriche-per-un-fotoritocco-professionale" title="Permanent link">&para;</a></h1>
+<p><strong>Canale:</strong> Fotografare per Stupire<strong>Video:</strong> <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE">https://www.youtube.com/watch?v=OxAF-EsDmPE</a>
+<strong>Generato:</strong> 2026-04-12T01:26:21.181121
+<strong>Modelli:</strong> LLM qwen3.6-plus, VL qwen3-vl-plus</p>
+<hr />
+<h2 id="indice">Indice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#introduzione-e-attivazione-delle-maschere-parametriche">Introduzione e attivazione delle maschere parametriche</a></li>
+<li><a href="#funzionamento-dei-cursori-e-gestione-delle-transizioni">Funzionamento dei cursori e gestione delle transizioni</a></li>
+<li><a href="#canali-colore-e-utilizzo-della-pipetta">Canali colore e utilizzo della pipetta</a></li>
+<li><a href="#fattore-di-incremento-e-esempio-pratico-di-mascheratura">Fattore di incremento e esempio pratico di mascheratura</a></li>
+<li><a href="#combinazione-maschere-e-workflow-finale">Combinazione maschere e workflow finale</a></li>
+<li><a href="#regolazione-dei-parametri-delle-maschere">Regolazione dei parametri delle maschere</a></li>
+</ol>
+<hr />
+<h2 id="1-introduzione-e-attivazione-delle-maschere-parametriche">1. Introduzione e attivazione delle maschere parametriche<a class="headerlink" href="#1-introduzione-e-attivazione-delle-maschere-parametriche" title="Permanent link">&para;</a></h2>
+<p><strong>[00:00 – 04:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=0">Guarda nel video</a></p>
+<p>Presentazione delle maschere parametriche come strumento fondamentale e performante in darktable. Spiegazione di come attivarle e visualizzarle tramite l'icona dedicata, con introduzione ai canali di base (G, R, G, B).</p>
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Esposizione' con la maschera parametrica attiva e visualizzata in giallo sull'intera immagine, indicando che non è stata ancora definita una selezione specifica (maschera globale). L'icona dell'occhio accanto alla maschera è attivata, permettendo di vedere la maschera sovrapposta all'immagine. Il pannello a destra mostra i controlli della maschera parametrica con opacità al 100% e valori di input RGB nulli per il canale R e G, 100 per A." src="screenshots/frame_00159_133.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Esposizione' con la maschera parametrica attiva e visualizzata in giallo sull'intera immagine, indicando che non è stata ancora definita una selezione specifica (maschera globale). L'icona dell'occhio accanto alla maschera è attivata, permettendo di vedere la maschera sovrapposta all'immagine. Il pannello a destra mostra i controlli della maschera parametrica con opacità al 100% e valori di input RGB nulli per il canale R e G, 100 per A.</em></p>
+<p><strong>Modulo:</strong> esposizione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>esposizione</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>Correzione livello del nero</td>
+<td>-0.0002</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71.1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input R</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input A</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'esposizione' attivo in darktable, con una maschera parametrica applicata che evidenzia in giallo l'intera immagine (indicando che nessuna selezione specifica è stata definita, quindi la maschera copre l'intero frame). La sezione 'Maschera parametrica' mostra i canali RGB e altri parametri (C2, hz) impostati a valori estremi (B=100, C2=100, hz=100), suggerendo un tentativo di selezionare aree scure o bluastre, ma poiché l’immagine è dominata da giallo acceso, la maschera appare uniformemente gialla. Il cursore della chiarezza è spostato a 71,1% e l’esposizione è aumentata di +0.7 EV. L’utente sta probabilmente illustrando come attivare/visualizzare le maschere tramite l’icona quadrata con cerchio (il pulsante 'Visualizza maschera'), come descritto nel contesto parlato." src="screenshots/frame_00162_500.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'esposizione' attivo in darktable, con una maschera parametrica applicata che evidenzia in giallo l'intera immagine (indicando che nessuna selezione specifica è stata definita, quindi la maschera copre l'intero frame). La sezione 'Maschera parametrica' mostra i canali RGB e altri parametri (C2, hz) impostati a valori estremi (B=100, C2=100, hz=100), suggerendo un tentativo di selezionare aree scure o bluastre, ma poiché l’immagine è dominata da giallo acceso, la maschera appare uniformemente gialla. Il cursore della chiarezza è spostato a 71,1% e l’esposizione è aumentata di +0.7 EV. L’utente sta probabilmente illustrando come attivare/visualizzare le maschere tramite l’icona quadrata con cerchio (il pulsante 'Visualizza maschera'), come descritto nel contesto parlato.</em></p>
+<p><strong>Modulo:</strong> esposizione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>esposizione</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>Correzione livello del nero</td>
+<td>-0.0002</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità maschera di fusione</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input</td>
+<td>g:0, R:0, G:0, B:100, C2:100, hz:100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0.000 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'esposizione' in darktable con un'immagine completamente gialla al centro, indicando che una maschera è stata creata ma non ancora applicata o limitata tramite maschera parametrica. A destra sono visibili i controlli della maschera parametrica con i canali RGB e altri (G, B, Jz, Cz, hz), e la barra di input mostra valori estremi (0 0 0 100 100), suggerendo una selezione massima su alcuni canali. Il pannello sinistro mostra una forma 'Cerchio #1' nel gruppo 'esposizione', confermando l’uso di una maschera geometrica. L’istogramma RGB a destra evidenzia saturazione estrema nei canali rosso, verde e blu, coerente con il colore giallo uniforme." src="screenshots/frame_00173_639.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'esposizione' in darktable con un'immagine completamente gialla al centro, indicando che una maschera è stata creata ma non ancora applicata o limitata tramite maschera parametrica. A destra sono visibili i controlli della maschera parametrica con i canali RGB e altri (G, B, Jz, Cz, hz), e la barra di input mostra valori estremi (0 0 0 100 100), suggerendo una selezione massima su alcuni canali. Il pannello sinistro mostra una forma 'Cerchio #1' nel gruppo 'esposizione', confermando l’uso di una maschera geometrica. L’istogramma RGB a destra evidenzia saturazione estrema nei canali rosso, verde e blu, coerente con il colore giallo uniforme.</em></p>
+<p><strong>Modulo:</strong> esposizione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modo</td>
+<td>Manuale</td>
+</tr>
+<tr>
+<td>Compensa l'esposizione della fotocamera</td>
+<td>-2.0 EV</td>
+</tr>
+<tr>
+<td>esposizione</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>Correzione livello del nero</td>
+<td>-0.002</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71.1%</td>
+</tr>
+<tr>
+<td>Opacità maschera di fusione</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input maschera parametrica</td>
+<td>0 0 0 100 100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0.000 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Tavolo Luminoso' attivo in darktable, con un'immagine gradiente in scala di grigi (nero in alto, bianco in basso) visualizzata al centro. A destra è visibile il pannello dei controlli della maschera, con una maschera parametrica attiva basata su luminanza (input L: N/A, chiarezza 71,1%). La maschera è configurata in modalità 'Esclusiva', con opacità al 100% e nessuna sfumatura o sfocatura applicata. In alto a destra sono presenti i campioni di colore per la mappatura dell'esposizione (rosso, verde, blu). Il cursore è posizionato al centro dell’immagine. Nessuna forma è selezionata nel pannello 'Forme create' a sinistra." src="screenshots/frame_00210_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Tavolo Luminoso' attivo in darktable, con un'immagine gradiente in scala di grigi (nero in alto, bianco in basso) visualizzata al centro. A destra è visibile il pannello dei controlli della maschera, con una maschera parametrica attiva basata su luminanza (input L: N/A, chiarezza 71,1%). La maschera è configurata in modalità 'Esclusiva', con opacità al 100% e nessuna sfumatura o sfocatura applicata. In alto a destra sono presenti i campioni di colore per la mappatura dell'esposizione (rosso, verde, blu). Il cursore è posizionato al centro dell’immagine. Nessuna forma è selezionata nel pannello 'Forme create' a sinistra.</em></p>
+<p><strong>Modulo:</strong> Tavolo Luminoso</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input g</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input R</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input B</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input Jz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Input Cz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Input hz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'esposizione' attivo in darktable 4.6.0, con un'immagine di una Ford Mustang verde fluo selezionata. È attiva una maschera parametrica basata sui canali B e Jz (blu e luminanza CIE Jz), con opacità al 100% e fusione in modalità Normale. L'esposizione è stata corretta manualmente a +0.700 EV rispetto alla compensazione automatica di -2.0 EV. Sulla destra sono visibili gli istogrammi RGB e la mappatura dell'esposizione dell'area, mentre a sinistra si vede la struttura delle forme create (gruppo 'esposizione', cerchio #1). Il tooltip in basso descrive le scorciatoie per abilitare/disabilitare selettori e visualizzazione maschera." src="screenshots/frame_00129_133.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'esposizione' attivo in darktable 4.6.0, con un'immagine di una Ford Mustang verde fluo selezionata. È attiva una maschera parametrica basata sui canali B e Jz (blu e luminanza CIE Jz), con opacità al 100% e fusione in modalità Normale. L'esposizione è stata corretta manualmente a +0.700 EV rispetto alla compensazione automatica di -2.0 EV. Sulla destra sono visibili gli istogrammi RGB e la mappatura dell'esposizione dell'area, mentre a sinistra si vede la struttura delle forme create (gruppo 'esposizione', cerchio #1). Il tooltip in basso descrive le scorciatoie per abilitare/disabilitare selettori e visualizzazione maschera.</em></p>
+<p><strong>Modulo:</strong> esposizione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modo</td>
+<td>Manuale</td>
+</tr>
+<tr>
+<td>Compensa l'esposizione della fotocamera</td>
+<td>-2.0 EV</td>
+</tr>
+<tr>
+<td>esposizione</td>
+<td>+0.700 EV</td>
+</tr>
+<tr>
+<td>Correzione livello del nero</td>
+<td>-0.0002</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71.1%</td>
+</tr>
+<tr>
+<td>Opacità maschera di fusione</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input g</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input R</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input B</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input Jz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable">Moduli darktable<a class="headerlink" href="#moduli-darktable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera di fusione (maschere parametriche)</li>
+</ul>
+<hr />
+<h2 id="2-funzionamento-dei-cursori-e-gestione-delle-transizioni">2. Funzionamento dei cursori e gestione delle transizioni<a class="headerlink" href="#2-funzionamento-dei-cursori-e-gestione-delle-transizioni" title="Permanent link">&para;</a></h2>
+<p><strong>[04:10 – 09:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=250">Guarda nel video</a></p>
+<p>Analisi del comportamento dei cursori di selezione: come restringere l'intervallo, come funziona la transizione graduale di opacità tra i cursori e l'importanza di evitare bordi netti.</p>
+<h3 id="screenshot_1">Screenshot<a class="headerlink" href="#screenshot_1" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Maschera di fusione' attivo nella scheda 'Camera Oscura'. È visibile una maschera grafica applicata a una porzione centrale dell'immagine (banda gialla), con indicatori numerici dell'input della maschera (20,4 3,1 61,6 80,4) e due frecce rosse che indicano i punti di controllo sulla barra di input. La maschera è impostata in modalità 'Input', con chiarezza al 71,1% e opacità/contrasto maschera a 0%. Il narratore descrive una maschera parziale (con opacità graduale) tra due aree ('cursory' e 'acqua') e due zone con maschera al 100%, coerentemente con la presenza di una maschera selettiva visibile sul gradiente giallo." src="screenshots/frame_00390_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Maschera di fusione' attivo nella scheda 'Camera Oscura'. È visibile una maschera grafica applicata a una porzione centrale dell'immagine (banda gialla), con indicatori numerici dell'input della maschera (20,4 3,1 61,6 80,4) e due frecce rosse che indicano i punti di controllo sulla barra di input. La maschera è impostata in modalità 'Input', con chiarezza al 71,1% e opacità/contrasto maschera a 0%. Il narratore descrive una maschera parziale (con opacità graduale) tra due aree ('cursory' e 'acqua') e due zone con maschera al 100%, coerentemente con la presenza di una maschera selettiva visibile sul gradiente giallo.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chiarzza</td>
+<td>71.1%</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>20,4 3,1 61,6 80,4</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Maschera parametrica' attivo nella scheda 'Camera Oscura'. È applicata una maschera basata su luminanza (G), con un gradiente verticale che evidenzia una banda gialla centrale su sfondo grigio scuro. L'istogramma RGB e la visualizzazione della maschera indicano che la selezione è focalizzata sulla componente luminosa (canale G), coerentemente con il commento del narratore che distingue G (luminanza) da GZ, CZ, HZ (basati sul colore). La maschera è esclusiva, con opacità al 100% e nessuna sfocatura." src="screenshots/frame_00420_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Maschera parametrica' attivo nella scheda 'Camera Oscura'. È applicata una maschera basata su luminanza (G), con un gradiente verticale che evidenzia una banda gialla centrale su sfondo grigio scuro. L'istogramma RGB e la visualizzazione della maschera indicano che la selezione è focalizzata sulla componente luminosa (canale G), coerentemente con il commento del narratore che distingue G (luminanza) da GZ, CZ, HZ (basati sul colore). La maschera è esclusiva, con opacità al 100% e nessuna sfocatura.</em></p>
+<p><strong>Modulo:</strong> Maschera parametrica</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>20.4 34.1 61.6 80.4</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Maschera di fusione' attivo nella scheda 'Camera Oscura'. L'immagine principale è un blocco uniforme di giallo brillante (RGB ~255,255,0), indicativo di un test o di una maschera applicata. A destra, la sezione 'Maschera parametrica' è espansa con i canali RGB e Cz configurati (B e Cz a 100), suggerendo una selezione basata su blu/ciano. La chiarezza è impostata al 71,1%, mentre opacità e contrasto della maschera sono a 0%. Non è selezionata alcuna forma nella sezione 'Forme create', come confermato da 'Nessuna forma selezionata'." src="screenshots/frame_00300_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Maschera di fusione' attivo nella scheda 'Camera Oscura'. L'immagine principale è un blocco uniforme di giallo brillante (RGB ~255,255,0), indicativo di un test o di una maschera applicata. A destra, la sezione 'Maschera parametrica' è espansa con i canali RGB e Cz configurati (B e Cz a 100), suggerendo una selezione basata su blu/ciano. La chiarezza è impostata al 71,1%, mentre opacità e contrasto della maschera sono a 0%. Non è selezionata alcuna forma nella sezione 'Forme create', come confermato da 'Nessuna forma selezionata'.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input g</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input R</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input G</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input B</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Input Cz</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable nella scheda 'Camera Oscura', con il modulo 'Maschera di fusione' attivo a destra. È visibile una maschera parametrica applicata a un gradiente verticale (nero → verde → giallo → bianco), con i valori RGB dell'area selezionata mostrati come 0, 26.3, 63.9, 100 (input). La chiarezza è impostata al 71,1%, opacità al 100%, e non sono presenti sfumature o sfocature. Il cursore è posizionato sull'area della maschera parametrica, coerentemente con il commento del narratore che indica l’interazione con i selettori di maschera." src="screenshots/frame_00330_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable nella scheda 'Camera Oscura', con il modulo 'Maschera di fusione' attivo a destra. È visibile una maschera parametrica applicata a un gradiente verticale (nero → verde → giallo → bianco), con i valori RGB dell'area selezionata mostrati come 0, 26.3, 63.9, 100 (input). La chiarezza è impostata al 71,1%, opacità al 100%, e non sono presenti sfumature o sfocature. Il cursore è posizionato sull'area della maschera parametrica, coerentemente con il commento del narratore che indica l’interazione con i selettori di maschera.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>0 26,3 63,9 100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Mappatura dell'esposizione dell'area' nella scheda 'Camera Oscura'. È visibile una barra di gradiente rosso che rappresenta la mappatura dell'esposizione, con un cursore posizionato a 71,1% sulla scala di 'Chiarzza'. Il pannello dei parametri include controlli per l'input RGB, opacità e fattore di incremento. Sul lato sinistro è aperto il pannello 'Forme create', ma nessuna forma è selezionata ('Nessuna forma selezionata'). In basso sono visibili i campioni di colore e l'istogramma. Il commento del narratore suggerisce che uno slider sta usando una scala (probabilmente quella di 'Chiarzza') invece di un altro tipo di controllo, confermato dal valore numerico percentuale visualizzato." src="screenshots/frame_00480_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Mappatura dell'esposizione dell'area' nella scheda 'Camera Oscura'. È visibile una barra di gradiente rosso che rappresenta la mappatura dell'esposizione, con un cursore posizionato a 71,1% sulla scala di 'Chiarzza'. Il pannello dei parametri include controlli per l'input RGB, opacità e fattore di incremento. Sul lato sinistro è aperto il pannello 'Forme create', ma nessuna forma è selezionata ('Nessuna forma selezionata'). In basso sono visibili i campioni di colore e l'istogramma. Il commento del narratore suggerisce che uno slider sta usando una scala (probabilmente quella di 'Chiarzza') invece di un altro tipo di controllo, confermato dal valore numerico percentuale visualizzato.</em></p>
+<p><strong>Modulo:</strong> Mappatura dell'esposizione dell'area</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarzza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input g</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input R</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input G</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Input B</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_1">Moduli darktable<a class="headerlink" href="#moduli-darktable_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera di fusione (maschere parametriche)</li>
+</ul>
+<hr />
+<h2 id="3-canali-colore-e-utilizzo-della-pipetta">3. Canali colore e utilizzo della pipetta<a class="headerlink" href="#3-canali-colore-e-utilizzo-della-pipetta" title="Permanent link">&para;</a></h2>
+<p><strong>[09:10 – 14:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=550">Guarda nel video</a></p>
+<p>Approfondimento sui canali L, a, b, C e H. Dimostrazione dell'uso della pipetta per selezionare automaticamente tonalità o colori direttamente dall'immagine, con spiegazione dell'inversione della selezione.</p>
+<h3 id="screenshot_2">Screenshot<a class="headerlink" href="#screenshot_2" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Maschera di fusione' attivo, in cui è stata applicata una maschera parametrica basata su luminanza (L) o colore (hz), evidenziata da un'area gialla intensa che copre gran parte dell'immagine, lasciando visibile solo un cilindro grigio a destra. L'istogramma RGB e il selettore cromatico indicano che la maschera è stata costruita utilizzando il canale 'hz' (tonalità), con valori di input centrati su 53 (probabilmente tonalità gialla). La maschera ha opacità al 99% e chiaranza al 71.1%, suggerendo un'intensa selezione cromatica. Il cursore non è visibile, ma il contesto narrativo indica che si sta dimostrando la capacità del modulo di isolare porzioni specifiche dell'immagine in base alla tonalità (rosso → arancione → giallo → verde), confermando l’uso della maschera parametrica per selezionare colori specifici." src="screenshots/frame_00570_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Maschera di fusione' attivo, in cui è stata applicata una maschera parametrica basata su luminanza (L) o colore (hz), evidenziata da un'area gialla intensa che copre gran parte dell'immagine, lasciando visibile solo un cilindro grigio a destra. L'istogramma RGB e il selettore cromatico indicano che la maschera è stata costruita utilizzando il canale 'hz' (tonalità), con valori di input centrati su 53 (probabilmente tonalità gialla). La maschera ha opacità al 99% e chiaranza al 71.1%, suggerendo un'intensa selezione cromatica. Il cursore non è visibile, ma il contesto narrativo indica che si sta dimostrando la capacità del modulo di isolare porzioni specifiche dell'immagine in base alla tonalità (rosso → arancione → giallo → verde), confermando l’uso della maschera parametrica per selezionare colori specifici.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chiaranza</td>
+<td>71.1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>99%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>53 53 360 360</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' con la maschera parametrica aperta. È attiva la maschera di fusione in modalità Normale con opacità al 100%. Nella sezione 'Maschera parametrica', sono visibili i canali L, a, b, C, h (con C e h entrambi impostati a 100), confermando che l’utente sta configurando una maschera basata su spazio colore CIELAB/CIECAM02 (L, a, b) e cromaticità (h), come indicato dal contesto verbale. Il cursore è posizionato sul canale 'a', suggerendo un’interazione in corso." src="screenshots/frame_00836_933.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' con la maschera parametrica aperta. È attiva la maschera di fusione in modalità Normale con opacità al 100%. Nella sezione 'Maschera parametrica', sono visibili i canali L, a, b, C, h (con C e h entrambi impostati a 100), confermando che l’utente sta configurando una maschera basata su spazio colore CIELAB/CIECAM02 (L, a, b) e cromaticità (h), come indicato dal contesto verbale. Il cursore è posizionato sul canale 'a', suggerendo un’interazione in corso.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input a</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input b</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Input C</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Input h</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'zone colore' attivo nella sezione 'Tavolo Luminoso'. È selezionata l'immagine di una Ford Mustang verde fluo con strisce nere, sotto un cielo nuvoloso. Il pannello destro visualizza lo strumento 'zone colore' con la tab 'Chiarezza' attiva, una palette cromatica e opzioni per la selezione per tonalità. Non sono presenti maschere attive sulle immagini, ma il narratore sta introducendo la creazione di una maschera per modificare tonalità e saturazione del veicolo. In alto a destra sono visibili i tre istogrammi RGB (rosso, verde, blu) in modalità 'zone colore'." src="screenshots/frame_00810_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'zone colore' attivo nella sezione 'Tavolo Luminoso'. È selezionata l'immagine di una Ford Mustang verde fluo con strisce nere, sotto un cielo nuvoloso. Il pannello destro visualizza lo strumento 'zone colore' con la tab 'Chiarezza' attiva, una palette cromatica e opzioni per la selezione per tonalità. Non sono presenti maschere attive sulle immagini, ma il narratore sta introducendo la creazione di una maschera per modificare tonalità e saturazione del veicolo. In alto a destra sono visibili i tre istogrammi RGB (rosso, verde, blu) in modalità 'zone colore'.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'Maschera di fusione' attivo, in particolare la sottosezione 'Maschera parametrica'. È visualizzata un'immagine di prova con cerchi colorati (rosso, verde, blu) che rappresentano i canali RGB e le loro sovrapposizioni (ciano, magenta, giallo, bianco). La maschera parametrica è configurata su 'Input' con valori estremi (0–100), indicando una selezione totale dell'area. Il cursore della chiarezza è impostato al 71,1%, mentre opacità e fattori di correzione sono a zero o default. A sinistra si vede il pannello 'Forme create', ma nessuna forma è selezionata ('Nessuna forma selezionata'). L'istogramma e i controlli di esposizione sono visibili in alto a destra, ma non attivi." src="screenshots/frame_00598_120.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'Maschera di fusione' attivo, in particolare la sottosezione 'Maschera parametrica'. È visualizzata un'immagine di prova con cerchi colorati (rosso, verde, blu) che rappresentano i canali RGB e le loro sovrapposizioni (ciano, magenta, giallo, bianco). La maschera parametrica è configurata su 'Input' con valori estremi (0–100), indicando una selezione totale dell'area. Il cursore della chiarezza è impostato al 71,1%, mentre opacità e fattori di correzione sono a zero o default. A sinistra si vede il pannello 'Forme create', ma nessuna forma è selezionata ('Nessuna forma selezionata'). L'istogramma e i controlli di esposizione sono visibili in alto a destra, ma non attivi.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>0 0 100 100</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'Correzione livello del nero' attivo nella scheda 'Camera Oscura'. È presente una maschera parametrica con valori di input RGB (17,6, 18,0, 100, 100) e un'area selezionata in giallo brillante nell'anteprima. Un cursore blu evidenzia la voce 'Fattore di incremento della maschera canale', indicando un'interazione in corso con i controlli avanzati della maschera. L'istogramma e i colori nel pannello inferiore mostrano una distribuzione dominata dal giallo e da toni neutri." src="screenshots/frame_00720_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'Correzione livello del nero' attivo nella scheda 'Camera Oscura'. È presente una maschera parametrica con valori di input RGB (17,6, 18,0, 100, 100) e un'area selezionata in giallo brillante nell'anteprima. Un cursore blu evidenzia la voce 'Fattore di incremento della maschera canale', indicando un'interazione in corso con i controlli avanzati della maschera. L'istogramma e i colori nel pannello inferiore mostrano una distribuzione dominata dal giallo e da toni neutri.</em></p>
+<p><strong>Modulo:</strong> Correzione livello del nero</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correzione livello del nero</td>
+<td>+0,000</td>
+</tr>
+<tr>
+<td>Chiarezza</td>
+<td>71,1%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>0,0 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_2">Moduli darktable<a class="headerlink" href="#moduli-darktable_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera di fusione (maschere parametriche)</li>
+<li>Tonalità</li>
+<li>Colore</li>
+</ul>
+<hr />
+<h2 id="4-fattore-di-incremento-e-esempio-pratico-di-mascheratura">4. Fattore di incremento e esempio pratico di mascheratura<a class="headerlink" href="#4-fattore-di-incremento-e-esempio-pratico-di-mascheratura" title="Permanent link">&para;</a></h2>
+<p><strong>[14:10 – 19:10]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=850">Guarda nel video</a></p>
+<p>Spiegazione del fattore di incremento per ampliare la gamma dinamica di selezione. Applicazione pratica su un'immagine con un'auto: creazione di una maschera precisa per modificare tonalità e saturazione senza intaccare lo sfondo.</p>
+<h3 id="screenshot_3">Screenshot<a class="headerlink" href="#screenshot_3" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera colorata (giallo fluorescente) applicata selettivamente sulla parte anteriore di un'auto gialla, mentre lo sfondo e altre aree sono in scala di grigi. Sono visibili i punti della maschera (piccoli punti gialli) che indicano la selezione basata su tonalità; l’utente sta utilizzando il contagocce per affinare la selezione, come descritto nel contesto, e si nota un leggero 'spillover' della maschera sulla zona nera vicina al paraurti, confermando l’attenzione richiesta nella definizione precisa della maschera. L’istogramma RGB e la palette cromatica sono visibili a destra, con la selezione attuale centrata sul giallo vivace." src="screenshots/frame_00990_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera colorata (giallo fluorescente) applicata selettivamente sulla parte anteriore di un'auto gialla, mentre lo sfondo e altre aree sono in scala di grigi. Sono visibili i punti della maschera (piccoli punti gialli) che indicano la selezione basata su tonalità; l’utente sta utilizzando il contagocce per affinare la selezione, come descritto nel contesto, e si nota un leggero 'spillover' della maschera sulla zona nera vicina al paraurti, confermando l’attenzione richiesta nella definizione precisa della maschera. L’istogramma RGB e la palette cromatica sono visibili a destra, con la selezione attuale centrata sul giallo vivace.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>(101,8) 94 101 102 110</td>
+</tr>
+<tr>
+<td>Combinare le maschere</td>
+<td>Esclusiva</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="L'interfaccia mostra il modulo 'zone colore' attivo con la tab 'Tonalità' selezionata. È presente una maschera di fusione attiva (indicata dal pulsante 'Maschera di fusione' premuto e dall'istogramma colorato nella sezione 'Chiarezza'). L'immagine principale è sovrascritta da un blocco giallo uniforme, segno che la maschera è stata applicata ma non ancora definita con precisione; il messaggio in basso avvisa che le maschere non sono visualizzabili mentre è attiva una maschera di fusione. Il narratore sta descrivendo il processo di creazione di una maschera basata sulla tonalità, senza aver ancora creato una maschera adattata." src="screenshots/frame_00960_000.jpg" /></p>
+<p><em>L'interfaccia mostra il modulo 'zone colore' attivo con la tab 'Tonalità' selezionata. È presente una maschera di fusione attiva (indicata dal pulsante 'Maschera di fusione' premuto e dall'istogramma colorato nella sezione 'Chiarezza'). L'immagine principale è sovrascritta da un blocco giallo uniforme, segno che la maschera è stata applicata ma non ancora definita con precisione; il messaggio in basso avvisa che le maschere non sono visualizzabili mentre è attiva una maschera di fusione. Il narratore sta descrivendo il processo di creazione di una maschera basata sulla tonalità, senza aver ancora creato una maschera adattata.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0,000 EV</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera parametrica basata sulla tonalità applicata a un'immagine fortemente stilizzata (dominante gialla). È visibile una selezione manuale tramite pipetta su una porzione scura del cofano dell’auto, che ha generato una maschera non perfettamente precisa: alcune aree nere circostanti (es. dettagli del paraurti o ombre) sono state incluse involontariamente, come indicato dal narratore. L’istogramma RGB e la visualizzazione della maschera (in alto a destra) mostrano tre zone colorate (rosa, verde, blu), corrispondenti a diverse regioni selezionate. La maschera è attiva e si vede il bordo di selezione (quadratini di controllo) sul veicolo." src="screenshots/frame_00984_480.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera parametrica basata sulla tonalità applicata a un'immagine fortemente stilizzata (dominante gialla). È visibile una selezione manuale tramite pipetta su una porzione scura del cofano dell’auto, che ha generato una maschera non perfettamente precisa: alcune aree nere circostanti (es. dettagli del paraurti o ombre) sono state incluse involontariamente, come indicato dal narratore. L’istogramma RGB e la visualizzazione della maschera (in alto a destra) mostrano tre zone colorate (rosa, verde, blu), corrispondenti a diverse regioni selezionate. La maschera è attiva e si vede il bordo di selezione (quadratini di controllo) sul veicolo.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seleziona per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>(100.7, 46, 53, 114, 121)</td>
+</tr>
+<tr>
+<td>Maschera parametrica</td>
+<td>h</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo con la tab 'Cromaticità' selezionata. È attiva una maschera parametrica basata su canali C (cromaticità) e H (tonalità), con i cursori impostati a zero, indicando una selezione iniziale o neutra. L'istogramma a destra visualizza la distribuzione dei colori dell'immagine (un Ford Mustang verde fluo sotto cielo nuvoloso). Il narratore sta spiegando la differenza tra i canali L*a*b* (L per luminosità/grigi, a/b per cromaticità) e l’uso di C/H nella maschera parametrica, evidenziando come la maschera crei una selezione specifica basata su tonalità e cromaticità, non su luminosità." src="screenshots/frame_00862_600.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo con la tab 'Cromaticità' selezionata. È attiva una maschera parametrica basata su canali C (cromaticità) e H (tonalità), con i cursori impostati a zero, indicando una selezione iniziale o neutra. L'istogramma a destra visualizza la distribuzione dei colori dell'immagine (un Ford Mustang verde fluo sotto cielo nuvoloso). Il narratore sta spiegando la differenza tra i canali L</em>a<em>b</em> (L per luminosità/grigi, a/b per cromaticità) e l’uso di C/H nella maschera parametrica, evidenziando come la maschera crei una selezione specifica basata su tonalità e cromaticità, non su luminosità.*</p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seleziona per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Maschera parametrica - Input</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maschera parametrica - h</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Maschera parametrica - C</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera parametrica applicata a un'immagine di una Ford Mustang gialla fluorescente su sfondo in bianco e nero. La maschera è basata sulla tonalità (come indicato dal grafico RGB nella parte superiore destra), e l'effetto evidenzia selettivamente il giallo vivido dell’auto, lasciando il resto dell’immagine desaturato. Gli slider della maschera mostrano valori di raggio di sfumatura e sfocatura regolati, e l’opacità della maschera è al 100% con fusione morbida. L’istogramma RGB e la visualizzazione della maschera confermano che la selezione è focalizzata sul canale giallo/verde." src="screenshots/frame_01080_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera parametrica applicata a un'immagine di una Ford Mustang gialla fluorescente su sfondo in bianco e nero. La maschera è basata sulla tonalità (come indicato dal grafico RGB nella parte superiore destra), e l'effetto evidenzia selettivamente il giallo vivido dell’auto, lasciando il resto dell’immagine desaturato. Gli slider della maschera mostrano valori di raggio di sfumatura e sfocatura regolati, e l’opacità della maschera è al 100% con fusione morbida. L’istogramma RGB e la visualizzazione della maschera confermano che la selezione è focalizzata sul canale giallo/verde.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>94 98 105 108</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>15,2 px</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>6,5 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_3">Moduli darktable<a class="headerlink" href="#moduli-darktable_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera di fusione (maschere parametriche)</li>
+<li>Tonalità</li>
+<li>Colore</li>
+<li>Contrasto</li>
+</ul>
+<hr />
+<h2 id="5-combinazione-maschere-e-workflow-finale">5. Combinazione maschere e workflow finale<a class="headerlink" href="#5-combinazione-maschere-e-workflow-finale" title="Permanent link">&para;</a></h2>
+<p><strong>[19:10 – 22:15]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=1150">Guarda nel video</a></p>
+<p>Considerazioni sulla combinazione delle maschere, con focus sulla modalità di fusione 'esclusivo'. Riepilogo del flusso di lavoro: creazione maschera, verifica visiva, regolazione parametri e applicazione delle modifiche.</p>
+<h3 id="screenshot_4">Screenshot<a class="headerlink" href="#screenshot_4" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable con il modulo 'zone colore' attivo nella pipeline di sviluppo. È selezionata un'immagine di una Ford Mustang verde fluo con strisce nere, sotto un cielo nuvoloso. Sul pannello destro è visibile la maschera parametrica attiva, con i valori RGB dell'input impostati su 94, 98, 105, 108, indicando una selezione basata sulla tonalità del giallo-verde della carrozzeria. L'istogramma a destra mostra la distribuzione cromatica con evidenza delle zone colorate (rosa, verde, viola), e la maschera è applicata in modalità 'Morbido' con opacità al 100%. Il narratore sta spiegando come modificare la luminosità della macchina tramite la maschera creata sul colore giallo/verde." src="screenshots/frame_01156_039.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable con il modulo 'zone colore' attivo nella pipeline di sviluppo. È selezionata un'immagine di una Ford Mustang verde fluo con strisce nere, sotto un cielo nuvoloso. Sul pannello destro è visibile la maschera parametrica attiva, con i valori RGB dell'input impostati su 94, 98, 105, 108, indicando una selezione basata sulla tonalità del giallo-verde della carrozzeria. L'istogramma a destra mostra la distribuzione cromatica con evidenza delle zone colorate (rosa, verde, viola), e la maschera è applicata in modalità 'Morbido' con opacità al 100%. Il narratore sta spiegando come modificare la luminosità della macchina tramite la maschera creata sul colore giallo/verde.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>94 98 105 108</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable 4.6.0 con il modulo 'Tonalità' attivo nella sezione 'Camera Oscura'. L'immagine principale è un'auto sportiva (Ford Mustang) resa in monocromatico con un'intensa sovrapposizione cromatica giallo-neon su una porzione selezionata tramite maschera parametrica basata sulla tonalità. A destra è visibile l'istogramma RGB e la curva di tonalità modificata; nella barra laterale sinistra sono elencati i moduli della pipeline di sviluppo, con 11 istanze del modulo 'zone colore' attive. La maschera parametrica è configurata con valori di input HSL (89, 99, 135, 161), indicando una selezione mirata a tonalità gialle/verdi brillanti. Il risultato è un effetto di 'selective color' estremo, con il veicolo che risalta in giallo fluorescente contro uno sfondo in bianco e nero." src="screenshots/frame_01230_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable 4.6.0 con il modulo 'Tonalità' attivo nella sezione 'Camera Oscura'. L'immagine principale è un'auto sportiva (Ford Mustang) resa in monocromatico con un'intensa sovrapposizione cromatica giallo-neon su una porzione selezionata tramite maschera parametrica basata sulla tonalità. A destra è visibile l'istogramma RGB e la curva di tonalità modificata; nella barra laterale sinistra sono elencati i moduli della pipeline di sviluppo, con 11 istanze del modulo 'zone colore' attive. La maschera parametrica è configurata con valori di input HSL (89, 99, 135, 161), indicando una selezione mirata a tonalità gialle/verdi brillanti. Il risultato è un effetto di 'selective color' estremo, con il veicolo che risalta in giallo fluorescente contro uno sfondo in bianco e nero.</em></p>
+<p><strong>Modulo:</strong> Tonalità</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbidamente</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazioneSpline centripeta</td>
+<td>attivato</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>89 99 135 161</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>non specificato</td>
+</tr>
+<tr>
+<td>Combina le maschere</td>
+<td>Esclusiva</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'interfaccia di darktable 4.6.0 con il modulo 'Tonalità' attivo nel pannello destro. È visibile una curva RGB personalizzata con punti di controllo, e la maschera parametrica è attiva con valori L*a*b*C*h impostati (89, 99, 135, 161). L'immagine principale è una Ford Mustang gialla con strisce nere sotto un cielo nuvoloso; nella barra laterale sinistra sono elencati i moduli della pipeline di sviluppo, con 'zone colore' selezionato (livello 11). In alto a destra si vedono le anteprime delle maschere colorate (rosa, verde, viola), indicando che sono state create maschere tonali. Il cursore è posizionato sulla curva tonale, suggerendo un'operazione in corso di regolazione." src="screenshots/frame_01260_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'interfaccia di darktable 4.6.0 con il modulo 'Tonalità' attivo nel pannello destro. È visibile una curva RGB personalizzata con punti di controllo, e la maschera parametrica è attiva con valori L</em>a<em>b</em>C<em>h impostati (89, 99, 135, 161). L'immagine principale è una Ford Mustang gialla con strisce nere sotto un cielo nuvoloso; nella barra laterale sinistra sono elencati i moduli della pipeline di sviluppo, con 'zone colore' selezionato (livello 11). In alto a destra si vedono le anteprime delle maschere colorate (rosa, verde, viola), indicando che sono state create maschere tonali. Il cursore è posizionato sulla curva tonale, suggerendo un'operazione in corso di regolazione.</em></p>
+<p><strong>Modulo:</strong> Tonalità</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbidо</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazioneSpline centripeta</td>
+<td>attivo</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input L</td>
+<td>89</td>
+</tr>
+<tr>
+<td>Input a</td>
+<td>99</td>
+</tr>
+<tr>
+<td>Input b</td>
+<td>135</td>
+</tr>
+<tr>
+<td>Input C</td>
+<td>161</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Chiarezza' attivo in darktable, con un'immagine di una Ford Mustang modificata in modo estremo: la carrozzeria è resa in giallo fluorescente intenso con strisce nere, probabilmente tramite maschera parametrica basata sulla tonalità. Sulla destra sono visibili l'istogramma RGB e la curva di correzione della chiarezza, con una maschera parametrica attiva che seleziona i valori luminosi (input 89–161). La foto originale appare sotto forma di anteprima nella raccolta in basso, mostrando varie immagini non correlate. L'interfaccia indica che è selezionata 1 immagine su 11 nella raccolta corrente, versione darktable 4.6.0." src="screenshots/frame_01320_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Chiarezza' attivo in darktable, con un'immagine di una Ford Mustang modificata in modo estremo: la carrozzeria è resa in giallo fluorescente intenso con strisce nere, probabilmente tramite maschera parametrica basata sulla tonalità. Sulla destra sono visibili l'istogramma RGB e la curva di correzione della chiarezza, con una maschera parametrica attiva che seleziona i valori luminosi (input 89–161). La foto originale appare sotto forma di anteprima nella raccolta in basso, mostrando varie immagini non correlate. L'interfaccia indica che è selezionata 1 immagine su 11 nella raccolta corrente, versione darktable 4.6.0.</em></p>
+<p><strong>Modulo:</strong> Chiarezza</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selezione per</td>
+<td>Tonalità</td>
+</tr>
+<tr>
+<td>Modalità di esecuzione</td>
+<td>Morbido</td>
+</tr>
+<tr>
+<td>Fusione</td>
+<td>+0,00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazioneSpline centripeta</td>
+<td>attivato</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>89 99 135 161</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_4">Moduli darktable<a class="headerlink" href="#moduli-darktable_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Maschera di fusione (maschere parametriche)</li>
+<li>Tonalità</li>
+<li>Colore</li>
+</ul>
+<hr />
+<h2 id="6-regolazione-dei-parametri-delle-maschere">6. Regolazione dei parametri delle maschere<a class="headerlink" href="#6-regolazione-dei-parametri-delle-maschere" title="Permanent link">&para;</a></h2>
+<p><strong>[22:15 – 24:29]</strong>
+ | <a href="https://www.youtube.com/watch?v=OxAF-EsDmPE&amp;t=1335">Guarda nel video</a></p>
+<p>Analisi dettagliata dei parametri di controllo delle maschere in darktable: opacità, contrasto, dettaglio e smussatura. Viene spiegato come ciascun parametro influenzi l'applicazione selettiva degli effetti e come evitare la fuoriuscita della maschera dalle aree desiderate.</p>
+<h3 id="screenshot_5">Screenshot<a class="headerlink" href="#screenshot_5" title="Permanent link">&para;</a></h3>
+<p><img alt="Lo screenshot mostra il modulo 'Fusione' attivo in darktable, con una maschera parametrica applicata all'immagine. L'immagine principale è fortemente sovraesposta e dominata da toni giallo-verdi, indicando un'elaborazione estrema o un errore di visualizzazione della maschera. La maschera è visibile come area luminosa (opaca) sul veicolo, con contrasto della maschera impostato a +47% e opacità maschera a +21%, confermando che le porzioni più opache della maschera sono state intensificate, rendendole più evidenti — coerentemente con la spiegazione del narratore sull’effetto del contrasto della maschera sulle aree opache. A destra sono visibili gli istogrammi RGB e i controlli avanzati della maschera parametrica." src="screenshots/frame_01385_400.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Fusione' attivo in darktable, con una maschera parametrica applicata all'immagine. L'immagine principale è fortemente sovraesposta e dominata da toni giallo-verdi, indicando un'elaborazione estrema o un errore di visualizzazione della maschera. La maschera è visibile come area luminosa (opaca) sul veicolo, con contrasto della maschera impostato a +47% e opacità maschera a +21%, confermando che le porzioni più opache della maschera sono state intensificate, rendendole più evidenti — coerentemente con la spiegazione del narratore sull’effetto del contrasto della maschera sulle aree opache. A destra sono visibili gli istogrammi RGB e i controlli avanzati della maschera parametrica.</em></p>
+<p><strong>Modulo:</strong> Fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Input L</td>
+<td>66</td>
+</tr>
+<tr>
+<td>Input a</td>
+<td>99</td>
+</tr>
+<tr>
+<td>Input b</td>
+<td>135</td>
+</tr>
+<tr>
+<td>Input C</td>
+<td>161</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>31.8 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+21%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+47%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera applicata a un'immagine di una Ford Mustang. La maschera è visibilmente evidenziata in giallo fluorescente e presenta un forte effetto di sfocatura ai bordi. I controlli della maschera sono espansi a destra, con valori specifici per opacità (-28%), contrasto (-29%) e raggio di sfocatura (31.8 px), indicando un'attenta regolazione della transizione tra aree opache e trasparenti della maschera. L’istogramma RGB e la visualizzazione delle zone colorate confermano l’uso di una maschera parametrica basata su LCh." src="screenshots/frame_01410_000.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera applicata a un'immagine di una Ford Mustang. La maschera è visibilmente evidenziata in giallo fluorescente e presenta un forte effetto di sfocatura ai bordi. I controlli della maschera sono espansi a destra, con valori specifici per opacità (-28%), contrasto (-29%) e raggio di sfocatura (31.8 px), indicando un'attenta regolazione della transizione tra aree opache e trasparenti della maschera. L’istogramma RGB e la visualizzazione delle zone colorate confermano l’uso di una maschera parametrica basata su LCh.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>31.8 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>-28%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>-29%</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>66 99 135 161</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'Maschera parametrica' attivo nel pannello destro, con una maschera visiva applicata all'immagine centrale: le aree selezionate appaiono in giallo fluorescente (indicando la regione interessata dalla maschera), mentre il resto è in bianco e nero. La maschera è stata creata basandosi su valori luminosi (L) e cromatici (a, b, C, h), come indicato dai campi 'Input'. Il cursore 'Soglia dei dettagli' è a +0%, e l'opacità della maschera è al 100%. È attiva l'opzione 'Esclusiva', che implica che solo la maschera selezionata è attiva. L'istogramma RGB e lo spettro cromatico sono visibili sopra il modulo, confermando l’uso di selezione basata sul colore/luminanza." src="screenshots/frame_01425_033.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'Maschera parametrica' attivo nel pannello destro, con una maschera visiva applicata all'immagine centrale: le aree selezionate appaiono in giallo fluorescente (indicando la regione interessata dalla maschera), mentre il resto è in bianco e nero. La maschera è stata creata basandosi su valori luminosi (L) e cromatici (a, b, C, h), come indicato dai campi 'Input'. Il cursore 'Soglia dei dettagli' è a +0%, e l'opacità della maschera è al 100%. È attiva l'opzione 'Esclusiva', che implica che solo la maschera selezionata è attiva. L'istogramma RGB e lo spettro cromatico sono visibili sopra il modulo, confermando l’uso di selezione basata sul colore/luminanza.</em></p>
+<p><strong>Modulo:</strong> Maschera parametrica</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input</td>
+<td>29.0 29.0 36.0 37.0</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Fattore di incremento</td>
+<td>0.000 EV</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra l'immagine di una Ford Mustang con un effetto di maschera selettiva applicato: il corpo dell'auto è reso in giallo fluorescente intenso, mentre lo sfondo rimane in bianco e nero. La maschera è visibilmente estesa oltre i bordi dell'auto, indicando un raggio di sfocatura elevato (76.8 px) e un'opacità della maschera negativa (-37%), che riduce l'intensità dell'effetto ai margini. Il modulo 'Maschera di fusione' è attivo con parametri finemente regolati per controllare la transizione e l'influenza della maschera sul risultato finale." src="screenshots/frame_01350_000.jpg" /></p>
+<p><em>Lo screenshot mostra l'immagine di una Ford Mustang con un effetto di maschera selettiva applicato: il corpo dell'auto è reso in giallo fluorescente intenso, mentre lo sfondo rimane in bianco e nero. La maschera è visibilmente estesa oltre i bordi dell'auto, indicando un raggio di sfocatura elevato (76.8 px) e un'opacità della maschera negativa (-37%), che riduce l'intensità dell'effetto ai margini. Il modulo 'Maschera di fusione' è attivo con parametri finemente regolati per controllare la transizione e l'influenza della maschera sul risultato finale.</em></p>
+<p><strong>Modulo:</strong> Maschera di fusione</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Metodo interpolazione</td>
+<td>Spline centripeta</td>
+</tr>
+<tr>
+<td>Modo</td>
+<td>Normale</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>76.8 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>-37%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+47%</td>
+</tr>
+<tr>
+<td>Guida per la sfocatura</td>
+<td>Input dopo aver s...</td>
+</tr>
+<tr>
+<td>Raggio di sfumatura</td>
+<td>0.0 px</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera applicata che evidenzia in giallo fluorescente la parte anteriore di un'auto (Mustang), mentre lo sfondo rimane in tonalità grigio-verdi. La maschera è visibilmente sovrimposta all’immagine principale e appare fortemente saturata, indicando un'intensa selezione cromatica. A destra sono visibili i controlli della maschera parametrica con valori specifici per opacità, contrasto e raggio di sfocatura. L’istogramma RGB nella parte superiore destra conferma l’accentuazione dei canali verdi e rossi nella maschera. Il contesto narrativo descrive l’effetto dell’opacità della maschera sulle aree influenzate dal modulo: riducendo l’opacità, le zone meno opache vengono modificate più intensamente; aumentandola, le zone più opache (come quella gialla) diventano ancora più marcate — ciò è coerente con l’immagine mostrata, dove la maschera gialla è estremamente evidente e dominante." src="screenshots/frame_01367_140.jpg" /></p>
+<p><em>Lo screenshot mostra il modulo 'zone colore' attivo in darktable, con una maschera applicata che evidenzia in giallo fluorescente la parte anteriore di un'auto (Mustang), mentre lo sfondo rimane in tonalità grigio-verdi. La maschera è visibilmente sovrimposta all’immagine principale e appare fortemente saturata, indicando un'intensa selezione cromatica. A destra sono visibili i controlli della maschera parametrica con valori specifici per opacità, contrasto e raggio di sfocatura. L’istogramma RGB nella parte superiore destra conferma l’accentuazione dei canali verdi e rossi nella maschera. Il contesto narrativo descrive l’effetto dell’opacità della maschera sulle aree influenzate dal modulo: riducendo l’opacità, le zone meno opache vengono modificate più intensamente; aumentandola, le zone più opache (come quella gialla) diventano ancora più marcate — ciò è coerente con l’immagine mostrata, dove la maschera gialla è estremamente evidente e dominante.</em></p>
+<p><strong>Modulo:</strong> zone colore</p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Valore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fusione</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td>Opacità</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Raggio di sfocatura</td>
+<td>31.8 px</td>
+</tr>
+<tr>
+<td>Opacità maschera</td>
+<td>+15%</td>
+</tr>
+<tr>
+<td>Contrasto maschera</td>
+<td>+47%</td>
+</tr>
+<tr>
+<td>Input</td>
+<td>66 99 135 161</td>
+</tr>
+<tr>
+<td>Soglia dei dettagli</td>
+<td>+0%</td>
+</tr>
+<tr>
+<td>Guida per la s.f. Input dopo aver s...</td>
+<td>0.0 px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moduli-darktable_5">Moduli darktable<a class="headerlink" href="#moduli-darktable_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sistema di Mascheramento (Parametriche/Disegnate)</li>
+</ul>
+<hr />
+<h2 id="indice-dei-moduli">Indice dei Moduli<a class="headerlink" href="#indice-dei-moduli" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametri discussi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Maschera di fusione (maschere parametriche)</strong></td>
+<td>visualizzazione maschera, modalità di fusione (esclusivo), canali L, a, b, C, H, fattore di incremento, canali G, R, G, B, cursori di intervallo, pipetta di campionamento</td>
+</tr>
+<tr>
+<td><strong>Tonalità</strong></td>
+<td>saturazione, luminosità, tonalità</td>
+</tr>
+<tr>
+<td><strong>Colore</strong></td>
+<td>saturazione, cromaticità, tonalità</td>
+</tr>
+<tr>
+<td><strong>Contrasto</strong></td>
+<td>regolazione contrasto</td>
+</tr>
+<tr>
+<td><strong>Sistema di Mascheramento</strong></td>
+<td>Dettaglio, Raggio/Smussatura, Contrasto, Opacità, Intervallo, Forza dell'effetto del modulo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli-e-avvertimenti">Consigli e Avvertimenti<a class="headerlink" href="#consigli-e-avvertimenti" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Attivare sempre l'icona di visualizzazione maschera per verificare l'area di influenza prima di applicare qualsiasi regolazione. — <em>Fase di setup e verifica della maschera</em><blockquote>
+<p><strong>Importante:</strong> Utilizzare la pipetta per selezionare rapidamente il colore o la tonalità target direttamente dall'immagine, evitando regolazioni manuali imprecise dei cursori. — <em>Selezione iniziale del soggetto o area di interesse</em>
+<strong>Attenzione:</strong> Prestare attenzione alle zone di transizione tra i cursori: generano una sfumatura di opacità fondamentale per evitare bordi netti e innaturali nell'immagine finale. — <em>Regolazione fine dei cursori di intervallo</em>
+<strong>Importante:</strong> Il fattore di incremento espande la gamma dinamica di selezione; usarlo con cautela per isolare luci o ombre senza includere pixel indesiderati o creare aloni. — <em>Recupero dettagli in alte/basse luci o zone a basso contrasto</em>
+<strong>Attenzione:</strong> Verificare la maschera su più canali (es. Luminanza, Crominanza, Tonalità) per evitare interferenze da colori simili o dal nero, che possono alterare la selezione. — <em>Validazione e affinamento della maschera parametrica</em>
+<strong>Attenzione:</strong> Un raggio o intervallo di smussatura troppo elevato può causare la fuoriuscita della maschera, applicando l'effetto a regioni che si desidera escludere. — <em>Quando si regola la transizione o la morbidezza della maschera</em></p>
+</blockquote>
+</li>
+<li>Valori negativi dell'opacità invertono l'effetto della maschera, influenzando maggiormente le aree meno opache. — <em>Per invertire selettivamente l'applicazione dell'effetto</em></li>
+<li>Il parametro 'Contrasto' regola la transizione tra le zone opache e trasparenti della maschera, permettendo un controllo più netto o graduale. — <em>Per affinare i bordi e le transizioni della maschera</em><blockquote>
+<p><strong>Importante:</strong> Il parametro 'Dettaglio' seleziona le aree in base alla texture: valori positivi agiscono sulle zone dettagliate, valori negativi su quelle uniformi. È fondamentale nelle immagini con molto rumore. — <em>Quando si lavora su immagini rumorose o con texture complesse</em></p>
+</blockquote>
+</li>
+</ul>
+<hr />
+<p><em>Report generato automaticamente da <a href="https://github.com/lorenzoperone/manualize">dt-video-analyzer</a> il 2026-04-12T01:26:21.181121.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
