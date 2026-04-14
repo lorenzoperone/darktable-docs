@@ -3083,17 +3083,17 @@
 
 <h1 id="orton-effect-dragan-effect-in-darktable">Orton Effect &amp; Dragan Effect in darktable<a class="headerlink" href="#orton-effect-dragan-effect-in-darktable" title="Permanent link">&para;</a></h1>
 <p>L’<strong>Orton effect</strong> e il <strong>Dragan effect</strong> sono due tecniche di post-produzione che creano un’atmosfera onirica, luminosa e drammatica rispettivamente:<br />
-- <strong>Orton</strong>: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati[^orton-video].<br />
-- <strong>Dragan</strong>: contrasto esploso, dettagli iper-definiti, ombre profonde e luci incandescenti — nato per ritratti drammatici e street photography[^dragon-video].  </p>
-<p>Entrambi <em>non esistono come moduli nativi singoli</em> in darktable, ma si costruiscono combinando moduli esistenti nella pipeline scene-referred. Il modulo <code>soften</code> implementa l’Orton in modo semplificato, mentre il Dragan richiede un flusso avanzato con <code>composite</code>, <code>blur</code>, <code>sigmoid</code> e maschere locali[^orton-video][^dragon-video].</p>
+- <strong>Orton</strong>: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati<sup id="fnref:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br />
+- <strong>Dragan</strong>: contrasto esploso, dettagli iper-definiti, ombre profonde e luci incandescenti — nato per ritratti drammatici e street photography<sup id="fnref:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.  </p>
+<p>Entrambi <em>non esistono come moduli nativi singoli</em> in darktable, ma si costruiscono combinando moduli esistenti nella pipeline scene-referred. Il modulo <code>soften</code> implementa l’Orton in modo semplificato, mentre il Dragan richiede un flusso avanzato con <code>composite</code>, <code>blur</code>, <code>sigmoid</code> e maschere locali<sup id="fnref2:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup><sup id="fnref2:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 <p><img alt="Confronto Orton vs Dragan su un ritratto" src="../images/orton-dragan-comparison.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché non usare preset esterni?</p>
-<p>I preset <code>.dtstyle</code> (es. <em>Red Max Payne</em>, <em>Lomo’s Effect</em>)[^maxpayne][^lomos] offrono scorciatoie stilistiche, ma <strong>non replicano fedelmente Orton/ Dragán</strong>, perché mancano del controllo fine sulla fusione dei livelli e sulla gestione della gamma dinamica. Usali solo come punto di partenza — non come soluzione definitiva[^orton-video].</p>
+<p>I preset <code>.dtstyle</code> (es. <em>Red Max Payne</em>, <em>Lomo’s Effect</em>)<sup id="fnref:maxpayne"><a class="footnote-ref" href="#fn:maxpayne">5</a></sup><sup id="fnref:lomos"><a class="footnote-ref" href="#fn:lomos">6</a></sup> offrono scorciatoie stilistiche, ma <strong>non replicano fedelmente Orton/ Dragán</strong>, perché mancano del controllo fine sulla fusione dei livelli e sulla gestione della gamma dinamica. Usali solo come punto di partenza — non come soluzione definitiva<sup id="fnref3:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</p>
 </div>
 <hr />
 <h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">&para;</a></h2>
-<p>Entrambi gli effetti richiedono una <strong>duplicazione dell’immagine</strong> per lavorare su livelli separati. Il posizionamento del modulo <code>composite</code> è critico: deve essere inserito <em>prima</em> di <code>tone curve</code>/<code>AGX</code>, ma <em>dopo</em> tutti i moduli di correzione base (esposizione, bilanciamento bianco, correzione ottica)[^dragon-video].</p>
+<p>Entrambi gli effetti richiedono una <strong>duplicazione dell’immagine</strong> per lavorare su livelli separati. Il posizionamento del modulo <code>composite</code> è critico: deve essere inserito <em>prima</em> di <code>tone curve</code>/<code>AGX</code>, ma <em>dopo</em> tutti i moduli di correzione base (esposizione, bilanciamento bianco, correzione ottica)<sup id="fnref3:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzioni base (exposure, white balance, lens correction)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Duplicazione → creazione livello “sfocato” (Orton) o “inversione + fusione” (Dragan)
@@ -3106,16 +3106,16 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Errore comune: ordine sbagliato di composite</p>
-<p>Se <code>composite</code> è posizionato <em>dopo</em> <code>AGX</code>, la fusione avviene su dati già compressi → risultati piatti, senza profondità. Verifica sempre la posizione con il pulsante <strong>Show module order</strong> (icona a tre puntini in alto a destra del pannello moduli)[^dragon-video].</p>
+<p>Se <code>composite</code> è posizionato <em>dopo</em> <code>AGX</code>, la fusione avviene su dati già compressi → risultati piatti, senza profondità. Verifica sempre la posizione con il pulsante <strong>Show module order</strong> (icona a tre puntini in alto a destra del pannello moduli)<sup id="fnref5:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </div>
 <hr />
 <h2 id="flusso-pratico-orton-effect-con-soften">Flusso pratico: Orton Effect con <code>soften</code><a class="headerlink" href="#flusso-pratico-orton-effect-con-soften" title="Permanent link">&para;</a></h2>
-<p>Il metodo più rapido e controllabile per l’Orton è usare il modulo <code>soften</code>, progettato appositamente per replicare il processo analogico di Michael Orton[^soften-manual].</p>
+<p>Il metodo più rapido e controllabile per l’Orton è usare il modulo <code>soften</code>, progettato appositamente per replicare il processo analogico di Michael Orton<sup id="fnref:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</p>
 <h3 id="passo-1-preparazione-base">Passo 1: Preparazione base<a class="headerlink" href="#passo-1-preparazione-base" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Applica <code>exposure</code>: regola l’esposizione globale a <strong>0.00 EV</strong> (non sovraesporre prima di soften).</li>
 <li>Usa <code>white balance</code>: imposta un bilanciamento neutro (es. preset <em>Daylight</em> o pipetta su grigio neutro).</li>
-<li>Attiva <code>lens correction</code>: correggi distorsione e vignettatura (<strong>distortion = 1.000</strong>, <strong>vignetting = 1.000</strong>)[^dragon-video].</li>
+<li>Attiva <code>lens correction</code>: correggi distorsione e vignettatura (<strong>distortion = 1.000</strong>, <strong>vignetting = 1.000</strong>)<sup id="fnref6:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</li>
 </ul>
 <h3 id="passo-2-configurazione-soften">Passo 2: Configurazione <code>soften</code><a class="headerlink" href="#passo-2-configurazione-soften" title="Permanent link">&para;</a></h3>
 <p>Attiva il modulo <code>soften</code> e imposta:</p>
@@ -3131,40 +3131,40 @@
 <tr>
 <td><strong>size</strong></td>
 <td><code>25–40%</code></td>
-<td>Controlla l’intensità della sfocatura. Valori &gt;40% generano un glow eccessivo e perdita di dettaglio[^orton-video].</td>
+<td>Controlla l’intensità della sfocatura. Valori &gt;40% generano un glow eccessivo e perdita di dettaglio<sup id="fnref7:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>saturation</strong></td>
 <td><code>80–100%</code></td>
-<td>Aumenta la vividezza del livello sfocato, fondamentale per il glow cromatico[^orton-video].</td>
+<td>Aumenta la vividezza del livello sfocato, fondamentale per il glow cromatico<sup id="fnref8:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>brightness</strong></td>
 <td><code>+0.70–+1.20 EV</code></td>
-<td>Sovraesposizione del livello sfocato: +1.00 EV è il valore standard per Orton[^soften-manual].</td>
+<td>Sovraesposizione del livello sfocato: +1.00 EV è il valore standard per Orton<sup id="fnref4:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>mix</strong></td>
 <td><code>45–55%</code></td>
-<td>Bilancia tra immagine nitida (base) e sfocata (glow). 50% = fusione perfetta[^soften-manual].</td>
+<td>Bilancia tra immagine nitida (base) e sfocata (glow). 50% = fusione perfetta<sup id="fnref5:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Modulo soften configurato per Orton: size 34.55%, saturation 100%, brightness +0.33 EV, mix 50%" src="../images/soften-orton-config.jpg" /></p>
 <h3 id="passo-3-affinamento-finale">Passo 3: Affinamento finale<a class="headerlink" href="#passo-3-affinamento-finale" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Aggiungi <code>AGX</code>: usa <strong>Contrast = 2.20–2.60</strong> (non &gt;3.00, altrimenti il glow diventa artificiale)[^orton-video].</li>
-<li>Usa <code>color balance rgb</code>: attenua leggermente il blu (<strong>Blue attenuation = 20%</strong>) prima di AGX per evitare clipping nei cieli[^dt54-update].</li>
-<li>Applica <code>vignetting</code>: bordo scuro sottile (<strong>strength = -15%</strong>, <strong>radius = 70%</strong>) per focalizzare l’attenzione sul centro[^lomos].</li>
+<li>Aggiungi <code>AGX</code>: usa <strong>Contrast = 2.20–2.60</strong> (non &gt;3.00, altrimenti il glow diventa artificiale)<sup id="fnref4:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</li>
+<li>Usa <code>color balance rgb</code>: attenua leggermente il blu (<strong>Blue attenuation = 20%</strong>) prima di AGX per evitare clipping nei cieli<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">7</a></sup>.</li>
+<li>Applica <code>vignetting</code>: bordo scuro sottile (<strong>strength = -15%</strong>, <strong>radius = 70%</strong>) per focalizzare l’attenzione sul centro<sup id="fnref2:lomos"><a class="footnote-ref" href="#fn:lomos">6</a></sup>.</li>
 </ul>
 <hr />
 <h2 id="flusso-pratico-dragan-effect-con-composite">Flusso pratico: Dragan Effect con <code>composite</code><a class="headerlink" href="#flusso-pratico-dragan-effect-con-composite" title="Permanent link">&para;</a></h2>
-<p>Il Dragan richiede 3 livelli: <strong>originale</strong>, <strong>sfocato invertito</strong>, <strong>fuso in Multiply</strong>. È un flusso avanzato ma preciso[^dragon-video].</p>
+<p>Il Dragan richiede 3 livelli: <strong>originale</strong>, <strong>sfocato invertito</strong>, <strong>fuso in Multiply</strong>. È un flusso avanzato ma preciso<sup id="fnref4:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 <h3 id="passo-1-creazione-dei-livelli">Passo 1: Creazione dei livelli<a class="headerlink" href="#passo-1-creazione-dei-livelli" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Clicca su <strong>Duplicate</strong> (icona copia nel pannello sinistro) → crea una copia.</li>
 <li>Nella copia, applica:</li>
-<li><code>blur</code>: <strong>blur_type = gaussian</strong>, <strong>blur_radius = 18–22 px</strong> (valore dipende dalla risoluzione: 20 px per 6000px larghezza)[^dragon-video].</li>
+<li><code>blur</code>: <strong>blur_type = gaussian</strong>, <strong>blur_radius = 18–22 px</strong> (valore dipende dalla risoluzione: 20 px per 6000px larghezza)<sup id="fnref7:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</li>
 <li><code>invert</code>: attiva il modulo <code>invert</code> (non presente di default: abilitalo in <em>preferences &gt; modules &gt; invert</em>).</li>
 <li>Torna all’immagine originale e attiva <code>composite</code>.</li>
 </ol>
@@ -3182,12 +3182,12 @@
 <tr>
 <td><strong>blend mode</strong></td>
 <td><code>Multiply</code></td>
-<td>Fondamentale: intensifica le ombre e mantiene i dettagli nelle luci[^dragon-video].</td>
+<td>Fondamentale: intensifica le ombre e mantiene i dettagli nelle luci<sup id="fnref13:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>opacity</strong></td>
 <td><code>85–95%</code></td>
-<td>Non al 100%: lascia trasparire un po’ di dettaglio dall’originale[^dragon-video].</td>
+<td>Non al 100%: lascia trasparire un po’ di dettaglio dall’originale<sup id="fnref14:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>mask</strong></td>
@@ -3204,10 +3204,10 @@
 <li><strong>midtones</strong> = <code>0.45–0.55</code>  </li>
 <li>
 <p><strong>black point</strong> = <code>-0.10 EV</code>, <strong>white point</strong> = <code>+0.05 EV</code><br />
-<em>(Questi valori evitano il clipping e preservano il dettaglio nei neri profondi)</em>[^dragon-video].</p>
+<em>(Questi valori evitano il clipping e preservano il dettaglio nei neri profondi)</em><sup id="fnref9:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </li>
 <li>
-<p>Usa <code>local contrast</code>: applica una maschera sul volto/soggetto con <strong>detail = 110–130%</strong>, <strong>highlights = 60%</strong>, <strong>shadows = 40%</strong> per enfatizzare texture senza bruciare le luci[^dragon-video].</p>
+<p>Usa <code>local contrast</code>: applica una maschera sul volto/soggetto con <strong>detail = 110–130%</strong>, <strong>highlights = 60%</strong>, <strong>shadows = 40%</strong> per enfatizzare texture senza bruciare le luci<sup id="fnref10:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </li>
 </ul>
 <hr />
@@ -3228,35 +3228,35 @@
 <td><code>soften</code></td>
 <td><code>size</code></td>
 <td><code>34.55%</code></td>
-<td>Valori &gt;45% rendono l’immagine “appannata”: controlla zoom 100% sui bordi[^orton-video].</td>
+<td>Valori &gt;45% rendono l’immagine “appannata”: controlla zoom 100% sui bordi<sup id="fnref9:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Orton</strong></td>
 <td><code>soften</code></td>
 <td><code>brightness</code></td>
 <td><code>+1.00 EV</code></td>
-<td>Se l’immagine appare troppo lavata, riduci a <code>+0.70 EV</code> e aumenta <code>saturation</code>[^soften-manual].</td>
+<td>Se l’immagine appare troppo lavata, riduci a <code>+0.70 EV</code> e aumenta <code>saturation</code><sup id="fnref6:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Dragan</strong></td>
 <td><code>blur</code></td>
 <td><code>blur_radius</code></td>
 <td><code>20 px</code></td>
-<td>Su immagini &lt;4000px, usa <code>12–15 px</code>. Troppo poco → nessun effetto; troppo → artefatti da aliasing[^dragon-video].</td>
+<td>Su immagini &lt;4000px, usa <code>12–15 px</code>. Troppo poco → nessun effetto; troppo → artefatti da aliasing<sup id="fnref15:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Dragan</strong></td>
 <td><code>composite</code></td>
 <td><code>opacity</code></td>
 <td><code>90%</code></td>
-<td>Valori &lt;80% indeboliscono il dramma; &gt;95% appiattiscono il volume tonale[^dragon-video].</td>
+<td>Valori &lt;80% indeboliscono il dramma; &gt;95% appiattiscono il volume tonale<sup id="fnref16:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Entrambi</strong></td>
 <td><code>AGX</code></td>
 <td><code>Shoulder power</code></td>
 <td><code>1.20–1.40</code></td>
-<td>Riduci rispetto al default (1.55) per preservare i dettagli nelle luci glow/drammatiche[^agx-guide].</td>
+<td>Riduci rispetto al default (1.55) per preservare i dettagli nelle luci glow/drammatiche<sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">8</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3267,35 +3267,56 @@
 <ol>
 <li>Lavora sempre su <strong>copia duplicata</strong>, mai sull’originale.  </li>
 <li>Usa <strong>snapshot</strong> per salvare stati intermedi (<em>Original</em>, <em>Orton base</em>, <em>Dragan full</em>).  </li>
-<li>Prima di esportare, verifica con <code>scopes</code> → <code>histogram</code>: il picco delle luci deve essere a <strong>~95–98%</strong>, mai al 100% (clipping)[^dragon-video].</li>
+<li>Prima di esportare, verifica con <code>scopes</code> → <code>histogram</code>: il picco delle luci deve essere a <strong>~95–98%</strong>, mai al 100% (clipping)<sup id="fnref11:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</li>
 </ol>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Cosa evitare assolutamente</p>
 <ul>
-<li><strong>Usare <code>soften</code> dopo <code>AGX</code></strong>: il glow viene compresso prematuramente → risultato opaco[^orton-video].  </li>
-<li><strong>Applicare <code>composite</code> in <code>Screen</code> per Dragan</strong>: genera alone innaturali e perdita di controllo sulle ombre[^dragon-video].  </li>
-<li><strong>Aumentare <code>saturation</code> oltre il 100% in <code>soften</code></strong>: introduce artefatti cromatici irreversibili[^soften-manual].</li>
+<li><strong>Usare <code>soften</code> dopo <code>AGX</code></strong>: il glow viene compresso prematuramente → risultato opaco<sup id="fnref6:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.  </li>
+<li><strong>Applicare <code>composite</code> in <code>Screen</code> per Dragan</strong>: genera alone innaturali e perdita di controllo sulle ombre<sup id="fnref12:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.  </li>
+<li><strong>Aumentare <code>saturation</code> oltre il 100% in <code>soften</code></strong>: introduce artefatti cromatici irreversibili<sup id="fnref3:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</li>
 </ul>
 </div>
 <hr />
 <h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">Video tutorial Orton in darktable (inglese)</a> — metodo <code>soften</code>, <code>blur</code> + <code>composite</code>[^orton-video]  </li>
-<li><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">Video tutorial Dragan in darktable (inglese)</a> — flusso completo con <code>composite</code>, <code>invert</code>, <code>sigmoid</code>[^dragon-video]  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/">Manuale ufficiale <code>soften</code></a> — documentazione tecnica completa[^soften-manual]  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/">Manuale ufficiale <code>composite</code></a> — spiegazione approfondita delle modalità di fusione[^composite-manual]  </li>
+<li><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">Video tutorial Orton in darktable (inglese)</a> — metodo <code>soften</code>, <code>blur</code> + <code>composite</code><sup id="fnref5:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">Video tutorial Dragan in darktable (inglese)</a> — flusso completo con <code>composite</code>, <code>invert</code>, <code>sigmoid</code><sup id="fnref8:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/">Manuale ufficiale <code>soften</code></a> — documentazione tecnica completa<sup id="fnref2:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/">Manuale ufficiale <code>composite</code></a> — spiegazione approfondita delle modalità di fusione<sup id="fnref:composite-manual"><a class="footnote-ref" href="#fn:composite-manual">4</a></sup>  </li>
 </ul>
 <hr />
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^orton-video]: A Dabble in Photography, <em>The Orton effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=OF7ZcDPQfeM<br />
-[^dragon-video]: A Dabble in Photography, <em>The Dragan effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=EuvG0lh8OB8<br />
-[^soften-manual]: darktable User Manual v4.8, <em>soften module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/<br />
-[^composite-manual]: darktable User Manual v4.8, <em>composite module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/<br />
-[^maxpayne]: darktable.fr, <em>Style Red Max Payne Effect</em>, 2016. URL: https://darktable.fr/posts/2016/03/style-red-max-payne-effect/<br />
-[^lomos]: darktable.fr, <em>Style Lomo's Effect</em>, 2016. URL: https://darktable.fr/posts/2016/04/style-lomos-effect/<br />
-[^dt54-update]: darktable 5.4 Release Notes, <em>AGX as default tone mapper</em>, https://github.com/darktable-org/darktable/releases/tag/release-5.4.0<br />
-[^agx-guide]: darktable Documentation, <em>AGX Tone Mapping Guide</em>, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:orton-video">
+<p>A Dabble in Photography, <em>The Orton effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=OF7ZcDPQfeM&#160;<a class="footnote-backref" href="#fnref:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragon-video">
+<p>A Dabble in Photography, <em>The Dragan effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=EuvG0lh8OB8&#160;<a class="footnote-backref" href="#fnref:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:soften-manual">
+<p>darktable User Manual v4.8, <em>soften module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/&#160;<a class="footnote-backref" href="#fnref:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:composite-manual">
+<p>darktable User Manual v4.8, <em>composite module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/&#160;<a class="footnote-backref" href="#fnref:composite-manual" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:maxpayne">
+<p>darktable.fr, <em>Style Red Max Payne Effect</em>, 2016. URL: https://darktable.fr/posts/2016/03/style-red-max-payne-effect/&#160;<a class="footnote-backref" href="#fnref:maxpayne" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lomos">
+<p>darktable.fr, <em>Style Lomo's Effect</em>, 2016. URL: https://darktable.fr/posts/2016/04/style-lomos-effect/&#160;<a class="footnote-backref" href="#fnref:lomos" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lomos" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-update">
+<p>darktable 5.4 Release Notes, <em>AGX as default tone mapper</em>, https://github.com/darktable-org/darktable/releases/tag/release-5.4.0&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-guide">
+<p>darktable Documentation, <em>AGX Tone Mapping Guide</em>, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx/&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

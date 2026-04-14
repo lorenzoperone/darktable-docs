@@ -3194,30 +3194,30 @@
 
 
 <h1 id="contrast-equalizer">Contrast Equalizer<a class="headerlink" href="#contrast-equalizer" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>contrast equalizer</strong> è uno strumento avanzato per il controllo del contrasto locale e globale basato sulla decomposizione wavelet. Opera nello spazio colore CIE LCh (Luminanza, Crominanza, Tonalità), permettendo di regolare separatamente luminosità (<em>luma</em>) e saturazione (<em>chroma</em>) a diverse scale di dettaglio — dalle strutture grossolane (<em>coarse</em>) a quelle finissime (<em>fine</em>) — senza introdurre artefatti cromatici o gradient reversal[^dt48-manual]. È il modulo di riferimento per nitidezza selettiva, bloom controllato, riduzione del rumore multiscala e chiaroscuro strutturale in darktable 5.4+[^dt54-update][^pixls-rgb].</p>
+<p>Il modulo <strong>contrast equalizer</strong> è uno strumento avanzato per il controllo del contrasto locale e globale basato sulla decomposizione wavelet. Opera nello spazio colore CIE LCh (Luminanza, Crominanza, Tonalità), permettendo di regolare separatamente luminosità (<em>luma</em>) e saturazione (<em>chroma</em>) a diverse scale di dettaglio — dalle strutture grossolane (<em>coarse</em>) a quelle finissime (<em>fine</em>) — senza introdurre artefatti cromatici o gradient reversal<sup id="fnref:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>. È il modulo di riferimento per nitidezza selettiva, bloom controllato, riduzione del rumore multiscala e chiaroscuro strutturale in darktable 5.4+<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">2</a></sup><sup id="fnref:pixls-rgb"><a class="footnote-ref" href="#fn:pixls-rgb">3</a></sup>.</p>
 <p><img alt="Interfaccia del modulo contrast equalizer con scheda luma attiva" src="../images/contrast-equalizer-luma-orig.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Contrast Equalizer ≠ Local Contrast</p>
-<p>Il modulo <em>local contrast</em> applica un filtro Laplaciano su una singola scala, mentre <em>contrast equalizer</em> lavora su <strong>6–7 scale wavelet indipendenti</strong>, offrendo granularità superiore e compatibilità con la pipeline scene-referred. Usalo quando hai bisogno di controllo fine (es. preservare i peli di un insetto senza accentuare il rumore dello sfondo)[^dt48-manual][^video-firststeps].</p>
+<p>Il modulo <em>local contrast</em> applica un filtro Laplaciano su una singola scala, mentre <em>contrast equalizer</em> lavora su <strong>6–7 scale wavelet indipendenti</strong>, offrendo granularità superiore e compatibilità con la pipeline scene-referred. Usalo quando hai bisogno di controllo fine (es. preservare i peli di un insetto senza accentuare il rumore dello sfondo)<sup id="fnref6:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup><sup id="fnref:video-firststeps"><a class="footnote-ref" href="#fn:video-firststeps">4</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Contrast Equalizer non è un semplice “sharpening”: è un sistema di equalizzazione frequenziale che agisce su tre dimensioni distinte:</p>
 <ol>
 <li><strong>Luma</strong> — Controllo del contrasto luminoso a ogni scala wavelet  </li>
 <li><strong>Chroma</strong> — Regolazione della saturazione cromatica a ogni scala  </li>
-<li><strong>Edges</strong> — Affinamento dell’<em>edge awareness</em> per prevenire <em>halo</em> e <em>gradient reversals</em>[^dt48-manual]</li>
+<li><strong>Edges</strong> — Affinamento dell’<em>edge awareness</em> per prevenire <em>halo</em> e <em>gradient reversals</em><sup id="fnref7:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup></li>
 </ol>
-<p>Opera in spazio <strong>CIE LCh</strong>, quindi è insensibile alle variazioni di bilanciamento del bianco e mantiene la linearità fisica dei dati fino alla fase finale della pipeline[^pixls-rgb]. Questo lo rende ideale per flussi scene-referred, dove il contrasto deve essere applicato <em>prima</em> del tone mapping (AGX/Sigmoid) e <em>dopo</em> la correzione tecnica (denoise, demosaic)[^dt54-update].</p>
+<p>Opera in spazio <strong>CIE LCh</strong>, quindi è insensibile alle variazioni di bilanciamento del bianco e mantiene la linearità fisica dei dati fino alla fase finale della pipeline<sup id="fnref2:pixls-rgb"><a class="footnote-ref" href="#fn:pixls-rgb">3</a></sup>. Questo lo rende ideale per flussi scene-referred, dove il contrasto deve essere applicato <em>prima</em> del tone mapping (AGX/Sigmoid) e <em>dopo</em> la correzione tecnica (denoise, demosaic)<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">2</a></sup>.</p>
 <h3 id="perche-usare-wavelet-invece-di-fft-o-laplaciano">Perché usare wavelet invece di FFT o Laplaciano?<a class="headerlink" href="#perche-usare-wavelet-invece-di-fft-o-laplaciano" title="Permanent link">&para;</a></h3>
 <p>A differenza dei filtri spaziali tradizionali, la decomposizione wavelet <em>à trous</em> utilizzata da contrast equalizer:
 - Preserva la località spaziale dei dettagli<br />
-- Non introduce aliasing o ringing[^dt48-manual]<br />
-- Permette di isolare e trattare separatamente rumore (alta frequenza) e struttura (bassa frequenza)[^video-diffuse-sharpen]<br />
-- È matematicamente equivalente al modulo <em>diffuse or sharpen</em>, ma con interfaccia più intuitiva[^video-diffuse-sharpen]</p>
+- Non introduce aliasing o ringing<sup id="fnref2:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup><br />
+- Permette di isolare e trattare separatamente rumore (alta frequenza) e struttura (bassa frequenza)<sup id="fnref:video-diffuse-sharpen"><a class="footnote-ref" href="#fn:video-diffuse-sharpen">5</a></sup><br />
+- È matematicamente equivalente al modulo <em>diffuse or sharpen</em>, ma con interfaccia più intuitiva<sup id="fnref2:video-diffuse-sharpen"><a class="footnote-ref" href="#fn:video-diffuse-sharpen">5</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare contrast equalizer prima del denoise</p>
 <p>Applicare contrast equalizer <em>prima</em> del denoise profilato amplifica il rumore, specialmente nelle alte luci. L’ordine corretto è:<br />
-<code>denoise profilato → contrast equalizer → tone mapping</code>[^dt54-update][^pixls-rgb]</p>
+<code>denoise profilato → contrast equalizer → tone mapping</code><sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">2</a></sup><sup id="fnref3:pixls-rgb"><a class="footnote-ref" href="#fn:pixls-rgb">3</a></sup></p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ottimale segue la gerarchia fisica della luce e dei sensori:</p>
@@ -3234,21 +3234,21 @@
 <h3 id="passo-1-imposta-la-scala-di-visualizzazione">Passo 1: Imposta la scala di visualizzazione<a class="headerlink" href="#passo-1-imposta-la-scala-di-visualizzazione" title="Permanent link">&para;</a></h3>
 <p>Prima di modificare qualsiasi curva, <strong>zooma all’80–100%</strong>. Le bande alternate (chiare/scure) nel fondo della griglia indicano quali scale sono visibili a quella risoluzione:<br />
 - Le bande <strong>visibili</strong> = scale che avranno effetto immediato<br />
-- Le bande <strong>non visibili</strong> = scale troppo piccole per essere percepite — evita di modificarle[^dt48-manual]  </p>
+- Le bande <strong>non visibili</strong> = scale troppo piccole per essere percepite — evita di modificarle<sup id="fnref3:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>  </p>
 <p><img alt="Griglia wavelet con bande alternate visibili" src="../images/contrast-equalizer-scale-zoom.jpg" /></p>
 <h3 id="passo-2-usa-la-modalita-difference-per-testare-le-curve">Passo 2: Usa la modalità “difference” per testare le curve<a class="headerlink" href="#passo-2-usa-la-modalita-difference-per-testare-le-curve" title="Permanent link">&para;</a></h3>
 <p>Attiva la <strong>modalità blend “difference”</strong> (clicca sull’icona della maschera nella barra degli strumenti). In questa modalità, solo le aree modificate appaiono in bianco/nero:<br />
 - Sollevare un punto sulla curva <em>luma</em> → compare il contorno dei dettagli a quella scala<br />
 - Sollevare un punto sulla curva <em>chroma</em> → compare la saturazione locale a quella scala<br />
-Questo ti permette di verificare <em>esattamente</em> quale struttura stai influenzando[^dt48-manual].</p>
+Questo ti permette di verificare <em>esattamente</em> quale struttura stai influenzando<sup id="fnref4:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</p>
 <h3 id="passo-3-regola-il-controllo-mix">Passo 3: Regola il controllo “mix”<a class="headerlink" href="#passo-3-regola-il-controllo-mix" title="Permanent link">&para;</a></h3>
 <p>Lo slider <strong>mix</strong> controlla l’intensità complessiva dell’effetto:<br />
 - <strong>Default</strong>: <code>1.000</code><br />
 - <strong>Valori positivi</strong> (<code>0.3–1.5</code>) → effetto progressivo<br />
 - <strong>Valori negativi</strong> (<code>-0.5–-1.0</code>) → inverte la curva (utile per <em>softening</em> o <em>de-emphasis</em>)<br />
-- <strong>Valore 0.000</strong> → disabilita completamente il modulo[^dt48-manual]</p>
+- <strong>Valore 0.000</strong> → disabilita completamente il modulo<sup id="fnref5:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup></p>
 <blockquote>
-<p>⚠️ Attenzione: Quando il mouse è sopra la curva, la preview mostra l’effetto come se <code>mix = 1.0</code>, indipendentemente dal valore reale. Allontana il mouse per vedere l’effetto effettivo[^dt48-manual].</p>
+<p>⚠️ Attenzione: Quando il mouse è sopra la curva, la preview mostra l’effetto come se <code>mix = 1.0</code>, indipendentemente dal valore reale. Allontana il mouse per vedere l’effetto effettivo<sup id="fnref8:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</p>
 </blockquote>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3265,31 +3265,31 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <td><strong>mix</strong></td>
 <td><code>-1.000</code> to <code>+2.000</code></td>
 <td><code>1.000</code></td>
-<td>Intensità globale dell’effetto. Valori negativi invertono la curva[^dt48-manual].</td>
+<td>Intensità globale dell’effetto. Valori negativi invertono la curva<sup id="fnref13:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>smooth</strong></td>
 <td><code>0.000</code> to <code>1.000</code></td>
 <td><code>0.000</code></td>
-<td>Smoothing della curva tra i punti di controllo. Utile per eliminare transizioni troppo brusche[^dt48-manual].</td>
+<td>Smoothing della curva tra i punti di controllo. Utile per eliminare transizioni troppo brusche<sup id="fnref14:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>luma curve</strong></td>
 <td><code>-1.000</code> to <code>+1.000</code> per ogni punto</td>
 <td><code>0.000</code> su tutti i punti</td>
-<td>Aumenta (+) o diminuisce (-) il contrasto luminoso a ciascuna scala wavelet[^dt48-manual].</td>
+<td>Aumenta (+) o diminuisce (-) il contrasto luminoso a ciascuna scala wavelet<sup id="fnref15:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>chroma curve</strong></td>
 <td><code>-1.000</code> to <code>+1.000</code> per ogni punto</td>
 <td><code>0.000</code> su tutti i punti</td>
-<td>Aumenta (+) o diminuisce (-) la saturazione cromatica a ciascuna scala[^dt48-manual].</td>
+<td>Aumenta (+) o diminuisce (-) la saturazione cromatica a ciascuna scala<sup id="fnref16:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>edges curve</strong></td>
 <td><code>-1.000</code> to <code>+1.000</code> per ogni punto</td>
 <td><code>0.000</code> su tutti i punti</td>
-<td>Regola la sensibilità ai bordi per prevenire halo. Valori &gt;0 aumentano l’edge awareness[^dt48-manual].</td>
+<td>Regola la sensibilità ai bordi per prevenire halo. Valori &gt;0 aumentano l’edge awareness<sup id="fnref17:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3306,7 +3306,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 | 6 | ~32 px | Blocchi tonali (ombre profonde, luci ampie) |<br />
 | 7 (destra) | ~64 px | Strutture molto grossolane (bloom, glow) |  </p>
 <blockquote>
-<p>🔍 Nota: Il numero massimo di scale dipende dalla risoluzione dell’immagine. Per immagini &lt; 2 MP, darktable usa automaticamente 6 scale[^video-diffuse-sharpen].</p>
+<p>🔍 Nota: Il numero massimo di scale dipende dalla risoluzione dell’immagine. Per immagini &lt; 2 MP, darktable usa automaticamente 6 scale<sup id="fnref3:video-diffuse-sharpen"><a class="footnote-ref" href="#fn:video-diffuse-sharpen">5</a></sup>.</p>
 </blockquote>
 <h2 id="uso-pratico-per-casi-duso-comuni">Uso pratico per casi d’uso comuni<a class="headerlink" href="#uso-pratico-per-casi-duso-comuni" title="Permanent link">&para;</a></h2>
 <h3 id="nitidezza-selettiva-sharpening">✅ Nitidezza selettiva (sharpening)<a class="headerlink" href="#nitidezza-selettiva-sharpening" title="Permanent link">&para;</a></h3>
@@ -3316,7 +3316,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>Scheda <strong>luma</strong>: solleva i punti di controllo alle scale <strong>1–3</strong> (valori tipici: <code>+0.25</code> a scala 1, <code>+0.15</code> a scala 2, <code>+0.10</code> a scala 3)  </li>
 <li>Scheda <strong>chroma</strong>: lascia a <code>0.000</code> o abbassa leggermente (<code>-0.05</code>) per evitare “fringe” cromatici  </li>
 <li>Scheda <strong>edges</strong>: imposta a <code>+0.10</code> su scale 1–2 per proteggere i bordi  </li>
-<li><strong>Consiglio</strong>: usa una maschera parametrica su <code>Jz</code> o <code>Cz</code> per limitare l’effetto alle zone con sufficiente crominanza[^video-masks-ep4].</li>
+<li><strong>Consiglio</strong>: usa una maschera parametrica su <code>Jz</code> o <code>Cz</code> per limitare l’effetto alle zone con sufficiente crominanza<sup id="fnref:video-masks-ep4"><a class="footnote-ref" href="#fn:video-masks-ep4">6</a></sup>.</li>
 </ul>
 <h3 id="bloom-glow-artistico">✅ Bloom / Glow artistico<a class="headerlink" href="#bloom-glow-artistico" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3325,7 +3325,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>Scheda <strong>luma</strong>: solleva solo il punto più a <strong>destra</strong> (scala 7) a <code>+0.40</code>  </li>
 <li>Scheda <strong>chroma</strong>: solleva il punto più a destra a <code>+0.20</code> per aggiungere calore al bloom  </li>
 <li><strong>mix</strong>: riduci a <code>0.600</code> per un effetto sottile  </li>
-<li><strong>Consiglio</strong>: combina con una maschera parametrica su <code>Jz &gt; 0.8</code> per limitare il bloom solo alle alte luci[^video-night-sky].</li>
+<li><strong>Consiglio</strong>: combina con una maschera parametrica su <code>Jz &gt; 0.8</code> per limitare il bloom solo alle alte luci<sup id="fnref:video-night-sky"><a class="footnote-ref" href="#fn:video-night-sky">8</a></sup>.</li>
 </ul>
 <h3 id="riduzione-del-rumore-multiscala">✅ Riduzione del rumore multiscala<a class="headerlink" href="#riduzione-del-rumore-multiscala" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3334,7 +3334,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>Scheda <strong>luma</strong>: abbassa i punti di controllo alle scale <strong>1–2</strong> a <code>-0.30</code>  </li>
 <li>Scheda <strong>chroma</strong>: abbassa i punti di controllo alle scale <strong>1–3</strong> a <code>-0.40</code>  </li>
 <li>Scheda <strong>edges</strong>: lascia a <code>0.000</code>  </li>
-<li><strong>Consiglio</strong>: usa <em>prima</em> il modulo <strong>denoise profilato</strong>, poi contrast equalizer solo per il rumore residuo[^dt54-update].</li>
+<li><strong>Consiglio</strong>: usa <em>prima</em> il modulo <strong>denoise profilato</strong>, poi contrast equalizer solo per il rumore residuo<sup id="fnref4:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">2</a></sup>.</li>
 </ul>
 <h3 id="recupero-dettagli-in-ombre-sfocate-low-light">✅ Recupero dettagli in ombre sfocate (low-light)<a class="headerlink" href="#recupero-dettagli-in-ombre-sfocate-low-light" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3343,7 +3343,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>Scheda <strong>luma</strong>: solleva leggermente le scale <strong>4–5</strong> (<code>+0.10</code>) per migliorare la definizione delle forme  </li>
 <li>Scheda <strong>chroma</strong>: abbassa leggermente le scale <strong>1–2</strong> (<code>-0.05</code>) per stabilizzare i colori  </li>
 <li><strong>mix</strong>: <code>0.700</code>  </li>
-<li><strong>Consiglio</strong>: abbinare con una maschera luminanza su <code>Jz &lt; 0.2</code> per isolare le ombre[^video-lowlight].</li>
+<li><strong>Consiglio</strong>: abbinare con una maschera luminanza su <code>Jz &lt; 0.2</code> per isolare le ombre<sup id="fnref:video-lowlight"><a class="footnote-ref" href="#fn:video-lowlight">7</a></sup>.</li>
 </ul>
 <h2 id="parametri-avanzati-della-curva">Parametri avanzati della curva<a class="headerlink" href="#parametri-avanzati-della-curva" title="Permanent link">&para;</a></h2>
 <p>Espandendo la sezione <em>Advanced Curve Parameters</em>, si accede a controlli di precisione:</p>
@@ -3386,7 +3386,7 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <p>I seguenti valori sono quasi sempre ottimali di default e devono essere modificati solo in casi specifici:<br />
 - <code>radius &gt; 64 px</code>: rischio di perdita di controllo locale<br />
 - <code>curve smoothing &gt; 0.300</code>: può appiattire dettagli fini<br />
-- <code>feathering radius &gt; 0.0</code> in assenza di maschera: inefficace[^dt48-manual]</p>
+- <code>feathering radius &gt; 0.0</code> in assenza di maschera: inefficace<sup id="fnref9:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup></p>
 </div>
 <h2 id="gestione-del-rumore-con-contrast-equalizer">Gestione del rumore con contrast equalizer<a class="headerlink" href="#gestione-del-rumore-con-contrast-equalizer" title="Permanent link">&para;</a></h2>
 <p>Contrast Equalizer include due spline di denoise integrate, una per <strong>luma</strong>, una per <strong>chroma</strong>, posizionate rispettivamente sotto le curve principali.</p>
@@ -3395,16 +3395,16 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>Si attiva cliccando <em>sopra</em> uno dei triangoli in basso e trascinando verso l’alto  </li>
 <li><strong>Effetto</strong>: riduce il rumore luminoso <em>solo</em> alla scala selezionata  </li>
 <li>
-<p><strong>Valore tipico</strong>: <code>+0.20</code> a scala 1 per ISO ≥ 1600[^dt48-manual]  </p>
+<p><strong>Valore tipico</strong>: <code>+0.20</code> a scala 1 per ISO ≥ 1600<sup id="fnref12:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>  </p>
 </li>
 <li>
 <p><strong>Spline chroma denoise</strong>:  </p>
 </li>
 <li>Simile alla luma, ma agisce sul rumore cromatico  </li>
-<li><strong>Valore tipico</strong>: <code>+0.35</code> a scala 1, <code>+0.15</code> a scala 2 (il rumore cromatico è più aggressivo alle scale fini)[^dt48-manual]  </li>
+<li><strong>Valore tipico</strong>: <code>+0.35</code> a scala 1, <code>+0.15</code> a scala 2 (il rumore cromatico è più aggressivo alle scale fini)<sup id="fnref10:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>  </li>
 </ul>
 <blockquote>
-<p>📌 Nota: Il denoise wavelet è più efficace su scale <strong>basse</strong> (1–3). Su scale alte (5–7) ha scarso effetto perché il rumore non esiste a quelle dimensioni[^dt48-manual].</p>
+<p>📌 Nota: Il denoise wavelet è più efficace su scale <strong>basse</strong> (1–3). Su scale alte (5–7) ha scarso effetto perché il rumore non esiste a quelle dimensioni<sup id="fnref11:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</p>
 </blockquote>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3416,14 +3416,35 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <li>PIXLS.US — Darktable 3: RGB or Lab? Which Modules? Help!  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-manual]: darktable 4.8 user manual - contrast equalizer, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/contrast-equalizer/#<br />
-[^dt54-update]: darktable 5.4 release notes &amp; pipeline update, https://www.darktable.org/2024/09/darktable-5-4-released/<br />
-[^pixls-rgb]: PIXLS.US — Darktable 3:RGB or Lab? Which Modules? Help!, https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/<br />
-[^video-firststeps]: [ENG] Darktable first steps EP05, https://www.youtube.com/watch?v=sgW4oOtLeNs<br />
-[^video-diffuse-sharpen]: [ENG] The diffuse and sharpen module, https://www.youtube.com/watch?v=jHlPh7gt3Y0<br />
-[^video-masks-ep4]: [ENG] darktable masks Episode 4, https://www.youtube.com/watch?v=4z70D5zRAXw<br />
-[^video-lowlight]: [ENG] Lowlight photos in darktable, https://www.youtube.com/watch?v=O7wXgmQZqiU<br />
-[^video-night-sky]: [ENG] darktable Night Sky Full Edit, https://www.youtube.com/watch?v=5P0Yj_vqy5w</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-manual">
+<p>darktable 4.8 user manual - contrast equalizer, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/contrast-equalizer/#&#160;<a class="footnote-backref" href="#fnref:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-update">
+<p>darktable 5.4 release notes &amp; pipeline update, https://www.darktable.org/2024/09/darktable-5-4-released/&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt54-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt54-update" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-rgb">
+<p>PIXLS.US — Darktable 3:RGB or Lab? Which Modules? Help!, https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/&#160;<a class="footnote-backref" href="#fnref:pixls-rgb" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-rgb" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pixls-rgb" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:video-firststeps">
+<p>[ENG] Darktable first steps EP05, https://www.youtube.com/watch?v=sgW4oOtLeNs&#160;<a class="footnote-backref" href="#fnref:video-firststeps" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:video-diffuse-sharpen">
+<p>[ENG] The diffuse and sharpen module, https://www.youtube.com/watch?v=jHlPh7gt3Y0&#160;<a class="footnote-backref" href="#fnref:video-diffuse-sharpen" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:video-diffuse-sharpen" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:video-diffuse-sharpen" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:video-masks-ep4">
+<p>[ENG] darktable masks Episode 4, https://www.youtube.com/watch?v=4z70D5zRAXw&#160;<a class="footnote-backref" href="#fnref:video-masks-ep4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:video-lowlight">
+<p>[ENG] Lowlight photos in darktable, https://www.youtube.com/watch?v=O7wXgmQZqiU&#160;<a class="footnote-backref" href="#fnref:video-lowlight" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:video-night-sky">
+<p>[ENG] darktable Night Sky Full Edit, https://www.youtube.com/watch?v=5P0Yj_vqy5w&#160;<a class="footnote-backref" href="#fnref:video-night-sky" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

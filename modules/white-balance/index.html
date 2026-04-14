@@ -3060,25 +3060,25 @@
 
 
 <h1 id="white-balance">White Balance<a class="headerlink" href="#white-balance" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>white balance</strong> è il primo modulo tecnico della pipeline di elaborazione RAW in darktable, responsabile della correzione obbligatoria del bilanciamento del bianco prima che i dati possano essere correttamente demosaicati e processati. Il suo scopo non è creativo ma <em>tecnico</em>: garantire che i grigi neutri della scena siano resi con valori RGB uguali (R = G = B) nel flusso di lavoro[^wb-manual]. A differenza di Lightroom, dove il bilanciamento del bianco è un singolo strumento flessibile, in darktable esso opera in sinergia con il modulo <strong>color calibration</strong>, che gestisce la successiva adattazione cromatica percepita[^color-calib-manual].</p>
+<p>Il modulo <strong>white balance</strong> è il primo modulo tecnico della pipeline di elaborazione RAW in darktable, responsabile della correzione obbligatoria del bilanciamento del bianco prima che i dati possano essere correttamente demosaicati e processati. Il suo scopo non è creativo ma <em>tecnico</em>: garantire che i grigi neutri della scena siano resi con valori RGB uguali (R = G = B) nel flusso di lavoro<sup id="fnref:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>. A differenza di Lightroom, dove il bilanciamento del bianco è un singolo strumento flessibile, in darktable esso opera in sinergia con il modulo <strong>color calibration</strong>, che gestisce la successiva adattazione cromatica percepita<sup id="fnref:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.</p>
 <p><img alt="Introduzione al modulo white balance" src="../images/white-balance-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">White balance è obbligatorio — non opzionale</p>
-<p>Il modulo <code>white balance</code> è attivo per ogni immagine RAW caricata e <strong>non può essere disattivato</strong>. Anche se impostato su “as shot”, i suoi coefficienti RGB vengono comunque calcolati e applicati per permettere al modulo <code>demosaic</code> di funzionare correttamente[^wb-manual]. Questo è un requisito tecnico del flusso RAW, non una scelta editoriale.</p>
+<p>Il modulo <code>white balance</code> è attivo per ogni immagine RAW caricata e <strong>non può essere disattivato</strong>. Anche se impostato su “as shot”, i suoi coefficienti RGB vengono comunque calcolati e applicati per permettere al modulo <code>demosaic</code> di funzionare correttamente<sup id="fnref6:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>. Questo è un requisito tecnico del flusso RAW, non una scelta editoriale.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo <code>white balance</code> opera esclusivamente sui dati RAW <em>prima</em> dell’applicazione del profilo colore d’ingresso (<code>input color profile</code>) e del demosaicing. I suoi parametri influenzano direttamente i coefficienti RGB che moltiplicano i canali del sensore, determinando così come verrà interpretata la luce incidente. La sua azione è fondamentale perché:</p>
 <ul>
 <li>Un bilanciamento errato genera dominanti cromatiche che compromettono tutti i moduli successivi (es. <code>exposure</code>, <code>filmic rgb</code>, <code>color balance rgb</code>)</li>
-<li>Senza una correzione accurata, il modulo <code>demosaic</code> produce artefatti cromatici e perdita di dettaglio, specialmente nelle zone con transizioni morbide o texture fini[^wb-manual][^pipeline-beginner]</li>
+<li>Senza una correzione accurata, il modulo <code>demosaic</code> produce artefatti cromatici e perdita di dettaglio, specialmente nelle zone con transizioni morbide o texture fini<sup id="fnref7:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup><sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></li>
 </ul>
 <p>Il modulo fornisce tre modalità di controllo complementari:
 1. <strong>Temperature &amp; Tint</strong>: interfaccia intuitiva basata su Kelvin e correzione magenta-verde
 2. <strong>Presets</strong>: preimpostazioni derivate dai metadati EXIF della fotocamera (es. “sunny”, “cloudy”, “tungsten”)
-3. <strong>Channel coefficients</strong>: controllo diretto e preciso dei moltiplicatori RGB (da 0.000 a 8.000), usato internamente da tutti gli altri metodi[^wb-manual]</p>
+3. <strong>Channel coefficients</strong>: controllo diretto e preciso dei moltiplicatori RGB (da 0.000 a 8.000), usato internamente da tutti gli altri metodi<sup id="fnref2:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alla compatibilità tra fotocamere</p>
-<p>I coefficienti RGB calcolati da temperature/tint dipendono dalle caratteristiche specifiche del sensore e del firmware della fotocamera. Applicare le impostazioni di bilanciamento di una Canon su un file Fujifilm produrrà risultati imprevedibili e spesso errati[^wb-manual]. Per questo motivo, i preset sono generati per modello di fotocamera e non sono trasferibili.</p>
+<p>I coefficienti RGB calcolati da temperature/tint dipendono dalle caratteristiche specifiche del sensore e del firmware della fotocamera. Applicare le impostazioni di bilanciamento di una Canon su un file Fujifilm produrrà risultati imprevedibili e spesso errati<sup id="fnref8:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>. Per questo motivo, i preset sono generati per modello di fotocamera e non sono trasferibili.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ideale per il bilanciamento del bianco segue una sequenza rigorosa, specie nei workflow <em>scene-referred</em> (AGX, Filmic RGB):</p>
@@ -3093,12 +3093,12 @@
 <p><img alt="White balance nella pipeline scene-referred" src="../images/pipeline-wb-scene-referred.jpg" /></p>
 <h3 id="passo-1-diagnosi-visiva-con-listogramma-rgb">Passo 1: Diagnosi visiva con l’istogramma RGB<a class="headerlink" href="#passo-1-diagnosi-visiva-con-listogramma-rgb" title="Permanent link">&para;</a></h3>
 <p>Prima di qualsiasi regolazione, osserva l’istogramma RGB nel pannello destro:<br />
-- Se un canale domina nettamente (es. verde molto più alto di rosso/blu), l’immagine appare con una forte dominante cromatica (tipicamente verde, poiché i sensori Bayer hanno il doppio dei pixel verdi)[^wb-manual][^pipeline-beginner]<br />
+- Se un canale domina nettamente (es. verde molto più alto di rosso/blu), l’immagine appare con una forte dominante cromatica (tipicamente verde, poiché i sensori Bayer hanno il doppio dei pixel verdi)<sup id="fnref3:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup><sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup><br />
 - L’immagine apparirà “verde” anche se il bilanciamento è tecnicamente corretto: questo è normale e sarà risolto solo dopo il demosaicing e il profilo colore</p>
 <p><img alt="Istogramma RGB con dominante verde tipica di un RAW non bilanciato" src="../images/wb-histogram-green-dominant.jpg" /></p>
 <h3 id="passo-2-partenza-dal-preset-as-shot">Passo 2: Partenza dal preset “as shot”<a class="headerlink" href="#passo-2-partenza-dal-preset-as-shot" title="Permanent link">&para;</a></h3>
-<p>Il preset predefinito è <strong>as shot</strong>, che legge direttamente i metadati EXIF della fotocamera. È il punto di partenza più affidabile, soprattutto se la fotocamera era stata impostata correttamente sul campo[^wb-manual].<br />
-- <strong>Non modificare mai</strong> <code>white balance</code> prima di aver verificato che <code>input color profile</code> sia impostato su “scene-referred default” o “embedded” — un profilo errato invalida ogni regolazione successiva[^color-calib-manual]</p>
+<p>Il preset predefinito è <strong>as shot</strong>, che legge direttamente i metadati EXIF della fotocamera. È il punto di partenza più affidabile, soprattutto se la fotocamera era stata impostata correttamente sul campo<sup id="fnref4:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.<br />
+- <strong>Non modificare mai</strong> <code>white balance</code> prima di aver verificato che <code>input color profile</code> sia impostato su “scene-referred default” o “embedded” — un profilo errato invalida ogni regolazione successiva<sup id="fnref2:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup></p>
 <h3 id="passo-3-correzione-con-la-pipetta-from-image-area">Passo 3: Correzione con la pipetta “from image area”<a class="headerlink" href="#passo-3-correzione-con-la-pipetta-from-image-area" title="Permanent link">&para;</a></h3>
 <p>Per precisione massima, usa la funzione <strong>from image area</strong>:<br />
 - Disegna un rettangolo su una zona <em>effettivamente neutra</em> (es. carta grigia, asfalto asciutto, parete bianca non illuminata da luci colorate)<br />
@@ -3107,10 +3107,10 @@
   - <code>red</code>: 1.200 – 3.500<br />
   - <code>green</code>: 1.000 (valore di riferimento, fissato a 1.000)<br />
   - <code>blue</code>: 1.300 – 4.200<br />
-<em>(es. screenshot video: red=2.009, green=1.000, blue=1.450)[^wb-video-1]</em></p>
+<em>(es. screenshot video: red=2.009, green=1.000, blue=1.450)<sup id="fnref:wb-video-1"><a class="footnote-ref" href="#fn:wb-video-1">3</a></sup></em></p>
 <div class="admonition tip">
 <p class="admonition-title">Area neutra ≠ superficie bianca</p>
-<p>Una superficie bianca sotto luce fluorescente non è neutra: contiene una dominante verde. Cerca aree con riflettanza uniforme e bassa saturazione cromatica. Se non trovi nulla, usa “AI detect from surfaces” in <code>color calibration</code> come backup[^color-calib-manual].</p>
+<p>Una superficie bianca sotto luce fluorescente non è neutra: contiene una dominante verde. Cerca aree con riflettanza uniforme e bassa saturazione cromatica. Se non trovi nulla, usa “AI detect from surfaces” in <code>color calibration</code> come backup<sup id="fnref5:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3127,31 +3127,31 @@
 <td><strong>temperature</strong></td>
 <td>2000 K – 15000 K</td>
 <td>~5000–6500 K (dipende dalla fotocamera)</td>
-<td>Regola la temperatura cromatica. Valori bassi → tonalità fredde (blu); alti → tonalità calde (giallo/oro). Usato per bilanciare luci da lampade, sole, flash[^wb-manual].</td>
+<td>Regola la temperatura cromatica. Valori bassi → tonalità fredde (blu); alti → tonalità calde (giallo/oro). Usato per bilanciare luci da lampade, sole, flash<sup id="fnref10:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>tint</strong></td>
 <td>0.10 – 10.00</td>
 <td>1.00</td>
-<td>Corregge la dominante magenta-verde. &lt;1.00 → più magenta; &gt;1.00 → più verde. Fondamentale per compensare aberrazioni cromatiche e illuminazione artificiale[^wb-manual].</td>
+<td>Corregge la dominante magenta-verde. &lt;1.00 → più magenta; &gt;1.00 → più verde. Fondamentale per compensare aberrazioni cromatiche e illuminazione artificiale<sup id="fnref11:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>red channel</strong></td>
 <td>0.000 – 8.000</td>
 <td>variabile (calcolato)</td>
-<td>Coefficiente moltiplicativo per il canale rosso. Aumentarlo schiarisce i rossi; diminuirlo li scurisce. Valore tipico: 1.800–2.500 per scene esterne[^wb-manual].</td>
+<td>Coefficiente moltiplicativo per il canale rosso. Aumentarlo schiarisce i rossi; diminuirlo li scurisce. Valore tipico: 1.800–2.500 per scene esterne<sup id="fnref12:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>green channel</strong></td>
 <td>0.000 – 8.000</td>
 <td><strong>1.000</strong> (fisso)</td>
-<td>Canale di riferimento. Non modificabile manualmente: tutti gli altri coefficienti sono relativi a questo valore[^wb-manual].</td>
+<td>Canale di riferimento. Non modificabile manualmente: tutti gli altri coefficienti sono relativi a questo valore<sup id="fnref13:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>blue channel</strong></td>
 <td>0.000 – 8.000</td>
 <td>variabile (calcolato)</td>
-<td>Coefficiente moltiplicativo per il canale blu. Tipicamente più alto del rosso in condizioni di luce fredda (es. 2.800–3.600)[^wb-manual].</td>
+<td>Coefficiente moltiplicativo per il canale blu. Tipicamente più alto del rosso in condizioni di luce fredda (es. 2.800–3.600)<sup id="fnref14:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3160,7 +3160,7 @@
 <p>Le barre di regolazione possono essere personalizzate in <strong>Preferences &gt; Darkroom &gt; white balance slider colors</strong>:<br />
 - <strong>no color</strong> (default): slider monocromatici<br />
 - <strong>illuminant color</strong>: il colore dello slider rappresenta la luce da cui ti stai bilanciando (es. blu per luce fredda)<br />
-- <strong>effect emulation</strong>: il colore rappresenta l’effetto applicato all’immagine (es. giallo per riscaldare)[^wb-manual]</p>
+- <strong>effect emulation</strong>: il colore rappresenta l’effetto applicato all’immagine (es. giallo per riscaldare)<sup id="fnref5:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup></p>
 <h2 id="presets-avanzati-e-uso-professionale">Presets avanzati e uso professionale<a class="headerlink" href="#presets-avanzati-e-uso-professionale" title="Permanent link">&para;</a></h2>
 <p>Oltre ai preset standard (“as shot”, “cloudy”, “tungsten”), darktable offre due preset strategici per il workflow professionale:</p>
 <table>
@@ -3174,22 +3174,22 @@
 <tbody>
 <tr>
 <td><strong>camera reference</strong></td>
-<td>Per calibrazione precisa o quando si usano profili custom. Imposta la temperatura a D65 (~6502 K) e calcola i coefficienti per convertire il bianco della fotocamera in sRGB D65[^wb-manual].</td>
+<td>Per calibrazione precisa o quando si usano profili custom. Imposta la temperatura a D65 (~6502 K) e calcola i coefficienti per convertire il bianco della fotocamera in sRGB D65<sup id="fnref15:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 <td><code>temperature</code>: 6502 K, <code>tint</code>: 1.000, <code>red</code>: 1.972, <code>blue</code>: 2.410</td>
 </tr>
 <tr>
 <td><strong>user modified</strong></td>
-<td>Automaticamente selezionato dopo ogni modifica manuale. Permette di tornare rapidamente allo stato più recente senza dover salvare un preset[^wb-manual].</td>
+<td>Automaticamente selezionato dopo ogni modifica manuale. Permette di tornare rapidamente allo stato più recente senza dover salvare un preset<sup id="fnref16:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.</td>
 <td>Dinamico — memorizza l’ultima combinazione modificata</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Crea preset specifici per fotocamera</p>
-<p>Per ottenere coerenza assoluta tra immagini della stessa sessione, scatta una foto su un foglio bianco o grigio neutro sotto la stessa illuminazione. Usa <code>from image area</code> su quell’immagine, quindi salva un preset con nome come <code>GFX100S-studio-D65</code>. Questo preset sarà disponibile <em>solo</em> per immagini della stessa fotocamera[^wb-video-1].</p>
+<p>Per ottenere coerenza assoluta tra immagini della stessa sessione, scatta una foto su un foglio bianco o grigio neutro sotto la stessa illuminazione. Usa <code>from image area</code> su quell’immagine, quindi salva un preset con nome come <code>GFX100S-studio-D65</code>. Questo preset sarà disponibile <em>solo</em> per immagini della stessa fotocamera<sup id="fnref2:wb-video-1"><a class="footnote-ref" href="#fn:wb-video-1">3</a></sup>.</p>
 </div>
 <h2 id="relazione-con-color-calibration">Relazione con color calibration<a class="headerlink" href="#relazione-con-color-calibration" title="Permanent link">&para;</a></h2>
-<p>Il modulo <code>white balance</code> non sostituisce <code>color calibration</code>: ne è il <em>prerequisito tecnico</em>. Mentre <code>white balance</code> garantisce che i grigi siano neutri, <code>color calibration</code> (nella scheda <strong>CAT</strong>) effettua una vera e propria <em>adattazione cromatica</em> per simulare come la scena sarebbe apparsa sotto un diverso illuminante (es. D50 del monitor vs luce solare reale)[^color-calib-manual].</p>
+<p>Il modulo <code>white balance</code> non sostituisce <code>color calibration</code>: ne è il <em>prerequisito tecnico</em>. Mentre <code>white balance</code> garantisce che i grigi siano neutri, <code>color calibration</code> (nella scheda <strong>CAT</strong>) effettua una vera e propria <em>adattazione cromatica</em> per simulare come la scena sarebbe apparsa sotto un diverso illuminante (es. D50 del monitor vs luce solare reale)<sup id="fnref3:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.</p>
 <ul>
 <li><code>white balance</code> → “rendi neutro il grigio”  </li>
 <li><code>color calibration</code> → “fai sembrare questa scena come se fosse stata illuminata da D50”  </li>
@@ -3197,14 +3197,14 @@
 <p>Per abilitare il workflow moderno:<br />
 1. Vai in <strong>Preferences &gt; Processing &gt; auto-apply chromatic adaptation defaults</strong><br />
 2. Seleziona <strong>modern</strong> (anziché legacy)<br />
-3. <code>color calibration</code> verrà applicato automaticamente <em>dopo</em> <code>white balance</code>, con parametri ottimizzati per CAT16[^color-calib-manual]</p>
+3. <code>color calibration</code> verrà applicato automaticamente <em>dopo</em> <code>white balance</code>, con parametri ottimizzati per CAT16<sup id="fnref4:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup></p>
 <p><img alt="Relazione white balance / color calibration nella pipeline" src="../images/wb-vs-colorcalib-pipeline.jpg" /></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non usare mai temperature &gt; 10000 K o &lt; 3000 K</strong> senza verifica: valori estremi possono generare coefficienti RGB non fisicamente plausibili, causando clipping cromatico irrecuperabile[^wb-manual].  </li>
-<li><strong>Abilita sempre la visualizzazione “display sample in vectorscope”</strong> quando usi la pipetta: ti mostra in tempo reale se il campione è davvero neutro (punto centrale del vettore)[^wb-video-1].  </li>
-<li><strong>Evita di regolare <code>white balance</code> dopo <code>color calibration</code></strong>: la gerarchia è fissa — ogni modifica successiva invalida l’adattazione cromatica già calcolata[^color-calib-manual].  </li>
-<li><strong>Per immagini notturne con luci miste</strong>, usa <code>color calibration</code> &gt; <strong>(AI) detect from edges</strong>, che identifica meglio le transizioni cromatiche rispetto alla media globale[^color-calib-manual].</li>
+<li><strong>Non usare mai temperature &gt; 10000 K o &lt; 3000 K</strong> senza verifica: valori estremi possono generare coefficienti RGB non fisicamente plausibili, causando clipping cromatico irrecuperabile<sup id="fnref9:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.  </li>
+<li><strong>Abilita sempre la visualizzazione “display sample in vectorscope”</strong> quando usi la pipetta: ti mostra in tempo reale se il campione è davvero neutro (punto centrale del vettore)<sup id="fnref3:wb-video-1"><a class="footnote-ref" href="#fn:wb-video-1">3</a></sup>.  </li>
+<li><strong>Evita di regolare <code>white balance</code> dopo <code>color calibration</code></strong>: la gerarchia è fissa — ogni modifica successiva invalida l’adattazione cromatica già calcolata<sup id="fnref6:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.  </li>
+<li><strong>Per immagini notturne con luci miste</strong>, usa <code>color calibration</code> &gt; <strong>(AI) detect from edges</strong>, che identifica meglio le transizioni cromatiche rispetto alla media globale<sup id="fnref7:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3215,11 +3215,26 @@
 <li>[ENG] Filmic &amp; Sigmoid Part 4 — Exposure and white balance setup (<a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0">YouTube</a>)</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^wb-manual]: darktable 4.8 user manual - white balance, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/white-balance/<br />
-[^color-calib-manual]: darktable 4.8 user manual - color calibration, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/<br />
-[^wb-video-1]: [ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU<br />
-[^pipeline-beginner]: [ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo<br />
-[^wb-video-2]: [ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:wb-manual">
+<p>darktable 4.8 user manual - white balance, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/white-balance/&#160;<a class="footnote-backref" href="#fnref:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:wb-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-calib-manual">
+<p>darktable 4.8 user manual - color calibration, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/&#160;<a class="footnote-backref" href="#fnref:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:color-calib-manual" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wb-video-1">
+<p>[ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU&#160;<a class="footnote-backref" href="#fnref:wb-video-1" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:wb-video-1" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:wb-video-1" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p>[ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wb-video-2">
+<p>[ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0&#160;<a class="footnote-backref" href="#fnref:wb-video-2" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

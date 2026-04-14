@@ -3004,20 +3004,20 @@
 
 
 <h1 id="input-color-profile">Input Color Profile<a class="headerlink" href="#input-color-profile" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>input color profile</strong> definisce come darktable interpreterà i dati cromatici dell’immagine in ingresso, convertendoli dallo spazio colore nativo della sorgente (fotocamera, scanner, file JPEG/TIFF) a uno spazio colore di lavoro standardizzato. È il primo modulo <em>obbligatorio</em> nella pipeline di elaborazione RAW e agisce prima di qualsiasi regolazione espositiva o cromatica — un errore qui compromette irreversibilmente tutti i passaggi successivi[^manual-48-input].</p>
+<p>Il modulo <strong>input color profile</strong> definisce come darktable interpreterà i dati cromatici dell’immagine in ingresso, convertendoli dallo spazio colore nativo della sorgente (fotocamera, scanner, file JPEG/TIFF) a uno spazio colore di lavoro standardizzato. È il primo modulo <em>obbligatorio</em> nella pipeline di elaborazione RAW e agisce prima di qualsiasi regolazione espositiva o cromatica — un errore qui compromette irreversibilmente tutti i passaggi successivi<sup id="fnref:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 <p><img alt="Introduzione al modulo input color profile" src="../images/input-color-profile-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Posizione critica nella pipeline</p>
-<p>Il modulo <code>input color profile</code> si trova <strong>subito dopo <code>raw black/white point</code></strong> e <strong>prima di <code>white balance</code></strong>, nel flusso scene-referred. Non è modificabile per immagini RAW: se disabilitato, appare grigio e bloccato nella pipeline[^pipeline-beginner]. Questa posizione garantisce che la mappatura colore avvenga sui dati grezzi, non su valori già bilanciati o esposti[^manual-48-input].</p>
+<p>Il modulo <code>input color profile</code> si trova <strong>subito dopo <code>raw black/white point</code></strong> e <strong>prima di <code>white balance</code></strong>, nel flusso scene-referred. Non è modificabile per immagini RAW: se disabilitato, appare grigio e bloccato nella pipeline<sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup>. Questa posizione garantisce che la mappatura colore avvenga sui dati grezzi, non su valori già bilanciati o esposti<sup id="fnref6:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo svolge tre funzioni fondamentali:</p>
 <ol>
-<li><strong>Mappatura del colore da sensore</strong> — applica una matrice colore specifica per il modello di fotocamera (es. <code>enhanced matrix</code> per Fujifilm X-T2) o usa una matrice standard quando non disponibile[^manual-48-input].</li>
-<li><strong>Gestione profili ICC embedded</strong> — riconosce e applica automaticamente i profili ICC inclusi in file JPEG, TIFF o DNG[^manual-48-input]. Se presente, il tooltip sul menù a tendina mostra i dettagli del profilo (nome, versione, intento).</li>
-<li><strong>Controllo del gamut</strong> — limita i colori fuori gamma tramite <em>gamut clipping</em>, prevenendo artefatti come pixel neri in aree di blu saturi (es. cieli al tramonto con luci LED)[^manual-48-input].</li>
+<li><strong>Mappatura del colore da sensore</strong> — applica una matrice colore specifica per il modello di fotocamera (es. <code>enhanced matrix</code> per Fujifilm X-T2) o usa una matrice standard quando non disponibile<sup id="fnref7:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</li>
+<li><strong>Gestione profili ICC embedded</strong> — riconosce e applica automaticamente i profili ICC inclusi in file JPEG, TIFF o DNG<sup id="fnref8:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>. Se presente, il tooltip sul menù a tendina mostra i dettagli del profilo (nome, versione, intento).</li>
+<li><strong>Controllo del gamut</strong> — limita i colori fuori gamma tramite <em>gamut clipping</em>, prevenendo artefatti come pixel neri in aree di blu saturi (es. cieli al tramonto con luci LED)<sup id="fnref9:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</li>
 </ol>
-<p>A differenza di Lightroom, darktable non “assume” uno spazio colore di ingresso: ogni RAW viene trattato con una matrice calibrata per quel sensore, garantendo coerenza tra modelli diversi[^dt54-update]. Per immagini non-RAW (JPEG), il modulo è invece opzionale e può essere bypassato.</p>
+<p>A differenza di Lightroom, darktable non “assume” uno spazio colore di ingresso: ogni RAW viene trattato con una matrice calibrata per quel sensore, garantendo coerenza tra modelli diversi<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup>. Per immagini non-RAW (JPEG), il modulo è invece opzionale e può essere bypassato.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ottimale è semplice ma rigido:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. raw black/white point (automatico)
@@ -3028,22 +3028,22 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Non modificare mai input color profile su RAW</p>
-<p>Per file RAW, lascia sempre <code>input profile</code> impostato su <strong><code>camera default</code></strong> o <strong><code>enhanced matrix</code></strong> (se disponibile per la tua fotocamera). Modificarlo manualmente introduce errori di mappatura cromatica difficili da diagnosticare, specialmente con colori neutri e pelle[^pipeline-beginner][^manual-48-input].</p>
+<p>Per file RAW, lascia sempre <code>input profile</code> impostato su <strong><code>camera default</code></strong> o <strong><code>enhanced matrix</code></strong> (se disponibile per la tua fotocamera). Modificarlo manualmente introduce errori di mappatura cromatica difficili da diagnosticare, specialmente con colori neutri e pelle<sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup><sup id="fnref10:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-verifica-del-profilo-automatico">Passo 1: Verifica del profilo automatico<a class="headerlink" href="#passo-1-verifica-del-profilo-automatico" title="Permanent link">&para;</a></h3>
 <p>All’apertura di un RAW:
 - Controlla che il menù <code>input profile</code> mostri una voce specifica per la tua fotocamera (es. <code>Fujifilm X-T2 enhanced matrix</code>) anziché <code>generic matrix</code>.
-- Se vedi <code>embedded icc profile</code>, significa che l’immagine non è RAW ma JPEG/TIFF/DNG con profilo incorporato[^manual-48-input].
-- Usa il tooltip (passa il mouse sul menù) per verificare i dettagli: nome del profilo, gamma, intento di rendering[^manual-48-input].</p>
+- Se vedi <code>embedded icc profile</code>, significa che l’immagine non è RAW ma JPEG/TIFF/DNG con profilo incorporato<sup id="fnref2:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.
+- Usa il tooltip (passa il mouse sul menù) per verificare i dettagli: nome del profilo, gamma, intento di rendering<sup id="fnref3:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 <p><img alt="Input color profile nella pipeline RAW" src="../images/pipeline-input-profile-raw.jpg" /></p>
 <h3 id="passo-2-profilo-personalizzato-solo-per-casi-avanzati">Passo 2: Profilo personalizzato (solo per casi avanzati)<a class="headerlink" href="#passo-2-profilo-personalizzato-solo-per-casi-avanzati" title="Permanent link">&para;</a></h3>
 <p>Puoi fornire un profilo ICC personalizzato solo se:
 - Hai generato un profilo con uno strumento esterno (es. <code>Argyll CMS</code>, <code>DisplayCAL</code>)
-- Lo hai salvato nella cartella <code>$HOME/.config/darktable/color/in/</code> (creala manualmente se assente)[^manual-48-input]
-- Hai attivato il modulo <code>unbreak input profile</code> per abilitarne l’uso[^manual-48-input]</p>
+- Lo hai salvato nella cartella <code>$HOME/.config/darktable/color/in/</code> (creala manualmente se assente)<sup id="fnref4:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>
+- Hai attivato il modulo <code>unbreak input profile</code> per abilitarne l’uso<sup id="fnref5:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Profilazione custom = rischio alto</p>
-<p>I profili personalizzati richiedono calibrazione precisa del sensore. Un ICC errato causa shift cromatici sistematici (es. rossi che diventano arancioni, verdi che virano gialli) e non è recuperabile nei moduli successivi[^manual-48-input].</p>
+<p>I profili personalizzati richiedono calibrazione precisa del sensore. Un ICC errato causa shift cromatici sistematici (es. rossi che diventano arancioni, verdi che virano gialli) e non è recuperabile nei moduli successivi<sup id="fnref11:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3060,19 +3060,19 @@
 <td><strong>input profile</strong></td>
 <td><code>camera default</code>, <code>enhanced matrix</code>, <code>generic matrix</code>, <code>embedded icc profile</code>, <code>linear Rec. 2020 RGB</code>, <code>Adobe RGB (compatible)</code>, <code>sRGB</code>, <code>linear Rec. 709 RGB</code></td>
 <td><code>camera default</code> (per RAW)<br><code>embedded icc profile</code> (per JPEG)</td>
-<td>Seleziona la matrice o il profilo da applicare. Le voci <code>enhanced matrix</code> sono disponibili solo per alcuni modelli (Sony ARW, Fujifilm RAF, Canon CR3)[^manual-48-input][^dt38-new].</td>
+<td>Seleziona la matrice o il profilo da applicare. Le voci <code>enhanced matrix</code> sono disponibili solo per alcuni modelli (Sony ARW, Fujifilm RAF, Canon CR3)<sup id="fnref18:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup><sup id="fnref2:dt38-new"><a class="footnote-ref" href="#fn:dt38-new">3</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>working profile</strong></td>
 <td><code>linear Rec. 2020 RGB</code>, <code>Adobe RGB (compatible)</code>, <code>sRGB</code>, <code>linear Rec. 709 RGB</code>, <code>ACEScg</code></td>
 <td><code>linear Rec. 2020 RGB</code></td>
-<td>Spazio colore interno usato dai moduli successivi. <code>linear Rec. 2020 RGB</code> è raccomandato per workflow scene-referred: offre il più ampio gamut senza clipping prematuro[^manual-48-input].</td>
+<td>Spazio colore interno usato dai moduli successivi. <code>linear Rec. 2020 RGB</code> è raccomandato per workflow scene-referred: offre il più ampio gamut senza clipping prematuro<sup id="fnref19:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>gamut clipping</strong></td>
 <td><code>off</code>, <code>on</code></td>
 <td><code>off</code></td>
-<td>Attiva il meccanismo di taglio dei colori fuori gamma. Abilitalo <strong>solo</strong> se compaiono artefatti visibili (pixel neri isolati in zone di blu intenso o luci LED)[^manual-48-input].</td>
+<td>Attiva il meccanismo di taglio dei colori fuori gamma. Abilitalo <strong>solo</strong> se compaiono artefatti visibili (pixel neri isolati in zone di blu intenso o luci LED)<sup id="fnref20:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3084,27 +3084,27 @@
 <li>L’immagine mostra <strong>pixel neri isolati</strong> in aree di blu saturo (es. cielo notturno con luci LED, neon blu)  </li>
 <li>L’istogramma RGB mostra picchi estremi su blu senza corrispondenti valori in rosso/verde  </li>
 <li>
-<p>Il problema persiste anche dopo aver regolato <code>white balance</code> e <code>color calibration</code>[^manual-48-input]</p>
+<p>Il problema persiste anche dopo aver regolato <code>white balance</code> e <code>color calibration</code><sup id="fnref15:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></p>
 </li>
 <li>
 <p><strong>Scegli il working profile in base al clipping</strong>:<br />
   | Profilo | Gamut | Quando usarlo |<br />
   |---------|--------|----------------|<br />
-  | <code>linear Rec. 2020 RGB</code> | Più ampio | Default per RAW — minimo clipping naturale[^manual-48-input] |<br />
+  | <code>linear Rec. 2020 RGB</code> | Più ampio | Default per RAW — minimo clipping naturale<sup id="fnref16:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup> |<br />
   | <code>Adobe RGB (compatible)</code> | Medio | Se <code>Rec. 2020</code> genera artefatti ma <code>sRGB</code> è troppo stretto |<br />
-  | <code>sRGB</code> | Più stretto | Solo per output web finale — evita in fase di editing[^manual-48-input] |  </p>
+  | <code>sRGB</code> | Più stretto | Solo per output web finale — evita in fase di editing<sup id="fnref17:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup> |  </p>
 </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Test rapido con maschera</p>
-<p>Per identificare i pixel fuori gamut: attiva la visualizzazione della maschera (<code>M</code>), seleziona <code>gamut clipping</code> nel menù contestuale e osserva le aree in rosso scuro. Se non compaiono, il clipping non è necessario[^manual-48-input].</p>
+<p>Per identificare i pixel fuori gamut: attiva la visualizzazione della maschera (<code>M</code>), seleziona <code>gamut clipping</code> nel menù contestuale e osserva le aree in rosso scuro. Se non compaiono, il clipping non è necessario<sup id="fnref12:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
 </div>
 <h2 id="interazione-con-altri-moduli">Interazione con altri moduli<a class="headerlink" href="#interazione-con-altri-moduli" title="Permanent link">&para;</a></h2>
 <p><code>input color profile</code> influenza direttamente:</p>
 <ul>
-<li><strong><code>white balance</code></strong>: lavora sui dati già mappati. Una matrice errata qui rende impossibile un bilanciamento preciso del bianco[^pipeline-beginner].</li>
-<li><strong><code>color calibration</code></strong>: riceve dati già convertiti nel <code>working profile</code>. Se il working profile è <code>sRGB</code>, la calibrazione avrà meno margine per manipolare i primari[^manual-48-input].</li>
-<li><strong><code>AGX</code> / <code>Filmic RGB</code></strong>: dipendono dalla linearità e dall’accuratezza della mappatura iniziale. Un input profile scorretto causa under/over-saturazione sistematica, specialmente nei rossi e nei blu[^agx-guide].</li>
+<li><strong><code>white balance</code></strong>: lavora sui dati già mappati. Una matrice errata qui rende impossibile un bilanciamento preciso del bianco<sup id="fnref3:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup>.</li>
+<li><strong><code>color calibration</code></strong>: riceve dati già convertiti nel <code>working profile</code>. Se il working profile è <code>sRGB</code>, la calibrazione avrà meno margine per manipolare i primari<sup id="fnref13:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</li>
+<li><strong><code>AGX</code> / <code>Filmic RGB</code></strong>: dipendono dalla linearità e dall’accuratezza della mappatura iniziale. Un input profile scorretto causa under/over-saturazione sistematica, specialmente nei rossi e nei blu<sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">6</a></sup>.</li>
 </ul>
 <p><img alt="Interazione tra input color profile e white balance" src="../images/input-wb-interaction.jpg" /></p>
 <h2 id="consigli-pratici-per-migranti-da-lightroom">Consigli pratici per migranti da Lightroom<a class="headerlink" href="#consigli-pratici-per-migranti-da-lightroom" title="Permanent link">&para;</a></h2>
@@ -3119,41 +3119,60 @@
 <tbody>
 <tr>
 <td>“I colori non corrispondono all’anteprima della fotocamera”</td>
-<td>Usa <code>enhanced matrix</code> invece di <code>generic matrix</code>. Verifica che il modello sia supportato nella <a href="https://raw.pixinsight.com/">lista ufficiale</a>[^dt38-new]</td>
-<td>[^manual-48-input]</td>
+<td>Usa <code>enhanced matrix</code> invece di <code>generic matrix</code>. Verifica che il modello sia supportato nella <a href="https://raw.pixinsight.com/">lista ufficiale</a><sup id="fnref3:dt38-new"><a class="footnote-ref" href="#fn:dt38-new">3</a></sup></td>
+<td><sup id="fnref21:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></td>
 </tr>
 <tr>
 <td>“Le immagini JPEG sembrano sbiadite”</td>
-<td>Imposta <code>input profile</code> su <code>embedded icc profile</code> e <code>working profile</code> su <code>linear Rec. 2020 RGB</code> — non usare <code>sRGB</code> come working[^manual-48-input]</td>
-<td>[^manual-48-input]</td>
+<td>Imposta <code>input profile</code> su <code>embedded icc profile</code> e <code>working profile</code> su <code>linear Rec. 2020 RGB</code> — non usare <code>sRGB</code> come working<sup id="fnref22:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></td>
+<td><sup id="fnref23:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></td>
 </tr>
 <tr>
 <td>“Il bianco non è neutro anche con WB corretto”</td>
-<td>Controlla che <code>input profile</code> non sia impostato su <code>sRGB</code> o <code>linear Rec. 709 RGB</code> — questi profilano per display, non per editing[^manual-48-input]</td>
-<td>[^manual-48-input]</td>
+<td>Controlla che <code>input profile</code> non sia impostato su <code>sRGB</code> o <code>linear Rec. 709 RGB</code> — questi profilano per display, non per editing<sup id="fnref24:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></td>
+<td><sup id="fnref25:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup></td>
 </tr>
 <tr>
 <td>“Voglio replicare il look della fotocamera”</td>
-<td>Usa <code>enhanced matrix</code> + <code>color calibration</code> con tab <code>colorfulness</code> e <code>adaptation = none</code>[^dt54-update]</td>
-<td>[^dt54-update]</td>
+<td>Usa <code>enhanced matrix</code> + <code>color calibration</code> con tab <code>colorfulness</code> e <code>adaptation = none</code><sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
+<td><sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Manuale ufficiale darktable 4.8 — Input Color Profile</strong>[^manual-48-input]  </li>
-<li><strong>Video tutorial: “The darktable pipeline for beginners”</strong> — spiegazione visiva della posizione del modulo nella pipeline[^pipeline-beginner]  </li>
-<li><strong>Video tutorial: “darktable 3.8 What is new?”</strong> — introduzione al supporto CR3 e alle enhanced matrices[^dt38-new]  </li>
-<li><strong>Video tutorial: “Some Color calibration ideas”</strong> — dimostrazione pratica dell’effetto di una matrice errata sul verde dello sfondo[^color-calibration-ideas]  </li>
+<li><strong>Manuale ufficiale darktable 4.8 — Input Color Profile</strong><sup id="fnref14:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>  </li>
+<li><strong>Video tutorial: “The darktable pipeline for beginners”</strong> — spiegazione visiva della posizione del modulo nella pipeline<sup id="fnref4:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup>  </li>
+<li><strong>Video tutorial: “darktable 3.8 What is new?”</strong> — introduzione al supporto CR3 e alle enhanced matrices<sup id="fnref:dt38-new"><a class="footnote-ref" href="#fn:dt38-new">3</a></sup>  </li>
+<li><strong>Video tutorial: “Some Color calibration ideas”</strong> — dimostrazione pratica dell’effetto di una matrice errata sul verde dello sfondo<sup id="fnref:color-calibration-ideas"><a class="footnote-ref" href="#fn:color-calibration-ideas">5</a></sup>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-48-input]: darktable 4.8 user manual — input color profile, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/input-color-profile/<br />
-[^pipeline-beginner]: [ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo<br />
-[^dt38-new]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0<br />
-[^dt54-update]: [ENG] New Release: darktable 5.2, https://www.youtube.com/watch?v=YcLJMaDbfRA<br />
-[^color-calibration-ideas]: [ENG] Some Color calibration ideas, https://www.youtube.com/watch?v=MJJR8DJ3rr8<br />
-[^agx-guide]: [ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU<br />
-[^filmic-sigmoid]: [ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-48-input">
+<p>darktable 4.8 user manual — input color profile, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/input-color-profile/&#160;<a class="footnote-backref" href="#fnref:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:manual-48-input" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p>[ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline-beginner" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pipeline-beginner" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pipeline-beginner" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt38-new">
+<p>[ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0&#160;<a class="footnote-backref" href="#fnref:dt38-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt38-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt38-new" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-update">
+<p>[ENG] New Release: darktable 5.2, https://www.youtube.com/watch?v=YcLJMaDbfRA&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54-update" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt54-update" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-calibration-ideas">
+<p>[ENG] Some Color calibration ideas, https://www.youtube.com/watch?v=MJJR8DJ3rr8&#160;<a class="footnote-backref" href="#fnref:color-calibration-ideas" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-guide">
+<p>[ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-sigmoid">
+<p>[ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0&#160;<a class="footnote-backref" href="#fnref:filmic-sigmoid" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

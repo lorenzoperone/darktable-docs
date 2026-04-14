@@ -3026,20 +3026,20 @@
 
 
 <h1 id="color-balance-rgb">Color Balance RGB<a class="headerlink" href="#color-balance-rgb" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>color balance rgb</strong> è uno strumento avanzato di color grading cinematografico integrato nel flusso scene-referred di darktable. Progettato per operazioni creative e non correttive, si distingue per la sua capacità di manipolare cromaticità, saturazione e luminosità in modo percettivamente uniforme, mantenendo l’intonazione cromatica costante durante le regolazioni [^dt48-color-balance-rgb]. Non è adatto ai principianti: richiede una solida comprensione della teoria del colore e della separazione tra <em>primary</em> (correzione neutrale) e <em>secondary</em> (stilizzazione creativa) color grading [^dt48-color-balance-rgb].</p>
+<p>Il modulo <strong>color balance rgb</strong> è uno strumento avanzato di color grading cinematografico integrato nel flusso scene-referred di darktable. Progettato per operazioni creative e non correttive, si distingue per la sua capacità di manipolare cromaticità, saturazione e luminosità in modo percettivamente uniforme, mantenendo l’intonazione cromatica costante durante le regolazioni <sup id="fnref:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>. Non è adatto ai principianti: richiede una solida comprensione della teoria del colore e della separazione tra <em>primary</em> (correzione neutrale) e <em>secondary</em> (stilizzazione creativa) color grading <sup id="fnref2:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <p><img alt="Interfaccia del modulo color balance rgb con scheda Master attiva" src="../images/color-balance-rgb-master-tab.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Non è un sostituto di color calibration</p>
-<p>Il modulo <strong>color balance rgb</strong> opera <em>dopo</em> la calibrazione dell’illuminante e non deve essere utilizzato per rimuovere dominanti cromatiche globali. Questo compito spetta al modulo <strong>color calibration</strong>, che agisce in uno spazio fisicamente coerente con i dati RAW [^dt48-color-balance-rgb].</p>
+<p>Il modulo <strong>color balance rgb</strong> opera <em>dopo</em> la calibrazione dell’illuminante e non deve essere utilizzato per rimuovere dominanti cromatiche globali. Questo compito spetta al modulo <strong>color calibration</strong>, che agisce in uno spazio fisicamente coerente con i dati RAW <sup id="fnref5:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
-<p>Il modulo implementa un’estensione migliorata dello standard ASC CDL (American Society of Cinematographers Color Decision List), introducendo maschere luminose parametriche (<em>shadows</em>, <em>mid-tones</em>, <em>highlights</em>) per applicare modifiche selettive su intervalli di luminanza — a differenza del CDL classico, che agisce sull’intera immagine [^dt48-color-balance-rgb].</p>
+<p>Il modulo implementa un’estensione migliorata dello standard ASC CDL (American Society of Cinematographers Color Decision List), introducendo maschere luminose parametriche (<em>shadows</em>, <em>mid-tones</em>, <em>highlights</em>) per applicare modifiche selettive su intervalli di luminanza — a differenza del CDL classico, che agisce sull’intera immagine <sup id="fnref3:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <p>Opera principalmente in due spazi colore distinti:</p>
 <ul>
-<li><strong>Spazio lineare RGB personalizzato</strong>: usato per <em>chroma</em>, <em>contrast</em>, <em>vibrance</em> e <em>global power</em>. Garantisce una scala lineare della luminanza e una distribuzione uniforme delle tonalità percettive [^dt48-color-balance-rgb].</li>
-<li><strong>Spazio JzAzBz o darktable UCS</strong>: usato per <em>saturation</em> e <em>brilliance</em>. Fornisce una gestione percettivamente accurata della cromaticità, correggendo effetti come l’Helmholtz-Kohlrausch (colore vivido che appare più luminoso) [^dt48-color-balance-rgb].</li>
+<li><strong>Spazio lineare RGB personalizzato</strong>: usato per <em>chroma</em>, <em>contrast</em>, <em>vibrance</em> e <em>global power</em>. Garantisce una scala lineare della luminanza e una distribuzione uniforme delle tonalità percettive <sup id="fnref6:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</li>
+<li><strong>Spazio JzAzBz o darktable UCS</strong>: usato per <em>saturation</em> e <em>brilliance</em>. Fornisce una gestione percettivamente accurata della cromaticità, correggendo effetti come l’Helmholtz-Kohlrausch (colore vivido che appare più luminoso) <sup id="fnref7:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</li>
 </ul>
-<p>Il modulo produce un output scene-referred, ma può delinearizzare il segnale se abilitati <code>contrast</code> o <code>power</code>. In uscita, esegue un <em>soft saturation clipping</em> a tonalità costante per riportare i colori fuori gamut (es. Rec. 2020) verso valori validi, senza generare artefatti cromatici [^dt48-color-balance-rgb].</p>
+<p>Il modulo produce un output scene-referred, ma può delinearizzare il segnale se abilitati <code>contrast</code> o <code>power</code>. In uscita, esegue un <em>soft saturation clipping</em> a tonalità costante per riportare i colori fuori gamut (es. Rec. 2020) verso valori validi, senza generare artefatti cromatici <sup id="fnref4:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ideale prevede tre fasi sequenziali, rispettando l’ordine gerarchico della pipeline:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzione primaria (color calibration)
@@ -3050,14 +3050,14 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Usa solo dopo la compressione tonale</p>
-<p>Applicare <code>color balance rgb</code> <em>prima</em> di AGX/Filmic RGB porta a risultati imprevedibili: i controlli di saturazione e contrasto assumono comportamenti non lineari e possono causare clipping cromatico irrecuperabile [^dt48-color-balance-rgb].</p>
+<p>Applicare <code>color balance rgb</code> <em>prima</em> di AGX/Filmic RGB porta a risultati imprevedibili: i controlli di saturazione e contrasto assumono comportamenti non lineari e possono causare clipping cromatico irrecuperabile <sup id="fnref8:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-scegliere-il-profilo-di-partenza">Passo 1: Scegliere il profilo di partenza<a class="headerlink" href="#passo-1-scegliere-il-profilo-di-partenza" title="Permanent link">&para;</a></h3>
 <p>Darktable fornisce preset preconfigurati nella sezione <em>Presets</em> del modulo:</p>
 <ul>
-<li><strong>basic colorfulness|standard</strong>: impostazione neutrale, ottimale per iniziare [^dt48-color-balance-rgb][^agx-guide]</li>
-<li><strong>creative|teal-orange</strong>: base per lo stile cinematografico “Teal &amp; Orange” [^dt48-color-balance-rgb]</li>
-<li><strong>monochrome|high-contrast</strong>: ottimizzato per immagini in bianco e nero [^dt48-color-balance-rgb]</li>
+<li><strong>basic colorfulness|standard</strong>: impostazione neutrale, ottimale per iniziare <sup id="fnref9:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup><sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">2</a></sup></li>
+<li><strong>creative|teal-orange</strong>: base per lo stile cinematografico “Teal &amp; Orange” <sup id="fnref10:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
+<li><strong>monochrome|high-contrast</strong>: ottimizzato per immagini in bianco e nero <sup id="fnref11:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 </ul>
 <p><img alt="Selezione del preset 'basic colorfulness|standard' nel modulo color balance rgb" src="../images/color-balance-rgb-presets.jpg" /></p>
 <h3 id="passo-2-regolazione-globale-scheda-master">Passo 2: Regolazione globale (scheda Master)<a class="headerlink" href="#passo-2-regolazione-globale-scheda-master" title="Permanent link">&para;</a></h3>
@@ -3067,7 +3067,7 @@
 <li><em>Range</em>: −180° a +180°  </li>
 <li><em>Default</em>: 0.0°  </li>
 <li>
-<p><em>Valore tipico</em>: ±5–15° per correzioni fini [^dt48-color-balance-rgb]</p>
+<p><em>Valore tipico</em>: ±5–15° per correzioni fini <sup id="fnref21:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></p>
 </li>
 <li>
 <p><strong>Global vibrance</strong>: aumenta la cromaticità dei colori a bassa croma, preservando quelli già saturi. Ideale per ravvivare tonalità neutre senza esagerare nei rossi o blu.  </p>
@@ -3075,18 +3075,18 @@
 <li><em>Range</em>: −100% a +100%  </li>
 <li><em>Default</em>: 0.0%  </li>
 <li>
-<p><em>Valore tipico</em>: +20%–+45% per immagini piatte [^dt48-color-balance-rgb]</p>
+<p><em>Valore tipico</em>: +20%–+45% per immagini piatte <sup id="fnref22:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></p>
 </li>
 <li>
 <p><strong>Contrast</strong>: modifica la luminanza lungo una curva S, con punto di fulcro regolabile (vedi scheda <em>Masks</em>).  </p>
 </li>
 <li><em>Range</em>: −100% a +100%  </li>
 <li><em>Default</em>: 0.0%  </li>
-<li><em>Valore tipico</em>: +15%–+35% per impatto visivo moderato [^dt48-color-balance-rgb]</li>
+<li><em>Valore tipico</em>: +15%–+35% per impatto visivo moderato <sup id="fnref12:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Contrast ≠ Exposure</p>
-<p>Il controllo <code>contrast</code> non è equivalente all’esposizione: agisce sulla pendenza della curva luminosa, non sul livello assoluto. Un valore positivo amplifica la distanza tra zone chiare e scure <em>intorno al fulcro</em>, non illumina l’intera immagine [^dt48-color-balance-rgb].</p>
+<p>Il controllo <code>contrast</code> non è equivalente all’esposizione: agisce sulla pendenza della curva luminosa, non sul livello assoluto. Un valore positivo amplifica la distanza tra zone chiare e scure <em>intorno al fulcro</em>, non illumina l’intera immagine <sup id="fnref13:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-affinamento-tonale-scheda-4-ways">Passo 3: Affinamento tonale (scheda 4 Ways)<a class="headerlink" href="#passo-3-affinamento-tonale-scheda-4-ways" title="Permanent link">&para;</a></h3>
 <p>La scheda <strong>4 Ways</strong> permette regolazioni separate per ombre, mezzi toni e luci, usando coordinate indipendenti (luminanza, tonalità, croma):</p>
@@ -3133,7 +3133,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Perché usare ‘lift/gain’ invece di ‘offset/gain’?</p>
-<p>Le operazioni <code>lift</code> e <code>gain</code> sono moltiplicative, quindi mantengono meglio la relazione proporzionale tra canali e riducono il rischio di dominanti cromatiche indesiderate rispetto alle addizioni lineari [^dt48-color-balance-rgb].</p>
+<p>Le operazioni <code>lift</code> e <code>gain</code> sono moltiplicative, quindi mantengono meglio la relazione proporzionale tra canali e riducono il rischio di dominanti cromatiche indesiderate rispetto alle addizioni lineari <sup id="fnref14:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3150,37 +3150,37 @@
 <td><strong>Hue shift</strong></td>
 <td>−180° to +180°</td>
 <td>0.0°</td>
-<td>Rotazione della cromaticità su piano CIE. Usa la pipetta per selezionare l’opposto cromatico di una dominante [^dt48-color-balance-rgb].</td>
+<td>Rotazione della cromaticità su piano CIE. Usa la pipetta per selezionare l’opposto cromatico di una dominante <sup id="fnref23:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Global vibrance</strong></td>
 <td>−100% to +100%</td>
 <td>0.0%</td>
-<td>Aumenta la croma dei colori a bassa croma, evitando di sovraccaricare quelli già saturi [^dt48-color-balance-rgb].</td>
+<td>Aumenta la croma dei colori a bassa croma, evitando di sovraccaricare quelli già saturi <sup id="fnref24:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Contrast</strong></td>
 <td>−100% to +100%</td>
 <td>0.0%</td>
-<td>Curva S sulla luminanza, centrata sul <code>contrast gray fulcrum</code>. Valori positivi aumentano il contrasto, negativi lo riducono [^dt48-color-balance-rgb].</td>
+<td>Curva S sulla luminanza, centrata sul <code>contrast gray fulcrum</code>. Valori positivi aumentano il contrasto, negativi lo riducono <sup id="fnref25:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Global chroma</strong></td>
 <td>−100% to +100%</td>
 <td>0.0%</td>
-<td>Modifica la croma linearmente (non percettivamente). Utile per correzioni tecniche precise [^dt48-color-balance-rgb].</td>
+<td>Modifica la croma linearmente (non percettivamente). Utile per correzioni tecniche precise <sup id="fnref26:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Global saturation</strong></td>
 <td>−100% to +100%</td>
 <td>0.0%</td>
-<td>Modifica la saturazione in spazio JzAzBz o darktable UCS. Preserva l’intonazione cromatica [^dt48-color-balance-rgb].</td>
+<td>Modifica la saturazione in spazio JzAzBz o darktable UCS. Preserva l’intonazione cromatica <sup id="fnref27:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Global brilliance</strong></td>
 <td>−100% to +100%</td>
 <td>0.0%</td>
-<td>Modifica simultaneamente luminanza e croma in direzione ortogonale alla saturazione: simula un cambio di esposizione percettiva [^dt48-color-balance-rgb].</td>
+<td>Modifica simultaneamente luminanza e croma in direzione ortogonale alla saturazione: simula un cambio di esposizione percettiva <sup id="fnref28:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3201,49 +3201,49 @@
 <td><strong>Shadows fall-off</strong></td>
 <td>Controlla la morbidezza della transizione della maschera ombre</td>
 <td>0.10 to 0.50</td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref29:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Mask middle-gray fulcrum</strong></td>
 <td>Luminanza centrale (50% opacità) per tutte e tre le maschere</td>
 <td>0.18 to 0.22 (18–22%)</td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref30:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Highlights fall-off</strong></td>
 <td>Controlla la morbidezza della transizione della maschera luci</td>
 <td>0.10 to 0.50</td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref31:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>White fulcrum</strong></td>
 <td>Punto di riferimento per la normalizzazione di <code>global power</code></td>
 <td>1.0 to 10.0 EV</td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref32:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast gray fulcrum</strong></td>
 <td>Punto neutro della curva <code>contrast</code>: lasciato inalterato</td>
 <td>0.1845 (18.45%)</td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref33:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Saturation formula</strong></td>
 <td>Algoritmo di saturazione: <code>JzAzBz (2021)</code> o <code>darktable UCS (2022)</code></td>
 <td><code>darktable UCS (2022)</code></td>
-<td>[^dt48-color-balance-rgb]</td>
+<td><sup id="fnref34:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Perché darktable UCS è preferibile</p>
-<p>Il profilo <code>darktable UCS (2022)</code> tiene conto dell’effetto Helmholtz-Kohlrausch e offre una mappatura del gamut più precisa ed efficiente rispetto a JzAzBz, con comportamento più uniforme nelle ombre [^dt48-color-balance-rgb].</p>
+<p>Il profilo <code>darktable UCS (2022)</code> tiene conto dell’effetto Helmholtz-Kohlrausch e offre una mappatura del gamut più precisa ed efficiente rispetto a JzAzBz, con comportamento più uniforme nelle ombre <sup id="fnref15:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="gestione-del-colore-e-del-gamut">Gestione del colore e del gamut<a class="headerlink" href="#gestione-del-colore-e-del-gamut" title="Permanent link">&para;</a></h2>
 <p>Il modulo include un sistema di protezione automatica del gamut:</p>
 <ul>
-<li><strong>Soft saturation clipping</strong>: quando i valori di croma superano i limiti del profilo colore di uscita (di default Rec. 2020), vengono scalati in modo dolce a tonalità costante, evitando tagli netti (clipping) [^dt48-color-balance-rgb].</li>
-<li><strong>Clipping prevention</strong>: i parametri <code>recover purity</code>, <code>master purity boost</code> e <code>per-channel purity boost</code> consentono di recuperare la vividezza persa durante la compressione tonale (es. AGX), senza uscire dal gamut [^dt48-color-balance-rgb].</li>
+<li><strong>Soft saturation clipping</strong>: quando i valori di croma superano i limiti del profilo colore di uscita (di default Rec. 2020), vengono scalati in modo dolce a tonalità costante, evitando tagli netti (clipping) <sup id="fnref16:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</li>
+<li><strong>Clipping prevention</strong>: i parametri <code>recover purity</code>, <code>master purity boost</code> e <code>per-channel purity boost</code> consentono di recuperare la vividezza persa durante la compressione tonale (es. AGX), senza uscire dal gamut <sup id="fnref17:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</li>
 </ul>
 <table>
 <thead>
@@ -3257,17 +3257,17 @@
 <tr>
 <td><strong>Recover purity</strong></td>
 <td>Dopo AGX/Filmic, se i colori appaiono spenti</td>
-<td>+10% to +30% [^dt48-color-balance-rgb]</td>
+<td>+10% to +30% <sup id="fnref35:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Master purity boost</strong></td>
 <td>Per dare “pop” globale ai colori</td>
-<td>+5% to +20% [^dt48-color-balance-rgb]</td>
+<td>+5% to +20% <sup id="fnref36:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Red/Green/Blue purity boost</strong></td>
 <td>Per enfatizzare o correggere singoli canali (es. rosso pelle)</td>
-<td>+0% to +40% per rosso [^dt48-color-balance-rgb]</td>
+<td>+0% to +40% per rosso <sup id="fnref37:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3277,32 +3277,47 @@
 <li>✅ <strong>Sostituisci “Vibrance” con <code>global vibrance</code></strong>: funziona esattamente come in Lightroom, ma con maggiore coerenza cromatica.</li>
 <li>✅ <strong>Sostituisci “Split Toning” con <code>hue shift</code> + maschere tonali</strong>: usa la pipetta per trovare l’opposto cromatico di una dominante, poi applica <code>shadows lift</code> o <code>highlights gain</code> per bilanciare.</li>
 <li>❌ <strong>Non usare <code>global saturation</code> come “Saturation” di LR</strong>: è più aggressivo e percettivamente diverso. Preferisci <code>global vibrance</code> per regolazioni generali.</li>
-<li>⚠️ <strong>Attenzione al <code>global power</code></strong>: richiede sempre la regolazione di <code>white fulcrum</code> per evitare compressioni asimmetriche. Usa <code>highlights gain</code> per interventi più intuitivi [^dt48-color-balance-rgb].</li>
+<li>⚠️ <strong>Attenzione al <code>global power</code></strong>: richiede sempre la regolazione di <code>white fulcrum</code> per evitare compressioni asimmetriche. Usa <code>highlights gain</code> per interventi più intuitivi <sup id="fnref18:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Workflow per immagini in bianco e nero</p>
-<p>Anche in B/N, <code>color balance rgb</code> è potente: usa <code>shadows lift</code> per schiarire le ombre senza perdere profondità, <code>highlights gain</code> per definire i riflessi, e <code>hue shift</code> per controllare la tonalità del grigio (es. spostare i blu verso il viola per un look più freddo) [^dt48-color-balance-rgb].</p>
+<p>Anche in B/N, <code>color balance rgb</code> è potente: usa <code>shadows lift</code> per schiarire le ombre senza perdere profondità, <code>highlights gain</code> per definire i riflessi, e <code>hue shift</code> per controllare la tonalità del grigio (es. spostare i blu verso il viola per un look più freddo) <sup id="fnref19:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>📘 <strong>Manuale ufficiale darktable 4.8 – color balance rgb</strong>:<br />
-<a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/</a> [^dt48-color-balance-rgb]</li>
+<a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/</a> <sup id="fnref20:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 <li>▶️ <strong>Video tutorial “Colour balance rgb” (A Dabble in Photography)</strong>:<br />
   Analisi approfondita di chroma vs saturazione, gestione del gamut e workflow Teal &amp; Orange.<br />
-<a href="https://www.youtube.com/watch?v=SmeUXCtNNh0">https://www.youtube.com/watch?v=SmeUXCtNNh0</a> [^color-balance-rgb-video]</li>
+<a href="https://www.youtube.com/watch?v=SmeUXCtNNh0">https://www.youtube.com/watch?v=SmeUXCtNNh0</a> <sup id="fnref:color-balance-rgb-video"><a class="footnote-ref" href="#fn:color-balance-rgb-video">3</a></sup></li>
 <li>▶️ <strong>Video tutorial “Full b&amp;w edits in darktable”</strong>:<br />
   Esempio pratico di utilizzo di <code>color balance rgb</code> in contesto monocromatico con maschere tonali.<br />
-<a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">https://www.youtube.com/watch?v=f9szYMJ9wYo</a> [^bw-edit-video]</li>
+<a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">https://www.youtube.com/watch?v=f9szYMJ9wYo</a> <sup id="fnref:bw-edit-video"><a class="footnote-ref" href="#fn:bw-edit-video">4</a></sup></li>
 <li>▶️ <strong>Video tutorial “New Release: darktable 5.2”</strong>:<br />
   Dimostrazione degli aggiornamenti a <code>color balance rgb</code> inclusi in darktable 5.2, con focus su prestazioni e nuovi preset.<br />
-<a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">https://www.youtube.com/watch?v=YcLJMaDbfRA</a> [^dt52-release-video]</li>
+<a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">https://www.youtube.com/watch?v=YcLJMaDbfRA</a> <sup id="fnref:dt52-release-video"><a class="footnote-ref" href="#fn:dt52-release-video">5</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-color-balance-rgb]: darktable 4.8 user manual - color balance rgb, official documentation, 2026-04-10<br />
-[^agx-guide]: [ENG] A guide to AgX in darktable, video-tutorials, A Dabble in Photography, 2026-04-12<br />
-[^color-balance-rgb-video]: [ENG] Colour balance rgb, video-tutorials, A Dabble in Photography, 2026-04-12<br />
-[^bw-edit-video]: [ENG] Full b&amp;w edits in darktable for street photography, video-tutorials, A Dabble in Photography, 2026-04-12<br />
-[^dt52-release-video]: [ENG] New Release: darktable 5.2, video-tutorials, A Dabble in Photography, 2026-04-12</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-color-balance-rgb">
+<p>darktable 4.8 user manual - color balance rgb, official documentation, 2026-04-10&#160;<a class="footnote-backref" href="#fnref:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref34:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref35:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref36:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref37:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-guide">
+<p>[ENG] A guide to AgX in darktable, video-tutorials, A Dabble in Photography, 2026-04-12&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-balance-rgb-video">
+<p>[ENG] Colour balance rgb, video-tutorials, A Dabble in Photography, 2026-04-12&#160;<a class="footnote-backref" href="#fnref:color-balance-rgb-video" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bw-edit-video">
+<p>[ENG] Full b&amp;w edits in darktable for street photography, video-tutorials, A Dabble in Photography, 2026-04-12&#160;<a class="footnote-backref" href="#fnref:bw-edit-video" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52-release-video">
+<p>[ENG] New Release: darktable 5.2, video-tutorials, A Dabble in Photography, 2026-04-12&#160;<a class="footnote-backref" href="#fnref:dt52-release-video" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

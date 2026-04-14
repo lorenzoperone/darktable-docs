@@ -3060,24 +3060,24 @@
 
 
 <h1 id="crop">Crop<a class="headerlink" href="#crop" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>crop</strong> è il modulo dedicato al ritaglio geometrico in darktable 5.4+, progettato per sostituire definitivamente il modulo obsoleto <em>crop and rotate</em> a partire dalla versione 3.8[^crop-rotate-deprecated]. È posizionato <em>dopo</em> i moduli di correzione geometrica (<em>rotate and perspective</em>) e <em>prima</em> di quelli di ritocco (<em>retouch</em>), garantendo che l’intera immagine originale rimanga disponibile per la creazione di sorgenti (<em>source spots</em>) nel modulo <em>retouch</em>[^crop-manual][^pipeline-order].</p>
+<p>Il modulo <strong>crop</strong> è il modulo dedicato al ritaglio geometrico in darktable 5.4+, progettato per sostituire definitivamente il modulo obsoleto <em>crop and rotate</em> a partire dalla versione 3.8<sup id="fnref:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup>. È posizionato <em>dopo</em> i moduli di correzione geometrica (<em>rotate and perspective</em>) e <em>prima</em> di quelli di ritocco (<em>retouch</em>), garantendo che l’intera immagine originale rimanga disponibile per la creazione di sorgenti (<em>source spots</em>) nel modulo <em>retouch</em><sup id="fnref:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup>[^pipeline-order].</p>
 <p><img alt="Interfaccia del modulo crop con griglia delle regole dei terzi attiva" src="../images/crop-interface.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Posizione strategica nella pipeline</p>
-<p>Il modulo <code>crop</code> è collocato nella fase finale della pipeline tecnica, subito prima dei moduli creativi (es. <code>color balance rgb</code>, <code>AGX</code>). Questo ordine permette di eseguire ritagli artistici <em>dopo</em> aver corretto rotazione, prospettiva e orientamento, preservando la massima flessibilità per interventi locali successivi[^crop-manual][^pipeline-beginner].</p>
+<p>Il modulo <code>crop</code> è collocato nella fase finale della pipeline tecnica, subito prima dei moduli creativi (es. <code>color balance rgb</code>, <code>AGX</code>). Questo ordine permette di eseguire ritagli artistici <em>dopo</em> aver corretto rotazione, prospettiva e orientamento, preservando la massima flessibilità per interventi locali successivi<sup id="fnref9:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup><sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">5</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo <code>crop</code> gestisce esclusivamente la selezione dell’area visibile dell’immagine, senza effettuare alcuna trasformazione geometrica (rotazione, keystone, flip). Questa separazione funzionale è fondamentale per un workflow robusto:</p>
 <ol>
-<li><strong>Correzione geometrica</strong>: eseguita con <code>rotate and perspective</code> (per angoli e distorsioni prospettiche) e <code>orientation</code> (per capovolgimenti orizzontali/verticali)[^crop-rotate-deprecated][^dt38-what-new]</li>
-<li><strong>Ritaglio finale</strong>: eseguito con <code>crop</code>, che opera su un’immagine già geometricamente corretta[^crop-manual]</li>
+<li><strong>Correzione geometrica</strong>: eseguita con <code>rotate and perspective</code> (per angoli e distorsioni prospettiche) e <code>orientation</code> (per capovolgimenti orizzontali/verticali)<sup id="fnref4:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup><sup id="fnref2:dt38-what-new"><a class="footnote-ref" href="#fn:dt38-what-new">3</a></sup></li>
+<li><strong>Ritaglio finale</strong>: eseguito con <code>crop</code>, che opera su un’immagine già geometricamente corretta<sup id="fnref10:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
 </ol>
 <p>Il modulo fornisce due modalità di controllo:
 - <strong>Interattiva</strong>: trascinamento diretto dei maniglioni sullo schermo
-- <strong>Numerica</strong>: impostazione precisa tramite slider <em>Margins</em> o input testuale del rapporto d’aspetto[^crop-manual]</p>
-<p>A differenza del vecchio <code>crop and rotate</code>, non offre controlli per l’angolo né per la prospettiva: tentativi di utilizzo per tali scopi genereranno risultati imprecisi o artefatti di interpolazione[^crop-rotate-deprecated].</p>
+- <strong>Numerica</strong>: impostazione precisa tramite slider <em>Margins</em> o input testuale del rapporto d’aspetto<sup id="fnref2:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></p>
+<p>A differenza del vecchio <code>crop and rotate</code>, non offre controlli per l’angolo né per la prospettiva: tentativi di utilizzo per tali scopi genereranno risultati imprecisi o artefatti di interpolazione<sup id="fnref2:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso di lavoro ottimale per il ritaglio in darktable segue una sequenza rigorosa di tre passaggi, rispettando l’ordine della pipeline[^pipeline-beginner][^dt38-what-new]:</p>
+<p>Il flusso di lavoro ottimale per il ritaglio in darktable segue una sequenza rigorosa di tre passaggi, rispettando l’ordine della pipeline<sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">5</a></sup><sup id="fnref:dt38-what-new"><a class="footnote-ref" href="#fn:dt38-what-new">3</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. rotate and perspective → correzione angolo e prospettiva
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. orientation → flip orizzontale/verticale (se necessario)
@@ -3086,14 +3086,14 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Regola d’oro: ritaglia sempre per ultimo</p>
-<p>Applica sempre <code>crop</code> <em>dopo</em> aver completato tutte le correzioni geometriche e tecniche. Ritagliare prima comporta la perdita di dati necessari per operazioni come <code>retouch</code> (che richiede aree esterne al crop per le sorgenti) o <code>diffuse or sharpen</code> (che beneficia di un contesto più ampio)[^crop-manual][^pipeline-beginner].</p>
+<p>Applica sempre <code>crop</code> <em>dopo</em> aver completato tutte le correzioni geometriche e tecniche. Ritagliare prima comporta la perdita di dati necessari per operazioni come <code>retouch</code> (che richiede aree esterne al crop per le sorgenti) o <code>diffuse or sharpen</code> (che beneficia di un contesto più ampio)<sup id="fnref11:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup><sup id="fnref3:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">5</a></sup>.</p>
 </div>
 <h3 id="passo-1-imposta-il-rapporto-daspetto">Passo 1: Imposta il rapporto d’aspetto<a class="headerlink" href="#passo-1-imposta-il-rapporto-daspetto" title="Permanent link">&para;</a></h3>
 <p>Prima di disegnare il rettangolo, definisci il rapporto d’aspetto desiderato dal menu a tendina <em>aspect</em>:</p>
 <ul>
-<li><strong>Predefiniti comuni</strong>: <code>freehand</code>, <code>original image</code>, <code>square</code> (1:1), <code>golden cut</code> (≈1.62:1)[^crop-manual]</li>
-<li><strong>Personalizzati</strong>: digita direttamente nel campo <code>x:y</code> (es. <code>13:18</code> per una stampa 13×18 cm) o come decimale (es. <code>0.722</code> per 13/18 ≈ 0.722)[^crop-secrets][^crop-manual]</li>
-<li><strong>Orientamento</strong>: usa il pulsante accanto al menu per scambiare rapidamente tra <em>portrait</em> e <em>landscape</em>[^crop-manual]</li>
+<li><strong>Predefiniti comuni</strong>: <code>freehand</code>, <code>original image</code>, <code>square</code> (1:1), <code>golden cut</code> (≈1.62:1)<sup id="fnref12:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
+<li><strong>Personalizzati</strong>: digita direttamente nel campo <code>x:y</code> (es. <code>13:18</code> per una stampa 13×18 cm) o come decimale (es. <code>0.722</code> per 13/18 ≈ 0.722)<sup id="fnref:crop-secrets"><a class="footnote-ref" href="#fn:crop-secrets">4</a></sup><sup id="fnref13:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
+<li><strong>Orientamento</strong>: usa il pulsante accanto al menu per scambiare rapidamente tra <em>portrait</em> e <em>landscape</em><sup id="fnref14:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
 </ul>
 <p><img alt="Menu a tendina aspect con opzione '13:18' evidenziata" src="../images/crop-aspect-menu.jpg" /></p>
 <h3 id="passo-2-disegna-e-regola-il-crop">Passo 2: Disegna e regola il crop<a class="headerlink" href="#passo-2-disegna-e-regola-il-crop" title="Permanent link">&para;</a></h3>
@@ -3101,15 +3101,15 @@
 - <strong>Crea il rettangolo</strong>: clicca e trascina nell’area dell’immagine
 - <strong>Ridimensiona</strong>: trascina i maniglioni sui bordi o negli angoli
 - <strong>Sposta</strong>: clicca e trascina all’interno del rettangolo
-- <strong>Muovi su un asse</strong>: tieni premuto <code>Ctrl</code> (orizzontale) o <code>Shift</code> (verticale) mentre trascini[^crop-manual]</p>
+- <strong>Muovi su un asse</strong>: tieni premuto <code>Ctrl</code> (orizzontale) o <code>Shift</code> (verticale) mentre trascini<sup id="fnref3:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione ai maniglioni laterali</p>
-<p>In alcune versioni recenti (es. 5.5+), i maniglioni sui lati possono essere difficili da afferrare se il bordo del crop coincide con il limite dell’immagine visualizzata. In tal caso, riduci leggermente il crop con un angolo per far apparire i maniglioni laterali[^pixls-crop-bug].</p>
+<p>In alcune versioni recenti (es. 5.5+), i maniglioni sui lati possono essere difficili da afferrare se il bordo del crop coincide con il limite dell’immagine visualizzata. In tal caso, riduci leggermente il crop con un angolo per far apparire i maniglioni laterali<sup id="fnref:pixls-crop-bug"><a class="footnote-ref" href="#fn:pixls-crop-bug">6</a></sup>.</p>
 </div>
 <h3 id="passo-3-affina-numericamente-opzionale">Passo 3: Affina numericamente (opzionale)<a class="headerlink" href="#passo-3-affina-numericamente-opzionale" title="Permanent link">&para;</a></h3>
 <p>Espandi la sezione <em>Margins</em> per controllare con precisione la percentuale di immagine tagliata da ogni lato:
-- <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>: valori da <code>0.00%</code> (nessun taglio) a <code>100.00%</code> (taglio totale)[^crop-manual]
-- I valori si aggiornano automaticamente quando modifichi il crop interattivamente[^crop-manual]</p>
+- <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>: valori da <code>0.00%</code> (nessun taglio) a <code>100.00%</code> (taglio totale)<sup id="fnref4:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup>
+- I valori si aggiornano automaticamente quando modifichi il crop interattivamente<sup id="fnref5:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3125,45 +3125,45 @@
 <td><strong>aspect</strong></td>
 <td><code>freehand</code>, <code>original image</code>, <code>square</code>, <code>golden cut</code>, <code>x:y</code> (es. <code>13:18</code>)</td>
 <td><code>freehand</code></td>
-<td>Constrain the crop rectangle to a fixed width:height ratio. Custom ratios must be integers (e.g., <code>191:100</code> for 1.91:1)[^crop-manual][^crop-secrets]</td>
+<td>Constrain the crop rectangle to a fixed width:height ratio. Custom ratios must be integers (e.g., <code>191:100</code> for 1.91:1)<sup id="fnref17:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup><sup id="fnref4:crop-secrets"><a class="footnote-ref" href="#fn:crop-secrets">4</a></sup></td>
 </tr>
 <tr>
 <td><strong>left margin</strong></td>
 <td>0.00% – 100.00%</td>
 <td>0.00%</td>
-<td>Percentage of the image cropped from the left edge[^crop-manual]</td>
+<td>Percentage of the image cropped from the left edge<sup id="fnref18:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>right margin</strong></td>
 <td>0.00% – 100.00%</td>
 <td>0.00%</td>
-<td>Percentage of the image cropped from the right edge[^crop-manual]</td>
+<td>Percentage of the image cropped from the right edge<sup id="fnref19:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>top margin</strong></td>
 <td>0.00% – 100.00%</td>
 <td>0.00%</td>
-<td>Percentage of the image cropped from the top edge[^crop-manual]</td>
+<td>Percentage of the image cropped from the top edge<sup id="fnref20:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>bottom margin</strong></td>
 <td>0.00% – 100.00%</td>
 <td>0.00%</td>
-<td>Percentage of the image cropped from the bottom edge[^crop-manual]</td>
+<td>Percentage of the image cropped from the bottom edge<sup id="fnref21:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello crop con sezione margins espansa" src="../images/crop-margins-panel.jpg" /></p>
 <h2 id="guide-e-sovrapposizioni">Guide e sovrapposizioni<a class="headerlink" href="#guide-e-sovrapposizioni" title="Permanent link">&para;</a></h2>
-<p>Il modulo supporta guide visive per il composizione, attivabili con la casella <em>show guides</em>[^crop-manual]:</p>
+<p>Il modulo supporta guide visive per il composizione, attivabili con la casella <em>show guides</em><sup id="fnref6:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup>:</p>
 <ul>
-<li><strong>Tipi disponibili</strong>: <code>rule of thirds</code>, <code>golden spiral</code>, <code>diagonal</code>, <code>harmonious triangle</code>, <code>grid</code>, <code>centerline</code>[^dt38-what-new]</li>
-<li><strong>Attivazione rapida</strong>: premi <code>G</code> per mostrare/nascondere le guide globalmente[^dt38-what-new]</li>
-<li><strong>Personalizzazione</strong>: clicca sull’icona a destra di <em>show guides</em> per modificare colore, opacità e tipo[^crop-manual]</li>
+<li><strong>Tipi disponibili</strong>: <code>rule of thirds</code>, <code>golden spiral</code>, <code>diagonal</code>, <code>harmonious triangle</code>, <code>grid</code>, <code>centerline</code><sup id="fnref3:dt38-what-new"><a class="footnote-ref" href="#fn:dt38-what-new">3</a></sup></li>
+<li><strong>Attivazione rapida</strong>: premi <code>G</code> per mostrare/nascondere le guide globalmente<sup id="fnref4:dt38-what-new"><a class="footnote-ref" href="#fn:dt38-what-new">3</a></sup></li>
+<li><strong>Personalizzazione</strong>: clicca sull’icona a destra di <em>show guides</em> per modificare colore, opacità e tipo<sup id="fnref15:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Guide per la stampa fisica</p>
-<p>Per stampe con dimensioni esatte (es. 13×18 cm), combina il rapporto <code>13:18</code> con la guida <code>rule of thirds</code>: la griglia ti aiuta a posizionare elementi chiave secondo i principi compositivi standard, mantenendo il rapporto fisico richiesto[^crop-secrets].</p>
+<p>Per stampe con dimensioni esatte (es. 13×18 cm), combina il rapporto <code>13:18</code> con la guida <code>rule of thirds</code>: la griglia ti aiuta a posizionare elementi chiave secondo i principi compositivi standard, mantenendo il rapporto fisico richiesto<sup id="fnref2:crop-secrets"><a class="footnote-ref" href="#fn:crop-secrets">4</a></sup>.</p>
 </div>
 <h2 id="gestione-degli-aspetti-avanzati">Gestione degli aspetti avanzati<a class="headerlink" href="#gestione-degli-aspetti-avanzati" title="Permanent link">&para;</a></h2>
 <h3 id="aggiunta-di-nuovi-rapporti-daspetto">Aggiunta di nuovi rapporti d’aspetto<a class="headerlink" href="#aggiunta-di-nuovi-rapporti-daspetto" title="Permanent link">&para;</a></h3>
@@ -3171,31 +3171,48 @@
 1. Apri il file di configurazione <code>$HOME/.config/darktable/darktablerc</code>
 2. Aggiungi una riga nel formato:<br />
 <code>plugins/darkroom/clipping/extra_aspect_ratios/13x18=13:18</code><br />
-<em>(il nome <code>13x18</code> appare nel menu; <code>13:18</code> è il rapporto effettivo)</em>[^crop-manual]</p>
+<em>(il nome <code>13x18</code> appare nel menu; <code>13:18</code> è il rapporto effettivo)</em><sup id="fnref7:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></p>
 <h3 id="compatibilita-con-il-modulo-retouch">Compatibilità con il modulo Retouch<a class="headerlink" href="#compatibilita-con-il-modulo-retouch" title="Permanent link">&para;</a></h3>
 <p>Il modulo <code>crop</code> è intenzionalmente posizionato <em>dopo</em> <code>retouch</code> nella pipeline. Ciò significa che:
 - Tutte le aree fuori dal crop sono ancora accessibili come <em>source spots</em> per clonazione o riparazione
-- Le maschere create in <code>retouch</code> possono estendersi oltre i bordi finali del crop[^crop-manual][^crop-rotate-deprecated]</p>
+- Le maschere create in <code>retouch</code> possono estendersi oltre i bordi finali del crop<sup id="fnref8:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup><sup id="fnref3:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare crop per correggere la prospettiva</p>
-<p>Il modulo <code>crop</code> non esegue alcuna interpolazione. Se utilizzi <code>crop</code> invece di <code>rotate and perspective</code> per “correggere” linee verticali, otterrai solo un’immagine ritagliata con linee inclinate — non rettificate. La correzione prospettica richiede l’interpolazione fornita da <code>rotate and perspective</code>[^crop-rotate-deprecated].</p>
+<p>Il modulo <code>crop</code> non esegue alcuna interpolazione. Se utilizzi <code>crop</code> invece di <code>rotate and perspective</code> per “correggere” linee verticali, otterrai solo un’immagine ritagliata con linee inclinate — non rettificate. La correzione prospettica richiede l’interpolazione fornita da <code>rotate and perspective</code><sup id="fnref5:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup>.</p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop/">darktable 4.8 user manual — crop</a> [^crop-manual]</li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop-rotate/">darktable 4.8 user manual — (deprecated) crop and rotate</a> [^crop-rotate-deprecated]</li>
-<li><a href="https://www.youtube.com/watch?v=WRIzHRTA_N4">YouTube — The secrets of cropping</a> [^crop-secrets]</li>
-<li><a href="https://www.youtube.com/watch?v=5smugZ5pXN0">YouTube — darktable 3.8 What is new?</a> [^dt38-what-new]</li>
-<li><a href="https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031">discuss.pixls.us — Auto-crop from 'rotate and perspective' being disabled</a> [^pixls-crop-bug]</li>
-<li><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">YouTube — The darktable pipeline for beginners</a> [^pipeline-beginner]</li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop/">darktable 4.8 user manual — crop</a> <sup id="fnref16:crop-manual"><a class="footnote-ref" href="#fn:crop-manual">1</a></sup></li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop-rotate/">darktable 4.8 user manual — (deprecated) crop and rotate</a> <sup id="fnref6:crop-rotate-deprecated"><a class="footnote-ref" href="#fn:crop-rotate-deprecated">2</a></sup></li>
+<li><a href="https://www.youtube.com/watch?v=WRIzHRTA_N4">YouTube — The secrets of cropping</a> <sup id="fnref3:crop-secrets"><a class="footnote-ref" href="#fn:crop-secrets">4</a></sup></li>
+<li><a href="https://www.youtube.com/watch?v=5smugZ5pXN0">YouTube — darktable 3.8 What is new?</a> <sup id="fnref5:dt38-what-new"><a class="footnote-ref" href="#fn:dt38-what-new">3</a></sup></li>
+<li><a href="https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031">discuss.pixls.us — Auto-crop from 'rotate and perspective' being disabled</a> <sup id="fnref2:pixls-crop-bug"><a class="footnote-ref" href="#fn:pixls-crop-bug">6</a></sup></li>
+<li><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">YouTube — The darktable pipeline for beginners</a> <sup id="fnref4:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">5</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^crop-manual]: darktable 4.8 user manual - crop, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop/<br />
-[^crop-rotate-deprecated]: darktable 4.8 user manual - (deprecated) crop and rotate, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop-rotate/<br />
-[^dt38-what-new]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0<br />
-[^crop-secrets]: [ENG] The secrets of cropping, https://www.youtube.com/watch?v=WRIzHRTA_N4<br />
-[^pipeline-beginner]: [ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo<br />
-[^pixls-crop-bug]: Auto-crop from 'rotate and perspective' being disabled, https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:crop-manual">
+<p>darktable 4.8 user manual - crop, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop/&#160;<a class="footnote-backref" href="#fnref:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:crop-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:crop-rotate-deprecated">
+<p>darktable 4.8 user manual - (deprecated) crop and rotate, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/crop-rotate/&#160;<a class="footnote-backref" href="#fnref:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:crop-rotate-deprecated" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt38-what-new">
+<p>[ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0&#160;<a class="footnote-backref" href="#fnref:dt38-what-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt38-what-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt38-what-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt38-what-new" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt38-what-new" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:crop-secrets">
+<p>[ENG] The secrets of cropping, https://www.youtube.com/watch?v=WRIzHRTA_N4&#160;<a class="footnote-backref" href="#fnref:crop-secrets" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:crop-secrets" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:crop-secrets" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:crop-secrets" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p>[ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline-beginner" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pipeline-beginner" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pipeline-beginner" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-crop-bug">
+<p>Auto-crop from 'rotate and perspective' being disabled, https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031&#160;<a class="footnote-backref" href="#fnref:pixls-crop-bug" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-crop-bug" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

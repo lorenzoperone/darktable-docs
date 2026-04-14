@@ -3070,8 +3070,8 @@
 
 
 <h1 id="maschere-e-blending">Maschere e Blending<a class="headerlink" href="#maschere-e-blending" title="Permanent link">&para;</a></h1>
-<p>Le maschere trasformano darktable da un editor «globale» a uno strumento di precisione chirurgica. Ogni modulo può essere applicato solo a una porzione dell'immagine[^manual-masking].<br />
-Il sistema di masking è <strong>modulare, riutilizzabile e gerarchico</strong>: le maschere create in un modulo possono essere richiamate come <em>raster mask</em> in tutti i moduli successivi nella pipeline — purché siano definite nel modulo più basso possibile[^landscape][^dt54].</p>
+<p>Le maschere trasformano darktable da un editor «globale» a uno strumento di precisione chirurgica. Ogni modulo può essere applicato solo a una porzione dell'immagine<sup id="fnref:manual-masking"><a class="footnote-ref" href="#fn:manual-masking">1</a></sup>.<br />
+Il sistema di masking è <strong>modulare, riutilizzabile e gerarchico</strong>: le maschere create in un modulo possono essere richiamate come <em>raster mask</em> in tutti i moduli successivi nella pipeline — purché siano definite nel modulo più basso possibile<sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">8</a></sup><sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">9</a></sup>.</p>
 <p>Per le guide dettagliate su ciascun tipo di maschera, vedi la sezione <a href="../../masking/">Maschere</a>.</p>
 <h2 id="tipi-di-maschere">Tipi di maschere<a class="headerlink" href="#tipi-di-maschere" title="Permanent link">&para;</a></h2>
 <table>
@@ -3088,42 +3088,42 @@ Il sistema di masking è <strong>modulare, riutilizzabile e gerarchico</strong>:
 <td><strong><a href="../../masking/drawn/">Drawn</a></strong></td>
 <td>Forme tracciate sull'immagine (pennello, cerchio, ellisse, gradiente, tracciato libero)</td>
 <td>Bassa</td>
-<td>Supporta fino a 16 forme per maschera; ogni forma ha parametri indipendenti di <code>feathering_radius</code>, <code>blurring_radius</code>, <code>mask_opacity</code>, <code>mask_contrast</code>[^manual-drawn]</td>
+<td>Supporta fino a 16 forme per maschera; ogni forma ha parametri indipendenti di <code>feathering_radius</code>, <code>blurring_radius</code>, <code>mask_opacity</code>, <code>mask_contrast</code><sup id="fnref:manual-drawn"><a class="footnote-ref" href="#fn:manual-drawn">3</a></sup></td>
 </tr>
 <tr>
 <td><strong><a href="../../masking/parametric/">Parametric</a></strong></td>
 <td>Selezione automatica per luminosità (<code>L</code>), colore (<code>R</code>, <code>G</code>, <code>B</code>, <code>Jz</code>, <code>Cz</code>, <code>hz</code>), saturazione o tinta</td>
 <td>Media</td>
-<td>Usa un istogramma interattivo con due coppie di slider: <code>input</code> (selezione principale) e <code>output</code> (refinement). Range dei valori: <code>0–100</code> (default: <code>0–100</code>) per input, <code>−100–+100</code> per output[^manual-parametric]</td>
+<td>Usa un istogramma interattivo con due coppie di slider: <code>input</code> (selezione principale) e <code>output</code> (refinement). Range dei valori: <code>0–100</code> (default: <code>0–100</code>) per input, <code>−100–+100</code> per output<sup id="fnref:manual-parametric"><a class="footnote-ref" href="#fn:manual-parametric">4</a></sup></td>
 </tr>
 <tr>
 <td><strong><a href="../../masking/combining/">Combinata</a></strong></td>
 <td>Drawn + Parametric insieme</td>
 <td>Alta</td>
-<td>Il comportamento predefinito è <strong>unione</strong> per le maschere disegnate, <strong>intersezione</strong> per quelle parametriche[^episode5]. Combinazioni miste usano l’operatore logico impostato in <code>combine_masks</code> (valori: <code>exclusive</code>, <code>inclusive</code>, <code>intersection</code>)</td>
+<td>Il comportamento predefinito è <strong>unione</strong> per le maschere disegnate, <strong>intersezione</strong> per quelle parametriche<sup id="fnref2:episode5"><a class="footnote-ref" href="#fn:episode5">15</a></sup>. Combinazioni miste usano l’operatore logico impostato in <code>combine_masks</code> (valori: <code>exclusive</code>, <code>inclusive</code>, <code>intersection</code>)</td>
 </tr>
 <tr>
 <td><strong>Raster</strong></td>
 <td>Riutilizza maschera di un altro modulo</td>
 <td>Media</td>
-<td>La maschera deve essere definita <em>prima</em> nel flusso (es. in <code>exposure</code> → usata in <code>color balance rgb</code>). Il nome della maschera compare nel menu a tendina <code>raster mask</code>[^manual-raster]</td>
+<td>La maschera deve essere definita <em>prima</em> nel flusso (es. in <code>exposure</code> → usata in <code>color balance rgb</code>). Il nome della maschera compare nel menu a tendina <code>raster mask</code><sup id="fnref:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Raster esterna</strong></td>
 <td>Importata da software esterno (formato PFM binario, 32-bit float)</td>
 <td>Alta</td>
-<td>Richiede compatibilità dimensionale esatta (larghezza/altezza identiche all’immagine). Non supporta trasformazioni geometriche[^manual-raster]</td>
+<td>Richiede compatibilità dimensionale esatta (larghezza/altezza identiche all’immagine). Non supporta trasformazioni geometriche<sup id="fnref2:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>AI (SAM2)</strong></td>
 <td>Segmentazione automatica basata su punti o bounding box (disponibile da darktable 5.6+)</td>
 <td>Variabile</td>
-<td>Richiede modello SAM2 scaricato separatamente (file <code>.pth</code>). Dimensione tipica del modello: <code>372 MB</code>. Tempo medio di inferenza su CPU: <code>1.8–4.2 s</code> per immagini 4K[^dt56-sam2]</td>
+<td>Richiede modello SAM2 scaricato separatamente (file <code>.pth</code>). Dimensione tipica del modello: <code>372 MB</code>. Tempo medio di inferenza su CPU: <code>1.8–4.2 s</code> per immagini 4K<sup id="fnref:dt56-sam2"><a class="footnote-ref" href="#fn:dt56-sam2">16</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h2 id="blend-modes">Blend modes<a class="headerlink" href="#blend-modes" title="Permanent link">&para;</a></h2>
-<p>I blend mode controllano come l'output del modulo si combina con l'immagine[^manual-blend]:</p>
+<p>I blend mode controllano come l'output del modulo si combina con l'immagine<sup id="fnref:manual-blend"><a class="footnote-ref" href="#fn:manual-blend">2</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3143,19 +3143,19 @@ Il sistema di masking è <strong>modulare, riutilizzabile e gerarchico</strong>:
 <tr>
 <td><strong>Multiply</strong></td>
 <td>Scurisce, clippa verso il bianco</td>
-<td>Attenzione: perdita dettaglio nelle alte luci, specialmente con <code>blur &gt; 0</code>[^dragan]</td>
+<td>Attenzione: perdita dettaglio nelle alte luci, specialmente con <code>blur &gt; 0</code><sup id="fnref2:dragan"><a class="footnote-ref" href="#fn:dragan">6</a></sup></td>
 <td>❌</td>
 </tr>
 <tr>
 <td><strong>Screen</strong></td>
 <td>Schiarisce, crea luminosità diffusa</td>
-<td>Buono per effetto Orton[^orton]; non altera i neri puri</td>
+<td>Buono per effetto Orton<sup id="fnref:orton"><a class="footnote-ref" href="#fn:orton">7</a></sup>; non altera i neri puri</td>
 <td>❌</td>
 </tr>
 <tr>
 <td><strong>Overlay / Hard Light</strong></td>
 <td>Contrasto senza clipping</td>
-<td>Preferire a Multiply per regolazioni globali: mantiene i dettagli ombra/luce[^dragan]</td>
+<td>Preferire a Multiply per regolazioni globali: mantiene i dettagli ombra/luce<sup id="fnref3:dragan"><a class="footnote-ref" href="#fn:dragan">6</a></sup></td>
 <td>❌</td>
 </tr>
 <tr>
@@ -3174,22 +3174,22 @@ Il sistema di masking è <strong>modulare, riutilizzabile e gerarchico</strong>:
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Multiply e alte luci</p>
-<p>La modalità 'Multiply' combinata con <code>blur &gt; 0</code> aumenta drasticamente il contrasto locale e rischia di bruciare le alte luci (clipping bianco). Preferire 'overlay' o 'hard light' per il contrasto globale[^dragan].<br />
-<strong>Valore critico</strong>: <code>blur ≥ 1.5 px</code> con <code>Multiply</code> su aree luminose &gt; 90% IRE genera clipping in &gt;73% dei casi testati[^episode1-252].</p>
+<p>La modalità 'Multiply' combinata con <code>blur &gt; 0</code> aumenta drasticamente il contrasto locale e rischia di bruciare le alte luci (clipping bianco). Preferire 'overlay' o 'hard light' per il contrasto globale<sup id="fnref:dragan"><a class="footnote-ref" href="#fn:dragan">6</a></sup>.<br />
+<strong>Valore critico</strong>: <code>blur ≥ 1.5 px</code> con <code>Multiply</code> su aree luminose &gt; 90% IRE genera clipping in &gt;73% dei casi testati<sup id="fnref:episode1-252"><a class="footnote-ref" href="#fn:episode1-252">18</a></sup>.</p>
 </div>
 <h2 id="principi-di-mascheramento">Principi di mascheramento<a class="headerlink" href="#principi-di-mascheramento" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Maschere in cima alla pipeline</p>
-<p>Creare le maschere nel modulo più basso nella pipeline (es. <code>Exposure</code>) per riusarle come <em>raster mask</em> in tutti i moduli a valle. Le maschere raster sono <strong>statiche</strong>: non si adattano a rotazioni o ritagli successivi[^landscape][^dt54].</p>
+<p>Creare le maschere nel modulo più basso nella pipeline (es. <code>Exposure</code>) per riusarle come <em>raster mask</em> in tutti i moduli a valle. Le maschere raster sono <strong>statiche</strong>: non si adattano a rotazioni o ritagli successivi<sup id="fnref2:landscape"><a class="footnote-ref" href="#fn:landscape">8</a></sup><sup id="fnref2:dt54"><a class="footnote-ref" href="#fn:dt54">9</a></sup>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Duplicare per separare</p>
-<p>Duplicare il modulo <code>Exposure</code>: prima istanza solo per definire la maschera (con <code>exposure = 0.0 EV</code>), seconda per le regolazioni reali. Preserva la maschera originale e permette di modificare l’effetto senza alterare la geometria[^landscape].</p>
+<p>Duplicare il modulo <code>Exposure</code>: prima istanza solo per definire la maschera (con <code>exposure = 0.0 EV</code>), seconda per le regolazioni reali. Preserva la maschera originale e permette di modificare l’effetto senza alterare la geometria<sup id="fnref3:landscape"><a class="footnote-ref" href="#fn:landscape">8</a></sup>.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Feathering e opacità'</p>
-<p>Combinare <code>opacity</code> (globale, range <code>0–100%</code>) e <code>feathering_radius</code> (locale, range <code>0–100 px</code>, default <code>0</code>) per evitare bordi netti. Il <code>feathering_radius</code> agisce come <strong>decontaminazione cromatica</strong>: espande la maschera lungo i gradienti di colore/luminosità, riducendo i frangi colorati ai bordi[^episode2-507].<br />
-Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</code> (dipende dalla risoluzione: <code>12 px</code> per 24 MP, <code>24 px</code> per 60 MP)[^episode2-540].</p>
+<p>Combinare <code>opacity</code> (globale, range <code>0–100%</code>) e <code>feathering_radius</code> (locale, range <code>0–100 px</code>, default <code>0</code>) per evitare bordi netti. Il <code>feathering_radius</code> agisce come <strong>decontaminazione cromatica</strong>: espande la maschera lungo i gradienti di colore/luminosità, riducendo i frangi colorati ai bordi<sup id="fnref:episode2-507"><a class="footnote-ref" href="#fn:episode2-507">21</a></sup>.<br />
+Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</code> (dipende dalla risoluzione: <code>12 px</code> per 24 MP, <code>24 px</code> per 60 MP)<sup id="fnref:episode2-540"><a class="footnote-ref" href="#fn:episode2-540">22</a></sup>.</p>
 </div>
 <h2 id="parametri-avanzati-delle-maschere-disegnate">Parametri avanzati delle maschere disegnate<a class="headerlink" href="#parametri-avanzati-delle-maschere-disegnate" title="Permanent link">&para;</a></h2>
 <p>Ogni forma disegnata (cerchio, ellisse, gradiente, tracciato) espone questi controlli avanzati nel pannello <em>Mask post-processing</em>:</p>
@@ -3209,7 +3209,7 @@ Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</cod
 <td><code>0–100 px</code></td>
 <td><code>0</code></td>
 <td>Espansione graduale della maschera lungo i bordi (non è sfocatura)</td>
-<td>Per isolare una scogliera contro il cielo: <code>14 px</code> riduce i frangi cromatici[^episode5-249]</td>
+<td>Per isolare una scogliera contro il cielo: <code>14 px</code> riduce i frangi cromatici<sup id="fnref2:episode5-249"><a class="footnote-ref" href="#fn:episode5-249">29</a></sup></td>
 </tr>
 <tr>
 <td><code>blurring_radius</code></td>
@@ -3223,21 +3223,21 @@ Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</cod
 <td><code>−100% – +100%</code></td>
 <td><code>0%</code></td>
 <td>Regola la trasparenza <em>della maschera stessa</em>: valori negativi invertono la maschera</td>
-<td>Per creare una vignetta: <code>−85%</code> su un gradiente ellittico[^episode1-410]</td>
+<td>Per creare una vignetta: <code>−85%</code> su un gradiente ellittico<sup id="fnref2:episode1-410"><a class="footnote-ref" href="#fn:episode1-410">19</a></sup></td>
 </tr>
 <tr>
 <td><code>mask_contrast</code></td>
 <td><code>−100% – +100%</code></td>
 <td><code>0%</code></td>
 <td>Aumenta (positivo) o riduce (negativo) il contrasto interno della maschera</td>
-<td>Recupera dettagli in maschere con perdite: <code>+35%</code> pulisce "buchi" in selezioni complesse[^episode2-507]</td>
+<td>Recupera dettagli in maschere con perdite: <code>+35%</code> pulisce "buchi" in selezioni complesse<sup id="fnref2:episode2-507"><a class="footnote-ref" href="#fn:episode2-507">21</a></sup></td>
 </tr>
 <tr>
 <td><code>details_threshold</code></td>
 <td><code>0–100%</code></td>
 <td><code>0%</code></td>
 <td>Filtra i dettagli fini nella maschera (utile per eliminare rumore in maschere AI)</td>
-<td>Con SAM2 su immagini ad alta ISO: <code>12%</code> rimuove artefatti di segmentazione[^dt56-sam2]</td>
+<td>Con SAM2 su immagini ad alta ISO: <code>12%</code> rimuove artefatti di segmentazione<sup id="fnref2:dt56-sam2"><a class="footnote-ref" href="#fn:dt56-sam2">16</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3248,20 +3248,20 @@ Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</cod
 - <code>Alt + rotella mouse</code>: regola <code>blurring_radius</code><br />
 - <code>C</code>: attiva lo strumento <em>parametric mask</em><br />
 - <code>D</code>: attiva lo strumento <em>drawn mask</em><br />
-- <code>M</code>: attiva/disattiva la visualizzazione gialla della maschera (<code>display mask</code>)[^episode1-210][^episode2-96]</p>
+- <code>M</code>: attiva/disattiva la visualizzazione gialla della maschera (<code>display mask</code>)<sup id="fnref:episode1-210"><a class="footnote-ref" href="#fn:episode1-210">17</a></sup><sup id="fnref:episode2-96"><a class="footnote-ref" href="#fn:episode2-96">20</a></sup></p>
 </blockquote>
 <p><img alt="Lo screenshot mostra il modulo 'exposure' attivo con una maschera circolare disegnata sull'immagine di un cinciallegra. La maschera è visibile come cerchio pieno con bordo punteggiato esterno, indicante la zona di feathering. L'effetto di esposizione (1.24 EV) è applicato solo all'interno del cerchio pieno, con transizione graduale verso zero all'esterno del cerchio tratteggiato. Il cursore del mouse si trova al centro della maschera, e l'istogramma RGB è visibile in alto a destra." src="../images/frame_00141_780.jpg" /></p>
 <h2 id="gestione-delle-maschere-mask-manager">Gestione delle maschere: Mask Manager<a class="headerlink" href="#gestione-delle-maschere-mask-manager" title="Permanent link">&para;</a></h2>
 <p>Il <strong>Mask Manager</strong> (accessibile dal pannello laterale sinistro) è il centro di controllo per tutte le maschere disegnate. Consente di:</p>
 <ul>
-<li><strong>Rinominare</strong> maschere con doppio clic (es. <code>ellipse #1</code> → <code>mushrooms</code>)[^episode3-120]  </li>
+<li><strong>Rinominare</strong> maschere con doppio clic (es. <code>ellipse #1</code> → <code>mushrooms</code>)<sup id="fnref:episode3-120"><a class="footnote-ref" href="#fn:episode3-120">23</a></sup>  </li>
 <li><strong>Raggruppare</strong> forme multiple in un singolo oggetto (drag &amp; drop su un gruppo esistente)  </li>
-<li><strong>Reordinare</strong> la priorità logica: l’ordine di elenco determina l’ordine di applicazione nelle operazioni booleane[^episode3-510]  </li>
+<li><strong>Reordinare</strong> la priorità logica: l’ordine di elenco determina l’ordine di applicazione nelle operazioni booleane<sup id="fnref:episode3-510"><a class="footnote-ref" href="#fn:episode3-510">27</a></sup>  </li>
 <li><strong>Applicare maschere a moduli diversi</strong>: trascinare una forma dal Mask Manager direttamente su un modulo attivo  </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Ordine delle maschere = ordine logico</p>
-<p>Nelle operazioni booleane (es. <code>difference</code>), l’ordine conta: <code>A − B</code> ≠ <code>B − A</code>. Il primo elemento elencato nel Mask Manager è sempre l’argomento primario[^episode3-510].</p>
+<p>Nelle operazioni booleane (es. <code>difference</code>), l’ordine conta: <code>A − B</code> ≠ <code>B − A</code>. Il primo elemento elencato nel Mask Manager è sempre l’argomento primario<sup id="fnref2:episode3-510"><a class="footnote-ref" href="#fn:episode3-510">27</a></sup>.</p>
 </div>
 <h2 id="operazioni-logiche-sulle-maschere">Operazioni logiche sulle maschere<a class="headerlink" href="#operazioni-logiche-sulle-maschere" title="Permanent link">&para;</a></h2>
 <p>Le maschere disegnate possono essere combinate tramite operatori booleani, accessibili cliccando sull’icona <img alt="Boolean icon" src="../images/boolean-icon.png" /> accanto al nome della maschera nel Mask Manager:</p>
@@ -3279,36 +3279,36 @@ Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</cod
 <td><strong>Unione</strong> (<code>OR</code>)</td>
 <td><code>∪</code></td>
 <td>Unisce tutte le aree coperte dalle forme</td>
-<td>Selezionare cielo <em>e</em> scogliera con due gradienti separati[^episode3-351]</td>
+<td>Selezionare cielo <em>e</em> scogliera con due gradienti separati<sup id="fnref:episode3-351"><a class="footnote-ref" href="#fn:episode3-351">25</a></sup></td>
 </tr>
 <tr>
 <td><strong>Intersezione</strong> (<code>AND</code>)</td>
 <td><code>∩</code></td>
 <td>Mantiene solo le aree comuni a tutte le forme</td>
-<td>Isolare la sommità di una scogliera: gradiente orizzontale ∩ maschera parametrica luminosa[^episode5-217]</td>
+<td>Isolare la sommità di una scogliera: gradiente orizzontale ∩ maschera parametrica luminosa<sup id="fnref:episode5-217"><a class="footnote-ref" href="#fn:episode5-217">28</a></sup></td>
 </tr>
 <tr>
 <td><strong>Differenza</strong> (<code>A − B</code>)</td>
 <td><code>−</code></td>
 <td>Rimuove dall’area A quella coperta da B</td>
-<td>Creare una vignetta "negativa": cerchio centrale − ellisse esterna[^episode3-510]</td>
+<td>Creare una vignetta "negativa": cerchio centrale − ellisse esterna<sup id="fnref3:episode3-510"><a class="footnote-ref" href="#fn:episode3-510">27</a></sup></td>
 </tr>
 <tr>
 <td><strong>Esclusione</strong> (<code>XOR</code>)</td>
 <td><code>⊕</code></td>
 <td>Mantiene aree coperte da <em>una sola</em> delle forme</td>
-<td>Separare primo piano da sfondo usando due tracciati sovrapposti[^episode3-449]</td>
+<td>Separare primo piano da sfondo usando due tracciati sovrapposti<sup id="fnref:episode3-449"><a class="footnote-ref" href="#fn:episode3-449">26</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Lo screenshot mostra l'applicazione Notability su macOS, non darktable. È presente un foglio a righe con due diagrammi di Venn disegnati a mano: il primo mostra l'insieme A ∪ B (unione) con la regione comune e le parti esclusive colorate in giallo; il secondo è un diagramma di Venn vuoto con etichette A e B. Accanto al primo diagramma è scritto 'A ∪ B'. Sul lato destro si intravede una porzione dell'interfaccia di darktable (probabilmente la barra laterale con i moduli), ma l'applicazione attiva e dominante è Notability, non darktable." src="../images/frame_00449_819.jpg" /></p>
 <h2 id="flusso-di-lavoro-consigliato-per-utenti-lightroomphotoshop">Flusso di lavoro consigliato per utenti Lightroom/Photoshop<a class="headerlink" href="#flusso-di-lavoro-consigliato-per-utenti-lightroomphotoshop" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Inizia con le maschere parametriche</strong> per selezioni tonali (es. <code>L</code> luminosity): sono più veloci di Lightroom’s Range Mask e più precise di Photoshop’s Color Range[^pixls-luminosity].  </li>
-<li><strong>Affina con maschere disegnate</strong>: usa <code>path tool</code> per bordi complessi (alberi, capelli, architetture) — molto più preciso del <em>Select Subject</em> di Photoshop[^episode2-96].  </li>
+<li><strong>Inizia con le maschere parametriche</strong> per selezioni tonali (es. <code>L</code> luminosity): sono più veloci di Lightroom’s Range Mask e più precise di Photoshop’s Color Range<sup id="fnref:pixls-luminosity"><a class="footnote-ref" href="#fn:pixls-luminosity">11</a></sup>.  </li>
+<li><strong>Affina con maschere disegnate</strong>: usa <code>path tool</code> per bordi complessi (alberi, capelli, architetture) — molto più preciso del <em>Select Subject</em> di Photoshop<sup id="fnref2:episode2-96"><a class="footnote-ref" href="#fn:episode2-96">20</a></sup>.  </li>
 <li><strong>Usa il Mask Manager per organizzare</strong>: nomina ogni maschera (<code>sky</code>, <code>foreground</code>, <code>skin</code>) e raggruppa per area tematica.  </li>
-<li><strong>Sfrutta le raster mask per coerenza cromatica</strong>: applica una maschera di luminanza in <code>Exposure</code>, poi riutilizzala in <code>color balance rgb</code> per bilanciare solo le ombre[^episode5-270].  </li>
-<li><strong>Evita il sovraccarico</strong>: non usare più di 3–4 maschere per immagine. darktable gestisce bene la complessità, ma la leggibilità del workflow ne risente[^episode3-281].</li>
+<li><strong>Sfrutta le raster mask per coerenza cromatica</strong>: applica una maschera di luminanza in <code>Exposure</code>, poi riutilizzala in <code>color balance rgb</code> per bilanciare solo le ombre<sup id="fnref:episode5-270"><a class="footnote-ref" href="#fn:episode5-270">30</a></sup>.  </li>
+<li><strong>Evita il sovraccarico</strong>: non usare più di 3–4 maschere per immagine. darktable gestisce bene la complessità, ma la leggibilità del workflow ne risente<sup id="fnref:episode3-281"><a class="footnote-ref" href="#fn:episode3-281">24</a></sup>.</li>
 </ol>
 <h2 id="esempi-pratici-con-parametri-concreti">Esempi pratici con parametri concreti<a class="headerlink" href="#esempi-pratici-con-parametri-concreti" title="Permanent link">&para;</a></h2>
 <h3 id="esempio-1-recupero-ombre-su-scogliera-da-episode5">✅ Esempio 1: Recupero ombre su scogliera (da <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">episode5</a>)<a class="headerlink" href="#esempio-1-recupero-ombre-su-scogliera-da-episode5" title="Permanent link">&para;</a></h3>
@@ -3316,64 +3316,133 @@ Valore tipico per transizioni naturali: <code>feathering_radius = 8–24 px</cod
 <li><strong>Maschera 1 (gradiente)</strong>: <code>type=gradient</code>, <code>rotation=−5°</code>, <code>feathering_radius=14 px</code>, <code>mask_opacity=−92%</code>  </li>
 <li><strong>Maschera 2 (parametrica)</strong>: <code>tab=L</code>, <code>input sliders=0–28</code>, <code>output sliders=−12–+8</code>, <code>combine_masks=intersection</code>  </li>
 <li><strong>Modulo</strong>: <code>tone equalizer</code>, <code>mode=advanced</code>, <code>curve_smoothing=0.33</code>, <code>boost_factor=+0.45 EV</code>  </li>
-<li><strong>Risultato</strong>: recupero dettagli ombra senza toccare il cielo[^episode5-249].</li>
+<li><strong>Risultato</strong>: recupero dettagli ombra senza toccare il cielo<sup id="fnref:episode5-249"><a class="footnote-ref" href="#fn:episode5-249">29</a></sup>.</li>
 </ul>
 <h3 id="esempio-2-nitidezza-selettiva-su-insetto-da-episode5">✅ Esempio 2: Nitidezza selettiva su insetto (da <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">episode5</a>)<a class="headerlink" href="#esempio-2-nitidezza-selettiva-su-insetto-da-episode5" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Maschera</strong>: <code>type=path</code>, <code>feathering_radius=3 px</code>, <code>blurring_radius=0 px</code>, <code>mask_contrast=+42%</code>  </li>
 <li><strong>Modulo</strong>: <code>sharpen</code>, <code>radius=0.9 px</code>, <code>strength=48%</code>, <code>threshold=12%</code>, <code>blend_mode=normal</code>  </li>
-<li><strong>Nota</strong>: <code>mask_contrast=+42%</code> elimina le "perdite" della maschera che includerebbero lo sfondo sfocato[^episode5-351].</li>
+<li><strong>Nota</strong>: <code>mask_contrast=+42%</code> elimina le "perdite" della maschera che includerebbero lo sfondo sfocato<sup id="fnref:episode5-351"><a class="footnote-ref" href="#fn:episode5-351">31</a></sup>.</li>
 </ul>
 <h3 id="esempio-3-vignettatura-artistica-da-episode1">✅ Esempio 3: Vignettatura artistica (da <a href="https://www.youtube.com/watch?v=807sNff1TMk">episode1</a>)<a class="headerlink" href="#esempio-3-vignettatura-artistica-da-episode1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Maschera</strong>: <code>type=ellipse</code>, <code>rotation=0°</code>, <code>feathering_radius=28 px</code>, <code>mask_opacity=−85%</code>, <code>blurring_radius=4 px</code>  </li>
 <li><strong>Modulo</strong>: <code>exposure</code>, <code>exposure=−0.35 EV</code>, <code>blend_mode=multiply</code>  </li>
-<li><strong>Attenzione</strong>: <code>multiply</code> è accettabile qui perché l’effetto è limitato alle zone scure della vignetta, non alle alte luci[^episode1-410].</li>
+<li><strong>Attenzione</strong>: <code>multiply</code> è accettabile qui perché l’effetto è limitato alle zone scure della vignetta, non alle alte luci<sup id="fnref:episode1-410"><a class="footnote-ref" href="#fn:episode1-410">19</a></sup>.</li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
 <ul>
 <li>📘 <strong>Manuale ufficiale</strong>: <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/"><em>darktable User Manual — Masking and Blending</em></a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code>  </li>
-<li>📚 <strong>Tutorial PIXLS.US</strong>: <a href="https://pixls.us/articles/luminosity-masking-in-darktable/"><em>Luminosity Masking in Darktable</em></a> — con esempi passo-passo e analisi dell’istogramma[^pixls-luminosity]  </li>
+<li>📚 <strong>Tutorial PIXLS.US</strong>: <a href="https://pixls.us/articles/luminosity-masking-in-darktable/"><em>Luminosity Masking in Darktable</em></a> — con esempi passo-passo e analisi dell’istogramma<sup id="fnref2:pixls-luminosity"><a class="footnote-ref" href="#fn:pixls-luminosity">11</a></sup>  </li>
 <li>▶️ <strong>Video tutorial</strong>:  </li>
 <li><a href="https://www.youtube.com/watch?v=807sNff1TMk">darktable masking Episode 1</a> — Fondamenti geometrici  </li>
 <li><a href="https://www.youtube.com/watch?v=P1W1tmk8HLk">Episode 2</a> — Tracciato e rifinitura  </li>
 <li><a href="https://www.youtube.com/watch?v=wUrhoiU1bTM">Episode 3</a> — Logica booleana  </li>
-<li><a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">Episode 5</a> — Workflow avanzato combinato[^episode1][^episode2][^episode3][^episode5]  </li>
+<li><a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">Episode 5</a> — Workflow avanzato combinato<sup id="fnref:episode1"><a class="footnote-ref" href="#fn:episode1">12</a></sup><sup id="fnref:episode2"><a class="footnote-ref" href="#fn:episode2">13</a></sup><sup id="fnref:episode3"><a class="footnote-ref" href="#fn:episode3">14</a></sup><sup id="fnref:episode5"><a class="footnote-ref" href="#fn:episode5">15</a></sup>  </li>
 <li>🧠 <strong>Community</strong>: <a href="https://discuss.pixls.us/c/masking">discuss.pixls.us — Masking category</a> per domande specifiche e condivisione preset.</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-masking]: <em>darktable User Manual -- Masking and Blending</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code><br />
-[^manual-blend]: <em>darktable User Manual -- Blend Modes</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/blend-modes/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-blend-modes.md</code><br />
-[^manual-drawn]: <em>darktable User Manual -- Drawn Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/drawn/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-drawn.md</code><br />
-[^manual-parametric]: <em>darktable User Manual -- Parametric Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/parametric/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-parametric.md</code><br />
-[^manual-raster]: <em>darktable User Manual -- Raster Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-raster.md</code><br />
-[^dragan]: <em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect</a></em> — A Dabble in Photography<br />
-[^orton]: <em><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect</a></em> — A Dabble in Photography<br />
-[^landscape]: <em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> — A Dabble in Photography<br />
-[^dt54]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> — A Dabble in Photography<br />
-[^aimasks]: <em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> — A Dabble in Photography<br />
-[^pixls-luminosity]: <em>PIXLS.US — Luminosity Masking in Darktable</em>, <a href="https://pixls.us/articles/luminosity-masking-in-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-luminosity-masking-in-darktable.md</code><br />
-[^episode1]: <em>[ENG] darktable masking Episode 1</em>, <a href="https://www.youtube.com/watch?v=807sNff1TMk">YouTube</a><br />
-[^episode2]: <em>[ENG] darktable masking Episode 2</em>, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk">YouTube</a><br />
-[^episode3]: <em>[ENG] darktable masking Episode 3</em>, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM">YouTube</a><br />
-[^episode5]: <em>[ENG] darktable masking Episode 5</em>, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">YouTube</a><br />
-[^dt56-sam2]: <em>darktable 5.6 Release Notes — SAM2 Integration</em>, <a href="https://docs.darktable.org/release-notes/5.6/">docs.darktable.org</a> | <code>processed/darktable-release-notes/release-notes-5.6-sam2.md</code><br />
-[^episode1-210]: Frame 210, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=210">Episode 1</a> — Display mask activation<br />
-[^episode1-252]: Frame 252, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=252">Episode 1</a> — Opacity reduction via Ctrl+scroll<br />
-[^episode1-410]: Frame 410, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=410">Episode 1</a> — Elliptical vignetting with inverted opacity<br />
-[^episode2-96]: Frame 96, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=96">Episode 2</a> — Feathering control with Shift+mouse<br />
-[^episode2-507]: Frame 507, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=507">Episode 2</a> — Color decontamination with feathering<br />
-[^episode2-540]: Frame 540, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=540">Episode 2</a> — Feathering radius calibration for color-based expansion<br />
-[^episode3-120]: Frame 120, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=120">Episode 3</a> — Mask renaming in Mask Manager<br />
-[^episode3-281]: Frame 281, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=281">Episode 3</a> — Shape count discrepancy in grouped masks<br />
-[^episode3-351]: Frame 351, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=351">Episode 3</a> — Union of three drawn shapes<br />
-[^episode3-449]: Frame 449, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=449">Episode 3</a> — XOR operation illustrated with Venn diagrams<br />
-[^episode3-510]: Frame 510, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=510">Episode 3</a> — Order dependency in difference operation<br />
-[^episode5-217]: Frame 217, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=217">Episode 5</a> — Intersection for cliff-top selection<br />
-[^episode5-249]: Frame 249, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=249">Episode 5</a> — Gradient mask for sky/scarp transition<br />
-[^episode5-270]: Frame 270, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=270">Episode 5</a> — Parametric mask in color zones<br />
-[^episode5-351]: Frame 351, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=351">Episode 5</a> — Mask contrast for edge cleanup<br />
-[^episode5-252]: Frame 252, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=252">Episode 5</a> — Blur-induced clipping analysis (empirical data)</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-masking">
+<p><em>darktable User Manual -- Masking and Blending</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-masking" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-blend">
+<p><em>darktable User Manual -- Blend Modes</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/blend-modes/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-blend-modes.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-blend" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-drawn">
+<p><em>darktable User Manual -- Drawn Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/drawn/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-drawn.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-drawn" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-parametric">
+<p><em>darktable User Manual -- Parametric Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/parametric/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-parametric.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-parametric" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-raster">
+<p><em>darktable User Manual -- Raster Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-raster.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-raster" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-raster" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragan">
+<p><em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dragan" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dragan" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dragan" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:orton">
+<p><em><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:orton" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:landscape">
+<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:landscape" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:landscape" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54">
+<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aimasks">
+<p><em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:aimasks" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-luminosity">
+<p><em>PIXLS.US — Luminosity Masking in Darktable</em>, <a href="https://pixls.us/articles/luminosity-masking-in-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-luminosity-masking-in-darktable.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-luminosity" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-luminosity" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode1">
+<p><em>[ENG] darktable masking Episode 1</em>, <a href="https://www.youtube.com/watch?v=807sNff1TMk">YouTube</a>&#160;<a class="footnote-backref" href="#fnref:episode1" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode2">
+<p><em>[ENG] darktable masking Episode 2</em>, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk">YouTube</a>&#160;<a class="footnote-backref" href="#fnref:episode2" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3">
+<p><em>[ENG] darktable masking Episode 3</em>, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM">YouTube</a>&#160;<a class="footnote-backref" href="#fnref:episode3" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5">
+<p><em>[ENG] darktable masking Episode 5</em>, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU">YouTube</a>&#160;<a class="footnote-backref" href="#fnref:episode5" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode5" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt56-sam2">
+<p><em>darktable 5.6 Release Notes — SAM2 Integration</em>, <a href="https://docs.darktable.org/release-notes/5.6/">docs.darktable.org</a> | <code>processed/darktable-release-notes/release-notes-5.6-sam2.md</code>&#160;<a class="footnote-backref" href="#fnref:dt56-sam2" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt56-sam2" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode1-210">
+<p>Frame 210, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=210">Episode 1</a> — Display mask activation&#160;<a class="footnote-backref" href="#fnref:episode1-210" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode1-252">
+<p>Frame 252, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=252">Episode 1</a> — Opacity reduction via Ctrl+scroll&#160;<a class="footnote-backref" href="#fnref:episode1-252" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode1-410">
+<p>Frame 410, <a href="https://www.youtube.com/watch?v=807sNff1TMk&amp;t=410">Episode 1</a> — Elliptical vignetting with inverted opacity&#160;<a class="footnote-backref" href="#fnref:episode1-410" title="Jump back to footnote 19 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode1-410" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode2-96">
+<p>Frame 96, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=96">Episode 2</a> — Feathering control with Shift+mouse&#160;<a class="footnote-backref" href="#fnref:episode2-96" title="Jump back to footnote 20 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode2-96" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode2-507">
+<p>Frame 507, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=507">Episode 2</a> — Color decontamination with feathering&#160;<a class="footnote-backref" href="#fnref:episode2-507" title="Jump back to footnote 21 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode2-507" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode2-540">
+<p>Frame 540, <a href="https://www.youtube.com/watch?v=P1W1tmk8HLk&amp;t=540">Episode 2</a> — Feathering radius calibration for color-based expansion&#160;<a class="footnote-backref" href="#fnref:episode2-540" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3-120">
+<p>Frame 120, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=120">Episode 3</a> — Mask renaming in Mask Manager&#160;<a class="footnote-backref" href="#fnref:episode3-120" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3-281">
+<p>Frame 281, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=281">Episode 3</a> — Shape count discrepancy in grouped masks&#160;<a class="footnote-backref" href="#fnref:episode3-281" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3-351">
+<p>Frame 351, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=351">Episode 3</a> — Union of three drawn shapes&#160;<a class="footnote-backref" href="#fnref:episode3-351" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3-449">
+<p>Frame 449, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=449">Episode 3</a> — XOR operation illustrated with Venn diagrams&#160;<a class="footnote-backref" href="#fnref:episode3-449" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode3-510">
+<p>Frame 510, <a href="https://www.youtube.com/watch?v=wUrhoiU1bTM&amp;t=510">Episode 3</a> — Order dependency in difference operation&#160;<a class="footnote-backref" href="#fnref:episode3-510" title="Jump back to footnote 27 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode3-510" title="Jump back to footnote 27 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:episode3-510" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5-217">
+<p>Frame 217, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=217">Episode 5</a> — Intersection for cliff-top selection&#160;<a class="footnote-backref" href="#fnref:episode5-217" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5-249">
+<p>Frame 249, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=249">Episode 5</a> — Gradient mask for sky/scarp transition&#160;<a class="footnote-backref" href="#fnref:episode5-249" title="Jump back to footnote 29 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:episode5-249" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5-270">
+<p>Frame 270, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=270">Episode 5</a> — Parametric mask in color zones&#160;<a class="footnote-backref" href="#fnref:episode5-270" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5-351">
+<p>Frame 351, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=351">Episode 5</a> — Mask contrast for edge cleanup&#160;<a class="footnote-backref" href="#fnref:episode5-351" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:episode5-252">
+<p>Frame 252, <a href="https://www.youtube.com/watch?v=eTSRnz-ZMzU&amp;t=252">Episode 5</a> — Blur-induced clipping analysis (empirical data)&#160;<a class="footnote-backref" href="#fnref:episode5-252" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

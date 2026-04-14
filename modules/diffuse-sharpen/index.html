@@ -3548,21 +3548,21 @@
 
 
 <h1 id="diffuse-or-sharpen-diffondi-o-nitidezza">Diffuse or Sharpen (Diffondi o Nitidezza)<a class="headerlink" href="#diffuse-or-sharpen-diffondi-o-nitidezza" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>Diffuse or Sharpen</strong> e' uno degli strumenti piu' potenti e complessi di darktable. Implementa un modello fisico generalizzato di diffusione -- un'equazione differenziale parziale anisotropa e multiscala -- per simulare o annullare processi diffusivi reali.[^manual]</p>
-<p>A differenza dei tradizionali sharpening che aggiungono aloni artificiosi, questo modulo lavora con le leggi fisiche della diffusione delle particelle, rendendolo adatto sia per recuperare nitidezza ottica perduta sia per creare effetti creativi come bloom, acquerello e inpainting.[^manual]</p>
+<p>Il modulo <strong>Diffuse or Sharpen</strong> e' uno degli strumenti piu' potenti e complessi di darktable. Implementa un modello fisico generalizzato di diffusione -- un'equazione differenziale parziale anisotropa e multiscala -- per simulare o annullare processi diffusivi reali.<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
+<p>A differenza dei tradizionali sharpening che aggiungono aloni artificiosi, questo modulo lavora con le leggi fisiche della diffusione delle particelle, rendendolo adatto sia per recuperare nitidezza ottica perduta sia per creare effetti creativi come bloom, acquerello e inpainting.<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Risorse computazionali</p>
-<p>Questo modulo e' <strong>estremamente esigente</strong>. E' un risolutore di equazioni differenziali parziali anisotropo e multiscala. Il tempo di esecuzione cresce con il numero di iterazioni. L'uso di <strong>OpenCL e' fortemente raccomandato</strong>.[^manual]</p>
+<p>Questo modulo e' <strong>estremamente esigente</strong>. E' un risolutore di equazioni differenziali parziali anisotropo e multiscala. Il tempo di esecuzione cresce con il numero di iterazioni. L'uso di <strong>OpenCL e' fortemente raccomandato</strong>.<sup id="fnref22:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <p><img alt="Diffuse or Sharpen module interface" src="../../images/diffuse-sharpen-intro.jpg" /></p>
 <hr />
 <h2 id="cose-la-diffusione">Cos'e' la diffusione<a class="headerlink" href="#cose-la-diffusione" title="Permanent link">&para;</a></h2>
-<p>La diffusione e' un processo fisico attraverso il quale le particelle si muovono e si distribuiscono gradualmente nel tempo, da una sorgente che le genera. Nell'elaborazione delle immagini, la diffusione si verifica principalmente in due contesti:[^manual]</p>
+<p>La diffusione e' un processo fisico attraverso il quale le particelle si muovono e si distribuiscono gradualmente nel tempo, da una sorgente che le genera. Nell'elaborazione delle immagini, la diffusione si verifica principalmente in due contesti:<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <ol>
 <li><strong>Diffusione dei fotoni</strong> attraverso il vetro delle lenti (sfocatura) o l'aria umida (foschia)</li>
 <li><strong>Diffusione dei pigmenti</strong> in inchiostri bagnati o acquerelli</li>
 </ol>
-<p>In entrambi i casi, la diffusione rende l'immagine meno nitida facendo "colare" le particelle e livellando le variazioni locali. Il modulo puo' sia <strong>simulare</strong> che <strong>annullare</strong> questi processi.[^manual]</p>
+<p>In entrambi i casi, la diffusione rende l'immagine meno nitida facendo "colare" le particelle e livellando le variazioni locali. Il modulo puo' sia <strong>simulare</strong> che <strong>annullare</strong> questi processi.<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="cosa-si-puo-rimuovere-annullare-la-diffusione">Cosa si puo' rimuovere (annullare la diffusione)<a class="headerlink" href="#cosa-si-puo-rimuovere-annullare-la-diffusione" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3623,19 +3623,19 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Sfocatura di movimento</p>
-<p>Le sfocature da movimento <strong>non</strong> possono essere annullate con questo modulo, perche' non sono di natura diffusiva.[^manual]</p>
+<p>Le sfocature da movimento <strong>non</strong> possono essere annullate con questo modulo, perche' non sono di natura diffusiva.<sup id="fnref23:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <hr />
 <h2 id="concetti-fondamentali">Concetti fondamentali<a class="headerlink" href="#concetti-fondamentali" title="Permanent link">&para;</a></h2>
 <h3 id="tempo-iterazioni">Tempo (iterazioni)<a class="headerlink" href="#tempo-iterazioni" title="Permanent link">&para;</a></h3>
-<p>La diffusione e' un processo dipendente dal tempo: piu' tempo ha, piu' le particelle possono diffondersi. In questo modulo, il tempo viene simulato tramite il <strong>numero di iterazioni</strong> -- quante volte l'algoritmo viene eseguito su se stesso.[^manual]</p>
+<p>La diffusione e' un processo dipendente dal tempo: piu' tempo ha, piu' le particelle possono diffondersi. In questo modulo, il tempo viene simulato tramite il <strong>numero di iterazioni</strong> -- quante volte l'algoritmo viene eseguito su se stesso.<sup id="fnref5:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <ul>
 <li>Piu' iterazioni = ricostruzione piu' accurata (deblurring, denoising, dehazing)</li>
 <li>Troppe iterazioni con parametri scorretti = degenerazione della soluzione</li>
 <li>Le iterazioni sono il fattore che piu' impatta sulle prestazioni</li>
 </ul>
 <h3 id="direzione">Direzione<a class="headerlink" href="#direzione" title="Permanent link">&para;</a></h3>
-<p>La diffusione naturale avviene dai punti ad alto potenziale (pixel luminosi) verso quelli a basso potenziale (pixel scuri). Questa implementazione offre tre modalita:[^manual]</p>
+<p>La diffusione naturale avviene dai punti ad alto potenziale (pixel luminosi) verso quelli a basso potenziale (pixel scuri). Questa implementazione offre tre modalita:<sup id="fnref6:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3659,10 +3659,10 @@
 </tbody>
 </table>
 <h3 id="velocita">Velocita'<a class="headerlink" href="#velocita" title="Permanent link">&para;</a></h3>
-<p>La velocita' di diffusione determina quanto rapidamente le particelle si muovono. Per la ricostruzione (deblurring, denoising, dehazing) e' consigliabile usare <strong>velocita' ridotte</strong> per evitare overshoot numerici.[^manual]</p>
-<p>Tutte le velocita' si sommano. Le somme <code>1° ordine + 2° ordine</code> e <code>3° ordine + 4° ordine</code> <strong>non dovrebbero mai superare +/-100%</strong>, a meno che non si voglia produrre <a href="https://en.wikipedia.org/wiki/Glitch_art">glitch art</a>.[^manual]</p>
+<p>La velocita' di diffusione determina quanto rapidamente le particelle si muovono. Per la ricostruzione (deblurring, denoising, dehazing) e' consigliabile usare <strong>velocita' ridotte</strong> per evitare overshoot numerici.<sup id="fnref7:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
+<p>Tutte le velocita' si sommano. Le somme <code>1° ordine + 2° ordine</code> e <code>3° ordine + 4° ordine</code> <strong>non dovrebbero mai superare +/-100%</strong>, a meno che non si voglia produrre <a href="https://en.wikipedia.org/wiki/Glitch_art">glitch art</a>.<sup id="fnref8:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="scala">Scala<a class="headerlink" href="#scala" title="Permanent link">&para;</a></h3>
-<p>La diffusione naturale coinvolge solo i 9 pixel vicini. Questa implementazione usa lo schema wavelet multiscala del <em>Contrast Equalizer</em> per diffondere a diverse scale, definite da <code>central_radius</code> e <code>radius_span</code>.[^manual]</p>
+<p>La diffusione naturale coinvolge solo i 9 pixel vicini. Questa implementazione usa lo schema wavelet multiscala del <em>Contrast Equalizer</em> per diffondere a diverse scale, definite da <code>central_radius</code> e <code>radius_span</code>.<sup id="fnref9:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <hr />
 <h2 id="controlli-del-modulo">Controlli del modulo<a class="headerlink" href="#controlli-del-modulo" title="Permanent link">&para;</a></h2>
 <h3 id="proprieta">Proprieta'<a class="headerlink" href="#proprieta" title="Permanent link">&para;</a></h3>
@@ -3690,11 +3690,11 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Nota tecnica</p>
-<p>I raggi sono espressi in pixel dell'immagine a piena risoluzione. Copiare+incollare le impostazioni tra immagini di diversa risoluzione puo' produrre risultati leggermente diversi, eccetto per la nitidezza a livello di pixel.[^manual]</p>
+<p>I raggi sono espressi in pixel dell'immagine a piena risoluzione. Copiare+incollare le impostazioni tra immagini di diversa risoluzione puo' produrre risultati leggermente diversi, eccetto per la nitidezza a livello di pixel.<sup id="fnref24:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
-<p>Per gli ingegneri elettrici: quanto si configura qui e' un <strong>filtro passa-banda nello spazio wavelet</strong>, usando una finestra frequenziale gaussiana centrata su <code>central_radius</code> con decadimento (<code>radius_span</code>).[^manual]</p>
+<p>Per gli ingegneri elettrici: quanto si configura qui e' un <strong>filtro passa-banda nello spazio wavelet</strong>, usando una finestra frequenziale gaussiana centrata su <code>central_radius</code> con decadimento (<code>radius_span</code>).<sup id="fnref10:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="velocita-sharpen-diffuse">Velocita' (Sharpen ↔ Diffuse)<a class="headerlink" href="#velocita-sharpen-diffuse" title="Permanent link">&para;</a></h3>
-<p>Valori <strong>positivi</strong> = applicano diffusione (sfocano). Valori <strong>negativi</strong> = annullano la diffusione (nitidezza). Zero = nessun effetto.[^manual]</p>
+<p>Valori <strong>positivi</strong> = applicano diffusione (sfocano). Valori <strong>negativi</strong> = annullano la diffusione (nitidezza). Zero = nessun effetto.<sup id="fnref11:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3727,7 +3727,7 @@
 </tbody>
 </table>
 <h3 id="direzione-anisotropia">Direzione (Anisotropia)<a class="headerlink" href="#direzione-anisotropia" title="Permanent link">&para;</a></h3>
-<p>Valori <strong>positivi</strong> = la diffusione evita i bordi (isofote). Valori <strong>negativi</strong> = la diffusione segue i gradienti. Zero = isotropa (entrambe le direzioni uguali).[^manual]</p>
+<p>Valori <strong>positivi</strong> = la diffusione evita i bordi (isofote). Valori <strong>negativi</strong> = la diffusione segue i gradienti. Zero = isotropa (entrambe le direzioni uguali).<sup id="fnref12:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3795,8 +3795,8 @@
 <hr />
 <h2 id="preset-spiegati">Preset spiegati<a class="headerlink" href="#preset-spiegati" title="Permanent link">&para;</a></h2>
 <h3 id="sharpen-sensor-demosaicing">Sharpen sensor demosaicing<a class="headerlink" href="#sharpen-sensor-demosaicing" title="Permanent link">&para;</a></h3>
-<p><strong>Scopo:</strong> Compensare la perdita di nitidezza causata dal filtro anti-aliasing (LPF) del sensore e dagli algoritmi di demosaicing.[^manual]</p>
-<p><strong>Posizionamento nella pipeline:</strong> Spostare questo modulo <strong>prima</strong> del modulo <em>input color profile</em> nella pixelpipe.[^manual]</p>
+<p><strong>Scopo:</strong> Compensare la perdita di nitidezza causata dal filtro anti-aliasing (LPF) del sensore e dagli algoritmi di demosaicing.<sup id="fnref13:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
+<p><strong>Posizionamento nella pipeline:</strong> Spostare questo modulo <strong>prima</strong> del modulo <em>input color profile</em> nella pixelpipe.<sup id="fnref14:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Caratteristiche tipiche:</strong>
 - <code>central_radius</code> = 0 px (agisce a livello di pixel)
 - <code>radius_span</code> = ridotto
@@ -3804,10 +3804,10 @@
 - Anisotropia elevata per preservare i bordi</p>
 <div class="admonition tip">
 <p class="admonition-title">Capture sharpening alternativo</p>
-<p>Per la nitidezza di cattura, attivare anche il modulo <strong>Demosaic</strong> con <em>capture sharpening</em> all'inizio della pipeline. Regolare la <em>contrast sensitivity</em> per non accentuare il rumore.[^denoise]</p>
+<p>Per la nitidezza di cattura, attivare anche il modulo <strong>Demosaic</strong> con <em>capture sharpening</em> all'inizio della pipeline. Regolare la <em>contrast sensitivity</em> per non accentuare il rumore.<sup id="fnref:denoise"><a class="footnote-ref" href="#fn:denoise">4</a></sup></p>
 </div>
 <h3 id="lens-deblur">Lens deblur<a class="headerlink" href="#lens-deblur" title="Permanent link">&para;</a></h3>
-<p><strong>Scopo:</strong> Recuperare una messa a fuoco leggermente morbida causata da sfocatura statica dell'obiettivo.[^manual]</p>
+<p><strong>Scopo:</strong> Recuperare una messa a fuoco leggermente morbida causata da sfocatura statica dell'obiettivo.<sup id="fnref15:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Parametri chiave:</strong>
 - <code>radius_span</code> ≈ larghezza della sfocatura dell'obiettivo
 - <code>central_radius</code> = 0 px
@@ -3815,10 +3815,10 @@
 - Velocita' moderate per evitare degenerazione</p>
 <div class="admonition tip">
 <p class="admonition-title">Regolazione dell'effetto</p>
-<p>Se l'effetto sembra troppo forte, diminuire le iterazioni. Se compaiono artefact ai bordi, aumentare la edge sensitivity. Se il deblur influenza aree sfocate valide (bokeh), ridurre il raggio.[^manual]</p>
+<p>Se l'effetto sembra troppo forte, diminuire le iterazioni. Se compaiono artefact ai bordi, aumentare la edge sensitivity. Se il deblur influenza aree sfocate valide (bokeh), ridurre il raggio.<sup id="fnref25:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h3 id="local-contrast">Local contrast<a class="headerlink" href="#local-contrast" title="Permanent link">&para;</a></h3>
-<p><strong>Scopo:</strong> Aumentare il contrasto locale con un approccio fisico, simile al Contrast Equalizer ma nello spazio RGB scene-referred.[^manual]</p>
+<p><strong>Scopo:</strong> Aumentare il contrasto locale con un approccio fisico, simile al Contrast Equalizer ma nello spazio RGB scene-referred.<sup id="fnref16:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Caratteristiche tipiche:</strong>
 - <code>central_radius</code> non-zero (definisce la scala del contrasto locale)
 - <code>radius_span</code> = 3/4 del raggio centrale massimo
@@ -3826,11 +3826,11 @@
 - Anisotropia elevata (es. +200% al 1° e 3° ordine) per guidare la diffusione lungo le direzioni legittime dei bordi reali</p>
 <div class="admonition tip">
 <p class="admonition-title">Preservare i neri</p>
-<p>Quando il contrasto locale "mangia" i neri, usare <code>edge_threshold</code> positivo e una <strong>maschera parametrica</strong> per escludere le zone molto scure. Nel workflow B/N di street photography, il narratore usa una maschera parametrica su Jz con <code>emphasize mask</code> per proteggere le ombre profonde.[^street-bw]</p>
+<p>Quando il contrasto locale "mangia" i neri, usare <code>edge_threshold</code> positivo e una <strong>maschera parametrica</strong> per escludere le zone molto scure. Nel workflow B/N di street photography, il narratore usa una maschera parametrica su Jz con <code>emphasize mask</code> per proteggere le ombre profonde.<sup id="fnref3:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
 <p><img alt="Local contrast enhancement with Diffuse or Sharpen" src="../../images/diffuse-local-contrast.jpg" /></p>
 <h3 id="dehaze">Dehaze<a class="headerlink" href="#dehaze" title="Permanent link">&para;</a></h3>
-<p><strong>Scopo:</strong> Rimuovere foschia e nebbia atmosferica.[^manual]</p>
+<p><strong>Scopo:</strong> Rimuovere foschia e nebbia atmosferica.<sup id="fnref17:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Parametri tipici dal workflow reale:</strong>
 - <code>iterations</code> = 1 (minimo sufficiente)
 - <code>central_radius</code> = 0 px
@@ -3840,11 +3840,11 @@
 - <code>edge_sensitivity</code> = 1.0</p>
 <div class="admonition tip">
 <p class="admonition-title">Dehaze al posto dell'high-pass</p>
-<p>Usare il preset <em>dehaze</em> in Diffuse or Sharpen invece del tradizionale filtro high-pass. Offre nitidezza piu' pulita ed evita i bordi neri indesiderati tipici dell'approccio high-pass.[^dragan]</p>
+<p>Usare il preset <em>dehaze</em> in Diffuse or Sharpen invece del tradizionale filtro high-pass. Offre nitidezza piu' pulita ed evita i bordi neri indesiderati tipici dell'approccio high-pass.<sup id="fnref:dragan"><a class="footnote-ref" href="#fn:dragan">6</a></sup></p>
 </div>
 <p><img alt="Dehaze effect using Diffuse or Sharpen" src="../../images/diffuse-dehaze.jpg" /></p>
 <h3 id="bloom">Bloom<a class="headerlink" href="#bloom" title="Permanent link">&para;</a></h3>
-<p><strong>Scopo:</strong> Creare un bagliore morbido sulle alte luci, simile all'effetto Orton.[^manual]</p>
+<p><strong>Scopo:</strong> Creare un bagliore morbido sulle alte luci, simile all'effetto Orton.<sup id="fnref18:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Parametri tipici dal workflow reale:</strong>
 - <code>iterations</code> = 1
 - <code>central_radius</code> = 0 px
@@ -3853,12 +3853,12 @@
 - Anisotropia = 0% (isotropa, tutte le direzioni uguali)</p>
 <div class="admonition example">
 <p class="admonition-title">Esempio pratico: ammorbidire il cielo</p>
-<p>Nel tutorial di street photography B/N, il narratore applica il bloom al cielo usando una <strong>maschera disegnata a mano</strong> per delimitare l'area. Le speed positive (+50%) creano una diffusione morbida che attenua i contorni del cielo, riducendo la distrazione visiva.[^street-bw]</p>
+<p>Nel tutorial di street photography B/N, il narratore applica il bloom al cielo usando una <strong>maschera disegnata a mano</strong> per delimitare l'area. Le speed positive (+50%) creano una diffusione morbida che attenua i contorni del cielo, riducendo la distrazione visiva.<sup id="fnref4:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
 <p><img alt="Bloom effect with Diffuse or Sharpen" src="../../images/diffuse-bloom.jpg" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione ai preset</p>
-<p>Applicare un preset sovrascrive le impostazioni ma puo' causare la <strong>perdita delle maschere</strong> precedentemente create. Ricrearle dopo l'applicazione del preset.[^street-bw]</p>
+<p>Applicare un preset sovrascrive le impostazioni ma puo' causare la <strong>perdita delle maschere</strong> precedentemente create. Ricrearle dopo l'applicazione del preset.<sup id="fnref5:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
 <hr />
 <h2 id="quando-usare-diffuse-or-sharpen-vs-altri-moduli">Quando usare Diffuse or Sharpen vs altri moduli<a class="headerlink" href="#quando-usare-diffuse-or-sharpen-vs-altri-moduli" title="Permanent link">&para;</a></h2>
@@ -3874,38 +3874,38 @@
 <tr>
 <td>Nitidezza di cattura (demosaicing)</td>
 <td><strong>Demosaic</strong> (capture sharpening)</td>
-<td>Piu' leggero, integrato nel demosaicing[^denoise]</td>
+<td>Piu' leggero, integrato nel demosaicing<sup id="fnref2:denoise"><a class="footnote-ref" href="#fn:denoise">4</a></sup></td>
 </tr>
 <tr>
 <td>Nitidezza per scale wavelet</td>
 <td><strong>Contrast Equalizer</strong></td>
-<td>Stesso approccio wavelet, interfaccia piu' intuitiva[^manual]</td>
+<td>Stesso approccio wavelet, interfaccia piu' intuitiva<sup id="fnref35:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></td>
 </tr>
 <tr>
 <td>Contrasto locale rapido</td>
 <td><strong>Local Contrast</strong></td>
-<td>Piu' veloce, anche se piu' sottile -- ideale nel workflow lowlight[^lowlight]</td>
+<td>Piu' veloce, anche se piu' sottile -- ideale nel workflow lowlight<sup id="fnref2:lowlight"><a class="footnote-ref" href="#fn:lowlight">5</a></sup></td>
 </tr>
 <tr>
 <td>Nitidezza fisica multiscala / Dehaze / Bloom</td>
 <td><strong>Diffuse or Sharpen</strong></td>
-<td>Unico con modello fisico, adatto a tutti questi usi[^manual]</td>
+<td>Unico con modello fisico, adatto a tutti questi usi<sup id="fnref36:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></td>
 </tr>
 <tr>
 <td>Nitidezza semplice e veloce</td>
 <td><strong>Sharpen</strong> (modulo base)</td>
-<td>Leggero, ma senza controllo multiscala o edge-aware[^manual]</td>
+<td>Leggero, ma senza controllo multiscala o edge-aware<sup id="fnref37:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Alternativa veloce</p>
-<p>Il modulo <strong>Local Contrast</strong> e' piu' veloce di Diffuse or Sharpen, anche se piu' sottile. Preferirlo nel workflow lowlight quando le prestazioni sono priorita'.[^lowlight]</p>
+<p>Il modulo <strong>Local Contrast</strong> e' piu' veloce di Diffuse or Sharpen, anche se piu' sottile. Preferirlo nel workflow lowlight quando le prestazioni sono priorita'.<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">5</a></sup></p>
 </div>
 <hr />
 <h2 id="workflow-consigliato">Workflow consigliato<a class="headerlink" href="#workflow-consigliato" title="Permanent link">&para;</a></h2>
 <h3 id="ordine-delle-istanze-multiple">Ordine delle istanze multiple<a class="headerlink" href="#ordine-delle-istanze-multiple" title="Permanent link">&para;</a></h3>
-<p>Quando piu' problemi ottici affliggono la stessa immagine, usare <strong>istanze multiple</strong> del modulo, ordinate dalla scala piu' grande alla piu' piccola:[^manual]</p>
+<p>Quando piu' problemi ottici affliggono la stessa immagine, usare <strong>istanze multiple</strong> del modulo, ordinate dalla scala piu' grande alla piu' piccola:<sup id="fnref19:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <ol>
 <li><strong>Denoise</strong> (sempre prima di tutto)</li>
 <li><strong>Miglioramento del contrasto locale</strong></li>
@@ -3913,13 +3913,13 @@
 <li><strong>Correzione sfocatura obiettivo</strong></li>
 <li><strong>Correzione sensore e demosaicing</strong></li>
 </ol>
-<p>Partire dalle ricostruzioni a scala piu' grande riduce la probabilita' di introdurre o amplificare il rumore durante le ricostruzioni a scala piu' fine. Questo e' controintuitivo perche' questi processi non avvengono in questo ordine durante la formazione dell'immagine.[^manual]</p>
+<p>Partire dalle ricostruzioni a scala piu' grande riduce la probabilita' di introdurre o amplificare il rumore durante le ricostruzioni a scala piu' fine. Questo e' controintuitivo perche' questi processi non avvengono in questo ordine durante la formazione dell'immagine.<sup id="fnref20:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Regola d'oro</p>
-<p>Il denoising deve <strong>sempre</strong> avvenire prima di qualsiasi tentativo di sharpening o aumento dell'acutanza.[^manual]</p>
+<p>Il denoising deve <strong>sempre</strong> avvenire prima di qualsiasi tentativo di sharpening o aumento dell'acutanza.<sup id="fnref26:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h3 id="procedura-operativa-da-zero">Procedura operativa da zero<a class="headerlink" href="#procedura-operativa-da-zero" title="Permanent link">&para;</a></h3>
-<p>I parametri predefiniti del modulo sono completamente neutri e non fanno nulla all'immagine. Lo spirito del modulo e' che ogni ordine influenza la texture in modo specifico:[^manual]</p>
+<p>I parametri predefiniti del modulo sono completamente neutri e non fanno nulla all'immagine. Lo spirito del modulo e' che ogni ordine influenza la texture in modo specifico:<sup id="fnref21:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <ol>
 <li><strong>Regolare il 1° ordine</strong> (speed e anisotropia) per ottenere una base iniziale. Poi aggiustare il raggio. Questo influenza le texture piu' grossolane</li>
 <li><strong>Regolare il 2° ordine</strong> (speed e anisotropy). Agisce sulle basse frequenze ma segue il gradiente delle <em>alte</em> frequenze (nitidezza o rumore). Utile per ridurre il rumore quando si usa il 1° ordine in modalita' sharpening</li>
@@ -3930,10 +3930,10 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Partire dai preset</p>
-<p>L'approccio piu' semplice e' partire dai preset del developer e poi modificarli: diminuire le iterazioni se l'effetto e' troppo forte, aumentare la edge sensitivity se compaiono artefact.[^manual]</p>
+<p>L'approccio piu' semplice e' partire dai preset del developer e poi modificarli: diminuire le iterazioni se l'effetto e' troppo forte, aumentare la edge sensitivity se compaiono artefact.<sup id="fnref27:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h3 id="esempio-contrasto-locale-con-maschera-parametrica">Esempio: contrasto locale con maschera parametrica<a class="headerlink" href="#esempio-contrasto-locale-con-maschera-parametrica" title="Permanent link">&para;</a></h3>
-<p>Dal workflow di street photography B/N analizzato nei video:[^street-bw]</p>
+<p>Dal workflow di street photography B/N analizzato nei video:<sup id="fnref:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 <ol>
 <li>Applicare il preset <strong>local contrast</strong> (high frequency)</li>
 <li>Impostare: <code>iterations</code> = 15, <code>central_radius</code> = 0, <code>radius_span</code> = 512</li>
@@ -3946,7 +3946,7 @@
 <hr />
 <h2 id="consigli-pratici-dai-video-tutorial">Consigli pratici dai video tutorial<a class="headerlink" href="#consigli-pratici-dai-video-tutorial" title="Permanent link">&para;</a></h2>
 <h3 id="street-photography-bn">Street photography B/N<a class="headerlink" href="#street-photography-bn" title="Permanent link">&para;</a></h3>
-<p>Nel tutorial completo di street photography in bianco e nero, il modulo viene usato in tre modi distinti:[^street-bw]</p>
+<p>Nel tutorial completo di street photography in bianco e nero, il modulo viene usato in tre modi distinti:<sup id="fnref2:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 <ul>
 <li><strong>Dehaze</strong> per aggiungere texture e contrasto locale al cappotto del soggetto (<code>central_radius</code> = 0, <code>radius_span</code> = 4, speed = -25%, anisotropia = +100%)</li>
 <li><strong>Bloom</strong> sul cielo per ammorbidire e ridurre la distrazione visiva, con maschera disegnata a mano (speed = +50%, isotropo)</li>
@@ -3955,36 +3955,36 @@
 <p><img alt="Final result of B&amp;W street photography editing" src="../../images/diffuse-final.jpg" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Limitazioni delle maschere colore</p>
-<p>Non e' possibile creare una maschera basata sul colore quando il modulo <code>Diffuse or Sharpen</code> si trova <strong>sopra</strong> il modulo <code>black and white</code> nella pipeline -- il colore non e' ancora disponibile in quella posizione.[^street-bw]</p>
+<p>Non e' possibile creare una maschera basata sul colore quando il modulo <code>Diffuse or Sharpen</code> si trova <strong>sopra</strong> il modulo <code>black and white</code> nella pipeline -- il colore non e' ancora disponibile in quella posizione.<sup id="fnref6:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
 <h3 id="fotografia-infrarossa">Fotografia infrarossa<a class="headerlink" href="#fotografia-infrarossa" title="Permanent link">&para;</a></h3>
-<p>Nel workflow per infrarosso a falsi colori, il modulo viene utilizzato per recuperare dettagli dopo la conversione cromatica, in combinazione con <code>Tone Equalizer Sky</code> e maschere raster.[^ir-photo]</p>
+<p>Nel workflow per infrarosso a falsi colori, il modulo viene utilizzato per recuperare dettagli dopo la conversione cromatica, in combinazione con <code>Tone Equalizer Sky</code> e maschere raster.<sup id="fnref:ir-photo"><a class="footnote-ref" href="#fn:ir-photo">3</a></sup></p>
 <h3 id="precauzioni-generali">Precauzioni generali<a class="headerlink" href="#precauzioni-generali" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Correggere prima le aberrazioni cromatiche</p>
-<p>Se si intende deblurrare l'immagine, correggere <strong>prima</strong> le aberrazioni cromatiche e il rumore, perche' il deblurring puo' magnificare questi artefact. Assicurarsi di non avere pixel neri clippati (correggere con <em>black level correction</em> nel modulo Exposure).[^manual]</p>
+<p>Se si intende deblurrare l'immagine, correggere <strong>prima</strong> le aberrazioni cromatiche e il rumore, perche' il deblurring puo' magnificare questi artefact. Assicurarsi di non avere pixel neri clippati (correggere con <em>black level correction</em> nel modulo Exposure).<sup id="fnref28:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Posizionamento nella pipeline</p>
-<p>Poiche' lavora su canali RGB separati, e' meglio applicare questo modulo <strong>dopo</strong> <em>Color Calibration</em>, partendo da un'immagine completamente neutra e con bilanciamento del bianco corretto.[^manual]</p>
+<p>Poiche' lavora su canali RGB separati, e' meglio applicare questo modulo <strong>dopo</strong> <em>Color Calibration</em>, partendo da un'immagine completamente neutra e con bilanciamento del bianco corretto.<sup id="fnref29:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Sharpness percepita vs ottica</p>
-<p>Il contrasto globale (curve tonali, livelli nero/bianco) influenza la percezione della nitidezza, che e' diversa dalla nitidezza ottica (risoluzione). L'occhio umano e' sensibile solo al contrasto locale. Se un tone mapping aumenta il contrasto, l'immagine apparira' piu' nitida -- ma i bordi reali non sono cambiati.[^manual]</p>
+<p>Il contrasto globale (curve tonali, livelli nero/bianco) influenza la percezione della nitidezza, che e' diversa dalla nitidezza ottica (risoluzione). L'occhio umano e' sensibile solo al contrasto locale. Se un tone mapping aumenta il contrasto, l'immagine apparira' piu' nitida -- ma i bordi reali non sono cambiati.<sup id="fnref30:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <hr />
 <h2 id="note-sul-giudizio-della-nitidezza">Note sul giudizio della nitidezza<a class="headerlink" href="#note-sul-giudizio-della-nitidezza" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Non valutare a zoom 1:1</p>
-<p>Valutare la nitidezza a zoom 1:1 (100%) o superiore e' un esercizio inutile. Nei musei, nelle mostre e persino a schermo, il pubblico guarda le immagini nel loro insieme, non con una lente d'ingrandimento. Nella maggior parte degli usi pratici, le fotografie raramente superano 3000x2000 pixel (circa 300 DPI in formato A4/Letter), che per sensori da 24 megapixel significa un downscaling di 4x. Esaminando un file da 24 MP a 1:1, si sta guardando un'immagine che <strong>non esistera' mai</strong>.[^manual]</p>
+<p>Valutare la nitidezza a zoom 1:1 (100%) o superiore e' un esercizio inutile. Nei musei, nelle mostre e persino a schermo, il pubblico guarda le immagini nel loro insieme, non con una lente d'ingrandimento. Nella maggior parte degli usi pratici, le fotografie raramente superano 3000x2000 pixel (circa 300 DPI in formato A4/Letter), che per sensori da 24 megapixel significa un downscaling di 4x. Esaminando un file da 24 MP a 1:1, si sta guardando un'immagine che <strong>non esistera' mai</strong>.<sup id="fnref31:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Plausibile vs piacevole</p>
-<p>Con l'invecchiamento si perde la capacita' visiva. La quantita' di sharpening che piace a chi ha 50 anni puo' essere diversa da chi ne ha 20. Considerare una nitidezza <strong>plausibile</strong> (che corrisponde alla percezione quotidiana) piuttosto che <strong>piacevole</strong> (che puo' sembrare buona solo a chi ha la stessa vista).[^manual]</p>
+<p>Con l'invecchiamento si perde la capacita' visiva. La quantita' di sharpening che piace a chi ha 50 anni puo' essere diversa da chi ne ha 20. Considerare una nitidezza <strong>plausibile</strong> (che corrisponde alla percezione quotidiana) piuttosto che <strong>piacevole</strong> (che puo' sembrare buona solo a chi ha la stessa vista).<sup id="fnref32:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Soft focus e poetica della morbidezza</p>
-<p>Molte delle piu' grandi immagini della storia della fotografia sono state scattate con obiettivi lontani dall'essere nitidi come quelli odierni. La messa a fuoco morbida e un po' di sfocatura hanno meriti poetici che le immagini igienizzate in HD potrebbero non trasmettere.[^manual]</p>
+<p>Molte delle piu' grandi immagini della storia della fotografia sono state scattate con obiettivi lontani dall'essere nitidi come quelli odierni. La messa a fuoco morbida e un po' di sfocatura hanno meriti poetici che le immagini igienizzate in HD potrebbero non trasmettere.<sup id="fnref33:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <hr />
 <h2 id="riepilogo-parametri-per-preset">Riepilogo parametri per preset<a class="headerlink" href="#riepilogo-parametri-per-preset" title="Permanent link">&para;</a></h2>
@@ -4059,16 +4059,33 @@
 </tbody>
 </table>
 <blockquote>
-<p>I valori sono indicativi e variano in base all'immagine. Partire sempre dai preset inclusi e regolare di conseguenza.[^manual]</p>
+<p>I valori sono indicativi e variano in base all'immagine. Partire sempre dai preset inclusi e regolare di conseguenza.<sup id="fnref34:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </blockquote>
 <hr />
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- Diffuse or Sharpen</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/diffuse/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-diffuse.md</code>
-[^street-bw]: <em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edits in darktable for street photography</a></em> -- A Dabble in Photography
-[^ir-photo]: <em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography
-[^denoise]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">darktable pipeline for beginners</a></em> -- A Dabble in Photography
-[^lowlight]: <em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography
-[^dragan]: <em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a></em> -- A Dabble in Photography</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual">
+<p><em>darktable User Manual -- Diffuse or Sharpen</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/diffuse/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-diffuse.md</code>&#160;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref34:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref35:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref36:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref37:manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:street-bw">
+<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edits in darktable for street photography</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:street-bw" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ir-photo">
+<p><em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ir-photo" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:denoise">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:denoise" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:denoise" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lowlight">
+<p><em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:lowlight" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lowlight" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragan">
+<p><em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dragan" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

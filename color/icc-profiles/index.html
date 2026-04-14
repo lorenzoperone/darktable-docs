@@ -2894,7 +2894,7 @@
 
 
 <h1 id="profili-icc">Profili ICC<a class="headerlink" href="#profili-icc" title="Permanent link">&para;</a></h1>
-<p>I profili ICC definiscono come i colori vengono interpretati e convertiti tra dispositivi (fotocamera, monitor, stampante).[^manual-icc]</p>
+<p>I profili ICC definiscono come i colori vengono interpretati e convertiti tra dispositivi (fotocamera, monitor, stampante).<sup id="fnref:manual-icc"><a class="footnote-ref" href="#fn:manual-icc">1</a></sup></p>
 <h2 id="profili-in-darktable">Profili in darktable<a class="headerlink" href="#profili-in-darktable" title="Permanent link">&para;</a></h2>
 <h3 id="input-color-profile">Input Color Profile<a class="headerlink" href="#input-color-profile" title="Permanent link">&para;</a></h3>
 <table>
@@ -2911,17 +2911,17 @@
 </tr>
 <tr>
 <td><strong>Linear Rec 2020 RGB</strong></td>
-<td>Consigliato per il workflow scene-referred[^pipeline]</td>
+<td>Consigliato per il workflow scene-referred<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Profilo fotocamera personalizzato</strong></td>
-<td>Creato con color checker e Darktable Chart[^pixls-profiling]</td>
+<td>Creato con color checker e Darktable Chart<sup id="fnref2:pixls-profiling"><a class="footnote-ref" href="#fn:pixls-profiling">4</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Non modificare</p>
-<p>Il modulo Input Color Profile e' generalmente da lasciare ai valori predefiniti nel workflow scene-referred.[^pipeline]</p>
+<p>Il modulo Input Color Profile e' generalmente da lasciare ai valori predefiniti nel workflow scene-referred.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup></p>
 </div>
 <h3 id="output-color-profile">Output Color Profile<a class="headerlink" href="#output-color-profile" title="Permanent link">&para;</a></h3>
 <table>
@@ -2951,16 +2951,29 @@
 </tbody>
 </table>
 <h3 id="soft-proof">Soft Proof<a class="headerlink" href="#soft-proof" title="Permanent link">&para;</a></h3>
-<p>La funzione <strong>Soft Proof</strong> simula sullo schermo come apparira' l'immagine con un profilo di output specifico, permettendo di individuare colori fuori gamut prima dell'esportazione.[^manual-icc]</p>
+<p>La funzione <strong>Soft Proof</strong> simula sullo schermo come apparira' l'immagine con un profilo di output specifico, permettendo di individuare colori fuori gamut prima dell'esportazione.<sup id="fnref2:manual-icc"><a class="footnote-ref" href="#fn:manual-icc">1</a></sup></p>
 <blockquote>
-<p>Per la profilazione avanzata della fotocamera: <em>PIXLS.US -- Profiling a Camera with Darktable Chart</em>[^pixls-profiling] con color checker e calibrazione.</p>
-<p>La documentazione ufficiale sulla gestione del colore copre in dettaglio i flussi ICC, i rendering intent e la soft proof.[^manual-colormgmt]</p>
+<p>Per la profilazione avanzata della fotocamera: <em>PIXLS.US -- Profiling a Camera with Darktable Chart</em><sup id="fnref:pixls-profiling"><a class="footnote-ref" href="#fn:pixls-profiling">4</a></sup> con color checker e calibrazione.</p>
+<p>La documentazione ufficiale sulla gestione del colore copre in dettaglio i flussi ICC, i rendering intent e la soft proof.<sup id="fnref:manual-colormgmt"><a class="footnote-ref" href="#fn:manual-colormgmt">2</a></sup></p>
 </blockquote>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-icc]: <em>darktable User Manual -- Input/Output Color Profile</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/input-color-profile/">docs.darktable.org</a>
-[^manual-colormgmt]: <em>darktable User Manual -- Color Management</em>, <a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-special-topics-color-management-*.md</code>
-[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography
-[^pixls-profiling]: <em>PIXLS.US -- Profiling a Camera with Darktable Chart</em>, <a href="https://pixls.us/articles/profiling-a-camera-with-darktable-chart/">pixls.us</a> | <code>processed/pixls-articles/articles-profiling-a-camera-with-darktable-chart.md</code></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-icc">
+<p><em>darktable User Manual -- Input/Output Color Profile</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/input-color-profile/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual-icc" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-icc" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-colormgmt">
+<p><em>darktable User Manual -- Color Management</em>, <a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-special-topics-color-management-*.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-colormgmt" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-profiling">
+<p><em>PIXLS.US -- Profiling a Camera with Darktable Chart</em>, <a href="https://pixls.us/articles/profiling-a-camera-with-darktable-chart/">pixls.us</a> | <code>processed/pixls-articles/articles-profiling-a-camera-with-darktable-chart.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-profiling" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-profiling" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

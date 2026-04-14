@@ -3004,21 +3004,21 @@
 
 
 <h1 id="vignetting">Vignetting<a class="headerlink" href="#vignetting" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>vignetting</strong> applica un effetto di attenuazione della luminosità e saturazione lungo i bordi dell’immagine, con forma geometrica controllabile (circolare, ellittica o quadrata). È uno strumento <em>non fisico</em>: non corregge vignettatura ottica reale, ma ne simula o accentua l’effetto per fini compositivi — ad esempio per guidare l’occhio verso il centro o creare un look cinematografico[^vignetting-manual].  </p>
+<p>Il modulo <strong>vignetting</strong> applica un effetto di attenuazione della luminosità e saturazione lungo i bordi dell’immagine, con forma geometrica controllabile (circolare, ellittica o quadrata). È uno strumento <em>non fisico</em>: non corregge vignettatura ottica reale, ma ne simula o accentua l’effetto per fini compositivi — ad esempio per guidare l’occhio verso il centro o creare un look cinematografico<sup id="fnref:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.  </p>
 <p><img alt="Interfaccia del modulo vignetting in darktable 5.4" src="../images/vignetting-interface.jpg" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare per correzione ottica</p>
-<p>Per la <strong>correzione automatica della vignettatura causata dall’obiettivo</strong>, usa invece il modulo <strong>lens correction</strong>, che sfrutta profili Lensfun o metadati embedded. Il modulo <code>vignetting</code> è progettato esclusivamente per effetti artistici[^vignetting-manual].</p>
+<p>Per la <strong>correzione automatica della vignettatura causata dall’obiettivo</strong>, usa invece il modulo <strong>lens correction</strong>, che sfrutta profili Lensfun o metadati embedded. Il modulo <code>vignetting</code> è progettato esclusivamente per effetti artistici<sup id="fnref5:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo opera in due modi distinti:</p>
 <ol>
 <li><strong>Effetto artistico</strong>: attenuazione controllata di luminosità e saturazione su una forma geometrica centrata, regolabile in posizione, forma e gradiente.</li>
-<li><strong>Controllo visivo</strong>: visualizzazione sovrapposta in tempo reale (attivabile con il pulsante <em>mask</em> o premendo <code>M</code>) che mostra l’estensione e la forma dell’effetto direttamente sull’immagine[^vignetting-manual].</li>
+<li><strong>Controllo visivo</strong>: visualizzazione sovrapposta in tempo reale (attivabile con il pulsante <em>mask</em> o premendo <code>M</code>) che mostra l’estensione e la forma dell’effetto direttamente sull’immagine<sup id="fnref6:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</li>
 </ol>
-<p>A differenza di strumenti come <code>exposure</code> con maschera ellittica, <code>vignetting</code> offre un controllo più rapido e intuitivo per effetti globali, ma <strong>senza supporto per maschere parametriche o disegnate</strong>. Per un controllo selettivo avanzato (es. vignettatura solo sul cielo), si raccomanda l’uso combinato di <code>exposure</code> + maschera ellittica + <code>color balance rgb</code>[^vignetting-manual].</p>
+<p>A differenza di strumenti come <code>exposure</code> con maschera ellittica, <code>vignetting</code> offre un controllo più rapido e intuitivo per effetti globali, ma <strong>senza supporto per maschere parametriche o disegnate</strong>. Per un controllo selettivo avanzato (es. vignettatura solo sul cielo), si raccomanda l’uso combinato di <code>exposure</code> + maschera ellittica + <code>color balance rgb</code><sup id="fnref2:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso tipico prevede tre fasi sequenziali, da eseguire <em>dopo</em> le correzioni tecniche fondamentali (demosaic, lens correction, exposure, white balance)[^process-manual]:</p>
+<p>Il flusso tipico prevede tre fasi sequenziali, da eseguire <em>dopo</em> le correzioni tecniche fondamentali (demosaic, lens correction, exposure, white balance)<sup id="fnref:process-manual"><a class="footnote-ref" href="#fn:process-manual">5</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzioni tecniche (lens correction, exposure)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Vignetting — effetto artistico
@@ -3026,26 +3026,26 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Affinamento cromatico (color balance rgb)
 </code></pre></div>
 <h3 id="passo-1-attiva-la-visualizzazione-della-maschera">Passo 1: Attiva la visualizzazione della maschera<a class="headerlink" href="#passo-1-attiva-la-visualizzazione-della-maschera" title="Permanent link">&para;</a></h3>
-<p>Premi <code>M</code> o clicca il pulsante <strong>mask</strong> per visualizzare in sovrapposizione la forma e l’estensione della vignetta. Questo ti permette di regolare i parametri con precisione visiva, senza dover zoomare o indovinare[^vignetting-manual].</p>
+<p>Premi <code>M</code> o clicca il pulsante <strong>mask</strong> per visualizzare in sovrapposizione la forma e l’estensione della vignetta. Questo ti permette di regolare i parametri con precisione visiva, senza dover zoomare o indovinare<sup id="fnref3:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 <p><img alt="Maschera sovrapposta del modulo vignetting" src="../images/vignetting-mask-overlay.jpg" /></p>
 <h3 id="passo-2-regola-forma-e-centro">Passo 2: Regola forma e centro<a class="headerlink" href="#passo-2-regola-forma-e-centro" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Imposta <code>shape</code> a <strong>1.00</strong> per una vignetta circolare perfetta (default).</li>
 <li>Usa <code>horizontal center</code> e <code>vertical center</code> per spostare il centro fino a ±0.50 (valori normalizzati rispetto alla larghezza/altezza dell’immagine).</li>
-<li>Abilita <code>automatic ratio</code> per far sì che la vignetta diventi ellittica in proporzione al rapporto d’aspetto dell’immagine (es. 16:9 → ellisse orizzontale)[^vignetting-manual].</li>
+<li>Abilita <code>automatic ratio</code> per far sì che la vignetta diventi ellittica in proporzione al rapporto d’aspetto dell’immagine (es. 16:9 → ellisse orizzontale)<sup id="fnref7:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</li>
 </ul>
 <h3 id="passo-3-controlla-intensita-e-transizione">Passo 3: Controlla intensità e transizione<a class="headerlink" href="#passo-3-controlla-intensita-e-transizione" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>fall-off radius</code>: definisce quanto è estesa la zona di transizione.<br />
 <strong>Range</strong>: 0.01–1.00 | <strong>Default</strong>: 0.50<br />
-  Valori bassi (&lt;0.30) creano un bordo netto; valori alti (&gt;0.70) producono un degradato molto morbido[^vignetting-manual].</li>
+  Valori bassi (&lt;0.30) creano un bordo netto; valori alti (&gt;0.70) producono un degradato molto morbido<sup id="fnref8:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</li>
 <li><code>fall-off start</code>: imposta il raggio interno della zona non influenzata.<br />
 <strong>Range</strong>: 0.00–1.00 | <strong>Default</strong>: 0.25<br />
-  Aumentando questo valore si restringe l’area centrale “protetta”[^vignetting-manual].</li>
+  Aumentando questo valore si restringe l’area centrale “protetta”<sup id="fnref9:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Regola prima il raggio, poi l’intensità</p>
-<p>Modifica <code>fall-off radius</code> e <code>fall-off start</code> <em>prima</em> di toccare <code>brightness</code> o <code>saturation</code>. Così ottieni un controllo preciso sulla geometria prima di decidere quanto scurire o desaturare[^vignetting-manual].</p>
+<p>Modifica <code>fall-off radius</code> e <code>fall-off start</code> <em>prima</em> di toccare <code>brightness</code> o <code>saturation</code>. Così ottieni un controllo preciso sulla geometria prima di decidere quanto scurire o desaturare<sup id="fnref10:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3062,74 +3062,74 @@
 <td><strong>brightness</strong></td>
 <td>-1.00 – +1.00 EV</td>
 <td>0.00 EV</td>
-<td>Intensità della variazione di luminosità: negativo = scurisce i bordi, positivo = illumina i bordi[^vignetting-manual].</td>
+<td>Intensità della variazione di luminosità: negativo = scurisce i bordi, positivo = illumina i bordi<sup id="fnref15:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>saturation</strong></td>
 <td>-100% – +100%</td>
 <td>0.00%</td>
-<td>Variazione di saturazione nella zona vignettata: negativo = desatura, positivo = sovrassatura[^vignetting-manual].</td>
+<td>Variazione di saturazione nella zona vignettata: negativo = desatura, positivo = sovrassatura<sup id="fnref16:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>fall-off start</strong></td>
 <td>0.00 – 1.00</td>
 <td>0.25</td>
-<td>Raggio interno della zona non modificata (normalizzato)[^vignetting-manual].</td>
+<td>Raggio interno della zona non modificata (normalizzato)<sup id="fnref17:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>fall-off radius</strong></td>
 <td>0.01 – 1.00</td>
 <td>0.50</td>
-<td>Estensione della transizione tra zona centrale e bordi[^vignetting-manual].</td>
+<td>Estensione della transizione tra zona centrale e bordi<sup id="fnref18:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>horizontal center</strong></td>
 <td>-0.50 – +0.50</td>
 <td>0.00</td>
-<td>Spostamento orizzontale del centro della vignetta (normalizzato)[^vignetting-manual].</td>
+<td>Spostamento orizzontale del centro della vignetta (normalizzato)<sup id="fnref19:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>vertical center</strong></td>
 <td>-0.50 – +0.50</td>
 <td>0.00</td>
-<td>Spostamento verticale del centro della vignetta (normalizzato)[^vignetting-manual].</td>
+<td>Spostamento verticale del centro della vignetta (normalizzato)<sup id="fnref20:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>shape</strong></td>
 <td>0.01 – 10.00</td>
 <td>1.00</td>
-<td>Forma: 1.00 = cerchio/ellisse; &lt;1.00 → quadrata; &gt;1.00 → croce-like[^vignetting-manual].</td>
+<td>Forma: 1.00 = cerchio/ellisse; &lt;1.00 → quadrata; &gt;1.00 → croce-like<sup id="fnref21:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>automatic ratio</strong></td>
 <td>on/off</td>
 <td>on</td>
-<td>Adatta automaticamente il rapporto larghezza/altezza alla proporzione dell’immagine[^vignetting-manual].</td>
+<td>Adatta automaticamente il rapporto larghezza/altezza alla proporzione dell’immagine<sup id="fnref22:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>width/height ratio</strong></td>
 <td>0.10 – 10.00</td>
 <td>1.00</td>
-<td>Rapporto manuale larghezza/altezza (attivo solo se <code>automatic ratio</code> è disattivato)[^vignetting-manual].</td>
+<td>Rapporto manuale larghezza/altezza (attivo solo se <code>automatic ratio</code> è disattivato)<sup id="fnref23:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>dithering</strong></td>
 <td>off / 8-bit output / 16-bit output</td>
 <td>off</td>
-<td>Attiva rumore casuale per ridurre artefatti di <em>banding</em> nei gradienti. Si raccomanda <strong>8-bit output</strong> per JPEG e schermi[^vignetting-manual].</td>
+<td>Attiva rumore casuale per ridurre artefatti di <em>banding</em> nei gradienti. Si raccomanda <strong>8-bit output</strong> per JPEG e schermi<sup id="fnref24:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello completo dei parametri vignetting" src="../images/vignetting-parameters-panel.jpg" /></p>
 <h2 id="gestione-degli-artefatti-e-best-practice">Gestione degli artefatti e best practice<a class="headerlink" href="#gestione-degli-artefatti-e-best-practice" title="Permanent link">&para;</a></h2>
-<p>Il modulo <code>vignetting</code> è noto per generare artefatti di <em>banding</em> (strisce di tonalità uniforme) nei gradienti delicati, specialmente su sfondi omogenei o cieli sereni[^vignetting-manual].</p>
+<p>Il modulo <code>vignetting</code> è noto per generare artefatti di <em>banding</em> (strisce di tonalità uniforme) nei gradienti delicati, specialmente su sfondi omogenei o cieli sereni<sup id="fnref4:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Banding: attiva il dithering</p>
-<p>Se osservi bande visibili dopo aver applicato la vignetta, <strong>attiva subito <code>dithering → 8-bit output</code></strong>. Questo inserisce rumore fine sufficiente a rompere le transizioni artificiali, senza impattare la qualità visiva[^vignetting-manual].</p>
+<p>Se osservi bande visibili dopo aver applicato la vignetta, <strong>attiva subito <code>dithering → 8-bit output</code></strong>. Questo inserisce rumore fine sufficiente a rompere le transizioni artificiali, senza impattare la qualità visiva<sup id="fnref11:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 </div>
 <p>Inoltre, il manuale ufficiale avverte esplicitamente:</p>
 <blockquote>
-<p><em>"Questo modulo può produrre risultati innaturali e va usato con cautela. Invece, usa il modulo <code>exposure</code> con una maschera ellittica a grande transizione e, se necessario, <code>color balance rgb</code> con la stessa maschera per ridurre la saturazione ai bordi."</em>[^vignetting-manual]</p>
+<p><em>"Questo modulo può produrre risultati innaturali e va usato con cautela. Invece, usa il modulo <code>exposure</code> con una maschera ellittica a grande transizione e, se necessario, <code>color balance rgb</code> con la stessa maschera per ridurre la saturazione ai bordi."</em><sup id="fnref12:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup></p>
 </blockquote>
 <p>Questo consiglio è particolarmente valido per:
 - ritratti (per evitare occhi o pelle “schiacciati” ai bordi),
@@ -3138,25 +3138,40 @@
 <h2 id="alternative-avanzate">Alternative avanzate<a class="headerlink" href="#alternative-avanzate" title="Permanent link">&para;</a></h2>
 <p>Per un controllo più preciso e integrato nella pipeline scene-referred, considera queste alternative:</p>
 <ul>
-<li><strong><code>exposure</code> + maschera ellittica</strong>: crea una vignetta con transizione morbida e regolabile, e puoi applicare modifiche separate a luminosità e saturazione tramite <code>color balance rgb</code>[^vignetting-manual].</li>
-<li><strong><code>lens correction</code> → manual vignette correction</strong>: utile quando i profili automatici non coprono il tuo obiettivo. Offre <code>strength</code>, <code>radius</code> e <code>steepness</code>, con preview integrata[^lens-correction-manual].</li>
+<li><strong><code>exposure</code> + maschera ellittica</strong>: crea una vignetta con transizione morbida e regolabile, e puoi applicare modifiche separate a luminosità e saturazione tramite <code>color balance rgb</code><sup id="fnref13:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</li>
+<li><strong><code>lens correction</code> → manual vignette correction</strong>: utile quando i profili automatici non coprono il tuo obiettivo. Offre <code>strength</code>, <code>radius</code> e <code>steepness</code>, con preview integrata<sup id="fnref:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup>.</li>
 <li><strong><code>soften</code> + maschera globale</strong>: per un effetto “glow” soft e atmosferico, non basato su attenuazione geometrica[^soften-video].</li>
 </ul>
 <p>Nessuno di questi sostituisce <code>vignetting</code> per la semplicità di utilizzo, ma tutti offrono maggiore flessibilità e minor rischio di artefatti.</p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/vignetting/">darktable 4.8 user manual — vignetting</a> [^vignetting-manual]  </li>
-<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 user manual — lens correction</a> [^lens-correction-manual]  </li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a> — uso pratico di <code>vignetting</code> in workflow creativi [^dragon-video]  </li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs">Darktable first steps EP05</a> — confronto tra <code>vignetting</code>, <code>exposure</code> e maschere [^first-steps-video]  </li>
-<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/">darktable 4.8 user manual — process</a> — contesto della pipeline scene-referred [^process-manual]  </li>
+<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/vignetting/">darktable 4.8 user manual — vignetting</a> <sup id="fnref14:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>  </li>
+<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 user manual — lens correction</a> <sup id="fnref2:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup>  </li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a> — uso pratico di <code>vignetting</code> in workflow creativi <sup id="fnref:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">3</a></sup>  </li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=sgW4oOtLeNs">Darktable first steps EP05</a> — confronto tra <code>vignetting</code>, <code>exposure</code> e maschere <sup id="fnref:first-steps-video"><a class="footnote-ref" href="#fn:first-steps-video">4</a></sup>  </li>
+<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/">darktable 4.8 user manual — process</a> — contesto della pipeline scene-referred <sup id="fnref2:process-manual"><a class="footnote-ref" href="#fn:process-manual">5</a></sup>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^vignetting-manual]: darktable 4.8 user manual - vignetting — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/vignetting/<br />
-[^lens-correction-manual]: darktable 4.8 user manual - lens correction — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/<br />
-[^dragon-video]: [ENG] The Dragan effect in darktable — https://www.youtube.com/watch?v=EuvG0lh8OB8<br />
-[^first-steps-video]: [ENG] Darktable first steps EP05 — https://www.youtube.com/watch?v=sgW4oOtLeNs<br />
-[^process-manual]: darktable 4.8 user manual - process — https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:vignetting-manual">
+<p>darktable 4.8 user manual - vignetting — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/vignetting/&#160;<a class="footnote-backref" href="#fnref:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:vignetting-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lens-correction-manual">
+<p>darktable 4.8 user manual - lens correction — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/&#160;<a class="footnote-backref" href="#fnref:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragon-video">
+<p>[ENG] The Dragan effect in darktable — https://www.youtube.com/watch?v=EuvG0lh8OB8&#160;<a class="footnote-backref" href="#fnref:dragon-video" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:first-steps-video">
+<p>[ENG] Darktable first steps EP05 — https://www.youtube.com/watch?v=sgW4oOtLeNs&#160;<a class="footnote-backref" href="#fnref:first-steps-video" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:process-manual">
+<p>darktable 4.8 user manual - process — https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/&#160;<a class="footnote-backref" href="#fnref:process-manual" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:process-manual" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

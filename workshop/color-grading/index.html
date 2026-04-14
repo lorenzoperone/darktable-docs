@@ -3060,11 +3060,11 @@
 
 
 <h1 id="color-grading-avanzato-bilanciamento-colore-rgb-in-darktable">Color Grading Avanzato: Bilanciamento Colore RGB in darktable<a class="headerlink" href="#color-grading-avanzato-bilanciamento-colore-rgb-in-darktable" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>color balance rgb</strong> è lo strumento di <em>secondary color grading</em> avanzato per il flusso scene-referred, ispirato al cinema e progettato per operare in spazi cromatici perceptualmente uniformi (JzAzBz e darktable UCS) [^dt48-color-balance-rgb]. Sostituisce progressivamente il vecchio modulo <em>color balance</em>, offrendo controllo indipendente su ombre, mezzitoni e luci, con maschere luminose pre-calibrate e gestione precisa della saturazione senza shift cromatici [^dt48-color-balance-rgb].</p>
+<p>Il modulo <strong>color balance rgb</strong> è lo strumento di <em>secondary color grading</em> avanzato per il flusso scene-referred, ispirato al cinema e progettato per operare in spazi cromatici perceptualmente uniformi (JzAzBz e darktable UCS) <sup id="fnref:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>. Sostituisce progressivamente il vecchio modulo <em>color balance</em>, offrendo controllo indipendente su ombre, mezzitoni e luci, con maschere luminose pre-calibrate e gestione precisa della saturazione senza shift cromatici <sup id="fnref2:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <p><img alt="Introduzione al modulo color balance rgb" src="../images/color-balance-rgb-intro.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Color balance rgb ≠ color balance</p>
-<p>Il modulo <em>color balance</em> è deprecato per il workflow scene-referred. <em>color balance rgb</em> opera in uno spazio lineare RGB progettato per la correzione cromatica fine, mentre <em>color balance</em> lavora in Lab e introduce artefatti tonali [^dt48-color-balance-rgb][^dt48-color-balance].</p>
+<p>Il modulo <em>color balance</em> è deprecato per il workflow scene-referred. <em>color balance rgb</em> opera in uno spazio lineare RGB progettato per la correzione cromatica fine, mentre <em>color balance</em> lavora in Lab e introduce artefatti tonali <sup id="fnref6:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup><sup id="fnref:dt48-color-balance"><a class="footnote-ref" href="#fn:dt48-color-balance">2</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo si articola in tre schede principali:</p>
@@ -3073,13 +3073,13 @@
 <li><strong>4 ways</strong>: regolazioni ASC CDL (<em>lift</em>, <em>gamma</em>, <em>gain</em>, <em>offset</em>, <em>power</em>) applicate su maschere luminose</li>
 <li><strong>Masks</strong>: configurazione avanzata delle maschere di luminanza e dei fulcri cromatici</li>
 </ol>
-<p>La sua forza risiede nella separazione fisica tra <strong>luminanza</strong> e <strong>crominanza</strong>, che permette di modificare la saturazione senza alterare la luminosità — un comportamento impossibile nei moduli legacy [^dt48-color-balance-rgb].</p>
+<p>La sua forza risiede nella separazione fisica tra <strong>luminanza</strong> e <strong>crominanza</strong>, che permette di modificare la saturazione senza alterare la luminosità — un comportamento impossibile nei moduli legacy <sup id="fnref3:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <p>A differenza di Lightroom, qui ogni parametro ha una definizione CIE rigorosa:<br />
 - <strong>Chroma</strong>: distanza dal grigio neutro a <em>luminanza costante</em><br />
 - <strong>Saturation</strong>: rapporto tra crominanza e <em>brilliance</em> (percezione visiva)<br />
-- <strong>Brilliance</strong>: luminanza relativa al contesto circostante [^dt48-color-dimensions]</p>
+- <strong>Brilliance</strong>: luminanza relativa al contesto circostante <sup id="fnref:dt48-color-dimensions"><a class="footnote-ref" href="#fn:dt48-color-dimensions">3</a></sup></p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso ottimale segue l’ordine della pipeline scene-referred [^workflow-manual]:</p>
+<p>Il flusso ottimale segue l’ordine della pipeline scene-referred <sup id="fnref:workflow-manual"><a class="footnote-ref" href="#fn:workflow-manual">9</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione (exposure)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Calibrazione colore (color calibration, tab CAT)
@@ -3090,19 +3090,19 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Non invertire l'ordine</p>
-<p>Applicare <em>color balance rgb</em> prima di <em>color calibration</em> produce risultati imprevedibili: la calibrazione del colore deve stabilire un punto di partenza neutro prima di qualsiasi grading creativo [^dt48-color-balance-rgb].</p>
+<p>Applicare <em>color balance rgb</em> prima di <em>color calibration</em> produce risultati imprevedibili: la calibrazione del colore deve stabilire un punto di partenza neutro prima di qualsiasi grading creativo <sup id="fnref7:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-preparazione-con-color-calibration">Passo 1: Preparazione con color calibration<a class="headerlink" href="#passo-1-preparazione-con-color-calibration" title="Permanent link">&para;</a></h3>
-<p>Prima di toccare <em>color balance rgb</em>, assicurati che <em>color calibration</em> sia impostato su <strong>CAT16</strong> e che l’illuminante sia corretto (es. “detect from surfaces” o “as shot in camera”) [^dt48-color-calibration]. Questo garantisce che i colori siano fisicamente coerenti prima del grading.</p>
+<p>Prima di toccare <em>color balance rgb</em>, assicurati che <em>color calibration</em> sia impostato su <strong>CAT16</strong> e che l’illuminante sia corretto (es. “detect from surfaces” o “as shot in camera”) <sup id="fnref:dt48-color-calibration"><a class="footnote-ref" href="#fn:dt48-color-calibration">4</a></sup>. Questo garantisce che i colori siano fisicamente coerenti prima del grading.</p>
 <p><img alt="color calibration CAT16 attivo" src="../images/color-calibration-cat16.jpg" /></p>
 <h3 id="passo-2-selezione-del-profilo-iniziale">Passo 2: Selezione del profilo iniziale<a class="headerlink" href="#passo-2-selezione-del-profilo-iniziale" title="Permanent link">&para;</a></h3>
 <p>Nella scheda <strong>Master</strong>, usa il menu a tendina <em>profile</em> per scegliere un punto di partenza:
-- <code>basic colorfulness|standard</code>: bilanciamento neutro, leggera vividezza — ideale per ritratti [^iaZ2-QvOHyA]
-- <code>cinematic teal/orange</code>: look da film, con verde-ciano attenuato e arancio accentuato [^dt48-color-balance-rgb]
-- <code>monochrome|film</code>: conversione in bianco e nero basata sulla sensibilità spettrale delle emulsioni [^dt34-color-calibration]</p>
+- <code>basic colorfulness|standard</code>: bilanciamento neutro, leggera vividezza — ideale per ritratti <sup id="fnref:iaZ2-QvOHyA"><a class="footnote-ref" href="#fn:iaZ2-QvOHyA">6</a></sup>
+- <code>cinematic teal/orange</code>: look da film, con verde-ciano attenuato e arancio accentuato <sup id="fnref4:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>
+- <code>monochrome|film</code>: conversione in bianco e nero basata sulla sensibilità spettrale delle emulsioni <sup id="fnref:dt34-color-calibration"><a class="footnote-ref" href="#fn:dt34-color-calibration">5</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché non partire da zero?</p>
-<p>I profili sono preset testati che rispettano le regole del gamut e della linearità. Partire da <code>neutral</code> richiede conoscenze avanzate di teoria del colore e aumenta il rischio di clipping cromatico [^dt48-color-balance-rgb].</p>
+<p>I profili sono preset testati che rispettano le regole del gamut e della linearità. Partire da <code>neutral</code> richiede conoscenze avanzate di teoria del colore e aumenta il rischio di clipping cromatico <sup id="fnref8:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-regolazione-master">Passo 3: Regolazione master<a class="headerlink" href="#passo-3-regolazione-master" title="Permanent link">&para;</a></h3>
 <p>Applica modifiche globali solo se necessarie — evita di sovraccaricare il modulo:</p>
@@ -3120,43 +3120,43 @@
 <td><strong>Hue shift</strong></td>
 <td>-5° a +5°</td>
 <td>Rotazione globale dell’intero cerchio cromatico</td>
-<td>Correggere dominanti ambientali (es. luce fluorescente gialla) [^dt48-color-balance-rgb]</td>
+<td>Correggere dominanti ambientali (es. luce fluorescente gialla) <sup id="fnref14:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global vibrance</strong></td>
 <td>10–30%</td>
 <td>Aumenta la crominanza dei colori <em>poco saturi</em>, preservando quelli già vividi</td>
-<td>Dare “pop” ai toni medi senza bruciare i rossi del tramonto [^dt48-color-balance-rgb]</td>
+<td>Dare “pop” ai toni medi senza bruciare i rossi del tramonto <sup id="fnref15:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast</strong></td>
 <td>0.1–0.4</td>
 <td>Aumenta la separazione tonale <em>a crominanza costante</em></td>
-<td>Aggiungere profondità senza desaturare [^dt48-color-balance-rgb]</td>
+<td>Aggiungere profondità senza desaturare <sup id="fnref16:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global saturation</strong></td>
 <td>-15% a +25%</td>
 <td>Scala la crominanza proporzionalmente all’input</td>
-<td>Recuperare vividezza dopo AGX (che desatura naturalmente le alte luci) [^iaZ2-QvOHyA]</td>
+<td>Recuperare vividezza dopo AGX (che desatura naturalmente le alte luci) <sup id="fnref3:iaZ2-QvOHyA"><a class="footnote-ref" href="#fn:iaZ2-QvOHyA">6</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Parametri master di color balance rgb" src="../images/color-balance-rgb-master.jpg" /></p>
 <h3 id="passo-4-controllo-per-zone-4-ways">Passo 4: Controllo per zone (4 ways)<a class="headerlink" href="#passo-4-controllo-per-zone-4-ways" title="Permanent link">&para;</a></h3>
-<p>Questa è la fase più potente: regola separatamente ombre, mezzitoni e luci usando le maschere predefinite [^dt48-color-balance-rgb].</p>
+<p>Questa è la fase più potente: regola separatamente ombre, mezzitoni e luci usando le maschere predefinite <sup id="fnref5:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <h4 id="esempio-pratico-ritratto-con-cielo-blu-intenso">Esempio pratico: ritratto con cielo blu intenso<a class="headerlink" href="#esempio-pratico-ritratto-con-cielo-blu-intenso" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Nella scheda <strong>4 ways</strong>, attiva <strong>shadows lift</strong>  </li>
-<li>Imposta <em>red</em>: 0.95, <em>green</em>: 0.97, <em>blue</em>: 1.02 → apri le ombre senza aggiungere freddo [^MJJR8DJ3rr8]  </li>
+<li>Imposta <em>red</em>: 0.95, <em>green</em>: 0.97, <em>blue</em>: 1.02 → apri le ombre senza aggiungere freddo <sup id="fnref:MJJR8DJ3rr8"><a class="footnote-ref" href="#fn:MJJR8DJ3rr8">7</a></sup>  </li>
 <li>Attiva <strong>highlights gain</strong>  </li>
-<li>Imposta <em>red</em>: 1.03, <em>green</em>: 0.94, <em>blue</em>: 0.89 → attenua il blu del cielo per evitare clipping [^iaZ2-QvOHyA]  </li>
+<li>Imposta <em>red</em>: 1.03, <em>green</em>: 0.94, <em>blue</em>: 0.89 → attenua il blu del cielo per evitare clipping <sup id="fnref2:iaZ2-QvOHyA"><a class="footnote-ref" href="#fn:iaZ2-QvOHyA">6</a></sup>  </li>
 <li>Usa <strong>global power</strong> per bilanciare:  </li>
-<li><em>red</em>: 0.99, <em>green</em>: 1.00, <em>blue</em>: 1.01 → leggero aumento di brillianza sulle luci senza shift [^dt48-color-balance-rgb]</li>
+<li><em>red</em>: 0.99, <em>green</em>: 1.00, <em>blue</em>: 1.01 → leggero aumento di brillianza sulle luci senza shift <sup id="fnref9:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Maschere luminose: come funzionano</p>
-<p>Le maschere sono calcolate <em>all’ingresso del modulo</em>, quindi sono insensibili alle modifiche interne. La curva di transizione è definita da <code>shadows fall-off</code> (default: 0.25) e <code>highlights fall-off</code> (default: 0.25) [^dt48-color-balance-rgb].</p>
+<p>Le maschere sono calcolate <em>all’ingresso del modulo</em>, quindi sono insensibili alle modifiche interne. La curva di transizione è definita da <code>shadows fall-off</code> (default: 0.25) e <code>highlights fall-off</code> (default: 0.25) <sup id="fnref10:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3173,49 +3173,49 @@
 <td><strong>Hue shift</strong></td>
 <td>-180° to +180°</td>
 <td>0°</td>
-<td>Rotazione cromatica globale, a luminanza costante [^dt48-color-balance-rgb]</td>
+<td>Rotazione cromatica globale, a luminanza costante <sup id="fnref17:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global vibrance</strong></td>
 <td>-100% to +100%</td>
 <td>0%</td>
-<td>Aumenta la crominanza dei pixel a bassa crominanza, privilegiando i neutri [^dt48-color-balance-rgb]</td>
+<td>Aumenta la crominanza dei pixel a bassa crominanza, privilegiando i neutri <sup id="fnref18:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast</strong></td>
 <td>-1.0 to +1.0</td>
 <td>0.0</td>
-<td>Contrasto tonale a crominanza costante; fulcro predefinito a 18.45% [^dt48-color-balance-rgb]</td>
+<td>Contrasto tonale a crominanza costante; fulcro predefinito a 18.45% <sup id="fnref19:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global saturation</strong></td>
 <td>-100% to +100%</td>
 <td>0%</td>
-<td>Scala la crominanza proporzionalmente all’input, a tonalità costante [^dt48-color-balance-rgb]</td>
+<td>Scala la crominanza proporzionalmente all’input, a tonalità costante <sup id="fnref20:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global brilliance</strong></td>
 <td>-100% to +100%</td>
 <td>0%</td>
-<td>Scala la luminanza proporzionalmente all’input, a tonalità costante [^dt48-color-balance-rgb]</td>
+<td>Scala la luminanza proporzionalmente all’input, a tonalità costante <sup id="fnref21:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Shadows lift (R/G/B)</strong></td>
 <td>0.0 to 2.0</td>
 <td>1.0 / 1.0 / 1.0</td>
-<td>Moltiplicatore RGB per le ombre (maschera &lt; 30% luminanza) [^dt48-color-balance-rgb]</td>
+<td>Moltiplicatore RGB per le ombre (maschera &lt; 30% luminanza) <sup id="fnref22:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Highlights gain (R/G/B)</strong></td>
 <td>0.0 to 2.0</td>
 <td>1.0 / 1.0 / 1.0</td>
-<td>Moltiplicatore RGB per le luci (maschera &gt; 70% luminanza) [^dt48-color-balance-rgb]</td>
+<td>Moltiplicatore RGB per le luci (maschera &gt; 70% luminanza) <sup id="fnref23:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Global power (R/G/B)</strong></td>
 <td>0.0 to 2.0</td>
 <td>1.0 / 1.0 / 1.0</td>
-<td>Esponente RGB globale, normalizzato al white fulcrum (default: 18.45%) [^dt48-color-balance-rgb]</td>
+<td>Esponente RGB globale, normalizzato al white fulcrum (default: 18.45%) <sup id="fnref24:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3235,12 +3235,12 @@
 <tr>
 <td><strong>JzAzBz (2021)</strong></td>
 <td>Basato su standard HDR, accuratezza teorica</td>
-<td>Non considera l’effetto Helmholtz-Kohlrausch (i colori vividi appaiono più luminosi) [^dt48-color-balance-rgb]</td>
+<td>Non considera l’effetto Helmholtz-Kohlrausch (i colori vividi appaiono più luminosi) <sup id="fnref25:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 <td>❌</td>
 </tr>
 <tr>
 <td><strong>darktable UCS (2022)</strong></td>
-<td>Modellato su dati psicofisici reali, gestisce meglio il gamut e l’HK-effect [^dt48-color-balance-rgb]</td>
+<td>Modellato su dati psicofisici reali, gestisce meglio il gamut e l’HK-effect <sup id="fnref26:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></td>
 <td>Richiede più potenza CPU</td>
 <td>✅</td>
 </tr>
@@ -3248,14 +3248,14 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Quando usare darktable UCS</p>
-<p>Sempre. È l’algoritmo predefinito perché mantiene la coerenza percettiva: un rosso intenso appare più luminoso di un grigio chiaro, esattamente come nella realtà [^dt48-color-balance-rgb].</p>
+<p>Sempre. È l’algoritmo predefinito perché mantiene la coerenza percettiva: un rosso intenso appare più luminoso di un grigio chiaro, esattamente come nella realtà <sup id="fnref11:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 </div>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Usa il vectorscope</strong>: attivalo con <code>Ctrl+Shift+V</code>. Ti mostra la distribuzione cromatica reale: se i pixel si ammassano oltre il bordo del cerchio, stai uscendo dal gamut [^dt48-color-balance-rgb].  </li>
-<li><strong>Verifica il clipping</strong>: abilita <em>display sample in vectorscope</em> nel modulo <em>color calibration</em> per monitorare i valori cromatici in tempo reale [^DzdGL30lYjU].  </li>
-<li><strong>Evita il doppio contrasto</strong>: non usare <em>contrast</em> in <em>color balance rgb</em> se hai già applicato <em>tone equalizer</em> o <em>AGX contrast</em> — genera artefatti [^dt48-color-balance-rgb].  </li>
-<li><strong>Salva i preset per scena</strong>: crea uno stile chiamato <code>Ritratto_esterno_sole</code>, <code>Paesaggio_nuvoloso</code>, ecc., per riutilizzare rapidamente combinazioni testate [^MJJR8DJ3rr8].</li>
+<li><strong>Usa il vectorscope</strong>: attivalo con <code>Ctrl+Shift+V</code>. Ti mostra la distribuzione cromatica reale: se i pixel si ammassano oltre il bordo del cerchio, stai uscendo dal gamut <sup id="fnref12:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.  </li>
+<li><strong>Verifica il clipping</strong>: abilita <em>display sample in vectorscope</em> nel modulo <em>color calibration</em> per monitorare i valori cromatici in tempo reale <sup id="fnref:DzdGL30lYjU"><a class="footnote-ref" href="#fn:DzdGL30lYjU">8</a></sup>.  </li>
+<li><strong>Evita il doppio contrasto</strong>: non usare <em>contrast</em> in <em>color balance rgb</em> se hai già applicato <em>tone equalizer</em> o <em>AGX contrast</em> — genera artefatti <sup id="fnref13:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.  </li>
+<li><strong>Salva i preset per scena</strong>: crea uno stile chiamato <code>Ritratto_esterno_sole</code>, <code>Paesaggio_nuvoloso</code>, ecc., per riutilizzare rapidamente combinazioni testate <sup id="fnref2:MJJR8DJ3rr8"><a class="footnote-ref" href="#fn:MJJR8DJ3rr8">7</a></sup>.</li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3264,15 +3264,38 @@
 <li><a href="../special-topics/color-dimensions.md">Teoria delle dimensioni del colore</a> — definizioni CIE di chroma, saturation, brilliance  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-color-balance-rgb]: darktable 4.8 user manual — color balance rgb, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/</a>
-[^dt48-color-balance]: darktable 4.8 user manual — color balance, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance/</a><br />
-[^dt48-color-dimensions]: darktable 4.8 user manual — color dimensions, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/color-management/color-dimensions/">https://docs.darktable.org/usermanual/4.8/en/special-topics/color-management/color-dimensions/</a><br />
-[^dt48-color-calibration]: darktable 4.8 user manual — color calibration, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/</a><br />
-[^dt34-color-calibration]: darktable 3.4 — color calibration module, <a href="https://darktable.fr/posts/2020/12/darktable-3-4-la-revolution-colorimetrique-continue/">https://darktable.fr/posts/2020/12/darktable-3-4-la-revolution-colorimetrique-continue/</a><br />
-[^iaZ2-QvOHyA]: [ENG] A guide to AgX in darktable, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">https://www.youtube.com/watch?v=iaZ2-QvOHyA</a><br />
-[^MJJR8DJ3rr8]: [ENG] Some Color calibration ideas, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=MJJR8DJ3rr8">https://www.youtube.com/watch?v=MJJR8DJ3rr8</a><br />
-[^DzdGL30lYjU]: [ENG] darktable Full edit #1, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=DzdGL30lYjU">https://www.youtube.com/watch?v=DzdGL30lYjU</a><br />
-[^workflow-manual]: Manuale_Flusso_Lavoro_darktable, Aprile 2026, darktable 5.4+</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-color-balance-rgb">
+<p>darktable 4.8 user manual — color balance rgb, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/</a>&#160;<a class="footnote-backref" href="#fnref:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:dt48-color-balance-rgb" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt48-color-balance">
+<p>darktable 4.8 user manual — color balance, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance/</a>&#160;<a class="footnote-backref" href="#fnref:dt48-color-balance" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt48-color-dimensions">
+<p>darktable 4.8 user manual — color dimensions, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/color-management/color-dimensions/">https://docs.darktable.org/usermanual/4.8/en/special-topics/color-management/color-dimensions/</a>&#160;<a class="footnote-backref" href="#fnref:dt48-color-dimensions" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt48-color-calibration">
+<p>darktable 4.8 user manual — color calibration, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/</a>&#160;<a class="footnote-backref" href="#fnref:dt48-color-calibration" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt34-color-calibration">
+<p>darktable 3.4 — color calibration module, <a href="https://darktable.fr/posts/2020/12/darktable-3-4-la-revolution-colorimetrique-continue/">https://darktable.fr/posts/2020/12/darktable-3-4-la-revolution-colorimetrique-continue/</a>&#160;<a class="footnote-backref" href="#fnref:dt34-color-calibration" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:iaZ2-QvOHyA">
+<p>[ENG] A guide to AgX in darktable, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">https://www.youtube.com/watch?v=iaZ2-QvOHyA</a>&#160;<a class="footnote-backref" href="#fnref:iaZ2-QvOHyA" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:iaZ2-QvOHyA" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:iaZ2-QvOHyA" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:MJJR8DJ3rr8">
+<p>[ENG] Some Color calibration ideas, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=MJJR8DJ3rr8">https://www.youtube.com/watch?v=MJJR8DJ3rr8</a>&#160;<a class="footnote-backref" href="#fnref:MJJR8DJ3rr8" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:MJJR8DJ3rr8" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:DzdGL30lYjU">
+<p>[ENG] darktable Full edit #1, A Dabble in Photography, <a href="https://www.youtube.com/watch?v=DzdGL30lYjU">https://www.youtube.com/watch?v=DzdGL30lYjU</a>&#160;<a class="footnote-backref" href="#fnref:DzdGL30lYjU" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:workflow-manual">
+<p>Manuale_Flusso_Lavoro_darktable, Aprile 2026, darktable 5.4+&#160;<a class="footnote-backref" href="#fnref:workflow-manual" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

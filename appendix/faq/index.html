@@ -3102,11 +3102,11 @@
 
 
 <h1 id="troubleshooting-faq-darktable">Troubleshooting FAQ: darktable<a class="headerlink" href="#troubleshooting-faq-darktable" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>Troubleshooting FAQ</strong> non esiste come componente attivo nella pipeline di elaborazione di darktable. Si tratta invece di una <strong>sezione concettuale e operativa</strong> — integrata nel manuale ufficiale, nei forum della comunità e nelle risorse didattiche — dedicata alla diagnosi e risoluzione sistematica dei problemi più comuni durante l’uso del software[^manual-48-troubleshooting]. Questa pagina di riferimento sintetizza le procedure verificate, i comandi terminali essenziali e le strategie diagnostiche raccomandate per utenti avanzati e migranti da Lightroom/Photoshop, con particolare attenzione a compatibilità hardware, flussi di lavoro scene-referred e gestione degli errori critici.</p>
+<p>Il modulo <strong>Troubleshooting FAQ</strong> non esiste come componente attivo nella pipeline di elaborazione di darktable. Si tratta invece di una <strong>sezione concettuale e operativa</strong> — integrata nel manuale ufficiale, nei forum della comunità e nelle risorse didattiche — dedicata alla diagnosi e risoluzione sistematica dei problemi più comuni durante l’uso del software<sup id="fnref:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>. Questa pagina di riferimento sintetizza le procedure verificate, i comandi terminali essenziali e le strategie diagnostiche raccomandate per utenti avanzati e migranti da Lightroom/Photoshop, con particolare attenzione a compatibilità hardware, flussi di lavoro scene-referred e gestione degli errori critici.</p>
 <p><img alt="Panoramica della sezione Troubleshooting nel manuale ufficiale" src="../images/troubleshooting-manual-overview.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Troubleshooting ≠ modulo, ma workflow</p>
-<p>In darktable non esiste un modulo chiamato <em>Troubleshooting</em>. Il termine indica un <strong>processo strutturato</strong> basato su test sequenziali, log di sistema e verifica delle dipendenze (gphoto2, OpenCL, lensfun). La sua applicazione è obbligatoria prima di segnalare bug o richiedere supporto[^manual-48-troubleshooting].</p>
+<p>In darktable non esiste un modulo chiamato <em>Troubleshooting</em>. Il termine indica un <strong>processo strutturato</strong> basato su test sequenziali, log di sistema e verifica delle dipendenze (gphoto2, OpenCL, lensfun). La sua applicazione è obbligatoria prima di segnalare bug o richiedere supporto<sup id="fnref4:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>La procedura di troubleshooting in darktable si articola in quattro livelli gerarchici:</p>
@@ -3114,7 +3114,7 @@
 <li><strong>Rilevamento hardware</strong> — verifica che la fotocamera sia riconosciuta dal sistema e da <code>gphoto2</code>  </li>
 <li><strong>Abilità driver</strong> — controllo che il driver supporti <em>capture choices</em> e <em>configuration</em>  </li>
 <li><strong>Acquisizione remota</strong> — test funzionale di scatto e download  </li>
-<li><strong>Acquisizione tethered</strong> — test avanzato con eventi in tempo reale (richiesto per il tethering completo)[^manual-48-troubleshooting]</li>
+<li><strong>Acquisizione tethered</strong> — test avanzato con eventi in tempo reale (richiesto per il tethering completo)<sup id="fnref5:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup></li>
 </ol>
 <p>Questo approccio è stato progettato per isolare rapidamente se il problema risiede:
 - nel firmware della fotocamera,
@@ -3124,7 +3124,7 @@
 <p>Il troubleshooting non copre invece:
 - errori di licenza o installazione di terze parti (es. LUT personali),
 - corruzione di database SQLite (richiede backup manuale),
-- problemi di performance legati a SSD lenti o RAM insufficiente (&lt;16 GB consigliati per RAW 50MP)[^darktable-fr-faq].</p>
+- problemi di performance legati a SSD lenti o RAM insufficiente (&lt;16 GB consigliati per RAW 50MP)<sup id="fnref:darktable-fr-faq"><a class="footnote-ref" href="#fn:darktable-fr-faq">2</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso standard per diagnosi hardware (es. tethering) segue questa sequenza rigorosa:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. Verifica rilevamento base</span>
@@ -3141,7 +3141,7 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Non saltare alcun passo</p>
-<p>Ogni comando dipende dal successo del precedente. Se il passo 2 fallisce, i passi 3–4 sono destinati al fallimento indipendentemente dalle impostazioni di darktable[^manual-48-troubleshooting].</p>
+<p>Ogni comando dipende dal successo del precedente. Se il passo 2 fallisce, i passi 3–4 sono destinati al fallimento indipendentemente dalle impostazioni di darktable<sup id="fnref6:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-rilevamento-fotocamera">Passo 1: Rilevamento fotocamera<a class="headerlink" href="#passo-1-rilevamento-fotocamera" title="Permanent link">&para;</a></h3>
 <p>Il comando <code>gphoto2 --auto-detect</code> restituisce una lista simile a:</p>
@@ -3153,13 +3153,13 @@
 <p>Se la fotocamera <strong>non appare</strong>, controllare:
 - Che sia in modalità <em>PC Connection</em> (non MTP o PTP solo per trasferimento),
 - Che non sia collegata tramite hub USB non alimentato,
-- Che il kernel Linux abbia caricato il modulo <code>usbserial</code> (verificabile con <code>lsmod | grep usbserial</code>)[^manual-48-troubleshooting].</p>
+- Che il kernel Linux abbia caricato il modulo <code>usbserial</code> (verificabile con <code>lsmod | grep usbserial</code>)<sup id="fnref2:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>.</p>
 <h3 id="passo-2-abilita-driver">Passo 2: Abilità driver<a class="headerlink" href="#passo-2-abilita-driver" title="Permanent link">&para;</a></h3>
 <p>L’output di <code>--abilities</code> deve contenere esplicitamente:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>capture choices: Image
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>configuration: yes
 </code></pre></div>
-<p>Se manca una delle due voci, darktable <strong>non mostrerà mai il pulsante “Tethered shoot”</strong>, anche se la fotocamera è rilevata[^manual-48-troubleshooting]. Questo è un limite del driver <code>gphoto2</code>, non di darktable.</p>
+<p>Se manca una delle due voci, darktable <strong>non mostrerà mai il pulsante “Tethered shoot”</strong>, anche se la fotocamera è rilevata<sup id="fnref3:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>. Questo è un limite del driver <code>gphoto2</code>, non di darktable.</p>
 <h3 id="passo-3-4-acquisizione-remota-vs-tethered">Passo 3 &amp; 4: Acquisizione remota vs. tethered<a class="headerlink" href="#passo-3-4-acquisizione-remota-vs-tethered" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3187,7 +3187,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Perché tethered fallisce anche se remote funziona?</p>
-<p>Il tethering richiede che il driver supporti il protocollo <em>PTP Events</em>, non disponibile su molti modelli entry-level (es. Canon EOS Rebel serie, Nikon D3x00). È un vincolo hardware, non configurativo[^manual-48-troubleshooting].</p>
+<p>Il tethering richiede che il driver supporti il protocollo <em>PTP Events</em>, non disponibile su molti modelli entry-level (es. Canon EOS Rebel serie, Nikon D3x00). È un vincolo hardware, non configurativo<sup id="fnref7:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>.</p>
 </div>
 <h2 id="parametri-critici-di-sistema">Parametri critici di sistema<a class="headerlink" href="#parametri-critici-di-sistema" title="Permanent link">&para;</a></h2>
 <p>I parametri di sistema che influenzano direttamente la stabilità di darktable sono gestiti fuori dalla GUI, tramite file di configurazione o variabili d’ambiente.</p>
@@ -3205,25 +3205,25 @@
 <td><strong>OpenCL device</strong></td>
 <td><code>~/.config/darktable/darktablerc</code> → <code>[opencl]</code> → <code>enabled = TRUE</code></td>
 <td><code>TRUE</code> / <code>FALSE</code></td>
-<td>Disabilitare se si verificano crash su GPU AMD o Intel HD Graphics 600+[^darktable-fr-faq-opencl]</td>
+<td>Disabilitare se si verificano crash su GPU AMD o Intel HD Graphics 600+<sup id="fnref3:darktable-fr-faq-opencl"><a class="footnote-ref" href="#fn:darktable-fr-faq-opencl">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Lensfun database path</strong></td>
 <td><code>~/.config/darktable/darktablerc</code> → <code>[lens]</code> → <code>database = ...</code></td>
 <td><code>/usr/share/lensfun/version_2</code></td>
-<td>Percorso della base dati per correzione obiettivi. Aggiornare con <code>lensfun-update-data</code> se mancano profili[^darktable-fr-faq-lensfun]</td>
+<td>Percorso della base dati per correzione obiettivi. Aggiornare con <code>lensfun-update-data</code> se mancano profili<sup id="fnref:darktable-fr-faq-lensfun"><a class="footnote-ref" href="#fn:darktable-fr-faq-lensfun">4</a></sup></td>
 </tr>
 <tr>
 <td><strong>Cache size</strong></td>
 <td><code>~/.config/darktable/darktablerc</code> → <code>[cache]</code> → <code>size = ...</code></td>
 <td><code>2048</code> MB</td>
-<td>Dimensione cache in MB. Valori &gt;4096 MB possono causare OOM su sistemi con &lt;32 GB RAM[^darktable-fr-faq]</td>
+<td>Dimensione cache in MB. Valori &gt;4096 MB possono causare OOM su sistemi con &lt;32 GB RAM<sup id="fnref3:darktable-fr-faq"><a class="footnote-ref" href="#fn:darktable-fr-faq">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Thumbnail quality</strong></td>
 <td><code>~/.config/darktable/darktablerc</code> → <code>[ui]</code> → <code>thumbnail_quality = ...</code></td>
 <td><code>90</code></td>
-<td>Qualità JPEG delle miniature (0–100). Valori &lt;70 causano artefatti visibili nei preview[^darktable-fr-faq]</td>
+<td>Qualità JPEG delle miniature (0–100). Valori &lt;70 causano artefatti visibili nei preview<sup id="fnref4:darktable-fr-faq"><a class="footnote-ref" href="#fn:darktable-fr-faq">2</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3236,7 +3236,7 @@
 <li><strong>Soluzione</strong>:  </li>
 <li>Clic destro sull’immagine → <em>“Locate missing file…”</em>  </li>
 <li>Se il file è irreperibile: clic destro → <em>“Remove from collection”</em>  </li>
-<li>Per prevenire: usare sempre <em>“Move to folder…”</em> o <em>“Rename…”</em> dal menu contestuale di darktable[^darktable-fr-faq-dead-heads]</li>
+<li>Per prevenire: usare sempre <em>“Move to folder…”</em> o <em>“Rename…”</em> dal menu contestuale di darktable<sup id="fnref:darktable-fr-faq-dead-heads"><a class="footnote-ref" href="#fn:darktable-fr-faq-dead-heads">5</a></sup></li>
 </ul>
 <h3 id="clipping-cromatico-nei-rossi-saturi">❌ “Clipping cromatico nei rossi saturi”<a class="headerlink" href="#clipping-cromatico-nei-rossi-saturi" title="Permanent link">&para;</a></h3>
 <p>Si manifesta come perdita di dettaglio nei rossi brillanti (es. luci al tramonto, fiori) dopo AGX o Filmic RGB.</p>
@@ -3245,7 +3245,7 @@
 <li><strong>Soluzione</strong>:  </li>
 <li>Attivare <strong>Red attenuation</strong> in AGX <em>prima</em> del tone mapping (valore tipico: <code>15–30%</code>)  </li>
 <li>Usare <strong>Recover purity</strong> dopo il tone mapping (<code>20–40%</code>)  </li>
-<li>Alternativa: inserire un modulo <em>Color calibration</em> prima di AGX con <em>Input R</em> ridotto a <code>-0.100</code>[^darktable-fr-faq-gamut]</li>
+<li>Alternativa: inserire un modulo <em>Color calibration</em> prima di AGX con <em>Input R</em> ridotto a <code>-0.100</code><sup id="fnref:darktable-fr-faq-gamut"><a class="footnote-ref" href="#fn:darktable-fr-faq-gamut">6</a></sup></li>
 </ul>
 <h3 id="vignette-non-riflette-limmagine-trattata">❌ “Vignette non riflette l’immagine trattata”<a class="headerlink" href="#vignette-non-riflette-limmagine-trattata" title="Permanent link">&para;</a></h3>
 <p>Le miniature nella lighttable non aggiornano i cambiamenti applicati nel darkroom.</p>
@@ -3254,7 +3254,7 @@
 <li><strong>Soluzione</strong>:  </li>
 <li>Premere <code>Ctrl+R</code> per rigenerare la cache  </li>
 <li>Oppure: <code>Menu → Preferences → Interface → Clear thumbnail cache</code>  </li>
-<li>Per evitare: abilitare <em>“Update thumbnails after processing”</em> nelle preferenze[^darktable-fr-faq-thumbnails]</li>
+<li>Per evitare: abilitare <em>“Update thumbnails after processing”</em> nelle preferenze<sup id="fnref:darktable-fr-faq-thumbnails"><a class="footnote-ref" href="#fn:darktable-fr-faq-thumbnails">7</a></sup></li>
 </ul>
 <h3 id="errore-opencl-clbuildprogram-failed">❌ “Errore OpenCL: clBuildProgram failed”<a class="headerlink" href="#errore-opencl-clbuildprogram-failed" title="Permanent link">&para;</a></h3>
 <p>Comune su macOS con GPU Apple Silicon e su Linux con driver NVIDIA vecchi.</p>
@@ -3266,23 +3266,23 @@
     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[opencl]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">FALSE</span>
 </code></pre></div></li>
-<li>Su macOS: usare sempre la build <code>.dmg</code> ufficiale (non AppImage)[^darktable-fr-faq-opencl]</li>
+<li>Su macOS: usare sempre la build <code>.dmg</code> ufficiale (non AppImage)<sup id="fnref:darktable-fr-faq-opencl"><a class="footnote-ref" href="#fn:darktable-fr-faq-opencl">3</a></sup></li>
 </ul>
 <h2 id="consigli-avanzati-per-migranti-lrps">Consigli avanzati per migranti LR/PS<a class="headerlink" href="#consigli-avanzati-per-migranti-lrps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Sincronizzazione cataloghi</strong>: darktable non ha un “catalogo centrale” come Lightroom. Il database <code>library.db</code> è SQLite e <strong>non va modificato manualmente</strong>. Usare <code>darktable-cli --import</code> per importazioni batch[^manual-48-troubleshooting].  </li>
-<li><strong>Stili vs. Preset</strong>: Gli stili di darktable (<code>.dtstyle</code>) sono equivalenti ai preset Lightroom, ma <strong>non includono metadati</strong> (parole chiave, valutazioni). Questi ultimi vanno gestiti separatamente via XMP[^darktable-fr-faq].  </li>
+<li><strong>Sincronizzazione cataloghi</strong>: darktable non ha un “catalogo centrale” come Lightroom. Il database <code>library.db</code> è SQLite e <strong>non va modificato manualmente</strong>. Usare <code>darktable-cli --import</code> per importazioni batch<sup id="fnref8:manual-48-troubleshooting"><a class="footnote-ref" href="#fn:manual-48-troubleshooting">1</a></sup>.  </li>
+<li><strong>Stili vs. Preset</strong>: Gli stili di darktable (<code>.dtstyle</code>) sono equivalenti ai preset Lightroom, ma <strong>non includono metadati</strong> (parole chiave, valutazioni). Questi ultimi vanno gestiti separatamente via XMP<sup id="fnref2:darktable-fr-faq"><a class="footnote-ref" href="#fn:darktable-fr-faq">2</a></sup>.  </li>
 <li><strong>Export RAW + XMP</strong>: Per mantenere editabilità esterna, esportare sempre insieme:  </li>
 <li>File RAW originale (integro),  </li>
-<li>File <code>.xmp</code> sidecar generato automaticamente da darktable[^darktable-fr-faq-xmp].  </li>
-<li><strong>GPU acceleration</strong>: Non è necessaria per editing base. Abilitarla solo per denoise avanzato (<code>denoiseprofile</code>), local contrast e <code>diffuse or sharpen</code>[^darktable-fr-faq-opencl].</li>
+<li>File <code>.xmp</code> sidecar generato automaticamente da darktable<sup id="fnref:darktable-fr-faq-xmp"><a class="footnote-ref" href="#fn:darktable-fr-faq-xmp">8</a></sup>.  </li>
+<li><strong>GPU acceleration</strong>: Non è necessaria per editing base. Abilitarla solo per denoise avanzato (<code>denoiseprofile</code>), local contrast e <code>diffuse or sharpen</code><sup id="fnref2:darktable-fr-faq-opencl"><a class="footnote-ref" href="#fn:darktable-fr-faq-opencl">3</a></sup>.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Come recuperare lo storico da un file JPEG esportato</p>
 <p>Se hai un JPEG esportato da darktable <em>e</em> il relativo file RAW originale, puoi ripristinare l’intera cronologia di editing usando:<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>darktable-cli<span class="w"> </span>--import<span class="w"> </span>/path/to/raw.ARW<span class="w"> </span>--apply-style<span class="w"> </span>/path/to/style.dtstyle<span class="w"> </span>--export<span class="w"> </span>/path/to/output.tiff
 </code></pre></div>
-Lo stile contiene tutti i parametri dell’history stack[^darktable-fr-faq-xmp].</p>
+Lo stile contiene tutti i parametri dell’history stack<sup id="fnref2:darktable-fr-faq-xmp"><a class="footnote-ref" href="#fn:darktable-fr-faq-xmp">8</a></sup>.</p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3298,14 +3298,35 @@ Lo stile contiene tutti i parametri dell’history stack[^darktable-fr-faq-xmp].
 </code></pre></div></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-48-troubleshooting]: darktable 4.8 user manual - troubleshooting, <a href="https://docs.darktable.org/usermanual/4.8/en/tethering/troubleshooting/">https://docs.darktable.org/usermanual/4.8/en/tethering/troubleshooting/</a><br />
-[^darktable-fr-faq]: FAQs - darktable FR, <a href="https://darktable.fr/faq/">https://darktable.fr/faq/</a><br />
-[^darktable-fr-faq-opencl]: OpenCl e alcune risposte su schede grafiche, <a href="https://forums.darktable.fr/showthread.php?tid=2292">https://forums.darktable.fr/showthread.php?tid=2292</a><br />
-[^darktable-fr-faq-lensfun]: Aggiornamento della base di dati lensfun, <a href="https://forums.darktable.fr/showthread.php?tid=4212">https://forums.darktable.fr/showthread.php?tid=4212</a><br />
-[^darktable-fr-faq-dead-heads]: Têtes de mort et compagnie, <a href="https://forums.darktable.fr/showthread.php?tid=2258">https://forums.darktable.fr/showthread.php?tid=2258</a><br />
-[^darktable-fr-faq-gamut]: Correction d’un débordement de gamut, <a href="https://forums.darktable.fr/showthread.php?tid=2128">https://forums.darktable.fr/showthread.php?tid=2128</a><br />
-[^darktable-fr-faq-thumbnails]: Vignette ne reflète pas la photo traitée, <a href="https://forums.darktable.fr/showthread.php?tid=2255">https://forums.darktable.fr/showthread.php?tid=2255</a><br />
-[^darktable-fr-faq-xmp]: Récupérer le traitement (.xmp) dans une photo exportée, <a href="https://forums.darktable.fr/showthread.php?tid=2532">https://forums.darktable.fr/showthread.php?tid=2532</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-48-troubleshooting">
+<p>darktable 4.8 user manual - troubleshooting, <a href="https://docs.darktable.org/usermanual/4.8/en/tethering/troubleshooting/">https://docs.darktable.org/usermanual/4.8/en/tethering/troubleshooting/</a>&#160;<a class="footnote-backref" href="#fnref:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-48-troubleshooting" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq">
+<p>FAQs - darktable FR, <a href="https://darktable.fr/faq/">https://darktable.fr/faq/</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-fr-faq" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-fr-faq" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:darktable-fr-faq" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-opencl">
+<p>OpenCl e alcune risposte su schede grafiche, <a href="https://forums.darktable.fr/showthread.php?tid=2292">https://forums.darktable.fr/showthread.php?tid=2292</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-opencl" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-fr-faq-opencl" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-fr-faq-opencl" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-lensfun">
+<p>Aggiornamento della base di dati lensfun, <a href="https://forums.darktable.fr/showthread.php?tid=4212">https://forums.darktable.fr/showthread.php?tid=4212</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-lensfun" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-dead-heads">
+<p>Têtes de mort et compagnie, <a href="https://forums.darktable.fr/showthread.php?tid=2258">https://forums.darktable.fr/showthread.php?tid=2258</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-dead-heads" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-gamut">
+<p>Correction d’un débordement de gamut, <a href="https://forums.darktable.fr/showthread.php?tid=2128">https://forums.darktable.fr/showthread.php?tid=2128</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-gamut" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-thumbnails">
+<p>Vignette ne reflète pas la photo traitée, <a href="https://forums.darktable.fr/showthread.php?tid=2255">https://forums.darktable.fr/showthread.php?tid=2255</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-thumbnails" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-faq-xmp">
+<p>Récupérer le traitement (.xmp) dans une photo exportée, <a href="https://forums.darktable.fr/showthread.php?tid=2532">https://forums.darktable.fr/showthread.php?tid=2532</a>&#160;<a class="footnote-backref" href="#fnref:darktable-fr-faq-xmp" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-fr-faq-xmp" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

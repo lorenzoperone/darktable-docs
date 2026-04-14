@@ -3004,21 +3004,21 @@
 
 
 <h1 id="base-curve">Base Curve<a class="headerlink" href="#base-curve" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>base curve</strong> simula la curva tonale applicata in-camera per generare il JPEG dal RAW, trasformando i dati lineari del sensore in una rappresentazione visivamente coerente sullo schermo[^base-curve-manual]. È il modulo di <em>tone mapping</em> predefinito nel workflow <strong>display-referred</strong>, attivato automaticamente quando nelle preferenze è impostato <code>auto-apply pixel workflow defaults = display-referred</code>[^processing-manual]. A differenza di AGX o Filmic RGB, opera nello spazio <strong>camera RGB</strong> — non nello spazio di lavoro standard (ProPhoto RGB o XYZ) — e quindi riflette le caratteristiche specifiche del sensore e della pipeline di elaborazione della fotocamera[^pixls-rgb-lab].</p>
+<p>Il modulo <strong>base curve</strong> simula la curva tonale applicata in-camera per generare il JPEG dal RAW, trasformando i dati lineari del sensore in una rappresentazione visivamente coerente sullo schermo<sup id="fnref:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>. È il modulo di <em>tone mapping</em> predefinito nel workflow <strong>display-referred</strong>, attivato automaticamente quando nelle preferenze è impostato <code>auto-apply pixel workflow defaults = display-referred</code><sup id="fnref:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>. A differenza di AGX o Filmic RGB, opera nello spazio <strong>camera RGB</strong> — non nello spazio di lavoro standard (ProPhoto RGB o XYZ) — e quindi riflette le caratteristiche specifiche del sensore e della pipeline di elaborazione della fotocamera<sup id="fnref:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</p>
 <p><img alt="Interfaccia del modulo base curve in darktable 5.4" src="../images/base-curve-interface.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Base curve è legacy, ma ancora fondamentale</p>
-<p>Il workflow <code>display-referred (legacy)</code> con <code>base curve</code> rimane l’unica opzione per chi necessita di un’emulazione precisa del JPEG in-camera o lavora con flussi compatibili con Lightroom/Photoshop[^processing-manual]. Non è deprecato, ma è distinto dai workflow scene-referred (AGX, Filmic, Sigmoid) che operano in spazi fisicamente coerenti[^pixls-rgb-lab].</p>
+<p>Il workflow <code>display-referred (legacy)</code> con <code>base curve</code> rimane l’unica opzione per chi necessita di un’emulazione precisa del JPEG in-camera o lavora con flussi compatibili con Lightroom/Photoshop<sup id="fnref2:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>. Non è deprecato, ma è distinto dai workflow scene-referred (AGX, Filmic, Sigmoid) che operano in spazi fisicamente coerenti<sup id="fnref4:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
-<p>La <code>base curve</code> agisce come un <strong>primo stage di mappatura tonale</strong>, convertendo i dati lineari RAW (proporzionali ai fotoni catturati) in un segnale non lineare adatto alla visualizzazione[^pixls-rgb-lab]. Il suo scopo primario non è la compressione dinamica fine-tuned, ma la riproduzione fedele della “personalità” tonale della fotocamera — ad esempio, la curva “Nikon-like” enfatizza i contrasti medi, mentre “Canon-like” privilegia la dolcezza delle transizioni ombra-luce[^base-curve-manual].</p>
+<p>La <code>base curve</code> agisce come un <strong>primo stage di mappatura tonale</strong>, convertendo i dati lineari RAW (proporzionali ai fotoni catturati) in un segnale non lineare adatto alla visualizzazione<sup id="fnref2:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>. Il suo scopo primario non è la compressione dinamica fine-tuned, ma la riproduzione fedele della “personalità” tonale della fotocamera — ad esempio, la curva “Nikon-like” enfatizza i contrasti medi, mentre “Canon-like” privilegia la dolcezza delle transizioni ombra-luce<sup id="fnref2:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</p>
 <p>A differenza dei moduli <code>tone curve</code> o <code>rgb curve</code>, <code>base curve</code>:
-- Opera <strong>prima</strong> del modulo <code>input color profile</code>, quindi prima della conversione nello spazio di lavoro[^pixls-rgb-lab];
-- Usa <strong>curve predefinite per marca/modello</strong>, caricate automaticamente in base ai tag Exif (<code>Make</code>, <code>Model</code>) dell’immagine RAW[^base-curve-manual];
-- Non supporta l’applicazione separata su canali RGB: la curva è applicata al segnale luminanza derivato dal camera RGB[^base-curve-manual].</p>
+- Opera <strong>prima</strong> del modulo <code>input color profile</code>, quindi prima della conversione nello spazio di lavoro<sup id="fnref3:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>;
+- Usa <strong>curve predefinite per marca/modello</strong>, caricate automaticamente in base ai tag Exif (<code>Make</code>, <code>Model</code>) dell’immagine RAW<sup id="fnref3:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>;
+- Non supporta l’applicazione separata su canali RGB: la curva è applicata al segnale luminanza derivato dal camera RGB<sup id="fnref4:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare base curve in workflow scene-referred</p>
-<p>In pipeline <code>scene-referred (filmic)</code> o <code>scene-referred (sigmoid)</code>, <code>base curve</code> è disabilitata per default. Se forzata, interferisce con la linearità della pipeline e causa artefatti di colore e contrasto, specialmente in ombre profonde o luci estreme[^pixls-rgb-lab].</p>
+<p>In pipeline <code>scene-referred (filmic)</code> o <code>scene-referred (sigmoid)</code>, <code>base curve</code> è disabilitata per default. Se forzata, interferisce con la linearità della pipeline e causa artefatti di colore e contrasto, specialmente in ombre profonde o luci estreme<sup id="fnref5:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso tipico con <code>base curve</code> segue un ordine rigoroso, essenziale per preservare la coerenza del segnale:</p>
@@ -3033,7 +3033,7 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. esposizione globale (exposure), contrasto (contrast brightness saturation), ecc.
 </code></pre></div>
 <h3 id="passo-1-verifica-e-selezione-della-curva">Passo 1: Verifica e selezione della curva<a class="headerlink" href="#passo-1-verifica-e-selezione-della-curva" title="Permanent link">&para;</a></h3>
-<p>All’apertura di un RAW, darktable cerca automaticamente una curva specifica per modello (es. <code>olympus OM-D E-M5 II</code>). Se non trovata, applica la curva generica per marca (es. <code>olympus like alternate</code>)[^base-curve-manual]. Per verificarla:</p>
+<p>All’apertura di un RAW, darktable cerca automaticamente una curva specifica per modello (es. <code>olympus OM-D E-M5 II</code>). Se non trovata, applica la curva generica per marca (es. <code>olympus like alternate</code>)<sup id="fnref5:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>. Per verificarla:</p>
 <ul>
 <li>Controlla il nome della curva nella barra superiore del modulo (es. <code>olympus OM-D E-M5 II</code>);</li>
 <li>Se non corrisponde, clicca sulla freccia a destra del nome e seleziona manualmente il preset più vicino;</li>
@@ -3047,22 +3047,22 @@
 <li>Aggiungi nodi con click sinistro sulla curva;</li>
 <li>Muovi i nodi trascinandoli;</li>
 <li>Rimuovi un nodo trascinandolo fuori dall’area del grafico;</li>
-<li>Massimo <strong>20 nodi</strong> per curva[^curves-manual].</li>
+<li>Massimo <strong>20 nodi</strong> per curva<sup id="fnref:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Usa scale for graph per precisione in ombre</p>
-<p>Attiva <code>scale for graph</code> e imposta valori tra <strong>1.0 e 3.0</strong>: comprime le alte luci e dilata le ombre sul grafico, permettendo un controllo millimetrico sui dettagli scuri[^curves-manual].</p>
+<p>Attiva <code>scale for graph</code> e imposta valori tra <strong>1.0 e 3.0</strong>: comprime le alte luci e dilata le ombre sul grafico, permettendo un controllo millimetrico sui dettagli scuri<sup id="fnref2:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</p>
 </div>
 <h3 id="passo-3-exposure-fusion-per-immagini-sottoesposte-estreme">Passo 3: Exposure fusion (per immagini sottoesposte estreme)<a class="headerlink" href="#passo-3-exposure-fusion-per-immagini-sottoesposte-estreme" title="Permanent link">&para;</a></h3>
 <p>Per recuperare dettagli da RAW gravemente sottoesposti (es. notturni senza illuminazione):</p>
 <ul>
 <li>Abilita <strong>fusion</strong>;</li>
-<li>Imposta <code>exposure shift (fusion)</code> a <strong>1.0–2.0 EV</strong> (default: 1.0)[^base-curve-manual];</li>
-<li>Imposta <code>exposure bias (fusion)</code> a <strong>+1.0</strong> per fondere con copie sovraesposte (raccomandato)[^base-curve-manual].</li>
+<li>Imposta <code>exposure shift (fusion)</code> a <strong>1.0–2.0 EV</strong> (default: 1.0)<sup id="fnref7:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>;</li>
+<li>Imposta <code>exposure bias (fusion)</code> a <strong>+1.0</strong> per fondere con copie sovraesposte (raccomandato)<sup id="fnref8:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Exposure fusion è computazionalmente pesante</p>
-<p>Questa funzione genera copie virtuali dell’immagine, ricalcola la curva su ciascuna e fonde i risultati. Può rallentare significativamente il rendering su immagini ad alta risoluzione[^base-curve-manual].</p>
+<p>Questa funzione genera copie virtuali dell’immagine, ricalcola la curva su ciascuna e fonde i risultati. Può rallentare significativamente il rendering su immagini ad alta risoluzione<sup id="fnref9:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3079,37 +3079,37 @@
 <td><strong>fusion</strong></td>
 <td>on/off</td>
 <td>off</td>
-<td>Abilita la fusione multi-esposizione per compressione dinamica HDR[^base-curve-manual].</td>
+<td>Abilita la fusione multi-esposizione per compressione dinamica HDR<sup id="fnref11:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>exposure shift (fusion)</strong></td>
 <td>0.1 – 4.0 EV</td>
 <td>1.00 EV</td>
-<td>Differenza di esposizione tra le copie fuse. Valori &gt;2.0 EV aumentano il rumore nelle ombre[^base-curve-manual].</td>
+<td>Differenza di esposizione tra le copie fuse. Valori &gt;2.0 EV aumentano il rumore nelle ombre<sup id="fnref12:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>exposure bias (fusion)</strong></td>
 <td>-1.0 – +1.0</td>
 <td>+1.00</td>
-<td>+1.0 = sovraesposizione; -1.0 = sottoesposizione; 0.0 = fusione bilanciata (sotto+sovr)[^base-curve-manual].</td>
+<td>+1.0 = sovraesposizione; -1.0 = sottoesposizione; 0.0 = fusione bilanciata (sotto+sovr)<sup id="fnref13:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>interpolation method</strong></td>
 <td>cubic spline / centripetal spline / monotonic spline</td>
 <td>cubic spline</td>
-<td>Algoritmo di interpolazione tra nodi. <code>cubic spline</code> è più preciso ma sensibile a nodi troppo ravvicinati[^curves-manual].</td>
+<td>Algoritmo di interpolazione tra nodi. <code>cubic spline</code> è più preciso ma sensibile a nodi troppo ravvicinati<sup id="fnref5:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>preserve colors</strong></td>
 <td>none / luminance / max RGB / average RGB / sum RGB / norm RGB / basic power</td>
 <td>luminance</td>
-<td>Metodo per calcolare la luminanza di riferimento e applicare la stessa correzione a tutti i canali RGB, riducendo gli shift cromatici[^curves-manual].</td>
+<td>Metodo per calcolare la luminanza di riferimento e applicare la stessa correzione a tutti i canali RGB, riducendo gli shift cromatici<sup id="fnref6:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello parametri base curve con interpolazione e preserve colors" src="../images/base-curve-parameters.jpg" /></p>
 <h2 id="curve-predefinite-e-personalizzazione">Curve predefinite e personalizzazione<a class="headerlink" href="#curve-predefinite-e-personalizzazione" title="Permanent link">&para;</a></h2>
-<p>darktable include <strong>oltre 150 curve</strong> per marche e modelli specifici, aggiornate regolarmente dal team di sviluppo[^base-curve-manual]. Le curve più comuni includono:</p>
+<p>darktable include <strong>oltre 150 curve</strong> per marche e modelli specifici, aggiornate regolarmente dal team di sviluppo<sup id="fnref6:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>. Le curve più comuni includono:</p>
 <table>
 <thead>
 <tr>
@@ -3124,31 +3124,31 @@
 <td>Canon</td>
 <td>EOS R5, 5D Mark IV</td>
 <td><code>canon EOS R5</code> / <code>canon 5D Mark IV</code></td>
-<td>Curva leggermente contrastata, spalla morbida[^base-curve-manual].</td>
+<td>Curva leggermente contrastata, spalla morbida<sup id="fnref14:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td>Nikon</td>
 <td>Z6 II, D850</td>
 <td><code>nikon Z6 II</code> / <code>nikon D850</code></td>
-<td>Spalla pronunciata, toe profondo per mantenere dettagli in ombra[^base-curve-manual].</td>
+<td>Spalla pronunciata, toe profondo per mantenere dettagli in ombra<sup id="fnref15:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td>Sony</td>
 <td>A7 IV, A1</td>
 <td><code>sony ILCE-7M4</code> / <code>sony ILCE-A1</code></td>
-<td>Curva neutrale, alta linearità fino a 70% di luminanza[^base-curve-manual].</td>
+<td>Curva neutrale, alta linearità fino a 70% di luminanza<sup id="fnref16:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td>Fujifilm</td>
 <td>X-T4, GFX 100S</td>
 <td><code>fujifilm X-T4</code> / <code>fujifilm GFX 100S</code></td>
-<td>Simula il look “Acros” o “Classic Chrome” solo se abbinata a LUT 3D[^base-curve-manual].</td>
+<td>Simula il look “Acros” o “Classic Chrome” solo se abbinata a LUT 3D<sup id="fnref17:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td>Olympus</td>
 <td>OM-D E-M1 Mark III</td>
 <td><code>olympus OM-D E-M1 III</code></td>
-<td>Elevata saturazione nei verdi, spalla compressa per cieli blu ricchi[^base-curve-manual].</td>
+<td>Elevata saturazione nei verdi, spalla compressa per cieli blu ricchi<sup id="fnref18:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3159,25 +3159,40 @@
 - Salva con <code>Save as preset</code> → nome descrittivo (es. <code>my-nikon-z6-landscape</code>).</p>
 <h2 id="consigli-avanzati-per-ex-lightroom-users">Consigli avanzati per ex-Lightroom users<a class="headerlink" href="#consigli-avanzati-per-ex-lightroom-users" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non cercare equivalenza con “Tone Curve” di LR</strong>: LR opera in uno spazio non lineare (sRGB/gamma 2.2) già all’inizio; <code>base curve</code> invece è il primo passaggio <em>dalla linearità</em>. La sua curva è più simile al “Process Version” di Adobe Camera Raw (PV2012), non al pannello “Tone Curve”[^pixls-rgb-lab].</li>
-<li><strong>Evita di sovrascrivere la curva con modifiche aggressive</strong>: una curva troppo S-shaped prima del <code>input color profile</code> può causare clipping irrecuperabile nei canali RGB. Preferisci regolare il contrasto dopo la conversione nello spazio di lavoro[^pixls-rgb-lab].</li>
-<li><strong>Usa <code>preserve colors = luminance</code> per ritratti</strong>: minimizza gli shift cromatici sulle pelli, specialmente con curve ad alta pendenza nei mezzi toni[^curves-manual].</li>
+<li><strong>Non cercare equivalenza con “Tone Curve” di LR</strong>: LR opera in uno spazio non lineare (sRGB/gamma 2.2) già all’inizio; <code>base curve</code> invece è il primo passaggio <em>dalla linearità</em>. La sua curva è più simile al “Process Version” di Adobe Camera Raw (PV2012), non al pannello “Tone Curve”<sup id="fnref6:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</li>
+<li><strong>Evita di sovrascrivere la curva con modifiche aggressive</strong>: una curva troppo S-shaped prima del <code>input color profile</code> può causare clipping irrecuperabile nei canali RGB. Preferisci regolare il contrasto dopo la conversione nello spazio di lavoro<sup id="fnref7:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</li>
+<li><strong>Usa <code>preserve colors = luminance</code> per ritratti</strong>: minimizza gli shift cromatici sulle pelli, specialmente con curve ad alta pendenza nei mezzi toni<sup id="fnref3:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</li>
 <li><strong>Per immagini JPEG importate</strong>: <code>base curve</code> è disabilitata per default. Se necessario, spostala <em>dopo</em> <code>input color profile</code> usando il modulo <code>module order</code>[^exposure-manual].</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/base-curve/">Manuale ufficiale darktable 4.8 — Base Curve</a> [^base-curve-manual]</li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/darkroom/processing-modules/curves/">Manuale ufficiale darktable 4.8 — Curve (interpolazione, scale)</a> [^curves-manual]</li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/preferences-settings/processing/">Manuale ufficiale darktable 4.8 — Processing Preferences</a> [^processing-manual]</li>
-<li><a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">PIXLS.US — RGB vs Lab: perché base curve appartiene al workflow display-referred</a> [^pixls-rgb-lab]</li>
-<li><a href="https://pixls.us/articles/a-chiaroscuro-portrait/">Video tutorial: “A Chiaroscuro Portrait” — uso pratico di base curve in un flusso reale</a> [^chiaroscuro]</li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/base-curve/">Manuale ufficiale darktable 4.8 — Base Curve</a> <sup id="fnref10:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup></li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/darkroom/processing-modules/curves/">Manuale ufficiale darktable 4.8 — Curve (interpolazione, scale)</a> <sup id="fnref4:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup></li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/preferences-settings/processing/">Manuale ufficiale darktable 4.8 — Processing Preferences</a> <sup id="fnref3:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup></li>
+<li><a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">PIXLS.US — RGB vs Lab: perché base curve appartiene al workflow display-referred</a> <sup id="fnref8:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup></li>
+<li><a href="https://pixls.us/articles/a-chiaroscuro-portrait/">Video tutorial: “A Chiaroscuro Portrait” — uso pratico di base curve in un flusso reale</a> <sup id="fnref:chiaroscuro"><a class="footnote-ref" href="#fn:chiaroscuro">5</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^base-curve-manual]: darktable 4.8 user manual - base curve — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/base-curve/#<br />
-[^curves-manual]: darktable 4.8 user manual - curves — https://docs.darktable.org/usermanual/4.8/en/darkroom/processing-modules/curves/#<br />
-[^processing-manual]: darktable 4.8 user manual - processing — https://docs.darktable.org/usermanual/4.8/en/preferences-settings/processing/#<br />
-[^pixls-rgb-lab]: PIXLS.US — Darktable 3:RGB or Lab? Which Modules? Help! — https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/<br />
-[^chiaroscuro]: PIXLS.US — A Chiaroscuro Portrait — https://pixls.us/articles/a-chiaroscuro-portrait/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:base-curve-manual">
+<p>darktable 4.8 user manual - base curve — https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/base-curve/#&#160;<a class="footnote-backref" href="#fnref:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:base-curve-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:curves-manual">
+<p>darktable 4.8 user manual - curves — https://docs.darktable.org/usermanual/4.8/en/darkroom/processing-modules/curves/#&#160;<a class="footnote-backref" href="#fnref:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:curves-manual" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:processing-manual">
+<p>darktable 4.8 user manual - processing — https://docs.darktable.org/usermanual/4.8/en/preferences-settings/processing/#&#160;<a class="footnote-backref" href="#fnref:processing-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:processing-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:processing-manual" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-rgb-lab">
+<p>PIXLS.US — Darktable 3:RGB or Lab? Which Modules? Help! — https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/&#160;<a class="footnote-backref" href="#fnref:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:pixls-rgb-lab" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:chiaroscuro">
+<p>PIXLS.US — A Chiaroscuro Portrait — https://pixls.us/articles/a-chiaroscuro-portrait/&#160;<a class="footnote-backref" href="#fnref:chiaroscuro" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

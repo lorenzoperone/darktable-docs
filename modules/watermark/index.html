@@ -3004,19 +3004,19 @@
 
 
 <h1 id="watermark">Watermark<a class="headerlink" href="#watermark" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>watermark</strong> permette di sovrapporre un’immagine vettoriale (SVG) o bitmap (PNG) personalizzata all’immagine elaborata, con controllo preciso su posizionamento, scala, rotazione e opacità. È particolarmente utile per la protezione del copyright, l’aggiunta di firme, loghi o informazioni contestuali direttamente nell’output finale[^dt48-watermark]. A differenza dei moduli di effetto (es. <code>vignetting</code> o <code>framing</code>), <code>watermark</code> opera in uno spazio indipendente dalla pipeline tonale: il segno viene applicato <em>dopo</em> tutti i moduli di correzione e mappatura, garantendo che rimanga visibile anche su sfondi complessi o fortemente elaborati[^dt48-module-groups].</p>
+<p>Il modulo <strong>watermark</strong> permette di sovrapporre un’immagine vettoriale (SVG) o bitmap (PNG) personalizzata all’immagine elaborata, con controllo preciso su posizionamento, scala, rotazione e opacità. È particolarmente utile per la protezione del copyright, l’aggiunta di firme, loghi o informazioni contestuali direttamente nell’output finale<sup id="fnref:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>. A differenza dei moduli di effetto (es. <code>vignetting</code> o <code>framing</code>), <code>watermark</code> opera in uno spazio indipendente dalla pipeline tonale: il segno viene applicato <em>dopo</em> tutti i moduli di correzione e mappatura, garantendo che rimanga visibile anche su sfondi complessi o fortemente elaborati<sup id="fnref:dt48-module-groups"><a class="footnote-ref" href="#fn:dt48-module-groups">2</a></sup>.</p>
 <p><img alt="Interfaccia del modulo watermark in darktable 5.4" src="../images/watermark-interface.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Watermark ≠ filigrana in stile Lightroom</p>
-<p>In Lightroom, le filigrane sono gestite esclusivamente in fase di esportazione. In darktable, <code>watermark</code> è un modulo di sviluppo attivo nella pipeline: il segno è parte integrante dello <em>history stack</em>, può essere mascherato, combinato con altri effetti (es. <code>soften</code>) e incluso in snapshot o preset[^dt48-watermark].</p>
+<p>In Lightroom, le filigrane sono gestite esclusivamente in fase di esportazione. In darktable, <code>watermark</code> è un modulo di sviluppo attivo nella pipeline: il segno è parte integrante dello <em>history stack</em>, può essere mascherato, combinato con altri effetti (es. <code>soften</code>) e incluso in snapshot o preset<sup id="fnref3:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo supporta due tipologie di file:</p>
 <ul>
-<li><strong>SVG vettoriali</strong>: scalabili senza perdita di qualità, ideali per testo, loghi e forme geometriche. Possono contenere variabili sostituibili (es. <code>$(WATERMARK_TEXT)</code>) per inserire dati dinamici come data, nome del file o metadati[^dt48-watermark].</li>
-<li><strong>PNG bitmap</strong>: supportano trasparenze alpha, ma non sono scalabili senza artefatti. Adatti per firme scansionate o elementi artistici complessi[^dt48-watermark].</li>
+<li><strong>SVG vettoriali</strong>: scalabili senza perdita di qualità, ideali per testo, loghi e forme geometriche. Possono contenere variabili sostituibili (es. <code>$(WATERMARK_TEXT)</code>) per inserire dati dinamici come data, nome del file o metadati<sup id="fnref4:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
+<li><strong>PNG bitmap</strong>: supportano trasparenze alpha, ma non sono scalabili senza artefatti. Adatti per firme scansionate o elementi artistici complessi<sup id="fnref5:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
 </ul>
-<p>I file SVG devono essere salvati nella cartella <code>$HOME/.config/darktable/watermarks/</code>. Il limite massimo di dimensione per un file SVG è <strong>8 MB</strong>, come confermato da tutorial comunitari[^weekly-edit-13].</p>
+<p>I file SVG devono essere salvati nella cartella <code>$HOME/.config/darktable/watermarks/</code>. Il limite massimo di dimensione per un file SVG è <strong>8 MB</strong>, come confermato da tutorial comunitari<sup id="fnref:weekly-edit-13"><a class="footnote-ref" href="#fn:weekly-edit-13">3</a></sup>.</p>
 <p>Il flusso di lavoro tipico prevede tre fasi distinte:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Creazione o importazione del watermark (SVG/PNG)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
@@ -3026,26 +3026,26 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alla posizione nel flusso</p>
-<p><code>watermark</code> appartiene al gruppo <strong>(special) effects modules</strong>, ed è collocato <em>alla fine</em> della pipeline scene-referred (dopo <code>output color profile</code>, <code>color calibration</code>, <code>filmic rgb</code> o <code>AGX</code>)[^dt48-module-groups]. Se posizionato troppo presto (es. prima del tone mapping), il watermark potrebbe apparire troppo luminoso o desaturato[^dt48-watermark].</p>
+<p><code>watermark</code> appartiene al gruppo <strong>(special) effects modules</strong>, ed è collocato <em>alla fine</em> della pipeline scene-referred (dopo <code>output color profile</code>, <code>color calibration</code>, <code>filmic rgb</code> o <code>AGX</code>)<sup id="fnref2:dt48-module-groups"><a class="footnote-ref" href="#fn:dt48-module-groups">2</a></sup>. Se posizionato troppo presto (es. prima del tone mapping), il watermark potrebbe apparire troppo luminoso o desaturato<sup id="fnref6:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <h3 id="passo-1-preparazione-del-file-watermark">Passo 1: Preparazione del file watermark<a class="headerlink" href="#passo-1-preparazione-del-file-watermark" title="Permanent link">&para;</a></h3>
 <p>Per creare un watermark vettoriale professionale:</p>
 <ul>
-<li>Usa <strong>Inkscape</strong> (gratuito e open source) per disegnare il logo/testo[^weekly-edit-13].</li>
+<li>Usa <strong>Inkscape</strong> (gratuito e open source) per disegnare il logo/testo<sup id="fnref2:weekly-edit-13"><a class="footnote-ref" href="#fn:weekly-edit-13">3</a></sup>.</li>
 <li>Salva come <strong>SVG Plain</strong> (non “Inkscape SVG”) per compatibilità.</li>
 <li>Per convertire un PNG in SVG:<br />
   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>inkscape<span class="w"> </span>-f<span class="w"> </span>input.png<span class="w"> </span>-l<span class="w"> </span>output.svg
 </code></pre></div></li>
-<li>Copia il file nella cartella <code>~/.config/darktable/watermarks/</code>[^weekly-edit-13].</li>
+<li>Copia il file nella cartella <code>~/.config/darktable/watermarks/</code><sup id="fnref3:weekly-edit-13"><a class="footnote-ref" href="#fn:weekly-edit-13">3</a></sup>.</li>
 </ul>
 <p><img alt="Cartella watermarks in sistema Linux" src="../images/watermarks-folder.jpg" /></p>
 <h3 id="passo-2-caricamento-e-configurazione-base">Passo 2: Caricamento e configurazione base<a class="headerlink" href="#passo-2-caricamento-e-configurazione-base" title="Permanent link">&para;</a></h3>
 <p>Dopo aver copiato il file:</p>
 <ul>
-<li>Clicca il pulsante <strong>Reload</strong> nel modulo <code>watermark</code>: aggiorna l’elenco dei file disponibili[^dt48-watermark].</li>
+<li>Clicca il pulsante <strong>Reload</strong> nel modulo <code>watermark</code>: aggiorna l’elenco dei file disponibili<sup id="fnref7:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
 <li>Seleziona il watermark dal menu a tendina <code>marker</code>.</li>
-<li>Imposta il testo libero (<code>text</code>) fino a <strong>63 caratteri</strong> (limite tecnico hard-coded)[^dt48-watermark].</li>
+<li>Imposta il testo libero (<code>text</code>) fino a <strong>63 caratteri</strong> (limite tecnico hard-coded)<sup id="fnref8:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
 </ul>
 <h3 id="passo-3-allineamento-e-ridimensionamento">Passo 3: Allineamento e ridimensionamento<a class="headerlink" href="#passo-3-allineamento-e-ridimensionamento" title="Permanent link">&para;</a></h3>
 <p>L’opzione <code>scale on</code> determina il riferimento per la scala del watermark:</p>
@@ -3091,7 +3091,7 @@
 → Seleziona <code>advanced options</code><br />
 → Imposta <code>scale marker to</code> = <strong>image width</strong><br />
 → Imposta <code>scale marker reference</code> = <strong>marker width</strong><br />
-Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipendentemente dall’altezza[^dt48-watermark].</p>
+Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipendentemente dall’altezza<sup id="fnref9:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3108,73 +3108,73 @@ Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipen
 <td><strong>marker</strong></td>
 <td>—</td>
 <td>—</td>
-<td>Elenco dei file SVG/PNG presenti in <code>~/.config/darktable/watermarks/</code>. Estensione visibile tra parentesi[^dt48-watermark].</td>
+<td>Elenco dei file SVG/PNG presenti in <code>~/.config/darktable/watermarks/</code>. Estensione visibile tra parentesi<sup id="fnref13:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>text</strong></td>
 <td>0–63 caratteri</td>
 <td><code>simple-text.svg</code></td>
-<td>Testo libero inserito nelle variabili SVG. Non ha effetto sui file PNG[^dt48-watermark].</td>
+<td>Testo libero inserito nelle variabili SVG. Non ha effetto sui file PNG<sup id="fnref14:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>font</strong></td>
 <td>Sistema locale</td>
 <td><code>DejaVu Sans Book</code></td>
-<td>Font utilizzato per il testo. Apri il selettore cliccando sul campo: mostra anteprima e ricerca per nome[^dt48-watermark].</td>
+<td>Font utilizzato per il testo. Apri il selettore cliccando sul campo: mostra anteprima e ricerca per nome<sup id="fnref15:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>color</strong></td>
 <td>RGB 0–255</td>
 <td>Nero (<code>#000000</code>)</td>
-<td>Colore del testo. Selezionabile tramite color picker con palette predefinita e spazio RGB[^dt48-watermark].</td>
+<td>Colore del testo. Selezionabile tramite color picker con palette predefinita e spazio RGB<sup id="fnref16:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>opacity</strong></td>
 <td>0% – 100%</td>
 <td>100%</td>
-<td>Opacità globale del watermark. Valori &lt; 30% rendono il segno quasi invisibile; &gt; 80% lo rendono dominante[^dt48-watermark].</td>
+<td>Opacità globale del watermark. Valori &lt; 30% rendono il segno quasi invisibile; &gt; 80% lo rendono dominante<sup id="fnref17:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>rotation</strong></td>
 <td>−180° – +180°</td>
 <td>0°</td>
-<td>Rotazione in gradi. Utile per watermark diagonali (es. “SAMPLE”) o orientamenti specifici[^dt48-watermark].</td>
+<td>Rotazione in gradi. Utile per watermark diagonali (es. “SAMPLE”) o orientamenti specifici<sup id="fnref18:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>scale</strong></td>
 <td>1% – 1000%</td>
 <td>100%</td>
-<td>Scala percentuale rispetto al riferimento scelto in <code>scale on</code>. Valori &gt; 200% richiedono attenzione per evitare fuoriuscite[^dt48-watermark].</td>
+<td>Scala percentuale rispetto al riferimento scelto in <code>scale on</code>. Valori &gt; 200% richiedono attenzione per evitare fuoriuscite<sup id="fnref19:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>scale on</strong></td>
 <td>5 opzioni</td>
 <td><code>image</code></td>
-<td>Riferimento per la scala (vedi tabella sopra)[^dt48-watermark].</td>
+<td>Riferimento per la scala (vedi tabella sopra)<sup id="fnref20:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>alignment</strong></td>
 <td>9 posizioni</td>
 <td>center/center</td>
-<td>Allineamento: <code>top/left</code>, <code>top/center</code>, <code>top/right</code>, <code>center/left</code>, <code>center/center</code>, <code>center/right</code>, <code>bottom/left</code>, <code>bottom/center</code>, <code>bottom/right</code>[^dt48-watermark].</td>
+<td>Allineamento: <code>top/left</code>, <code>top/center</code>, <code>top/right</code>, <code>center/left</code>, <code>center/center</code>, <code>center/right</code>, <code>bottom/left</code>, <code>bottom/center</code>, <code>bottom/right</code><sup id="fnref21:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>x offset</strong></td>
 <td>−1.000 – +1.000</td>
 <td>0.000</td>
-<td>Offset orizzontale relativo all’allineamento (valore adimensionale). +0.1 = spostamento del 10% verso destra[^dt48-watermark].</td>
+<td>Offset orizzontale relativo all’allineamento (valore adimensionale). +0.1 = spostamento del 10% verso destra<sup id="fnref22:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>y offset</strong></td>
 <td>−1.000 – +1.000</td>
 <td>0.000</td>
-<td>Offset verticale relativo all’allineamento. −0.05 = spostamento del 5% verso l’alto[^dt48-watermark].</td>
+<td>Offset verticale relativo all’allineamento. −0.05 = spostamento del 5% verso l’alto<sup id="fnref23:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello parametri watermark con valori tipici" src="../images/watermark-parameters-panel.jpg" /></p>
 <h2 id="variabili-dinamiche-negli-svg">Variabili dinamiche negli SVG<a class="headerlink" href="#variabili-dinamiche-negli-svg" title="Permanent link">&para;</a></h2>
-<p>Gli SVG possono includere stringhe sostituibili che vengono automaticamente popolate dai metadati dell’immagine. Sono supportate le seguenti variabili[^dt48-watermark]:</p>
+<p>Gli SVG possono includere stringhe sostituibili che vengono automaticamente popolate dai metadati dell’immagine. Sono supportate le seguenti variabili<sup id="fnref2:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3213,14 +3213,14 @@ Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipen
 </table>
 <div class="admonition info">
 <p class="admonition-title">Variabili estese</p>
-<p>Oltre alle variabili specifiche per il watermark, sono disponibili tutte quelle definite nella sezione <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/variables/">Variables</a> della documentazione ufficiale, come <code>$(FILE_NAME)</code>, <code>$(DATE)</code>, <code>$(EXIF_MODEL)</code>[^dt48-watermark].</p>
+<p>Oltre alle variabili specifiche per il watermark, sono disponibili tutte quelle definite nella sezione <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/variables/">Variables</a> della documentazione ufficiale, come <code>$(FILE_NAME)</code>, <code>$(DATE)</code>, <code>$(EXIF_MODEL)</code><sup id="fnref10:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</p>
 </div>
 <h2 id="consigli-pratici-per-utenti-lightroomphotoshop">Consigli pratici per utenti Lightroom/Photoshop<a class="headerlink" href="#consigli-pratici-per-utenti-lightroomphotoshop" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non usare il watermark per branding durante lo sviluppo</strong>: in darktable, <code>watermark</code> è un modulo di <em>output</em>, non uno strumento di editing creativo. Per effetti di stile usa <code>framing</code>, <code>vignetting</code> o <code>soften</code>[^dt48-module-groups].</li>
-<li><strong>Testa sempre su diversi formati</strong>: un watermark centrato con <code>scale on = image</code> funziona bene su 4:3, ma può risultare troppo piccolo su 21:9. Preferisci <code>height</code> o <code>advanced options</code> per coerenza[^dt48-watermark].</li>
-<li><strong>Evita PNG a bassa risoluzione</strong>: un file PNG 200×100 px apparirà pixelato su immagini 6000×4000 px. Usa SVG ogni volta che possibile[^weekly-edit-13].</li>
-<li><strong>Integra con i preset</strong>: salva una configurazione <code>watermark</code> + <code>output color profile</code> come preset per esportazioni rapide con logo e profilo ICC coerenti[^dt48-watermark].</li>
+<li><strong>Non usare il watermark per branding durante lo sviluppo</strong>: in darktable, <code>watermark</code> è un modulo di <em>output</em>, non uno strumento di editing creativo. Per effetti di stile usa <code>framing</code>, <code>vignetting</code> o <code>soften</code><sup id="fnref3:dt48-module-groups"><a class="footnote-ref" href="#fn:dt48-module-groups">2</a></sup>.</li>
+<li><strong>Testa sempre su diversi formati</strong>: un watermark centrato con <code>scale on = image</code> funziona bene su 4:3, ma può risultare troppo piccolo su 21:9. Preferisci <code>height</code> o <code>advanced options</code> per coerenza<sup id="fnref11:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
+<li><strong>Evita PNG a bassa risoluzione</strong>: un file PNG 200×100 px apparirà pixelato su immagini 6000×4000 px. Usa SVG ogni volta che possibile<sup id="fnref4:weekly-edit-13"><a class="footnote-ref" href="#fn:weekly-edit-13">3</a></sup>.</li>
+<li><strong>Integra con i preset</strong>: salva una configurazione <code>watermark</code> + <code>output color profile</code> come preset per esportazioni rapide con logo e profilo ICC coerenti<sup id="fnref12:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3234,9 +3234,20 @@ Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipen
 <code>~/.config/darktable/watermarks/</code>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-watermark]: darktable 4.8 user manual - watermark, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/watermark/#">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/watermark/#</a><br />
-[^dt48-module-groups]: darktable 4.8 user manual - module groups, <a href="https://docs.darktable.org/usermanual/4.8/en/darkroom/organization/module-groups/#">https://docs.darktable.org/usermanual/4.8/en/darkroom/organization/module-groups/#</a><br />
-[^weekly-edit-13]: Weekly Edit 13: Intégrer un fichier externe, darktable.fr, <a href="https://darktable.fr/posts/2016/11/traitement-par-darktable-13-integrer-un-fichier-externe/">https://darktable.fr/posts/2016/11/traitement-par-darktable-13-integrer-un-fichier-externe/</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-watermark">
+<p>darktable 4.8 user manual - watermark, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/watermark/#">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/watermark/#</a>&#160;<a class="footnote-backref" href="#fnref:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt48-watermark" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt48-module-groups">
+<p>darktable 4.8 user manual - module groups, <a href="https://docs.darktable.org/usermanual/4.8/en/darkroom/organization/module-groups/#">https://docs.darktable.org/usermanual/4.8/en/darkroom/organization/module-groups/#</a>&#160;<a class="footnote-backref" href="#fnref:dt48-module-groups" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-module-groups" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-module-groups" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:weekly-edit-13">
+<p>Weekly Edit 13: Intégrer un fichier externe, darktable.fr, <a href="https://darktable.fr/posts/2016/11/traitement-par-darktable-13-integrer-un-fichier-externe/">https://darktable.fr/posts/2016/11/traitement-par-darktable-13-integrer-un-fichier-externe/</a>&#160;<a class="footnote-backref" href="#fnref:weekly-edit-13" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:weekly-edit-13" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:weekly-edit-13" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:weekly-edit-13" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

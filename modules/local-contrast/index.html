@@ -3004,23 +3004,23 @@
 
 
 <h1 id="local-contrast">Local Contrast<a class="headerlink" href="#local-contrast" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>local contrast</strong> è uno strumento di <em>enhancement</em> mirato al miglioramento del contrasto locale — ovvero il contrasto tra dettagli vicini — senza alterare il contrasto globale dell’immagine. Non è un modulo di <em>tone mapping</em>, né un sostituto di <strong>AGX</strong>, <strong>Filmic RGB</strong> o <strong>Sigmoid</strong>: opera esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, in modo indipendente dall’esposizione globale e dalla compressione tonale[^manual-local-contrast]. È particolarmente efficace per enfatizzare texture, contorni morbidi e micro-dettagli (es. peli, tessuti, granulato, superfici ruvide), ma richiede attenzione per evitare artefatti come <em>halo</em> o <em>banding</em>[^manual-local-contrast].</p>
+<p>Il modulo <strong>local contrast</strong> è uno strumento di <em>enhancement</em> mirato al miglioramento del contrasto locale — ovvero il contrasto tra dettagli vicini — senza alterare il contrasto globale dell’immagine. Non è un modulo di <em>tone mapping</em>, né un sostituto di <strong>AGX</strong>, <strong>Filmic RGB</strong> o <strong>Sigmoid</strong>: opera esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, in modo indipendente dall’esposizione globale e dalla compressione tonale<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>. È particolarmente efficace per enfatizzare texture, contorni morbidi e micro-dettagli (es. peli, tessuti, granulato, superfici ruvide), ma richiede attenzione per evitare artefatti come <em>halo</em> o <em>banding</em><sup id="fnref2:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 <p><img alt="Interfaccia del modulo local contrast con parametri visibili" src="../images/local-contrast-interface.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Due modalità fondamentali</p>
-<p>Il modulo offre due algoritmi distinti: <strong>local laplacian</strong> (predefinito e raccomandato) e <strong>bilateral grid</strong>. Il primo è progettato per essere robusto contro halo e inversioni di gradiente; il secondo è più semplice ma meno preciso nelle transizioni tonali[^manual-local-contrast].</p>
+<p>Il modulo offre due algoritmi distinti: <strong>local laplacian</strong> (predefinito e raccomandato) e <strong>bilateral grid</strong>. Il primo è progettato per essere robusto contro halo e inversioni di gradiente; il secondo è più semplice ma meno preciso nelle transizioni tonali<sup id="fnref4:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
-<p>Il modulo <strong>local contrast</strong> non modifica i valori assoluti di luminanza (come fa <strong>exposure</strong>) né comprime la gamma dinamica (come fa <strong>AGX</strong>). Invece, applica una curva S <em>localmente</em>: aumenta il contrasto nelle zone dove sono presenti variazioni di luminanza su piccola scala, lasciando intatte le transizioni ampie (es. cielo uniforme vs. prima piana)[^manual-local-contrast].</p>
+<p>Il modulo <strong>local contrast</strong> non modifica i valori assoluti di luminanza (come fa <strong>exposure</strong>) né comprime la gamma dinamica (come fa <strong>AGX</strong>). Invece, applica una curva S <em>localmente</em>: aumenta il contrasto nelle zone dove sono presenti variazioni di luminanza su piccola scala, lasciando intatte le transizioni ampie (es. cielo uniforme vs. prima piana)<sup id="fnref3:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 <p>La sua azione è simile a quella del modulo <strong>shadows and highlights</strong>, ma con differenze critiche:</p>
 <ul>
-<li><strong>shadows and highlights</strong> opera con filtri gaussiani o bilaterali su Lab → rischio di <em>halo</em> e <em>hue shift</em> nelle ombre[^manual-shadows-highlights]  </li>
-<li><strong>local contrast</strong> usa un approccio basato su <em>laplaciano locale</em> → migliore preservazione dei bordi e minore rischio di artefatti[^manual-local-contrast]  </li>
-<li><strong>local contrast</strong> non ha effetto su immagini completamente uniformi (es. cielo blu scuro): richiede <em>variazioni locali di luminanza</em> per agire[^manual-local-contrast]</li>
+<li><strong>shadows and highlights</strong> opera con filtri gaussiani o bilaterali su Lab → rischio di <em>halo</em> e <em>hue shift</em> nelle ombre<sup id="fnref:manual-shadows-highlights"><a class="footnote-ref" href="#fn:manual-shadows-highlights">2</a></sup>  </li>
+<li><strong>local contrast</strong> usa un approccio basato su <em>laplaciano locale</em> → migliore preservazione dei bordi e minore rischio di artefatti<sup id="fnref5:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
+<li><strong>local contrast</strong> non ha effetto su immagini completamente uniformi (es. cielo blu scuro): richiede <em>variazioni locali di luminanza</em> per agire<sup id="fnref6:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Non usare per il recupero delle alte luci</p>
-<p>Il modulo <strong>non recupera informazioni perse in clipping</strong> (es. cieli bruciati). Se l’immagine presenta highlight troncati (valori L = 100%), nessun parametro di <code>local contrast</code> potrà ripristinare dettagli. Prima di usarlo, verifica che le alte luci siano <em>recuperabili</em> tramite <strong>highlight reconstruction</strong>, <strong>AGX shoulder power</strong>, o <strong>sigmoid skew</strong>[^manual-local-contrast][^manual-shadows-highlights].</p>
+<p>Il modulo <strong>non recupera informazioni perse in clipping</strong> (es. cieli bruciati). Se l’immagine presenta highlight troncati (valori L = 100%), nessun parametro di <code>local contrast</code> potrà ripristinare dettagli. Prima di usarlo, verifica che le alte luci siano <em>recuperabili</em> tramite <strong>highlight reconstruction</strong>, <strong>AGX shoulder power</strong>, o <strong>sigmoid skew</strong><sup id="fnref7:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup><sup id="fnref2:manual-shadows-highlights"><a class="footnote-ref" href="#fn:manual-shadows-highlights">2</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ottimale prevede tre fasi sequenziali, con <strong>local contrast</strong> sempre in posizione <em>finale</em> della pipeline (dopo tone mapping e bilanciamento cromatico):</p>
@@ -3034,13 +3034,13 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Ordine critico: dopo AGX, prima di sharpen</p>
-<p>Applica <strong>local contrast</strong> <em>dopo</em> <strong>AGX</strong>, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. Inoltre, posizionalo <em>prima</em> di <strong>sharpen</strong> o <strong>diffuse or sharpen</strong>, poiché questi ultimi operano su frequenze più alte[^manual-local-contrast][^manual-shadows-highlights].</p>
+<p>Applica <strong>local contrast</strong> <em>dopo</em> <strong>AGX</strong>, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. Inoltre, posizionalo <em>prima</em> di <strong>sharpen</strong> o <strong>diffuse or sharpen</strong>, poiché questi ultimi operano su frequenze più alte<sup id="fnref8:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup><sup id="fnref3:manual-shadows-highlights"><a class="footnote-ref" href="#fn:manual-shadows-highlights">2</a></sup>.</p>
 </div>
 <h3 id="passo-1-scegli-la-modalita">Passo 1: Scegli la modalità<a class="headerlink" href="#passo-1-scegli-la-modalita" title="Permanent link">&para;</a></h3>
 <p>Il primo passo è selezionare l’algoritmo:</p>
 <ul>
-<li><strong>local laplacian</strong> (default): raccomandato per quasi tutti gli usi. Offre controllo fine su luci, ombre e mezzi toni[^manual-local-contrast]  </li>
-<li><strong>bilateral grid</strong>: alternativa più leggera, utile su hardware limitato o per correzioni rapide. Meno preciso nel controllo delle estremità della curva[^manual-local-contrast]</li>
+<li><strong>local laplacian</strong> (default): raccomandato per quasi tutti gli usi. Offre controllo fine su luci, ombre e mezzi toni<sup id="fnref9:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
+<li><strong>bilateral grid</strong>: alternativa più leggera, utile su hardware limitato o per correzioni rapide. Meno preciso nel controllo delle estremità della curva<sup id="fnref10:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></li>
 </ul>
 <p><img alt="Confronto tra local laplacian e bilateral grid" src="../images/local-contrast-modes-comparison.jpg" /></p>
 <h3 id="passo-2-regola-il-livello-base-di-dettaglio">Passo 2: Regola il livello base di dettaglio<a class="headerlink" href="#passo-2-regola-il-livello-base-di-dettaglio" title="Permanent link">&para;</a></h3>
@@ -3048,12 +3048,12 @@
 <ul>
 <li><strong>Default</strong>: <code>0.00</code>  </li>
 <li><strong>Range tipico</strong>: <code>-1.00</code> a <code>+1.00</code>  </li>
-<li><strong>Effetto</strong>: inserisce un elemento a forma di <strong>S</strong> nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)[^manual-local-contrast]  </li>
+<li><strong>Effetto</strong>: inserisce un elemento a forma di <strong>S</strong> nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)<sup id="fnref11:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
 <li><strong>Valore comune</strong>: <code>+0.35</code> per ritratti (enfatizza pelle e occhi), <code>+0.65</code> per paesaggi (texture di roccia/foglie)</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Usa il confronto prima/dopo</p>
-<p>Premi <code>Ctrl+D</code> per attivare il confronto <em>before/after</em> mentre regoli <code>detail</code>. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”[^manual-local-contrast].</p>
+<p>Premi <code>Ctrl+D</code> per attivare il confronto <em>before/after</em> mentre regoli <code>detail</code>. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”<sup id="fnref12:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-affina-luci-e-ombre">Passo 3: Affina luci e ombre<a class="headerlink" href="#passo-3-affina-luci-e-ombre" title="Permanent link">&para;</a></h3>
 <p>I parametri <strong>highlights</strong> e <strong>shadows</strong> agiscono <em>sulle estremità</em> della curva S:</p>
@@ -3072,21 +3072,21 @@
 <td><strong>highlights</strong></td>
 <td><code>-1.00</code> to <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Controlla il contrasto nelle <strong>alte luci</strong>. Valori negativi <em>comprimono</em> i dettagli luminosi (es. nuvole, riflessi); valori positivi li <em>accentuano</em>[^manual-local-contrast]</td>
+<td>Controlla il contrasto nelle <strong>alte luci</strong>. Valori negativi <em>comprimono</em> i dettagli luminosi (es. nuvole, riflessi); valori positivi li <em>accentuano</em><sup id="fnref16:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 <td>Per recuperare dettagli in cieli sovraesposti (senza clipping), o per dare “pop” ai riflessi su capelli/metalli</td>
 </tr>
 <tr>
 <td><strong>shadows</strong></td>
 <td><code>-1.00</code> to <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Controlla il contrasto nelle <strong>ombre</strong>. Valori positivi <em>aumentano il contrasto</em> nelle zone scure; valori negativi <em>sollevano le ombre</em> (simula una “fill light” locale)[^manual-local-contrast]</td>
+<td>Controlla il contrasto nelle <strong>ombre</strong>. Valori positivi <em>aumentano il contrasto</em> nelle zone scure; valori negativi <em>sollevano le ombre</em> (simula una “fill light” locale)<sup id="fnref17:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 <td>Per rendere più vividi i dettagli in ombra (es. pieghe di un abito, rametti in penombra), senza appiattire le zone nere</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione al banding</p>
-<p>Valori estremi di <code>highlights</code> o <code>shadows</code> (oltre <code>±0.70</code>) possono causare <strong>banding</strong> (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con <code>detail</code>[^manual-local-contrast].</p>
+<p>Valori estremi di <code>highlights</code> o <code>shadows</code> (oltre <code>±0.70</code>) possono causare <strong>banding</strong> (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con <code>detail</code><sup id="fnref13:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali-modalita-local-laplacian">Parametri principali (modalità <em>local laplacian</em>)<a class="headerlink" href="#parametri-principali-modalita-local-laplacian" title="Permanent link">&para;</a></h2>
 <table>
@@ -3103,25 +3103,25 @@
 <td><strong>detail</strong></td>
 <td><code>-1.00</code> – <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni[^manual-local-contrast]</td>
+<td>Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni<sup id="fnref18:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>highlights</strong></td>
 <td><code>-1.00</code> – <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Controllo del contrasto nelle alte luci. Negativo = compressione, positivo = enfasi[^manual-local-contrast]</td>
+<td>Controllo del contrasto nelle alte luci. Negativo = compressione, positivo = enfasi<sup id="fnref19:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>shadows</strong></td>
 <td><code>-1.00</code> – <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Controllo del contrasto nelle ombre. Positivo = maggiore contrasto, negativo = lifting ombre[^manual-local-contrast]</td>
+<td>Controllo del contrasto nelle ombre. Positivo = maggiore contrasto, negativo = lifting ombre<sup id="fnref20:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>mid-tone range</strong></td>
 <td><code>0.00</code> – <code>1.00</code></td>
 <td><code>0.50</code></td>
-<td>Estensione della zona centrale della curva S. Valori alti → più valori classificati come “mezzi toni”, meno come luci/ombre. Utile per HDR con range dinamico elevato[^manual-local-contrast]</td>
+<td>Estensione della zona centrale della curva S. Valori alti → più valori classificati come “mezzi toni”, meno come luci/ombre. Utile per HDR con range dinamico elevato<sup id="fnref21:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3142,25 +3142,25 @@
 <td><strong>coarseness</strong></td>
 <td><code>0.00</code> – <code>1.00</code></td>
 <td><code>0.50</code></td>
-<td>Definisce la <em>scala spaziale</em> dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)[^manual-local-contrast]</td>
+<td>Definisce la <em>scala spaziale</em> dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)<sup id="fnref22:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>contrast</strong></td>
 <td><code>-1.00</code> – <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Intensità della distinzione tra livelli di luminanza. Analogamente a <code>detail</code>, ma con algoritmo diverso[^manual-local-contrast]</td>
+<td>Intensità della distinzione tra livelli di luminanza. Analogamente a <code>detail</code>, ma con algoritmo diverso<sup id="fnref23:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>detail</strong></td>
 <td><code>-1.00</code> – <code>+1.00</code></td>
 <td><code>0.00</code></td>
-<td>Aggiunge o rimuove dettaglio, come nella modalità <em>local laplacian</em>[^manual-local-contrast]</td>
+<td>Aggiunge o rimuove dettaglio, come nella modalità <em>local laplacian</em><sup id="fnref24:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">bilateral grid: uso limitato</p>
-<p>La modalità <em>bilateral grid</em> è meno precisa e più suscettibile a halo rispetto a <em>local laplacian</em>. Usala solo se hai problemi di prestazioni o se stai replicando un workflow legacy. Non è raccomandata per editing professionale[^manual-local-contrast].</p>
+<p>La modalità <em>bilateral grid</em> è meno precisa e più suscettibile a halo rispetto a <em>local laplacian</em>. Usala solo se hai problemi di prestazioni o se stai replicando un workflow legacy. Non è raccomandata per editing professionale<sup id="fnref14:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h2 id="consigli-pratici-per-migranti-da-lightroomphotoshop">Consigli pratici per migranti da Lightroom/Photoshop<a class="headerlink" href="#consigli-pratici-per-migranti-da-lightroomphotoshop" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3168,20 +3168,33 @@
 <li>❌ <strong>Non è equivalente a “Unsharp Mask”</strong>: quest’ultimo opera su frequenze fisse; <code>local contrast</code> è adattivo alla scala locale.  </li>
 <li>🎯 <strong>Usalo selettivamente</strong>: applica maschere (tramite <strong>mask manager</strong>) per agire solo su occhi, capelli, texture di pietra — non sull’intera immagine.  </li>
 <li>📉 <strong>Evita di sovrapporlo a “sharpen”</strong>: entrambi agiscono su frequenze simili. Preferisci <code>local contrast</code> per il <em>micro-contrast</em> e <code>sharpen</code> per il <em>macro-contrast</em> (bordi netti).  </li>
-<li>🧪 <strong>Prova con “detail = 0.00”, poi “shadows = +0.25”, “highlights = -0.15”</strong>: è un punto di partenza sicuro per la maggior parte delle immagini RAW[^manual-local-contrast].</li>
+<li>🧪 <strong>Prova con “detail = 0.00”, poi “shadows = +0.25”, “highlights = -0.15”</strong>: è un punto di partenza sicuro per la maggior parte delle immagini RAW<sup id="fnref15:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/local-contrast/">darktable 4.8 user manual — local contrast</a>  </li>
 <li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/shadows-and-highlights/">darktable 4.8 user manual — shadows and highlights</a>  </li>
-<li>▶️ <a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a> — uso pratico di <code>local contrast</code> su ritratti urbani[^yt-bw-street]  </li>
-<li>▶️ <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Darktable landscape edit with AI</a> — applicazione con maschere parametriche su paesaggi[^yt-landscape-ai]  </li>
+<li>▶️ <a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a> — uso pratico di <code>local contrast</code> su ritratti urbani<sup id="fnref:yt-bw-street"><a class="footnote-ref" href="#fn:yt-bw-street">3</a></sup>  </li>
+<li>▶️ <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Darktable landscape edit with AI</a> — applicazione con maschere parametriche su paesaggi<sup id="fnref:yt-landscape-ai"><a class="footnote-ref" href="#fn:yt-landscape-ai">4</a></sup>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-local-contrast]: darktable 4.8 user manual - local contrast, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/local-contrast/<br />
-[^manual-shadows-highlights]: darktable 4.8 user manual - shadows and highlights, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/shadows-and-highlights/<br />
-[^yt-bw-street]: [ENG] Full b&amp;w edits in darktable for street photography, A Dabble in Photography, https://www.youtube.com/watch?v=f9szYMJ9wYo<br />
-[^yt-landscape-ai]: [ENG] Darktable landscape edit with AI, A Dabble in Photography, https://www.youtube.com/watch?v=OERXOFz9lEo</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-local-contrast">
+<p>darktable 4.8 user manual - local contrast, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/local-contrast/&#160;<a class="footnote-backref" href="#fnref:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:manual-local-contrast" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-shadows-highlights">
+<p>darktable 4.8 user manual - shadows and highlights, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/shadows-and-highlights/&#160;<a class="footnote-backref" href="#fnref:manual-shadows-highlights" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-shadows-highlights" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-shadows-highlights" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:yt-bw-street">
+<p>[ENG] Full b&amp;w edits in darktable for street photography, A Dabble in Photography, https://www.youtube.com/watch?v=f9szYMJ9wYo&#160;<a class="footnote-backref" href="#fnref:yt-bw-street" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:yt-landscape-ai">
+<p>[ENG] Darktable landscape edit with AI, A Dabble in Photography, https://www.youtube.com/watch?v=OERXOFz9lEo&#160;<a class="footnote-backref" href="#fnref:yt-landscape-ai" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

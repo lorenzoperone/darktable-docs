@@ -3082,11 +3082,11 @@
 
 
 <h1 id="chromatic-aberrations">Chromatic Aberrations<a class="headerlink" href="#chromatic-aberrations" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>chromatic aberrations</strong> corregge le aberrazioni cromatiche trasversali (TCA) <em>dopo</em> la demosaicizzazione, quindi funziona su immagini già convertite in RGB — a differenza del modulo <a href="#raw-chromatic-aberrations"><code>raw chromatic aberrations</code></a>, che opera direttamente sui dati RAW Bayer[^chromatic-aberrations-manual]. È il modulo principale da utilizzare per la correzione TCA su immagini non-RAW (JPEG, TIFF, PNG) o quando il modulo <code>lens correction</code> non riesce a risolvere completamente i bordi colorati[^chromatic-aberrations-manual].</p>
+<p>Il modulo <strong>chromatic aberrations</strong> corregge le aberrazioni cromatiche trasversali (TCA) <em>dopo</em> la demosaicizzazione, quindi funziona su immagini già convertite in RGB — a differenza del modulo <a href="#raw-chromatic-aberrations"><code>raw chromatic aberrations</code></a>, che opera direttamente sui dati RAW Bayer<sup id="fnref:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>. È il modulo principale da utilizzare per la correzione TCA su immagini non-RAW (JPEG, TIFF, PNG) o quando il modulo <code>lens correction</code> non riesce a risolvere completamente i bordi colorati<sup id="fnref2:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
 <p><img alt="Interfaccia del modulo chromatic aberrations in darktable 4.8" src="../images/chromatic-aberrations-interface.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">TCA ≠ LCA: due fenomeni distinti</p>
-<p>Le <strong>aberrazioni cromatiche trasversali (TCA)</strong> compaiono come bordi colorati (rosso/ciano o blu/giallo) lungo i contorni ad alto contrasto, specialmente ai bordi dell’immagine. Sono causate da una dispersione angolare delle lunghezze d’onda diverse e sono <em>correggibili</em>. Le <strong>aberrazioni cromatiche longitudinali (LCA)</strong>, invece, appaiono come frange di colore su tutta l’area di un oggetto fuori fuoco (es. bokeh verde/rossastro) e richiedono approcci diversi (come il modulo deprecato <a href="#defringe"><code>defringe</code></a>[^defringe-manual]. Il modulo <code>chromatic aberrations</code> <strong>non corregge LCA</strong>[^chromatic-aberrations-manual].</p>
+<p>Le <strong>aberrazioni cromatiche trasversali (TCA)</strong> compaiono come bordi colorati (rosso/ciano o blu/giallo) lungo i contorni ad alto contrasto, specialmente ai bordi dell’immagine. Sono causate da una dispersione angolare delle lunghezze d’onda diverse e sono <em>correggibili</em>. Le <strong>aberrazioni cromatiche longitudinali (LCA)</strong>, invece, appaiono come frange di colore su tutta l’area di un oggetto fuori fuoco (es. bokeh verde/rossastro) e richiedono approcci diversi (come il modulo deprecato <a href="#defringe"><code>defringe</code></a><sup id="fnref:defringe-manual"><a class="footnote-ref" href="#fn:defringe-manual">4</a></sup>. Il modulo <code>chromatic aberrations</code> <strong>non corregge LCA</strong><sup id="fnref9:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Le aberrazioni cromatiche si manifestano principalmente come:</p>
@@ -3094,10 +3094,10 @@
 <li><strong>Bordi rossi/ciani</strong> sul lato destro/sinistro dei contorni (spostamento del canale rosso rispetto al verde)</li>
 <li><strong>Bordi blu/gialli</strong> sul lato superiore/inferiore dei contorni (spostamento del canale blu rispetto al verde)</li>
 </ul>
-<p>Il modulo <code>chromatic aberrations</code> applica una correzione basata su un modello geometrico radiale: sposta i pixel dei canali R e B rispetto al canale G (considerato di riferimento) in modo proporzionale alla distanza dal centro dell’immagine[^chromatic-aberrations-manual].</p>
-<p>A differenza del modulo <code>lens correction</code>, che corregge TCA usando profili Lensfun o metadati incorporati (e agisce <em>prima</em> della demosaicizzazione), <code>chromatic aberrations</code> opera in uno spazio RGB già elaborato e offre un controllo più fine e visivo[^chromatic-aberrations-manual][^lens-correction-manual].</p>
+<p>Il modulo <code>chromatic aberrations</code> applica una correzione basata su un modello geometrico radiale: sposta i pixel dei canali R e B rispetto al canale G (considerato di riferimento) in modo proporzionale alla distanza dal centro dell’immagine<sup id="fnref3:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
+<p>A differenza del modulo <code>lens correction</code>, che corregge TCA usando profili Lensfun o metadati incorporati (e agisce <em>prima</em> della demosaicizzazione), <code>chromatic aberrations</code> opera in uno spazio RGB già elaborato e offre un controllo più fine e visivo<sup id="fnref4:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup><sup id="fnref:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup>.</p>
 <h3 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h3>
-<p>Il flusso ottimale per la correzione TCA è gerarchico e sequenziale[^chromatic-aberrations-manual]:</p>
+<p>Il flusso ottimale per la correzione TCA è gerarchico e sequenziale<sup id="fnref5:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzione primaria in lens correction (TCA sliders)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Affinamento con chromatic aberrations
@@ -3106,14 +3106,14 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Correggi prima nel modulo lens correction</p>
-<p>La correzione TCA nel modulo <a href="#lens-correction"><code>lens correction</code></a> è più precisa perché opera su dati lineari e non ancora interpolati. Usa <code>chromatic aberrations</code> solo <em>dopo</em> aver esaurito le possibilità di <code>lens correction</code>[^chromatic-aberrations-manual].</p>
+<p>La correzione TCA nel modulo <a href="#lens-correction"><code>lens correction</code></a> è più precisa perché opera su dati lineari e non ancora interpolati. Usa <code>chromatic aberrations</code> solo <em>dopo</em> aver esaurito le possibilità di <code>lens correction</code><sup id="fnref10:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-preparazione-con-lens-correction">Passo 1: Preparazione con lens correction<a class="headerlink" href="#passo-1-preparazione-con-lens-correction" title="Permanent link">&para;</a></h3>
 <p>Prima di attivare <code>chromatic aberrations</code>, assicurati che:</p>
 <ul>
-<li>Il modulo <code>lens correction</code> sia abilitato e configurato con un profilo Lensfun valido o metadati incorporati[^lens-correction-manual]</li>
-<li>La casella <strong>TCA overwrite</strong> sia deselezionata (per usare i parametri automatici) o, se selezionata, che i valori <code>TCA red</code> e <code>TCA blue</code> siano regolati finemente[^lens-correction-manual]</li>
-<li>Il modulo <code>raw chromatic aberrations</code> sia <strong>disabilitato</strong>, altrimenti si verificherà un conflitto di correzione[^raw-chromatic-aberrations-manual]</li>
+<li>Il modulo <code>lens correction</code> sia abilitato e configurato con un profilo Lensfun valido o metadati incorporati<sup id="fnref2:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup></li>
+<li>La casella <strong>TCA overwrite</strong> sia deselezionata (per usare i parametri automatici) o, se selezionata, che i valori <code>TCA red</code> e <code>TCA blue</code> siano regolati finemente<sup id="fnref3:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup></li>
+<li>Il modulo <code>raw chromatic aberrations</code> sia <strong>disabilitato</strong>, altrimenti si verificherà un conflitto di correzione<sup id="fnref:raw-chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:raw-chromatic-aberrations-manual">3</a></sup></li>
 </ul>
 <p><img alt="Modulo lens correction con TCA attivata" src="../images/lens-correction-tca.jpg" /></p>
 <h3 id="passo-2-attivazione-e-impostazione-base">Passo 2: Attivazione e impostazione base<a class="headerlink" href="#passo-2-attivazione-e-impostazione-base" title="Permanent link">&para;</a></h3>
@@ -3122,14 +3122,14 @@
 <li>Imposta innanzitutto il parametro <strong>radius</strong>:</li>
 <li>Inizia con <code>radius = 0.50</code> (valore medio)</li>
 <li>Aumenta progressivamente fino a quando i bordi colorati scompaiono</li>
-<li>Valori tipici: <code>0.30 – 0.90</code>. Oltre <code>1.00</code> è raro e può introdurre artefatti[^chromatic-aberrations-manual]</li>
+<li>Valori tipici: <code>0.30 – 0.90</code>. Oltre <code>1.00</code> è raro e può introdurre artefatti<sup id="fnref11:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></li>
 <li>Regola <strong>strength</strong>:</li>
 <li>Default: <code>1.00</code></li>
 <li>Riduci (<code>0.60–0.85</code>) se la correzione “lava” i colori o crea bordi invertiti</li>
-<li>Aumenta (<code>1.10–1.30</code>) solo se necessario dopo aver massimizzato <code>radius</code>[^chromatic-aberrations-manual]</li>
+<li>Aumenta (<code>1.10–1.30</code>) solo se necessario dopo aver massimizzato <code>radius</code><sup id="fnref12:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></li>
 </ol>
 <h3 id="passo-3-selezione-del-canale-guida">Passo 3: Selezione del canale guida<a class="headerlink" href="#passo-3-selezione-del-canale-guida" title="Permanent link">&para;</a></h3>
-<p>Il parametro <strong>guide</strong> determina quale canale RGB viene usato come riferimento fisso per lo spostamento degli altri due[^chromatic-aberrations-manual]:</p>
+<p>Il parametro <strong>guide</strong> determina quale canale RGB viene usato come riferimento fisso per lo spostamento degli altri due<sup id="fnref6:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3147,7 +3147,7 @@
 <tr>
 <td><strong>Green</strong></td>
 <td>Canale G fisso; sposta R e B</td>
-<td><strong>Default e raccomandato</strong> — G è il canale più affidabile nei sensori Bayer[^chromatic-aberrations-manual]</td>
+<td><strong>Default e raccomandato</strong> — G è il canale più affidabile nei sensori Bayer<sup id="fnref16:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Blue</strong></td>
@@ -3158,7 +3158,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Evita guide errate</p>
-<p>Usare una guida sbagliata (es. <code>Red</code> su un'immagine con bordi ciano) può <em>peggiorare</em> la TCA. Se non sei sicuro, mantieni <code>Green</code>[^chromatic-aberrations-manual].</p>
+<p>Usare una guida sbagliata (es. <code>Red</code> su un'immagine con bordi ciano) può <em>peggiorare</em> la TCA. Se non sei sicuro, mantieni <code>Green</code><sup id="fnref13:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3175,37 +3175,37 @@
 <td><strong>guide</strong></td>
 <td><code>Red</code>, <code>Green</code>, <code>Blue</code></td>
 <td><code>Green</code></td>
-<td>Canale di riferimento per lo spostamento radiale[^chromatic-aberrations-manual]</td>
+<td>Canale di riferimento per lo spostamento radiale<sup id="fnref17:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>radius</strong></td>
 <td><code>0.00 – 2.00</code></td>
 <td><code>0.50</code></td>
-<td>Raggio di influenza della correzione. Aumenta fino a eliminare i bordi. Valori &gt;1.00 richiedono attenzione[^chromatic-aberrations-manual]</td>
+<td>Raggio di influenza della correzione. Aumenta fino a eliminare i bordi. Valori &gt;1.00 richiedono attenzione<sup id="fnref18:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>strength</strong></td>
 <td><code>0.00 – 2.00</code></td>
 <td><code>1.00</code></td>
-<td>Intensità della correzione. Riduci per preservare saturazione e dettaglio[^chromatic-aberrations-manual]</td>
+<td>Intensità della correzione. Riduci per preservare saturazione e dettaglio<sup id="fnref19:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>correction mode</strong></td>
 <td><code>all</code>, <code>brighten only</code>, <code>darken only</code></td>
 <td><code>all</code></td>
-<td>Limita la correzione alle zone chiare o scure. Utile per evitare artefatti su ombre profonde o luci intense[^chromatic-aberrations-manual]</td>
+<td>Limita la correzione alle zone chiare o scure. Utile per evitare artefatti su ombre profonde o luci intense<sup id="fnref20:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>very large chromatic aberrations</strong></td>
 <td><code>off</code> / <code>on</code></td>
 <td><code>off</code></td>
-<td>Abilita un algoritmo iterativo per aberrazioni estreme (es. obiettivi ultra-grandangolari). Aumenta il tempo di elaborazione[^chromatic-aberrations-manual]</td>
+<td>Abilita un algoritmo iterativo per aberrazioni estreme (es. obiettivi ultra-grandangolari). Aumenta il tempo di elaborazione<sup id="fnref21:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello dei parametri chromatic aberrations" src="../images/chromatic-aberrations-parameters.jpg" /></p>
 <h2 id="strategie-avanzate">Strategie avanzate<a class="headerlink" href="#strategie-avanzate" title="Permanent link">&para;</a></h2>
-<p>Per casi complessi, il manuale ufficiale suggerisce approcci multi-istanza e mirati[^chromatic-aberrations-manual]:</p>
+<p>Per casi complessi, il manuale ufficiale suggerisce approcci multi-istanza e mirati<sup id="fnref7:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>:</p>
 <h3 id="multi-istanza-con-modalita-distinte">Multi-istanza con modalità distinte<a class="headerlink" href="#multi-istanza-con-modalita-distinte" title="Permanent link">&para;</a></h3>
 <p>Crea due istanze separate del modulo:</p>
 <ul>
@@ -3214,20 +3214,20 @@
 <li><strong>Istanza 2</strong>: <code>correction mode = darken only</code>, <code>strength = 0.50</code>, <code>radius = 0.45</code><br />
   → Corregge bordi gialli su zone scure (es. ombre di alberi)</li>
 </ul>
-<p>Questo evita di sovracorreggere aree neutre[^chromatic-aberrations-manual].</p>
+<p>Questo evita di sovracorreggere aree neutre<sup id="fnref8:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
 <h3 id="maschere-parametriche">Maschere parametriche<a class="headerlink" href="#maschere-parametriche" title="Permanent link">&para;</a></h3>
 <p>Usa maschere per applicare la correzione solo dove serve:</p>
 <ul>
 <li>Crea una maschera parametrica su <code>LCh</code> → <code>Chroma</code> (basso) + <code>Lightness</code> (alto) per isolare i bordi colorati</li>
 <li>Applica la maschera al modulo <code>chromatic aberrations</code> con <code>opacity = 100%</code></li>
-<li>Questo preserva la saturazione nelle aree pure (es. cielo blu senza bordi)[^chromatic-aberrations-manual]</li>
+<li>Questo preserva la saturazione nelle aree pure (es. cielo blu senza bordi)<sup id="fnref14:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></li>
 </ul>
 <h3 id="blend-mode-rgb">Blend mode RGB<a class="headerlink" href="#blend-mode-rgb" title="Permanent link">&para;</a></h3>
 <p>Combina il modulo con blend mode specifici:</p>
 <ul>
 <li><code>RGB Red</code>: applica la correzione <em>solo</em> al canale rosso → utile se solo il rosso è sfasato</li>
 <li><code>RGB Green</code>: disattiva la correzione sul verde (canale di riferimento) → mai necessario</li>
-<li><code>RGB Blue</code>: applica la correzione <em>solo</em> al canale blu → utile per frange gialle isolate[^chromatic-aberrations-manual]</li>
+<li><code>RGB Blue</code>: applica la correzione <em>solo</em> al canale blu → utile per frange gialle isolate<sup id="fnref15:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></li>
 </ul>
 <h2 id="confronto-con-moduli-correlati">Confronto con moduli correlati<a class="headerlink" href="#confronto-con-moduli-correlati" title="Permanent link">&para;</a></h2>
 <table>
@@ -3244,31 +3244,31 @@
 <td><strong><code>lens correction</code></strong></td>
 <td>RAW o RGB</td>
 <td>Prima della demosaicizzazione</td>
-<td>Usa profili Lensfun/metadati; migliore precisione; <strong>primo passo obbligatorio</strong>[^lens-correction-manual]</td>
+<td>Usa profili Lensfun/metadati; migliore precisione; <strong>primo passo obbligatorio</strong><sup id="fnref5:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup></td>
 </tr>
 <tr>
 <td><strong><code>raw chromatic aberrations</code></strong></td>
 <td>Solo RAW Bayer</td>
 <td>Subito dopo <code>demosaic</code></td>
-<td>Più aggressivo; richiede bilanciamento del bianco accurato; <strong>disabilitare se usi <code>lens correction</code></strong>[^raw-chromatic-aberrations-manual]</td>
+<td>Più aggressivo; richiede bilanciamento del bianco accurato; <strong>disabilitare se usi <code>lens correction</code></strong><sup id="fnref3:raw-chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:raw-chromatic-aberrations-manual">3</a></sup></td>
 </tr>
 <tr>
 <td><strong><code>chromatic aberrations</code></strong></td>
 <td>RGB (qualsiasi formato)</td>
 <td>Dopo <code>input color profile</code></td>
-<td>Controllo visivo diretto; ideale per affinamento; <strong>secondo passo</strong>[^chromatic-aberrations-manual]</td>
+<td>Controllo visivo diretto; ideale per affinamento; <strong>secondo passo</strong><sup id="fnref22:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong><code>(deprecated) defringe</code></strong></td>
 <td>RGB</td>
 <td>Qualsiasi posizione</td>
-<td>Obsoleto da darktable 3.6; progettato per LCA, non TCA; <strong>non usare</strong>[^defringe-manual]</td>
+<td>Obsoleto da darktable 3.6; progettato per LCA, non TCA; <strong>non usare</strong><sup id="fnref2:defringe-manual"><a class="footnote-ref" href="#fn:defringe-manual">4</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Non combinare raw chromatic aberrations e lens correction</p>
-<p>L’uso simultaneo causa sovracorrezione e artefatti visibili (es. bordi “doppi” o frange invertite). Scegli <em>uno solo</em> dei due moduli principali[^raw-chromatic-aberrations-manual][^lens-correction-manual].</p>
+<p>L’uso simultaneo causa sovracorrezione e artefatti visibili (es. bordi “doppi” o frange invertite). Scegli <em>uno solo</em> dei due moduli principali<sup id="fnref2:raw-chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:raw-chromatic-aberrations-manual">3</a></sup><sup id="fnref4:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup>.</p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3279,10 +3279,23 @@
 <li>▶️ <a href="https://www.youtube.com/watch?v=5smugZ5pXN0">Video tutorial: Chromatic Aberration Workflow (A Dabble in Photography)</a> — sezione “Lens correction &amp; TCA” (min. 1:45–3:20)</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^chromatic-aberrations-manual]: darktable 4.8 user manual - chromatic aberrations, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/chromatic-aberrations/#<br />
-[^lens-correction-manual]: darktable 4.8 user manual - lens correction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/#<br />
-[^raw-chromatic-aberrations-manual]: darktable 4.8 user manual - raw chromatic aberrations, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/raw-chromatic-aberrations/#<br />
-[^defringe-manual]: darktable 4.8 user manual - (deprecated) defringe, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/defringe/#</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:chromatic-aberrations-manual">
+<p>darktable 4.8 user manual - chromatic aberrations, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/chromatic-aberrations/#&#160;<a class="footnote-backref" href="#fnref:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:chromatic-aberrations-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lens-correction-manual">
+<p>darktable 4.8 user manual - lens correction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/#&#160;<a class="footnote-backref" href="#fnref:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:lens-correction-manual" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:raw-chromatic-aberrations-manual">
+<p>darktable 4.8 user manual - raw chromatic aberrations, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/raw-chromatic-aberrations/#&#160;<a class="footnote-backref" href="#fnref:raw-chromatic-aberrations-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:raw-chromatic-aberrations-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:raw-chromatic-aberrations-manual" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:defringe-manual">
+<p>darktable 4.8 user manual - (deprecated) defringe, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/defringe/#&#160;<a class="footnote-backref" href="#fnref:defringe-manual" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:defringe-manual" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

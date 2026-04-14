@@ -3316,7 +3316,7 @@
 
 
 <h1 id="esportazione">Esportazione<a class="headerlink" href="#esportazione" title="Permanent link">&para;</a></h1>
-<p>L'ultimo atto del flusso di lavoro e' la trasformazione del master in un file distribuibile. Le scelte tecniche in questa fase hanno impatto diretto sulla qualita' percepita.[^manual-export]</p>
+<p>L'ultimo atto del flusso di lavoro e' la trasformazione del master in un file distribuibile. Le scelte tecniche in questa fase hanno impatto diretto sulla qualita' percepita.<sup id="fnref:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></p>
 <h2 id="esportazione-per-il-web">Esportazione per il web<a class="headerlink" href="#esportazione-per-il-web" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3330,49 +3330,49 @@
 <tr>
 <td><strong>Formato</strong></td>
 <td>JPEG</td>
-<td>Universalmente supportato; compressione lossy ottimizzata per visualizzazione su schermo[^manual-export]</td>
+<td>Universalmente supportato; compressione lossy ottimizzata per visualizzazione su schermo<sup id="fnref14:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Qualita'</strong></td>
 <td>85-90</td>
-<td>Valori superiori non producono benefici visibili[^firststeps]; valori inferiori a 75 introducono artefatti visibili in aree omogenee (cielo, pelle)[^manual-export]</td>
+<td>Valori superiori non producono benefici visibili<sup id="fnref2:firststeps"><a class="footnote-ref" href="#fn:firststeps">5</a></sup>; valori inferiori a 75 introducono artefatti visibili in aree omogenee (cielo, pelle)<sup id="fnref15:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Profilo colore</strong></td>
 <td>sRGB</td>
-<td>Obbligatorio per la corretta visualizzazione nei browser; AdobeRGB non è interpretato correttamente da Chrome/Firefox/Safari[^output-profile]</td>
+<td>Obbligatorio per la corretta visualizzazione nei browser; AdobeRGB non è interpretato correttamente da Chrome/Firefox/Safari<sup id="fnref2:output-profile"><a class="footnote-ref" href="#fn:output-profile">10</a></sup></td>
 </tr>
 <tr>
 <td><strong>Dimensione</strong></td>
 <td>2048px lato lungo</td>
-<td>1080px lato corto per Instagram; per Twitter/X: 1200×675px (16:9); per Facebook: 1200×630px[^manual-export]</td>
+<td>1080px lato corto per Instagram; per Twitter/X: 1200×675px (16:9); per Facebook: 1200×630px<sup id="fnref16:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Ricampionamento</strong></td>
 <td>Lanczos3</td>
-<td>Migliore qualita'; <code>Bicubic</code> accettabile per esportazioni veloci; <code>Nearest Neighbor</code> solo per pixel-art[^manual-export]</td>
+<td>Migliore qualita'; <code>Bicubic</code> accettabile per esportazioni veloci; <code>Nearest Neighbor</code> solo per pixel-art<sup id="fnref17:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Dithering</strong></td>
 <td>Abilitato</td>
-<td>Necessario per prevenire banding in cieli e ombre graduali quando si esporta in 8-bit[^dither-or-posterize]</td>
+<td>Necessario per prevenire banding in cieli e ombre graduali quando si esporta in 8-bit<sup id="fnref:dither-or-posterize"><a class="footnote-ref" href="#fn:dither-or-posterize">11</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Multi-preset (dt 5.2+)</p>
-<p>Nel modulo Esporta, le selezioni multi-preset restano in memoria tra le foto, permettendo esportazioni sequenziali senza tornare al Lighttable.[^dt52]</p>
+<p>Nel modulo Esporta, le selezioni multi-preset restano in memoria tra le foto, permettendo esportazioni sequenziali senza tornare al Lighttable.<sup id="fnref:dt52"><a class="footnote-ref" href="#fn:dt52">6</a></sup></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Verifica sovrascrittura</p>
-<p>Verificare l'opzione di sovrascrittura prima di esportare per non perdere file precedenti.[^firststeps]</p>
+<p>Verificare l'opzione di sovrascrittura prima di esportare per non perdere file precedenti.<sup id="fnref:firststeps"><a class="footnote-ref" href="#fn:firststeps">5</a></sup></p>
 </div>
 <h3 id="esempio-pratico-web-gallery-responsive">Esempio pratico: Web gallery responsive<a class="headerlink" href="#esempio-pratico-web-gallery-responsive" title="Permanent link">&para;</a></h3>
 <p>Per generare una galleria web con tre versioni (thumbnail, medium, full), crea tre preset:
 - <code>web/thumbnail</code>: JPEG, qualità 80, dimensione massima 400px, <code>store_masks=no</code>, <code>high_quality_resampling=yes</code>
 - <code>web/medium</code>: JPEG, qualità 85, dimensione massima 1200px, <code>profile=sRGB</code>, <code>intent=perceptual</code>
 - <code>web/full</code>: JPEG, qualità 90, dimensione massima 2048px, <code>dpi=72</code>, <code>allow_upscaling=no</code></p>
-<p>Usa il modulo <strong>Stili</strong> per applicare un watermark testuale (<code>$(FILE.NAME) | $(YEAR)</code>), attivato <em>solo</em> nel preset <code>web/thumbnail</code> tramite opzione <code>style</code> nel modulo Esporta[^manual-export].</p>
+<p>Usa il modulo <strong>Stili</strong> per applicare un watermark testuale (<code>$(FILE.NAME) | $(YEAR)</code>), attivato <em>solo</em> nel preset <code>web/thumbnail</code> tramite opzione <code>style</code> nel modulo Esporta<sup id="fnref2:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>.</p>
 <p><img alt="Interfaccia darktable con il modulo Export aperto, tre preset salvati nella sezione 'presets', ciascuno con nome gerarchico (web/thumbnail, web/medium, web/full). Il campo 'filename template' mostra ${FILE_FOLDER}/web/${WIDTH.EXPORT}x${HEIGHT.EXPORT}/${FILE_NAME}.jpg." src="../images/export-web-presets.jpg" /></p>
 <h2 id="esportazione-per-la-stampa">Esportazione per la stampa<a class="headerlink" href="#esportazione-per-la-stampa" title="Permanent link">&para;</a></h2>
 <table>
@@ -3387,32 +3387,32 @@
 <tr>
 <td><strong>Formato</strong></td>
 <td>TIFF 16-bit</td>
-<td>Massima qualita'; JPEG alta qualita' se richiesto; EXR per archiviazione HDR[^manual-export]</td>
+<td>Massima qualita'; JPEG alta qualita' se richiesto; EXR per archiviazione HDR<sup id="fnref18:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Profilo colore</strong></td>
 <td>AdobeRGB</td>
-<td>Stampa offset; profilo ICC stampante se disponibile (da caricare in <code>$HOME/.config/darktable/color/out/</code>)[^output-profile]</td>
+<td>Stampa offset; profilo ICC stampante se disponibile (da caricare in <code>$HOME/.config/darktable/color/out/</code>)<sup id="fnref3:output-profile"><a class="footnote-ref" href="#fn:output-profile">10</a></sup></td>
 </tr>
 <tr>
 <td><strong>Risoluzione</strong></td>
 <td>300 DPI min</td>
-<td>600 DPI per grande formato o archiviazione; impostabile direttamente in cm/inches[^manual-export]</td>
+<td>600 DPI per grande formato o archiviazione; impostabile direttamente in cm/inches<sup id="fnref19:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Sharpening</strong></td>
 <td>Dose extra</td>
-<td>La carta assorbe l'inchiostro ammorbidendo l'immagine; applica sharpening <em>dopo</em> il ricampionamento[^manual-export]</td>
+<td>La carta assorbe l'inchiostro ammorbidendo l'immagine; applica sharpening <em>dopo</em> il ricampionamento<sup id="fnref20:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Compressione</strong></td>
 <td>LZW o ZIP</td>
-<td>Compressione senza perdite; <code>deflate with predictor</code> per TIFF 16-bit[^darktable-cli]</td>
+<td>Compressione senza perdite; <code>deflate with predictor</code> per TIFF 16-bit<sup id="fnref3:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup></td>
 </tr>
 <tr>
 <td><strong>Dithering</strong></td>
 <td>Disabilitato</td>
-<td>Non necessario in 16-bit; può introdurre rumore indesiderato[^dither-or-posterize]</td>
+<td>Non necessario in 16-bit; può introdurre rumore indesiderato<sup id="fnref2:dither-or-posterize"><a class="footnote-ref" href="#fn:dither-or-posterize">11</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3425,28 +3425,28 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <li><strong>Formato</strong>: TIFF 16-bit o EXR  </li>
 <li><strong>Profilo</strong>: ProPhoto RGB  </li>
 <li><strong>Risoluzione</strong>: Originale del sensore  </li>
-<li><strong>Compressione</strong>: Senza perdite (LZW per TIFF, PIZ per EXR)[^darktable-cli]  </li>
-<li><strong>Metadati</strong>: <code>exif data</code>, <code>metadata</code>, <code>develop history</code>, <code>geo tags</code> abilitati[^manual-export]  </li>
-<li><strong>Masks</strong>: <code>store_masks=yes</code> per TIFF/EXR/XCF[^manual-export]  </li>
+<li><strong>Compressione</strong>: Senza perdite (LZW per TIFF, PIZ per EXR)<sup id="fnref2:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup>  </li>
+<li><strong>Metadati</strong>: <code>exif data</code>, <code>metadata</code>, <code>develop history</code>, <code>geo tags</code> abilitati<sup id="fnref7:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
+<li><strong>Masks</strong>: <code>store_masks=yes</code> per TIFF/EXR/XCF<sup id="fnref8:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
 </ul>
 <p>Questo file master sara' il punto di partenza per qualsiasi futura ri-esportazione.<br />
-⚠️ <strong>Attenzione</strong>: L’embedding della storia di sviluppo (<code>develop history</code>) funziona solo con formati che supportano XMP (JPEG, TIFF, JPEG2000, JXL). Non è supportato da PNG o WebP[^manual-export].</p>
+⚠️ <strong>Attenzione</strong>: L’embedding della storia di sviluppo (<code>develop history</code>) funziona solo con formati che supportano XMP (JPEG, TIFF, JPEG2000, JXL). Non è supportato da PNG o WebP<sup id="fnref3:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>.</p>
 <h2 id="esportazione-batch">Esportazione batch<a class="headerlink" href="#esportazione-batch" title="Permanent link">&para;</a></h2>
-<p>Nel tavolo luminoso, seleziona tutte le immagini, configura il modulo Esportazione e premi <strong>«Esporta»</strong>. darktable elabora tutte le immagini in coda, usando tutti i core della CPU.[^manual-export]</p>
+<p>Nel tavolo luminoso, seleziona tutte le immagini, configura il modulo Esportazione e premi <strong>«Esporta»</strong>. darktable elabora tutte le immagini in coda, usando tutti i core della CPU.<sup id="fnref4:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></p>
 <div class="admonition info">
 <p class="admonition-title">Performance</p>
 <p>L'esportazione di 100 foto a piena risoluzione con tutti i moduli attivi puo' richiedere 15-30 minuti su un MacBook Pro M3. OpenCL accelera significativamente il processo.</p>
 </div>
 <h3 id="ottimizzazione-avanzata-per-batch">Ottimizzazione avanzata per batch<a class="headerlink" href="#ottimizzazione-avanzata-per-batch" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Abilita <code>high_quality_resampling=yes</code> solo se ridimensioni <em>verso il basso</em> (evita doppio ricampionamento)[^manual-export]  </li>
+<li>Abilita <code>high_quality_resampling=yes</code> solo se ridimensioni <em>verso il basso</em> (evita doppio ricampionamento)<sup id="fnref9:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
 <li>Imposta <code>allow_upscaling=no</code> per prevenire interpolazioni indesiderate  </li>
-<li>Usa <code>on conflict = overwrite if changed</code> per aggiornare solo i file modificati dopo l’ultima esportazione[^manual-export]  </li>
+<li>Usa <code>on conflict = overwrite if changed</code> per aggiornare solo i file modificati dopo l’ultima esportazione<sup id="fnref10:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
 <li>Per batch &gt; 500 immagini, disattiva <code>store_masks</code> e <code>develop history</code> per ridurre tempo e spazio su disco  </li>
 </ul>
 <h2 id="preset-stili-e-automazione">Preset, Stili e Automazione<a class="headerlink" href="#preset-stili-e-automazione" title="Permanent link">&para;</a></h2>
 <h3 id="preset-singolo-modulo">Preset: singolo modulo<a class="headerlink" href="#preset-singolo-modulo" title="Permanent link">&para;</a></h3>
-<p>Un preset e' un insieme salvato di impostazioni per un singolo modulo:[^manual-presets]</p>
+<p>Un preset e' un insieme salvato di impostazioni per un singolo modulo:<sup id="fnref:manual-presets"><a class="footnote-ref" href="#fn:manual-presets">2</a></sup></p>
 <ol>
 <li>Configura il modulo come desideri  </li>
 <li>Clicca sull'icona hamburger a destra del nome del modulo  </li>
@@ -3455,10 +3455,10 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Organizzazione (dt 5.2+)</p>
-<p>Creare sottomenu personalizzati per i preset usando il carattere pipe (<code>|</code>) nel nome (es. <code>Paesaggio|Tramonto morbido</code>).[^dt52]</p>
+<p>Creare sottomenu personalizzati per i preset usando il carattere pipe (<code>|</code>) nel nome (es. <code>Paesaggio|Tramonto morbido</code>).<sup id="fnref2:dt52"><a class="footnote-ref" href="#fn:dt52">6</a></sup></p>
 </div>
 <h3 id="stili-ricetta-completa">Stili: ricetta completa<a class="headerlink" href="#stili-ricetta-completa" title="Permanent link">&para;</a></h3>
-<p>Uno stile e' una raccolta di impostazioni multi-modulo:[^manual-styles]</p>
+<p>Uno stile e' una raccolta di impostazioni multi-modulo:<sup id="fnref:manual-styles"><a class="footnote-ref" href="#fn:manual-styles">3</a></sup></p>
 <ol>
 <li>Edita un'immagine fino al look desiderato  </li>
 <li>Nel tavolo luminoso, modulo <strong>«Stili»</strong> &gt; <strong>«Crea»</strong>  </li>
@@ -3470,7 +3470,7 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <p>Quando applichi uno stile in modalita' «sovrascrittura» perdi tutta la history stack precedente. Usa <strong>sempre «appendi»</strong> se hai gia' fatto regolazioni.</p>
 </div>
 <h3 id="batch-editing-a-due-fasi">Batch editing a due fasi<a class="headerlink" href="#batch-editing-a-due-fasi" title="Permanent link">&para;</a></h3>
-<p>Per serie con condizioni di luce variabili:[^manual-batch]</p>
+<p>Per serie con condizioni di luce variabili:<sup id="fnref:manual-batch"><a class="footnote-ref" href="#fn:manual-batch">4</a></sup></p>
 <p><strong>Fase 1 -- Primary color grading (neutralizzazione)</strong></p>
 <ol>
 <li>Color checker o superficie grigia per ogni setup di luce  </li>
@@ -3485,7 +3485,7 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Fine-tuning</p>
-<p>Barra spaziatrice per navigare tra le foto nella camera oscura, micro-aggiustamenti foto per foto dopo il batch paste. E' il metodo piu' efficiente.[^manual-batch]</p>
+<p>Barra spaziatrice per navigare tra le foto nella camera oscura, micro-aggiustamenti foto per foto dopo il batch paste. E' il metodo piu' efficiente.<sup id="fnref2:manual-batch"><a class="footnote-ref" href="#fn:manual-batch">4</a></sup></p>
 </div>
 <h2 id="parametri-dettagliati-del-modulo-export">Parametri dettagliati del modulo Export<a class="headerlink" href="#parametri-dettagliati-del-modulo-export" title="Permanent link">&para;</a></h2>
 <p>Il modulo <strong>Export</strong> dispone di 4 sezioni principali, ciascuna con parametri critici:</p>
@@ -3504,19 +3504,19 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <td><code>target storage</code></td>
 <td><code>file on disk</code>, <code>LaTeX book</code>, <code>web album</code>, <code>email</code></td>
 <td><code>file on disk</code></td>
-<td>I plugin Lua possono aggiungere nuovi backend (es. <code>scp_export</code>)[^exporting-images-lua]</td>
+<td>I plugin Lua possono aggiungere nuovi backend (es. <code>scp_export</code>)<sup id="fnref:exporting-images-lua"><a class="footnote-ref" href="#fn:exporting-images-lua">7</a></sup></td>
 </tr>
 <tr>
 <td><code>filename template</code></td>
 <td>Variabili dinamiche (vedi tabella sotto)</td>
 <td><code>${FILE_FOLDER}/darktable_exported/${FILE_NAME}</code></td>
-<td>Supporta 50+ variabili come <code>$(YEAR)</code>, <code>$(TAGS)</code>, <code>$(WIDTH.EXPORT)</code>[^variables]</td>
+<td>Supporta 50+ variabili come <code>$(YEAR)</code>, <code>$(TAGS)</code>, <code>$(WIDTH.EXPORT)</code><sup id="fnref:variables"><a class="footnote-ref" href="#fn:variables">8</a></sup></td>
 </tr>
 <tr>
 <td><code>on conflict</code></td>
 <td><code>create unique filename</code>, <code>overwrite</code>, <code>overwrite if changed</code>, <code>skip</code></td>
 <td><code>create unique filename</code></td>
-<td><code>overwrite if changed</code> confronta timestamp XMP vs filesystem[^manual-export]</td>
+<td><code>overwrite if changed</code> confronta timestamp XMP vs filesystem<sup id="fnref21:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3535,25 +3535,25 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <td><code>file format</code></td>
 <td><code>JPEG</code>, <code>TIFF</code>, <code>PNG</code>, <code>WebP</code>, <code>JXL</code>, <code>EXR</code>, <code>PDF</code>, <code>XCF</code>, <code>PPM</code>, <code>PFM</code>, <code>copy</code></td>
 <td><code>JPEG</code></td>
-<td>JXL offre compressione lossless con rapporto 2:1 rispetto a TIFF 16-bit[^darktable-cli]</td>
+<td>JXL offre compressione lossless con rapporto 2:1 rispetto a TIFF 16-bit<sup id="fnref4:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup></td>
 </tr>
 <tr>
 <td><code>quality</code></td>
 <td>JPEG/WebP/JXL: <code>5–100</code>; J2K: <code>5–100</code>; PDF: n/a</td>
 <td><code>95</code></td>
-<td>Per JPEG: <code>85</code> per web, <code>95</code> per stampa, <code>100</code> solo per archivio temporaneo[^manual-export]</td>
+<td>Per JPEG: <code>85</code> per web, <code>95</code> per stampa, <code>100</code> solo per archivio temporaneo<sup id="fnref22:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>bit depth</code></td>
 <td><code>8</code>, <code>16</code>, <code>32</code> (dipende dal formato)</td>
 <td><code>8</code> (JPEG), <code>16</code> (TIFF)</td>
-<td><code>32</code> disponibile solo per EXR e XCF[^darktable-cli]</td>
+<td><code>32</code> disponibile solo per EXR e XCF<sup id="fnref5:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup></td>
 </tr>
 <tr>
 <td><code>compression</code></td>
 <td><code>none</code>, <code>LZW</code>, <code>ZIP</code>, <code>deflate</code>, <code>PIZ</code>, <code>DWAA</code>, ecc.</td>
 <td>dipende dal formato</td>
-<td><code>PIZ</code> è ottimale per EXR con dati HDR[^darktable-cli]</td>
+<td><code>PIZ</code> è ottimale per EXR con dati HDR<sup id="fnref6:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3572,69 +3572,69 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <td><code>set size</code></td>
 <td><code>in pixels</code>, <code>in cm</code>, <code>in inch</code>, <code>by scale</code></td>
 <td><code>in pixels</code></td>
-<td><code>in cm</code> e <code>in inch</code> calcolano automaticamente i pixel in base al <code>dpi</code>[^manual-export]</td>
+<td><code>in cm</code> e <code>in inch</code> calcolano automaticamente i pixel in base al <code>dpi</code><sup id="fnref23:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>dpi</code></td>
 <td><code>1–5000</code></td>
 <td><code>300</code> (se usato <code>in cm/inch</code>)</td>
-<td>Memorizzato in Exif e utilizzato dai software di stampa[^manual-export]</td>
+<td>Memorizzato in Exif e utilizzato dai software di stampa<sup id="fnref24:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>max size</code></td>
 <td><code>0–∞</code> px/cm/inch</td>
 <td><code>0 × 0</code></td>
-<td><code>0</code> = nessun limite; <code>max size = 0 × 0</code> = esporta originale[^manual-export]</td>
+<td><code>0</code> = nessun limite; <code>max size = 0 × 0</code> = esporta originale<sup id="fnref25:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>allow upscaling</code></td>
 <td><code>yes</code>/<code>no</code></td>
 <td><code>no</code></td>
-<td>Mai abilitare per fotografia reale: introduce artefatti irreversibili[^manual-export]</td>
+<td>Mai abilitare per fotografia reale: introduce artefatti irreversibili<sup id="fnref26:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>high quality resampling</code></td>
 <td><code>yes</code>/<code>no</code></td>
 <td><code>no</code></td>
-<td>Abilitare solo per downscale; rallenta del 20–40% ma migliora nitidezza[^manual-export]</td>
+<td>Abilitare solo per downscale; rallenta del 20–40% ma migliora nitidezza<sup id="fnref27:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>store masks</code></td>
 <td><code>yes</code>/<code>no</code></td>
 <td><code>no</code></td>
-<td>Solo per TIFF/EXR/XCF; utile per ritocchi successivi in GIMP/Krita[^manual-export]</td>
+<td>Solo per TIFF/EXR/XCF; utile per ritocchi successivi in GIMP/Krita<sup id="fnref28:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>profile</code></td>
 <td><code>image settings</code>, <code>sRGB</code>, <code>AdobeRGB</code>, <code>ProPhoto RGB</code>, <code>XYZ</code>, <code>linear RGB</code></td>
 <td><code>image settings</code></td>
-<td><code>image settings</code> rispetta il modulo <code>output color profile</code>[^output-profile]</td>
+<td><code>image settings</code> rispetta il modulo <code>output color profile</code><sup id="fnref4:output-profile"><a class="footnote-ref" href="#fn:output-profile">10</a></sup></td>
 </tr>
 <tr>
 <td><code>intent</code></td>
 <td><code>perceptual</code>, <code>relative colorimetric</code>, <code>saturation</code>, <code>absolute colorimetric</code></td>
 <td><code>perceptual</code></td>
-<td><code>relative colorimetric</code> preferito per stampa professionale[^output-profile]</td>
+<td><code>relative colorimetric</code> preferito per stampa professionale<sup id="fnref5:output-profile"><a class="footnote-ref" href="#fn:output-profile">10</a></sup></td>
 </tr>
 <tr>
 <td><code>style</code></td>
 <td>Nome di uno stile salvato</td>
 <td><code>(none)</code></td>
-<td>Applica lo stile <em>temporaneamente</em> all’export[^manual-export]</td>
+<td>Applica lo stile <em>temporaneamente</em> all’export<sup id="fnref29:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 <tr>
 <td><code>mode</code></td>
 <td><code>replace history</code>, <code>append</code></td>
 <td><code>replace history</code></td>
-<td><code>append</code> mantiene la history originale[^manual-export]</td>
+<td><code>append</code> mantiene la history originale<sup id="fnref30:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h3 id="metadata-preferences">🏷️ Metadata preferences<a class="headerlink" href="#metadata-preferences" title="Permanent link">&para;</a></h3>
 <p>Accessibile tramite pulsante <strong>«preferences…»</strong>, gestisce l’embedding dei metadati:
 - <strong>Gruppi esportati</strong>: <code>exif data</code>, <code>metadata</code>, <code>geo tags</code>, <code>tags</code>, <code>hierarchical tags</code>, <code>develop history</code><br />
-- <strong>Controllo fine</strong>: per ogni campo Exif/IPTC/XMP, definisci una formula (es. <code>$(EXIF.YEAR)-$(EXIF.MONTH)</code> per <code>Iptc.Application2.DateCreated</code>)[^manual-export]<br />
-- <strong>Attenzione</strong>: <code>develop history</code> può fallire silenziosamente su file grandi (&gt;100 MB) — non affidarsi per backup[^manual-export]  </p>
+- <strong>Controllo fine</strong>: per ogni campo Exif/IPTC/XMP, definisci una formula (es. <code>$(EXIF.YEAR)-$(EXIF.MONTH)</code> per <code>Iptc.Application2.DateCreated</code>)<sup id="fnref5:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup><br />
+- <strong>Attenzione</strong>: <code>develop history</code> può fallire silenziosamente su file grandi (&gt;100 MB) — non affidarsi per backup<sup id="fnref6:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </p>
 <h3 id="tabella-variabili-per-filename-template">Tabella variabili per <code>filename template</code><a class="headerlink" href="#tabella-variabili-per-filename-template" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -3668,7 +3668,7 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <tr>
 <td><strong>Tagging</strong></td>
 <td><code>$(TAGS)</code>, <code>$(CATEGORY0(places))</code>, <code>$(CATEGORY1(places))</code></td>
-<td>Strutture gerarchiche (<code>${CATEGORY0(places)}/${CATEGORY1(places)}/${FILE.NAME}</code>)[^variables]</td>
+<td>Strutture gerarchiche (<code>${CATEGORY0(places)}/${CATEGORY1(places)}/${FILE.NAME}</code>)<sup id="fnref2:variables"><a class="footnote-ref" href="#fn:variables">8</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3692,13 +3692,13 @@ Esempio: per una stampa 30×45 cm a 300 DPI → <code>max size = 30 cm × 45 cm<
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--core<span class="w"> </span>--conf<span class="w"> </span>plugins/imageio/format/tiff/compress<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--core<span class="w"> </span>--conf<span class="w"> </span>plugins/imageio/format/tiff/bpp<span class="o">=</span><span class="m">16</span>
 </code></pre></div>
-Questo comando esporta tutte le immagini RAW in TIFF 16-bit 30×45 cm (300 DPI), con compressione ZIP e ricampionamento ad alta qualità[^darktable-cli].</p>
+Questo comando esporta tutte le immagini RAW in TIFF 16-bit 30×45 cm (300 DPI), con compressione ZIP e ricampionamento ad alta qualità<sup id="fnref:darktable-cli"><a class="footnote-ref" href="#fn:darktable-cli">9</a></sup>.</p>
 <h3 id="risoluzione-problemi-comuni">🛑 Risoluzione problemi comuni<a class="headerlink" href="#risoluzione-problemi-comuni" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Errore “ICC profile not found”</strong>: verifica che il profilo sia in <code>$HOME/.config/darktable/color/out/</code> e riavvia darktable[^output-profile]  </li>
-<li><strong>Esportazione lenta con OpenCL abilitato</strong>: disattiva <code>high_quality_resampling</code> o usa <code>--core --disable-opencl</code>[^manual-export]  </li>
-<li><strong>File esportati troppo piccoli</strong>: controlla <code>max size</code> — se entrambi i valori sono <code>0</code>, darktable esporta a risoluzione nativa <em>dopo il crop</em>, non prima[^manual-export]  </li>
-<li><strong>Tag gerarchici non esportati</strong>: assicurati che <code>hierarchical tags</code> sia abilitato <em>e</em> che <code>tags</code> abbia la casella <code>omit hierarchy</code> deselezionata[^manual-export]  </li>
+<li><strong>Errore “ICC profile not found”</strong>: verifica che il profilo sia in <code>$HOME/.config/darktable/color/out/</code> e riavvia darktable<sup id="fnref:output-profile"><a class="footnote-ref" href="#fn:output-profile">10</a></sup>  </li>
+<li><strong>Esportazione lenta con OpenCL abilitato</strong>: disattiva <code>high_quality_resampling</code> o usa <code>--core --disable-opencl</code><sup id="fnref11:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
+<li><strong>File esportati troppo piccoli</strong>: controlla <code>max size</code> — se entrambi i valori sono <code>0</code>, darktable esporta a risoluzione nativa <em>dopo il crop</em>, non prima<sup id="fnref12:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
+<li><strong>Tag gerarchici non esportati</strong>: assicurati che <code>hierarchical tags</code> sia abilitato <em>e</em> che <code>tags</code> abbia la casella <code>omit hierarchy</code> deselezionata<sup id="fnref13:manual-export"><a class="footnote-ref" href="#fn:manual-export">1</a></sup>  </li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3708,17 +3708,44 @@ Questo comando esporta tutte le immagini RAW in TIFF 16-bit 30×45 cm (300 DPI),
 <li><a href="https://docs.darktable.org/usermanual/stable/en/lua/exporting-images/">darktable Lua Scripting Guide</a>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-export]: <em>darktable User Manual -- Export</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-export.md</code><br />
-[^manual-presets]: <em>darktable User Manual -- Presets</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/processing-modules/presets/">docs.darktable.org</a><br />
-[^manual-styles]: <em>darktable User Manual -- Styles</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/styles/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-styles.md</code><br />
-[^manual-batch]: <em>darktable User Manual -- Batch-editing images</em>, <a href="https://docs.darktable.org/usermanual/stable/en/guides-tutorials/batch-editing/">docs.darktable.org</a><br />
-[^firststeps]: <em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography<br />
-[^dt52]: <em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">New Release: darktable 5.2</a></em> -- A Dabble in Photography<br />
-[^exporting-images-lua]: <em>darktable User Manual — Exporting images with lua</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">docs.darktable.org</a><br />
-[^variables]: <em>darktable User Manual — Variables</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/variables/">docs.darktable.org</a><br />
-[^darktable-cli]: <em>darktable User Manual — darktable-cli</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/program-invocation/darktable-cli/">docs.darktable.org</a><br />
-[^output-profile]: <em>darktable User Manual — Output color profile</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/output-color-profile/">docs.darktable.org</a><br />
-[^dither-or-posterize]: <em>darktable User Manual — Dither or posterize</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/dither-or-posterize/">docs.darktable.org</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-export">
+<p><em>darktable User Manual -- Export</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-export.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:manual-export" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-presets">
+<p><em>darktable User Manual -- Presets</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/processing-modules/presets/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual-presets" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-styles">
+<p><em>darktable User Manual -- Styles</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/styles/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-styles.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-styles" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-batch">
+<p><em>darktable User Manual -- Batch-editing images</em>, <a href="https://docs.darktable.org/usermanual/stable/en/guides-tutorials/batch-editing/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual-batch" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-batch" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:firststeps">
+<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:firststeps" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52">
+<p><em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">New Release: darktable 5.2</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt52" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt52" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:exporting-images-lua">
+<p><em>darktable User Manual — Exporting images with lua</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:exporting-images-lua" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:variables">
+<p><em>darktable User Manual — Variables</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/variables/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:variables" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:variables" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-cli">
+<p><em>darktable User Manual — darktable-cli</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/special-topics/program-invocation/darktable-cli/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:darktable-cli" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:output-profile">
+<p><em>darktable User Manual — Output color profile</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/output-color-profile/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:output-profile" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:output-profile" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:output-profile" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:output-profile" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:output-profile" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dither-or-posterize">
+<p><em>darktable User Manual — Dither or posterize</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/dither-or-posterize/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:dither-or-posterize" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dither-or-posterize" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

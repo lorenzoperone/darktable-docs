@@ -3004,11 +3004,11 @@
 
 
 <h1 id="rotate-and-perspective">Rotate and Perspective<a class="headerlink" href="#rotate-and-perspective" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>rotate and perspective</strong> è lo strumento principale di darktable per la correzione geometrica avanzata: raddrizza orizzonti, corregge linee convergenti (effetto “palazzo che cade”), e applica trasformazioni di tipo <em>lens shift</em> ispirate agli obiettivi tilt-shift. Basato sull’algoritmo di Markus Hebel (<em>ShiftN</em>), opera in uno spazio scene-referred e supporta sia correzioni automatiche basate su rilevamento strutturale che interventi manuali precisi[^manual-48-rotate].</p>
+<p>Il modulo <strong>rotate and perspective</strong> è lo strumento principale di darktable per la correzione geometrica avanzata: raddrizza orizzonti, corregge linee convergenti (effetto “palazzo che cade”), e applica trasformazioni di tipo <em>lens shift</em> ispirate agli obiettivi tilt-shift. Basato sull’algoritmo di Markus Hebel (<em>ShiftN</em>), opera in uno spazio scene-referred e supporta sia correzioni automatiche basate su rilevamento strutturale che interventi manuali precisi<sup id="fnref:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</p>
 <p><img alt="Interfaccia del modulo rotate and perspective con correzione prospettica attiva" src="../images/rotate-perspective-ui.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Il modulo è nascosto per default</p>
-<p>I controlli prospettici sono compressi sotto l’intestazione <strong>perspective</strong>, visibile solo dopo aver cliccato sul titolo del modulo. Questa scelta riflette il fatto che la rotazione è l’uso più comune, mentre la correzione prospettica richiede un workflow più articolato[^manual-48-rotate].</p>
+<p>I controlli prospettici sono compressi sotto l’intestazione <strong>perspective</strong>, visibile solo dopo aver cliccato sul titolo del modulo. Questa scelta riflette il fatto che la rotazione è l’uso più comune, mentre la correzione prospettica richiede un workflow più articolato<sup id="fnref3:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo gestisce due tipi di trasformazioni distinte ma correlate:</p>
@@ -3019,7 +3019,7 @@
 <li>Fitting automatico dei parametri di trasformazione</li>
 <li>Eventuale regolazione manuale dei risultati</li>
 </ol>
-<p>A differenza del modulo <em>crop and rotate</em>, che opera con una semplice trasformazione affine (rotazione + ritaglio), <code>rotate and perspective</code> utilizza una trasformazione proiettiva completa che include <em>shear</em>, <em>lens shift</em> verticale/orizzontale e compensazione della distorsione geometrica[^manual-48-rotate].</p>
+<p>A differenza del modulo <em>crop and rotate</em>, che opera con una semplice trasformazione affine (rotazione + ritaglio), <code>rotate and perspective</code> utilizza una trasformazione proiettiva completa che include <em>shear</em>, <em>lens shift</em> verticale/orizzontale e compensazione della distorsione geometrica<sup id="fnref2:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il workflow ideale segue tre fasi sequenziali, con priorità alla precisione strutturale prima di ogni rotazione finale:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Identificazione delle strutture (structure)
@@ -3044,19 +3044,19 @@
 <td><strong>Automatic detection</strong></td>
 <td>Analisi automatica di segmenti lineari nell’immagine tramite edge detection</td>
 <td>Scene con chiare linee architettoniche (edifici, finestre, strade)</td>
-<td>Usa <code>Shift+click</code> per contrast enhancement e <code>Ctrl+click</code> per edge enhancement se il rilevamento fallisce[^manual-48-rotate]. Linee verdi = verticali convergenti; blu = orizzontali convergenti.</td>
+<td>Usa <code>Shift+click</code> per contrast enhancement e <code>Ctrl+click</code> per edge enhancement se il rilevamento fallisce<sup id="fnref11:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>. Linee verdi = verticali convergenti; blu = orizzontali convergenti.</td>
 </tr>
 <tr>
 <td><strong>Draw structure lines</strong></td>
 <td>Disegno manuale di linee con il mouse: trascina per creare segmenti</td>
 <td>Strutture parziali o degradate (es. facciate parzialmente oscurate)</td>
-<td>Le linee vengono classificate automaticamente come verticali (verdi) o orizzontali (blu). Più linee → migliore fitting[^manual-48-rotate].</td>
+<td>Le linee vengono classificate automaticamente come verticali (verdi) o orizzontali (blu). Più linee → migliore fitting<sup id="fnref12:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Draw perspective rectangle</strong></td>
 <td>Disegno di un rettangolo con angoli modificabili</td>
 <td>Correzioni keystone precise (es. facciate frontali)</td>
-<td>Gli angoli del rettangolo definiscono le linee da rendere parallele — analogo al comportamento del modulo <em>crop and rotate</em>[^manual-48-rotate].</td>
+<td>Gli angoli del rettangolo definiscono le linee da rendere parallele — analogo al comportamento del modulo <em>crop and rotate</em><sup id="fnref13:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3077,19 +3077,19 @@
 <td><strong>Vertical</strong></td>
 <td><code>[icon-vertical]</code></td>
 <td>Applica solo <code>lens shift (vertical)</code></td>
-<td>Corregge linee cadenti (es. edifici fotografati dal basso) senza alterare l’orizzonte[^manual-48-rotate].</td>
+<td>Corregge linee cadenti (es. edifici fotografati dal basso) senza alterare l’orizzonte<sup id="fnref14:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Horizontal</strong></td>
 <td><code>[icon-horizontal]</code></td>
 <td>Applica solo <code>lens shift (horizontal)</code></td>
-<td>Corregge linee che si allargano verso l’alto (es. soffitti, pavimenti) — raro ma utile in interni[^manual-48-rotate].</td>
+<td>Corregge linee che si allargano verso l’alto (es. soffitti, pavimenti) — raro ma utile in interni<sup id="fnref15:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Both</strong></td>
 <td><code>[icon-both]</code></td>
 <td>Applica <code>lens shift (vertical)</code> + <code>lens shift (horizontal)</code> + <code>shear</code></td>
-<td>Correzione completa per immagini con convergenza su entrambi gli assi. Richiede <code>shear</code> per mantenere la coerenza geometrica[^manual-48-rotate].</td>
+<td>Correzione completa per immagini con convergenza su entrambi gli assi. Richiede <code>shear</code> per mantenere la coerenza geometrica<sup id="fnref16:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3098,7 +3098,7 @@
 <ul>
 <li><code>Ctrl+click</code>: applica <strong>solo la rotazione</strong>, ignorando il lens shift  </li>
 <li><code>Shift+click</code>: applica <strong>solo il lens shift</strong>, ignorando la rotazione<br />
-Questo ti permette di separare i due effetti per un controllo fine[^manual-48-rotate].</li>
+Questo ti permette di separare i due effetti per un controllo fine<sup id="fnref10:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</li>
 </ul>
 </div>
 <h3 id="passo-3-rotazione-finale-e-ritaglio">Passo 3: Rotazione finale e ritaglio<a class="headerlink" href="#passo-3-rotazione-finale-e-ritaglio" title="Permanent link">&para;</a></h3>
@@ -3117,19 +3117,19 @@ Questo ti permette di separare i due effetti per un controllo fine[^manual-48-ro
 <td><strong>Largest area</strong></td>
 <td>Ritaglia al massimo possibile, sacrificando il rapporto d’aspetto</td>
 <td>Default per editing rapido</td>
-<td>Produce il maggior numero di pixel utilizzabili[^manual-48-rotate].</td>
+<td>Produce il maggior numero di pixel utilizzabili<sup id="fnref17:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Original format</strong></td>
 <td>Mantiene il rapporto d’aspetto originale, centrando il ritaglio</td>
 <td>Consigliato per stampa o pubblicazione</td>
-<td>Puoi trascinare manualmente la regione di ritaglio dopo l’applicazione[^manual-48-rotate].</td>
+<td>Puoi trascinare manualmente la regione di ritaglio dopo l’applicazione<sup id="fnref18:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Problemi noti con auto-crop</p>
-<p>Su alcune versioni (5.5.0+), <code>automatic cropping</code> può disabilitarsi automaticamente dopo una rotazione con click-drag, mostrando il messaggio <em>“automatic cropping failed”</em> nei log[^pixls-auto-crop]. Questo bug è documentato ma non ancora risolto. Soluzione immediata: riattivare manualmente la casella.</p>
+<p>Su alcune versioni (5.5.0+), <code>automatic cropping</code> può disabilitarsi automaticamente dopo una rotazione con click-drag, mostrando il messaggio <em>“automatic cropping failed”</em> nei log<sup id="fnref:pixls-auto-crop"><a class="footnote-ref" href="#fn:pixls-auto-crop">2</a></sup>. Questo bug è documentato ma non ancora risolto. Soluzione immediata: riattivare manualmente la casella.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3146,13 +3146,13 @@ Questo ti permette di separare i due effetti per un controllo fine[^manual-48-ro
 <td><strong>rotation</strong></td>
 <td>-180° a +180°</td>
 <td>0.00°</td>
-<td>Angolo di rotazione intorno al centro. Il limite soft è ±10°: oltre, richiede click destro per inserimento manuale[^manual-48-rotate].</td>
+<td>Angolo di rotazione intorno al centro. Il limite soft è ±10°: oltre, richiede click destro per inserimento manuale<sup id="fnref19:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>lens shift (vertical)</strong></td>
 <td>-1.000 a +1.000</td>
 <td>0.000</td>
-<td>Correzione verticale: valori positivi spostano le linee verticali verso il centro (corregge “caduta”). Valori &gt;0.9 possono produrre artefatti[^manual-48-rotate].</td>
+<td>Correzione verticale: valori positivi spostano le linee verticali verso il centro (corregge “caduta”). Valori &gt;0.9 possono produrre artefatti<sup id="fnref20:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>lens shift (horizontal)</strong></td>
@@ -3164,37 +3164,37 @@ Questo ti permette di separare i due effetti per un controllo fine[^manual-48-ro
 <td><strong>shear</strong></td>
 <td>-1.000 a +1.000</td>
 <td>0.000</td>
-<td>Deformazione diagonale necessaria quando si applicano entrambi i lens shift. Se non impostato, l’immagine appare “stirata”[^manual-48-rotate].</td>
+<td>Deformazione diagonale necessaria quando si applicano entrambi i lens shift. Se non impostato, l’immagine appare “stirata”<sup id="fnref21:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>automatic cropping</strong></td>
 <td><code>off</code> / <code>largest area</code> / <code>original format</code></td>
 <td><code>off</code></td>
-<td>Abilita il ritaglio automatico post-correzione. Fondamentale per evitare bordi neri[^manual-48-rotate].</td>
+<td>Abilita il ritaglio automatico post-correzione. Fondamentale per evitare bordi neri<sup id="fnref22:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>lens model</strong></td>
 <td><code>generic</code> / <code>specific</code></td>
 <td><code>generic</code></td>
-<td>Imposta i parametri ottici: <code>generic</code> assume 28mm su full-frame. <code>specific</code> richiede <code>focal length</code> e <code>crop factor</code> per maggiore accuratezza[^manual-48-rotate].</td>
+<td>Imposta i parametri ottici: <code>generic</code> assume 28mm su full-frame. <code>specific</code> richiede <code>focal length</code> e <code>crop factor</code> per maggiore accuratezza<sup id="fnref23:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>focal length</strong></td>
 <td>10–200 mm</td>
 <td>preso da EXIF</td>
-<td>Solo se <code>lens model = specific</code>. Valore predefinito estratto dai metadati RAW[^manual-48-rotate].</td>
+<td>Solo se <code>lens model = specific</code>. Valore predefinito estratto dai metadati RAW<sup id="fnref24:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>crop factor</strong></td>
 <td>1.0 (full-frame) a 2.7 (micro 4/3)</td>
 <td>1.00</td>
-<td>Solo se <code>lens model = specific</code>. Cruciale per calcoli geometrici precisi[^manual-48-rotate].</td>
+<td>Solo se <code>lens model = specific</code>. Cruciale per calcoli geometrici precisi<sup id="fnref25:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>aspect adjust</strong></td>
 <td>-1.000 a +1.000</td>
 <td>0.000</td>
-<td>Regolazione manuale del rapporto d’aspetto. Utile per anamorfici o correzioni estreme[^manual-48-rotate].</td>
+<td>Regolazione manuale del rapporto d’aspetto. Utile per anamorfici o correzioni estreme<sup id="fnref26:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3202,34 +3202,47 @@ Questo ti permette di separare i due effetti per un controllo fine[^manual-48-ro
 <h2 id="workflow-avanzato-correzione-manuale-e-precisione">Workflow avanzato: correzione manuale e precisione<a class="headerlink" href="#workflow-avanzato-correzione-manuale-e-precisione" title="Permanent link">&para;</a></h2>
 <p>Per massimizzare il controllo, segui questo approccio iterativo:</p>
 <ol>
-<li><strong>Attiva <code>show guides</code></strong>: visualizza griglie sovrapposte (regola dei terzi, spirale aurea) per valutare l’allineamento visivo[^manual-48-rotate].</li>
-<li><strong>Usa il click-drag per rotazione</strong>: con il modulo attivo, clic destro + trascina su qualsiasi punto dell’immagine per disegnare una linea orizzontale/verticale. La rotazione viene adattata in tempo reale per renderla parallela al bordo dell’immagine[^manual-48-rotate].</li>
+<li><strong>Attiva <code>show guides</code></strong>: visualizza griglie sovrapposte (regola dei terzi, spirale aurea) per valutare l’allineamento visivo<sup id="fnref4:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</li>
+<li><strong>Usa il click-drag per rotazione</strong>: con il modulo attivo, clic destro + trascina su qualsiasi punto dell’immagine per disegnare una linea orizzontale/verticale. La rotazione viene adattata in tempo reale per renderla parallela al bordo dell’immagine<sup id="fnref5:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</li>
 <li><strong>Rifai il fitting dopo modifiche manuali</strong>: se regoli <code>lens shift</code> o <code>shear</code> manualmente, clicca nuovamente su un pulsante <code>fit</code> per ricalcolare i parametri ottimali in base alle tue modifiche.</li>
 <li><strong>Verifica con zoom 100%</strong>: le deformazioni prospettiche sono critiche nei dettagli. Controlla sempre bordi, finestre, cornici a ingrandimento massimo.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Perché non usare solo crop and rotate?</p>
-<p>Il modulo <em>crop and rotate</em> esegue una semplice trasformazione affine (rotazione + ritaglio). <code>rotate and perspective</code>, invece, applica una trasformazione proiettiva che mantiene le relazioni geometriche reali tra linee parallele. È indispensabile per architettura, interior design e fotografia tecnica dove la precisione geometrica è prioritaria[^manual-48-rotate].</p>
+<p>Il modulo <em>crop and rotate</em> esegue una semplice trasformazione affine (rotazione + ritaglio). <code>rotate and perspective</code>, invece, applica una trasformazione proiettiva che mantiene le relazioni geometriche reali tra linee parallele. È indispensabile per architettura, interior design e fotografia tecnica dove la precisione geometrica è prioritaria<sup id="fnref6:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</p>
 </div>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non esagerare con il lens shift</strong>: valori superiori a <code>±0.8</code> producono artefatti di interpolazione (pixel “stirati”) e perdita di dettaglio ai bordi. Se necessario, combina con un leggero <code>shear</code> per mitigare l’effetto[^manual-48-rotate].</li>
-<li><strong>Usa <code>lens model = specific</code> per fotografia professionale</strong>: inserisci manualmente lunghezza focale e crop factor (es. <code>24mm</code>, <code>1.5</code> per APS-C) per migliorare la precisione del fitting, soprattutto con obiettivi grandangolari[^manual-48-rotate].</li>
+<li><strong>Non esagerare con il lens shift</strong>: valori superiori a <code>±0.8</code> producono artefatti di interpolazione (pixel “stirati”) e perdita di dettaglio ai bordi. Se necessario, combina con un leggero <code>shear</code> per mitigare l’effetto<sup id="fnref7:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</li>
+<li><strong>Usa <code>lens model = specific</code> per fotografia professionale</strong>: inserisci manualmente lunghezza focale e crop factor (es. <code>24mm</code>, <code>1.5</code> per APS-C) per migliorare la precisione del fitting, soprattutto con obiettivi grandangolari<sup id="fnref8:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup>.</li>
 <li><strong>Disattiva <code>automatic cropping</code> durante il fitting</strong>: abilitalo solo alla fine, per poter valutare l’intera immagine deformata prima del ritaglio definitivo.</li>
 <li><strong>Salva preset per scenari ricorrenti</strong>: crea preset con <code>lens model = specific</code> + <code>focal length</code> preimpostato per il tuo obiettivo fisso (es. “24mm Architectural”).</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/rotate-perspective/">darktable 4.8 User Manual — rotate and perspective</a> — Documentazione ufficiale completa[^manual-48-rotate]</li>
-<li><a href="https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031">Auto-crop from 'rotate and perspective' being disabled</a> — Discussione tecnica su bug noti in dt 5.5+[^pixls-auto-crop]</li>
-<li>[ENG] darktable Full edit #1 — Esempio pratico di correzione prospettica su edificio urbano (min. 7:20)[^yt-full-edit]</li>
-<li>[ENG] darktable 3.8 What is new? — Spiegazione della riorganizzazione logica dei moduli <em>Crop</em>, <em>Rotate</em>, <em>Perspective</em>[^yt-38]</li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/rotate-perspective/">darktable 4.8 User Manual — rotate and perspective</a> — Documentazione ufficiale completa<sup id="fnref9:manual-48-rotate"><a class="footnote-ref" href="#fn:manual-48-rotate">1</a></sup></li>
+<li><a href="https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031">Auto-crop from 'rotate and perspective' being disabled</a> — Discussione tecnica su bug noti in dt 5.5+<sup id="fnref2:pixls-auto-crop"><a class="footnote-ref" href="#fn:pixls-auto-crop">2</a></sup></li>
+<li>[ENG] darktable Full edit #1 — Esempio pratico di correzione prospettica su edificio urbano (min. 7:20)<sup id="fnref:yt-full-edit"><a class="footnote-ref" href="#fn:yt-full-edit">3</a></sup></li>
+<li>[ENG] darktable 3.8 What is new? — Spiegazione della riorganizzazione logica dei moduli <em>Crop</em>, <em>Rotate</em>, <em>Perspective</em><sup id="fnref:yt-38"><a class="footnote-ref" href="#fn:yt-38">4</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-48-rotate]: darktable 4.8 user manual - rotate and perspective, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/rotate-perspective/#<br />
-[^pixls-auto-crop]: Auto-crop from 'rotate and perspective' being disabled - darktable - discuss.pixls.us, https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031<br />
-[^yt-full-edit]: [ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU (min. 7:20)<br />
-[^yt-38]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0 (min. 1:00–4:00)</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-48-rotate">
+<p>darktable 4.8 user manual - rotate and perspective, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/rotate-perspective/#&#160;<a class="footnote-backref" href="#fnref:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:manual-48-rotate" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-auto-crop">
+<p>Auto-crop from 'rotate and perspective' being disabled - darktable - discuss.pixls.us, https://discuss.pixls.us/t/auto-crop-from-rotate-and-perspective-being-disabled/57031&#160;<a class="footnote-backref" href="#fnref:pixls-auto-crop" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-auto-crop" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:yt-full-edit">
+<p>[ENG] darktable Full edit #1, https://www.youtube.com/watch?v=DzdGL30lYjU (min. 7:20)&#160;<a class="footnote-backref" href="#fnref:yt-full-edit" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:yt-38">
+<p>[ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0 (min. 1:00–4:00)&#160;<a class="footnote-backref" href="#fnref:yt-38" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

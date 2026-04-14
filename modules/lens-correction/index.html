@@ -3116,11 +3116,11 @@
 
 
 <h1 id="lens-correction">Lens Correction<a class="headerlink" href="#lens-correction" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>lens correction</strong> è il punto di partenza tecnico della pipeline darktable per la correzione ottica automatica e manuale. Gestisce tre difetti fisici fondamentali introdotti dall’obiettivo: <strong>distorsione geometrica</strong>, <strong>aberrazione cromatica trasversale (TCA)</strong> e <strong>vignettatura fotometrica</strong>, in modo non distruttivo e basato sui dati EXIF o sul database esterno <a href="https://lensfun.github.io/">Lensfun</a>[^dt48-lens-correction]. A partire da darktable 5.4, il modulo supporta anche la simulazione inversa di tali difetti (<em>distort mode</em>), utile per effetti creativi o test di calibrazione[^dt48-lens-correction].</p>
+<p>Il modulo <strong>lens correction</strong> è il punto di partenza tecnico della pipeline darktable per la correzione ottica automatica e manuale. Gestisce tre difetti fisici fondamentali introdotti dall’obiettivo: <strong>distorsione geometrica</strong>, <strong>aberrazione cromatica trasversale (TCA)</strong> e <strong>vignettatura fotometrica</strong>, in modo non distruttivo e basato sui dati EXIF o sul database esterno <a href="https://lensfun.github.io/">Lensfun</a><sup id="fnref:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>. A partire da darktable 5.4, il modulo supporta anche la simulazione inversa di tali difetti (<em>distort mode</em>), utile per effetti creativi o test di calibrazione<sup id="fnref2:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 <p><img alt="Interfaccia del modulo lens correction con griglia sovrapposta per allineamento" src="../images/lens-correction-interface.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Correzione lente = primo passo obbligatorio</p>
-<p>Il modulo lens correction deve essere applicato <strong>prima</strong> di qualsiasi regolazione tonale o cromatica. Correggere distorsione o TCA <em>dopo</em> un tone mapping come AGX può generare artefatti di interpolazione irreversibili e degradare la qualità dei bordi[^dt48-lens-correction][^manuale-flusso].</p>
+<p>Il modulo lens correction deve essere applicato <strong>prima</strong> di qualsiasi regolazione tonale o cromatica. Correggere distorsione o TCA <em>dopo</em> un tone mapping come AGX può generare artefatti di interpolazione irreversibili e degradare la qualità dei bordi<sup id="fnref5:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup><sup id="fnref:manuale-flusso"><a class="footnote-ref" href="#fn:manuale-flusso">3</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo opera su due livelli distinti:</p>
@@ -3128,7 +3128,7 @@
 <li><strong>Correzione automatica</strong>: basata su profili precaricati (Lensfun) o metadati embedded (DNG, Adobe), che richiedono solo la selezione corretta di <em>camera</em> e <em>lens</em>.</li>
 <li><strong>Affinamento manuale</strong>: per casi in cui i profili sono incompleti, assenti o insufficienti — soprattutto per vignettatura e TCA.</li>
 </ol>
-<p>Il modulo non modifica i dati RAW sottostanti, ma applica trasformazioni geometriche e fotometriche nella pixelpipe. In caso di correzioni forti, darktable riempie i pixel mancanti ai bordi ripetendo i valori dei bordi stessi (<em>edge replication</em>), un comportamento visibile su immagini rumorose o fortemente distorte[^dt48-lens-correction].</p>
+<p>Il modulo non modifica i dati RAW sottostanti, ma applica trasformazioni geometriche e fotometriche nella pixelpipe. In caso di correzioni forti, darktable riempie i pixel mancanti ai bordi ripetendo i valori dei bordi stessi (<em>edge replication</em>), un comportamento visibile su immagini rumorose o fortemente distorte<sup id="fnref3:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ideale segue una sequenza rigorosa per massimizzare precisione e prevenire artefatti:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Importazione → verifica EXIF (camera/lens/focal length)
@@ -3146,7 +3146,7 @@
 - Verifica che <code>camera</code> e <code>lens</code> siano identificati correttamente
 - Clicca sul menu a hamburger (⋮) del modulo → <em>Salva nuovo preset</em>
 - Nelle condizioni, imposta <code>model</code> = nome esatto dell’obiettivo (es. <code>Sigma 18-35mm f/1.8 DC HSM</code>)
-- Spunta <em>Applica automaticamente</em>[^manuale-flusso].</p>
+- Spunta <em>Applica automaticamente</em><sup id="fnref2:manuale-flusso"><a class="footnote-ref" href="#fn:manuale-flusso">3</a></sup>.</p>
 </div>
 <h3 id="passo-1-scelta-del-metodo-di-correzione">Passo 1: Scelta del metodo di correzione<a class="headerlink" href="#passo-1-scelta-del-metodo-di-correzione" title="Permanent link">&para;</a></h3>
 <p>Scegli tra tre modalità principali nel menu <em>correction method</em>:</p>
@@ -3162,23 +3162,23 @@
 <tr>
 <td><strong>Lensfun database</strong></td>
 <td>Obiettivo supportato da Lensfun (90% dei moderni)</td>
-<td>Richiede <code>lensfun-update-data</code> aggiornato; supporta tutti i parametri (distorsione, TCA, vignettatura)[^dt48-lens-correction]</td>
+<td>Richiede <code>lensfun-update-data</code> aggiornato; supporta tutti i parametri (distorsione, TCA, vignettatura)<sup id="fnref17:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Embedded metadata</strong></td>
 <td>File DNG o RAW con profili Adobe integrati</td>
-<td>Disponibile solo se i metadati contengono dati di correzione; meno flessibile su focal distance[^dt48-lens-correction]</td>
+<td>Disponibile solo se i metadati contengono dati di correzione; meno flessibile su focal distance<sup id="fnref18:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Only manual vignette</strong></td>
 <td>Profilo Lensfun assente o inadeguato, ma si vuole comunque correggere la vignettatura</td>
-<td>Non applica distorsione né TCA; usa solo i controlli manuali sotto[^dt48-lens-correction]</td>
+<td>Non applica distorsione né TCA; usa solo i controlli manuali sotto<sup id="fnref19:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">TCA e raw chromatic aberrations: evita il doppio intervento</p>
-<p>Se abiliti la correzione TCA qui, <strong>disattiva</strong> il modulo <em>raw chromatic aberrations</em>. L’applicazione simultanea causa over-correction e artefatti cromatici ai bordi (frange viola/ciano)[^dt48-lens-correction].</p>
+<p>Se abiliti la correzione TCA qui, <strong>disattiva</strong> il modulo <em>raw chromatic aberrations</em>. L’applicazione simultanea causa over-correction e artefatti cromatici ai bordi (frange viola/ciano)<sup id="fnref6:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </div>
 <h3 id="passo-2-parametri-fotometrici-critici">Passo 2: Parametri fotometrici critici<a class="headerlink" href="#passo-2-parametri-fotometrici-critici" title="Permanent link">&para;</a></h3>
 <p>I profili Lensfun dipendono da tre parametri letti dai metadati EXIF:</p>
@@ -3196,26 +3196,26 @@
 <td><strong>Focal length</strong></td>
 <td>8–2000 mm</td>
 <td>Auto (da EXIF)</td>
-<td>Determina intensità di distorsione e TCA; fondamentale per zoom[^dt48-lens-correction]</td>
+<td>Determina intensità di distorsione e TCA; fondamentale per zoom<sup id="fnref20:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Aperture</strong></td>
 <td>f/1.2–f/32</td>
 <td>Auto (da EXIF)</td>
-<td>Influenza forza della vignettatura e TCA; molti obiettivi non registrano aperture variabili[^dt48-lens-correction]</td>
+<td>Influenza forza della vignettatura e TCA; molti obiettivi non registrano aperture variabili<sup id="fnref21:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Focal distance</strong></td>
 <td>0.2 m – ∞</td>
 <td><em>Non registrato</em> (spesso vuoto)</td>
-<td>Critico per la vignettatura: impostalo manualmente se il valore è zero o errato[^dt48-lens-correction]</td>
+<td>Critico per la vignettatura: impostalo manualmente se il valore è zero o errato<sup id="fnref22:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p>✅ <strong>Valore tipico per paesaggio</strong>: <code>focal distance = ∞</code><br />
 ✅ <strong>Valore tipico per ritratto</strong>: <code>focal distance = 1.5–3.0 m</code><br />
-❌ <strong>Non lasciare vuoto</strong>: se manca, la vignettatura sarà inaccurata[^dt48-lens-correction].</p>
+❌ <strong>Non lasciare vuoto</strong>: se manca, la vignettatura sarà inaccurata<sup id="fnref7:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </blockquote>
 <p><img alt="Modulo lens correction con parametri fotometrici evidenziati" src="../images/lens-correction-photometric-params.jpg" /></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
@@ -3234,43 +3234,43 @@
 <td><strong>Target geometry</strong></td>
 <td><code>rectilinear</code>, <code>fisheye</code>, <code>panoramic</code>, <code>equirectangular</code>, <code>orthographic</code>, <code>stereographic</code>, <code>equisolid angle</code>, <code>Thoby fisheye</code></td>
 <td><code>rectilinear</code></td>
-<td>Cambia la proiezione dell’immagine: usare <code>fisheye</code> per correggere obiettivi fish-eye, <code>panoramic</code> per immagini stitched[^dt48-lens-correction]</td>
+<td>Cambia la proiezione dell’immagine: usare <code>fisheye</code> per correggere obiettivi fish-eye, <code>panoramic</code> per immagini stitched<sup id="fnref23:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Scale</strong></td>
 <td>0.70–1.50</td>
 <td>Auto</td>
-<td>Ridimensiona l’immagine per evitare angoli neri dopo correzione; il pulsante <em>auto scale</em> calcola il fattore ottimale[^dt48-lens-correction]</td>
+<td>Ridimensiona l’immagine per evitare angoli neri dopo correzione; il pulsante <em>auto scale</em> calcola il fattore ottimale<sup id="fnref24:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Mode</strong></td>
 <td><code>correct</code> (default), <code>distort</code></td>
 <td><code>correct</code></td>
-<td>In <code>distort</code>, inverte gli effetti: simula distorsione di un obiettivo specifico (utile per test o effetti)[^dt48-lens-correction]</td>
+<td>In <code>distort</code>, inverte gli effetti: simula distorsione di un obiettivo specifico (utile per test o effetti)<sup id="fnref25:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>TCA overwrite</strong></td>
 <td>checkbox</td>
 <td>disattivato</td>
-<td>Abilita i controlli manuali <code>TCA red</code> / <code>TCA blue</code>[^dt48-lens-correction]</td>
+<td>Abilita i controlli manuali <code>TCA red</code> / <code>TCA blue</code><sup id="fnref26:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>TCA red</strong></td>
 <td>-100.0–+100.0</td>
 <td>Auto</td>
-<td>Compensa lo shift cromatico del canale rosso; spostalo finché le frange rosse ai bordi non scompaiono[^dt48-lens-correction]</td>
+<td>Compensa lo shift cromatico del canale rosso; spostalo finché le frange rosse ai bordi non scompaiono<sup id="fnref27:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>TCA blue</strong></td>
 <td>-100.0–+100.0</td>
 <td>Auto</td>
-<td>Compensa lo shift cromatico del canale blu; spostalo finché le frange blu non scompaiono[^dt48-lens-correction]</td>
+<td>Compensa lo shift cromatico del canale blu; spostalo finché le frange blu non scompaiono<sup id="fnref28:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Come rilevare la TCA</p>
-<p>Zooma al 100% su un bordo ad alto contrasto (es. orizzonte contro cielo). Cerca frange rosse (sul lato destro del bordo) o blu (sul lato sinistro). Regola <code>TCA red</code>/<code>blue</code> fino a farle scomparire[^dt48-lens-correction].</p>
+<p>Zooma al 100% su un bordo ad alto contrasto (es. orizzonte contro cielo). Cerca frange rosse (sul lato destro del bordo) o blu (sul lato sinistro). Regola <code>TCA red</code>/<code>blue</code> fino a farle scomparire<sup id="fnref8:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </div>
 <h3 id="controlli-embedded-metadata-metodo-selezionato">Controlli Embedded Metadata (metodo selezionato)<a class="headerlink" href="#controlli-embedded-metadata-metodo-selezionato" title="Permanent link">&para;</a></h3>
 <table>
@@ -3287,13 +3287,13 @@
 <td><strong>Use latest algorithm</strong></td>
 <td>checkbox</td>
 <td>disattivato</td>
-<td>Abilita l’algoritmo di correzione più recente (richiede ricarica immagine)[^dt48-lens-correction]</td>
+<td>Abilita l’algoritmo di correzione più recente (richiede ricarica immagine)<sup id="fnref29:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Fine-tuning button</strong></td>
 <td>toggle</td>
 <td>nascosto</td>
-<td>Espande i controlli manuali per distorsione, vignettatura, TCA red/blue e scala immagine[^dt48-lens-correction]</td>
+<td>Espande i controlli manuali per distorsione, vignettatura, TCA red/blue e scala immagine<sup id="fnref30:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3313,25 +3313,25 @@
 <td><strong>Strength</strong></td>
 <td>-100% – +100%</td>
 <td>0%</td>
-<td>Valori positivi schiariscono i bordi; negativi li scuriscono ulteriormente[^dt48-lens-correction]</td>
+<td>Valori positivi schiariscono i bordi; negativi li scuriscono ulteriormente<sup id="fnref31:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Radius</strong></td>
 <td>0% – 100%</td>
 <td>50%</td>
-<td>Area centrale non modificata: 50% = cerchio che copre metà larghezza/altezza[^dt48-lens-correction]</td>
+<td>Area centrale non modificata: 50% = cerchio che copre metà larghezza/altezza<sup id="fnref32:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Steepness</strong></td>
 <td>0% – 100%</td>
 <td>50%</td>
-<td>Gradualità della transizione: 0% = transizione morbida, 100% = transizione netta[^dt48-lens-correction]</td>
+<td>Gradualità della transizione: 0% = transizione morbida, 100% = transizione netta<sup id="fnref33:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
 <p>✅ <strong>Valore tipico per correzione standard</strong>: <code>strength = +20%</code>, <code>radius = 65%</code>, <code>steepness = 70%</code><br />
-🔍 <strong>Visualizza la maschera</strong>: clicca l’icona <em>mask</em> accanto a <code>strength</code> per vedere l’area influenzata[^dt48-lens-correction].</p>
+🔍 <strong>Visualizza la maschera</strong>: clicca l’icona <em>mask</em> accanto a <code>strength</code> per vedere l’area influenzata<sup id="fnref9:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </blockquote>
 <p><img alt="Controllo manuale vignettatura con maschera visualizzata" src="../images/lens-correction-manual-vignette-mask.jpg" /></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
@@ -3339,30 +3339,43 @@
 <p>Se Lensfun non riconosce correttamente il tuo obiettivo (es. obiettivo terzo produttore o adattato), segui questa procedura:</p>
 <ol>
 <li>Clicca su <code>lens</code> → cerca manualmente nel menu a tendina il modello più vicino</li>
-<li>Se usi un adattatore (es. Canon EF su Sony E-mount), esegui prima <a href="https://lensfun.github.io/manual/v0.3.2/lensfun-add-adapter.html"><code>lensfun-add-adapter</code></a> per abilitare i profili compatibili[^dt48-lens-correction]</li>
-<li>Se il profilo è assente, verifica la lista ufficiale: <a href="https://lensfun.github.io/lenslist/">lenslist.lensfun.github.io</a>, quindi esegui <code>lensfun-update-data</code>[^dt48-lens-correction]</li>
+<li>Se usi un adattatore (es. Canon EF su Sony E-mount), esegui prima <a href="https://lensfun.github.io/manual/v0.3.2/lensfun-add-adapter.html"><code>lensfun-add-adapter</code></a> per abilitare i profili compatibili<sup id="fnref10:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
+<li>Se il profilo è assente, verifica la lista ufficiale: <a href="https://lensfun.github.io/lenslist/">lenslist.lensfun.github.io</a>, quindi esegui <code>lensfun-update-data</code><sup id="fnref11:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
 </ol>
 <h3 id="correzione-per-obiettivi-anamorfici">Correzione per obiettivi anamorfici<a class="headerlink" href="#correzione-per-obiettivi-anamorfici" title="Permanent link">&para;</a></h3>
-<p>Per obiettivi anamorfici, <strong>non usare</strong> <code>target geometry</code>. Usa invece il modulo <em>rotate and perspective</em> per correggere il rapporto d’aspetto e la distorsione verticale/horizontale separatamente[^dt48-lens-correction].</p>
+<p>Per obiettivi anamorfici, <strong>non usare</strong> <code>target geometry</code>. Usa invece il modulo <em>rotate and perspective</em> per correggere il rapporto d’aspetto e la distorsione verticale/horizontale separatamente<sup id="fnref4:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 <h3 id="performance-e-artefatti">Performance e artefatti<a class="headerlink" href="#performance-e-artefatti" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Le correzioni forti (distorsione &gt; ±30%, TCA &gt; ±50) possono causare aliasing o <em>ringing</em> ai bordi</li>
-<li>Se vedi pixel bianchi/neri ai bordi dopo correzione, applica un leggero <em>crop</em> (anche 1–2 px) per rimuovere i bordi replicati[^dt48-lens-correction]</li>
-<li>Su CPU vecchie o senza OpenCL, attiva <em>fast preview</em> nel modulo per accelerare il rendering in tempo reale[^dt48-lens-correction]</li>
+<li>Se vedi pixel bianchi/neri ai bordi dopo correzione, applica un leggero <em>crop</em> (anche 1–2 px) per rimuovere i bordi replicati<sup id="fnref12:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
+<li>Su CPU vecchie o senza OpenCL, attiva <em>fast preview</em> nel modulo per accelerare il rendering in tempo reale<sup id="fnref13:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 User Manual — Lens Correction</a> — Documentazione ufficiale completa[^dt48-lens-correction]</li>
-<li>🎥 <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=240">A Dabble in Photography — Lens Correction Workflow</a> — Tutorial pratico con correzione manuale di TCA[^dt-yt-comparison]</li>
-<li>📚 <a href="https://github.com/darktable-org/darktable/blob/master/doc/manual/Manuale_Flusso_Lavoro_darktable.md">Manuale Flusso Lavoro darktable (2026)</a> — Capitolo 2.1: “Correzione lente”[^manuale-flusso]</li>
-<li>🌐 <a href="https://lensfun.github.io/lenslist/">Lensfun Project — Supported Lenses</a> — Lista aggiornata di obiettivi supportati[^dt48-lens-correction]</li>
-<li>🛠️ <a href="https://lensfun.github.io/manual/v0.3.2/lensfun-update-data.html">lensfun-update-data — Manuale CLI</a> — Aggiorna il database localmente[^dt48-lens-correction]</li>
+<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 User Manual — Lens Correction</a> — Documentazione ufficiale completa<sup id="fnref14:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
+<li>🎥 <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=240">A Dabble in Photography — Lens Correction Workflow</a> — Tutorial pratico con correzione manuale di TCA<sup id="fnref:dt-yt-comparison"><a class="footnote-ref" href="#fn:dt-yt-comparison">2</a></sup></li>
+<li>📚 <a href="https://github.com/darktable-org/darktable/blob/master/doc/manual/Manuale_Flusso_Lavoro_darktable.md">Manuale Flusso Lavoro darktable (2026)</a> — Capitolo 2.1: “Correzione lente”<sup id="fnref3:manuale-flusso"><a class="footnote-ref" href="#fn:manuale-flusso">3</a></sup></li>
+<li>🌐 <a href="https://lensfun.github.io/lenslist/">Lensfun Project — Supported Lenses</a> — Lista aggiornata di obiettivi supportati<sup id="fnref15:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
+<li>🛠️ <a href="https://lensfun.github.io/manual/v0.3.2/lensfun-update-data.html">lensfun-update-data — Manuale CLI</a> — Aggiorna il database localmente<sup id="fnref16:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-lens-correction]: darktable 4.8 user manual - lens correction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/<br />
-[^dt-yt-comparison]: [ENG] Comparison Darktable vs C1 vs LR, A Dabble in Photography, https://www.youtube.com/watch?v=TahuhILulgY<br />
-[^manuale-flusso]: Manuale_Flusso_Lavoro_darktable, Capitolo 2.1 — Correzione lente, Aprile 2026<br />
-[^dt-fr-lens]: darktable.fr — tutoriel sur la correction des objectifs, https://darktable.fr/posts/2021/08/reduction-des-aberrations-chromatiques-avec-darktable-3-6/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-lens-correction">
+<p>darktable 4.8 user manual - lens correction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/&#160;<a class="footnote-backref" href="#fnref:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:dt48-lens-correction" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt-yt-comparison">
+<p>[ENG] Comparison Darktable vs C1 vs LR, A Dabble in Photography, https://www.youtube.com/watch?v=TahuhILulgY&#160;<a class="footnote-backref" href="#fnref:dt-yt-comparison" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manuale-flusso">
+<p>Manuale_Flusso_Lavoro_darktable, Capitolo 2.1 — Correzione lente, Aprile 2026&#160;<a class="footnote-backref" href="#fnref:manuale-flusso" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manuale-flusso" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manuale-flusso" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt-fr-lens">
+<p>darktable.fr — tutoriel sur la correction des objectifs, https://darktable.fr/posts/2021/08/reduction-des-aberrations-chromatiques-avec-darktable-3-6/&#160;<a class="footnote-backref" href="#fnref:dt-fr-lens" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

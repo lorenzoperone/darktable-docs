@@ -3060,11 +3060,11 @@
 
 
 <h1 id="composite-fusioni-avanzate-e-effetti-creativi">Composite: Fusioni avanzate e effetti creativi<a class="headerlink" href="#composite-fusioni-avanzate-e-effetti-creativi" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>composite</strong> è uno strumento avanzato per la fusione di livelli in darktable, introdotto ufficialmente come funzionalità stabile a partire dalla versione 5.0.0[^dt50-update]. Non è un semplice “livello di sfocatura”, ma un sistema completo per combinare due versioni della stessa immagine (originale + modificata) con modalità di fusione, maschere e controlli di opacità finemente granulari[^orton-tutorial]. È il cuore tecnico per replicare effetti classici come <strong>Orton</strong>, <strong>Dragan</strong>, <strong>glow</strong> o <strong>double exposure</strong>, senza uscire dall’ecosistema scene-referred di darktable[^dabble-orton][^dabble-dragon].</p>
+<p>Il modulo <strong>composite</strong> è uno strumento avanzato per la fusione di livelli in darktable, introdotto ufficialmente come funzionalità stabile a partire dalla versione 5.0.0<sup id="fnref:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup>. Non è un semplice “livello di sfocatura”, ma un sistema completo per combinare due versioni della stessa immagine (originale + modificata) con modalità di fusione, maschere e controlli di opacità finemente granulari<sup id="fnref:orton-tutorial"><a class="footnote-ref" href="#fn:orton-tutorial">2</a></sup>. È il cuore tecnico per replicare effetti classici come <strong>Orton</strong>, <strong>Dragan</strong>, <strong>glow</strong> o <strong>double exposure</strong>, senza uscire dall’ecosistema scene-referred di darktable<sup id="fnref:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup><sup id="fnref:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup>.</p>
 <p><img alt="Interfaccia del modulo composite con impostazioni per effetto Orton" src="../images/composite-intro.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Composite ≠ Soften</p>
-<p>Il modulo <strong>soften</strong> offre un'alternativa rapida per effetti glow, ma opera su un singolo livello con sfocatura interna. <strong>Composite</strong>, invece, richiede esplicitamente una <em>duplicata</em> dell’immagine ed è progettato per fusioni precise tra due stati distinti della pipeline — ideale per workflow non distruttivi e per effetti che richiedono controllo fine sulla luminanza e sul colore[^orton-tutorial].</p>
+<p>Il modulo <strong>soften</strong> offre un'alternativa rapida per effetti glow, ma opera su un singolo livello con sfocatura interna. <strong>Composite</strong>, invece, richiede esplicitamente una <em>duplicata</em> dell’immagine ed è progettato per fusioni precise tra due stati distinti della pipeline — ideale per workflow non distruttivi e per effetti che richiedono controllo fine sulla luminanza e sul colore<sup id="fnref2:orton-tutorial"><a class="footnote-ref" href="#fn:orton-tutorial">2</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Composite opera <em>dopo</em> tutti i moduli di sviluppo (es. <code>exposure</code>, <code>AgX</code>, <code>color balance rgb</code>) e prima del profilo di output. La sua architettura prevede due flussi paralleli:</p>
@@ -3075,10 +3075,10 @@
 <p>Il modulo combina questi due flussi tramite:
 - Una <strong>modalità di fusione</strong> (blend mode), simile a Photoshop (Multiply, Screen, Overlay, etc.)
 - Un <strong>controllo di opacità globale</strong> (opacity)
-- Una <strong>maschera di fusione</strong> (blend mask) opzionale, per applicare l’effetto solo su aree selezionate[^dabble-orton]</p>
-<p>Questo approccio consente di costruire effetti complessi mantenendo la separazione logica tra correzione globale e trattamento creativo — un vantaggio fondamentale rispetto ai workflow esterni o ai moduli monolitici[^dabble-dragon].</p>
+- Una <strong>maschera di fusione</strong> (blend mask) opzionale, per applicare l’effetto solo su aree selezionate<sup id="fnref2:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></p>
+<p>Questo approccio consente di costruire effetti complessi mantenendo la separazione logica tra correzione globale e trattamento creativo — un vantaggio fondamentale rispetto ai workflow esterni o ai moduli monolitici<sup id="fnref2:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso standard per un effetto Orton o Dragan si articola in quattro fasi chiare[^dabble-orton][^dabble-dragon]:</p>
+<p>Il flusso standard per un effetto Orton o Dragan si articola in quattro fasi chiare<sup id="fnref3:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup><sup id="fnref3:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzione globale (exposure → AgX → color balance rgb)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Duplicazione dell’immagine (Ctrl+D)
@@ -3089,7 +3089,7 @@
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Posizionamento critico nella pipeline</p>
-<p>Composite deve essere inserito <strong>dopo</strong> tutti i moduli di tonalità e colore, ma <strong>prima</strong> di <code>output color profile</code> e <code>watermark</code>. Se posizionato troppo presto, interferisce con la compressione tonale; se troppo tardi, viene ignorato nel rendering finale[^dt50-update].</p>
+<p>Composite deve essere inserito <strong>dopo</strong> tutti i moduli di tonalità e colore, ma <strong>prima</strong> di <code>output color profile</code> e <code>watermark</code>. Se posizionato troppo presto, interferisce con la compressione tonale; se troppo tardi, viene ignorato nel rendering finale<sup id="fnref2:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-creazione-e-configurazione-del-duplicato">Passo 1: Creazione e configurazione del duplicato<a class="headerlink" href="#passo-1-creazione-e-configurazione-del-duplicato" title="Permanent link">&para;</a></h3>
 <p>Prima di attivare Composite, crea una copia identica dell’immagine:</p>
@@ -3116,12 +3116,12 @@
 <tr>
 <td><strong>Blend mode</strong></td>
 <td><code>multiply</code></td>
-<td>Per effetto Orton: aumenta il contrasto e genera glow nelle luci. Usato con livello sfocato e leggermente sovraesposto[^dabble-orton]</td>
+<td>Per effetto Orton: aumenta il contrasto e genera glow nelle luci. Usato con livello sfocato e leggermente sovraesposto<sup id="fnref7:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Opacity</strong></td>
 <td>30–60%</td>
-<td>Controlla l’intensità dell’effetto. Valori &gt;70% tendono a oscurare eccessivamente[^dabble-orton]</td>
+<td>Controlla l’intensità dell’effetto. Valori &gt;70% tendono a oscurare eccessivamente<sup id="fnref8:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Foreground opacity</strong></td>
@@ -3140,7 +3140,7 @@
 <ul>
 <li><code>Multiply</code>: scurisce le zone scure, illumina le luci — ideale per glow morbido e caldo  </li>
 <li><code>Screen</code>: illumina le zone scure, brucia le luci — utile per effetti eterei o nebbiosi<br />
-Non confondere con <code>overlay</code>, che altera il contrasto in modo non lineare e può generare artefatti nei dettagli fini[^dabble-orton].</li>
+Non confondere con <code>overlay</code>, che altera il contrasto in modo non lineare e può generare artefatti nei dettagli fini<sup id="fnref6:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup>.</li>
 </ul>
 </div>
 <h3 id="passo-3-maschera-di-fusione-opzionale-ma-potente">Passo 3: Maschera di fusione (opzionale ma potente)<a class="headerlink" href="#passo-3-maschera-di-fusione-opzionale-ma-potente" title="Permanent link">&para;</a></h3>
@@ -3149,7 +3149,7 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <li>Clicca su <code>+</code> sotto <em>Blend mask</em>  </li>
 <li>Scegli una maschera esistente o crea una nuova (gradiente, ellisse, disegnata)  </li>
 <li>Imposta <code>Feathering radius</code> a 20–50 px per transizioni naturali  </li>
-<li>Usa <code>Invert mask</code> per applicare l’effetto <em>solo fuori</em> dall’area selezionata[^dabble-dragon]</li>
+<li>Usa <code>Invert mask</code> per applicare l’effetto <em>solo fuori</em> dall’area selezionata<sup id="fnref4:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></li>
 </ul>
 <p><img alt="Maschera gradiente applicata a Composite per isolare lo sfondo" src="../images/composite-blend-mask.jpg" /></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
@@ -3167,43 +3167,43 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <td><strong>Blend mode</strong></td>
 <td><code>normal</code>, <code>multiply</code>, <code>screen</code>, <code>overlay</code>, <code>softlight</code>, <code>hardlight</code>, <code>difference</code>, <code>addition</code>, <code>subtract</code>, <code>divide</code>, <code>darken only</code>, <code>lighten only</code></td>
 <td><code>normal</code></td>
-<td>Modalità di fusione tra i due livelli. <code>multiply</code> e <code>screen</code> sono le più usate per effetti creativi[^dabble-orton]</td>
+<td>Modalità di fusione tra i due livelli. <code>multiply</code> e <code>screen</code> sono le più usate per effetti creativi<sup id="fnref9:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Opacity</strong></td>
 <td>0% – 100%</td>
 <td>50%</td>
-<td>Opacità globale dell’intera operazione composite. Valori bassi (20–35%) per effetti sottili[^dabble-dragon]</td>
+<td>Opacità globale dell’intera operazione composite. Valori bassi (20–35%) per effetti sottili<sup id="fnref7:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></td>
 </tr>
 <tr>
 <td><strong>Foreground opacity</strong></td>
 <td>0% – 100%</td>
 <td>100%</td>
-<td>Opacità del livello composito (duplicato). Riduci per attenuare l’effetto senza toccare la fusione[^dt50-update]</td>
+<td>Opacità del livello composito (duplicato). Riduci per attenuare l’effetto senza toccare la fusione<sup id="fnref4:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Background opacity</strong></td>
 <td>0% – 100%</td>
 <td>100%</td>
-<td>Opacità del livello base (originale). Utile per bilanciare esposizione quando il duplicato è molto luminoso[^dabble-dragon]</td>
+<td>Opacità del livello base (originale). Utile per bilanciare esposizione quando il duplicato è molto luminoso<sup id="fnref8:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></td>
 </tr>
 <tr>
 <td><strong>Blend mask</strong></td>
 <td>—</td>
 <td><code>none</code></td>
-<td>Maschera parametrica o disegnata da applicare alla fusione. Richiede una maschera già creata nel <em>mask manager</em>[^dabble-orton]</td>
+<td>Maschera parametrica o disegnata da applicare alla fusione. Richiede una maschera già creata nel <em>mask manager</em><sup id="fnref10:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></td>
 </tr>
 <tr>
 <td><strong>Mask opacity</strong></td>
 <td>0% – 100%</td>
 <td>100%</td>
-<td>Opacità della maschera stessa (non del livello) — utile per soft transition[^dabble-dragon]</td>
+<td>Opacità della maschera stessa (non del livello) — utile per soft transition<sup id="fnref9:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></td>
 </tr>
 <tr>
 <td><strong>Mask contrast</strong></td>
 <td>-100% – +100%</td>
 <td>0%</td>
-<td>Aumenta o riduce il contrasto della maschera, affinando i bordi dell’effetto[^dt50-update]</td>
+<td>Aumenta o riduce il contrasto della maschera, affinando i bordi dell’effetto<sup id="fnref5:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3218,7 +3218,7 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <li><code>Blend mode = multiply</code>  </li>
 <li><code>Opacity = 45%</code>  </li>
 <li><code>Foreground opacity = 90%</code>  </li>
-<li><code>Blend mask = gradient</code> (da alto a basso, invertita) per isolare lo sfondo[^dabble-orton]</li>
+<li><code>Blend mask = gradient</code> (da alto a basso, invertita) per isolare lo sfondo<sup id="fnref4:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></li>
 </ol>
 <h3 id="effetto-dragan-nitidezza-drammatica">Effetto Dragan (nitidezza drammatica)<a class="headerlink" href="#effetto-dragan-nitidezza-drammatica" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3230,21 +3230,21 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <li><code>Blend mode = screen</code>  </li>
 <li><code>Opacity = 35%</code>  </li>
 <li><code>Foreground opacity = 100%</code>  </li>
-<li><code>Blend mask = none</code> (globale) o <code>ellipse</code> (per enfatizzare il soggetto)[^dabble-dragon]</li>
+<li><code>Blend mask = none</code> (globale) o <code>ellipse</code> (per enfatizzare il soggetto)<sup id="fnref5:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></li>
 </ol>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Usa snapshot</strong>: salva uno snapshot <em>prima</em> di attivare Composite per confronti rapidi (<code>S</code> per creare, <code>Tab</code> per navigare)  </li>
 <li><strong>Evita sovrapposizioni multiple</strong>: non usare Composite più di una volta per immagine — preferisci maschere complesse o moduli dedicati (<code>soften</code>, <code>grain</code>, <code>vignetting</code>)  </li>
-<li><strong>Calibrazione del monitor</strong>: gli effetti composite sono fortemente influenzati dal gamma del display. Verifica con <code>tools → preferences → color management → soft proofing</code>[^dt50-update]  </li>
-<li><strong>Performance</strong>: Composite è computazionalmente costoso. Disattivalo (<code>disable</code>) durante l’editing rapido, riattivalo solo per valutazioni finali[^dabble-orton]</li>
+<li><strong>Calibrazione del monitor</strong>: gli effetti composite sono fortemente influenzati dal gamma del display. Verifica con <code>tools → preferences → color management → soft proofing</code><sup id="fnref3:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup>  </li>
+<li><strong>Performance</strong>: Composite è computazionalmente costoso. Disattivalo (<code>disable</code>) durante l’editing rapido, riattivalo solo per valutazioni finali<sup id="fnref5:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Debugging delle fusioni</p>
 <p>Se l’effetto non appare:<br />
 1. Verifica che il duplicato sia <em>attivo</em> nella timeline (pallino verde acceso)<br />
 2. Controlla che <code>composite</code> sia posizionato <em>dopo</em> <code>blur</code> e <code>monochrome</code> nella lista dei moduli<br />
-3. Assicurati che <code>Blend mode ≠ normal</code> e che <code>Opacity &gt; 0%</code>[^dabble-dragon]</p>
+3. Assicurati che <code>Blend mode ≠ normal</code> e che <code>Opacity &gt; 0%</code><sup id="fnref6:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3254,11 +3254,23 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <li>📚 <a href="https://darktable.gitlab.io/dtdocs/manual/chapter-composite.html">Official darktable manual — Composite module</a>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt50-update]: darktable.fr, “Version 5.0.0”, 2024-12-20 — conferma introduzione stabile di composite e posizionamento nella pipeline[^dt50-update]<br />
-[^orton-tutorial]: darktable.fr, “l'effet Orton et le module composite”, 2025-10-13 — descrizione pratica, workflow e confronto con soften[^orton-tutorial]<br />
-[^dabble-orton]: YouTube, “The Orton effect in darktable”, A Dabble in Photography, 2026-04-12 — dimostrazione passo-passo con parametri reali (blur radius 20–25 px, multiply, opacity 45%)[^dabble-orton]<br />
-[^dabble-dragon]: YouTube, “The Dragan effect in darktable”, A Dabble in Photography, 2026-04-12 — uso di invert + screen, foreground opacity 100%, blending globale[^dabble-dragon]<br />
-[^dt50-update]: darktable.fr, “Version 5.0.0”, 2024-12-20 — dettagli tecnici su blend mask, opacità e integrazione con mask manager[^dt50-update]</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt50-update">
+<p>darktable.fr, “Version 5.0.0”, 2024-12-20 — dettagli tecnici su blend mask, opacità e integrazione con mask manager<sup id="fnref6:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup>&#160;<a class="footnote-backref" href="#fnref:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt50-update" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:orton-tutorial">
+<p>darktable.fr, “l'effet Orton et le module composite”, 2025-10-13 — descrizione pratica, workflow e confronto con soften<sup id="fnref3:orton-tutorial"><a class="footnote-ref" href="#fn:orton-tutorial">2</a></sup>&#160;<a class="footnote-backref" href="#fnref:orton-tutorial" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:orton-tutorial" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:orton-tutorial" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dabble-orton">
+<p>YouTube, “The Orton effect in darktable”, A Dabble in Photography, 2026-04-12 — dimostrazione passo-passo con parametri reali (blur radius 20–25 px, multiply, opacity 45%)<sup id="fnref11:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup>&#160;<a class="footnote-backref" href="#fnref:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dabble-orton" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dabble-dragon">
+<p>YouTube, “The Dragan effect in darktable”, A Dabble in Photography, 2026-04-12 — uso di invert + screen, foreground opacity 100%, blending globale<sup id="fnref10:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup>&#160;<a class="footnote-backref" href="#fnref:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dabble-dragon" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

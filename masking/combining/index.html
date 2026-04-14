@@ -2469,10 +2469,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#esempi-praticiaimasks" class="md-nav__link">
+  <a href="#esempi-pratici" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempi pratici[^aimasks]
+        Esempi pratici
       
     </span>
   </a>
@@ -3045,10 +3045,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#esempi-praticiaimasks" class="md-nav__link">
+  <a href="#esempi-pratici" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempi pratici[^aimasks]
+        Esempi pratici
       
     </span>
   </a>
@@ -3092,7 +3092,7 @@
 
 
 <h1 id="combinare-le-maschere">Combinare le Maschere<a class="headerlink" href="#combinare-le-maschere" title="Permanent link">&para;</a></h1>
-<p>Il vero potere delle maschere emerge quando si combinano piu' tipi insieme: drawn + parametric, raster, e le nuove maschere AI.[^manual]</p>
+<p>Il vero potere delle maschere emerge quando si combinano piu' tipi insieme: drawn + parametric, raster, e le nuove maschere AI.<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h2 id="drawn-parametric">Drawn + Parametric<a class="headerlink" href="#drawn-parametric" title="Permanent link">&para;</a></h2>
 <p>Esempio: saturare solo l'erba verde in primo piano, escludendo alberi e cielo.</p>
 <ol>
@@ -3103,47 +3103,47 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Intersezione gradiente</p>
-<p>Usare l'intersezione del gradiente nel Gestore Maschere per transizioni piu' naturali.[^landscape]</p>
+<p>Usare l'intersezione del gradiente nel Gestore Maschere per transizioni piu' naturali.<sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">6</a></sup></p>
 </div>
 <h2 id="maschere-raster">Maschere raster<a class="headerlink" href="#maschere-raster" title="Permanent link">&para;</a></h2>
-<p>Le maschere raster riutilizzano la maschera gia' calcolata da un altro modulo.[^manual-raster]</p>
+<p>Le maschere raster riutilizzano la maschera gia' calcolata da un altro modulo.<sup id="fnref:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">2</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Creare in cima alla pipeline</p>
-<p>Creare le maschere raster nel modulo Esposizione (in cima alla pipeline) per massima compatibilita' con i moduli a valle.[^dt54]</p>
+<p>Creare le maschere raster nel modulo Esposizione (in cima alla pipeline) per massima compatibilita' con i moduli a valle.<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Raffinamenti indipendenti</p>
-<p>I raffinamenti (feather, detail) sono indipendenti per modulo: puoi modificarli senza alterare la maschera di base.[^dt54]</p>
+<p>I raffinamenti (feather, detail) sono indipendenti per modulo: puoi modificarli senza alterare la maschera di base.<sup id="fnref2:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Limitazione</p>
-<p>Le maschere raster NON possono essere combinate con maschere disegnate (come i gradienti). Ricreare usando strumenti disegnati e il gestore maschere.[^nightsky]</p>
+<p>Le maschere raster NON possono essere combinate con maschere disegnate (come i gradienti). Ricreare usando strumenti disegnati e il gestore maschere.<sup id="fnref:nightsky"><a class="footnote-ref" href="#fn:nightsky">5</a></sup></p>
 </div>
 <h2 id="maschere-raster-esterne-dt-52">Maschere raster esterne (dt 5.2+)<a class="headerlink" href="#maschere-raster-esterne-dt-52" title="Permanent link">&para;</a></h2>
-<p>Importazione di maschere create con software esterno:[^extmasks]</p>
+<p>Importazione di maschere create con software esterno:<sup id="fnref:extmasks"><a class="footnote-ref" href="#fn:extmasks">7</a></sup></p>
 <ol>
 <li><strong>Esportare</strong> l'immagine senza trasformazioni geometriche (NO crop, NO lens correction, NO rotation)</li>
-<li>Usare formato <strong>PNG</strong> (TIF puo' causare errori nella conversione PFM)[^extmasks]</li>
+<li>Usare formato <strong>PNG</strong> (TIF puo' causare errori nella conversione PFM)<sup id="fnref2:extmasks"><a class="footnote-ref" href="#fn:extmasks">7</a></sup></li>
 <li>Creare la maschera nel software esterno</li>
 <li>Convertire in formato <strong>PFM</strong> (Portable Float Map)</li>
 <li>Importare tramite il modulo <strong>External Raster Masks</strong></li>
 </ol>
 <div class="admonition danger">
 <p class="admonition-title">File PFM</p>
-<p>I file PFM occupano spazio significativo e NON devono essere cancellati o spostati, altrimenti la maschera si rompe.[^extmasks]</p>
+<p>I file PFM occupano spazio significativo e NON devono essere cancellati o spostati, altrimenti la maschera si rompe.<sup id="fnref3:extmasks"><a class="footnote-ref" href="#fn:extmasks">7</a></sup></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Canali colore</p>
-<p>Sfruttare i singoli canali (R, G, B) della maschera per isolare aree specifiche o regolare l'intensita' dell'effetto.[^extmasks]</p>
+<p>Sfruttare i singoli canali (R, G, B) della maschera per isolare aree specifiche o regolare l'intensita' dell'effetto.<sup id="fnref4:extmasks"><a class="footnote-ref" href="#fn:extmasks">7</a></sup></p>
 </div>
 <blockquote>
-<p>Per il workflow completo con maschere esterne: <em>darktable 5.2 -- External Raster Masks module</em>[^dt52] | Documentazione ufficiale[^manual-raster]</p>
+<p>Per il workflow completo con maschere esterne: <em>darktable 5.2 -- External Raster Masks module</em><sup id="fnref:dt52"><a class="footnote-ref" href="#fn:dt52">4</a></sup> | Documentazione ufficiale<sup id="fnref2:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">2</a></sup></p>
 </blockquote>
 <h2 id="maschere-ai-sam2-dt-56">Maschere AI (SAM2, dt 5.6+)<a class="headerlink" href="#maschere-ai-sam2-dt-56" title="Permanent link">&para;</a></h2>
-<p>darktable 5.6 introduce maschere AI integrate basate su <strong>SAM2</strong> (Segment Anything Model):[^aimasks]</p>
+<p>darktable 5.6 introduce maschere AI integrate basate su <strong>SAM2</strong> (Segment Anything Model):<sup id="fnref:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p><img alt="AI masks introduction" src="../../images/ai-masks-intro.jpg" /></p>
 <h3 id="modelli-disponibili">Modelli disponibili<a class="headerlink" href="#modelli-disponibili" title="Permanent link">&para;</a></h3>
-<p>Sono disponibili diversi modelli AI, ognuno con caratteristiche proprie:[^gpu-thread]</p>
+<p>Sono disponibili diversi modelli AI, ognuno con caratteristiche proprie:<sup id="fnref:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3179,7 +3179,7 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Accelerazione GPU</p>
-<p>Su <strong>macOS (Apple Silicon)</strong> l'accelerazione CoreML e' inclusa di default. Su <strong>Windows</strong> e' incluso DirectML. Su <strong>Linux</strong> e' necessario installare ONNX Runtime con supporto GPU (CUDA per NVIDIA, ROCm per AMD, OpenVINO per Intel) tramite lo script in <code>tools/ai/</code>.[^gpu-thread]</p>
+<p>Su <strong>macOS (Apple Silicon)</strong> l'accelerazione CoreML e' inclusa di default. Su <strong>Windows</strong> e' incluso DirectML. Su <strong>Linux</strong> e' necessario installare ONNX Runtime con supporto GPU (CUDA per NVIDIA, ROCm per AMD, OpenVINO per Intel) tramite lo script in <code>tools/ai/</code>.<sup id="fnref2:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
 <p>Per verificare che la GPU sia attiva, avviare darktable con <code>darktable -d ai</code> e cercare nel log:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[darktable_ai] execution provider: CUDA
 </code></pre></div></p>
@@ -3189,7 +3189,7 @@
 <li>Nel <strong>Gestore Maschere</strong>, aggiungere una nuova maschera di tipo <strong>AI object</strong></li>
 <li>Attendere la fase di <strong>analisi dell'immagine</strong> (appare "object mask: analyzing image...")</li>
 <li><strong>Tracciare approssimativamente</strong> sul soggetto con il pennello: la dimensione del pennello va scelta <em>prima</em> di iniziare</li>
-<li><strong>Rilasciare il pulsante del mouse</strong> per confermare immediatamente la maschera[^aimasks]</li>
+<li><strong>Rilasciare il pulsante del mouse</strong> per confermare immediatamente la maschera<sup id="fnref3:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></li>
 </ol>
 <p><img alt="AI SAM2 brush tool" src="../../images/ai-masks-sam2-brush.jpg" /></p>
 <ol>
@@ -3199,7 +3199,7 @@
 <p>Dopo la generazione iniziale, la maschera puo' essere perfezionata:</p>
 <ul>
 <li><strong>Click sinistro</strong>: aggiungi punto <strong>positivo</strong> (includi area)</li>
-<li><strong>Click destro / centrale</strong>: aggiungi punto <strong>negativo</strong> (escludi area)[^aimasks]</li>
+<li><strong>Click destro / centrale</strong>: aggiungi punto <strong>negativo</strong> (escludi area)<sup id="fnref4:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></li>
 <li><strong>++shift+click++</strong>: rimuovi un punto di controllo esistente</li>
 <li><strong>++a++</strong>: zoom in/out senza modificare la maschera</li>
 <li><strong>++shift+wheel++</strong>: regola il feathering</li>
@@ -3250,7 +3250,7 @@
 <p><img alt="AI masks vectorized" src="../../images/ai-masks-vectorized.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Salvataggio nel file XMP</p>
-<p>Le maschere AI vettorizzate vengono salvate direttamente nel file <strong>.xmp</strong> di darktable come dati codificati in base64 nel campo <code>mask_points</code>. Un file XMP tipico occupa solo <strong>~14 kB</strong> per l'intero set di parametri e maschere, senza alcun impatto significativo sulla dimensione del file RAW.[^aimasks]</p>
+<p>Le maschere AI vettorizzate vengono salvate direttamente nel file <strong>.xmp</strong> di darktable come dati codificati in base64 nel campo <code>mask_points</code>. Un file XMP tipico occupa solo <strong>~14 kB</strong> per l'intero set di parametri e maschere, senza alcun impatto significativo sulla dimensione del file RAW.<sup id="fnref5:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p>Questo significa che:
 - <strong>Nessun file PFM esterno</strong> da gestire, spostare o conservare
 - <strong>Portabilita' totale</strong>: copia il file XMP e la maschera segue l'immagine
@@ -3258,21 +3258,21 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Vettorizzare maschere raster esterne</p>
-<p>Anche le maschere raster generate da plugin esterni (es. SAM3) possono essere <strong>vettorizzate</strong> tramite il pulsante <strong>Vectorize</strong> nel modulo External Raster Masks. Questo processo converte la maschera raster in un percorso vettoriale, permettendo di eliminare il file PFM e risparmiare spazio disco.[^aimasks]</p>
+<p>Anche le maschere raster generate da plugin esterni (es. SAM3) possono essere <strong>vettorizzate</strong> tramite il pulsante <strong>Vectorize</strong> nel modulo External Raster Masks. Questo processo converte la maschera raster in un percorso vettoriale, permettendo di eliminare il file PFM e risparmiare spazio disco.<sup id="fnref6:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <h3 id="limitazioni-e-workaround">Limitazioni e workaround<a class="headerlink" href="#limitazioni-e-workaround" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Bordi complessi</p>
-<p>Il mascheramento AI puo' diventare <strong>inefficiente su bordi complessi</strong> (alberi vs. cielo, rami intrecciati, fogliame). Nei test, l'AI ha selezionato erroneamente il cielo invece della vegetazione, o ha perso dettagli fini tra i rami. In questi casi, le maschere disegnate o parametriche sono <strong>piu' veloci e precise</strong>.[^aimasks]</p>
+<p>Il mascheramento AI puo' diventare <strong>inefficiente su bordi complessi</strong> (alberi vs. cielo, rami intrecciati, fogliame). Nei test, l'AI ha selezionato erroneamente il cielo invece della vegetazione, o ha perso dettagli fini tra i rami. In questi casi, le maschere disegnate o parametriche sono <strong>piu' veloci e precise</strong>.<sup id="fnref7:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p><strong>Workaround</strong>: selezionare l'area piu' semplice (es. il cielo) e <strong>invertire la maschera</strong> per isolare la vegetazione.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Prompt testuali instabili</p>
-<p>I prompt testuali nei modelli AI (es. "select sky", "select dog") possono essere <strong>instabili o fallire silenziosamente</strong>. Il modello puo' non riconoscere il soggetto desiderato o produrre risultati inaspettati. Se ci sono problemi, passare alla <strong>selezione manuale a punti</strong> (click positivi/negativi).[^aimasks]</p>
+<p>I prompt testuali nei modelli AI (es. "select sky", "select dog") possono essere <strong>instabili o fallire silenziosamente</strong>. Il modello puo' non riconoscere il soggetto desiderato o produrre risultati inaspettati. Se ci sono problemi, passare alla <strong>selezione manuale a punti</strong> (click positivi/negativi).<sup id="fnref8:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Maschere vettoriali e forme organiche</p>
-<p>Le maschere vettoriali (incluse quelle AI) sono <strong>inadatte a forme estremamente complesse o organiche</strong>. Per cieli con alberi, bordi frattali o texture molto dettagliate, preferire maschere raster o parametriche.[^aimasks]</p>
+<p>Le maschere vettoriali (incluse quelle AI) sono <strong>inadatte a forme estremamente complesse o organiche</strong>. Per cieli con alberi, bordi frattali o texture molto dettagliate, preferire maschere raster o parametriche.<sup id="fnref9:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <h3 id="quando-usare-le-maschere-ai-vs-alternative">Quando usare le maschere AI vs alternative<a class="headerlink" href="#quando-usare-le-maschere-ai-vs-alternative" title="Permanent link">&para;</a></h3>
 <table>
@@ -3319,7 +3319,7 @@
 <h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Performance su CPU vs GPU</p>
-<p>L'inferenza AI su <strong>CPU</strong> funziona immediatamente senza configurazioni aggiuntive, ma puo' richiedere diversi secondi per immagine. Con <strong>GPU acceleration</strong> (CUDA, CoreML, DirectML), il tempo di generazione si riduce drasticamente.[^gpu-thread]</p>
+<p>L'inferenza AI su <strong>CPU</strong> funziona immediatamente senza configurazioni aggiuntive, ma puo' richiedere diversi secondi per immagine. Con <strong>GPU acceleration</strong> (CUDA, CoreML, DirectML), il tempo di generazione si riduce drasticamente.<sup id="fnref3:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
 <p>Per monitorare le performance:
 - Avviare con <code>darktable -d ai</code> per il debug completo
 - Verificare il provider attivo nel log (<code>CUDA</code>, <code>CoreML</code>, <code>DirectML</code>)
@@ -3327,9 +3327,9 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Analisi iniziale dell'immagine</p>
-<p>La prima attivazione di una maschera AI richiede la fase di <strong>analisi dell'immagine</strong>, che puo' richiedere alcuni secondi. Le modifiche successive con punti di controllo sono invece quasi istantanee.[^aimasks]</p>
+<p>La prima attivazione di una maschera AI richiede la fase di <strong>analisi dell'immagine</strong>, che puo' richiedere alcuni secondi. Le modifiche successive con punti di controllo sono invece quasi istantanee.<sup id="fnref10:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
-<h3 id="esempi-praticiaimasks">Esempi pratici[^aimasks]<a class="headerlink" href="#esempi-praticiaimasks" title="Permanent link">&para;</a></h3>
+<h3 id="esempi-pratici">Esempi pratici<sup id="fnref2:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup><a class="headerlink" href="#esempi-pratici" title="Permanent link">&para;</a></h3>
 <p><strong>Esempio 1: Ritratto di animale (macaco)</strong></p>
 <p><img alt="AI masks final result" src="../../images/ai-masks-final.jpg" /></p>
 <ul>
@@ -3349,19 +3349,44 @@
 - Vettorizzazione della maschera raster per eliminare il file PFM
 - Risultato comparabile alla maschera AI integrata, ma con tempi di elaborazione piu' lunghi</p>
 <blockquote>
-<p>Per il workflow completo con esempi visivi: <em>AI masks in darktable</em>[^aimasks] | Documentazione ufficiale sulle maschere raster[^manual-raster]</p>
+<p>Per il workflow completo con esempi visivi: <em>AI masks in darktable</em><sup id="fnref11:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup> | Documentazione ufficiale sulle maschere raster<sup id="fnref3:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">2</a></sup></p>
 </blockquote>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- Mask Manager</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/mask-manager/">docs.darktable.org</a>
-[^manual-raster]: <em>darktable User Manual -- Raster Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-raster.md</code>
-[^dt54]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography
-[^dt52]: <em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 Release</a></em> -- A Dabble in Photography
-[^nightsky]: <em><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">Night Sky Full Edit</a></em> -- A Dabble in Photography
-[^landscape]: <em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography
-[^extmasks]: <em><a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">External raster masks</a></em> -- A Dabble in Photography
-[^aimasks]: <em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography
-[^pixls-sam2]: <em>discuss.pixls.us -- Testing AI Object Masks (SAM2)</em> | <code>processed/discuss-pixls/t-testing-ai-object-masks-in-darktable-nightly-builds-56684.md</code>
-[^gpu-thread]: <em>discuss.pixls.us -- GPU acceleration for AI features in Darktable</em> | <code>processed/discuss-pixls/t-gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scri.md</code></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual">
+<p><em>darktable User Manual -- Mask Manager</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/mask-manager/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-raster">
+<p><em>darktable User Manual -- Raster Masks</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-raster.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-raster" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-raster" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-raster" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54">
+<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52">
+<p><em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 Release</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt52" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:nightsky">
+<p><em><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">Night Sky Full Edit</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:nightsky" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:landscape">
+<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:extmasks">
+<p><em><a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">External raster masks</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:extmasks" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:extmasks" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:extmasks" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:extmasks" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aimasks">
+<p><em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-sam2">
+<p><em>discuss.pixls.us -- Testing AI Object Masks (SAM2)</em> | <code>processed/discuss-pixls/t-testing-ai-object-masks-in-darktable-nightly-builds-56684.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-sam2" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gpu-thread">
+<p><em>discuss.pixls.us -- GPU acceleration for AI features in Darktable</em> | <code>processed/discuss-pixls/t-gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scri.md</code>&#160;<a class="footnote-backref" href="#fnref:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

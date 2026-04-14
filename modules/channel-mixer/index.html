@@ -3572,13 +3572,13 @@
 
 
 <h1 id="channel-mixer-mix-di-canali">Channel Mixer (Mix di Canali)<a class="headerlink" href="#channel-mixer-mix-di-canali" title="Permanent link">&para;</a></h1>
-<p>Il <strong>Channel Mixer</strong> (Mix di Canali) e uno dei moduli piu potenti di darktable per la manipolazione cromatica. Permette di controllare in modo indipendente quanto ciascun canale di ingresso (Rosso, Verde, Blu) contribuisce a ciascun canale di uscita, attraverso una <strong>moltiplicazione matriciale 3x3</strong>.[^manual]</p>
+<p>Il <strong>Channel Mixer</strong> (Mix di Canali) e uno dei moduli piu potenti di darktable per la manipolazione cromatica. Permette di controllare in modo indipendente quanto ciascun canale di ingresso (Rosso, Verde, Blu) contribuisce a ciascun canale di uscita, attraverso una <strong>moltiplicazione matriciale 3x3</strong>.<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Modulo deprecato</p>
-<p>Questo modulo e <strong>deprecato dalla versione 3.4</strong> di darktable. La funzionalita e stata integralmente sostituita dal modulo <a href="../color-calibration/">Color Calibration</a>, che offre le stesse capacita di mix dei canali tramite i cursori <strong>input R/G/B</strong> nelle schede di destinazione colore. Questa documentazione e valida per entrambi i moduli, poiché la logica matematica e identica.[^manual]</p>
+<p>Questo modulo e <strong>deprecato dalla versione 3.4</strong> di darktable. La funzionalita e stata integralmente sostituita dal modulo <a href="../color-calibration/">Color Calibration</a>, che offre le stesse capacita di mix dei canali tramite i cursori <strong>input R/G/B</strong> nelle schede di destinazione colore. Questa documentazione e valida per entrambi i moduli, poiché la logica matematica e identica.<sup id="fnref10:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h2 id="come-funziona">Come funziona<a class="headerlink" href="#come-funziona" title="Permanent link">&para;</a></h2>
-<p>Il Channel Mixer esegue una trasformazione lineare dei canali RGB dell'immagine. Ogni pixel viene elaborato secondo la seguente operazione matriciale:[^ch1]</p>
+<p>Il Channel Mixer esegue una trasformazione lineare dei canali RGB dell'immagine. Ogni pixel viene elaborato secondo la seguente operazione matriciale:<sup id="fnref:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌ R_out ┐     ┌ Rr Rg Rb ┐     ┌ R_in ┐
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│ G_out │  =  │ Gr Gg Gb │  ×  │ G_in │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└ B_out ┘     └ Br Bg Bb ┘     └ B_in ┘
@@ -3591,7 +3591,7 @@
 </ul>
 <p><img alt="Channel mixer matrix explanation" src="../../images/channel-mixer-matrix.jpg" /></p>
 <h3 id="stato-iniziale-matrice-identita">Stato iniziale: matrice identita<a class="headerlink" href="#stato-iniziale-matrice-identita" title="Permanent link">&para;</a></h3>
-<p>Per impostazione predefinita, il modulo non altera l'immagine. La matrice e quella <strong>identita</strong>, dove ogni canale di uscita riceve contributo solo dal corrispondente canale di ingresso:[^ch1]</p>
+<p>Per impostazione predefinita, il modulo non altera l'immagine. La matrice e quella <strong>identita</strong>, dove ogni canale di uscita riceve contributo solo dal corrispondente canale di ingresso:<sup id="fnref2:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌ R_out ┐     ┌ 1  0  0 ┐     ┌ R_in ┐
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│ G_out │  =  │ 0  1  0 │  ×  │ G_in │
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>└ B_out ┘     └ 0  0  1 ┘     └ B_in ┘
@@ -3629,16 +3629,16 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Come leggere i controlli</p>
-<p>Ogni scheda di destinazione (R, G, B) ha tre cursori che indicano quanto i canali di <strong>ingresso</strong> R, G, B contribuiscono a quel canale di <strong>uscita</strong>. Spostare un cursore verso destra aggiunge quel canale di ingresso; spostarlo verso sinistra (valori negativi) lo sottrae.[^manual]</p>
+<p>Ogni scheda di destinazione (R, G, B) ha tre cursori che indicano quanto i canali di <strong>ingresso</strong> R, G, B contribuiscono a quel canale di <strong>uscita</strong>. Spostare un cursore verso destra aggiunge quel canale di ingresso; spostarlo verso sinistra (valori negativi) lo sottrae.<sup id="fnref11:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h2 id="regola-fondamentale-la-somma-dei-coefficienti">Regola fondamentale: la somma dei coefficienti<a class="headerlink" href="#regola-fondamentale-la-somma-dei-coefficienti" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Mantieni la somma vicina a 1</p>
-<p>Per ogni canale di uscita, mantieni la <strong>somma dei tre coefficienti</strong> vicina a <strong>1.0</strong>. Questo preserva la luminosita originale dell'immagine. Somme maggiori di 1 schiariscono l'immagine; somme minori la scuriscono.[^ch1]</p>
+<p>Per ogni canale di uscita, mantieni la <strong>somma dei tre coefficienti</strong> vicina a <strong>1.0</strong>. Questo preserva la luminosita originale dell'immagine. Somme maggiori di 1 schiariscono l'immagine; somme minori la scuriscono.<sup id="fnref6:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 </div>
-<p>Ad esempio, per un canale di uscita con coefficienti <code>[0.5, 0.3, 0.2]</code>, la somma e <code>1.0</code> -- la luminosita rimane invariata. Con <code>[1.5, 0.3, 0.2]</code> la somma e <code>2.0</code> -- il risultato sara piu luminoso.[^ch1]</p>
+<p>Ad esempio, per un canale di uscita con coefficienti <code>[0.5, 0.3, 0.2]</code>, la somma e <code>1.0</code> -- la luminosita rimane invariata. Con <code>[1.5, 0.3, 0.2]</code> la somma e <code>2.0</code> -- il risultato sara piu luminoso.<sup id="fnref3:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <h2 id="interpretazione-intuitiva-dei-cursori">Interpretazione intuitiva dei cursori<a class="headerlink" href="#interpretazione-intuitiva-dei-cursori" title="Permanent link">&para;</a></h2>
-<p>Per comprendere rapidamente l'effetto di ciascun cursore:[^manual]</p>
+<p>Per comprendere rapidamente l'effetto di ciascun cursore:<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3666,12 +3666,12 @@
 </tbody>
 </table>
 <h2 id="uso-pratico-1-conversione-in-bianco-e-nero">Uso pratico 1: Conversione in bianco e nero<a class="headerlink" href="#uso-pratico-1-conversione-in-bianco-e-nero" title="Permanent link">&para;</a></h2>
-<p>Uno degli impieghi piu utili del Channel Mixer e la creazione di immagini monocromatiche personalizzate. Seleziona la destinazione <strong>Grigio</strong> (gray) e regola i cursori R, G, B per controllare come ciascun canale contribuisce alla luminosita finale.[^manual]</p>
+<p>Uno degli impieghi piu utili del Channel Mixer e la creazione di immagini monocromatiche personalizzate. Seleziona la destinazione <strong>Grigio</strong> (gray) e regola i cursori R, G, B per controllare come ciascun canale contribuisce alla luminosita finale.<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GRAY_out = [r  g  b] × [R_in, G_in, B_in]
 </code></pre></div>
 <p><img alt="B&amp;W conversion with channel mixer" src="../../images/channel-mixer-bw-conversion.jpg" /></p>
 <h3 id="simulare-pellicole-tradizionali">Simulare pellicole tradizionali<a class="headerlink" href="#simulare-pellicole-tradizionali" title="Permanent link">&para;</a></h3>
-<p>Diverse pellicole bianco e nero hanno sensibilita differenti ai colori. Il Channel Mixer permette di simulare queste caratteristiche:[^manual]</p>
+<p>Diverse pellicole bianco e nero hanno sensibilita differenti ai colori. Il Channel Mixer permette di simulare queste caratteristiche:<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3722,12 +3722,12 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Infrarosso in bianco e nero</p>
-<p>Per foto infrarosse, il solo canale <strong>rosso</strong> produce risultati eccellenti: la vegetazione che riflette IR appare molto chiara, mentre il cielo diventa scuro. E un punto di partenza classico per il B&amp;W infrarosso.[^ch1]</p>
+<p>Per foto infrarosse, il solo canale <strong>rosso</strong> produce risultati eccellenti: la vegetazione che riflette IR appare molto chiara, mentre il cielo diventa scuro. E un punto di partenza classico per il B&amp;W infrarosso.<sup id="fnref7:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 </div>
 <h2 id="uso-pratico-2-fotografia-infrarosso-a-falsi-colori">Uso pratico 2: Fotografia infrarosso a falsi colori<a class="headerlink" href="#uso-pratico-2-fotografia-infrarosso-a-falsi-colori" title="Permanent link">&para;</a></h2>
-<p>La fotografia infrarossa con filtro (es. 720nm) produce immagini con forte dominante rossa. Il Channel Mixer permette di convertire queste immagini in <strong>falsi colori</strong> realistici attraverso lo scambio dei canali.[^ir]</p>
+<p>La fotografia infrarossa con filtro (es. 720nm) produce immagini con forte dominante rossa. Il Channel Mixer permette di convertire queste immagini in <strong>falsi colori</strong> realistici attraverso lo scambio dei canali.<sup id="fnref:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <h3 id="ricetta-base-scambio-rosso-blu">Ricetta base: scambio Rosso-Blu<a class="headerlink" href="#ricetta-base-scambio-rosso-blu" title="Permanent link">&para;</a></h3>
-<p>Questa e la trasformazione fondamentale per l'infrarosso a falsi colori. Il canale rosso (che contiene la riflessione IR della vegetazione) viene mappato sul blu in uscita, e il blu viene mappato sul rosso:[^ch1]</p>
+<p>Questa e la trasformazione fondamentale per l'infrarosso a falsi colori. Il canale rosso (che contiene la riflessione IR della vegetazione) viene mappato sul blu in uscita, e il blu viene mappato sul rosso:<sup id="fnref4:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3759,9 +3759,9 @@
 </tbody>
 </table>
 <p><img alt="Infrared channel swap" src="../../images/channel-mixer-ir-channel-swap.jpg" /></p>
-<p>Il risultato: la vegetazione (che era rossa nell'immagine IR) diventa blu/ciano, e il cielo (che era blu) diventa rosso. L'effetto e simile al filtro Wratten #80A usato in pellicola.[^ir]</p>
+<p>Il risultato: la vegetazione (che era rossa nell'immagine IR) diventa blu/ciano, e il cielo (che era blu) diventa rosso. L'effetto e simile al filtro Wratten #80A usato in pellicola.<sup id="fnref2:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <h3 id="personalizzare-la-ricetta-ir">Personalizzare la ricetta IR<a class="headerlink" href="#personalizzare-la-ricetta-ir" title="Permanent link">&para;</a></h3>
-<p>Non esiste una combinazione "giusta" universale. Ogni sensore e filtro produce risultati leggermente diversi. Ecco come personalizzare:[^ir]</p>
+<p>Non esiste una combinazione "giusta" universale. Ogni sensore e filtro produce risultati leggermente diversi. Ecco come personalizzare:<sup id="fnref3:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <ol>
 <li><strong>Parti dallo scambio R-B</strong> come base</li>
 <li><strong>Regola la saturazione</strong> modificando i coefficienti: valori piu alti aumentano la saturazione</li>
@@ -3771,7 +3771,7 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Ricetta personalizzata da video tutorial</p>
-<p>Una ricetta avanzata per falsi colori con maggiore saturazione del fogliame:[^ir]</p>
+<p>Una ricetta avanzata per falsi colori con maggiore saturazione del fogliame:<sup id="fnref6:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3802,21 +3802,21 @@
 </tr>
 </tbody>
 </table>
-<p>Il valore negativo sul blu in ingresso crea un'inversione che produce tonalita piu ricche e saturazione differenziata.[^ch1]</p>
+<p>Il valore negativo sul blu in ingresso crea un'inversione che produce tonalita piu ricche e saturazione differenziata.<sup id="fnref8:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 </div>
 <h3 id="workflow-completo-per-infrarosso">Workflow completo per infrarosso<a class="headerlink" href="#workflow-completo-per-infrarosso" title="Permanent link">&para;</a></h3>
 <p><img alt="Infrared final result" src="../../images/channel-mixer-ir-final.jpg" /></p>
 <ol>
-<li><strong>Importa il RAW</strong> e imposta il profilo colore di ingresso su <code>Linear Rec 2020</code>[^ir]</li>
-<li><strong>Bilanciamento del bianco</strong>: punta su vegetazione (foglie o erba) -- la riflessione IR funziona come riferimento neutro[^ir]</li>
-<li><strong>Color Calibration</strong> (tab CAT): applica il preset "infrared" se disponibile, oppure imposta manualmente lo scambio R-B[^ir]</li>
-<li><strong>Filmic RGB</strong>: regola esposizione relativa bianco/nero per il mapping tonale[^ir]</li>
-<li><strong>Color Balance RGB</strong> (opzionale): per affinamenti creativi sulle tonalita[^ir]</li>
+<li><strong>Importa il RAW</strong> e imposta il profilo colore di ingresso su <code>Linear Rec 2020</code><sup id="fnref7:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
+<li><strong>Bilanciamento del bianco</strong>: punta su vegetazione (foglie o erba) -- la riflessione IR funziona come riferimento neutro<sup id="fnref8:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
+<li><strong>Color Calibration</strong> (tab CAT): applica il preset "infrared" se disponibile, oppure imposta manualmente lo scambio R-B<sup id="fnref9:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
+<li><strong>Filmic RGB</strong>: regola esposizione relativa bianco/nero per il mapping tonale<sup id="fnref10:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
+<li><strong>Color Balance RGB</strong> (opzionale): per affinamenti creativi sulle tonalita<sup id="fnref11:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
 </ol>
 <h2 id="uso-pratico-3-correzione-colore-mirata">Uso pratico 3: Correzione colore mirata<a class="headerlink" href="#uso-pratico-3-correzione-colore-mirata" title="Permanent link">&para;</a></h2>
-<p>Il Channel Mixer eccelle nel correggere problemi cromatici specifici che altri moduli non affrontano facilmente.[^manual]</p>
+<p>Il Channel Mixer eccelle nel correggere problemi cromatici specifici che altri moduli non affrontano facilmente.<sup id="fnref5:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="dominanti-da-led-blu">Dominanti da LED blu<a class="headerlink" href="#dominanti-da-led-blu" title="Permanent link">&para;</a></h3>
-<p>Le luci LED blu spesso producono colori fuori gamut sgradevoli. Una matrice utile per renderli piu magenta:[^manual]</p>
+<p>Le luci LED blu spesso producono colori fuori gamut sgradevoli. Una matrice utile per renderli piu magenta:<sup id="fnref6:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3849,44 +3849,44 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Usa maschere parametriche</p>
-<p>Quando correggi colori specifici (come LED blu), applica il Channel Mixer solo sulle zone problematiche usando una <strong>maschera parametrica</strong> basata sulla luminanza o sul canale blu. Applicarlo globalmente altererebbe tutta l'immagine.[^manual]</p>
+<p>Quando correggi colori specifici (come LED blu), applica il Channel Mixer solo sulle zone problematiche usando una <strong>maschera parametrica</strong> basata sulla luminanza o sul canale blu. Applicarlo globalmente altererebbe tutta l'immagine.<sup id="fnref12:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <h3 id="viraggio-del-cielo">Viraggio del cielo<a class="headerlink" href="#viraggio-del-cielo" title="Permanent link">&para;</a></h3>
-<p>Per modificare il colore del cielo senza alterare il resto della scena, il Channel Mixer offre un controllo chirurgico:[^ch2]</p>
+<p>Per modificare il colore del cielo senza alterare il resto della scena, il Channel Mixer offre un controllo chirurgico:<sup id="fnref:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <p><img alt="Sky retargeting with channel mixer" src="../../images/channel-mixer-sky-retarget.jpg" /></p>
 <p><strong>Esempio: cielo blu verso ciano</strong></p>
-<p>Il cielo blu ha valori RGB tipo <code>(86, 100, 159)</code>. Per spostarlo verso il ciano, occorre aggiungere verde al canale blu. La scelta del canale di ingresso e cruciale:[^ch2]</p>
+<p>Il cielo blu ha valori RGB tipo <code>(86, 100, 159)</code>. Per spostarlo verso il ciano, occorre aggiungere verde al canale blu. La scelta del canale di ingresso e cruciale:<sup id="fnref2:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <ul>
 <li>Usando <strong>input Blu</strong> (valore 159): la modifica e piu forte, ma altera anche altre zone blu</li>
 <li>Usando <strong>input Rosso</strong> (valore 86): la modifica e piu selettiva, perche il rosso ha il valore piu basso nel cielo</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Scegli il canale con il differenziale maggiore</p>
-<p>Per minimizzare gli effetti collaterali, seleziona il canale di ingresso in cui la differenza tra il valore del colore target e quello dei colori da preservare e massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica.[^ch2]</p>
+<p>Per minimizzare gli effetti collaterali, seleziona il canale di ingresso in cui la differenza tra il valore del colore target e quello dei colori da preservare e massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica.<sup id="fnref5:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 </div>
 <h3 id="viraggio-verso-il-magenta">Viraggio verso il magenta<a class="headerlink" href="#viraggio-verso-il-magenta" title="Permanent link">&para;</a></h3>
-<p>Per un cielo al tramonto che tende al magenta senza alterare gialli e arancioni:[^ch2]</p>
+<p>Per un cielo al tramonto che tende al magenta senza alterare gialli e arancioni:<sup id="fnref3:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <ol>
 <li>Posiziona <strong>campioni live</strong> (color picker) sul cielo e sulle zone da preservare</li>
 <li>Monitora i valori RGB in tempo reale sul vettorscopio</li>
 <li>Aggiungi rosso o sottrai verde/blu dal canale blu di destinazione</li>
-<li>Confronta diverse combinazioni: aggiungere rosso schiarisce, sottrarre verde/blu scurisce[^ch2]</li>
+<li>Confronta diverse combinazioni: aggiungere rosso schiarisce, sottrarre verde/blu scurisce<sup id="fnref6:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h2 id="uso-pratico-4-tonalita-globali-ed-effetti-creativi">Uso pratico 4: Tonalita globali ed effetti creativi<a class="headerlink" href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" title="Permanent link">&para;</a></h2>
 <h3 id="effetto-marrone-vintage">Effetto "marrone vintage"<a class="headerlink" href="#effetto-marrone-vintage" title="Permanent link">&para;</a></h3>
-<p>Per dare a un'immagine un aspetto invecchiato con tonalita marrone:[^ch2]</p>
+<p>Per dare a un'immagine un aspetto invecchiato con tonalita marrone:<sup id="fnref4:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <p><img alt="Brown tint effect" src="../../images/channel-mixer-brown-tint.jpg" /></p>
 <ol>
-<li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)[^ch2]</li>
+<li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)<sup id="fnref7:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 <li>Nel Channel Mixer, modifica i canali per introdurre piu rosso e verde, meno blu</li>
-<li>Il marrone nel modello additivo e: molto rosso, meno verde, ancora meno blu (es. <code>161, 106, 64</code>)[^ch2]</li>
-<li>Bilancia la luminosita compensando con valori negativi dove necessario[^ch2]</li>
+<li>Il marrone nel modello additivo e: molto rosso, meno verde, ancora meno blu (es. <code>161, 106, 64</code>)<sup id="fnref8:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Bilancia la luminosita compensando con valori negativi dove necessario<sup id="fnref9:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h3 id="falsi-colori-estremi">Falsi colori estremi<a class="headerlink" href="#falsi-colori-estremi" title="Permanent link">&para;</a></h3>
-<p>Per effetti creativi estremi (non fotograficamente realistici), si possono usare coefficienti molto alti e illuminanti personalizzati. L'immagine risultante avra tonalita innaturali ma artisticamente interessanti.[^ir]</p>
+<p>Per effetti creativi estremi (non fotograficamente realistici), si possono usare coefficienti molto alti e illuminanti personalizzati. L'immagine risultante avra tonalita innaturali ma artisticamente interessanti.<sup id="fnref4:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <h2 id="parametri-del-modulo">Parametri del modulo<a class="headerlink" href="#parametri-del-modulo" title="Permanent link">&para;</a></h2>
 <h3 id="destinazione-destination">Destinazione (Destination)<a class="headerlink" href="#destinazione-destination" title="Permanent link">&para;</a></h3>
-<p>Seleziona il canale di uscita influenzato dai cursori:[^manual]</p>
+<p>Seleziona il canale di uscita influenzato dai cursori:<sup id="fnref7:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3926,14 +3926,14 @@
 </tbody>
 </table>
 <h3 id="cursori-input-r-g-b">Cursori Input R / G / B<a class="headerlink" href="#cursori-input-r-g-b" title="Permanent link">&para;</a></h3>
-<p>Per ogni destinazione, definiscono quanto ciascun canale di ingresso contribuisce al canale di uscita selezionato:[^manual]</p>
+<p>Per ogni destinazione, definiscono quanto ciascun canale di ingresso contribuisce al canale di uscita selezionato:<sup id="fnref8:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <ul>
 <li><strong>Valore positivo</strong>: aggiunge il canale di ingresso, spostando il colore verso la tinta corrispondente</li>
 <li><strong>Valore negativo</strong>: sottrae il canale di ingresso, spostando il colore verso la tinta complementare</li>
 <li><strong>Valore zero</strong>: il canale di ingresso non contribuisce</li>
 </ul>
 <h3 id="normalize-channels">Normalize Channels<a class="headerlink" href="#normalize-channels" title="Permanent link">&para;</a></h3>
-<p>Quando attivata, questa opzione normalizza automaticamente i coefficienti. Utile per evitare variazioni di luminosita non intenzionali, ma riduce il controllo fine.[^ch1]</p>
+<p>Quando attivata, questa opzione normalizza automaticamente i coefficienti. Utile per evitare variazioni di luminosita non intenzionali, ma riduce il controllo fine.<sup id="fnref5:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <h2 id="workflow-e-buone-pratiche">Workflow e buone pratiche<a class="headerlink" href="#workflow-e-buone-pratiche" title="Permanent link">&para;</a></h2>
 <h3 id="quando-usare-channel-mixer-vs-altri-moduli">Quando usare Channel Mixer vs altri moduli<a class="headerlink" href="#quando-usare-channel-mixer-vs-altri-moduli" title="Permanent link">&para;</a></h3>
 <table>
@@ -3948,7 +3948,7 @@
 <tr>
 <td>Bilanciamento del bianco globale</td>
 <td>Color Calibration (tab CAT)</td>
-<td>Adattamento cromatico percettivo con CAT16[^pipeline]</td>
+<td>Adattamento cromatico percettivo con CAT16<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
 </tr>
 <tr>
 <td>Viraggio creativo mirato</td>
@@ -3963,7 +3963,7 @@
 <tr>
 <td>Correzione colore locale</td>
 <td>Channel Mixer + maschera parametrica</td>
-<td>Isolamento cromatico preciso[^manual]</td>
+<td>Isolamento cromatico preciso<sup id="fnref14:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></td>
 </tr>
 <tr>
 <td>Regolazione tonale generale</td>
@@ -3975,11 +3975,11 @@
 <h3 id="gestione-delle-maschere">Gestione delle maschere<a class="headerlink" href="#gestione-delle-maschere" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Non mascherare il bilanciamento del bianco</p>
-<p>Evita di applicare maschere al Channel Mixer quando lo usi per bilanciamento del bianco o calibrazione globale. Differenze di bilanciamento cromatico localizzate risultano innaturali. Preferisci correzioni globali e sottili.[^ch2]</p>
+<p>Evita di applicare maschere al Channel Mixer quando lo usi per bilanciamento del bianco o calibrazione globale. Differenze di bilanciamento cromatico localizzate risultano innaturali. Preferisci correzioni globali e sottili.<sup id="fnref10:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 </div>
-<p>Le maschere parametriche sono invece molto utili quando il Channel Mixer viene usato per <strong>correzioni selettive</strong> (es. correggere solo le luci LED blu). In questo caso, maschera basandoti sul canale cromatica dominante o sulla luminanza.[^manual]</p>
+<p>Le maschere parametriche sono invece molto utili quando il Channel Mixer viene usato per <strong>correzioni selettive</strong> (es. correggere solo le luci LED blu). In questo caso, maschera basandoti sul canale cromatica dominante o sulla luminanza.<sup id="fnref9:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="ordine-nella-pipeline">Ordine nella pipeline<a class="headerlink" href="#ordine-nella-pipeline" title="Permanent link">&para;</a></h3>
-<p>Il Channel Mixer (tramite Color Calibration) si colloca nella fase di <strong>calibrazione colore</strong> della pipeline scene-referred:[^pipeline]</p>
+<p>Il Channel Mixer (tramite Color Calibration) si colloca nella fase di <strong>calibrazione colore</strong> della pipeline scene-referred:<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
 <ol>
 <li>White Balance (lasciare su <em>Camera Reference</em>)</li>
 <li>Profilo colore in ingresso (<code>Linear Rec 2020</code>)</li>
@@ -3988,17 +3988,17 @@
 <li>Color Balance RGB (per affinamenti creativi)</li>
 </ol>
 <h3 id="istanze-multiple">Istanze multiple<a class="headerlink" href="#istanze-multiple" title="Permanent link">&para;</a></h3>
-<p>Per illuminazione mista o correzioni complesse, puoi usare <strong>istanze multiple</strong> del modulo Color Calibration con maschere diverse. Ad esempio, una istanza per il cielo e una per il terreno in un paesaggio infrarosso.[^ir]</p>
+<p>Per illuminazione mista o correzioni complesse, puoi usare <strong>istanze multiple</strong> del modulo Color Calibration con maschere diverse. Ad esempio, una istanza per il cielo e una per il terreno in un paesaggio infrarosso.<sup id="fnref5:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Evita applicazioni duplicate</p>
-<p>Quando duplichi un modulo di calibrazione, darktable potrebbe segnalare un'applicazione doppia. Verifica la modalita operativa per evitare conflitti tra le istanze.[^ir]</p>
+<p>Quando duplichi un modulo di calibrazione, darktable potrebbe segnalare un'applicazione doppia. Verifica la modalita operativa per evitare conflitti tra le istanze.<sup id="fnref12:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 </div>
 <h2 id="esempi-passo-passo">Esempi passo-passo<a class="headerlink" href="#esempi-passo-passo" title="Permanent link">&para;</a></h2>
 <h3 id="esempio-1-bw-con-pelle-morbida">Esempio 1: B&amp;W con pelle morbida<a class="headerlink" href="#esempio-1-bw-con-pelle-morbida" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Aggiungi un modulo <strong>Color Calibration</strong> (nuova istanza)</li>
 <li>Vai alla scheda di destinazione <strong>Grigio</strong> (o usa il Channel Mixer deprecato, destinazione Gray)</li>
-<li>Imposta i cursori: <strong>Rosso = 0.90</strong>, <strong>Verde = 0.30</strong>, <strong>Blu = -0.30</strong>[^manual]</li>
+<li>Imposta i cursori: <strong>Rosso = 0.90</strong>, <strong>Verde = 0.30</strong>, <strong>Blu = -0.30</strong><sup id="fnref13:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></li>
 <li>Verifica sull'istogramma che la distribuzione tonale sia bilanciata</li>
 <li>Se la pelle appare troppo chiara, riduci il cursore Rosso a 0.80</li>
 <li>Per piu dettaglio nei tessuti, aumenta il Verde a 0.40</li>
@@ -4006,10 +4006,10 @@
 <h3 id="esempio-2-infrarosso-a-falsi-colori">Esempio 2: Infrarosso a falsi colori<a class="headerlink" href="#esempio-2-infrarosso-a-falsi-colori" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Apri il RAW della foto infrarossa in darktable</li>
-<li>Imposta <strong>Linear Rec 2020</strong> come profilo colore di ingresso[^ir]</li>
-<li>Nel modulo <strong>White Balance</strong>, punta il contagocce su vegetazione (foglie o erba)[^ir]</li>
+<li>Imposta <strong>Linear Rec 2020</strong> come profilo colore di ingresso<sup id="fnref13:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
+<li>Nel modulo <strong>White Balance</strong>, punta il contagocce su vegetazione (foglie o erba)<sup id="fnref14:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
 <li>Aggiungi un modulo <strong>Color Calibration</strong> (seconda istanza)</li>
-<li>Imposta i coefficienti per lo scambio R-B:[^ch1]</li>
+<li>Imposta i coefficienti per lo scambio R-B:<sup id="fnref9:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></li>
 </ol>
 <table>
 <thead>
@@ -4043,16 +4043,16 @@
 </table>
 <ol>
 <li>Valuta il risultato: se il fogliame e troppo saturo, riduci il coefficiente Blu nella destinazione Rosso (es. 0.80 invece di 1.00)</li>
-<li>Usa <strong>Filmic RGB</strong> per il mapping tonale e <strong>Color Balance RGB</strong> per affinamenti[^ir]</li>
+<li>Usa <strong>Filmic RGB</strong> per il mapping tonale e <strong>Color Balance RGB</strong> per affinamenti<sup id="fnref15:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
 </ol>
 <h3 id="esempio-3-correggere-dominante-blu-globale">Esempio 3: Correggere dominante blu globale<a class="headerlink" href="#esempio-3-correggere-dominante-blu-globale" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Identifica una zona che dovrebbe essere grigio neutro</li>
-<li>Usa il <strong>color picker</strong> per verificare i valori RGB (es. <code>61, 62, 61</code>)[^ch2]</li>
+<li>Usa il <strong>color picker</strong> per verificare i valori RGB (es. <code>61, 62, 61</code>)<sup id="fnref11:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 <li>Se i valori indicano una dominante blu (B piu alto di R e G), aggiungi un modulo <strong>Color Calibration</strong></li>
 <li>Nella destinazione <strong>Blu</strong>, riduci l'input Blu sotto 1.0 (es. 0.85)</li>
 <li>In alternativa, aggiungi input Rosso alla destinazione Blu per compensare</li>
-<li>Verifica con il color picker che la zona neutra abbia ora valori RGB equilibrati[^ch2]</li>
+<li>Verifica con il color picker che la zona neutra abbia ora valori RGB equilibrati<sup id="fnref12:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h2 id="riepilogo-dei-canali-di-output">Riepilogo dei canali di output<a class="headerlink" href="#riepilogo-dei-canali-di-output" title="Permanent link">&para;</a></h2>
 <table>
@@ -4086,11 +4086,26 @@
 </tbody>
 </table>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- (deprecated) Channel Mixer</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/channel-mixer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-channel-mixer.md</code>
-[^ch1]: <em><a href="https://www.youtube.com/watch?v=IRIVqQoqPnU">Channel Mixer Part 1</a></em> -- A Dabble in Photography
-[^ch2]: <em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography
-[^ir]: <em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography
-[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual">
+<p><em>darktable User Manual -- (deprecated) Channel Mixer</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/channel-mixer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-channel-mixer.md</code>&#160;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ch1">
+<p><em><a href="https://www.youtube.com/watch?v=IRIVqQoqPnU">Channel Mixer Part 1</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:ch1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:ch1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ch2">
+<p><em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:ch2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:ch2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ir">
+<p><em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:ir" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:ir" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

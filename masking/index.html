@@ -2838,7 +2838,7 @@
 
 
 <h1 id="maschere-e-selezioni">Maschere e selezioni<a class="headerlink" href="#maschere-e-selezioni" title="Permanent link">&para;</a></h1>
-<p>Le maschere sono lo strumento che trasforma darktable in un editor di precisione chirurgica. Ogni modulo puo' essere applicato non all'intera immagine ma solo a una porzione.[^manual]</p>
+<p>Le maschere sono lo strumento che trasforma darktable in un editor di precisione chirurgica. Ogni modulo puo' essere applicato non all'intera immagine ma solo a una porzione.<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h2 id="tipi-di-maschere">Tipi di maschere<a class="headerlink" href="#tipi-di-maschere" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="drawn/">Maschere disegnate</a> -- Forme tracciate direttamente sull'immagine</li>
@@ -2848,28 +2848,45 @@
 <h2 id="principi-generali">Principi generali<a class="headerlink" href="#principi-generali" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Dove creare le maschere</p>
-<p>Creare le maschere nel modulo piu' basso della pipeline (es. Exposure) per riusarle come raster mask in tutti i moduli a valle. Questo massimizza la compatibilita'.[^dt54][^landscape]</p>
+<p>Creare le maschere nel modulo piu' basso della pipeline (es. Exposure) per riusarle come raster mask in tutti i moduli a valle. Questo massimizza la compatibilita'.<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">2</a></sup><sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Visualizzazione</p>
-<p>Premere ++m++ per mostrare/nascondere l'overlay della maschera. Premere ++c++ sullo slider parametrico per vedere il canale in scala di grigi.[^manual]</p>
+<p>Premere ++m++ per mostrare/nascondere l'overlay della maschera. Premere ++c++ sullo slider parametrico per vedere il canale in scala di grigi.<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Non serve la perfezione</p>
-<p>Il feathering graduale tra maschera e sfondo nasconde le imperfezioni dei bordi, rendendo la precisione pixel-perfect non necessaria.[^aimasks]</p>
+<p>Il feathering graduale tra maschera e sfondo nasconde le imperfezioni dei bordi, rendendo la precisione pixel-perfect non necessaria.<sup id="fnref:aimasks"><a class="footnote-ref" href="#fn:aimasks">4</a></sup></p>
 </div>
 <blockquote>
-<p>La documentazione ufficiale copre in dettaglio tutti i tipi di maschera, i blend modes e le opzioni di raffinamento.[^manual]</p>
-<p>La serie di 7 video di Bruce Williams Photography e' la risorsa piu' completa sulle maschere in darktable.[^bruce-williams]</p>
-<p>Il tutorial PIXLS.US sulla <em>Luminosity Masking</em> offre un approccio pratico alla selezione per luminanza.[^pixls-luminosity]</p>
+<p>La documentazione ufficiale copre in dettaglio tutti i tipi di maschera, i blend modes e le opzioni di raffinamento.<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
+<p>La serie di 7 video di Bruce Williams Photography e' la risorsa piu' completa sulle maschere in darktable.<sup id="fnref:bruce-williams"><a class="footnote-ref" href="#fn:bruce-williams">5</a></sup></p>
+<p>Il tutorial PIXLS.US sulla <em>Luminosity Masking</em> offre un approccio pratico alla selezione per luminanza.<sup id="fnref:pixls-luminosity"><a class="footnote-ref" href="#fn:pixls-luminosity">6</a></sup></p>
 </blockquote>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- Masking and Blending</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code>
-[^dt54]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography
-[^landscape]: <em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography
-[^aimasks]: <em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography
-[^bruce-williams]: Bruce Williams Photography, <em>Masks Part 1-7</em> -- Serie completa YouTube
-[^pixls-luminosity]: <em>PIXLS.US -- Luminosity Masking in Darktable</em>, <a href="https://pixls.us/articles/luminosity-masking-in-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-luminosity-masking-in-darktable.md</code></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual">
+<p><em>darktable User Manual -- Masking and Blending</em>, <a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code>&#160;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54">
+<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:landscape">
+<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aimasks">
+<p><em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:aimasks" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bruce-williams">
+<p>Bruce Williams Photography, <em>Masks Part 1-7</em> -- Serie completa YouTube&#160;<a class="footnote-backref" href="#fnref:bruce-williams" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-luminosity">
+<p><em>PIXLS.US -- Luminosity Masking in Darktable</em>, <a href="https://pixls.us/articles/luminosity-masking-in-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-luminosity-masking-in-darktable.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-luminosity" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

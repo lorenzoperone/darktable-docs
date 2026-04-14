@@ -3026,14 +3026,14 @@
 
 
 <h1 id="macro-close-up-photography-in-darktable">Macro Close-Up Photography in darktable<a class="headerlink" href="#macro-close-up-photography-in-darktable" title="Permanent link">&para;</a></h1>
-<p>Il flusso di lavoro per la <strong>macro close-up photography</strong> in darktable richiede un approccio specifico: alta fedeltà cromatica, controllo millimetrico del contrasto locale, gestione precisa delle alte luci (spesso sovraesposte su fondi neri o sfocati), e supporto nativo al <em>focus stacking</em> tramite integrazione esterna[^focus-stacking-video]. A differenza della fotografia paesaggistica o ritrattistica, la macro richiede una pipeline che preservi i dettagli microscopici senza introdurre artefatti di denoising, desaturazione o clipping tonale.</p>
+<p>Il flusso di lavoro per la <strong>macro close-up photography</strong> in darktable richiede un approccio specifico: alta fedeltà cromatica, controllo millimetrico del contrasto locale, gestione precisa delle alte luci (spesso sovraesposte su fondi neri o sfocati), e supporto nativo al <em>focus stacking</em> tramite integrazione esterna<sup id="fnref:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>. A differenza della fotografia paesaggistica o ritrattistica, la macro richiede una pipeline che preservi i dettagli microscopici senza introdurre artefatti di denoising, desaturazione o clipping tonale.</p>
 <p><img alt="Workflow macro in darktable: focus peaking, spot mapping, guided laplacians, local contrast" src="../images/macro-workflow-overview.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Macro ≠ solo ingrandimento</p>
 <p>La post-produzione macro non è semplice “zoom e nitidezza”. È una gestione di tre livelli simultanei:<br />
 1. <strong>Geometrico</strong>: allineamento perfetto dei piani di fuoco (focus stacking)<br />
 2. <strong>Tono</strong>: recupero dei dettagli nelle zone luminose (petali, gocce, riflessi) senza appiattimento<br />
-3. <strong>Cromatico</strong>: stabilità del colore su superfici microscopiche (es. venature di foglie, peli di insetti), dove anche 1° di hue shift è visibile[^focus-stacking-video][^dt40-update]</p>
+3. <strong>Cromatico</strong>: stabilità del colore su superfici microscopiche (es. venature di foglie, peli di insetti), dove anche 1° di hue shift è visibile<sup id="fnref2:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup><sup id="fnref:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup></p>
 </div>
 <h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">&para;</a></h2>
 <p>Il workflow macro in darktable si articola in <strong>5 fasi sequenziali</strong>, con priorità assoluta alla conservazione dei dati RAW:</p>
@@ -3059,7 +3059,7 @@
 <p><img alt="Focus peaking attivo su un fiore macro: contorni rossi evidenziano i petali a fuoco" src="../images/macro-focus-peaking.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Focus peaking è essenziale per macro</p>
-<p>In darktable 5.4+, il focus peaking usa l’algoritmo <em>Laplacian of Gaussian</em> (LoG) ottimizzato per alti rapporti di contrasto locali — ideale per bordi netti su sfondi sfocati[^focus-stacking-video]. Non è un surrogato del focus stacking, ma lo strumento per scegliere correttamente l’immagine di riferimento.</p>
+<p>In darktable 5.4+, il focus peaking usa l’algoritmo <em>Laplacian of Gaussian</em> (LoG) ottimizzato per alti rapporti di contrasto locali — ideale per bordi netti su sfondi sfocati<sup id="fnref3:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>. Non è un surrogato del focus stacking, ma lo strumento per scegliere correttamente l’immagine di riferimento.</p>
 </div>
 <h3 id="passo-2-allineamento-tonale-e-cromatico-con-spot-mapping">Passo 2: Allineamento tonale e cromatico con Spot Mapping<a class="headerlink" href="#passo-2-allineamento-tonale-e-cromatico-con-spot-mapping" title="Permanent link">&para;</a></h3>
 <p>Usa <strong>Spot Exposure Mapping</strong> e <strong>Spot Color Mapping</strong> per uniformare esposizione e colore tra tutte le immagini della sequenza — cruciale per evitare banding nello stacking:</p>
@@ -3077,7 +3077,7 @@
 <p><img alt="Spot exposure mapping attivo su un fiore: cerchio rosso sul petalo, valore L=52.9%" src="../images/macro-spot-mapping.jpg" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare Auto Tune Levels su macro</p>
-<p>Il pulsante <em>Auto Tune Levels</em> è progettato per scene con ampia gamma dinamica (paesaggi). Su macro, spesso interpreta lo sfondo nero come “nero reale” e taglia i dettagli nelle ombre. Usa invece <code>spot exposure mapping</code> per un controllo deterministico[^dt40-update].</p>
+<p>Il pulsante <em>Auto Tune Levels</em> è progettato per scene con ampia gamma dinamica (paesaggi). Su macro, spesso interpreta lo sfondo nero come “nero reale” e taglia i dettagli nelle ombre. Usa invece <code>spot exposure mapping</code> per un controllo deterministico<sup id="fnref2:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup>.</p>
 </div>
 <h3 id="passo-3-ricostruzione-delle-alte-luci-con-guided-laplacians">Passo 3: Ricostruzione delle alte luci con Guided Laplacians<a class="headerlink" href="#passo-3-ricostruzione-delle-alte-luci-con-guided-laplacians" title="Permanent link">&para;</a></h3>
 <p>Le luci speculari (gocce d’acqua, riflessi su carapaci, venature traslucide) sono spesso troncate. Il modulo <code>highlight reconstruction</code> con metodo <strong>guided laplacians</strong> le ricostruisce senza artefatti:</p>
@@ -3094,7 +3094,7 @@
 <p><img alt="Guided laplacians attivo su una goccia d'acqua: curva tonale modificata nella zona bianca" src="../images/macro-guided-laplacians.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché Guided Laplacians e non LCH?</p>
-<p>Il metodo <em>guided laplacians</em> preserva la struttura geometrica locale (bordi, texture) meglio di LCH o colour-based. È stato introdotto in darktable 4.0 proprio per casi d’uso come la macro e la microfotografia[^dt40-update][^dt40-features].</p>
+<p>Il metodo <em>guided laplacians</em> preserva la struttura geometrica locale (bordi, texture) meglio di LCH o colour-based. È stato introdotto in darktable 4.0 proprio per casi d’uso come la macro e la microfotografia<sup id="fnref3:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup><sup id="fnref:dt40-features"><a class="footnote-ref" href="#fn:dt40-features">3</a></sup>.</p>
 </div>
 <h3 id="passo-4-contrasto-locale-con-maschere-mirate">Passo 4: Contrasto locale con maschere mirate<a class="headerlink" href="#passo-4-contrasto-locale-con-maschere-mirate" title="Permanent link">&para;</a></h3>
 <p>La chiarezza globale appiattisce i dettagli. Usa <code>local contrast</code> con maschere parametriche per enfatizzare solo ciò che serve:</p>
@@ -3131,52 +3131,67 @@
 <td><code>exposure</code></td>
 <td><code>spot exposure mapping</code></td>
 <td>attivo, <code>lightness target = 52.9%</code></td>
-<td>Garantisce coerenza tonale tra frame dello stacking[^focus-stacking-video]</td>
+<td>Garantisce coerenza tonale tra frame dello stacking<sup id="fnref6:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup></td>
 </tr>
 <tr>
 <td><code>color calibration</code></td>
 <td><code>spot color mapping</code></td>
 <td><code>hue_target = 305.2°</code>, <code>chroma_target = 53.7%</code></td>
-<td>Stabilizza i colori su superfici microscopiche, dove la dominante cambia con l’angolo di luce[^dt40-update]</td>
+<td>Stabilizza i colori su superfici microscopiche, dove la dominante cambia con l’angolo di luce<sup id="fnref5:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup></td>
 </tr>
 <tr>
 <td><code>highlight reconstruction</code></td>
 <td><code>method</code></td>
 <td><code>guided laplacians</code></td>
-<td>Ricostruisce riflessi senza perdita di texture[^dt40-features]</td>
+<td>Ricostruisce riflessi senza perdita di texture<sup id="fnref3:dt40-features"><a class="footnote-ref" href="#fn:dt40-features">3</a></sup></td>
 </tr>
 <tr>
 <td><code>local contrast</code></td>
 <td><code>clarity in highlights</code></td>
 <td><code>38%</code></td>
-<td>Esalta i dettagli nei punti di massima luminosità senza clipping[^focus-stacking-video]</td>
+<td>Esalta i dettagli nei punti di massima luminosità senza clipping<sup id="fnref7:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup></td>
 </tr>
 <tr>
 <td><code>denoise (profiled)</code></td>
 <td><code>strength</code></td>
 <td><code>12%</code></td>
-<td>Sufficiente per sensori moderni a basso ISO, evita “plastic look” sui dettagli fini[^dt54-manual]</td>
+<td>Sufficiente per sensori moderni a basso ISO, evita “plastic look” sui dettagli fini<sup id="fnref:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Maschere geometriche</strong>: per oggetti con contorni netti (insetti, fiori), preferisci maschere disegnate (<code>drawn mask</code>) con <code>feathering</code>: <code>0.3%</code> — più preciso di quelle parametriche su bordi complessi  </li>
-<li><strong>Esportazione per stacking</strong>: imposta <code>export</code> → <code>file format</code>: <code>TIFF 16-bit</code> → <code>compression</code>: <code>none</code> → <code>profile</code>: <code>Rec.2020</code> (per massima profondità cromatica prima dello stacking esterno)[^focus-stacking-video]  </li>
+<li><strong>Esportazione per stacking</strong>: imposta <code>export</code> → <code>file format</code>: <code>TIFF 16-bit</code> → <code>compression</code>: <code>none</code> → <code>profile</code>: <code>Rec.2020</code> (per massima profondità cromatica prima dello stacking esterno)<sup id="fnref4:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>  </li>
 <li><strong>Controllo qualità</strong>: attiva <code>soft proofing</code> → <code>profile</code>: <code>AdobeRGB (1998)</code> → <code>intent</code>: <code>perceptual</code> per verificare la resa su stampa fine-art  </li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=0rFk_k12ebE">Focus stacking from darktable (video)</a> — workflow completo con Helicon Focus e Zerene Stacker[^focus-stacking-video]  </li>
-<li><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0? (video)</a> — spiegazione tecnica di <code>guided laplacians</code> e <code>spot mapping</code>[^dt40-update]  </li>
-<li><a href="https://darktable.fr/posts/2022/07/darktable-4-0-0/">darktable 4.0.0 – darktable FR</a> — elenco ufficiale delle feature macro-specifiche[^dt40-features]  </li>
+<li><a href="https://www.youtube.com/watch?v=0rFk_k12ebE">Focus stacking from darktable (video)</a> — workflow completo con Helicon Focus e Zerene Stacker<sup id="fnref5:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0? (video)</a> — spiegazione tecnica di <code>guided laplacians</code> e <code>spot mapping</code><sup id="fnref4:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup>  </li>
+<li><a href="https://darktable.fr/posts/2022/07/darktable-4-0-0/">darktable 4.0.0 – darktable FR</a> — elenco ufficiale delle feature macro-specifiche<sup id="fnref2:dt40-features"><a class="footnote-ref" href="#fn:dt40-features">3</a></sup>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^focus-stacking-video]: [ENG] Focus stacking from darktable — A Dabble in Photography, YouTube, 2026-04-12. URL: https://www.youtube.com/watch?v=0rFk_k12ebE<br />
-[^dt40-update]: [ENG] What is new in darktable 4.0? — A Dabble in Photography, YouTube, 2026-04-14. URL: https://www.youtube.com/watch?v=_EOGBmksHDw<br />
-[^dt40-features]: darktable 4.0.0 — darktable FR, 2022-07-03. URL: https://darktable.fr/posts/2022/07/darktable-4-0-0/<br />
-[^dt54-manual]: darktable usermanual 5.4 — official documentation. URL: https://darktable.gitlab.io/doc/en/<br />
-[^agx-guide]: darktable AGX Tone Mapping Guide — official documentation, 2025. URL: https://darktable.gitlab.io/doc/en/modules/agx.html</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:focus-stacking-video">
+<p>[ENG] Focus stacking from darktable — A Dabble in Photography, YouTube, 2026-04-12. URL: https://www.youtube.com/watch?v=0rFk_k12ebE&#160;<a class="footnote-backref" href="#fnref:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:focus-stacking-video" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt40-update">
+<p>[ENG] What is new in darktable 4.0? — A Dabble in Photography, YouTube, 2026-04-14. URL: https://www.youtube.com/watch?v=_EOGBmksHDw&#160;<a class="footnote-backref" href="#fnref:dt40-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt40-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt40-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt40-update" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt40-update" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt40-features">
+<p>darktable 4.0.0 — darktable FR, 2022-07-03. URL: https://darktable.fr/posts/2022/07/darktable-4-0-0/&#160;<a class="footnote-backref" href="#fnref:dt40-features" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt40-features" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt40-features" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-manual">
+<p>darktable usermanual 5.4 — official documentation. URL: https://darktable.gitlab.io/doc/en/&#160;<a class="footnote-backref" href="#fnref:dt54-manual" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-guide">
+<p>darktable AGX Tone Mapping Guide — official documentation, 2025. URL: https://darktable.gitlab.io/doc/en/modules/agx.html&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

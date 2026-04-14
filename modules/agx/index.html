@@ -3546,21 +3546,21 @@
 
 
 <h1 id="tone-mapping-agx">Tone Mapping: AGX<a class="headerlink" href="#tone-mapping-agx" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>AGX</strong> (Academy Color Encoding System-inspired tone mapping) e' il tone mapper predefinito in darktable 5.4+. Sostituisce gradualmente Filmic RGB e Sigmoid, offrendo un approccio ispirato al workflow cinematografico ACES per la compressione tonale scene-referred.[^agx-guide][^manual-agx]</p>
+<p>Il modulo <strong>AGX</strong> (Academy Color Encoding System-inspired tone mapping) e' il tone mapper predefinito in darktable 5.4+. Sostituisce gradualmente Filmic RGB e Sigmoid, offrendo un approccio ispirato al workflow cinematografico ACES per la compressione tonale scene-referred.<sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup></p>
 <p><img alt="Introduzione al modulo AGX" src="../../images/agx-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">AGX e' il default da darktable 5.4</p>
-<p>Dalla versione 5.4, AGX e' il modulo di tone mapping predefinito nella pipeline scene-referred. Questo significa che ogni nuova immagine RAW verra' elaborata con AGX automaticamente.[^dt54-update]</p>
+<p>Dalla versione 5.4, AGX e' il modulo di tone mapping predefinito nella pipeline scene-referred. Questo significa che ogni nuova immagine RAW verra' elaborata con AGX automaticamente.<sup id="fnref7:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>AGX gestisce due aspetti fondamentali in un unico modulo:</p>
 <ol>
 <li><strong>Compressione tonale</strong> (scheda <em>Primaries</em> / <em>Tone</em>) -- comprime l'ampia gamma dinamica del RAW nel range visualizzabile dello schermo</li>
-<li><strong>Gestione del colore</strong> (scheda <em>Color</em> / <em>Primaries</em>) -- controlla saturazione, rotazioni e recupero della puretta cromatica dopo la compressione[^agx-guide][^dt54-update]</li>
+<li><strong>Gestione del colore</strong> (scheda <em>Color</em> / <em>Primaries</em>) -- controlla saturazione, rotazioni e recupero della puretta cromatica dopo la compressione<sup id="fnref25:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref8:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></li>
 </ol>
-<p>A differenza di Filmic RGB, AGX gestisce la saturazione seguendo il comportamento della pellicola analogica: i colori molto luminosi si desaturano naturalmente, come avviene nella realta'.[^manual-agx] Questo risolve il cosiddetto problema dei "<strong>Notorious 6</strong>" -- sei comportamenti problematici dei tone mapper precedenti con colori saturi e luminosi.[^agx-guide]</p>
+<p>A differenza di Filmic RGB, AGX gestisce la saturazione seguendo il comportamento della pellicola analogica: i colori molto luminosi si desaturano naturalmente, come avviene nella realta'.<sup id="fnref2:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup> Questo risolve il cosiddetto problema dei "<strong>Notorious 6</strong>" -- sei comportamenti problematici dei tone mapper precedenti con colori saturi e luminosi.<sup id="fnref2:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso di lavoro tipico con AGX si articola in tre fasi:[^agx-guide][^pipeline-beginner]</p>
+<p>Il flusso di lavoro tipico con AGX si articola in tre fasi:<sup id="fnref3:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione (modulo exposure)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. AGX -- compressione tonale
@@ -3569,29 +3569,29 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Regola d'oro: esponi prima, comprimi dopo</p>
-<p>Imposta <strong>sempre</strong> l'esposizione globale <em>prima</em> di toccare AGX. Il tone mapper lavora sui dati gia' esposti; se l'esposizione e' sbagliata, nessun parametro di AGX potra' recuperare la situazione.[^agx-guide]</p>
+<p>Imposta <strong>sempre</strong> l'esposizione globale <em>prima</em> di toccare AGX. Il tone mapper lavora sui dati gia' esposti; se l'esposizione e' sbagliata, nessun parametro di AGX potra' recuperare la situazione.<sup id="fnref26:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 </div>
 <h3 id="passo-1-auto-tune-levels">Passo 1: Auto Tune Levels<a class="headerlink" href="#passo-1-auto-tune-levels" title="Permanent link">&para;</a></h3>
-<p>Il primo passo pratico in AGX e' quasi sempre il pulsante <strong>Auto Tune Levels</strong>:[^agx-guide]</p>
+<p>Il primo passo pratico in AGX e' quasi sempre il pulsante <strong>Auto Tune Levels</strong>:<sup id="fnref4:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ul>
 <li>Cliccalo una sola volta all'inizio dell'editing</li>
 <li>Calcola automaticamente i punti di bianco e nero dell'immagine</li>
-<li>Funziona meglio se l'esposizione globale e' gia' stata regolata[^pipeline-beginner]</li>
+<li>Funziona meglio se l'esposizione globale e' gia' stata regolata<sup id="fnref3:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></li>
 </ul>
 <p><img alt="AGX nella pipeline di darktable" src="../../images/pipeline-agx-default.jpg" /></p>
 <h3 id="passo-2-contrasto">Passo 2: Contrasto<a class="headerlink" href="#passo-2-contrasto" title="Permanent link">&para;</a></h3>
-<p>Il parametro <strong>Contrast</strong> controlla la pendenza della curva S globale:[^agx-guide]</p>
+<p>Il parametro <strong>Contrast</strong> controlla la pendenza della curva S globale:<sup id="fnref5:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ul>
 <li><strong>Default</strong>: ~2.80</li>
 <li><strong>Aumenta</strong> per piu' impatto visivo (tipicamente 3.0-4.5)</li>
-<li><strong>Riduci</strong> per scene gia' contrastate o per un look piu' morbido[^agx-guide]</li>
+<li><strong>Riduci</strong> per scene gia' contrastate o per un look piu' morbido<sup id="fnref27:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Valuta il contrasto a distanza</p>
-<p>Riduci la dimensione di visualizzazione dell'immagine (Ctrl + -) per percepire meglio l'impatto globale del contrasto, invece di lavorare sempre zoomato al 100%.[^pipeline-beginner]</p>
+<p>Riduci la dimensione di visualizzazione dell'immagine (Ctrl + -) per percepire meglio l'impatto globale del contrasto, invece di lavorare sempre zoomato al 100%.<sup id="fnref4:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></p>
 </div>
 <h3 id="passo-3-shoulder-e-toe-power">Passo 3: Shoulder e Toe Power<a class="headerlink" href="#passo-3-shoulder-e-toe-power" title="Permanent link">&para;</a></h3>
-<p>Questi due parametri controllano separatamente le estremita' della curva:[^agx-guide]</p>
+<p>Questi due parametri controllano separatamente le estremita' della curva:<sup id="fnref6:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3604,18 +3604,18 @@
 <tr>
 <td><strong>Shoulder Power</strong></td>
 <td>Compressione alte luci</td>
-<td>Aumenta per recuperare dettagli nelle zone luminose (cieli, finestre). Valori alti schiariscono le luci gradualmente.[^agx-guide]</td>
+<td>Aumenta per recuperare dettagli nelle zone luminose (cieli, finestre). Valori alti schiariscono le luci gradualmente.<sup id="fnref36:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Toe Power</strong></td>
 <td>Compressione ombre</td>
-<td>Aumenta per aprire le ombre senza appiattirle. Valori alti schiariscono le zone scure mantenendo profondita'.[^agx-guide]</td>
+<td>Aumenta per aprire le ombre senza appiattirle. Valori alti schiariscono le zone scure mantenendo profondita'.<sup id="fnref37:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Non esagerare</p>
-<p>Valori estremi di shoulder/toe power possono distruggere la forma a S della curva, riducendo il controllo locale. Se la curva diventa arancione nelle estremita', stai spingendo troppo.[^agx-guide]</p>
+<p>Valori estremi di shoulder/toe power possono distruggere la forma a S della curva, riducendo il controllo locale. Se la curva diventa arancione nelle estremita', stai spingendo troppo.<sup id="fnref28:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3632,55 +3632,55 @@
 <td><strong>White relative exposure</strong></td>
 <td>2.0 - 8.0 EV</td>
 <td>6.50 EV</td>
-<td>Punto piu' luminoso dell'immagine. Usa la pipetta per campionare.[^agx-guide]</td>
+<td>Punto piu' luminoso dell'immagine. Usa la pipetta per campionare.<sup id="fnref38:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Black relative exposure</strong></td>
 <td>-4.0 - -15.0 EV</td>
 <td>-10.00 EV</td>
-<td>Punto piu' scuro dell'immagine. Usa la pipetta per campionare.[^agx-guide]</td>
+<td>Punto piu' scuro dell'immagine. Usa la pipetta per campionare.<sup id="fnref39:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Dynamic range scaling</strong></td>
 <td>-50% - +50%</td>
 <td>+10.00%</td>
-<td>Scala simmetricamente il range dinamico calcolato. Utile come margine di sicurezza per luminanze estreme.[^dt54-update]</td>
+<td>Scala simmetricamente il range dinamico calcolato. Utile come margine di sicurezza per luminanze estreme.<sup id="fnref15:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Pivot relative exposure</strong></td>
 <td>Variabile</td>
 <td>+0.00 EV</td>
-<td>Punto di massimo contrasto sulla curva. Spostalo sulla zona dell'immagine che vuoi sia piu' nitida.[^agx-guide]</td>
+<td>Punto di massimo contrasto sulla curva. Spostalo sulla zona dell'immagine che vuoi sia piu' nitida.<sup id="fnref40:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Pivot target output</strong></td>
 <td>0% - 50%</td>
 <td>18.00%</td>
-<td>Luminanza di output del pivot. 18% corrisponde al grigio medio (riflettanza neutra).[^agx-guide]</td>
+<td>Luminanza di output del pivot. 18% corrisponde al grigio medio (riflettanza neutra).<sup id="fnref41:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast</strong></td>
 <td>1.0 - 5.0</td>
 <td>2.80</td>
-<td>Pendenza della curva S. Controlla il contrasto globale.[^agx-guide]</td>
+<td>Pendenza della curva S. Controlla il contrasto globale.<sup id="fnref42:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Shoulder power</strong></td>
 <td>1.0 - 5.0</td>
 <td>1.55</td>
-<td>Controllo della compressione nelle alte luci.[^agx-guide]</td>
+<td>Controllo della compressione nelle alte luci.<sup id="fnref43:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Toe power</strong></td>
 <td>1.0 - 5.0</td>
 <td>1.55</td>
-<td>Controllo della compressione nelle ombre.[^agx-guide]</td>
+<td>Controllo della compressione nelle ombre.<sup id="fnref44:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello dei parametri AGX" src="../../images/agx-parameters-panel.jpg" /></p>
 <h2 id="parametri-avanzati-della-curva">Parametri avanzati della curva<a class="headerlink" href="#parametri-avanzati-della-curva" title="Permanent link">&para;</a></h2>
-<p>Espandendo la sezione <em>Advanced Curve Parameters</em>, si trovano controlli aggiuntivi:[^agx-guide]</p>
+<p>Espandendo la sezione <em>Advanced Curve Parameters</em>, si trovano controlli aggiuntivi:<sup id="fnref7:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3693,38 +3693,38 @@
 <tr>
 <td><strong>Shoulder start</strong></td>
 <td>Dove inizia la compressione delle luci</td>
-<td>Per anticipare o ritardare la curva nella zona luminosa[^agx-guide]</td>
+<td>Per anticipare o ritardare la curva nella zona luminosa<sup id="fnref45:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Toe start</strong></td>
 <td>Dove inizia la compressione delle ombre</td>
-<td>Per controllare da dove parte la curva nelle zone scure[^agx-guide]</td>
+<td>Per controllare da dove parte la curva nelle zone scure<sup id="fnref46:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Target white</strong></td>
 <td>Luminanza massima di output</td>
-<td>Di solito 100%. Abbassare per look desaturato.[^agx-guide]</td>
+<td>Di solito 100%. Abbassare per look desaturato.<sup id="fnref47:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Target black</strong></td>
 <td>Luminanza minima di output</td>
-<td>Alza leggermente (1-3%) per effetto "pellicola sbiadita" (black lift)[^agx-guide]</td>
+<td>Alza leggermente (1-3%) per effetto "pellicola sbiadita" (black lift)<sup id="fnref48:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Curve Y gamma</strong></td>
 <td>Gamma della curva</td>
-<td>Workaround quando shoulder/toe non bastano. Aumenta per schiarire senza perdere controllo sulla spalla.[^agx-guide]</td>
+<td>Workaround quando shoulder/toe non bastano. Aumenta per schiarire senza perdere controllo sulla spalla.<sup id="fnref49:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Slope</strong></td>
 <td>Pendenza lineare</td>
-<td>Regolazione fine della pendenza globale[^agx-guide]</td>
+<td>Regolazione fine della pendenza globale<sup id="fnref50:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Parametri da non toccare (di solito)</p>
-<p>I seguenti parametri sono sconsigliati per l'uso quotidiano:[^agx-guide]</p>
+<p>I seguenti parametri sono sconsigliati per l'uso quotidiano:<sup id="fnref29:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ul>
 <li><strong>Dynamic range scaling</strong> oltre +/-10% -- rischio clipping</li>
 <li><strong>Target white/black</strong> estremi -- effetto sbiadito innaturale</li>
@@ -3733,10 +3733,10 @@
 </div>
 <p><img alt="Visualizzazione della curva tonale AGX" src="../../images/agx-curve-display.jpg" /></p>
 <h2 id="gestione-del-colore-in-agx">Gestione del colore in AGX<a class="headerlink" href="#gestione-del-colore-in-agx" title="Permanent link">&para;</a></h2>
-<p>La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda <em>Color</em> o tramite il modulo <em>Color Calibration</em> con tab <em>Primaries</em>.[^agx-guide][^dt54-update]</p>
+<p>La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda <em>Color</em> o tramite il modulo <em>Color Calibration</em> con tab <em>Primaries</em>.<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <p><img alt="Nuova ruota cromatica dt 5.4" src="../../images/dt54-hue-wheel.jpg" /></p>
 <h3 id="attenuazione-delle-primarie-before-tone-mapping">Attenuazione delle primarie (Before Tone Mapping)<a class="headerlink" href="#attenuazione-delle-primarie-before-tone-mapping" title="Permanent link">&para;</a></h3>
-<p>Prima della compressione tonale, puoi desaturare selettivamente i canali RGB:[^dt54-update]</p>
+<p>Prima della compressione tonale, puoi desaturare selettivamente i canali RGB:<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3749,31 +3749,31 @@
 <tr>
 <td><strong>Red attenuation</strong></td>
 <td>Desatura i rossi prima del tone mapping</td>
-<td>10-30%[^dt54-update]</td>
+<td>10-30%<sup id="fnref16:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Green attenuation</strong></td>
 <td>Desatura i verdi prima del tone mapping</td>
-<td>0-10%[^dt54-update]</td>
+<td>0-10%<sup id="fnref17:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Blue attenuation</strong></td>
 <td>Desatura i blu prima del tone mapping</td>
-<td>10-70% (scene con blu saturi)[^dt54-update]</td>
+<td>10-70% (scene con blu saturi)<sup id="fnref18:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Red/Green/Blue rotation</strong></td>
 <td>Ruota la tonalità del canale</td>
-<td>+/- 1-5°[^dt54-update]</td>
+<td>+/- 1-5°<sup id="fnref19:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Perche' attenuare prima del tone mapping</p>
-<p>I colori troppo saturi e luminosi vengono troncati a valori massimi sullo schermo (clipping cromatico). Attenuandoli <em>prima</em> della compressione, li porti in uno "spazio sicuro" dove il tone mapper puo' gestirli correttamente.[^dt54-update]</p>
+<p>I colori troppo saturi e luminosi vengono troncati a valori massimi sullo schermo (clipping cromatico). Attenuandoli <em>prima</em> della compressione, li porti in uno "spazio sicuro" dove il tone mapper puo' gestirli correttamente.<sup id="fnref9:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 </div>
 <h3 id="recupero-della-purezza-after-tone-mapping">Recupero della purezza (After Tone Mapping)<a class="headerlink" href="#recupero-della-purezza-after-tone-mapping" title="Permanent link">&para;</a></h3>
-<p>Dopo la compressione, puoi recuperare la vividezza cromatica persa:[^dt54-update]</p>
+<p>Dopo la compressione, puoi recuperare la vividezza cromatica persa:<sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3786,22 +3786,22 @@
 <tr>
 <td><strong>Recover purity</strong></td>
 <td>Recupera saturazione persa dal tone mapping</td>
-<td>Quando i colori sembrano spenti dopo AGX[^dt54-update]</td>
+<td>Quando i colori sembrano spenti dopo AGX<sup id="fnref20:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Master purity boost</strong></td>
 <td>Aumento globale di purezza cromatica</td>
-<td>Per dare piu' "pop" ai colori[^dt54-update]</td>
+<td>Per dare piu' "pop" ai colori<sup id="fnref21:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Red/Green/Blue purity boost</strong></td>
 <td>Aumento selettivo per canale</td>
-<td>Per correggere dominanti o enfatizzare colori specifici[^dt54-update]</td>
+<td>Per correggere dominanti o enfatizzare colori specifici<sup id="fnref22:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h3 id="reversals-inversioni">Reversals (inversioni)<a class="headerlink" href="#reversals-inversioni" title="Permanent link">&para;</a></h3>
-<p>I controlli <em>reversal</em> permettono di "tornare indietro" parzialmente sulle correzioni applicate:[^dt54-update]</p>
+<p>I controlli <em>reversal</em> permettono di "tornare indietro" parzialmente sulle correzioni applicate:<sup id="fnref4:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3826,10 +3826,10 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Come funzionano le reversals</p>
-<p>Le reversals non annullano le correzioni, ma ne mitigano l'effetto. Questo permette un controllo fine: attenui molto per evitare clipping, poi recuperi parzialmente con la reversal.[^dt54-update]</p>
+<p>Le reversals non annullano le correzioni, ma ne mitigano l'effetto. Questo permette un controllo fine: attenui molto per evitare clipping, poi recuperi parzialmente con la reversal.<sup id="fnref10:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 </div>
 <h2 id="uso-della-pipetta-eyedropper">Uso della pipetta (eyedropper)<a class="headerlink" href="#uso-della-pipetta-eyedropper" title="Permanent link">&para;</a></h2>
-<p>AGX offre strumenti pipetta per impostare automaticamente i parametri:[^agx-guide]</p>
+<p>AGX offre strumenti pipetta per impostare automaticamente i parametri:<sup id="fnref9:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3842,97 +3842,97 @@
 <tr>
 <td><strong>Auto tune levels</strong></td>
 <td>Calcola white/black exposure</td>
-<td>Clicca una volta dopo aver regolato l'esposizione[^agx-guide]</td>
+<td>Clicca una volta dopo aver regolato l'esposizione<sup id="fnref51:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Pipetta pivot</strong></td>
 <td>Campiona l'esposizione media di un'area</td>
-<td>Trascina un rettangolo sulla zona che vuoi sia a massimo contrasto[^agx-guide]</td>
+<td>Trascina un rettangolo sulla zona che vuoi sia a massimo contrasto<sup id="fnref52:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tecnica del rettangolo</p>
-<p>Quando usi la pipetta per il pivot, non cliccare su un singolo pixel. Trascina un rettangolo sulla zona di interesse (es. il soggetto principale) per campionare l'esposizione media di quell'area.[^agx-guide]</p>
+<p>Quando usi la pipetta per il pivot, non cliccare su un singolo pixel. Trascina un rettangolo sulla zona di interesse (es. il soggetto principale) per campionare l'esposizione media di quell'area.<sup id="fnref30:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 </div>
 <p><img alt="Uso della pipetta per il pivot AGX" src="../../images/agx-pivot-eyedropper.jpg" /></p>
 <h2 id="casi-duso-pratici">Casi d'uso pratici<a class="headerlink" href="#casi-duso-pratici" title="Permanent link">&para;</a></h2>
 <h3 id="ritratti">Ritratti<a class="headerlink" href="#ritratti" title="Permanent link">&para;</a></h3>
-<p>Per i ritratti, AGX offre toni della pelle naturali e buona gestione delle alte luci:[^agx-guide]</p>
+<p>Per i ritratti, AGX offre toni della pelle naturali e buona gestione delle alte luci:<sup id="fnref10:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ol>
 <li><strong>Esposizione</strong>: regola per esporre correttamente il volto (spesso +0.5 a +1.5 EV)</li>
 <li><strong>Auto tune levels</strong> per impostare i punti bianco/nero</li>
 <li><strong>Contrast</strong>: 2.80-3.50 (moderato, non aggressivo)</li>
 <li><strong>Shoulder power</strong>: 1.55-2.00 (protegge le alte luci della pelle)</li>
 <li><strong>Toe power</strong>: 1.55-2.00 (apre le ombre senza appiattire)</li>
-<li><strong>Color balance RGB</strong>: preset <em>Basic Colorfulness - Standard</em> per saturazione naturale[^agx-guide]</li>
+<li><strong>Color balance RGB</strong>: preset <em>Basic Colorfulness - Standard</em> per saturazione naturale<sup id="fnref31:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Toni della pelle</p>
-<p>Se i toni della pelle risultano troppo saturi, usa il <em>Color Equalizer</em> sulla saturazione per desaturare selettivamente la zona dei rossi/arancioni.[^dragan-effect]</p>
+<p>Se i toni della pelle risultano troppo saturi, usa il <em>Color Equalizer</em> sulla saturazione per desaturare selettivamente la zona dei rossi/arancioni.<sup id="fnref2:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
 </div>
 <p><img alt="Desaturazione della pelle effetto Dragan" src="../../images/dragan-skin-desaturation.jpg" /></p>
 <h3 id="paesaggi">Paesaggi<a class="headerlink" href="#paesaggi" title="Permanent link">&para;</a></h3>
-<p>I paesaggi beneficiano della gestione avanzata della dinamica di AGX:[^landscape]</p>
+<p>I paesaggi beneficiano della gestione avanzata della dinamica di AGX:<sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
 <ol>
 <li><strong>Exposure</strong>: esponi per le alte luci (proteggi il cielo)</li>
 <li><strong>Auto tune levels</strong></li>
 <li><strong>Contrast</strong>: 3.0-4.5 (i paesaggi reggono contrasti piu' alti)</li>
 <li><strong>Shoulder power</strong>: 2.0-3.0 (recupera dettagli nel cielo)</li>
 <li><strong>Toe power</strong>: 1.55-2.50 (mantieni profondita' nelle ombre)</li>
-<li><strong>Pivot</strong>: campiona sulla zona principale (es. albero, montagna)[^landscape]</li>
+<li><strong>Pivot</strong>: campiona sulla zona principale (es. albero, montagna)<sup id="fnref2:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Maschere parametriche</p>
-<p>Per paesaggi complessi, usa maschere parametriche su moduli Exposure aggiuntivi per lavorare separatamente su cielo, terreno e soggetti.[^landscape]</p>
+<p>Per paesaggi complessi, usa maschere parametriche su moduli Exposure aggiuntivi per lavorare separatamente su cielo, terreno e soggetti.<sup id="fnref3:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
 </div>
 <p><img alt="Maschera Tone EQ per paesaggi" src="../../images/dt54-tone-eq-mask.jpg" /></p>
 <h3 id="tramonti">Tramonti<a class="headerlink" href="#tramonti" title="Permanent link">&para;</a></h3>
-<p>I tramonti sono la sfida piu' difficile per un tone mapper a causa dei colori estremamente saturi:[^agx-guide]</p>
+<p>I tramonti sono la sfida piu' difficile per un tone mapper a causa dei colori estremamente saturi:<sup id="fnref11:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ol>
 <li><strong>Exposure</strong>: esponi per il cielo (spesso sottoesponi leggermente)</li>
 <li><strong>Auto tune levels</strong></li>
-<li><strong>Blue attenuation</strong>: aumenta significativamente (30-70%) per evitare clipping dei blu[^dt54-update]</li>
-<li><strong>Red attenuation</strong>: 10-20% per gestire i rossi saturi[^dt54-update]</li>
+<li><strong>Blue attenuation</strong>: aumenta significativamente (30-70%) per evitare clipping dei blu<sup id="fnref11:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></li>
+<li><strong>Red attenuation</strong>: 10-20% per gestire i rossi saturi<sup id="fnref12:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></li>
 <li><strong>Contrast</strong>: 2.5-3.5</li>
-<li><strong>Recover purity</strong>: 50-100% per recuperare vividezza dopo la compressione[^dt54-update]</li>
+<li><strong>Recover purity</strong>: 50-100% per recuperare vividezza dopo la compressione<sup id="fnref13:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione al color banding</p>
-<p>I tramonti con colori molto saturi possono mostrare <em>color banding</em> (bande di colore) nelle zone di transizione. Se succede, aumenta l'attenuazione del blu e del rosso, poi recupera con <em>recover purity</em>.[^dt52-release]</p>
+<p>I tramonti con colori molto saturi possono mostrare <em>color banding</em> (bande di colore) nelle zone di transizione. Se succede, aumenta l'attenuazione del blu e del rosso, poi recupera con <em>recover purity</em>.<sup id="fnref:dt52-release"><a class="footnote-ref" href="#fn:dt52-release">6</a></sup></p>
 </div>
 <p><img alt="Funzionalita Preserve Hue per i tramonti" src="../../images/agx-preserve-hue.jpg" /></p>
 <h3 id="scene-in-scarsa-luce-lowlight">Scene in scarsa luce (Lowlight)<a class="headerlink" href="#scene-in-scarsa-luce-lowlight" title="Permanent link">&para;</a></h3>
-<p>Per foto scattate in condizioni di scarsa luce:[^lowlight]</p>
+<p>Per foto scattate in condizioni di scarsa luce:<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
 <ol>
 <li><strong>Exposure</strong>: aumenta significativamente (+1.0 a +2.0 EV o piu')</li>
-<li><strong>AGX+</strong> come profilo di output (evita tonalita' magenta indesiderate)[^lowlight]</li>
-<li><strong>Black relative exposure</strong>: spingi piu' in basso (-15 a -20 EV) per pulire il rumore nelle ombre[^lowlight]</li>
+<li><strong>AGX+</strong> come profilo di output (evita tonalita' magenta indesiderate)<sup id="fnref2:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
+<li><strong>Black relative exposure</strong>: spingi piu' in basso (-15 a -20 EV) per pulire il rumore nelle ombre<sup id="fnref3:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
 <li><strong>Shoulder power</strong>: 2.0-2.5 (proteggi le luci artificiali)</li>
 <li><strong>Toe power</strong>: 1.5-2.0 (controlla le ombre sollevate dall'esposizione)</li>
-<li><strong>Color Balance RGB</strong>: usa la scheda <em>4 Ways</em> per color grading creativo nelle ombre e luci[^lowlight]</li>
+<li><strong>Color Balance RGB</strong>: usa la scheda <em>4 Ways</em> per color grading creativo nelle ombre e luci<sup id="fnref4:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Foto ISO alti</p>
-<p>Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.[^lowlight]</p>
+<p>Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.<sup id="fnref5:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
 </div>
 <p><img alt="Impostazioni AGX per scene lowlight" src="../../images/lowlight-agx-settings.jpg" /></p>
 <h3 id="effetto-dragan-ritratti-drammatici">Effetto Dragan (ritratti drammatici)<a class="headerlink" href="#effetto-dragan-ritratti-drammatici" title="Permanent link">&para;</a></h3>
-<p>Per il look ad alto contrasto stile Andrzej Dragan:[^dragan-effect]</p>
+<p>Per il look ad alto contrasto stile Andrzej Dragan:<sup id="fnref:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
 <ol>
 <li>Elaborazione base con AGX (contrasto medio-alto)</li>
 <li>Duplica l'immagine</li>
 <li>Sulla duplicata: converti in bianco e nero (Color Calibration - Monochrome)</li>
 <li>Applica sfocatura (Blur module, gaussiano, raggio 15-20px)</li>
 <li>Composite: fondi con modalita' <em>Overlay</em> o <em>Hard Light</em></li>
-<li>Regola l'opacita' del composite per controllare l'intensita'[^dragan-effect]</li>
+<li>Regola l'opacita' del composite per controllare l'intensita'<sup id="fnref3:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Il modulo Composite e' fondamentale</p>
-<p>Il modulo <em>Composite</em> permette di fondere due versioni della stessa immagine. E' posizionato nella pipeline: i moduli <em>sotto</em> di esso vengono elaborati separatamente, quelli <em>sopra</em> lavorano sul risultato fuso.[^dragan-effect]</p>
+<p>Il modulo <em>Composite</em> permette di fondere due versioni della stessa immagine. E' posizionato nella pipeline: i moduli <em>sotto</em> di esso vengono elaborati separatamente, quelli <em>sopra</em> lavorano sul risultato fuso.<sup id="fnref4:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
 </div>
 <h2 id="i-notorious-6">I "Notorious 6"<a class="headerlink" href="#i-notorious-6" title="Permanent link">&para;</a></h2>
-<p>I "Notorious 6" sono sei problemi noti dei tone mapper scene-referred (in particolare Filmic RGB e Sigmoid) quando gestiscono colori molto saturi e luminosi:[^agx-guide]</p>
+<p>I "Notorious 6" sono sei problemi noti dei tone mapper scene-referred (in particolare Filmic RGB e Sigmoid) quando gestiscono colori molto saturi e luminosi:<sup id="fnref12:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3947,43 +3947,43 @@
 <td>1</td>
 <td><strong>Hue shift</strong></td>
 <td>Le tonalità cambiano quando i colori diventano molto luminosi</td>
-<td>AGX preserva le tonalità durante la compressione, seguendo il modello ACES[^agx-guide]</td>
+<td>AGX preserva le tonalità durante la compressione, seguendo il modello ACES<sup id="fnref53:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>Luminance inversion</strong></td>
 <td>Colori saturi appaiono piu' scuri del previsto</td>
-<td>La mappatura AGX mantiene la relazione luminanza-saturazione della pellicola[^manual-agx]</td>
+<td>La mappatura AGX mantiene la relazione luminanza-saturazione della pellicola<sup id="fnref5:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup></td>
 </tr>
 <tr>
 <td>3</td>
 <td><strong>Gamut clipping</strong></td>
 <td>Colori fuori gamut vengono troncati bruscamente</td>
-<td>AGX comprime il gamut gradualmente, come farebbe una pellicola[^agx-guide]</td>
+<td>AGX comprime il gamut gradualmente, come farebbe una pellicola<sup id="fnref54:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td>4</td>
 <td><strong>Desaturation delle luci</strong></td>
 <td>Le alte luci perdono colore troppo rapidamente</td>
-<td>Il comportamento filmico di AGX desatura in modo naturale e progressivo[^manual-agx]</td>
+<td>Il comportamento filmico di AGX desatura in modo naturale e progressivo<sup id="fnref6:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup></td>
 </tr>
 <tr>
 <td>5</td>
 <td><strong>Saturation pumping</strong></td>
 <td>Alcuni colori diventano innaturalmente saturi</td>
-<td>La compressione AGX e' uniforme su tutti i canali[^agx-guide]</td>
+<td>La compressione AGX e' uniforme su tutti i canali<sup id="fnref55:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 <tr>
 <td>6</td>
 <td><strong>Black crush</strong></td>
 <td>Le ombre collassano perdendo dettaglio</td>
-<td>Il controllo toe power indipendente permette di aprire le ombre senza distruggere il contrasto[^agx-guide]</td>
+<td>Il controllo toe power indipendente permette di aprire le ombre senza distruggere il contrasto<sup id="fnref56:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Perche' si chiamano cosi'</p>
-<p>Il termine "Notorious 6" nasce nella community di darktable per descrivere i sei comportamenti piu' problematici che si manifestavano con Filmic RGB quando si elaboravano immagini con colori saturi (tramonti, luci al neon, fiori).[^agx-guide] AGX e' stato progettato specificamente per risolvere questi problemi.</p>
+<p>Il termine "Notorious 6" nasce nella community di darktable per descrivere i sei comportamenti piu' problematici che si manifestavano con Filmic RGB quando si elaboravano immagini con colori saturi (tramonti, luci al neon, fiori).<sup id="fnref32:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup> AGX e' stato progettato specificamente per risolvere questi problemi.</p>
 </div>
 <h2 id="agx-vs-filmic-rgb-vs-sigmoid">AGX vs Filmic RGB vs Sigmoid<a class="headerlink" href="#agx-vs-filmic-rgb-vs-sigmoid" title="Permanent link">&para;</a></h2>
 <table>
@@ -4049,38 +4049,38 @@
 <div class="admonition tip">
 <p class="admonition-title">Quale scegliere?</p>
 <ul>
-<li><strong>AGX</strong>: default consigliato per la maggior parte delle situazioni. Eccelle con tramonti, paesaggi e scene ad alto contrasto cromatico.[^agx-guide]</li>
-<li><strong>Sigmoid</strong>: ancora ottimo per ritratti rapidi con toni della pelle naturali "out of the box".[^manual-sigmoid]</li>
-<li><strong>Filmic RGB</strong>: preferito da alcuni per il bianco e nero, dove offre un controllo granulare su curve e latitudine.[^dt52-release]</li>
+<li><strong>AGX</strong>: default consigliato per la maggior parte delle situazioni. Eccelle con tramonti, paesaggi e scene ad alto contrasto cromatico.<sup id="fnref35:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></li>
+<li><strong>Sigmoid</strong>: ancora ottimo per ritratti rapidi con toni della pelle naturali "out of the box".<sup id="fnref2:manual-sigmoid"><a class="footnote-ref" href="#fn:manual-sigmoid">10</a></sup></li>
+<li><strong>Filmic RGB</strong>: preferito da alcuni per il bianco e nero, dove offre un controllo granulare su curve e latitudine.<sup id="fnref3:dt52-release"><a class="footnote-ref" href="#fn:dt52-release">6</a></sup></li>
 </ul>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Usa un solo tone mapper alla volta</p>
-<p>Non attivare mai piu' di un tone mapper simultaneamente. AGX, Sigmoid e Filmic RGB sono mutualmente esclusivi: usarne due insieme crea artefatti imprevedibili.[^manual-agx][^manual-sigmoid]</p>
+<p>Non attivare mai piu' di un tone mapper simultaneamente. AGX, Sigmoid e Filmic RGB sono mutualmente esclusivi: usarne due insieme crea artefatti imprevedibili.<sup id="fnref3:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup><sup id="fnref:manual-sigmoid"><a class="footnote-ref" href="#fn:manual-sigmoid">10</a></sup></p>
 </div>
 <h2 id="errori-comuni-e-come-evitarli">Errori comuni e come evitarli<a class="headerlink" href="#errori-comuni-e-come-evitarli" title="Permanent link">&para;</a></h2>
 <h3 id="1-non-regolare-lesposizione-prima-di-agx">1. Non regolare l'esposizione prima di AGX<a class="headerlink" href="#1-non-regolare-lesposizione-prima-di-agx" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: AGX applicato a un'immagine sotto/sovraesposta produce risultati scadenti.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Sempre il modulo <em>Exposure</em> prima, poi <em>Auto Tune Levels</em> in AGX.[^pipeline-beginner]</p>
+<p><strong>Problema</strong>: AGX applicato a un'immagine sotto/sovraesposta produce risultati scadenti.<sup id="fnref13:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Sempre il modulo <em>Exposure</em> prima, poi <em>Auto Tune Levels</em> in AGX.<sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></p>
 <h3 id="2-contrast-troppo-alto">2. Contrast troppo alto<a class="headerlink" href="#2-contrast-troppo-alto" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Valori di contrasto &gt; 5.0 distruggono la forma a S, riducono il controllo di shoulder/toe e possono generare artefatti.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Resta tra 2.5 e 4.0 per la maggior parte delle immagini. Se serve piu' contrasto, usa shoulder/toe power.[^agx-guide]</p>
+<p><strong>Problema</strong>: Valori di contrasto &gt; 5.0 distruggono la forma a S, riducono il controllo di shoulder/toe e possono generare artefatti.<sup id="fnref14:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Resta tra 2.5 e 4.0 per la maggior parte delle immagini. Se serve piu' contrasto, usa shoulder/toe power.<sup id="fnref15:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h3 id="3-ignorare-lattenuazione-delle-primarie">3. Ignorare l'attenuazione delle primarie<a class="headerlink" href="#3-ignorare-lattenuazione-delle-primarie" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Colori molto saturi (tramonti, luci al neon) causano clipping cromatico e color banding.[^dt54-update]</p>
-<p><strong>Soluzione</strong>: Attenua i blu (e talvolta i rossi) <em>prima</em> del tone mapping, poi recupera con <em>recover purity</em>.[^dt54-update]</p>
+<p><strong>Problema</strong>: Colori molto saturi (tramonti, luci al neon) causano clipping cromatico e color banding.<sup id="fnref5:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
+<p><strong>Soluzione</strong>: Attenua i blu (e talvolta i rossi) <em>prima</em> del tone mapping, poi recupera con <em>recover purity</em>.<sup id="fnref6:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <p><img alt="Bilanciamento colore dopo AGX" src="../../images/lowlight-color-balance.jpg" /></p>
 <h3 id="4-pivot-mal-posizionato">4. Pivot mal posizionato<a class="headerlink" href="#4-pivot-mal-posizionato" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Il pivot di default (0 EV, 18% output) potrebbe non corrispondere al soggetto principale.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Usa la pipetta per campionare la zona dell'immagine che deve avere il massimo contrasto.[^agx-guide]</p>
+<p><strong>Problema</strong>: Il pivot di default (0 EV, 18% output) potrebbe non corrispondere al soggetto principale.<sup id="fnref16:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Usa la pipetta per campionare la zona dell'immagine che deve avere il massimo contrasto.<sup id="fnref17:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h3 id="5-dynamic-range-scaling-aggressivo">5. Dynamic range scaling aggressivo<a class="headerlink" href="#5-dynamic-range-scaling-aggressivo" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Valori estremi di dynamic range scaling causano clipping nelle alte luci o nelle ombre.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Mantieni il dynamic range scaling tra -10% e +10%. Il default +10% va bene per la maggior parte dei casi.[^agx-guide]</p>
+<p><strong>Problema</strong>: Valori estremi di dynamic range scaling causano clipping nelle alte luci o nelle ombre.<sup id="fnref18:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Mantieni il dynamic range scaling tra -10% e +10%. Il default +10% va bene per la maggior parte dei casi.<sup id="fnref19:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h3 id="6-target-black-troppo-alto">6. Target black troppo alto<a class="headerlink" href="#6-target-black-troppo-alto" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Alzare troppo il target black (es. &gt; 5%) crea un effetto "sbiadito" innaturale.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Se vuoi l'effetto pellicola, alza il target black gradualmente (1-3%) e valuta il risultato.[^agx-guide]</p>
+<p><strong>Problema</strong>: Alzare troppo il target black (es. &gt; 5%) crea un effetto "sbiadito" innaturale.<sup id="fnref20:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Se vuoi l'effetto pellicola, alza il target black gradualmente (1-3%) e valuta il risultato.<sup id="fnref21:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h3 id="7-curve-avanzata-senza-motivo">7. Curve avanzata senza motivo<a class="headerlink" href="#7-curve-avanzata-senza-motivo" title="Permanent link">&para;</a></h3>
-<p><strong>Problema</strong>: Modificare i parametri avanzati della curva (shoulder start, toe start, gamma) senza bisogno complica l'editing senza benefici.[^agx-guide]</p>
-<p><strong>Soluzione</strong>: Usa solo contrast, shoulder power e toe power. Passa ai parametri avanzati solo se questi non bastano.[^agx-guide]</p>
+<p><strong>Problema</strong>: Modificare i parametri avanzati della curva (shoulder start, toe start, gamma) senza bisogno complica l'editing senza benefici.<sup id="fnref22:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
+<p><strong>Soluzione</strong>: Usa solo contrast, shoulder power e toe power. Passa ai parametri avanzati solo se questi non bastano.<sup id="fnref23:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <h2 id="scorciatoie-da-tastiera-utili">Scorciatoie da tastiera utili<a class="headerlink" href="#scorciatoie-da-tastiera-utili" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -4104,11 +4104,11 @@
 </tr>
 <tr>
 <td><strong>Click destro</strong> su slider di tonalità</td>
-<td>Apre la ruota cromatica visuale[^dt54-update]</td>
+<td>Apre la ruota cromatica visuale<sup id="fnref23:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Cmd/Ctrl + B</strong></td>
-<td>Mostra bordo bianco di riferimento per valutare l'esposizione[^agx-guide]</td>
+<td>Mostra bordo bianco di riferimento per valutare l'esposizione<sup id="fnref57:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4164,41 +4164,66 @@
 <td>3.50-4.50</td>
 <td>2.00-3.00</td>
 <td>1.55-2.00</td>
-<td>Dragan effect[^dragan-effect]</td>
+<td>Dragan effect<sup id="fnref6:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></td>
 </tr>
 </tbody>
 </table>
 <h2 id="note-sulla-curva-arancione">Note sulla curva arancione<a class="headerlink" href="#note-sulla-curva-arancione" title="Permanent link">&para;</a></h2>
-<p>In AGX, quando la curva tonale mostra una porzione <strong>arancione</strong> nelle estremita', questo e' un <strong>avviso</strong>, non un errore:[^agx-guide]</p>
+<p>In AGX, quando la curva tonale mostra una porzione <strong>arancione</strong> nelle estremita', questo e' un <strong>avviso</strong>, non un errore:<sup id="fnref24:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ul>
 <li>Indica che la curva sta raggiungendo limiti dove ulteriori correzioni potrebbero generare artefatti</li>
 <li>A differenza di Filmic RGB (dove l'arancione era un errore bloccante), in AGX e' solo un suggerimento</li>
-<li>Se vedi arancione: riduci il contrasto o aggiusta shoulder/toe power per riportare la curva in zona sicura[^agx-guide]</li>
+<li>Se vedi arancione: riduci il contrasto o aggiusta shoulder/toe power per riportare la curva in zona sicura<sup id="fnref33:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <p>Per approfondire:</p>
 <ul>
-<li><em>darktable User Manual -- AgX</em>: <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a>[^manual-agx]</li>
-<li><em>A guide to AGX in darktable</em> (94 screenshot): <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">YouTube - A Dabble in Photography</a>[^agx-guide]</li>
-<li><em>Lowlight photos in darktable</em>: <a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">YouTube - A Dabble in Photography</a>[^lowlight]</li>
-<li><em>Landscape edit with AI</em>: <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">YouTube - A Dabble in Photography</a>[^landscape]</li>
-<li><em>The darktable pipeline for beginners</em>: <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">YouTube - A Dabble in Photography</a>[^pipeline-beginner]</li>
-<li><em>darktable 5.4 UPDATE</em>: <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">YouTube - A Dabble in Photography</a>[^dt54-update]</li>
-<li><em>darktable 5.2 Release</em>: <a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">YouTube - A Dabble in Photography</a>[^dt52-release]</li>
-<li><em>The Dragan effect in darktable</em>: <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">YouTube - A Dabble in Photography</a>[^dragan-effect]</li>
-<li><em>The Orton effect in darktable</em>: <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">YouTube - A Dabble in Photography</a>[^orton-effect]</li>
+<li><em>darktable User Manual -- AgX</em>: <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a><sup id="fnref4:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">9</a></sup></li>
+<li><em>A guide to AGX in darktable</em> (94 screenshot): <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">YouTube - A Dabble in Photography</a><sup id="fnref34:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></li>
+<li><em>Lowlight photos in darktable</em>: <a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">YouTube - A Dabble in Photography</a><sup id="fnref6:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
+<li><em>Landscape edit with AI</em>: <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">YouTube - A Dabble in Photography</a><sup id="fnref4:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></li>
+<li><em>The darktable pipeline for beginners</em>: <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">YouTube - A Dabble in Photography</a><sup id="fnref5:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></li>
+<li><em>darktable 5.4 UPDATE</em>: <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">YouTube - A Dabble in Photography</a><sup id="fnref14:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></li>
+<li><em>darktable 5.2 Release</em>: <a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">YouTube - A Dabble in Photography</a><sup id="fnref2:dt52-release"><a class="footnote-ref" href="#fn:dt52-release">6</a></sup></li>
+<li><em>The Dragan effect in darktable</em>: <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">YouTube - A Dabble in Photography</a><sup id="fnref5:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></li>
+<li><em>The Orton effect in darktable</em>: <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">YouTube - A Dabble in Photography</a><sup id="fnref:orton-effect"><a class="footnote-ref" href="#fn:orton-effect">8</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^agx-guide]: <em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a></em> -- A Dabble in Photography
-[^lowlight]: <em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography
-[^landscape]: <em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography
-[^pipeline-beginner]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography
-[^dt54-update]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a></em> -- A Dabble in Photography
-[^dt52-release]: <em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">New Release: darktable 5.2</a></em> -- A Dabble in Photography
-[^dragan-effect]: <em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a></em> -- A Dabble in Photography
-[^orton-effect]: <em><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect in darktable</a></em> -- A Dabble in Photography
-[^manual-agx]: <em>darktable User Manual -- AgX</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a>
-[^manual-sigmoid]: <em>darktable User Manual -- Sigmoid</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/sigmoid/">docs.darktable.org</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:agx-guide">
+<p><em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref34:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref35:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref36:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref37:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref38:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref39:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref40:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref41:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref42:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref43:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref44:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref45:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref46:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref47:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref48:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref49:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref50:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref51:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref52:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref53:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref54:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref55:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref56:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref57:agx-guide" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lowlight">
+<p><em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:lowlight" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:landscape">
+<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:landscape" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:landscape" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:landscape" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:pipeline-beginner" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-update">
+<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt54-update" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52-release">
+<p><em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">New Release: darktable 5.2</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dt52-release" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt52-release" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt52-release" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragan-effect">
+<p><em><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dragan-effect" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:orton-effect">
+<p><em><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:orton-effect" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-agx">
+<p><em>darktable User Manual -- AgX</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/agx/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-agx" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-sigmoid">
+<p><em>darktable User Manual -- Sigmoid</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/sigmoid/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:manual-sigmoid" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-sigmoid" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

@@ -3004,32 +3004,32 @@
 
 
 <h1 id="ai-masks-sam2-darktable">AI masks SAM2 darktable<a class="headerlink" href="#ai-masks-sam2-darktable" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>AI masks SAM2</strong> è il sistema nativo di mascheramento basato su intelligenza artificiale introdotto in darktable 5.6, integrato direttamente nella pipeline scene-referred senza necessità di plugin esterni[^youtube-sam2]. Sostituisce progressivamente i workflow basati su SAM2/SAM3 esterni e maschere raster tradizionali, offrendo maschere vettoriali ad alta precisione generate in tempo reale direttamente dall’immagine RAW[^youtube-sam2][^pixls-gpu]. A differenza dei modelli precedenti, SAM2 opera in modalità <em>object-aware</em>, permettendo la segmentazione semantica di soggetti complessi (persone, animali, oggetti) con un solo clic o tramite prompt testuale[^youtube-sam2].</p>
+<p>Il modulo <strong>AI masks SAM2</strong> è il sistema nativo di mascheramento basato su intelligenza artificiale introdotto in darktable 5.6, integrato direttamente nella pipeline scene-referred senza necessità di plugin esterni<sup id="fnref:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>. Sostituisce progressivamente i workflow basati su SAM2/SAM3 esterni e maschere raster tradizionali, offrendo maschere vettoriali ad alta precisione generate in tempo reale direttamente dall’immagine RAW<sup id="fnref2:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup><sup id="fnref:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup>. A differenza dei modelli precedenti, SAM2 opera in modalità <em>object-aware</em>, permettendo la segmentazione semantica di soggetti complessi (persone, animali, oggetti) con un solo clic o tramite prompt testuale<sup id="fnref3:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
 <p><img alt="Interfaccia darktable 5.6 con modulo Mask Manager attivo e indicatore &quot;object mask: analyzing image...&quot;" src="../images/sam2-analyzing.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">SAM2 richiede l'abilitazione esplicita</p>
-<p>Il modulo non è attivo di default. Deve essere abilitato nelle <strong>Preferenze › Elaborazione › AI</strong> e richiede il download manuale (o automatico) del modello <code>mask sam2.1 hiera small</code> o <code>mask sam2.1 hiera base plus</code>[^youtube-sam2]. Senza questo passaggio, il pulsante «AI mask» nel modulo <em>Mask Manager</em> rimane disabilitato[^youtube-sam2].</p>
+<p>Il modulo non è attivo di default. Deve essere abilitato nelle <strong>Preferenze › Elaborazione › AI</strong> e richiede il download manuale (o automatico) del modello <code>mask sam2.1 hiera small</code> o <code>mask sam2.1 hiera base plus</code><sup id="fnref17:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>. Senza questo passaggio, il pulsante «AI mask» nel modulo <em>Mask Manager</em> rimane disabilitato<sup id="fnref18:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>SAM2 in darktable fornisce due modalità fondamentali di generazione maschera:</p>
 <ol>
-<li><strong>Maschera per oggetto (Object mask)</strong> — identifica e segmenta automaticamente soggetti riconoscibili (persone, animali, veicoli, edifici) usando un modello di visione artificiale pre-addestrato[^youtube-sam2].</li>
-<li><strong>Maschera per prompt (Prompt mask)</strong> — accetta input testuali (es. <code>"sky"</code>, <code>"green foliage"</code>, <code>"person's face"</code>) per guidare la segmentazione[^youtube-sam2].</li>
+<li><strong>Maschera per oggetto (Object mask)</strong> — identifica e segmenta automaticamente soggetti riconoscibili (persone, animali, veicoli, edifici) usando un modello di visione artificiale pre-addestrato<sup id="fnref19:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</li>
+<li><strong>Maschera per prompt (Prompt mask)</strong> — accetta input testuali (es. <code>"sky"</code>, <code>"green foliage"</code>, <code>"person's face"</code>) per guidare la segmentazione<sup id="fnref20:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</li>
 </ol>
 <p>Tutte le maschere generate sono <strong>vettoriali</strong>, non raster: ciò significa che:
 - Non perdono qualità in zoom o ridimensionamento
 - Possono essere rifinite con strumenti di disegno precisi (punti di controllo, smoothing, feathering)
-- Hanno un footprint minimo sul database XMP (solo coordinate vettoriali, non bitmap)[^youtube-sam2]</p>
+- Hanno un footprint minimo sul database XMP (solo coordinate vettoriali, non bitmap)<sup id="fnref4:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
 <p>Il flusso operativo si basa su tre fasi distinte ma integrate:
 - <strong>Generazione</strong>: analisi dell’immagine da parte del modello ONNX
 - <strong>Rifinitura</strong>: modifica interattiva della maschera vettoriale
-- <strong>Applicazione</strong>: blending con qualsiasi modulo che supporta maschere (es. <em>Exposure</em>, <em>Tone Equalizer</em>, <em>Color Balance RGB</em>)[^youtube-sam2]</p>
+- <strong>Applicazione</strong>: blending con qualsiasi modulo che supporta maschere (es. <em>Exposure</em>, <em>Tone Equalizer</em>, <em>Color Balance RGB</em>)<sup id="fnref5:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Limitazioni note su cieli e vegetazione</p>
-<p>I test confermano che SAM2 mostra una precisione inferiore su cieli uniformi e su vegetazione densa e sfocata, dove tende a produrre bordi irregolari o a includere aree indesiderate[^youtube-sam2]. In questi casi, si raccomanda di combinare SAM2 con maschere parametriche (es. <em>Luminance</em> o <em>Color Range</em>) o usare il modello alternativo <code>mask segnext vitb-sax2 hq</code>[^youtube-sam2].</p>
+<p>I test confermano che SAM2 mostra una precisione inferiore su cieli uniformi e su vegetazione densa e sfocata, dove tende a produrre bordi irregolari o a includere aree indesiderate<sup id="fnref21:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>. In questi casi, si raccomanda di combinare SAM2 con maschere parametriche (es. <em>Luminance</em> o <em>Color Range</em>) o usare il modello alternativo <code>mask segnext vitb-sax2 hq</code><sup id="fnref22:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso ottimale per sfruttare SAM2 segue un ordine rigoroso, allineato al paradigma scene-referred[^manual-flusso]:</p>
+<p>Il flusso ottimale per sfruttare SAM2 segue un ordine rigoroso, allineato al paradigma scene-referred<sup id="fnref:manual-flusso"><a class="footnote-ref" href="#fn:manual-flusso">3</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzioni tecniche (Lens Correction, Denoise profilato)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Esposizione globale (modulo Exposure)
@@ -3039,32 +3039,32 @@
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. Regolazioni locali (con maschera applicata)
 </code></pre></div>
 <h3 id="passo-1-abilitazione-e-configurazione-del-modello">Passo 1: Abilitazione e configurazione del modello<a class="headerlink" href="#passo-1-abilitazione-e-configurazione-del-modello" title="Permanent link">&para;</a></h3>
-<p>Prima di tutto, accedi a <strong>Preferenze › Elaborazione › AI</strong>[^youtube-sam2]:
+<p>Prima di tutto, accedi a <strong>Preferenze › Elaborazione › AI</strong><sup id="fnref6:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>:
 - Attiva <code>enable AI features</code>
-- Imposta <code>execution provider</code> su <code>auto</code> (permette rilevamento automatico GPU/CPU)[^pixls-gpu]
+- Imposta <code>execution provider</code> su <code>auto</code> (permette rilevamento automatico GPU/CPU)<sup id="fnref2:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup>
 - Scarica e abilita almeno un modello SAM2:
-  - <code>mask sam2.1 hiera small</code>: ~180 MB, veloce, sufficiente per la maggior parte dei casi (default consigliato)[^youtube-sam2]
-  - <code>mask sam2.1 hiera base plus</code>: ~420 MB, maggiore accuratezza su dettagli fini (es. peli, tessuti)[^youtube-sam2]</p>
+  - <code>mask sam2.1 hiera small</code>: ~180 MB, veloce, sufficiente per la maggior parte dei casi (default consigliato)<sup id="fnref7:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
+  - <code>mask sam2.1 hiera base plus</code>: ~420 MB, maggiore accuratezza su dettagli fini (es. peli, tessuti)<sup id="fnref8:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
 <p><img alt="Preferenze &gt; Sezione AI con modello SAM2 scaricato ed abilitato" src="../images/sam2-preferences.jpg" /></p>
 <h3 id="passo-2-generazione-della-maschera">Passo 2: Generazione della maschera<a class="headerlink" href="#passo-2-generazione-della-maschera" title="Permanent link">&para;</a></h3>
 <p>Nella <em>Camera Oscura</em>, apri il modulo <strong>Mask Manager</strong>, quindi:
-- Clicca su <strong>+</strong> &gt; <strong>AI mask</strong> (disponibile solo se il modello è abilitato)[^youtube-sam2]
+- Clicca su <strong>+</strong> &gt; <strong>AI mask</strong> (disponibile solo se il modello è abilitato)<sup id="fnref9:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
 - Scegli tra:
-  - <strong>Object detection</strong>: clicca sull’oggetto nell’anteprima per generare la maschera (es. scimmia su roccia)[^youtube-sam2]
-  - <strong>Prompt-based</strong>: digita un termine descrittivo (es. <code>"rock surface"</code>, <code>"background mountains"</code>)[^youtube-sam2]
-- L’indicatore <code>object mask: analyzing image...</code> appare in basso a destra[^youtube-sam2]</p>
+  - <strong>Object detection</strong>: clicca sull’oggetto nell’anteprima per generare la maschera (es. scimmia su roccia)<sup id="fnref10:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
+  - <strong>Prompt-based</strong>: digita un termine descrittivo (es. <code>"rock surface"</code>, <code>"background mountains"</code>)<sup id="fnref11:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
+- L’indicatore <code>object mask: analyzing image...</code> appare in basso a destra<sup id="fnref12:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
 <p>Tempo medio di inferenza:
 - CPU (Intel i7-11800H): 8–12 sec per immagine 24 MP
-- GPU NVIDIA RTX 3060 (CUDA): 1.2–1.8 sec[^pixls-gpu]</p>
+- GPU NVIDIA RTX 3060 (CUDA): 1.2–1.8 sec<sup id="fnref3:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></p>
 <h3 id="passo-3-rifinitura-vettoriale">Passo 3: Rifinitura vettoriale<a class="headerlink" href="#passo-3-rifinitura-vettoriale" title="Permanent link">&para;</a></h3>
-<p>Una volta generata, la maschera appare come poligono con punti di controllo viola[^youtube-sam2]:
+<p>Una volta generata, la maschera appare come poligono con punti di controllo viola<sup id="fnref13:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>:
 - <strong>Aggiungi punto</strong>: Ctrl + clic su bordo
 - <strong>Rimuovi punto</strong>: Shift + clic su punto esistente
-- <strong>Smoothing</strong>: regola il cursore <code>smoothing</code> da 0.0 a 1.0 (default: 0.3)[^youtube-sam2]
-- <strong>Feathering</strong>: imposta <code>feathering radius</code> da 0.0 a 20.0 px (valore tipico: 3.0–8.0 px)[^youtube-sam2]</p>
+- <strong>Smoothing</strong>: regola il cursore <code>smoothing</code> da 0.0 a 1.0 (default: 0.3)<sup id="fnref14:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
+- <strong>Feathering</strong>: imposta <code>feathering radius</code> da 0.0 a 20.0 px (valore tipico: 3.0–8.0 px)<sup id="fnref15:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Usa la visualizzazione sovrapposta</p>
-<p>Attiva <code>display exposure mask</code> nel modulo <em>Mask Manager</em> per vedere la maschera in sovrapposizione con l’immagine originale. Questo aiuta a valutare la precisione del bordo prima dell’applicazione definitiva[^youtube-sam2].</p>
+<p>Attiva <code>display exposure mask</code> nel modulo <em>Mask Manager</em> per vedere la maschera in sovrapposizione con l’immagine originale. Questo aiuta a valutare la precisione del bordo prima dell’applicazione definitiva<sup id="fnref23:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3081,55 +3081,55 @@
 <td><strong>Smoothing</strong></td>
 <td>0.0 – 1.0</td>
 <td>0.30</td>
-<td>Livello di approssimazione della curva vettoriale. Valori alti riducono i punti di controllo ma possono arrotondare troppo i dettagli[^youtube-sam2]</td>
+<td>Livello di approssimazione della curva vettoriale. Valori alti riducono i punti di controllo ma possono arrotondare troppo i dettagli<sup id="fnref25:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Feathering radius</strong></td>
 <td>0.0 – 20.0 px</td>
 <td>3.0 px</td>
-<td>Raggio di sfumatura del bordo della maschera. Valori superiori a 10 px producono transizioni molto morbide[^youtube-sam2]</td>
+<td>Raggio di sfumatura del bordo della maschera. Valori superiori a 10 px producono transizioni molto morbide<sup id="fnref26:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Opacity</strong></td>
 <td>0% – 100%</td>
 <td>100%</td>
-<td>Opacità della maschera applicata. Utile per effetti di fusione parziale[^youtube-sam2]</td>
+<td>Opacità della maschera applicata. Utile per effetti di fusione parziale<sup id="fnref27:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Details threshold</strong></td>
 <td>-100% – +100%</td>
 <td>0%</td>
-<td>Sensibilità al dettaglio durante la generazione. Valori positivi aumentano la granularità della maschera (utile per texture complesse)[^youtube-sam2]</td>
+<td>Sensibilità al dettaglio durante la generazione. Valori positivi aumentano la granularità della maschera (utile per texture complesse)<sup id="fnref28:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast compensation</strong></td>
 <td>-100% – +100%</td>
 <td>0%</td>
-<td>Compensazione del contrasto della maschera stessa (non dell’immagine). Valori positivi migliorano il contrasto del bordo[^youtube-sam2]</td>
+<td>Compensazione del contrasto della maschera stessa (non dell’immagine). Valori positivi migliorano il contrasto del bordo<sup id="fnref29:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello Mask Manager con parametri SAM2 attivi" src="../images/sam2-parameters.jpg" /></p>
 <h2 id="integrazione-con-gpu-e-prestazioni">Integrazione con GPU e prestazioni<a class="headerlink" href="#integrazione-con-gpu-e-prestazioni" title="Permanent link">&para;</a></h2>
-<p>SAM2 utilizza ONNX Runtime per l’inferenza AI. darktable 5.6 introduce un sistema semplificato per l’accelerazione GPU[^pixls-gpu]:</p>
+<p>SAM2 utilizza ONNX Runtime per l’inferenza AI. darktable 5.6 introduce un sistema semplificato per l’accelerazione GPU<sup id="fnref4:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup>:</p>
 <ul>
-<li><strong>macOS (Apple Silicon)</strong>: CoreML abilitato di default, nessuna configurazione richiesta[^pixls-gpu]</li>
-<li><strong>Windows</strong>: DirectML abilitato di default su GPU DirectX 12[^pixls-gpu]</li>
-<li><strong>Linux</strong>: richiede installazione manuale o tramite pulsante <em>Install</em> nelle Preferenze AI[^pixls-gpu]</li>
+<li><strong>macOS (Apple Silicon)</strong>: CoreML abilitato di default, nessuna configurazione richiesta<sup id="fnref6:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
+<li><strong>Windows</strong>: DirectML abilitato di default su GPU DirectX 12<sup id="fnref7:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
+<li><strong>Linux</strong>: richiede installazione manuale o tramite pulsante <em>Install</em> nelle Preferenze AI<sup id="fnref8:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
 </ul>
 <p>Per verificare l’uso GPU:
 - Avvia darktable con flag <code>-d ai</code>
-- Cerca nella console: <code>[darktable_ai] execution provider: CUDA</code> (NVIDIA), <code>MIGraphX</code> (AMD), o <code>OpenVINO</code> (Intel)[^pixls-gpu]</p>
+- Cerca nella console: <code>[darktable_ai] execution provider: CUDA</code> (NVIDIA), <code>MIGraphX</code> (AMD), o <code>OpenVINO</code> (Intel)<sup id="fnref5:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></p>
 <div class="admonition info">
 <p class="admonition-title">Requisiti minimi GPU</p>
 <ul>
-<li><strong>NVIDIA</strong>: driver ≥ 525, CUDA Toolkit 12.x, cuDNN 9.x[^pixls-gpu]</li>
-<li><strong>AMD</strong>: ROCm ≥ 6.x, <code>migraphx</code> installato[^pixls-gpu]</li>
-<li><strong>Intel Arc</strong>: OpenVINO Toolkit ≥ 2024.1[^pixls-gpu]</li>
+<li><strong>NVIDIA</strong>: driver ≥ 525, CUDA Toolkit 12.x, cuDNN 9.x<sup id="fnref10:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
+<li><strong>AMD</strong>: ROCm ≥ 6.x, <code>migraphx</code> installato<sup id="fnref11:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
+<li><strong>Intel Arc</strong>: OpenVINO Toolkit ≥ 2024.1<sup id="fnref12:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
 </ul>
 </div>
 <h2 id="confronto-con-workflow-esterni">Confronto con workflow esterni<a class="headerlink" href="#confronto-con-workflow-esterni" title="Permanent link">&para;</a></h2>
-<p>SAM2 nativo offre vantaggi significativi rispetto ai plugin esterni SAM2/SAM3[^youtube-sam2]:</p>
+<p>SAM2 nativo offre vantaggi significativi rispetto ai plugin esterni SAM2/SAM3<sup id="fnref16:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3157,7 +3157,7 @@
 <tr>
 <td><strong>GPU acceleration</strong></td>
 <td>Integrata e automatica</td>
-<td>Richiede configurazione manuale del runtime esterno[^pixls-gpu]</td>
+<td>Richiede configurazione manuale del runtime esterno<sup id="fnref13:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Prompt support</strong></td>
@@ -3169,17 +3169,32 @@
 <p><img alt="Confronto visivo: maschera SAM2 nativa (bordo netto, vettoriale) vs. SAM3 esterno (bordo frastagliato, raster)" src="../images/sam2-vs-sam3.jpg" /></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">Video tutorial ufficiale: AI masks in darktable</a> — Guida pratica passo-passo con dimostrazioni live[^youtube-sam2]</li>
-<li><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/ai-masks/">Documentazione ufficiale: AI Features</a> — Riferimento tecnico completo[^manual-ai]</li>
-<li><a href="https://discuss.pixls.us/t/gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scripts/56941">Discussione community: GPU acceleration for AI features</a> — Installazione, troubleshooting e report di test hardware[^pixls-gpu]</li>
-<li><a href="https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/">Manuale Flusso di Lavoro darktable (Capitolo Maschere)</a> — Approccio ibrido SAM2 + maschere parametriche[^darktable-fr]</li>
+<li><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">Video tutorial ufficiale: AI masks in darktable</a> — Guida pratica passo-passo con dimostrazioni live<sup id="fnref24:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></li>
+<li><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/ai-masks/">Documentazione ufficiale: AI Features</a> — Riferimento tecnico completo<sup id="fnref:manual-ai"><a class="footnote-ref" href="#fn:manual-ai">4</a></sup></li>
+<li><a href="https://discuss.pixls.us/t/gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scripts/56941">Discussione community: GPU acceleration for AI features</a> — Installazione, troubleshooting e report di test hardware<sup id="fnref9:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup></li>
+<li><a href="https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/">Manuale Flusso di Lavoro darktable (Capitolo Maschere)</a> — Approccio ibrido SAM2 + maschere parametriche<sup id="fnref:darktable-fr"><a class="footnote-ref" href="#fn:darktable-fr">5</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^youtube-sam2]: [ENG] AI masks in darktable — Video-tutorial ufficiale (A Dabble in Photography), 2026-04-12, URL: https://www.youtube.com/watch?v=7yd5riDmUjk<br />
-[^pixls-gpu]: GPU acceleration for AI features in Darktable — discuss.pixls.us, 2026-04-10, URL: https://discuss.pixls.us/t/gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scripts/56941<br />
-[^manual-flusso]: Manuale_Flusso_Lavoro_darktable — darktable 5.4+, Aprile 2026, URL: https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/<br />
-[^manual-ai]: darktable 5.6 user manual — AI Masks module reference, URL: https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/ai-masks/<br />
-[^darktable-fr]: darktable FR — Tutoriel "Simplifier les masques avec darktable 4.2", 2023-02-05, URL: https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:youtube-sam2">
+<p>[ENG] AI masks in darktable — Video-tutorial ufficiale (A Dabble in Photography), 2026-04-12, URL: https://www.youtube.com/watch?v=7yd5riDmUjk&#160;<a class="footnote-backref" href="#fnref:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:youtube-sam2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-gpu">
+<p>GPU acceleration for AI features in Darktable — discuss.pixls.us, 2026-04-10, URL: https://discuss.pixls.us/t/gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scripts/56941&#160;<a class="footnote-backref" href="#fnref:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:pixls-gpu" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-flusso">
+<p>Manuale_Flusso_Lavoro_darktable — darktable 5.4+, Aprile 2026, URL: https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/&#160;<a class="footnote-backref" href="#fnref:manual-flusso" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-ai">
+<p>darktable 5.6 user manual — AI Masks module reference, URL: https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/ai-masks/&#160;<a class="footnote-backref" href="#fnref:manual-ai" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr">
+<p>darktable FR — Tutoriel "Simplifier les masques avec darktable 4.2", 2023-02-05, URL: https://darktable.fr/posts/2023/02/simplifier-les-masques-avec-darktable-4.2/&#160;<a class="footnote-backref" href="#fnref:darktable-fr" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

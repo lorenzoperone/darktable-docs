@@ -2894,7 +2894,7 @@
 
 
 <h1 id="flusso-scene-referred">Flusso Scene-Referred<a class="headerlink" href="#flusso-scene-referred" title="Permanent link">&para;</a></h1>
-<p>Il paradigma <strong>scene-referred</strong> ha ridefinito le fondamenta di darktable a partire dalla versione 3.0.[^manual-scene]</p>
+<p>Il paradigma <strong>scene-referred</strong> ha ridefinito le fondamenta di darktable a partire dalla versione 3.0.<sup id="fnref:manual-scene"><a class="footnote-ref" href="#fn:manual-scene">1</a></sup></p>
 <h2 id="display-referred-vs-scene-referred">Display-referred vs. scene-referred<a class="headerlink" href="#display-referred-vs-scene-referred" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2931,7 +2931,7 @@
 <p>Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred, quando alzi l'esposizione, l'arancione vira verso un giallo-limone artificiale. Nel flusso scene-referred, l'arancione rimane arancione anche a esposizioni elevate.</p>
 <div class="admonition tip">
 <p class="admonition-title">Configurazione iniziale</p>
-<p><strong>Preferenze &gt; Elaborazione &gt; Flusso predefinito</strong>: seleziona <code>scene-referred (agx)</code>. Imposta anche <em>auto apply pixel workflow defaults</em> su <em>scene-referred</em> e <em>chromatic adaptation</em> su <em>modern</em>.[^firststeps]</p>
+<p><strong>Preferenze &gt; Elaborazione &gt; Flusso predefinito</strong>: seleziona <code>scene-referred (agx)</code>. Imposta anche <em>auto apply pixel workflow defaults</em> su <em>scene-referred</em> e <em>chromatic adaptation</em> su <em>modern</em>.<sup id="fnref:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup></p>
 </div>
 <h2 id="la-pipeline-scene-referred">La pipeline scene-referred<a class="headerlink" href="#la-pipeline-scene-referred" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RAW --&gt; Raw B/W Point --&gt; White Balance (camera ref) --&gt; Demosaic
@@ -2943,11 +2943,11 @@
 </code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Moduli disabilitati</p>
-<p>NON modificare <em>raw black/white point</em>, <em>input color profile</em>, <em>output color profile</em>. Sono essenziali per la pipeline.[^pipeline]</p>
+<p>NON modificare <em>raw black/white point</em>, <em>input color profile</em>, <em>output color profile</em>. Sono essenziali per la pipeline.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup></p>
 </div>
 <blockquote>
-<p>Aurelie Pierre (sviluppatore darktable) ha scritto un articolo fondamentale sulla transizione a RGB e il perche' dei moduli scene-referred: <em>darktable 3: RGB or Lab? Which modules help?</em>[^pixls-rgb]</p>
-<p>La community darktable.fr documenta in dettaglio l'evoluzione del flusso scene-referred nelle varie versioni.[^dtfr-scene]</p>
+<p>Aurelie Pierre (sviluppatore darktable) ha scritto un articolo fondamentale sulla transizione a RGB e il perche' dei moduli scene-referred: <em>darktable 3: RGB or Lab? Which modules help?</em><sup id="fnref:pixls-rgb"><a class="footnote-ref" href="#fn:pixls-rgb">4</a></sup></p>
+<p>La community darktable.fr documenta in dettaglio l'evoluzione del flusso scene-referred nelle varie versioni.<sup id="fnref:dtfr-scene"><a class="footnote-ref" href="#fn:dtfr-scene">5</a></sup></p>
 </blockquote>
 <h2 id="spazi-colore-in-darktable">Spazi colore in darktable<a class="headerlink" href="#spazi-colore-in-darktable" title="Permanent link">&para;</a></h2>
 <table>
@@ -2978,14 +2978,29 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Profilo di input</p>
-<p>Mantenere <em>linear rec 2020 RGB</em> come profilo colore di input per compatibilita' scene-referred.[^pipeline]</p>
+<p>Mantenere <em>linear rec 2020 RGB</em> come profilo colore di input per compatibilita' scene-referred.<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup></p>
 </div>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-scene]: <em>darktable User Manual -- Scene-referred and display-referred workflow</em>, <a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-*.md</code>
-[^firststeps]: <em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography
-[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography
-[^pixls-rgb]: <em>PIXLS.US -- darktable 3: RGB or Lab?</em>, <a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">pixls.us</a> | <code>processed/pixls-articles/articles-darktable-3-rgb-or-lab-which-modules-help.md</code>
-[^dtfr-scene]: <em>darktable.fr -- Apprendre</em>, <a href="https://darktable.fr/apprendre/">darktable.fr</a> | <code>processed/darktable-fr/apprendre.md</code></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-scene">
+<p><em>darktable User Manual -- Scene-referred and display-referred workflow</em>, <a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-*.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-scene" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:firststeps">
+<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-rgb">
+<p><em>PIXLS.US -- darktable 3: RGB or Lab?</em>, <a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">pixls.us</a> | <code>processed/pixls-articles/articles-darktable-3-rgb-or-lab-which-modules-help.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-rgb" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dtfr-scene">
+<p><em>darktable.fr -- Apprendre</em>, <a href="https://darktable.fr/apprendre/">darktable.fr</a> | <code>processed/darktable-fr/apprendre.md</code>&#160;<a class="footnote-backref" href="#fnref:dtfr-scene" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

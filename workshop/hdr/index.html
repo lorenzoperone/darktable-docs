@@ -3117,14 +3117,14 @@
 
 <h1 id="hdr-tone-mapping-in-darktable-workshop-pratico">HDR Tone Mapping in darktable: Workshop Pratico<a class="headerlink" href="#hdr-tone-mapping-in-darktable-workshop-pratico" title="Permanent link">&para;</a></h1>
 <p>Il <strong>tone mapping HDR</strong> in darktable non è un singolo modulo, ma una strategia di compressione tonale che combina tre strumenti complementari:<br />
-1. <strong>Tone Equalizer</strong>, per il controllo locale e la gestione delle zone di luminanza[^dt48-tone-equalizer]<br />
-2. <strong>Sigmoid</strong>, per la compressione globale robusta e prevedibile[^sigmoid-v5-video]<br />
-3. <strong>AGX</strong> (da darktable 5.4+), come sostituto avanzato per immagini scene-referred ad alto contrasto[^dt54-update][^agx-guide]  </p>
+1. <strong>Tone Equalizer</strong>, per il controllo locale e la gestione delle zone di luminanza<sup id="fnref:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup><br />
+2. <strong>Sigmoid</strong>, per la compressione globale robusta e prevedibile<sup id="fnref:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup><br />
+3. <strong>AGX</strong> (da darktable 5.4+), come sostituto avanzato per immagini scene-referred ad alto contrasto<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup><sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">4</a></sup>  </p>
 <p>Questo workshop ti guida passo-passo su un’immagine RAW di paesaggio al tramonto con cielo nuvoloso, forti luci sulle nuvole e ombre profonde nel primo piano — un classico caso HDR.</p>
 <p><img alt="Immagine RAW di paesaggio al tramonto, prima dell'editing" src="../images/hdr-workshop-before.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">HDR ≠ solo immagini bracketed</p>
-<p>Darktable gestisce l’HDR <em>anche</em> su singoli RAW con ampio range dinamico (es. Fujifilm X-Trans, Sony A7IV). Non serve necessariamente un set di esposizioni multiple[^dt48-tone-equalizer].</p>
+<p>Darktable gestisce l’HDR <em>anche</em> su singoli RAW con ampio range dinamico (es. Fujifilm X-Trans, Sony A7IV). Non serve necessariamente un set di esposizioni multiple<sup id="fnref4:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</p>
 </div>
 <hr />
 <h2 id="panoramica-del-flusso-hdr">Panoramica del flusso HDR<a class="headerlink" href="#panoramica-del-flusso-hdr" title="Permanent link">&para;</a></h2>
@@ -3139,7 +3139,7 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Non saltare la fase 1</p>
-<p>Se i dati nelle alte luci sono già bruciati (<em>clipped</em>) nel RAW (istogramma tocca il bordo destro), nessun tone mapper potrà recuperarli. Verifica sempre il clipping premendo <code>O</code> (Overexposure) prima di iniziare[^sigmoid-v5-video].</p>
+<p>Se i dati nelle alte luci sono già bruciati (<em>clipped</em>) nel RAW (istogramma tocca il bordo destro), nessun tone mapper potrà recuperarli. Verifica sempre il clipping premendo <code>O</code> (Overexposure) prima di iniziare<sup id="fnref2:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</p>
 </div>
 <hr />
 <h2 id="passo-1-esposizione-corretta-modulo-exposure">Passo 1: Esposizione corretta (modulo <code>exposure</code>)<a class="headerlink" href="#passo-1-esposizione-corretta-modulo-exposure" title="Permanent link">&para;</a></h2>
@@ -3156,22 +3156,22 @@
 <tr>
 <td><code>compensate camera exposure</code></td>
 <td><code>0.00 EV</code></td>
-<td>Disattiva la compensazione automatica della fotocamera per avere il controllo totale[^sigmoid-v5-video].</td>
+<td>Disattiva la compensazione automatica della fotocamera per avere il controllo totale<sup id="fnref4:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>exposure</code></td>
 <td><code>+0.30 EV</code></td>
-<td>Leggero aumento per “alzare” le ombre senza bruciare le nuvole (valore tipico per tramonti con cielo coperto)[^sigmoid-v5-video].</td>
+<td>Leggero aumento per “alzare” le ombre senza bruciare le nuvole (valore tipico per tramonti con cielo coperto)<sup id="fnref5:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>clipping threshold</code></td>
 <td><code>0.010%</code></td>
-<td>Imposta la soglia di clipping più bassa possibile per rivelare anche i primi segni di sovraesposizione[^sigmoid-v5-video].</td>
+<td>Imposta la soglia di clipping più bassa possibile per rivelare anche i primi segni di sovraesposizione<sup id="fnref6:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>black level correction</code></td>
 <td><code>-0.0002</code></td>
-<td>Corregge leggermente il nero per evitare blocchi di colore uniforme nelle ombre profonde[^sigmoid-v5-video].</td>
+<td>Corregge leggermente il nero per evitare blocchi di colore uniforme nelle ombre profonde<sup id="fnref7:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3194,15 +3194,15 @@
 <tbody>
 <tr>
 <td><strong>Sigmoid</strong></td>
-<td>Immagini con colori caldi intensi (tramonti, albe), dove vuoi preservare gialli/arancioni vividi[^color-perception-video]</td>
-<td>Più controllabile sui colori alti, meno rischio di "rosso fisso" (effetto Bezold-Brücke)[^color-perception-video]</td>
-<td>[^sigmoid-v5-video]</td>
+<td>Immagini con colori caldi intensi (tramonti, albe), dove vuoi preservare gialli/arancioni vividi<sup id="fnref2:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup></td>
+<td>Più controllabile sui colori alti, meno rischio di "rosso fisso" (effetto Bezold-Brücke)<sup id="fnref3:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup></td>
+<td><sup id="fnref8:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>AGX</strong></td>
-<td>Immagini con forte contrasto geometrico (es. edifici contro cielo), dove priorità è la linearità tonale e la coerenza cromatica scene-referred[^dt54-update]</td>
-<td>Curva più stabile, attenuazione automatica delle primarie prima della compressione[^dt54-update]</td>
-<td>[^dt54-update]</td>
+<td>Immagini con forte contrasto geometrico (es. edifici contro cielo), dove priorità è la linearità tonale e la coerenza cromatica scene-referred<sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup></td>
+<td>Curva più stabile, attenuazione automatica delle primarie prima della compressione<sup id="fnref4:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup></td>
+<td><sup id="fnref5:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3220,35 +3220,35 @@
 <tr>
 <td><code>contrast</code></td>
 <td><code>1.60</code></td>
-<td>Valore medio-alto per dare impatto senza esagerare[^sigmoid-v5-video].</td>
+<td>Valore medio-alto per dare impatto senza esagerare<sup id="fnref9:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>target_white</code></td>
 <td><code>99.99%</code></td>
-<td>Evita il white clipping (non usare <code>100.00%</code>)[^sigmoid-v5-video].</td>
+<td>Evita il white clipping (non usare <code>100.00%</code>)<sup id="fnref10:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>target_black</code></td>
 <td><code>0.0152%</code></td>
-<td>Preserva profondità nelle ombre senza "pompare" il nero[^sigmoid-v5-video].</td>
+<td>Preserva profondità nelle ombre senza "pompare" il nero<sup id="fnref11:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>color_processing</code></td>
 <td><code>per channel</code></td>
-<td>Mantiene la separazione cromatica durante la compressione[^sigmoid-v5-video].</td>
+<td>Mantiene la separazione cromatica durante la compressione<sup id="fnref12:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 <tr>
 <td><code>preserve_hue</code></td>
 <td><code>100.00%</code></td>
-<td>Impedisce spostamenti indesiderati della tinta nelle transizioni tonali[^sigmoid-v5-video].</td>
+<td>Impedisce spostamenti indesiderati della tinta nelle transizioni tonali<sup id="fnref13:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</td>
 </tr>
 </tbody>
 </table>
-<p>⚠️ <strong>Attenzione</strong>: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), vai alla scheda <em>Color</em> e abbassa <code>red attenuation</code> a <code>15–25%</code>[^color-perception-video].</p>
+<p>⚠️ <strong>Attenzione</strong>: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), vai alla scheda <em>Color</em> e abbassa <code>red attenuation</code> a <code>15–25%</code><sup id="fnref:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup>.</p>
 <p><img alt="Sigmoid attivo con curva bilanciata per HDR" src="../images/hdr-workshop-sigmoid.jpg" /></p>
 <hr />
 <h2 id="passo-3-controllo-locale-con-tone-equalizer">Passo 3: Controllo locale con <code>tone equalizer</code><a class="headerlink" href="#passo-3-controllo-locale-con-tone-equalizer" title="Permanent link">&para;</a></h2>
-<p>Il modulo <strong>tone equalizer</strong> è lo strumento chiave per l’HDR: permette di “dodgere” e “burnare” zone specifiche <strong>senza distruggere il contrasto locale</strong>, grazie alla sua maschera guidata[^dt48-tone-equalizer].</p>
+<p>Il modulo <strong>tone equalizer</strong> è lo strumento chiave per l’HDR: permette di “dodgere” e “burnare” zone specifiche <strong>senza distruggere il contrasto locale</strong>, grazie alla sua maschera guidata<sup id="fnref2:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</p>
 <h3 id="configurazione-della-maschera">Configurazione della maschera<a class="headerlink" href="#configurazione-della-maschera" title="Permanent link">&para;</a></h3>
 <p>Vai alla scheda <strong>masking</strong> e imposta:</p>
 <table>
@@ -3263,27 +3263,27 @@
 <tr>
 <td><code>luminance estimator</code></td>
 <td><code>RGB euclidean norm</code></td>
-<td>Default affidabile per immagini naturali[^dt48-tone-equalizer].</td>
+<td>Default affidabile per immagini naturali<sup id="fnref6:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
 <td><code>preserve details</code></td>
 <td><code>eigf (default)</code></td>
-<td>Filtro exposure-independent: tratta luci e ombre con la stessa intensità di blur[^dt48-tone-equalizer].</td>
+<td>Filtro exposure-independent: tratta luci e ombre con la stessa intensità di blur<sup id="fnref7:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
 <td><code>smoothing diameter</code></td>
 <td><code>5%</code></td>
-<td>Valore standard per immagini full-frame; aumenta a <code>8%</code> per sensori più piccoli[^dt48-tone-equalizer].</td>
+<td>Valore standard per immagini full-frame; aumenta a <code>8%</code> per sensori più piccoli<sup id="fnref8:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
 <td><code>edges refinement/feathering</code></td>
 <td><code>200</code></td>
-<td>Mantiene i bordi netti (es. orizzonte, profilo delle nuvole)[^dt48-tone-equalizer].</td>
+<td>Mantiene i bordi netti (es. orizzonte, profilo delle nuvole)<sup id="fnref9:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
 <td><code>mask contrast compensation</code></td>
 <td><code>+15%</code></td>
-<td>Allarga l’istogramma della maschera per coprire meglio le 9 zone EV[^dt48-tone-equalizer].</td>
+<td>Allarga l’istogramma della maschera per coprire meglio le 9 zone EV<sup id="fnref10:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3326,7 +3326,7 @@
 </tr>
 </tbody>
 </table>
-<p>💡 <strong>Trucco veloce</strong>: posiziona il cursore sopra una nuvola luminosa e usa la rotellina del mouse per ridurre l’esposizione localmente[^dt48-tone-equalizer].</p>
+<p>💡 <strong>Trucco veloce</strong>: posiziona il cursore sopra una nuvola luminosa e usa la rotellina del mouse per ridurre l’esposizione localmente<sup id="fnref3:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</p>
 <p><img alt="Tone Equalizer con maschera ben distribuita e interventi mirati" src="../images/hdr-workshop-tone-equalizer.jpg" /></p>
 <hr />
 <h2 id="passo-4-affinamento-cromatico">Passo 4: Affinamento cromatico<a class="headerlink" href="#passo-4-affinamento-cromatico" title="Permanent link">&para;</a></h2>
@@ -3344,17 +3344,17 @@
 <tr>
 <td><code>blue attenuation</code></td>
 <td><code>42%</code></td>
-<td>Il blu è il canale più fragile: attenuarlo previene il clipping ciano/azzurro nelle nuvole[^dt54-update].</td>
+<td>Il blu è il canale più fragile: attenuarlo previene il clipping ciano/azzurro nelle nuvole<sup id="fnref6:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.</td>
 </tr>
 <tr>
 <td><code>red attenuation</code></td>
 <td><code>20%</code></td>
-<td>Riduce il rischio di rosso fisso negli highlight caldi[^color-perception-video].</td>
+<td>Riduce il rischio di rosso fisso negli highlight caldi<sup id="fnref4:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup>.</td>
 </tr>
 <tr>
 <td><code>green attenuation</code></td>
 <td><code>5%</code></td>
-<td>Minimo necessario per bilanciare[^dt54-update].</td>
+<td>Minimo necessario per bilanciare<sup id="fnref7:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3381,7 +3381,7 @@
 <tr>
 <td><code>highlights</code></td>
 <td><code>-0.05</code></td>
-<td>Controbilancia l’eccesso di bianco nelle luci (evita “lavaggio”)[^color-perception-video]</td>
+<td>Controbilancia l’eccesso di bianco nelle luci (evita “lavaggio”)<sup id="fnref5:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3412,31 +3412,31 @@
 <td><code>contrast</code></td>
 <td><code>1.20 – 2.00</code></td>
 <td><code>1.60</code></td>
-<td>&gt;2.0 → curve instabili, artefatti nelle transizioni[^sigmoid-v5-video]</td>
+<td>&gt;2.0 → curve instabili, artefatti nelle transizioni<sup id="fnref14:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup></td>
 </tr>
 <tr>
 <td><code>tone equalizer</code></td>
 <td><code>curve smoothing</code></td>
 <td><code>0.2 – 0.5</code></td>
 <td><code>0.35</code></td>
-<td>&gt;0.6 → oscillazioni matematiche, banding[^dt48-tone-equalizer]</td>
+<td>&gt;0.6 → oscillazioni matematiche, banding<sup id="fnref11:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup></td>
 </tr>
 <tr>
 <td><code>color calibration</code></td>
 <td><code>blue attenuation</code></td>
 <td><code>10% – 70%</code></td>
 <td><code>42%</code></td>
-<td>&gt;70% → immagine spenta, perdita di atmosfera[^dt54-update]</td>
+<td>&gt;70% → immagine spenta, perdita di atmosfera<sup id="fnref8:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="consigli-operativi-finali">Consigli operativi finali<a class="headerlink" href="#consigli-operativi-finali" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Ordine di attivazione</strong>: <code>exposure</code> → <code>sigmoid</code> → <code>tone equalizer</code> → <code>color balance rgb</code>. Cambiare l’ordine può generare artefatti[^dt48-tone-equalizer].  </li>
-<li><strong>Zoom costante</strong>: lavora sempre a <code>100%</code> per valutare il clipping, ma verifica il risultato a <code>25%</code> per il contrasto globale[^sigmoid-v5-video].  </li>
-<li><strong>Salva uno snapshot prima di sigmoid</strong>: utile per confrontare prima/dopo con <code>Ctrl+Shift+D</code>[^dt52-snapshots-video].  </li>
-<li><strong>Evita il doppio tone mapping</strong>: non usare contemporaneamente <code>sigmoid</code> e <code>AGX</code> — causano over-compression e banding[^dt54-update].  </li>
+<li><strong>Ordine di attivazione</strong>: <code>exposure</code> → <code>sigmoid</code> → <code>tone equalizer</code> → <code>color balance rgb</code>. Cambiare l’ordine può generare artefatti<sup id="fnref5:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.  </li>
+<li><strong>Zoom costante</strong>: lavora sempre a <code>100%</code> per valutare il clipping, ma verifica il risultato a <code>25%</code> per il contrasto globale<sup id="fnref3:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.  </li>
+<li><strong>Salva uno snapshot prima di sigmoid</strong>: utile per confrontare prima/dopo con <code>Ctrl+Shift+D</code><sup id="fnref:dt52-snapshots-video"><a class="footnote-ref" href="#fn:dt52-snapshots-video">6</a></sup>.  </li>
+<li><strong>Evita il doppio tone mapping</strong>: non usare contemporaneamente <code>sigmoid</code> e <code>AGX</code> — causano over-compression e banding<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.  </li>
 </ul>
 <hr />
 <h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">&para;</a></h2>
@@ -3448,12 +3448,29 @@
 </ul>
 <hr />
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-tone-equalizer]: darktable 4.8 user manual - tone equalizer, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/tone-equalizer/#<br />
-[^sigmoid-v5-video]: [ENG] Darktable Filmic v5, A Dabble in Photography, https://www.youtube.com/watch?v=K7ALyEU9fHY<br />
-[^dt54-update]: [ENG] darktable 5.4 NEW UPDATE!, A Dabble in Photography, https://www.youtube.com/watch?v=yiTqUgoWg6Q<br />
-[^agx-guide]: darktable 5.4 official documentation on AGX tone compression, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx-tone-compressor/<br />
-[^color-perception-video]: [ENG] How to get accurate colours in darktable, A Dabble in Photography, https://www.youtube.com/watch?v=TMlF85TFIUo<br />
-[^dt52-snapshots-video]: [ENG] New Release: darktable 5.2, A Dabble in Photography, https://www.youtube.com/watch?v=YcLJMaDbfRA</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-tone-equalizer">
+<p>darktable 4.8 user manual - tone equalizer, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/tone-equalizer/#&#160;<a class="footnote-backref" href="#fnref:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-tone-equalizer" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sigmoid-v5-video">
+<p>[ENG] Darktable Filmic v5, A Dabble in Photography, https://www.youtube.com/watch?v=K7ALyEU9fHY&#160;<a class="footnote-backref" href="#fnref:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:sigmoid-v5-video" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt54-update">
+<p>[ENG] darktable 5.4 NEW UPDATE!, A Dabble in Photography, https://www.youtube.com/watch?v=yiTqUgoWg6Q&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt54-update" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-guide">
+<p>darktable 5.4 official documentation on AGX tone compression, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx-tone-compressor/&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-perception-video">
+<p>[ENG] How to get accurate colours in darktable, A Dabble in Photography, https://www.youtube.com/watch?v=TMlF85TFIUo&#160;<a class="footnote-backref" href="#fnref:color-perception-video" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:color-perception-video" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:color-perception-video" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:color-perception-video" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:color-perception-video" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52-snapshots-video">
+<p>[ENG] New Release: darktable 5.2, A Dabble in Photography, https://www.youtube.com/watch?v=YcLJMaDbfRA&#160;<a class="footnote-backref" href="#fnref:dt52-snapshots-video" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

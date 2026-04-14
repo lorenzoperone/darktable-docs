@@ -3026,14 +3026,14 @@
 
 
 <h1 id="highlight-reconstruction">Highlight Reconstruction<a class="headerlink" href="#highlight-reconstruction" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>highlight reconstruction</strong> è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone <em>clippate</em> — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, <strong>highlight reconstruction agisce molto precocemente</strong>, prima di <code>input color profile</code>, <code>color calibration</code> e <code>white balance</code>, su un segnale ancora grezzo e privo di significato cromatico definito [^dt48-highlight].</p>
+<p>Il modulo <strong>highlight reconstruction</strong> è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone <em>clippate</em> — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, <strong>highlight reconstruction agisce molto precocemente</strong>, prima di <code>input color profile</code>, <code>color calibration</code> e <code>white balance</code>, su un segnale ancora grezzo e privo di significato cromatico definito <sup id="fnref:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
 <p><img alt="Introduzione al modulo highlight reconstruction" src="../images/highlight-reconstruction-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Posizione critica nella pipeline</p>
-<p>Il modulo si trova subito dopo <code>demosaic</code> e prima di <code>input color profile</code>. Questa posizione è fondamentale: poiché non esiste ancora un concetto di "bianco" o "colore" ben definito, i metodi di ricostruzione devono basarsi esclusivamente su gradienti spaziali e rapporti tra pixel adiacenti — non su valori cromatici assoluti [^dt48-highlight].</p>
+<p>Il modulo si trova subito dopo <code>demosaic</code> e prima di <code>input color profile</code>. Questa posizione è fondamentale: poiché non esiste ancora un concetto di "bianco" o "colore" ben definito, i metodi di ricostruzione devono basarsi esclusivamente su gradienti spaziali e rapporti tra pixel adiacenti — non su valori cromatici assoluti <sup id="fnref3:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
-<p>Quando un pixel è <em>clippato</em>, significa che la luce incidente ha superato la capacità di registrazione del fotosensore (saturation) o del formato digitale (digital clipping). In una matrice Bayer, ogni pixel registra solo un colore (R, G o B); durante il demosaicing, i valori mancanti vengono interpolati. Se un canale è clippato ma gli altri no (es. solo il verde è a 100%), l’interpolazione produce colori innaturali (es. magenta invece che bianco), che poi vengono amplificati dal successivo bilanciamento del bianco [^dt48-highlight].</p>
+<p>Quando un pixel è <em>clippato</em>, significa che la luce incidente ha superato la capacità di registrazione del fotosensore (saturation) o del formato digitale (digital clipping). In una matrice Bayer, ogni pixel registra solo un colore (R, G o B); durante il demosaicing, i valori mancanti vengono interpolati. Se un canale è clippato ma gli altri no (es. solo il verde è a 100%), l’interpolazione produce colori innaturali (es. magenta invece che bianco), che poi vengono amplificati dal successivo bilanciamento del bianco <sup id="fnref2:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
 <p>Il modulo offre <strong>cinque metodi principali</strong>, ciascuno con un diverso compromesso tra accuratezza, velocità e robustezza:</p>
 <table>
 <thead>
@@ -3049,37 +3049,37 @@
 <td><strong>inpaint opposed</strong> (default)</td>
 <td>Ricostruisce pixel clippati usando la media dei pixel adiacenti <em>non clippati</em> nello stesso canale.</td>
 <td>La maggior parte delle immagini, soprattutto con aree clippate piccole e omogenee. Rapido e affidabile.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref19:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>segmentation based</strong></td>
 <td>Identifica regioni clippate come “segmenti” separati e stima il colore corretto analizzando i rapporti cromatici dei pixel circostanti, scartando quelli troppo scuri o su bordi.</td>
 <td>Aree clippate ampie e strutturate (es. cieli, finestre, superfici lucide). Più accurato di <code>inpaint opposed</code> ma più lento.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref20:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>guided laplacians</strong></td>
 <td>Algoritmo multi-scala che propaga gradienti e dettagli da regioni valide in quelle clippate, senza fare ipotesi sul colore. Usa rumore Poisson per mascherare la differenza di texture.</td>
 <td>Spotlights, riflessi speculari, aree clippate fino a ~256 px (a risoluzione RAW). Massima coerenza visiva, ma computazionalmente pesante.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref21:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>clip highlights</strong></td>
 <td>Forza il clipping di tutti i canali al livello del canale più basso (es. se G=1.0, R e B vengono troncati a 1.0).</td>
 <td>Oggetti naturalmente desaturati (nubi, marmo, neve) dove la perdita di colore è accettabile.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref22:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>reconstruct in LCh</strong></td>
 <td>Analizza blocchi di sensori (3 pixel per Bayer, 8 per X-Trans) e ricostruisce in spazio LCh: preserva luminanza ma rende le alte luci monochrome.</td>
 <td>Immagini con curve base ad alto contrasto che già desaturano naturalmente le luci.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref23:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Limiti fondamentali</p>
-<p>Nessun metodo può “recuperare magicamente” dati persi. La ricostruzione è sempre un'<strong>inferenza plausibile</strong>, non un ripristino fisico. Come sottolineato nel manuale ufficiale: <em>"think of this method more as a way to 'disguise' clipped areas with something plausible, rather than a way to 'magically' repair them"</em> [^dt48-highlight].</p>
+<p>Nessun metodo può “recuperare magicamente” dati persi. La ricostruzione è sempre un'<strong>inferenza plausibile</strong>, non un ripristino fisico. Come sottolineato nel manuale ufficiale: <em>"think of this method more as a way to 'disguise' clipped areas with something plausible, rather than a way to 'magically' repair them"</em> <sup id="fnref4:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
 <p>Il flusso ottimale prevede un'integrazione stretta con <code>exposure</code>, <code>white balance</code> e <code>filmic rgb</code>:</p>
@@ -3097,18 +3097,18 @@
 <p>Il parametro <strong>clipping threshold</strong> definisce il valore oltre il quale un pixel è considerato clippato. Il default dipende dalla fotocamera, ma spesso va regolato manualmente:</p>
 <ul>
 <li>Clicca sull’icona accanto allo slider per visualizzare la <strong>maschera di clipping</strong> (aree rosse = clippate).</li>
-<li>Se la maschera non corrisponde all’avviso RAW overexposed (visualizzato premendo <code>O</code>), aggiusta il threshold [^dt48-highlight].</li>
-<li>Valori tipici: <code>0.995</code>–<code>0.999</code> (per RAW lineari), ma può variare da <code>0.97</code> (sensori rumorosi) a <code>0.9999</code> (sensori ad alta precisione) [^dt48-highlight].</li>
+<li>Se la maschera non corrisponde all’avviso RAW overexposed (visualizzato premendo <code>O</code>), aggiusta il threshold <sup id="fnref5:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
+<li>Valori tipici: <code>0.995</code>–<code>0.999</code> (per RAW lineari), ma può variare da <code>0.97</code> (sensori rumorosi) a <code>0.9999</code> (sensori ad alta precisione) <sup id="fnref6:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 </ul>
 <p><img alt="Maschera di clipping attivata" src="../images/highlight-reconstruction-clipping-mask.jpg" /></p>
 <h3 id="passo-2-scelta-del-metodo">Passo 2: Scelta del metodo<a class="headerlink" href="#passo-2-scelta-del-metodo" title="Permanent link">&para;</a></h3>
 <p>Per la maggior parte degli utenti, <strong>inpaint opposed</strong> è sufficiente. Passa a metodi avanzati solo se necessario:</p>
 <ul>
-<li><strong>Segmentation based</strong>: usa quando <code>inpaint opposed</code> genera artefatti (es. bordi frastagliati, colori inconsistenti tra segmenti vicini). Attiva la visualizzazione dei segmenti cliccando sul pulsante accanto a <code>combine</code> [^dt48-highlight].</li>
+<li><strong>Segmentation based</strong>: usa quando <code>inpaint opposed</code> genera artefatti (es. bordi frastagliati, colori inconsistenti tra segmenti vicini). Attiva la visualizzazione dei segmenti cliccando sul pulsante accanto a <code>combine</code> <sup id="fnref7:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 <li><strong>Guided laplacians</strong>: riserva questo metodo per casi critici:</li>
 <li>Clipping su riflessi speculati (lampadine, vetro, acqua).</li>
 <li>Necessità di mantenere dettagli fini (linee, texture) nelle luci.</li>
-<li>Clipping con dominanti magenta persistenti (dopo aver provato gli altri metodi) [^dt48-highlight].</li>
+<li>Clipping con dominanti magenta persistenti (dopo aver provato gli altri metodi) <sup id="fnref8:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 </ul>
 <h3 id="passo-3-ottimizzazione-guided-laplacians-se-usato">Passo 3: Ottimizzazione guided laplacians (se usato)<a class="headerlink" href="#passo-3-ottimizzazione-guided-laplacians-se-usato" title="Permanent link">&para;</a></h3>
 <p>Questo metodo richiede regolazioni precise per bilanciare qualità e prestazioni:</p>
@@ -3128,34 +3128,34 @@
 <td>0.0 – 1.0</td>
 <td>0.05</td>
 <td>Aggiunge rumore Poisson per mimare il rumore fotonico reale. Utile per nascondere la “troppa pulizia” delle aree ricostruite.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref24:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>iterations</strong></td>
 <td>1 – 10</td>
 <td>3</td>
 <td>Ogni iterazione migliora la coerenza del gradiente, ma raddoppia il tempo di calcolo. Usa 3–5 per la maggior parte dei casi; evita &gt;7 se non strettamente necessario.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref25:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>inpaint a flat color</strong></td>
 <td>0% – 100%</td>
 <td>0%</td>
 <td>Abilita un “trucco” per accelerare la rimozione del magenta in grandi aree clippate. <strong>Usa con cautela</strong>: può causare contaminazione cromatica (es. cielo blu che “sanguina” in una nuvola bianca).</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref26:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>diameter of the reconstruction</strong></td>
 <td>64 – 1024 px</td>
 <td>256 px</td>
 <td>Scala massima utilizzata dall’algoritmo. Imposta a ~2× il diametro dell’area clippata più grande. Non superare 512 px: oltre, il tempo sale esponenzialmente e i risultati peggiorano.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref27:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Workflow ibrido consigliato</p>
-<p>Per aree clippate molto estese (&gt;512 px), combina i metodi: usa <code>guided laplacians</code> con <code>diameter = 512</code> per il 90% del lavoro, poi attiva la ricostruzione integrata in <code>filmic rgb</code> (scheda <em>Reconstruct</em>) per completare il resto. Questo dà risultati simili con tempi di rendering gestibili [^dt48-highlight].</p>
+<p>Per aree clippate molto estese (&gt;512 px), combina i metodi: usa <code>guided laplacians</code> con <code>diameter = 512</code> per il 90% del lavoro, poi attiva la ricostruzione integrata in <code>filmic rgb</code> (scheda <em>Reconstruct</em>) per completare il resto. Questo dà risultati simili con tempi di rendering gestibili <sup id="fnref9:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3174,35 +3174,35 @@
 <td><code>inpaint opposed</code>, <code>segmentation based</code>, <code>guided laplacians</code>, <code>clip highlights</code>, <code>reconstruct in LCh</code>, <code>reconstruct color</code></td>
 <td><code>inpaint opposed</code></td>
 <td>Algoritmo di ricostruzione.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref28:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>clipping threshold</strong></td>
 <td>0.0001 – 0.9999</td>
 <td>Variabile per fotocamera</td>
 <td>Valore di soglia oltre il quale un pixel è considerato clippato.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref29:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>combine</strong> (solo <code>segmentation based</code>)</td>
 <td>0 – 100</td>
 <td>20</td>
 <td>Raggio entro cui segmenti vicini vengono uniti. Aumenta per oggetti continui (es. un muro), riduci per oggetti separati (es. foglie singole).</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref30:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>candidating</strong> (solo <code>segmentation based</code>)</td>
 <td>0 – 100</td>
 <td>50</td>
 <td>Bilancia tra analisi segmentale (valori alti) e <code>inpaint opposed</code> (valori bassi). Visualizza i candidati cliccando sul pulsante accanto.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref31:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>rebuild</strong> (solo <code>segmentation based</code>)</td>
 <td><code>small</code>, <code>large</code>, <code>flat small</code>, <code>flat large</code>, <code>generic</code></td>
 <td><code>generic</code></td>
 <td>Strategia di ricostruzione per segmenti con <em>tutti i canali clippati</em>. <code>flat</code> ignora dettagli fini (es. fili, rami); <code>generic</code> sceglie automaticamente.</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref32:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3222,41 +3222,41 @@
 <td><strong>noise level</strong></td>
 <td>Maschera la differenza di texture tra zona ricostruita e originale.</td>
 <td><code>0.03</code>–<code>0.08</code> (ISO medio-alto)</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref33:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>iterations</strong></td>
 <td>Numero di passaggi per affinare la propagazione del gradiente.</td>
 <td><code>3</code>–<code>5</code> (default <code>3</code>)</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref34:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>inpaint a flat color</strong></td>
 <td>“Booster” per rimuovere magenta in grandi aree.</td>
 <td><code>0%</code> (disattivato di default); <code>20%</code>–<code>40%</code> solo se necessario</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref35:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>diameter of the reconstruction</strong></td>
 <td>Dimensione massima della scala usata.</td>
 <td><code>256</code> px (per aree &lt;128 px); <code>512</code> px (massimo raccomandato)</td>
-<td>[^dt48-highlight]</td>
+<td><sup id="fnref36:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Parametri da evitare senza motivo</p>
 <ul>
-<li><strong><code>diameter of the reconstruction</code> &gt; 512 px</strong>: rallenta drasticamente il rendering e introduce artefatti (colori estranei, dettagli non pertinenti). | [^dt48-highlight] |</li>
-<li><strong><code>inpaint a flat color</code> &gt; 40%</strong>: aumenta il rischio di contaminazione cromatica. | [^dt48-highlight] |</li>
-<li><strong><code>iterations</code> &gt; 7</strong>: guadagno minimo in qualità vs costo computazionale elevatissimo. | [^dt48-highlight] |</li>
+<li><strong><code>diameter of the reconstruction</code> &gt; 512 px</strong>: rallenta drasticamente il rendering e introduce artefatti (colori estranei, dettagli non pertinenti). | <sup id="fnref16:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup> |</li>
+<li><strong><code>inpaint a flat color</code> &gt; 40%</strong>: aumenta il rischio di contaminazione cromatica. | <sup id="fnref17:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup> |</li>
+<li><strong><code>iterations</code> &gt; 7</strong>: guadagno minimo in qualità vs costo computazionale elevatissimo. | <sup id="fnref18:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup> |</li>
 </ul>
 </div>
 <h2 id="interazione-con-filmic-rgb">Interazione con Filmic RGB<a class="headerlink" href="#interazione-con-filmic-rgb" title="Permanent link">&para;</a></h2>
 <p>Poiché <code>highlight reconstruction</code> opera <em>prima</em> di <code>input color profile</code>, non può usare concetti come “bianco” o “desaturazione”. Filmic RGB, invece, opera <em>dopo</em> la completa calibrazione cromatica e dispone di una sua funzione di ricostruzione (<code>Reconstruct</code> nella scheda <em>Look</em>), che include opzioni di desaturazione cromatica.</p>
 <p>La documentazione ufficiale chiarisce la strategia consigliata:</p>
 <blockquote>
-<p><em>"It is important to note that the highlight reconstruction module is quite early in the pixel pipeline [...] The filmic reconstruction is good enough for very large clipped patches and offers the benefit of being able to degrade to white as a last resort."</em> [^dt48-highlight]</p>
+<p><em>"It is important to note that the highlight reconstruction module is quite early in the pixel pipeline [...] The filmic reconstruction is good enough for very large clipped patches and offers the benefit of being able to degrade to white as a last resort."</em> <sup id="fnref10:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></p>
 </blockquote>
 <p>In pratica:
 - Usa <code>highlight reconstruction</code> per la <strong>ricostruzione fine e locale</strong>, specialmente su riflessi e dettagli.
@@ -3264,23 +3264,36 @@
 <p><img alt="Confronto: highlight reconstruction vs filmic rgb reconstruct" src="../images/highlight-reconstruction-vs-filmic.jpg" /></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non attivare mai <code>highlight reconstruction</code> prima di <code>exposure</code> e <code>white balance</code></strong>: senza un’esposizione corretta, non c’è nulla da ricostruire; senza bilanciamento, i rapporti RGB sono instabili e la ricostruzione sarà imprecisa [^dt48-highlight].</li>
-<li><strong>Verifica il white point della fotocamera</strong>: se impostato male, il clipping viene rilevato in modo errato, compromettendo tutta la ricostruzione. Controlla le preferenze di <code>raw black/white point</code> [^dt48-highlight].</li>
-<li><strong>Per immagini X-Trans</strong>: il metodo <code>reconstruct in LCh</code> funziona meglio grazie alla maggiore densità di pixel nel blocco sensore (8 invece di 3) [^dt48-highlight].</li>
-<li><strong>Se vedi artefatti “a labirinto”</strong>: disattiva <code>reconstruct color</code> e passa a <code>segmentation based</code> o <code>guided laplacians</code> [^dt48-highlight].</li>
+<li><strong>Non attivare mai <code>highlight reconstruction</code> prima di <code>exposure</code> e <code>white balance</code></strong>: senza un’esposizione corretta, non c’è nulla da ricostruire; senza bilanciamento, i rapporti RGB sono instabili e la ricostruzione sarà imprecisa <sup id="fnref11:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
+<li><strong>Verifica il white point della fotocamera</strong>: se impostato male, il clipping viene rilevato in modo errato, compromettendo tutta la ricostruzione. Controlla le preferenze di <code>raw black/white point</code> <sup id="fnref12:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
+<li><strong>Per immagini X-Trans</strong>: il metodo <code>reconstruct in LCh</code> funziona meglio grazie alla maggiore densità di pixel nel blocco sensore (8 invece di 3) <sup id="fnref13:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
+<li><strong>Se vedi artefatti “a labirinto”</strong>: disattiva <code>reconstruct color</code> e passa a <code>segmentation based</code> o <code>guided laplacians</code> <sup id="fnref14:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Manuale ufficiale darktable 4.8 (inglese)</strong>: <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/">highlight reconstruction module</a> [^dt48-highlight]</li>
-<li><strong>Video tutorial</strong>: <em>The darktable pipeline for beginners</em> (A Dabble in Photography) — dimostrazione pratica del modulo al minuto 4:40 [^pipeline-beginner]</li>
-<li><strong>Video tutorial</strong>: <em>Filmic &amp; Sigmoid Part 4</em> — confronto tra <code>highlight reconstruction</code> e la ricostruzione integrata in Filmic RGB [^filmic-sigmoid-part4]</li>
-<li><strong>Video tutorial</strong>: <em>New Release: darktable 5.2</em> — spiegazione del ruolo del modulo nel contesto della pipeline scene-referred [^dt52-release]</li>
+<li><strong>Manuale ufficiale darktable 4.8 (inglese)</strong>: <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/">highlight reconstruction module</a> <sup id="fnref15:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup></li>
+<li><strong>Video tutorial</strong>: <em>The darktable pipeline for beginners</em> (A Dabble in Photography) — dimostrazione pratica del modulo al minuto 4:40 <sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup></li>
+<li><strong>Video tutorial</strong>: <em>Filmic &amp; Sigmoid Part 4</em> — confronto tra <code>highlight reconstruction</code> e la ricostruzione integrata in Filmic RGB <sup id="fnref:filmic-sigmoid-part4"><a class="footnote-ref" href="#fn:filmic-sigmoid-part4">3</a></sup></li>
+<li><strong>Video tutorial</strong>: <em>New Release: darktable 5.2</em> — spiegazione del ruolo del modulo nel contesto della pipeline scene-referred <sup id="fnref:dt52-release"><a class="footnote-ref" href="#fn:dt52-release">4</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-highlight]: darktable 4.8 user manual - highlight reconstruction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/#<br />
-[^pipeline-beginner]: [ENG] The darktable pipeline for beginners, video-tutorials, https://www.youtube.com/watch?v=1nPW6WPhhTo<br />
-[^filmic-sigmoid-part4]: [ENG] Filmic &amp; Sigmoid Part 4, video-tutorials, https://www.youtube.com/watch?v=4KV9Ic-mPj0<br />
-[^dt52-release]: [ENG] New Release: darktable 5.2, video-tutorials, https://www.youtube.com/watch?v=YcLJMaDbfRA</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-highlight">
+<p>darktable 4.8 user manual - highlight reconstruction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/#&#160;<a class="footnote-backref" href="#fnref:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref34:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref35:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref36:dt48-highlight" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p>[ENG] The darktable pipeline for beginners, video-tutorials, https://www.youtube.com/watch?v=1nPW6WPhhTo&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-sigmoid-part4">
+<p>[ENG] Filmic &amp; Sigmoid Part 4, video-tutorials, https://www.youtube.com/watch?v=4KV9Ic-mPj0&#160;<a class="footnote-backref" href="#fnref:filmic-sigmoid-part4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt52-release">
+<p>[ENG] New Release: darktable 5.2, video-tutorials, https://www.youtube.com/watch?v=YcLJMaDbfRA&#160;<a class="footnote-backref" href="#fnref:dt52-release" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

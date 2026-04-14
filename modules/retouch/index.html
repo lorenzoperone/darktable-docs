@@ -3026,21 +3026,21 @@
 
 
 <h1 id="modulo-retouch">Modulo Retouch<a class="headerlink" href="#modulo-retouch" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>retouch</strong> è lo strumento centrale per la rimozione selettiva di elementi indesiderati (macchie, fili, sensor dust, riflessi) e per il ritocco avanzato della pelle, del cielo o di altre aree critiche. A partire da darktable 4.8, sostituisce definitivamente il modulo deprecato <em>spot removal</em>, integrando clonazione, guarigione (<em>heal</em>), riempimento (<em>fill</em>) e sfocatura (<em>blur</em>) in un’unica interfaccia modulare, con supporto nativo alla <strong>decomposizione wavelet</strong> per un controllo multilivello dei dettagli[^darktable-usermanual-4.8-retouch][^pixls-wavelet].</p>
+<p>Il modulo <strong>retouch</strong> è lo strumento centrale per la rimozione selettiva di elementi indesiderati (macchie, fili, sensor dust, riflessi) e per il ritocco avanzato della pelle, del cielo o di altre aree critiche. A partire da darktable 4.8, sostituisce definitivamente il modulo deprecato <em>spot removal</em>, integrando clonazione, guarigione (<em>heal</em>), riempimento (<em>fill</em>) e sfocatura (<em>blur</em>) in un’unica interfaccia modulare, con supporto nativo alla <strong>decomposizione wavelet</strong> per un controllo multilivello dei dettagli<sup id="fnref:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
 <p><img alt="Introduzione al modulo retouch" src="../images/retouch-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Retouch è il modulo di ritocco avanzato predefinito</p>
-<p>Dal 2019, <em>retouch</em> è il modulo ufficiale per tutte le operazioni di rimozione e correzione locale. Il vecchio <em>spot removal</em> è stato rimosso dalla pipeline in darktable 4.6+ e non è più disponibile nei nuovi profili di sviluppo[^darktable-usermanual-4.8-retouch][^darktable-fr-2023-12].</p>
+<p>Dal 2019, <em>retouch</em> è il modulo ufficiale per tutte le operazioni di rimozione e correzione locale. Il vecchio <em>spot removal</em> è stato rimosso dalla pipeline in darktable 4.6+ e non è più disponibile nei nuovi profili di sviluppo<sup id="fnref3:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Retouch opera su due livelli concettuali distinti ma complementari:</p>
 <ol>
 <li><strong>Rimozione geometrica</strong>: tramite forme disegnate (<em>circle</em>, <em>ellipse</em>, <em>path</em>, <em>brush</em>) che definiscono l’area da modificare (<em>target</em>) e quella da cui attingere dati (<em>source</em>).  </li>
-<li><strong>Elaborazione multilivello</strong>: grazie alla decomposizione wavelet, permette di applicare gli stessi interventi su scale di dettaglio separate — dai bordi grossolani (livelli 5–6) alle texture fini della pelle (livelli 1–2) — senza alterare i dettagli non coinvolti[^darktable-usermanual-4.8-retouch][^pixls-wavelet].</li>
+<li><strong>Elaborazione multilivello</strong>: grazie alla decomposizione wavelet, permette di applicare gli stessi interventi su scale di dettaglio separate — dai bordi grossolani (livelli 5–6) alle texture fini della pelle (livelli 1–2) — senza alterare i dettagli non coinvolti<sup id="fnref4:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref6:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</li>
 </ol>
-<p>A differenza di Lightroom’s Spot Removal o Photoshop’s Healing Brush, <em>retouch</em> non lavora su un singolo layer piatto: ogni livello wavelet è elaborato indipendentemente e poi ricomposto matematicamente, preservando la struttura reale dell’immagine[^pixls-wavelet]. Questo evita l’effetto “plastico” tipico dei metodi a sfocatura globale, come dimostrato nell’articolo PIXLS.US su <em>Mairi</em>, dove la pelle mantiene pori e rughe naturali anche dopo una marcata omogeneizzazione tonale[^pixls-wavelet].</p>
+<p>A differenza di Lightroom’s Spot Removal o Photoshop’s Healing Brush, <em>retouch</em> non lavora su un singolo layer piatto: ogni livello wavelet è elaborato indipendentemente e poi ricomposto matematicamente, preservando la struttura reale dell’immagine<sup id="fnref2:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>. Questo evita l’effetto “plastico” tipico dei metodi a sfocatura globale, come dimostrato nell’articolo PIXLS.US su <em>Mairi</em>, dove la pelle mantiene pori e rughe naturali anche dopo una marcata omogeneizzazione tonale<sup id="fnref3:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso ottimale per ritocchi professionali si articola in tre fasi sequenziali[^pixls-wavelet][^darktable-usermanual-4.8-retouch]:</p>
+<p>Il flusso ottimale per ritocchi professionali si articola in tre fasi sequenziali<sup id="fnref4:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup><sup id="fnref2:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione &amp; bilanciamento colore (exposure, white balance, color calibration)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Decomposizione wavelet (modulo retouch → sezione &quot;wavelet decompose&quot;)
@@ -3049,14 +3049,14 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Wavelet prima di tutto</p>
-<p>Esegui sempre la decomposizione wavelet <strong>prima</strong> di qualsiasi intervento di ritocco. Se applichi <em>clone</em> o <em>heal</em> direttamente sull’immagine non decomposta, perderai il controllo sulle frequenze e rischierai di appiattire dettagli critici come capelli, barba o trame tessili[^pixls-wavelet][^darktable-usermanual-4.8-retouch].</p>
+<p>Esegui sempre la decomposizione wavelet <strong>prima</strong> di qualsiasi intervento di ritocco. Se applichi <em>clone</em> o <em>heal</em> direttamente sull’immagine non decomposta, perderai il controllo sulle frequenze e rischierai di appiattire dettagli critici come capelli, barba o trame tessili<sup id="fnref7:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup><sup id="fnref5:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</p>
 </div>
 <h3 id="passo-1-configurazione-wavelet">Passo 1: Configurazione wavelet<a class="headerlink" href="#passo-1-configurazione-wavelet" title="Permanent link">&para;</a></h3>
 <p>La prima azione pratica è impostare il numero di livelli wavelet:</p>
 <ul>
-<li>Clicca sul triangolo sotto la barra grafica <em>wavelet decompose</em> e trascinalo verso destra[^darktable-usermanual-4.8-retouch]  </li>
-<li><strong>Valore tipico</strong>: <code>5</code> livelli per immagini full-frame (4000×6000 px); <code>4</code> per immagini APS-C (3000×4500 px)[^pixls-wavelet]  </li>
-<li><strong>Default</strong>: <code>0</code> (nessuna decomposizione attiva) — <strong>non usare mai questo valore per ritocchi seri</strong>[^darktable-usermanual-4.8-retouch]</li>
+<li>Clicca sul triangolo sotto la barra grafica <em>wavelet decompose</em> e trascinalo verso destra<sup id="fnref6:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>  </li>
+<li><strong>Valore tipico</strong>: <code>5</code> livelli per immagini full-frame (4000×6000 px); <code>4</code> per immagini APS-C (3000×4500 px)<sup id="fnref8:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>  </li>
+<li><strong>Default</strong>: <code>0</code> (nessuna decomposizione attiva) — <strong>non usare mai questo valore per ritocchi seri</strong><sup id="fnref7:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></li>
 </ul>
 <p><img alt="Barra wavelet nel modulo retouch" src="../images/retouch-wavelet-bar.jpg" /></p>
 <h3 id="passo-2-selezione-della-scala">Passo 2: Selezione della scala<a class="headerlink" href="#passo-2-selezione-della-scala" title="Permanent link">&para;</a></h3>
@@ -3064,12 +3064,12 @@
 <ul>
 <li>Clicca su uno dei quadrati grigi nella barra:  </li>
 <li><strong>Quadrati a sinistra</strong> = dettagli fini (livelli 1–2, ~1–3 px di raggio)  </li>
-<li><strong>Quadrati a destra</strong> = dettagli grossolani (livelli 4–6, ~10–50 px di raggio)[^darktable-usermanual-4.8-retouch]  </li>
-<li>Usa <em>preview single scale</em> per visualizzare esclusivamente quel livello, con auto-levels abilitato per migliorare la visibilità[^darktable-usermanual-4.8-retouch]</li>
+<li><strong>Quadrati a destra</strong> = dettagli grossolani (livelli 4–6, ~10–50 px di raggio)<sup id="fnref8:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>  </li>
+<li>Usa <em>preview single scale</em> per visualizzare esclusivamente quel livello, con auto-levels abilitato per migliorare la visibilità<sup id="fnref9:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Non saltare la preview</p>
-<p>Senza <em>preview single scale</em>, non puoi valutare se un livello contiene effettivamente il difetto da correggere (es. una macchia su livello 5 ma non su livello 2). L’errore più comune è applicare <em>heal</em> su una scala sbagliata, generando artefatti invisibili in anteprima ma evidenti in stampa[^pixls-wavelet].</p>
+<p>Senza <em>preview single scale</em>, non puoi valutare se un livello contiene effettivamente il difetto da correggere (es. una macchia su livello 5 ma non su livello 2). L’errore più comune è applicare <em>heal</em> su una scala sbagliata, generando artefatti invisibili in anteprima ma evidenti in stampa<sup id="fnref9:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
 </div>
 <h3 id="passo-3-algoritmo-e-forma">Passo 3: Algoritmo e forma<a class="headerlink" href="#passo-3-algoritmo-e-forma" title="Permanent link">&para;</a></h3>
 <p>Scegli l’algoritmo in base al tipo di difetto:</p>
@@ -3085,22 +3085,22 @@
 <tr>
 <td><strong>Heal</strong></td>
 <td>Macchie di pelle, brufoli, piccoli oggetti su sfondo uniforme</td>
-<td><code>mask opacity</code>: 0.7–0.9[^darktable-usermanual-4.8-retouch]</td>
+<td><code>mask opacity</code>: 0.7–0.9<sup id="fnref15:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Clone</strong></td>
 <td>Oggetti su sfondi strutturati (es. fili su cielo nuvoloso)</td>
-<td><code>mask opacity</code>: 1.0[^darktable-usermanual-4.8-retouch]</td>
+<td><code>mask opacity</code>: 1.0<sup id="fnref16:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Blur</strong></td>
 <td>Omogeneizzazione di texture (es. pelle su livello 1–2)</td>
-<td><code>blur radius</code>: 1.5–4.0 px; <code>blur type</code>: <em>bilateral</em>[^pixls-wavelet]</td>
+<td><code>blur radius</code>: 1.5–4.0 px; <code>blur type</code>: <em>bilateral</em><sup id="fnref15:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Fill</strong></td>
 <td>Rimozione di oggetti su sfondi solidi (es. cavi su parete bianca)</td>
-<td><code>fill color</code>: campionato con pipetta; <code>brightness</code>: ±0.05[^darktable-usermanual-4.8-retouch]</td>
+<td><code>fill color</code>: campionato con pipetta; <code>brightness</code>: ±0.05<sup id="fnref17:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -3119,43 +3119,43 @@
 <td><strong>scales</strong></td>
 <td><code>0</code> – <code>8</code></td>
 <td><code>0</code></td>
-<td>Numero totale di livelli wavelet estratti. Ogni livello rappresenta una banda di frequenza distinta[^darktable-usermanual-4.8-retouch].</td>
+<td>Numero totale di livelli wavelet estratti. Ogni livello rappresenta una banda di frequenza distinta<sup id="fnref18:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>current</strong></td>
 <td><code>0</code> – <code>max_scale</code></td>
 <td><code>0</code></td>
-<td>Livello wavelet attualmente selezionato per l’editing. <code>0</code> = immagine completa (senza decomposizione)[^darktable-usermanual-4.8-retouch].</td>
+<td>Livello wavelet attualmente selezionato per l’editing. <code>0</code> = immagine completa (senza decomposizione)<sup id="fnref19:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>merge from</strong></td>
 <td><code>0</code> – <code>max_scale</code></td>
 <td><code>0</code></td>
-<td>Se &gt; <code>0</code>, tutti gli interventi su un livello vengono replicati sui livelli inferiori fino a questo valore. Utile per correggere un difetto su più scale con un solo tratto[^darktable-usermanual-4.8-retouch].</td>
+<td>Se &gt; <code>0</code>, tutti gli interventi su un livello vengono replicati sui livelli inferiori fino a questo valore. Utile per correggere un difetto su più scale con un solo tratto<sup id="fnref20:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>mask opacity</strong></td>
 <td><code>0.0</code> – <code>1.0</code></td>
 <td><code>1.0</code></td>
-<td>Opacità della maschera applicata. Valori &lt; <code>1.0</code> consentono una fusione graduale con il sottostante[^darktable-usermanual-4.8-retouch].</td>
+<td>Opacità della maschera applicata. Valori &lt; <code>1.0</code> consentono una fusione graduale con il sottostante<sup id="fnref21:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>blur radius</strong></td>
 <td><code>0.1</code> – <code>10.0</code> px</td>
 <td><code>1.0</code> px</td>
-<td>Raggio dello sfocatura per l’algoritmo <em>blur</em>. Valori &gt; <code>3.0</code> richiedono <em>merge from</em> per evitare effetti “a macchia”[^pixls-wavelet].</td>
+<td>Raggio dello sfocatura per l’algoritmo <em>blur</em>. Valori &gt; <code>3.0</code> richiedono <em>merge from</em> per evitare effetti “a macchia”<sup id="fnref16:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>blur type</strong></td>
 <td><code>gaussian</code>, <code>bilateral</code></td>
 <td><code>gaussian</code></td>
-<td><em>Bilateral</em> preserva i bordi; preferito per ritocchi cutanei su livelli fini[^pixls-wavelet].</td>
+<td><em>Bilateral</em> preserva i bordi; preferito per ritocchi cutanei su livelli fini<sup id="fnref17:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>fill mode</strong></td>
 <td><code>erase</code>, <code>color</code></td>
 <td><code>color</code></td>
-<td>In modalità <em>erase</em>, il colore di riempimento è calcolato come media dell’area circostante[^darktable-usermanual-4.8-retouch].</td>
+<td>In modalità <em>erase</em>, il colore di riempimento è calcolato come media dell’area circostante<sup id="fnref22:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -3163,37 +3163,37 @@
 <h2 id="gestione-sourcetarget">Gestione source/target<a class="headerlink" href="#gestione-sourcetarget" title="Permanent link">&para;</a></h2>
 <p>Per garantire risultati naturali, la posizione di <em>source</em> e <em>target</em> deve essere controllata con precisione:</p>
 <ul>
-<li><strong>Source in “relative mode”</strong>: <code>Shift + click</code> sul punto di origine → il simbolo <code>+</code> si fissa <em>relativamente</em> al cursore. Successivi <em>target</em> erediteranno lo stesso offset[^darktable-usermanual-4.8-retouch].  </li>
-<li><strong>Source in “absolute mode”</strong>: <code>Ctrl + Shift + click</code> → il simbolo <code>+</code> si fissa in coordinate assolute, utile per copiare da una zona precisa (es. una porzione di cielo blu uniforme)[^darktable-usermanual-4.8-retouch].  </li>
-<li><strong>Posizionamento simultaneo</strong>: per <em>circle</em>/<em>ellipse</em>, clicca e trascina dal <em>target</em> al <em>source</em> in un’unica azione[^darktable-usermanual-4.8-retouch].</li>
+<li><strong>Source in “relative mode”</strong>: <code>Shift + click</code> sul punto di origine → il simbolo <code>+</code> si fissa <em>relativamente</em> al cursore. Successivi <em>target</em> erediteranno lo stesso offset<sup id="fnref10:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.  </li>
+<li><strong>Source in “absolute mode”</strong>: <code>Ctrl + Shift + click</code> → il simbolo <code>+</code> si fissa in coordinate assolute, utile per copiare da una zona precisa (es. una porzione di cielo blu uniforme)<sup id="fnref11:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.  </li>
+<li><strong>Posizionamento simultaneo</strong>: per <em>circle</em>/<em>ellipse</em>, clicca e trascina dal <em>target</em> al <em>source</em> in un’unica azione<sup id="fnref12:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Regola d’oro per il healing</p>
-<p>Per un <em>heal</em> efficace, la distanza tra <em>source</em> e <em>target</em> non deve superare i <strong>50 px</strong>. Oltre questo limite, il mismatch di illuminazione e colore genera bordi visibili[^pixls-wavelet].</p>
+<p>Per un <em>heal</em> efficace, la distanza tra <em>source</em> e <em>target</em> non deve superare i <strong>50 px</strong>. Oltre questo limite, il mismatch di illuminazione e colore genera bordi visibili<sup id="fnref10:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-per-la-pelle-caso-studio">Flusso di lavoro per la pelle (caso studio)<a class="headerlink" href="#flusso-di-lavoro-per-la-pelle-caso-studio" title="Permanent link">&para;</a></h2>
-<p>Basato sull’approccio <em>Mairi</em> di PIXLS.US[^pixls-wavelet]:</p>
+<p>Basato sull’approccio <em>Mairi</em> di PIXLS.US<sup id="fnref5:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>:</p>
 <ol>
 <li><strong>Decomponi in 5 livelli</strong> → seleziona <em>current = 4</em> (dettagli medi, ~10 px)  </li>
 <li><strong>Applica <em>heal</em></strong> su macchie e discromie con <code>mask opacity = 0.85</code>  </li>
 <li><strong>Passa a <em>current = 2</em></strong> (texture fine) → usa <em>blur</em> con <code>radius = 2.2 px</code>, <code>type = bilateral</code> per ammorbidire pori senza eliminare rughe  </li>
 <li><strong>Usa <em>merge from = 2</em></strong> per propagare il <em>blur</em> anche su livello 1 (massima finezza)  </li>
-<li><strong>Controlla con <em>preview single scale</em></strong>: livello 4 mostra la correzione tonale, livello 2 conferma che la texture è preservata[^pixls-wavelet]</li>
+<li><strong>Controlla con <em>preview single scale</em></strong>: livello 4 mostra la correzione tonale, livello 2 conferma che la texture è preservata<sup id="fnref11:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup></li>
 </ol>
 <p><img alt="Esempio di ritocco pelle con wavelet" src="../images/retouch-skin-wavelet.jpg" /></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Per il cielo</strong>: usa <em>clone</em> su livello 5–6 con <em>source</em> da una zona priva di nubi, quindi applica <em>blur</em> leggero (<code>radius = 1.0</code>) su livello 3 per fondere i bordi[^darktable-fr-2023-12].  </li>
-<li><strong>Per i capelli</strong>: evita <em>heal</em> o <em>blur</em>. Usa <em>clone</em> su livello 1 con <code>mask opacity = 0.3</code> per un effetto trasparente che preservi i singoli filamenti[^pixls-wavelet].  </li>
-<li><strong>Per le alte luci</strong>: se un riflesso è presente solo su livelli alti (5–6), correggilo <em>solo lì</em>: non propagarlo a livelli più fini, altrimenti distruggeresti dettagli cromatici[^darktable-usermanual-4.8-retouch].  </li>
-<li><strong>Tempi di rendering</strong>: la decomposizione wavelet aumenta il carico CPU. Per immagini ad alta risoluzione (&gt;24 MP), riduci i livelli a <code>4</code> o abilita <em>OpenCL</em> nelle preferenze[^darktable-fr-2023-12].</li>
+<li><strong>Per il cielo</strong>: usa <em>clone</em> su livello 5–6 con <em>source</em> da una zona priva di nubi, quindi applica <em>blur</em> leggero (<code>radius = 1.0</code>) su livello 3 per fondere i bordi<sup id="fnref2:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.  </li>
+<li><strong>Per i capelli</strong>: evita <em>heal</em> o <em>blur</em>. Usa <em>clone</em> su livello 1 con <code>mask opacity = 0.3</code> per un effetto trasparente che preservi i singoli filamenti<sup id="fnref12:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.  </li>
+<li><strong>Per le alte luci</strong>: se un riflesso è presente solo su livelli alti (5–6), correggilo <em>solo lì</em>: non propagarlo a livelli più fini, altrimenti distruggeresti dettagli cromatici<sup id="fnref13:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup>.  </li>
+<li><strong>Tempi di rendering</strong>: la decomposizione wavelet aumenta il carico CPU. Per immagini ad alta risoluzione (&gt;24 MP), riduci i livelli a <code>4</code> o abilita <em>OpenCL</em> nelle preferenze<sup id="fnref3:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Parametri da evitare</p>
 <p>I seguenti valori compromettono la qualità del risultato:<br />
-- <code>merge from &gt; current</code> — causa duplicazione non controllata degli interventi[^darktable-usermanual-4.8-retouch]<br />
-- <code>blur radius &gt; 5.0 px</code> senza <em>merge from</em> — genera macchie sfocate isolate[^pixls-wavelet]<br />
-- <code>mask opacity &lt; 0.3</code> per <em>heal</em> su pelle — produce effetti “fantasma” difficili da correggere[^pixls-wavelet]</p>
+- <code>merge from &gt; current</code> — causa duplicazione non controllata degli interventi<sup id="fnref14:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><br />
+- <code>blur radius &gt; 5.0 px</code> senza <em>merge from</em> — genera macchie sfocate isolate<sup id="fnref13:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup><br />
+- <code>mask opacity &lt; 0.3</code> per <em>heal</em> su pelle — produce effetti “fantasma” difficili da correggere<sup id="fnref14:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup></p>
 </div>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3207,11 +3207,26 @@
 <a href="https://www.youtube.com/watch?v=jHlPh7gt3Y0">https://www.youtube.com/watch?v=jHlPh7gt3Y0</a>  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^darktable-usermanual-4.8-retouch]: darktable 4.8 user manual - retouch, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/retouch/#<br />
-[^pixls-wavelet]: PIXLS.US - Skin Retouching with Wavelet Decompose, https://pixls.us/articles/skin-retouching-with-wavelet-decompose/<br />
-[^darktable-fr-2023-12]: darktable.fr – Nouveautés darktable 4.6 (FR), https://darktable.fr/posts/2023/12/darktable_4.6/<br />
-[^darktable-fr-2019-01]: darktable.fr – Tuto N° 18 : Le module RETOUCHE . 2ème partie : DECOMPOSITION EN ONDELETTES, https://darktable.fr/posts/2019/01/tuto-n-18-le-module-retouche-2eme-partie-decomposition-en-ondelettes-pour-la-retouche/<br />
-[^pixls-mairi]: PIXLS.US - An Open Source Portrait (Mairi), https://pixls.us/articles/an-open-source-portrait-mairi/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:darktable-usermanual-4.8-retouch">
+<p>darktable 4.8 user manual - retouch, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/retouch/#&#160;<a class="footnote-backref" href="#fnref:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:darktable-usermanual-4.8-retouch" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-wavelet">
+<p>PIXLS.US - Skin Retouching with Wavelet Decompose, https://pixls.us/articles/skin-retouching-with-wavelet-decompose/&#160;<a class="footnote-backref" href="#fnref:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:pixls-wavelet" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-2023-12">
+<p>darktable.fr – Nouveautés darktable 4.6 (FR), https://darktable.fr/posts/2023/12/darktable_4.6/&#160;<a class="footnote-backref" href="#fnref:darktable-fr-2023-12" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-fr-2023-12" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-fr-2023-12" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-2019-01">
+<p>darktable.fr – Tuto N° 18 : Le module RETOUCHE . 2ème partie : DECOMPOSITION EN ONDELETTES, https://darktable.fr/posts/2019/01/tuto-n-18-le-module-retouche-2eme-partie-decomposition-en-ondelettes-pour-la-retouche/&#160;<a class="footnote-backref" href="#fnref:darktable-fr-2019-01" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-mairi">
+<p>PIXLS.US - An Open Source Portrait (Mairi), https://pixls.us/articles/an-open-source-portrait-mairi/&#160;<a class="footnote-backref" href="#fnref:pixls-mairi" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

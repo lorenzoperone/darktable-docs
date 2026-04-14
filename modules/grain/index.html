@@ -3038,21 +3038,21 @@
 
 
 <h1 id="grain">Grain<a class="headerlink" href="#grain" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>grain</strong> simula la grana tipica delle pellicole analogiche, aggiungendo una texture sottile e organica all’immagine. A differenza di filtri di rumore o di sfocatura, il grain opera in modo fisicamente plausibile: è calcolato esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, preservando la struttura cromatica e la nitidezza dei dettagli[^dt48-grain]. Questo approccio lo rende particolarmente adatto per applicazioni artistiche (ritratti, street, b/n) dove si desidera un aspetto “cinematografico” senza compromettere la definizione o introdurre artefatti cromatici[^darktable-fr-grain-2016].</p>
+<p>Il modulo <strong>grain</strong> simula la grana tipica delle pellicole analogiche, aggiungendo una texture sottile e organica all’immagine. A differenza di filtri di rumore o di sfocatura, il grain opera in modo fisicamente plausibile: è calcolato esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, preservando la struttura cromatica e la nitidezza dei dettagli<sup id="fnref:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>. Questo approccio lo rende particolarmente adatto per applicazioni artistiche (ritratti, street, b/n) dove si desidera un aspetto “cinematografico” senza compromettere la definizione o introdurre artefatti cromatici<sup id="fnref:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
 <p><img alt="Introduzione al modulo grain" src="../images/grain-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Grain lavora solo sul canale L di Lab</p>
-<p>Il modulo non modifica i canali a/b di Lab, né i canali RGB. Questo significa che il grain è <em>luminoso</em>, non cromatico: non altera la saturazione, la tonalità o la bilancia dei colori. È quindi sicuro da usare prima o dopo il tone mapping, purché non venga applicato in combinazione con moduli che degradano la precisione del canale L (es. compressione JPEG lossy pre-elaborazione)[^dt48-grain].</p>
+<p>Il modulo non modifica i canali a/b di Lab, né i canali RGB. Questo significa che il grain è <em>luminoso</em>, non cromatico: non altera la saturazione, la tonalità o la bilancia dei colori. È quindi sicuro da usare prima o dopo il tone mapping, purché non venga applicato in combinazione con moduli che degradano la precisione del canale L (es. compressione JPEG lossy pre-elaborazione)<sup id="fnref2:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il modulo grain è intenzionalmente minimalista: offre solo due controlli principali, entrambi scalati per emulare comportamenti realistici della pellicola:</p>
 <ol>
-<li><strong>Coarseness</strong> (dimensione della grana): controlla la scala spaziale del pattern, mappata approssimativamente su una scala ISO equivalente. Valori più alti simulano pellicole ad alta sensibilità (ISO 800–3200), con grana visibile e irregolare[^dt48-grain].</li>
-<li><strong>Strength</strong> (intensità della grana): regola l’ampiezza della variazione di luminanza introdotta dal pattern. Non è un semplice “opacità”: agisce come un guadagno sul segnale di grana, influenzando sia il contrasto locale che la percezione della profondità tonale[^dt48-grain].</li>
+<li><strong>Coarseness</strong> (dimensione della grana): controlla la scala spaziale del pattern, mappata approssimativamente su una scala ISO equivalente. Valori più alti simulano pellicole ad alta sensibilità (ISO 800–3200), con grana visibile e irregolare<sup id="fnref3:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
+<li><strong>Strength</strong> (intensità della grana): regola l’ampiezza della variazione di luminanza introdotta dal pattern. Non è un semplice “opacità”: agisce come un guadagno sul segnale di grana, influenzando sia il contrasto locale che la percezione della profondità tonale<sup id="fnref4:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
 </ol>
-<p>A differenza di altri software (es. Lightroom), darktable <strong>non genera grana parametrica in tempo reale tramite shader GPU</strong>, ma utilizza un algoritmo deterministico basato su noise Perlin semplificato, calcolato in CPU durante la pipeline di elaborazione. Ciò garantisce riproducibilità perfetta tra sessioni e dispositivi, ma richiede un leggero overhead computazionale[^dt44-performance].</p>
+<p>A differenza di altri software (es. Lightroom), darktable <strong>non genera grana parametrica in tempo reale tramite shader GPU</strong>, ma utilizza un algoritmo deterministico basato su noise Perlin semplificato, calcolato in CPU durante la pipeline di elaborazione. Ciò garantisce riproducibilità perfetta tra sessioni e dispositivi, ma richiede un leggero overhead computazionale<sup id="fnref:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il grain è un modulo <em>finale</em>, da applicare <strong>dopo</strong> tutti gli interventi di correzione tonale, cromatica e geometrica. La sua posizione ideale nella pipeline è subito prima del modulo <strong>output color profile</strong>, per garantire che la grana sia integrata correttamente nello spazio di destinazione[^darktable-fr-grain-2016].</p>
+<p>Il grain è un modulo <em>finale</em>, da applicare <strong>dopo</strong> tutti gli interventi di correzione tonale, cromatica e geometrica. La sua posizione ideale nella pipeline è subito prima del modulo <strong>output color profile</strong>, per garantire che la grana sia integrata correttamente nello spazio di destinazione<sup id="fnref2:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione → Bilanciamento bianco → Denoise
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Tone mapping (AGX / Filmic RGB)
@@ -3065,25 +3065,25 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Grain non è rumore: usalo per il carattere, non per mascherare</p>
-<p>Il grain non sostituisce la riduzione del rumore. Se l’immagine presenta rumore digitale (granulosità casuale, artefatti cromatici), applicare prima <code>denoise (profile)</code> o <code>denoise (wavelets)</code>. Il grain va aggiunto <em>solo</em> quando il segnale è pulito: serve a dare personalità, non a nascondere difetti[^darktable-fr-grain-2016].</p>
+<p>Il grain non sostituisce la riduzione del rumore. Se l’immagine presenta rumore digitale (granulosità casuale, artefatti cromatici), applicare prima <code>denoise (profile)</code> o <code>denoise (wavelets)</code>. Il grain va aggiunto <em>solo</em> quando il segnale è pulito: serve a dare personalità, non a nascondere difetti<sup id="fnref3:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
 </div>
 <h3 id="passo-1-coarseness-scegli-la-pellicola">Passo 1: Coarseness — scegli la “pellicola”<a class="headerlink" href="#passo-1-coarseness-scegli-la-pellicola" title="Permanent link">&para;</a></h3>
 <p>Il primo passo è impostare la dimensione della grana in base all’effetto desiderato:</p>
 <ul>
-<li><strong>Basso (0.1–0.5)</strong>: grana fine, simile a Kodak Portra 160 o Fuji Acros II. Ideale per ritratti in studio o paesaggi ad alta definizione[^dt48-grain].</li>
-<li><strong>Medio (0.6–1.2)</strong>: grana media, simile a Kodak Tri-X 400 o Ilford HP5+. Usato comunemente per street photography e reportage[^darktable-fr-grain-2016].</li>
-<li><strong>Alto (1.3–2.0)</strong>: grana marcata, simile a Kodak P3200 o Cinestill 800T. Richiede immagini ben esposte e con buon contrasto, altrimenti rischia di apparire artificiale[^dt48-grain].</li>
+<li><strong>Basso (0.1–0.5)</strong>: grana fine, simile a Kodak Portra 160 o Fuji Acros II. Ideale per ritratti in studio o paesaggi ad alta definizione<sup id="fnref5:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
+<li><strong>Medio (0.6–1.2)</strong>: grana media, simile a Kodak Tri-X 400 o Ilford HP5+. Usato comunemente per street photography e reportage<sup id="fnref4:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</li>
+<li><strong>Alto (1.3–2.0)</strong>: grana marcata, simile a Kodak P3200 o Cinestill 800T. Richiede immagini ben esposte e con buon contrasto, altrimenti rischia di apparire artificiale<sup id="fnref6:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Evita valori &gt;2.0</p>
-<p>Coarseness oltre 2.0 produce pattern troppo grandi e regolari, perdendo l’aspetto organico della pellicola. Può causare aliasing visibile su schermi ad alta densità pixel (Retina, 4K+). Non è mai necessario superare questo limite[^dt48-grain].</p>
+<p>Coarseness oltre 2.0 produce pattern troppo grandi e regolari, perdendo l’aspetto organico della pellicola. Può causare aliasing visibile su schermi ad alta densità pixel (Retina, 4K+). Non è mai necessario superare questo limite<sup id="fnref7:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
 </div>
 <h3 id="passo-2-strength-regola-la-presenza">Passo 2: Strength — regola la “presenza”<a class="headerlink" href="#passo-2-strength-regola-la-presenza" title="Permanent link">&para;</a></h3>
 <p>La forza controlla quanto la grana influenzi la percezione visiva:</p>
 <ul>
 <li><strong>Basso (5–20%)</strong>: grana quasi impercettibile, utile per dare “calore” a immagini digitali troppo lisce.</li>
-<li><strong>Medio (25–50%)</strong>: intensità standard, sufficiente per creare profondità e coesione visiva senza dominare la scena[^darktable-fr-grain-2016].</li>
-<li><strong>Alto (55–85%)</strong>: effetto marcato, adatto a stili vintage o b/n ad alto impatto. Oltre l’85% tende a appiattire le transizioni tonali[^dt48-grain].</li>
+<li><strong>Medio (25–50%)</strong>: intensità standard, sufficiente per creare profondità e coesione visiva senza dominare la scena<sup id="fnref5:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</li>
+<li><strong>Alto (55–85%)</strong>: effetto marcato, adatto a stili vintage o b/n ad alto impatto. Oltre l’85% tende a appiattire le transizioni tonali<sup id="fnref8:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
 </ul>
 <p><img alt="Grain applicato su un ritratto in b/n" src="../images/grain-portrait-bw.jpg" /></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
@@ -3101,19 +3101,19 @@
 <td><strong>Coarseness</strong></td>
 <td>0.01 – 2.00</td>
 <td>1.00</td>
-<td>Scala della grana. Valori &gt;1.0 simulano pellicole ISO ≥400. È mappato su una scala logaritmica per maggiore controllo nei bassi valori[^dt48-grain].</td>
+<td>Scala della grana. Valori &gt;1.0 simulano pellicole ISO ≥400. È mappato su una scala logaritmica per maggiore controllo nei bassi valori<sup id="fnref10:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Strength</strong></td>
 <td>0% – 100%</td>
 <td>50%</td>
-<td>Intensità del pattern di grana. Non è un’opacità: modula l’escursione di luminanza del noise. Valori &gt;70% possono ridurre la percezione del microcontrasto[^dt48-grain].</td>
+<td>Intensità del pattern di grana. Non è un’opacità: modula l’escursione di luminanza del noise. Valori &gt;70% possono ridurre la percezione del microcontrasto<sup id="fnref11:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Usa i preset per partire rapidamente</p>
-<p>darktable include preset preconfigurati per pellicole iconiche (es. <code>Kodak Tri-X</code>, <code>Ilford Delta 3200</code>). Sono accessibili dal menu a tendina in alto nel modulo grain. I preset sono ottimizzati per un uso immediato e possono essere modificati successivamente[^darktable-fr-grain-2016].</p>
+<p>darktable include preset preconfigurati per pellicole iconiche (es. <code>Kodak Tri-X</code>, <code>Ilford Delta 3200</code>). Sono accessibili dal menu a tendina in alto nel modulo grain. I preset sono ottimizzati per un uso immediato e possono essere modificati successivamente<sup id="fnref6:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
 </div>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <h3 id="combinazione-con-il-modulo-blurs">Combinazione con il modulo <code>blurs</code><a class="headerlink" href="#combinazione-con-il-modulo-blurs" title="Permanent link">&para;</a></h3>
@@ -3130,13 +3130,13 @@
 <ul>
 <li><code>Coarseness</code>: 0.9–1.4 (per enfatizzare la trama della pelle o del tessuto)  </li>
 <li><code>Strength</code>: 45–65% (più alto rispetto al colore, perché la grana diventa l’unica fonte di texture)  </li>
-<li><strong>Attenzione</strong>: evita di applicare <code>grain</code> dopo <code>monochrome</code>, poiché quest’ultimo opera in RGB e potrebbe alterare la distribuzione del noise. Preferisci <code>grain</code> prima di <code>monochrome</code> o in un flusso scene-referred[^pixls-bw-conversion].</li>
+<li><strong>Attenzione</strong>: evita di applicare <code>grain</code> dopo <code>monochrome</code>, poiché quest’ultimo opera in RGB e potrebbe alterare la distribuzione del noise. Preferisci <code>grain</code> prima di <code>monochrome</code> o in un flusso scene-referred<sup id="fnref:pixls-bw-conversion"><a class="footnote-ref" href="#fn:pixls-bw-conversion">4</a></sup>.</li>
 </ul>
 <h3 id="performance-e-compatibilita">Performance e compatibilità<a class="headerlink" href="#performance-e-compatibilita" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Il modulo <code>grain</code> è stato ottimizzato per prestazioni in darktable 4.4+: il codice SSE2 è stato rimosso e sostituito con implementazioni parallele più efficienti[^dt44-performance].  </li>
-<li>Funziona in tutti i flussi di lavoro (scene-referred e display-referred), ma dà risultati più coerenti nel primo[^dt44-performance].  </li>
-<li>Non supporta maschere parametriche o disegnate: è sempre applicato globalmente[^dt48-grain].</li>
+<li>Il modulo <code>grain</code> è stato ottimizzato per prestazioni in darktable 4.4+: il codice SSE2 è stato rimosso e sostituito con implementazioni parallele più efficienti<sup id="fnref2:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.  </li>
+<li>Funziona in tutti i flussi di lavoro (scene-referred e display-referred), ma dà risultati più coerenti nel primo<sup id="fnref3:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.  </li>
+<li>Non supporta maschere parametriche o disegnate: è sempre applicato globalmente<sup id="fnref9:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3146,10 +3146,23 @@
 <li><a href="https://pixls.us/articles/digital-b-w-conversion-gimp/">PIXLS.US — Digital B&amp;W Conversion (GIMP)</a> (principi applicabili anche a grain in b/n)  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^dt48-grain]: darktable 4.8 user manual - grain, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/grain/<br />
-[^darktable-fr-grain-2016]: Weekly Edit 20: Rajoutons du grain - darktable FR, https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/<br />
-[^dt44-performance]: Version 4.4.0 - darktable FR, https://darktable.fr/posts/2023/06/notes-version-4.4/#am%C3%A9lioration-des-performances<br />
-[^pixls-bw-conversion]: PIXLS.US - Digital B&amp;W Conversion (GIMP), https://pixls.us/articles/digital-b-w-conversion-gimp/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dt48-grain">
+<p>darktable 4.8 user manual - grain, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/grain/&#160;<a class="footnote-backref" href="#fnref:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dt48-grain" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:darktable-fr-grain-2016">
+<p>Weekly Edit 20: Rajoutons du grain - darktable FR, https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/&#160;<a class="footnote-backref" href="#fnref:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt44-performance">
+<p>Version 4.4.0 - darktable FR, https://darktable.fr/posts/2023/06/notes-version-4.4/#am%C3%A9lioration-des-performances&#160;<a class="footnote-backref" href="#fnref:dt44-performance" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt44-performance" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt44-performance" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixls-bw-conversion">
+<p>PIXLS.US - Digital B&amp;W Conversion (GIMP), https://pixls.us/articles/digital-b-w-conversion-gimp/&#160;<a class="footnote-backref" href="#fnref:pixls-bw-conversion" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

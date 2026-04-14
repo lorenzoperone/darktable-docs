@@ -3338,7 +3338,7 @@
 
 
 <h1 id="color-equalizer">Color Equalizer<a class="headerlink" href="#color-equalizer" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>Color Equalizer</strong> e' uno strumento di manipolazione cromatica avanzata che opera nello spazio colore <strong>HSL</strong> (Hue, Saturation, Lightness). Permette di regolare selettivamente tonalita', saturazione e luminosita' per specifiche gamme di colore tramite curve interattive e un sistema di mascheramento cromatico integrato.[^ce-in-depth]</p>
+<p>Il modulo <strong>Color Equalizer</strong> e' uno strumento di manipolazione cromatica avanzata che opera nello spazio colore <strong>HSL</strong> (Hue, Saturation, Lightness). Permette di regolare selettivamente tonalita', saturazione e luminosita' per specifiche gamme di colore tramite curve interattive e un sistema di mascheramento cromatico integrato.<sup id="fnref:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><img alt="Color equalizer introduction" src="../../images/color-eq-intro.jpg" /></p>
 <h2 id="come-funziona">Come funziona<a class="headerlink" href="#come-funziona" title="Permanent link">&para;</a></h2>
 <p>Il Color Equalizer analizza l'immagine e costruisce una maschera basata sulle proprieta' cromatiche dei pixel. A differenza di <strong>Color Balance RGB</strong> -- che lavora nello spazio RGB lineare con bilanciamento per ombre/mezzetinte/luci -- il Color Equalizer opera su una rappresentazione HSL, consentendo selezioni basate sulla <strong>tonalita'</strong> (hue) del colore.</p>
@@ -3354,38 +3354,38 @@
 <tbody>
 <tr>
 <td><strong>Hue analysis radius</strong></td>
-<td>Raggio di analisi della tonalita' (in pixel). Media i colori circostanti per evitare selezioni erratiche causate da rumore o texture. Valori tipici: 1.5-10 px.[^ce-in-depth]</td>
+<td>Raggio di analisi della tonalita' (in pixel). Media i colori circostanti per evitare selezioni erratiche causate da rumore o texture. Valori tipici: 1.5-10 px.<sup id="fnref41:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Saturation threshold</strong></td>
-<td>Soglia di saturazione minima (%). Esclude le aree poco sature (vicine al grigio) dalla modifica. Valore predefinito: 10%.[^ce-in-depth]</td>
+<td>Soglia di saturazione minima (%). Esclude le aree poco sature (vicine al grigio) dalla modifica. Valore predefinito: 10%.<sup id="fnref42:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Effect radius</strong></td>
-<td>Raggio dell'effetto (in pixel). Controlla la morbidezza della transizione ai bordi della maschera. Aumentarlo riduce lo "spill" (traboccamento) dell'effetto su zone adiacenti.[^ce-in-depth]</td>
+<td>Raggio dell'effetto (in pixel). Controlla la morbidezza della transizione ai bordi della maschera. Aumentarlo riduce lo "spill" (traboccamento) dell'effetto su zone adiacenti.<sup id="fnref43:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Guided filter</p>
-<p>L'opzione <strong>Use guided filter</strong> applica un filtro guidato che fonde le correzioni con i toni circostanti, producendo transizioni piu' naturali. Particolarmente utile per i toni della pelle.[^ce-in-depth]</p>
+<p>L'opzione <strong>Use guided filter</strong> applica un filtro guidato che fonde le correzioni con i toni circostanti, producendo transizioni piu' naturali. Particolarmente utile per i toni della pelle.<sup id="fnref6:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h3 id="le-tre-schede">Le tre schede<a class="headerlink" href="#le-tre-schede" title="Permanent link">&para;</a></h3>
 <p>Il modulo e' organizzato in tre tab principali:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Hue (Tonalita')</label><label for="__tabbed_1_2">Saturation (Saturazione)</label><label for="__tabbed_1_3">Brightness (Luminosita')</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Permette di ruotare i colori lungo il cerchio cromatico. Ogni nodo sulla curva rappresenta una tonalita' e puo' essere spostato in gradi (+/- 180 gradi). A differenza di saturazione e luminosita', la curva hue permette di regolare l'<strong>ampiezza dell'effetto</strong> per ogni nodo.[^ce-in-depth]</p>
+<p>Permette di ruotare i colori lungo il cerchio cromatico. Ogni nodo sulla curva rappresenta una tonalita' e puo' essere spostato in gradi (+/- 180 gradi). A differenza di saturazione e luminosita', la curva hue permette di regolare l'<strong>ampiezza dell'effetto</strong> per ogni nodo.<sup id="fnref44:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><img alt="Hue tab interface" src="../../images/color-eq-hue-tab.jpg" /></p>
 <p><strong>Uso tipico:</strong> Correggere dominanti cromatiche selettive, trasformare colori specifici (es. rendere un cielo piu' caldo), isolare colori per conversioni creative.</p>
 </div>
 <div class="tabbed-block">
-<p>Controlla l'intensita' dei colori per ogni gamma tonale. Nodi positivi aumentano la saturazione, negativi la riducono. Non supporta la regolazione dell'ampiezza dell'effetto.[^ce-in-depth]</p>
+<p>Controlla l'intensita' dei colori per ogni gamma tonale. Nodi positivi aumentano la saturazione, negativi la riducono. Non supporta la regolazione dell'ampiezza dell'effetto.<sup id="fnref45:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><img alt="Saturation tab" src="../../images/color-eq-saturation-tab.jpg" /></p>
 <p><strong>Uso tipico:</strong> Aumentare la vividezza di colori specifici senza alterare il resto dell'immagine, desaturare selettivamente elementi di disturbo.</p>
 </div>
 <div class="tabbed-block">
-<p>Regola la luminosita' per ogni tonalita'. Opera come un equalizzatore tonale ma selettivo per colore anziche' per luminanza.[^ce-in-depth]</p>
+<p>Regola la luminosita' per ogni tonalita'. Opera come un equalizzatore tonale ma selettivo per colore anziche' per luminanza.<sup id="fnref46:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><img alt="Brightness tab" src="../../images/color-eq-brightness-tab.jpg" /></p>
 <p><strong>Uso tipico:</strong> Illuminare i toni della pelle, scurire cieli, controllare la luminanza di elementi specifici prima della conversione in B/N.</p>
 </div>
@@ -3402,17 +3402,17 @@
 <tbody>
 <tr>
 <td><strong>White level</strong></td>
-<td>Limita il valore massimo di luminosita' consentito per i pixel modificati. Utile per prevenire il clipping nelle alte luci quando si aumenta la luminosita' di colori molto saturi.[^ce-in-depth]</td>
+<td>Limita il valore massimo di luminosita' consentito per i pixel modificati. Utile per prevenire il clipping nelle alte luci quando si aumenta la luminosita' di colori molto saturi.<sup id="fnref47:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Contrast</strong></td>
-<td>Indurisce o ammorbidisce la transizione della maschera cromatica. Valori negativi rendono la transizione piu' graduale, valori positivi piu' netta.[^ce-in-depth]</td>
+<td>Indurisce o ammorbidisce la transizione della maschera cromatica. Valori negativi rendono la transizione piu' graduale, valori positivi piu' netta.<sup id="fnref48:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Ctrl+clic per slider HSL</p>
-<p>Premendo <strong>Ctrl+clic</strong> sulla griglia cromatica si accede a slider individuali stile Lightroom per ogni canale, offrendo un controllo piu' preciso sulla posizione dei nodi.[^ce-in-depth]</p>
+<p>Premendo <strong>Ctrl+clic</strong> sulla griglia cromatica si accede a slider individuali stile Lightroom per ogni canale, offrendo un controllo piu' preciso sulla posizione dei nodi.<sup id="fnref7:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h2 id="quando-usare-color-equalizer-vs-color-balance-rgb">Quando usare Color Equalizer vs Color Balance RGB<a class="headerlink" href="#quando-usare-color-equalizer-vs-color-balance-rgb" title="Permanent link">&para;</a></h2>
 <p>I due moduli hanno scopi complementari ma distinti:</p>
@@ -3466,21 +3466,21 @@
 <h3 id="linee-guida-pratiche">Linee guida pratiche<a class="headerlink" href="#linee-guida-pratiche" title="Permanent link">&para;</a></h3>
 <p><strong>Usa Color Equalizer quando:</strong></p>
 <ul>
-<li>Devi regolare la luminanza di un colore specifico (es. pelle, cielo, vegetazione)[^ce-in-depth]</li>
-<li>Vuoi convertire in B/N controllando come ogni colore viene mappato in scala di grigi[^b-and-w]</li>
-<li>Hai bisogno di isolare un colore saturo senza influenzare toni simili ma meno saturi[^ce-in-depth]</li>
-<li>Vuoi correggere una dominante cromatica localizzata senza alterare il bilanciamento globale[^ce-in-depth]</li>
+<li>Devi regolare la luminanza di un colore specifico (es. pelle, cielo, vegetazione)<sup id="fnref8:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Vuoi convertire in B/N controllando come ogni colore viene mappato in scala di grigi<sup id="fnref3:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
+<li>Hai bisogno di isolare un colore saturo senza influenzare toni simili ma meno saturi<sup id="fnref9:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Vuoi correggere una dominante cromatica localizzata senza alterare il bilanciamento globale<sup id="fnref10:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ul>
 <p><strong>Usa Color Balance RGB quando:</strong></p>
 <ul>
-<li>Devi applicare un look cromatico globale (es. viraggio ombre fredde, luci calde)[^color-balance]</li>
-<li>Vuoi controllare la saturazione per zona tonale (ombre/mezzetinte/luci)[^color-balance]</li>
-<li>Hai bisogno di correzioni di tinta globali[^color-balance]</li>
-<li>Lavori su ritratti e vuoi uniformare i toni della pelle in modo globale[^color-balance]</li>
+<li>Devi applicare un look cromatico globale (es. viraggio ombre fredde, luci calde)<sup id="fnref:color-balance"><a class="footnote-ref" href="#fn:color-balance">5</a></sup></li>
+<li>Vuoi controllare la saturazione per zona tonale (ombre/mezzetinte/luci)<sup id="fnref2:color-balance"><a class="footnote-ref" href="#fn:color-balance">5</a></sup></li>
+<li>Hai bisogno di correzioni di tinta globali<sup id="fnref3:color-balance"><a class="footnote-ref" href="#fn:color-balance">5</a></sup></li>
+<li>Lavori su ritratti e vuoi uniformare i toni della pelle in modo globale<sup id="fnref4:color-balance"><a class="footnote-ref" href="#fn:color-balance">5</a></sup></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Combinazione</p>
-<p>I due moduli possono essere usati insieme nella pipeline: Color Balance RGB per il bilanciamento globale, Color Equalizer per correzioni selettive successive.[^pipeline]</p>
+<p>I due moduli possono essere usati insieme nella pipeline: Color Balance RGB per il bilanciamento globale, Color Equalizer per correzioni selettive successive.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup></p>
 </div>
 <h2 id="parametri-dettagliati">Parametri dettagliati<a class="headerlink" href="#parametri-dettagliati" title="Permanent link">&para;</a></h2>
 <h3 id="hue-analysis-radius">Hue analysis radius<a class="headerlink" href="#hue-analysis-radius" title="Permanent link">&para;</a></h3>
@@ -3513,125 +3513,125 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Rumore e artefatti</p>
-<p>Con immagini ad alto ISO non denoisate, il Color Equalizer puo' produrre artefatti a chiazze (<em>blotchiness</em>) e granulosita'. <strong>Applicare sempre la riduzione rumore prima</strong> di qualsiasi regolazione cromatica con questo modulo.[^ce-in-depth]</p>
+<p>Con immagini ad alto ISO non denoisate, il Color Equalizer puo' produrre artefatti a chiazze (<em>blotchiness</em>) e granulosita'. <strong>Applicare sempre la riduzione rumore prima</strong> di qualsiasi regolazione cromatica con questo modulo.<sup id="fnref11:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h3 id="saturation-threshold">Saturation threshold<a class="headerlink" href="#saturation-threshold" title="Permanent link">&para;</a></h3>
 <p>La soglia di saturazione funziona come un filtro: solo i pixel con saturazione superiore al valore specificato verranno influenzati dalle regolazioni.</p>
 <ul>
 <li><strong>10%</strong> (default): include quasi tutti i colori visibili</li>
-<li><strong>20-30%</strong>: esclude i toni della pelle poco saturi, utile per proteggere la pelle quando si regolano colori vivaci[^ce-in-depth]</li>
+<li><strong>20-30%</strong>: esclude i toni della pelle poco saturi, utile per proteggere la pelle quando si regolano colori vivaci<sup id="fnref12:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 <li><strong>50%+</strong>: agisce solo sui colori piu' intensi</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Proteggere la pelle</p>
-<p>Per modificare colori vivaci (es. vesti arancioni, fiori) senza alterare i toni della pelle, aumentare la saturation threshold al 20-30%. La pelle, essendo meno satura, verra' esclusa automaticamente dalla maschera.[^ce-in-depth]</p>
+<p>Per modificare colori vivaci (es. vesti arancioni, fiori) senza alterare i toni della pelle, aumentare la saturation threshold al 20-30%. La pelle, essendo meno satura, verra' esclusa automaticamente dalla maschera.<sup id="fnref13:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h3 id="effect-radius">Effect radius<a class="headerlink" href="#effect-radius" title="Permanent link">&para;</a></h3>
 <p>Controlla la diffusione dell'effetto oltre i confini della maschera cromatica.</p>
 <ul>
 <li><strong>1.0 px</strong> (default): effetto preciso, bordi netti</li>
 <li><strong>10-50 px</strong>: transizione piu' morbida, riduce artefatti ai bordi</li>
-<li><strong>100+ px</strong>: effetto molto diffuso, utile per correzioni globali all'interno di un'area mascherata[^ce-in-depth]</li>
+<li><strong>100+ px</strong>: effetto molto diffuso, utile per correzioni globali all'interno di un'area mascherata<sup id="fnref14:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Effetto spill</p>
-<p>Un effect radius elevato puo' causare il traboccamento dell'effetto oltre i bordi desiderati. Se noti aloni innaturali, riduci il valore o combina con una maschera parametrica per delimitare l'area.[^ce-in-depth]</p>
+<p>Un effect radius elevato puo' causare il traboccamento dell'effetto oltre i bordi desiderati. Se noti aloni innaturali, riduci il valore o combina con una maschera parametrica per delimitare l'area.<sup id="fnref15:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h2 id="workflow-pratici">Workflow pratici<a class="headerlink" href="#workflow-pratici" title="Permanent link">&para;</a></h2>
 <h3 id="workflow-1-conversione-bianco-e-nero-controllata">Workflow 1: Conversione Bianco e Nero controllata<a class="headerlink" href="#workflow-1-conversione-bianco-e-nero-controllata" title="Permanent link">&para;</a></h3>
-<p>Questo workflow, tratto dal tutorial <em>Full B&amp;W Edit in Darktable</em>, permette di convertire in scala di grigi controllando esattamente come ogni colore contribuisce alla luminanza finale.[^b-and-w]</p>
-<p><strong>Posizionamento nella pipeline:</strong> Inserire il Color Equalizer <strong>tra due istanze di Color Calibration</strong>. La prima istanza prepara i colori, il Color Equalizer controlla la luminanza, la seconda istanza esegue la conversione in B/N.[^b-and-w]</p>
+<p>Questo workflow, tratto dal tutorial <em>Full B&amp;W Edit in Darktable</em>, permette di convertire in scala di grigi controllando esattamente come ogni colore contribuisce alla luminanza finale.<sup id="fnref:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
+<p><strong>Posizionamento nella pipeline:</strong> Inserire il Color Equalizer <strong>tra due istanze di Color Calibration</strong>. La prima istanza prepara i colori, il Color Equalizer controlla la luminanza, la seconda istanza esegue la conversione in B/N.<sup id="fnref2:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
 <p><strong>Passaggi:</strong></p>
 <ol>
 <li>Applicare la prima istanza di <strong>Color Calibration</strong> (tab CAT) per il bilanciamento cromatico di base</li>
 <li>Aggiungere un'istanza di <strong>Color Equalizer</strong>, rinominarla "black and white"</li>
 <li>Nella tab <strong>Brightness</strong>, creare una curva a <strong>U</strong> per i toni della pelle:</li>
 <li>Aumentare la luminosita' di rosso e arancione (+40-50%)</li>
-<li>Ridurre leggermente il giallo centrale per evitare appiattimento[^b-and-w]</li>
-<li>In alternativa, applicare il preset <strong>skin</strong> come punto di partenza[^b-and-w]</li>
-<li>Aggiungere una seconda istanza di <strong>Color Calibration</strong> e desaturare completamente per la conversione in B/N[^b-and-w]</li>
+<li>Ridurre leggermente il giallo centrale per evitare appiattimento<sup id="fnref4:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
+<li>In alternativa, applicare il preset <strong>skin</strong> come punto di partenza<sup id="fnref5:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
+<li>Aggiungere una seconda istanza di <strong>Color Calibration</strong> e desaturare completamente per la conversione in B/N<sup id="fnref6:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Curva a U per la pelle</p>
-<p>La curva a U (rosso e arancione alti, giallo basso al centro) illumina i toni della pelle evitando che l'immagine risulti piatta. Questo e' l'equivalente cromatico della tecnica dodge &amp; burn.[^b-and-w]</p>
+<p>La curva a U (rosso e arancione alti, giallo basso al centro) illumina i toni della pelle evitando che l'immagine risulti piatta. Questo e' l'equivalente cromatico della tecnica dodge &amp; burn.<sup id="fnref7:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
 </div>
 <p><strong>Esempio con maschere:</strong> Per controllare separatamente diverse aree dell'immagine:</p>
 <ol>
-<li>Prima istanza di Color Equalizer: maschera sul soggetto principale, regolazione luminosita' rosso[^b-and-w]</li>
-<li>Seconda istanza: maschera diversa, regolazione globale[^b-and-w]</li>
+<li>Prima istanza di Color Equalizer: maschera sul soggetto principale, regolazione luminosita' rosso<sup id="fnref8:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
+<li>Seconda istanza: maschera diversa, regolazione globale<sup id="fnref9:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></li>
 </ol>
 <h3 id="workflow-2-correzione-selettiva-di-colori-vivaci">Workflow 2: Correzione selettiva di colori vivaci<a class="headerlink" href="#workflow-2-correzione-selettiva-di-colori-vivaci" title="Permanent link">&para;</a></h3>
-<p>Basato sull'esempio pratico con i monaci e le vesti arancioni nel tutorial <em>The Colour Equaliser in depth</em>.[^ce-in-depth]</p>
+<p>Basato sull'esempio pratico con i monaci e le vesti arancioni nel tutorial <em>The Colour Equaliser in depth</em>.<sup id="fnref2:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><strong>Scenario:</strong> Vuoi aumentare la luminosita' e saturazione delle vesti arancioni dei monaci senza alterare i toni della pelle sullo sfondo.</p>
 <p><strong>Passaggi:</strong></p>
 <ol>
 <li>Aprire il Color Equalizer, selezionare la tab <strong>Brightness</strong></li>
 <li>Cliccare sull'arancione delle vesti con il selettore colore per posizionare un nodo</li>
-<li>Aumentare la luminosita' del nodo arancione (+1.00 EV)[^ce-in-depth]</li>
-<li>Passare alla tab <strong>Saturation</strong> e aumentare leggermente la saturazione per lo stesso nodo[^ce-in-depth]</li>
-<li><strong>Aumentare la saturation threshold</strong> al 20-30% per escludere la pelle meno satura dalla modifica[^ce-in-depth]</li>
-<li>Attivare <strong>Use guided filter</strong> per transizioni naturali[^ce-in-depth]</li>
-<li>Se necessario, ridurre il <strong>Contrast</strong> (-0.7 a -1.0) per ammorbidire la transizione della maschera[^ce-in-depth]</li>
+<li>Aumentare la luminosita' del nodo arancione (+1.00 EV)<sup id="fnref16:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Passare alla tab <strong>Saturation</strong> e aumentare leggermente la saturazione per lo stesso nodo<sup id="fnref17:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li><strong>Aumentare la saturation threshold</strong> al 20-30% per escludere la pelle meno satura dalla modifica<sup id="fnref18:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Attivare <strong>Use guided filter</strong> per transizioni naturali<sup id="fnref19:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Se necessario, ridurre il <strong>Contrast</strong> (-0.7 a -1.0) per ammorbidire la transizione della maschera<sup id="fnref20:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione ai bordi</p>
-<p>Con curve molto aggressive, i bordi tra pelle e colore modificato possono mostrare un alone (<em>spill</em>). Per correggere: aumentare l'effect radius o combinare con una maschera parametrica basata su hue per delimitare precisamente l'area.[^ce-in-depth]</p>
+<p>Con curve molto aggressive, i bordi tra pelle e colore modificato possono mostrare un alone (<em>spill</em>). Per correggere: aumentare l'effect radius o combinare con una maschera parametrica basata su hue per delimitare precisamente l'area.<sup id="fnref21:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h3 id="workflow-3-illuminare-i-toni-della-pelle">Workflow 3: Illuminare i toni della pelle<a class="headerlink" href="#workflow-3-illuminare-i-toni-della-pelle" title="Permanent link">&para;</a></h3>
-<p>Per ritratti dove si vuole dare luminosita' ai toni cutanei senza influenzare il resto dell'immagine.[^ce-in-depth]</p>
+<p>Per ritratti dove si vuole dare luminosita' ai toni cutanei senza influenzare il resto dell'immagine.<sup id="fnref3:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><strong>Passaggi:</strong></p>
 <ol>
 <li>Aprire il Color Equalizer, selezionare la tab <strong>Brightness</strong></li>
-<li>Usare il selettore colore per campionare un tono medio della pelle[^ce-in-depth]</li>
-<li>Posizionare un nodo sulla curva e aumentare la luminosita'[^ce-in-depth]</li>
-<li>Regolare l'<strong>hue analysis radius</strong> in base all'ISO: valori piu' alti per ISO elevati riducono le macchie[^ce-in-depth]</li>
-<li>Attivare <strong>Use guided filter</strong> per una fusione naturale con i toni circostanti[^ce-in-depth]</li>
-<li>Se la pelle appare granulosa, aumentare il raggio di analisi della tonalita' (6-10 px)[^ce-in-depth]</li>
+<li>Usare il selettore colore per campionare un tono medio della pelle<sup id="fnref22:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Posizionare un nodo sulla curva e aumentare la luminosita'<sup id="fnref23:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Regolare l'<strong>hue analysis radius</strong> in base all'ISO: valori piu' alti per ISO elevati riducono le macchie<sup id="fnref24:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Attivare <strong>Use guided filter</strong> per una fusione naturale con i toni circostanti<sup id="fnref25:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Se la pelle appare granulosa, aumentare il raggio di analisi della tonalita' (6-10 px)<sup id="fnref26:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ol>
 <h3 id="workflow-4-rendere-le-immagini-piu-vivaci-pop">Workflow 4: Rendere le immagini piu' vivaci (POP)<a class="headerlink" href="#workflow-4-rendere-le-immagini-piu-vivaci-pop" title="Permanent link">&para;</a></h3>
-<p>Dal tutorial <em>How to Make Your Images POP</em>, il Color Equalizer puo' essere combinato con altri moduli per un impatto visivo maggiore.[^pop]</p>
+<p>Dal tutorial <em>How to Make Your Images POP</em>, il Color Equalizer puo' essere combinato con altri moduli per un impatto visivo maggiore.<sup id="fnref:pop"><a class="footnote-ref" href="#fn:pop">3</a></sup></p>
 <p><strong>Pipeline suggerita:</strong></p>
 <ol>
 <li><strong>Esposizione</strong> e <strong>Filmic RGB/Sigmoid</strong> per la base tonale</li>
 <li><strong>Color Calibration</strong> per il bilanciamento cromatico globale</li>
-<li><strong>Tone Equalizer</strong> per contrasto globale[^pop]</li>
+<li><strong>Tone Equalizer</strong> per contrasto globale<sup id="fnref2:pop"><a class="footnote-ref" href="#fn:pop">3</a></sup></li>
 <li><strong>Color Equalizer</strong>: aumentare saturazione e luminosita' dei colori chiave (es. blu del cielo, verde della vegetazione)</li>
-<li><strong>Contrasto locale</strong> o <strong>Diffondi e Nitidezza</strong> per i dettagli finali[^pop]</li>
+<li><strong>Contrasto locale</strong> o <strong>Diffondi e Nitidezza</strong> per i dettagli finali<sup id="fnref3:pop"><a class="footnote-ref" href="#fn:pop">3</a></sup></li>
 </ol>
 <h2 id="esempi-pratici-dai-video-tutorial">Esempi pratici dai video tutorial<a class="headerlink" href="#esempi-pratici-dai-video-tutorial" title="Permanent link">&para;</a></h2>
 <h3 id="esempio-1-isolamento-di-un-soggetto-ape-su-fiore">Esempio 1: Isolamento di un soggetto (ape su fiore)<a class="headerlink" href="#esempio-1-isolamento-di-un-soggetto-ape-su-fiore" title="Permanent link">&para;</a></h3>
-<p>Nel tutorial <em>The Colour Equaliser in depth</em>, il modulo viene usato per illuminare un'ape in volo vicino a un fiore viola. La sfida principale e' gestire il rumore ad alto ISO (4000 ISO) che causa artefatti cromatici.[^ce-in-depth]</p>
+<p>Nel tutorial <em>The Colour Equaliser in depth</em>, il modulo viene usato per illuminare un'ape in volo vicino a un fiore viola. La sfida principale e' gestire il rumore ad alto ISO (4000 ISO) che causa artefatti cromatici.<sup id="fnref4:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><strong>Soluzione adottata:</strong></p>
 <ul>
-<li>Aumentare l'<strong>hue analysis radius</strong> per mediare il rumore e ottenere una maschera piu' uniforme[^ce-in-depth]</li>
-<li>Usare una <strong>maschera disegnata</strong> per delimitare l'area dell'ape ed escludere lo sfondo[^ce-in-depth]</li>
-<li>Aumentare la luminosita' dei toni dell'ape tramite la curva brightness[^ce-in-depth]</li>
+<li>Aumentare l'<strong>hue analysis radius</strong> per mediare il rumore e ottenere una maschera piu' uniforme<sup id="fnref27:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Usare una <strong>maschera disegnata</strong> per delimitare l'area dell'ape ed escludere lo sfondo<sup id="fnref28:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Aumentare la luminosita' dei toni dell'ape tramite la curva brightness<sup id="fnref29:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Denoise prima del Color Equalizer</p>
-<p>Il tutorial enfatizza che e' <strong>cruciale applicare il denoise prima</strong> di qualsiasi regolazione con il Color Equalizer. Il rumore ad alto ISO viene interpretato come variazione cromatica, causando macchie e artefatti imprevedibili.[^ce-in-depth]</p>
+<p>Il tutorial enfatizza che e' <strong>cruciale applicare il denoise prima</strong> di qualsiasi regolazione con il Color Equalizer. Il rumore ad alto ISO viene interpretato come variazione cromatica, causando macchie e artefatti imprevedibili.<sup id="fnref30:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </div>
 <h3 id="esempio-2-gestione-fiori-e-toni-della-pelle">Esempio 2: Gestione fiori e toni della pelle<a class="headerlink" href="#esempio-2-gestione-fiori-e-toni-della-pelle" title="Permanent link">&para;</a></h3>
-<p>Sempre nel tutorial approfondito, un'immagine con una donna che lavora con fiori gialli presenta la sfida di modificare i fiori senza alterare la pelle.[^ce-in-depth]</p>
+<p>Sempre nel tutorial approfondito, un'immagine con una donna che lavora con fiori gialli presenta la sfida di modificare i fiori senza alterare la pelle.<sup id="fnref5:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 <p><strong>Approccio:</strong></p>
 <ol>
-<li>Usare una <strong>maschera disegnata</strong> (cerchio) sulla pelle per proteggerla[^ce-in-depth]</li>
-<li>Applicare il Color Equalizer sui toni giallo-arancione dei fiori[^ce-in-depth]</li>
-<li>Regolare <strong>contrast</strong> (-0.701) e <strong>effect radius</strong> (74.6 px) per un effetto diffuso ma controllato[^ce-in-depth]</li>
-<li>Usare il <strong>guided filter</strong> per fondere le correzioni con i toni circostanti[^ce-in-depth]</li>
+<li>Usare una <strong>maschera disegnata</strong> (cerchio) sulla pelle per proteggerla<sup id="fnref31:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Applicare il Color Equalizer sui toni giallo-arancione dei fiori<sup id="fnref32:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Regolare <strong>contrast</strong> (-0.701) e <strong>effect radius</strong> (74.6 px) per un effetto diffuso ma controllato<sup id="fnref33:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
+<li>Usare il <strong>guided filter</strong> per fondere le correzioni con i toni circostanti<sup id="fnref34:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></li>
 </ol>
 <h3 id="esempio-3-albe-e-tramonti-effetto-bezold-brucke">Esempio 3: Albe e tramonti -- effetto Bezold-Brucke<a class="headerlink" href="#esempio-3-albe-e-tramonti-effetto-bezold-brucke" title="Permanent link">&para;</a></h3>
-<p>Nel tutorial <em>How to Get Accurate Colours</em>, viene discusso il fenomeno percettivo per cui i colori caldi di albe e tramonti appaiono rossi invece che arancioni/gialli quando si attivano i tone mapper (Filmic/Sigmoid). Questo e' legato all'<strong>effetto Bezold-Brucke</strong>, per cui la percezione della tonalita' cambia con la luminanza.[^accurate-colours]</p>
+<p>Nel tutorial <em>How to Get Accurate Colours</em>, viene discusso il fenomeno percettivo per cui i colori caldi di albe e tramonti appaiono rossi invece che arancioni/gialli quando si attivano i tone mapper (Filmic/Sigmoid). Questo e' legato all'<strong>effetto Bezold-Brucke</strong>, per cui la percezione della tonalita' cambia con la luminanza.<sup id="fnref:accurate-colours"><a class="footnote-ref" href="#fn:accurate-colours">4</a></sup></p>
 <p><strong>Come il Color Equalizer puo' aiutare:</strong></p>
 <ol>
-<li>Dopo aver applicato <strong>Filmic RGB</strong> o <strong>Sigmoid</strong>, il sole puo' apparire giallo invece che arancione/rosso[^accurate-colours]</li>
+<li>Dopo aver applicato <strong>Filmic RGB</strong> o <strong>Sigmoid</strong>, il sole puo' apparire giallo invece che arancione/rosso<sup id="fnref2:accurate-colours"><a class="footnote-ref" href="#fn:accurate-colours">4</a></sup></li>
 <li>Usare il Color Equalizer nella tab <strong>Hue</strong> per spostare i toni gialli verso l'arancione nella zona del sole</li>
 <li>Nella tab <strong>Saturation</strong>, aumentare la saturazione dei toni caldi per enfatizzare l'effetto tramonto</li>
-<li>Usare una <strong>maschera parametrica basata sulla luminanza</strong> per limitare l'effetto alle alte luci[^accurate-colours]</li>
+<li>Usare una <strong>maschera parametrica basata sulla luminanza</strong> per limitare l'effetto alle alte luci<sup id="fnref3:accurate-colours"><a class="footnote-ref" href="#fn:accurate-colours">4</a></sup></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Filmic v5 per i tramonti</p>
-<p>Il tutorial nota che <strong>Filmic RGB v5 (2021)</strong> gestisce meglio i colori caldi dei tramonti rispetto alle versioni v6 e v7. Se usi v6/v7 e perdi i toni gialli/arancioni, il Color Equalizer puo' recuperare selettivamente queste tonalita'.[^accurate-colours]</p>
+<p>Il tutorial nota che <strong>Filmic RGB v5 (2021)</strong> gestisce meglio i colori caldi dei tramonti rispetto alle versioni v6 e v7. Se usi v6/v7 e perdi i toni gialli/arancioni, il Color Equalizer puo' recuperare selettivamente queste tonalita'.<sup id="fnref4:accurate-colours"><a class="footnote-ref" href="#fn:accurate-colours">4</a></sup></p>
 </div>
 <h2 id="posizionamento-nella-pipeline">Posizionamento nella pipeline<a class="headerlink" href="#posizionamento-nella-pipeline" title="Permanent link">&para;</a></h2>
 <p>Il posizionamento del Color Equalizer nella catena di elaborazione e' cruciale per il risultato:</p>
@@ -3647,12 +3647,12 @@
 <tr>
 <td>Correzione cromativa generica</td>
 <td>Dopo Color Calibration, prima di Filmic/Sigmoid</td>
-<td>Opera su colori ancora lineari, massimo controllo[^pipeline]</td>
+<td>Opera su colori ancora lineari, massimo controllo<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup></td>
 </tr>
 <tr>
 <td>Conversione B/N</td>
 <td><strong>Tra due istanze di Color Calibration</strong></td>
-<td>Controlla la luminanza dei colori prima della desaturazione[^b-and-w]</td>
+<td>Controlla la luminanza dei colori prima della desaturazione<sup id="fnref12:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></td>
 </tr>
 <tr>
 <td>Ritocco finale</td>
@@ -3668,30 +3668,30 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Pipeline consigliata per B/N</p>
-<p><code>RAW -&gt; White Balance -&gt; Color Calibration (1) -&gt; Color Equalizer -&gt; Color Calibration (2, desaturato) -&gt; Filmic/Sigmoid -&gt; Tone Equalizer</code>[^b-and-w]</p>
+<p><code>RAW -&gt; White Balance -&gt; Color Calibration (1) -&gt; Color Equalizer -&gt; Color Calibration (2, desaturato) -&gt; Filmic/Sigmoid -&gt; Tone Equalizer</code><sup id="fnref10:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
 </div>
 <h2 id="consigli-per-colori-accurati">Consigli per colori accurati<a class="headerlink" href="#consigli-per-colori-accurati" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>Denoise prima di tutto:</strong> Il rumore viene interpretato come variazione cromatica. Applicare sempre la riduzione rumore prima del Color Equalizer.[^ce-in-depth]</p>
+<p><strong>Denoise prima di tutto:</strong> Il rumore viene interpretato come variazione cromatica. Applicare sempre la riduzione rumore prima del Color Equalizer.<sup id="fnref35:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Usare il selettore colore:</strong> Invece di posizionare nodi manualmente, cliccare direttamente sull'immagine con il selettore colore per campionare la tonalita' esatta da modificare.[^ce-in-depth]</p>
+<p><strong>Usare il selettore colore:</strong> Invece di posizionare nodi manualmente, cliccare direttamente sull'immagine con il selettore colore per campionare la tonalita' esatta da modificare.<sup id="fnref36:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Monitorare la maschera:</strong> Visualizzare la maschera cromatica generata (le aree rosse/blu indicano zone selezionate/escluse) per verificare che la selezione corrisponda all'area desiderata.[^ce-in-depth]</p>
+<p><strong>Monitorare la maschera:</strong> Visualizzare la maschera cromatica generata (le aree rosse/blu indicano zone selezionate/escluse) per verificare che la selezione corrisponda all'area desiderata.<sup id="fnref37:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Combinare con maschere parametriche:</strong> Per un controllo ancora piu' preciso, applicare una maschera parametrica basata su hue (Cz) o luminanza (Jz) al modulo.[^ce-in-depth]</p>
+<p><strong>Combinare con maschere parametriche:</strong> Per un controllo ancora piu' preciso, applicare una maschera parametrica basata su hue (Cz) o luminanza (Jz) al modulo.<sup id="fnref38:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Attenzione all'ISO:</strong> Per immagini sopra ISO 1600, aumentare significativamente l'hue analysis radius (6-10 px) per evitare artefatti.[^ce-in-depth]</p>
+<p><strong>Attenzione all'ISO:</strong> Per immagini sopra ISO 1600, aumentare significativamente l'hue analysis radius (6-10 px) per evitare artefatti.<sup id="fnref39:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Preservare i neutri:</strong> Usare la saturation threshold per proteggere le aree vicine al grigio dalle modifiche cromatiche.[^ce-in-depth]</p>
+<p><strong>Preservare i neutri:</strong> Usare la saturation threshold per proteggere le aree vicine al grigio dalle modifiche cromatiche.<sup id="fnref40:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Istanze multiple:</strong> Come con Color Calibration, e' possibile usare piu' istanze di Color Equalizer con maschere diverse per controllare aree separate dell'immagine.[^b-and-w]</p>
+<p><strong>Istanze multiple:</strong> Come con Color Calibration, e' possibile usare piu' istanze di Color Equalizer con maschere diverse per controllare aree separate dell'immagine.<sup id="fnref11:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
 </li>
 </ol>
 <h2 id="riepilogo-rapido">Riepilogo rapido<a class="headerlink" href="#riepilogo-rapido" title="Permanent link">&para;</a></h2>
@@ -3743,12 +3743,29 @@
 </tbody>
 </table>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^ce-in-depth]: <em><a href="https://www.youtube.com/watch?v=hvn7CCGh-ts">The Colour Equaliser in depth</a></em> -- A Dabble in Photography
-[^b-and-w]: <em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edit in darktable for street photography</a></em> -- A Dabble in Photography
-[^pop]: <em><a href="https://www.youtube.com/watch?v=PWyCbGHE3C0">How to make your images POP!</a></em> -- A Dabble in Photography
-[^accurate-colours]: <em><a href="https://www.youtube.com/watch?v=TMlF85TFIUo">How to get accurate colours in darktable</a></em> -- A Dabble in Photography
-[^color-balance]: <em><a href="https://www.youtube.com/watch?v=SmeUXCtNNh0">Colour balance RGB</a></em> -- A Dabble in Photography
-[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ce-in-depth">
+<p><em><a href="https://www.youtube.com/watch?v=hvn7CCGh-ts">The Colour Equaliser in depth</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref33:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref34:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref35:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref36:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref37:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref38:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref39:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref40:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref41:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref42:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref43:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref44:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref45:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref46:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref47:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref48:ce-in-depth" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:b-and-w">
+<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edit in darktable for street photography</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:b-and-w" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pop">
+<p><em><a href="https://www.youtube.com/watch?v=PWyCbGHE3C0">How to make your images POP!</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pop" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pop" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pop" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:accurate-colours">
+<p><em><a href="https://www.youtube.com/watch?v=TMlF85TFIUo">How to get accurate colours in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:accurate-colours" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:accurate-colours" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:accurate-colours" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:accurate-colours" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-balance">
+<p><em><a href="https://www.youtube.com/watch?v=SmeUXCtNNh0">Colour balance RGB</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:color-balance" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:color-balance" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:color-balance" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:color-balance" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

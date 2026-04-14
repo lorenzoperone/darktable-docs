@@ -3026,20 +3026,20 @@
 
 
 <h1 id="raster-masks-external-plugins">Raster Masks: External Plugins<a class="headerlink" href="#raster-masks-external-plugins" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>raster masks external plugins</strong> non è un singolo modulo nativo di darktable, ma una <em>categoria funzionale</em> che descrive il flusso di lavoro per importare, convertire e applicare maschere raster generate esternamente (es. con AI tools come SAM2/SAM3, Affinity Photo o Photoshop) nel pipeline di elaborazione di darktable 5.4+[^raster-manual][^external-masks-video]. Questo workflow consente di sfruttare algoritmi di segmentazione avanzati non disponibili nativamente, integrandoli in modo non distruttivo nella pipeline scene-referred[^ai-subsystem-pr].</p>
+<p>Il modulo <strong>raster masks external plugins</strong> non è un singolo modulo nativo di darktable, ma una <em>categoria funzionale</em> che descrive il flusso di lavoro per importare, convertire e applicare maschere raster generate esternamente (es. con AI tools come SAM2/SAM3, Affinity Photo o Photoshop) nel pipeline di elaborazione di darktable 5.4+<sup id="fnref:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup><sup id="fnref:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>. Questo workflow consente di sfruttare algoritmi di segmentazione avanzati non disponibili nativamente, integrandoli in modo non distruttivo nella pipeline scene-referred<sup id="fnref:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup>.</p>
 <p><img alt="Workflow di importazione maschera raster esterna in darktable" src="../images/raster-external-workflow.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Raster mask ≠ vettoriale</p>
-<p>Una <em>raster mask</em> è un'immagine in scala di grigi (8/16 bit), dove ogni pixel ha un valore di opacità da 0.0 (trasparente) a 1.0 (opaco). A differenza delle maschere vettoriali (disegnate o AI-integrate), non è scalabile senza perdita di qualità e richiede un formato specifico: <strong>PFM (Portable FloatMap)</strong> per preservare la precisione floating-point necessaria alla pipeline scene-referred[^raster-manual][^external-masks-video].</p>
+<p>Una <em>raster mask</em> è un'immagine in scala di grigi (8/16 bit), dove ogni pixel ha un valore di opacità da 0.0 (trasparente) a 1.0 (opaco). A differenza delle maschere vettoriali (disegnate o AI-integrate), non è scalabile senza perdita di qualità e richiede un formato specifico: <strong>PFM (Portable FloatMap)</strong> per preservare la precisione floating-point necessaria alla pipeline scene-referred<sup id="fnref5:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup><sup id="fnref7:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Le maschere raster esterne sono utilizzate principalmente per:</p>
 <ol>
-<li><strong>Segmentazione AI avanzata</strong>: isolamento preciso di soggetti complessi (capelli, pelliccia, foglie) tramite modelli come SAM2/SAM3, Light HQ-SAM o Segment Anything[^ai-subsystem-pr][^external-masks-video]  </li>
-<li><strong>Controllo locale fine</strong>: applicazione di regolazioni solo su aree definite con precisione sub-pixel, impossibile con maschere parametriche native[^raster-manual]  </li>
-<li><strong>Integrazione con tool professionali</strong>: uso di maschere create in Affinity Photo, Photoshop o GIMP, dove si dispone di strumenti di ritocco manuale superiori[^external-masks-video]</li>
+<li><strong>Segmentazione AI avanzata</strong>: isolamento preciso di soggetti complessi (capelli, pelliccia, foglie) tramite modelli come SAM2/SAM3, Light HQ-SAM o Segment Anything<sup id="fnref4:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup><sup id="fnref8:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
+<li><strong>Controllo locale fine</strong>: applicazione di regolazioni solo su aree definite con precisione sub-pixel, impossibile con maschere parametriche native<sup id="fnref6:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup>  </li>
+<li><strong>Integrazione con tool professionali</strong>: uso di maschere create in Affinity Photo, Photoshop o GIMP, dove si dispone di strumenti di ritocco manuale superiori<sup id="fnref9:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup></li>
 </ol>
-<p>Il processo si articola in <strong>quattro fasi obbligatorie</strong>, tutte critiche per il successo finale[^external-masks-video]:</p>
+<p>Il processo si articola in <strong>quattro fasi obbligatorie</strong>, tutte critiche per il successo finale<sup id="fnref2:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <ul>
 <li>✅ Preparazione dell’immagine base (nessuna trasformazione geometrica)  </li>
 <li>✅ Esportazione in TIFF/PNG a dimensioni identiche all’originale  </li>
@@ -3048,10 +3048,10 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Errore comune: trasformazioni geometriche</p>
-<p>Qualsiasi operazione di <code>crop</code>, <code>rotate</code>, <code>lens correction</code> o <code>perspective</code> prima dell’esportazione <strong>invalida la maschera</strong>. La maschera PFM deve corrispondere pixel-per-pixel all’immagine RAW originale, altrimenti si verificano shift, stretching o clipping catastrofici[^external-masks-video].</p>
+<p>Qualsiasi operazione di <code>crop</code>, <code>rotate</code>, <code>lens correction</code> o <code>perspective</code> prima dell’esportazione <strong>invalida la maschera</strong>. La maschera PFM deve corrispondere pixel-per-pixel all’immagine RAW originale, altrimenti si verificano shift, stretching o clipping catastrofici<sup id="fnref10:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il workflow standard, dimostrato in <a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">A Dabble in Photography</a>, è il seguente[^external-masks-video]:</p>
+<p>Il workflow standard, dimostrato in <a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">A Dabble in Photography</a>, è il seguente<sup id="fnref3:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Preparazione: duplica l&#39;immagine → disattiva TUTTI i moduli geometrici  
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Esportazione: TIFF 16-bit, no ICC, stessa risoluzione (es. 6240×4160 px)  
@@ -3064,13 +3064,13 @@
 <p>Prima di esportare, devi garantire che l’immagine sia “pulita” dal punto di vista geometrico:</p>
 <ul>
 <li>✅ Abilita <code>duplicate manager</code> e crea un duplicato dedicato alle maschere  </li>
-<li>✅ Disattiva <strong>tutti</strong> i moduli geometrici: <code>crop</code>, <code>orientation</code>, <code>lens correction</code>, <code>rotate and perspective</code>[^external-masks-video]  </li>
-<li>✅ Evita modifiche cromatiche aggressive (es. <code>color balance rgb</code> con <code>highlights = -25%</code>) che alterano la percezione AI[^external-masks-video]  </li>
+<li>✅ Disattiva <strong>tutti</strong> i moduli geometrici: <code>crop</code>, <code>orientation</code>, <code>lens correction</code>, <code>rotate and perspective</code><sup id="fnref11:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
+<li>✅ Evita modifiche cromatiche aggressive (es. <code>color balance rgb</code> con <code>highlights = -25%</code>) che alterano la percezione AI<sup id="fnref12:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
 <li>❌ Non usare <code>velvia</code>, <code>LUT 3D</code> o <code>tone equalizer</code> prima dell’esportazione — possono confondere gli algoritmi esterni  </li>
 </ul>
 <p><img alt="Interfaccia darktable con modulo duplicate manager attivo e crop/lens correction disattivati" src="../images/raster-prep-duplicate.jpg" /></p>
 <h3 id="passo-2-esportazione-in-tiffpng">Passo 2: Esportazione in TIFF/PNG<a class="headerlink" href="#passo-2-esportazione-in-tiffpng" title="Permanent link">&para;</a></h3>
-<p>L’esportazione deve rispettare questi vincoli tecnici[^external-masks-video]:</p>
+<p>L’esportazione deve rispettare questi vincoli tecnici<sup id="fnref4:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3083,31 +3083,31 @@
 <tr>
 <td><strong>Formato</strong></td>
 <td>TIFF (preferito) o PNG</td>
-<td>Conserva profondità bit e dimensioni esatte[^external-masks-video]</td>
+<td>Conserva profondità bit e dimensioni esatte<sup id="fnref17:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Risoluzione</strong></td>
 <td>Identica all’originale (es. <code>6240×4160 px</code>)</td>
-<td>Mismatch causa shift della maschera[^external-masks-video]</td>
+<td>Mismatch causa shift della maschera<sup id="fnref18:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Colore</strong></td>
 <td>No ICC profile embedded</td>
-<td>Profili esterni possono alterare la luminanza interpretata da SAM[^external-masks-video]</td>
+<td>Profili esterni possono alterare la luminanza interpretata da SAM<sup id="fnref19:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>Bit depth</strong></td>
 <td>16-bit per TIFF, 8-bit per PNG</td>
-<td>Maggiore precisione per la successiva conversione PFM[^external-masks-video]</td>
+<td>Maggiore precisione per la successiva conversione PFM<sup id="fnref20:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Suggerimento pratico: usa 'Affinity Photo' come editor esterno</p>
-<p>Configura <code>external editors</code> in darktable con Affinity Photo come programma predefinito. Il flusso “Edit → Refine Selection → Export PNG” è testato e affidabile[^external-masks-video].</p>
+<p>Configura <code>external editors</code> in darktable con Affinity Photo come programma predefinito. Il flusso “Edit → Refine Selection → Export PNG” è testato e affidabile<sup id="fnref13:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>.</p>
 </div>
 <h3 id="passo-3-conversione-in-pfm">Passo 3: Conversione in PFM<a class="headerlink" href="#passo-3-conversione-in-pfm" title="Permanent link">&para;</a></h3>
-<p>La maschera deve essere convertita in <strong>PFM (Portable FloatMap)</strong>, non in JPG, WEBP o TIFF compresso[^raster-manual][^external-masks-video]. Il formato PFM supporta float32 e mantiene la gamma dinamica necessaria alla pipeline scene-referred.</p>
+<p>La maschera deve essere convertita in <strong>PFM (Portable FloatMap)</strong>, non in JPG, WEBP o TIFF compresso<sup id="fnref2:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup><sup id="fnref5:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>. Il formato PFM supporta float32 e mantiene la gamma dinamica necessaria alla pipeline scene-referred.</p>
 <ul>
 <li>✅ Strumenti raccomandati:  </li>
 <li><code>ImageMagick</code>: <code>magick input.png -depth 32 -define quantum:format=floating-point output.pfm</code>  </li>
@@ -3116,7 +3116,7 @@
 </ul>
 <p><img alt="Finestra di esportazione in Affinity Photo con PNG selezionato e dimensioni 6240×4160 px" src="../images/raster-export-png.jpg" /></p>
 <h3 id="passo-4-importazione-in-darktable">Passo 4: Importazione in darktable<a class="headerlink" href="#passo-4-importazione-in-darktable" title="Permanent link">&para;</a></h3>
-<p>Una volta ottenuto il file <code>.pfm</code>, procedi così[^external-masks-video]:</p>
+<p>Una volta ottenuto il file <code>.pfm</code>, procedi così<sup id="fnref6:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <ol>
 <li>Apri l’immagine duplicata in <code>darkroom</code>  </li>
 <li>Attiva un modulo che supporta le maschere (es. <code>exposure</code>, <code>color calibration</code>, <code>tone equalizer</code>)  </li>
@@ -3124,9 +3124,9 @@
 <li>Seleziona il file <code>.pfm</code> → conferma  </li>
 <li>Nella sezione <em>mask blending</em>, seleziona la maschera appena importata dal menu a tendina  </li>
 </ol>
-<p>La maschera apparirà come un’opzione nel combobox “raster mask”, con nome derivato dal file (es. <code>sky_mask.pfm</code>)[^raster-manual].</p>
+<p>La maschera apparirà come un’opzione nel combobox “raster mask”, con nome derivato dal file (es. <code>sky_mask.pfm</code>)<sup id="fnref3:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup>.</p>
 <h2 id="parametri-principali-in-fase-di-utilizzo">Parametri principali (in fase di utilizzo)<a class="headerlink" href="#parametri-principali-in-fase-di-utilizzo" title="Permanent link">&para;</a></h2>
-<p>Una volta importata, la maschera raster viene gestita tramite i controlli standard di blending, accessibili dal modulo attivo[^raster-manual]:</p>
+<p>Una volta importata, la maschera raster viene gestita tramite i controlli standard di blending, accessibili dal modulo attivo<sup id="fnref4:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -3165,29 +3165,29 @@
 <td><strong>Combine masks</strong></td>
 <td><code>exclusive</code>, <code>inclusive</code>, <code>additive</code>, <code>subtractive</code></td>
 <td><code>exclusive</code></td>
-<td>Modalità di combinazione con altre maschere attive nello stesso modulo[^raster-manual]</td>
+<td>Modalità di combinazione con altre maschere attive nello stesso modulo<sup id="fnref8:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Feathering radius &gt; 0.0 px è rischioso</p>
-<p>Un valore superiore a <code>5.0 px</code> può causare <strong>halo artifacts</strong> visibili intorno ai bordi, specialmente su maschere ad alta frequenza (capelli, foglie). Usa <code>feathering radius = 0.0</code> e preferisci il <code>details threshold</code> per affinare i bordi[^external-masks-video].</p>
+<p>Un valore superiore a <code>5.0 px</code> può causare <strong>halo artifacts</strong> visibili intorno ai bordi, specialmente su maschere ad alta frequenza (capelli, foglie). Usa <code>feathering radius = 0.0</code> e preferisci il <code>details threshold</code> per affinare i bordi<sup id="fnref14:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>.</p>
 </div>
 <h2 id="integrazione-con-maschere-ai-native-darktable-56">Integrazione con maschere AI native (darktable 5.6+)<a class="headerlink" href="#integrazione-con-maschere-ai-native-darktable-56" title="Permanent link">&para;</a></h2>
-<p>A partire da darktable 5.6, le maschere raster esterne possono essere <strong>vettorizzate</strong> tramite lo strumento integrato <code>ras2vect</code>, parte del subsystem AI[^ai-subsystem-pr]. Questo permette di:</p>
+<p>A partire da darktable 5.6, le maschere raster esterne possono essere <strong>vettorizzate</strong> tramite lo strumento integrato <code>ras2vect</code>, parte del subsystem AI<sup id="fnref2:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup>. Questo permette di:</p>
 <ul>
 <li>Convertire una maschera PFM in un percorso Bézier editabile  </li>
 <li>Applicare smoothing, feathering e scaling senza perdita di qualità  </li>
 <li>Combinare maschere raster e vettoriali nello stesso modulo  </li>
 </ul>
-<p>Il processo è accessibile tramite <code>mask manager</code> → <code>convert to vector</code> dopo aver importato la PFM[^ai-subsystem-pr].</p>
+<p>Il processo è accessibile tramite <code>mask manager</code> → <code>convert to vector</code> dopo aver importato la PFM<sup id="fnref3:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup>.</p>
 <p><img alt="Maschera raster importata visualizzata come overlay viola su un cane in movimento" src="../images/raster-overlay-dog.jpg" /></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Usa due istanze dello stesso modulo</strong>: es. due <code>exposure</code>, una per il cielo (con maschera raster <code>sky.pfm</code>) e una per il primo piano (con <code>ground.pfm</code>). Questo evita conflitti di blending[^landscape-ai-video]  </li>
-<li><strong>Nominare i file PFM in modo descrittivo</strong>: <code>tree_highlight_6240x4160.pfm</code>, non <code>mask1.pfm</code> — il nome appare nel menu a tendina[^external-masks-video]  </li>
-<li><strong>Verifica la corrispondenza pixel-per-pixel</strong>: zooma al 100% e confronta bordi di oggetti chiave (es. contorno di un albero) tra immagine e maschera sovrapposta[^external-masks-video]  </li>
-<li><strong>Evita la compressione lossy</strong>: mai usare JPEG come intermediario — introduce artefatti di quantizzazione che diventano bordi frastagliati nella maschera[^raster-manual]  </li>
+<li><strong>Usa due istanze dello stesso modulo</strong>: es. due <code>exposure</code>, una per il cielo (con maschera raster <code>sky.pfm</code>) e una per il primo piano (con <code>ground.pfm</code>). Questo evita conflitti di blending<sup id="fnref:landscape-ai-video"><a class="footnote-ref" href="#fn:landscape-ai-video">4</a></sup>  </li>
+<li><strong>Nominare i file PFM in modo descrittivo</strong>: <code>tree_highlight_6240x4160.pfm</code>, non <code>mask1.pfm</code> — il nome appare nel menu a tendina<sup id="fnref15:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
+<li><strong>Verifica la corrispondenza pixel-per-pixel</strong>: zooma al 100% e confronta bordi di oggetti chiave (es. contorno di un albero) tra immagine e maschera sovrapposta<sup id="fnref16:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
+<li><strong>Evita la compressione lossy</strong>: mai usare JPEG come intermediario — introduce artefatti di quantizzazione che diventano bordi frastagliati nella maschera<sup id="fnref7:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup>  </li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3197,11 +3197,26 @@
 <li>🛠️ <a href="https://github.com/darktable-org/darktable/pull/20322">GitHub PR #20322: AI Subsystem with ONNX Runtime</a> — Implementazione tecnica di <code>ras2vect</code> e integrazione PFM  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^raster-manual]: darktable 4.8 user manual - raster masks, https://docs.darktable.org/usermanual/4.8/en/darkroom/masking-and-blending/masks/raster/#<br />
-[^external-masks-video]: [ENG] darktable external raster masks, A Dabble in Photography, https://www.youtube.com/watch?v=7sOAxcNaP4M<br />
-[^ai-subsystem-pr]: <a href="https://github.com/darktable-org/darktable/pull/20322">[AI] AI inference subsystem with ONNX Runtime backend</a>, darktable GitHub PR #20322<br />
-[^landscape-ai-video]: [ENG] Darktable landscape edit with AI, A Dabble in Photography, https://www.youtube.com/watch?v=OERXOFz9lEo<br />
-[^ai-native-video]: [ENG] AI masks in darktable, A Dabble in Photography, https://www.youtube.com/watch?v=7yd5riDmUjk</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:raster-manual">
+<p>darktable 4.8 user manual - raster masks, https://docs.darktable.org/usermanual/4.8/en/darkroom/masking-and-blending/masks/raster/#&#160;<a class="footnote-backref" href="#fnref:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:raster-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:external-masks-video">
+<p>[ENG] darktable external raster masks, A Dabble in Photography, https://www.youtube.com/watch?v=7sOAxcNaP4M&#160;<a class="footnote-backref" href="#fnref:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:external-masks-video" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ai-subsystem-pr">
+<p><a href="https://github.com/darktable-org/darktable/pull/20322">[AI] AI inference subsystem with ONNX Runtime backend</a>, darktable GitHub PR #20322&#160;<a class="footnote-backref" href="#fnref:ai-subsystem-pr" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ai-subsystem-pr" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:ai-subsystem-pr" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:ai-subsystem-pr" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:landscape-ai-video">
+<p>[ENG] Darktable landscape edit with AI, A Dabble in Photography, https://www.youtube.com/watch?v=OERXOFz9lEo&#160;<a class="footnote-backref" href="#fnref:landscape-ai-video" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ai-native-video">
+<p>[ENG] AI masks in darktable, A Dabble in Photography, https://www.youtube.com/watch?v=7yd5riDmUjk&#160;<a class="footnote-backref" href="#fnref:ai-native-video" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

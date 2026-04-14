@@ -2894,16 +2894,16 @@
 
 
 <h1 id="bilanciamento-del-bianco">Bilanciamento del Bianco<a class="headerlink" href="#bilanciamento-del-bianco" title="Permanent link">&para;</a></h1>
-<p>In darktable, il bilanciamento del bianco segue un <strong>approccio a due stadi</strong> che e' piu' preciso del metodo tradizionale.[^manual-wb][^manual-colorcal]</p>
+<p>In darktable, il bilanciamento del bianco segue un <strong>approccio a due stadi</strong> che e' piu' preciso del metodo tradizionale.<sup id="fnref:manual-wb"><a class="footnote-ref" href="#fn:manual-wb">1</a></sup><sup id="fnref:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
 <h2 id="due-stadi">Due stadi<a class="headerlink" href="#due-stadi" title="Permanent link">&para;</a></h2>
 <h3 id="stadio-1-white-balance-tecnico">Stadio 1: White Balance (tecnico)<a class="headerlink" href="#stadio-1-white-balance-tecnico" title="Permanent link">&para;</a></h3>
-<p>Il modulo <strong>White Balance</strong> va lasciato su <strong>Camera Reference</strong>. Il suo unico compito e' rendere i dati neutri per la demosaicizzazione -- corregge la dominante verde del sensore Bayer.[^pipeline]</p>
+<p>Il modulo <strong>White Balance</strong> va lasciato su <strong>Camera Reference</strong>. Il suo unico compito e' rendere i dati neutri per la demosaicizzazione -- corregge la dominante verde del sensore Bayer.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare per la correzione creativa</p>
-<p>Il white balance tradizionale con temperatura/tinta e' un metodo legacy. Per la correzione creativa, usa la Color Calibration.[^manual-colorcal]</p>
+<p>Il white balance tradizionale con temperatura/tinta e' un metodo legacy. Per la correzione creativa, usa la Color Calibration.<sup id="fnref3:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
 </div>
 <h3 id="stadio-2-color-calibration-percettivo">Stadio 2: Color Calibration (percettivo)<a class="headerlink" href="#stadio-2-color-calibration-percettivo" title="Permanent link">&para;</a></h3>
-<p>Il modulo <strong>Color Calibration</strong> (tab CAT) esegue l'adattamento cromatico percettivo reale usando il modello <strong>CAT16</strong>. Offre:[^manual-colorcal]</p>
+<p>Il modulo <strong>Color Calibration</strong> (tab CAT) esegue l'adattamento cromatico percettivo reale usando il modello <strong>CAT16</strong>. Offre:<sup id="fnref2:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
 <ul>
 <li>Rilevamento automatico dell'illuminante (AI)</li>
 <li>Adattamento cromatico fisicamente accurato</li>
@@ -2911,7 +2911,7 @@
 <li>Supporto per illuminazione mista con istanze multiple</li>
 </ul>
 <blockquote>
-<p><em>Color calibration provides a more accurate white balance than the legacy white balance module using the CAT16 chromatic adaptation transform from the CIE.</em>[^manual-colorcal]</p>
+<p><em>Color calibration provides a more accurate white balance than the legacy white balance module using the CAT16 chromatic adaptation transform from the CIE.</em><sup id="fnref4:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
 </blockquote>
 <h3 id="perche-due-stadi">Perche' due stadi?<a class="headerlink" href="#perche-due-stadi" title="Permanent link">&para;</a></h3>
 <table>
@@ -2946,9 +2946,20 @@
 </tbody>
 </table>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-wb]: <em>darktable User Manual -- White Balance</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/white-balance/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-white-balance.md</code>
-[^manual-colorcal]: <em>darktable User Manual -- Color Calibration</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-calibration/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-color-calibration.md</code>
-[^pipeline]: <em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-wb">
+<p><em>darktable User Manual -- White Balance</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/white-balance/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-white-balance.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-wb" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manual-colorcal">
+<p><em>darktable User Manual -- Color Calibration</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-calibration/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-color-calibration.md</code>&#160;<a class="footnote-backref" href="#fnref:manual-colorcal" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-colorcal" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-colorcal" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-colorcal" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline">
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

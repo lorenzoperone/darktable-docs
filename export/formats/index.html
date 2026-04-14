@@ -3343,7 +3343,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Nuova funzione multi-preset (darktable ≥5.2)</p>
-<p>A partire dalla versione 5.2, il modulo <em>export</em> supporta l’esportazione simultanea in <strong>più formati e preset in un’unica operazione</strong>, senza dover ripetere l’azione per ogni destinazione[^newrelease52]. Ad esempio: esportare una stessa immagine come JPEG (web), TIFF (stampa) e WebP (CDN) con un solo clic, mantenendo i preset attivi anche durante la navigazione tra le immagini nella lighttable[^newrelease52].</p>
+<p>A partire dalla versione 5.2, il modulo <em>export</em> supporta l’esportazione simultanea in <strong>più formati e preset in un’unica operazione</strong>, senza dover ripetere l’azione per ogni destinazione<sup id="fnref:newrelease52"><a class="footnote-ref" href="#fn:newrelease52">3</a></sup>. Ad esempio: esportare una stessa immagine come JPEG (web), TIFF (stampa) e WebP (CDN) con un solo clic, mantenendo i preset attivi anche durante la navigazione tra le immagini nella lighttable<sup id="fnref2:newrelease52"><a class="footnote-ref" href="#fn:newrelease52">3</a></sup>.</p>
 </div>
 <h2 id="web-e-social-media">Web e social media<a class="headerlink" href="#web-e-social-media" title="Permanent link">&para;</a></h2>
 <table>
@@ -3360,7 +3360,7 @@
 </tr>
 <tr>
 <td>Qualità</td>
-<td>85–90 (oltre non migliora visibilmente)[^firststeps]</td>
+<td>85–90 (oltre non migliora visibilmente)<sup id="fnref:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup></td>
 </tr>
 <tr>
 <td>Profilo</td>
@@ -3378,7 +3378,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alla qualità JPEG oltre il 95%</p>
-<p>Impostare <code>quality &gt; 95</code> in JPEG produce incrementi marginali della qualità visiva (&lt; 0.3% PSNR migliorato), ma raddoppia la dimensione del file rispetto a <code>quality = 90</code>[^manual]. Per immagini web, <code>quality = 85</code> è il punto ottimale tra peso e percezione umana: test A/B su 120 fotografi hanno confermato che il 92% non distingue differenze tra 85 e 95 su schermi standard[^dabble-ep03].</p>
+<p>Impostare <code>quality &gt; 95</code> in JPEG produce incrementi marginali della qualità visiva (&lt; 0.3% PSNR migliorato), ma raddoppia la dimensione del file rispetto a <code>quality = 90</code><sup id="fnref5:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. Per immagini web, <code>quality = 85</code> è il punto ottimale tra peso e percezione umana: test A/B su 120 fotografi hanno confermato che il 92% non distingue differenze tra 85 e 95 su schermi standard<sup id="fnref:dabble-ep03"><a class="footnote-ref" href="#fn:dabble-ep03">4</a></sup>.</p>
 </div>
 <h2 id="stampa">Stampa<a class="headerlink" href="#stampa" title="Permanent link">&para;</a></h2>
 <table>
@@ -3443,7 +3443,7 @@
 <ol>
 <li><strong>Seleziona le immagini</strong>: in lighttable, usa <code>Ctrl+click</code> o <code>Shift+click</code> per selezionare più foto.</li>
 <li><strong>Apri il modulo export</strong>: clicca sulla voce <em>export</em> nel pannello destro.</li>
-<li><strong>Configura lo storage</strong>: scegli <em>file on disk</em>, <em>email</em>, <em>web album</em>, o un backend personalizzato (es. via Lua)[^lua-export].</li>
+<li><strong>Configura lo storage</strong>: scegli <em>file on disk</em>, <em>email</em>, <em>web album</em>, o un backend personalizzato (es. via Lua)<sup id="fnref:lua-export"><a class="footnote-ref" href="#fn:lua-export">5</a></sup>.</li>
 <li><strong>Imposta le opzioni di formato</strong>: file format, quality, bit depth, compression level.</li>
 <li><strong>Personalizza i metadati</strong>: abilita/disabilita gruppi (EXIF, IPTC, geo tags) e definisci formule dinamiche.</li>
 <li><strong>Avvia l’esportazione</strong>: clicca <em>export</em> → il processo avviene in background con barra di avanzamento.</li>
@@ -3451,42 +3451,42 @@
 <h3 id="parametri-dettagliati">Parametri dettagliati<a class="headerlink" href="#parametri-dettagliati" title="Permanent link">&para;</a></h3>
 <h4 id="file-format"><code>file format</code><a class="headerlink" href="#file-format" title="Permanent link">&para;</a></h4>
 <p>Valori supportati: <code>JPEG</code>, <code>TIFF</code>, <code>PNG</code>, <code>WebP</code>, <code>EXR</code>, <code>JPEG2000</code>, <code>XCF</code>.<br />
-Per <code>TIFF</code>: abilita <code>b&amp;w image</code> per salvare in scala di grigi con singolo canale (riduce fino al 67% la dimensione rispetto a RGB)[^manual].</p>
+Per <code>TIFF</code>: abilita <code>b&amp;w image</code> per salvare in scala di grigi con singolo canale (riduce fino al 67% la dimensione rispetto a RGB)<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 <h4 id="quality"><code>quality</code><a class="headerlink" href="#quality" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>JPEG/WebP</strong>: range <code>1–100</code>, default <code>95</code>.  </li>
-<li><code>85</code>: ottimo compromesso web (dimensione ~180 KB per 2048px, PSNR ≈ 42.1 dB)[^dabble-ep03].  </li>
+<li><code>85</code>: ottimo compromesso web (dimensione ~180 KB per 2048px, PSNR ≈ 42.1 dB)<sup id="fnref2:dabble-ep03"><a class="footnote-ref" href="#fn:dabble-ep03">4</a></sup>.  </li>
 <li><code>90</code>: standard professionale per social (dimensione ~260 KB, PSNR ≈ 43.7 dB).  </li>
 <li><code>95</code>: archivio interno (dimensione ~380 KB, PSNR ≈ 44.9 dB).  </li>
 <li><strong>TIFF/PNG</strong>: parametro ignorato (compressione senza perdita).</li>
-<li><strong>EXR</strong>: <code>compression</code> accetta <code>none</code>, <code>rle</code>, <code>zip</code>, <code>zips</code>, <code>piz</code>, <code>pxr24</code>, <code>b44</code>, <code>b44a</code>. Default <code>piz</code> (compressione wavelet, rapporto 2.3:1 senza artefatti)[^manual].</li>
+<li><strong>EXR</strong>: <code>compression</code> accetta <code>none</code>, <code>rle</code>, <code>zip</code>, <code>zips</code>, <code>piz</code>, <code>pxr24</code>, <code>b44</code>, <code>b44a</code>. Default <code>piz</code> (compressione wavelet, rapporto 2.3:1 senza artefatti)<sup id="fnref6:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</li>
 </ul>
 <h4 id="compression-level"><code>compression level</code><a class="headerlink" href="#compression-level" title="Permanent link">&para;</a></h4>
 <p>Disponibile solo per formati con compressione lossy o lossless configurabile:
 - <strong>JPEG</strong>: non applicabile — la qualità determina direttamente il livello di compressione.
-- <strong>TIFF</strong>: <code>compression</code> = <code>lzw</code> o <code>deflate</code>; <code>compression level</code> = <code>1–9</code> (default <code>6</code>). Livello <code>9</code> riduce il file del 12% rispetto a <code>6</code>, ma richiede +38% CPU[^manual].
-- <strong>PNG</strong>: <code>compression level</code> = <code>0–9</code> (default <code>6</code>). Livello <code>9</code> riduce del 22% rispetto a <code>0</code>, ma aumenta il tempo di esportazione del 400% su immagini 16-bit[^manual].</p>
+- <strong>TIFF</strong>: <code>compression</code> = <code>lzw</code> o <code>deflate</code>; <code>compression level</code> = <code>1–9</code> (default <code>6</code>). Livello <code>9</code> riduce il file del 12% rispetto a <code>6</code>, ma richiede +38% CPU<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.
+- <strong>PNG</strong>: <code>compression level</code> = <code>0–9</code> (default <code>6</code>). Livello <code>9</code> riduce del 22% rispetto a <code>0</code>, ma aumenta il tempo di esportazione del 400% su immagini 16-bit<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 <h4 id="bit-depth"><code>bit depth</code><a class="headerlink" href="#bit-depth" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>8 bit</code>: obbligatorio per JPEG, PNG, WebP, sRGB web-safe.</li>
-<li><code>16 bit</code>: raccomandato per TIFF ed EXR quando si esporta da pipeline scene-referred (evita banding nelle transizioni tonali)[^manual].</li>
+<li><code>16 bit</code>: raccomandato per TIFF ed EXR quando si esporta da pipeline scene-referred (evita banding nelle transizioni tonali)<sup id="fnref7:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</li>
 <li><code>32 bit float</code>: disponibile solo per EXR (per HDR e compositing avanzato).</li>
 </ul>
 <h4 id="profile-e-intent"><code>profile</code> e <code>intent</code><a class="headerlink" href="#profile-e-intent" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>profile</code>: <code>sRGB</code>, <code>AdobeRGB</code>, <code>ProPhoto RGB</code>, <code>image settings</code> (usa il profilo impostato nel modulo <em>output color profile</em>).  </li>
 <li><code>intent</code>: <code>perceptual</code>, <code>relative colorimetric</code>, <code>saturation</code>, <code>absolute colorimetric</code>.<br />
-  Per stampa su carta fotografica: <code>relative colorimetric</code> con <code>black point compensation</code> abilitato[^manual].</li>
+  Per stampa su carta fotografica: <code>relative colorimetric</code> con <code>black point compensation</code> abilitato<sup id="fnref8:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</li>
 </ul>
 <h4 id="store-masks"><code>store masks</code><a class="headerlink" href="#store-masks" title="Permanent link">&para;</a></h4>
 <p>Abilita l’inclusione delle maschere come layer aggiuntivi:
 - <strong>TIFF</strong>: salva maschere come layer separati (compatibile con GIMP/Krita).
 - <strong>EXR</strong>: salva maschere come canali aggiuntivi (es. <code>mask_01</code>, <code>mask_02</code>).
 - <strong>XCF</strong>: salva maschere come canali nativi di GIMP.<br />
-Default: <code>off</code>. Abilitare rallenta l’esportazione del 15–22% su immagini con &gt;3 maschere complesse[^manual].</p>
+Default: <code>off</code>. Abilitare rallenta l’esportazione del 15–22% su immagini con &gt;3 maschere complesse<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 <h4 id="high-quality-resampling"><code>high quality resampling</code><a class="headerlink" href="#high-quality-resampling" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>yes</code>: ricampionamento in full-resolution prima del downsampling finale → migliore qualità ma -35% velocità[^manual].  </li>
+<li><code>yes</code>: ricampionamento in full-resolution prima del downsampling finale → migliore qualità ma -35% velocità<sup id="fnref9:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.  </li>
 <li><code>no</code>: ricampionamento diretto → più veloce, leggermente meno definito nei bordi fini.<br />
 Consigliato: <code>yes</code> per stampe &gt;30 cm, <code>no</code> per web &lt;1080px.</li>
 </ul>
@@ -3497,21 +3497,21 @@ Consigliato: <code>yes</code> per stampe &gt;30 cm, <code>no</code> per web &lt;
 - <code>web_jpeg_85_srgb</code> → JPEG, quality=85, sRGB, Lanczos3, max size=2048px<br />
 - <code>print_tiff_16_adobe</code> → TIFF, 16-bit, AdobeRGB, no compression, dpi=300<br />
 - <code>archive_exr_piz</code> → EXR, 32-bit float, compression=piz, profile=ProPhoto<br />
-I preset sono accessibili dal menu a tendina in alto nel modulo export e persistono tra le sessioni[^newrelease52].</p>
+I preset sono accessibili dal menu a tendina in alto nel modulo export e persistono tra le sessioni<sup id="fnref3:newrelease52"><a class="footnote-ref" href="#fn:newrelease52">3</a></sup>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Gestione conflitti file</p>
 <p>L’opzione <code>on conflict</code> offre quattro strategie:
 - <code>create unique filename</code>: aggiunge <code>_1</code>, <code>_2</code>, ecc. (sicuro, ma disordinato).<br />
-- <code>overwrite</code>: richiede una sola conferma globale prima dell’esportazione (non per file)[^manual].<br />
-- <code>overwrite if changed</code>: confronta il timestamp di modifica del file esistente con quello memorizzato nel database darktable — ideale per workflow di revisione iterativa[^manual].<br />
-- <code>skip</code>: utile per esportazioni parziali su collezioni grandi (&gt;500 immagini) per evitare sovrascritture accidentali[^manual].</p>
+- <code>overwrite</code>: richiede una sola conferma globale prima dell’esportazione (non per file)<sup id="fnref10:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.<br />
+- <code>overwrite if changed</code>: confronta il timestamp di modifica del file esistente con quello memorizzato nel database darktable — ideale per workflow di revisione iterativa<sup id="fnref11:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.<br />
+- <code>skip</code>: utile per esportazioni parziali su collezioni grandi (&gt;500 immagini) per evitare sovrascritture accidentali<sup id="fnref12:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Metadati: non affidarti all’embedding automatico</p>
-<p>L’embedding XMP in file esportati <strong>può fallire silenziosamente</strong>, specialmente su JPEG con dimensione &gt;10 MB o su filesystem con limiti di tag EXIF[^manual]. La documentazione ufficiale raccomanda esplicitamente:  </p>
+<p>L’embedding XMP in file esportati <strong>può fallire silenziosamente</strong>, specialmente su JPEG con dimensione &gt;10 MB o su filesystem con limiti di tag EXIF<sup id="fnref13:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. La documentazione ufficiale raccomanda esplicitamente:  </p>
 <blockquote>
-<p><em>“Non fare affidamento su questa funzione per la tua strategia di backup. Salva sempre sia il file RAW originale che i sidecar XMP.”</em>[^manual]<br />
+<p><em>“Non fare affidamento su questa funzione per la tua strategia di backup. Salva sempre sia il file RAW originale che i sidecar XMP.”</em><sup id="fnref15:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup><br />
 Usa invece il modulo <em>metadata editor</em> per popolare campi critici (titolo, descrizione, copyright) e abilita <code>metadata</code> in export solo per campi <em>visible</em> e <em>non private</em>.</p>
 </blockquote>
 </div>
@@ -3559,18 +3559,35 @@ Usa invece il modulo <em>metadata editor</em> per popolare campi critici (titolo
 </code></pre></div>
 <h3 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">darktable User Manual — Export</a> — Documentazione completa del modulo[^manual]  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">darktable User Manual — Exporting images with Lua</a> — Come creare backend personalizzati (es. scp, rsync, cloud)[^lua-export]  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/batch-editing/">darktable 5.4 — Batch Editing Guide</a> — Workflow per esportazione multi-immagine coerente[^batch-editing]  </li>
-<li><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">A Dabble in Photography — darktable 5.2 New Features</a> — Demo pratica della funzione multi-preset[^newrelease52]</li>
+<li><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">darktable User Manual — Export</a> — Documentazione completa del modulo<sup id="fnref14:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">darktable User Manual — Exporting images with Lua</a> — Come creare backend personalizzati (es. scp, rsync, cloud)<sup id="fnref2:lua-export"><a class="footnote-ref" href="#fn:lua-export">5</a></sup>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/batch-editing/">darktable 5.4 — Batch Editing Guide</a> — Workflow per esportazione multi-immagine coerente<sup id="fnref:batch-editing"><a class="footnote-ref" href="#fn:batch-editing">6</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">A Dabble in Photography — darktable 5.2 New Features</a> — Demo pratica della funzione multi-preset<sup id="fnref4:newrelease52"><a class="footnote-ref" href="#fn:newrelease52">3</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- Export</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-export.md</code><br />
-[^firststeps]: <em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> — A Dabble in Photography<br />
-[^newrelease52]: <em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 What's New?</a></em> — A Dabble in Photography<br />
-[^dabble-ep03]: <em><a href="https://www.youtube.com/watch?v=F5AB-zi8yjU">Darktable first steps ep 03</a></em> — A Dabble in Photography<br />
-[^lua-export]: <em>darktable User Manual — Exporting images with Lua</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">docs.darktable.org</a><br />
-[^batch-editing]: <em>darktable User Manual — Batch-editing images</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/batch-editing/">docs.darktable.org</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual">
+<p><em>darktable User Manual -- Export</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/utility-modules/lighttable/export/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-export.md</code>&#160;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:firststeps">
+<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:newrelease52">
+<p><em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 What's New?</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:newrelease52" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:newrelease52" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:newrelease52" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:newrelease52" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dabble-ep03">
+<p><em><a href="https://www.youtube.com/watch?v=F5AB-zi8yjU">Darktable first steps ep 03</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:dabble-ep03" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dabble-ep03" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lua-export">
+<p><em>darktable User Manual — Exporting images with Lua</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/lua/exporting-images/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:lua-export" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lua-export" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:batch-editing">
+<p><em>darktable User Manual — Batch-editing images</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/batch-editing/">docs.darktable.org</a>&#160;<a class="footnote-backref" href="#fnref:batch-editing" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

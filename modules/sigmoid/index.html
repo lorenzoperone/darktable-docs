@@ -3082,21 +3082,21 @@
 
 
 <h1 id="tone-mapping-sigmoid">Tone Mapping: Sigmoid<a class="headerlink" href="#tone-mapping-sigmoid" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>sigmoid</strong> è un tone mapper basato su una curva log-logistica generalizzata, progettato per mappare la gamma dinamica <em>scene-referred</em> (illimitata) nel range limitato del display (0–100%) senza introdurre shift cromatici indesiderati[^sigmoid-manual]. È uno dei tre moduli principali di compressione tonale in darktable — insieme a <code>filmic rgb</code> e <code>agx</code> — e rimane particolarmente apprezzato per la sua semplicità, prevedibilità e controllo fine sulle transizioni tonali, specialmente in ritratti e immagini con ampie zone di pelle o cielo uniforme[^filmic-sigmoid-p4][^sigmoid-fr].</p>
+<p>Il modulo <strong>sigmoid</strong> è un tone mapper basato su una curva log-logistica generalizzata, progettato per mappare la gamma dinamica <em>scene-referred</em> (illimitata) nel range limitato del display (0–100%) senza introdurre shift cromatici indesiderati<sup id="fnref:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>. È uno dei tre moduli principali di compressione tonale in darktable — insieme a <code>filmic rgb</code> e <code>agx</code> — e rimane particolarmente apprezzato per la sua semplicità, prevedibilità e controllo fine sulle transizioni tonali, specialmente in ritratti e immagini con ampie zone di pelle o cielo uniforme<sup id="fnref:filmic-sigmoid-p4"><a class="footnote-ref" href="#fn:filmic-sigmoid-p4">3</a></sup><sup id="fnref:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</p>
 <p><img alt="Introduzione al modulo Sigmoid" src="../images/sigmoid-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Sigmoid è un modulo <em>display transform</em></p>
-<p>Sigmoid opera nella fase <em>display-referred</em> della pipeline: tutti i moduli posti <strong>prima</strong> di sigmoid lavorano in spazio scene-referred (dati RAW non compressi); tutti quelli <strong>dopo</strong> operano su dati già mappati al display. Non va mai usato insieme a <code>filmic rgb</code> o <code>base curve</code>[^sigmoid-manual].</p>
+<p>Sigmoid opera nella fase <em>display-referred</em> della pipeline: tutti i moduli posti <strong>prima</strong> di sigmoid lavorano in spazio scene-referred (dati RAW non compressi); tutti quelli <strong>dopo</strong> operano su dati già mappati al display. Non va mai usato insieme a <code>filmic rgb</code> o <code>base curve</code><sup id="fnref7:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Sigmoid applica una curva S modificata (sigmoidale) per comprimere la luminanza, con due parametri fondamentali che ne definiscono il comportamento:</p>
 <ol>
 <li><strong>Contrast</strong>: regola la pendenza centrale della curva, determinando l’impatto visivo del contrasto globale senza spostare i punti di nero/bianco.</li>
-<li><strong>Skew</strong>: sposta il baricentro della curva verso le luci (valori positivi) o le ombre (valori negativi), consentendo di trasferire contrasto da una zona all’altra <em>senza alterare il contrasto al grigio medio</em>[^sigmoid-manual][^filmic-sigmoid-p3].</li>
+<li><strong>Skew</strong>: sposta il baricentro della curva verso le luci (valori positivi) o le ombre (valori negativi), consentendo di trasferire contrasto da una zona all’altra <em>senza alterare il contrasto al grigio medio</em><sup id="fnref8:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup><sup id="fnref2:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</li>
 </ol>
-<p>A differenza di <code>filmic rgb</code>, sigmoid non include controlli nativi per la gestione della saturazione o del gamut: la conservazione del colore avviene principalmente attraverso la scelta della modalità di elaborazione (<code>per channel</code> vs <code>rgb ratio</code>) e l’opzione <code>preserve hue</code>[^sigmoid-manual]. Questo lo rende più “puro” come strumento di mappatura tonale, ma richiede un’integrazione consapevole con moduli successivi come <code>color balance rgb</code> o <code>color calibration</code> per la gestione cromatica.</p>
+<p>A differenza di <code>filmic rgb</code>, sigmoid non include controlli nativi per la gestione della saturazione o del gamut: la conservazione del colore avviene principalmente attraverso la scelta della modalità di elaborazione (<code>per channel</code> vs <code>rgb ratio</code>) e l’opzione <code>preserve hue</code><sup id="fnref2:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>. Questo lo rende più “puro” come strumento di mappatura tonale, ma richiede un’integrazione consapevole con moduli successivi come <code>color balance rgb</code> o <code>color calibration</code> per la gestione cromatica.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso ottimale con sigmoid segue rigorosamente la gerarchia della pipeline scene-referred[^sigmoid-manual]:</p>
+<p>Il flusso ottimale con sigmoid segue rigorosamente la gerarchia della pipeline scene-referred<sup id="fnref3:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione (modulo exposure)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Bilanciamento colore (color balance rgb / color calibration)
@@ -3107,30 +3107,30 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Regola d'oro: esponi prima, mappa dopo</p>
-<p>Sigmoid non recupera informazioni perse. L’esposizione deve essere corretta <em>prima</em> di attivare sigmoid: il modulo presuppone che i dati in ingresso siano già bilanciati e correttamente esposti[^sigmoid-manual][^filmic-sigmoid-p3].</p>
+<p>Sigmoid non recupera informazioni perse. L’esposizione deve essere corretta <em>prima</em> di attivare sigmoid: il modulo presuppone che i dati in ingresso siano già bilanciati e correttamente esposti<sup id="fnref9:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup><sup id="fnref3:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</p>
 </div>
 <h3 id="passo-1-impostazione-del-grigio-medio">Passo 1: Impostazione del grigio medio<a class="headerlink" href="#passo-1-impostazione-del-grigio-medio" title="Permanent link">&para;</a></h3>
 <p>Prima di toccare sigmoid, usa il modulo <code>exposure</code> per portare un’area neutra dell’immagine (es. una superficie grigia al 18%) al valore di luminanza corrispondente. Il metodo più affidabile è:</p>
 <ul>
 <li>Attiva lo strumento <code>area picker</code> (icona del rettangolo nel modulo <code>exposure</code>)</li>
 <li>Seleziona un’area rappresentativa del grigio medio (non troppo chiara né troppo scura)</li>
-<li>Clicca su “set middle gray” → darktable regolerà automaticamente <code>exposure</code> per portare quel punto a ~50% L (LCh) o 18% riflettanza[^filmic-sigmoid-p3].</li>
+<li>Clicca su “set middle gray” → darktable regolerà automaticamente <code>exposure</code> per portare quel punto a ~50% L (LCh) o 18% riflettanza<sup id="fnref4:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</li>
 </ul>
 <p><img alt="Selezione area grigio medio con exposure" src="../images/sigmoid-middle-gray.jpg" /></p>
 <h3 id="passo-2-contrasto">Passo 2: Contrasto<a class="headerlink" href="#passo-2-contrasto" title="Permanent link">&para;</a></h3>
-<p>Il parametro <strong>Contrast</strong> agisce sulla pendenza della regione lineare centrale della curva sigmoidale[^sigmoid-manual]:</p>
+<p>Il parametro <strong>Contrast</strong> agisce sulla pendenza della regione lineare centrale della curva sigmoidale<sup id="fnref4:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>:</p>
 <ul>
 <li><strong>Default</strong>: <code>1.00</code></li>
 <li><strong>Range tipico</strong>: <code>0.70 – 2.00</code></li>
 <li><strong>Valore comune per paesaggi</strong>: <code>1.30 – 1.60</code></li>
-<li><strong>Valore comune per ritratti</strong>: <code>0.90 – 1.20</code> (evita transizioni troppo marcate sulla pelle)[^sigmoid-manual]</li>
+<li><strong>Valore comune per ritratti</strong>: <code>0.90 – 1.20</code> (evita transizioni troppo marcate sulla pelle)<sup id="fnref10:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Contrasto &gt; 1.80 richiede attenzione</p>
-<p>Valori superiori a <code>1.80</code> possono causare posterizzazione nelle ombre e perdita di dettaglio nelle luci, specialmente se combinati con skew elevato[^sigmoid-manual].</p>
+<p>Valori superiori a <code>1.80</code> possono causare posterizzazione nelle ombre e perdita di dettaglio nelle luci, specialmente se combinati con skew elevato<sup id="fnref11:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-skew">Passo 3: Skew<a class="headerlink" href="#passo-3-skew" title="Permanent link">&para;</a></h3>
-<p>Il parametro <strong>Skew</strong> controlla l’asimmetria della curva: sposta il punto di massimo contrasto lungo l’asse delle esposizioni[^sigmoid-manual][^filmic-sigmoid-p3].</p>
+<p>Il parametro <strong>Skew</strong> controlla l’asimmetria della curva: sposta il punto di massimo contrasto lungo l’asse delle esposizioni<sup id="fnref5:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup><sup id="fnref:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</p>
 <table>
 <thead>
 <tr>
@@ -3159,7 +3159,7 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Skew &gt; +0.50 o &lt; -0.40 è sconsigliato per ritratti</p>
-<p>Valori estremi creano transizioni dure nella pelle e possono generare artefatti cromatici (es. viraggio giallo-arancio nei rossi saturi) quando <code>preserve hue</code> è disattivato[^sigmoid-manual].</p>
+<p>Valori estremi creano transizioni dure nella pelle e possono generare artefatti cromatici (es. viraggio giallo-arancio nei rossi saturi) quando <code>preserve hue</code> è disattivato<sup id="fnref12:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3176,43 +3176,43 @@
 <td><strong>Contrast</strong></td>
 <td><code>0.10 – 5.00</code></td>
 <td><code>1.00</code></td>
-<td>Pendenza della curva nella regione centrale. Aumenta il contrasto globale senza spostare i punti di nero/bianco[^sigmoid-manual].</td>
+<td>Pendenza della curva nella regione centrale. Aumenta il contrasto globale senza spostare i punti di nero/bianco<sup id="fnref21:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Skew</strong></td>
 <td><code>-1.00 – +1.00</code></td>
 <td><code>0.00</code></td>
-<td>Asimmetria della curva. Valori positivi accentuano le luci; valori negativi enfatizzano le ombre[^sigmoid-manual].</td>
+<td>Asimmetria della curva. Valori positivi accentuano le luci; valori negativi enfatizzano le ombre<sup id="fnref22:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Color processing</strong></td>
 <td><code>per channel</code>, <code>rgb ratio</code></td>
 <td><code>per channel</code></td>
-<td>Modalità di applicazione della curva: <code>per channel</code> agisce su RGB separatamente (più potente, ma può alterare l’Hue); <code>rgb ratio</code> mantiene i rapporti RGB (preserva meglio il colore, ma meno flessibile)[^sigmoid-manual].</td>
+<td>Modalità di applicazione della curva: <code>per channel</code> agisce su RGB separatamente (più potente, ma può alterare l’Hue); <code>rgb ratio</code> mantiene i rapporti RGB (preserva meglio il colore, ma meno flessibile)<sup id="fnref23:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Preserve hue</strong> <em>(solo in <code>per channel</code>)</em></td>
 <td><code>0% – 100%</code></td>
 <td><code>100%</code></td>
-<td>Livello di conservazione della tonalità spettrale. <code>100%</code> ≈ comportamento di <code>rgb ratio</code>; <code>0%</code> = massima distorsione cromatica (utile per effetti “caldi” in tramonti)[^sigmoid-manual].</td>
+<td>Livello di conservazione della tonalità spettrale. <code>100%</code> ≈ comportamento di <code>rgb ratio</code>; <code>0%</code> = massima distorsione cromatica (utile per effetti “caldi” in tramonti)<sup id="fnref24:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Target black</strong></td>
 <td><code>0.00 – 0.10</code></td>
 <td><code>0.00</code></td>
-<td>Valore minimo di output (nero). Di solito lasciato a <code>0.00</code>. Valori &gt; <code>0.01</code> producono un effetto “faded”[^sigmoid-manual].</td>
+<td>Valore minimo di output (nero). Di solito lasciato a <code>0.00</code>. Valori &gt; <code>0.01</code> producono un effetto “faded”<sup id="fnref25:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Target white</strong></td>
 <td><code>0.90 – 1.10</code></td>
 <td><code>1.00</code></td>
-<td>Valore massimo di output (bianco). <code>1.00</code> = bianco puro. Valori &lt; <code>0.98</code> evitano clipping cromatico in luci intense[^sigmoid-manual].</td>
+<td>Valore massimo di output (bianco). <code>1.00</code> = bianco puro. Valori &lt; <code>0.98</code> evitano clipping cromatico in luci intense<sup id="fnref26:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello dei parametri Sigmoid" src="../images/sigmoid-parameters-panel.jpg" /></p>
 <h2 id="parametri-avanzati-primaries">Parametri avanzati: Primaries<a class="headerlink" href="#parametri-avanzati-primaries" title="Permanent link">&para;</a></h2>
-<p>Espandendo la sezione <em>Primaries</em>, si accede a controlli specifici per la gestione cromatica <em>prima</em> della mappatura tonale — analoghi a quelli presenti in <code>filmic rgb</code> e <code>agx</code>, ma con finalità più tecniche[^sigmoid-manual].</p>
+<p>Espandendo la sezione <em>Primaries</em>, si accede a controlli specifici per la gestione cromatica <em>prima</em> della mappatura tonale — analoghi a quelli presenti in <code>filmic rgb</code> e <code>agx</code>, ma con finalità più tecniche<sup id="fnref6:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 <table>
 <thead>
 <tr>
@@ -3225,34 +3225,34 @@
 <tbody>
 <tr>
 <td><strong>Red/Green/Blue attenuation</strong></td>
-<td>Riduce la purezza dei canali primari <em>prima</em> della curva sigmoidale. Evita clipping cromatico e posterizzazione in aree molto luminose (es. LED blu, luci al neon)[^sigmoid-manual].</td>
+<td>Riduce la purezza dei canali primari <em>prima</em> della curva sigmoidale. Evita clipping cromatico e posterizzazione in aree molto luminose (es. LED blu, luci al neon)<sup id="fnref27:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 <td>Red: <code>10–30%</code>, Green: <code>0–10%</code>, Blue: <code>20–60%</code></td>
-<td>[^sigmoid-manual]</td>
+<td><sup id="fnref28:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Red/Green/Blue rotation</strong></td>
-<td>Ruota leggermente la tonalità del canale prima della compressione. Utile per correggere dominanti residue o per affinare il look finale[^sigmoid-manual].</td>
+<td>Ruota leggermente la tonalità del canale prima della compressione. Utile per correggere dominanti residue o per affinare il look finale<sup id="fnref29:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 <td><code>±0.5° – ±2.0°</code></td>
-<td>[^sigmoid-manual]</td>
+<td><sup id="fnref30:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>Recover purity</strong></td>
-<td>Ripristina parzialmente la purezza persa dall’attenuazione. <code>100%</code> = ripristino completo; <code>0%</code> = nessun ripristino (output garantito entro il gamut delle primaries scelte)[^sigmoid-manual].</td>
+<td>Ripristina parzialmente la purezza persa dall’attenuazione. <code>100%</code> = ripristino completo; <code>0%</code> = nessun ripristino (output garantito entro il gamut delle primaries scelte)<sup id="fnref31:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 <td><code>40% – 80%</code></td>
-<td>[^sigmoid-manual]</td>
+<td><sup id="fnref32:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Perché attenuare <em>prima</em> della curva?</p>
-<p>I colori puri e luminosi tendono a uscire dal gamut del display durante la compressione. Attenuandoli <em>prima</em>, li si porta in uno spazio sicuro dove sigmoid può gestirli senza clipping o rotazioni indesiderate dell’Hue[^sigmoid-manual].</p>
+<p>I colori puri e luminosi tendono a uscire dal gamut del display durante la compressione. Attenuandoli <em>prima</em>, li si porta in uno spazio sicuro dove sigmoid può gestirli senza clipping o rotazioni indesiderate dell’Hue<sup id="fnref13:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </div>
 <h2 id="gestione-del-colore-con-sigmoid">Gestione del colore con Sigmoid<a class="headerlink" href="#gestione-del-colore-con-sigmoid" title="Permanent link">&para;</a></h2>
 <p>Sigmoid offre due approcci distinti alla conservazione cromatica, selezionabili tramite <code>Color processing</code>:</p>
 <h3 id="modalita-rgb-ratio">Modalità <code>rgb ratio</code><a class="headerlink" href="#modalita-rgb-ratio" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Applica la stessa curva sigmoidale a tutti e tre i canali RGB <em>in proporzione</em>, mantenendo costanti i rapporti tra R, G e B.</li>
-<li>Risultato: i colori spettrali (es. un rosso puro) rimangono sulla stessa linea cromatica fino al bianco — desaturazione prevedibile e coerente[^sigmoid-manual].</li>
+<li>Risultato: i colori spettrali (es. un rosso puro) rimangono sulla stessa linea cromatica fino al bianco — desaturazione prevedibile e coerente<sup id="fnref14:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
 <li>Vantaggio: zero hue shift, ideale per immagini tecniche o con colori critici (es. prodotti, architettura).</li>
 <li>Svantaggio: minore flessibilità creativa; luci molto intense possono apparire “lavate”.</li>
 </ul>
@@ -3260,46 +3260,59 @@
 <ul>
 <li>Applica curve sigmoidali <em>indipendenti</em> a ciascun canale RGB.</li>
 <li>Con <code>preserve hue</code> a <code>100%</code>: simula <code>rgb ratio</code> ma con maggiore stabilità numerica.</li>
-<li>Con <code>preserve hue</code> a <code>0–50%</code>: introduce una distorsione controllata dell’Hue — i rossi diventano arancioni, i blu diventano ciano, i verdi diventano gialli[^sigmoid-manual].  </li>
-<li>Uso tipico: effetti “cinematografici”, tramonti caldi, luci notturne con dominanti artistiche[^sigmoid-fr].</li>
+<li>Con <code>preserve hue</code> a <code>0–50%</code>: introduce una distorsione controllata dell’Hue — i rossi diventano arancioni, i blu diventano ciano, i verdi diventano gialli<sup id="fnref15:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.  </li>
+<li>Uso tipico: effetti “cinematografici”, tramonti caldi, luci notturne con dominanti artistiche<sup id="fnref2:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</li>
 </ul>
 <p><img alt="Confronto modalità color processing" src="../images/sigmoid-color-processing.jpg" /></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Non usare sigmoid insieme ad altri display transforms</strong>: disattiva <code>filmic rgb</code> o <code>base curve</code> prima di abilitare sigmoid[^sigmoid-manual].</li>
-<li><strong>Per immagini con alta frequenza cromatica (es. LED, vetrine)</strong>: usa <code>per channel</code> + <code>red/blue attenuation</code> (20–40%) + <code>recover purity</code> (50–70%) per evitare banding e posterizzazione[^sigmoid-manual].</li>
-<li><strong>Per ritratti</strong>: preferisci <code>skew = -0.10</code> a <code>-0.25</code> e <code>contrast = 0.95–1.15</code>. Evita <code>skew &gt; +0.15</code> per non accentuare pori o venature[^sigmoid-manual].</li>
-<li><strong>Per paesaggi con cieli intensi</strong>: usa <code>skew = +0.25–+0.40</code> e <code>target white = 0.97–0.99</code> per preservare dettagli senza clipping[^sigmoid-fr].</li>
-<li><strong>Calibrazione monitor</strong>: sigmoid è sensibile alla gamma del display. Assicurati di usare un profilo ICC corretto e una gamma di riferimento 2.2[^sigmoid-manual].</li>
+<li><strong>Non usare sigmoid insieme ad altri display transforms</strong>: disattiva <code>filmic rgb</code> o <code>base curve</code> prima di abilitare sigmoid<sup id="fnref16:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
+<li><strong>Per immagini con alta frequenza cromatica (es. LED, vetrine)</strong>: usa <code>per channel</code> + <code>red/blue attenuation</code> (20–40%) + <code>recover purity</code> (50–70%) per evitare banding e posterizzazione<sup id="fnref17:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
+<li><strong>Per ritratti</strong>: preferisci <code>skew = -0.10</code> a <code>-0.25</code> e <code>contrast = 0.95–1.15</code>. Evita <code>skew &gt; +0.15</code> per non accentuare pori o venature<sup id="fnref18:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
+<li><strong>Per paesaggi con cieli intensi</strong>: usa <code>skew = +0.25–+0.40</code> e <code>target white = 0.97–0.99</code> per preservare dettagli senza clipping<sup id="fnref3:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</li>
+<li><strong>Calibrazione monitor</strong>: sigmoid è sensibile alla gamma del display. Assicurati di usare un profilo ICC corretto e una gamma di riferimento 2.2<sup id="fnref19:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
 </ul>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>📘 <strong>Manuale ufficiale darktable 4.8 — Sigmoid</strong><br />
 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/">https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/</a><br />
-  Documentazione tecnica completa, con descrizioni precise dei parametri e note sulla pipeline[^sigmoid-manual].</p>
+  Documentazione tecnica completa, con descrizioni precise dei parametri e note sulla pipeline<sup id="fnref20:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </li>
 <li>
 <p>▶️ <strong>Filmic &amp; Sigmoid Part 4 — Video tutorial (A Dabble in Photography)</strong><br />
 <a href="https://www.youtube.com/watch?v=4KV9Ic-mPj0">https://www.youtube.com/watch?v=4KV9Ic-mPj0</a><br />
-  Confronto diretto sigmoid vs filmic su immagini reali, con focus su gestione alte luci e curve tonali[^filmic-sigmoid-p4].</p>
+  Confronto diretto sigmoid vs filmic su immagini reali, con focus su gestione alte luci e curve tonali<sup id="fnref2:filmic-sigmoid-p4"><a class="footnote-ref" href="#fn:filmic-sigmoid-p4">3</a></sup>.</p>
 </li>
 <li>
 <p>▶️ <strong>Filmic and Sigmoid (Part 3) — Video tutorial (A Dabble in Photography)</strong><br />
 <a href="https://www.youtube.com/watch?v=LQHFOLAN028">https://www.youtube.com/watch?v=LQHFOLAN028</a><br />
-  Spiegazione teorica di <code>contrast</code> e <code>skew</code>, con dimostrazioni pratiche su ritratti e paesaggi[^filmic-sigmoid-p3].</p>
+  Spiegazione teorica di <code>contrast</code> e <code>skew</code>, con dimostrazioni pratiche su ritratti e paesaggi<sup id="fnref5:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</p>
 </li>
 <li>
 <p>🌐 <strong>Comparaison du traitement avec filmique et sigmoid — darktable.fr</strong><br />
 <a href="https://darktable.fr/posts/2023/01/comparaison-filmique-v5-sigmoid/">https://darktable.fr/posts/2023/01/comparaison-filmique-v5-sigmoid/</a><br />
-  Analisi comparativa in francese, con esempi su 4 immagini RAW diverse[^sigmoid-fr].</p>
+  Analisi comparativa in francese, con esempi su 4 immagini RAW diverse<sup id="fnref4:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</p>
 </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^sigmoid-manual]: darktable 4.8 user manual - sigmoid, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/<br />
-[^filmic-sigmoid-p3]: [ENG] Filmic and Sigmoid (Part 3), https://www.youtube.com/watch?v=LQHFOLAN028<br />
-[^filmic-sigmoid-p4]: [ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0<br />
-[^sigmoid-fr]: [EN] Comparaison du traitement avec filmique V5 et sigmoid, https://darktable.fr/posts/2023/01/comparaison-filmique-v5-sigmoid/</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:sigmoid-manual">
+<p>darktable 4.8 user manual - sigmoid, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/&#160;<a class="footnote-backref" href="#fnref:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref20:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref21:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref22:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref23:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref24:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref25:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref26:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref27:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref28:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref29:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref30:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref31:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref32:sigmoid-manual" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-sigmoid-p3">
+<p>[ENG] Filmic and Sigmoid (Part 3), https://www.youtube.com/watch?v=LQHFOLAN028&#160;<a class="footnote-backref" href="#fnref:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-sigmoid-p4">
+<p>[ENG] Filmic &amp; Sigmoid Part 4, https://www.youtube.com/watch?v=4KV9Ic-mPj0&#160;<a class="footnote-backref" href="#fnref:filmic-sigmoid-p4" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:filmic-sigmoid-p4" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sigmoid-fr">
+<p>[EN] Comparaison du traitement avec filmique V5 et sigmoid, https://darktable.fr/posts/2023/01/comparaison-filmique-v5-sigmoid/&#160;<a class="footnote-backref" href="#fnref:sigmoid-fr" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:sigmoid-fr" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:sigmoid-fr" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:sigmoid-fr" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

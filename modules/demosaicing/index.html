@@ -3072,26 +3072,26 @@
 
 
 <h1 id="demosaicing">Demosaicing<a class="headerlink" href="#demosaicing" title="Permanent link">&para;</a></h1>
-<p>Il modulo <strong>demosaicing</strong> è il primo modulo tecnico obbligatorio nella pipeline di elaborazione RAW di darktable. Ricostruisce l’intero spazio colore RGB da un singolo canale per pixel (disposto secondo il pattern del filtro Bayer o X-Trans), trasformando i dati grezzi del sensore in un’immagine visualizzabile con informazioni complete su rosso, verde e blu per ogni punto. È fondamentale per la qualità finale della nitidezza, della risoluzione cromatica e della gestione del rumore, specialmente a ISO elevati[^manual-demosaic][^dt38-demosaic].</p>
+<p>Il modulo <strong>demosaicing</strong> è il primo modulo tecnico obbligatorio nella pipeline di elaborazione RAW di darktable. Ricostruisce l’intero spazio colore RGB da un singolo canale per pixel (disposto secondo il pattern del filtro Bayer o X-Trans), trasformando i dati grezzi del sensore in un’immagine visualizzabile con informazioni complete su rosso, verde e blu per ogni punto. È fondamentale per la qualità finale della nitidezza, della risoluzione cromatica e della gestione del rumore, specialmente a ISO elevati<sup id="fnref:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup><sup id="fnref:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>.</p>
 <p><img alt="Introduzione al modulo Demosaicing" src="../images/demosaic-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Demosaicing è obbligatorio e non disabilitabile</p>
-<p>Il modulo <code>demosaic</code> appare grigio e bloccato nella pipeline (non modificabile) in modalità <em>darkroom</em> perché è un passaggio tecnico indispensabile: senza di esso, i dati RAW rimangono una matrice di intensità monocromatiche e non possono essere interpretati come immagine RGB. Non è possibile saltarlo né bypassarlo[^pipeline-beginner].</p>
+<p>Il modulo <code>demosaic</code> appare grigio e bloccato nella pipeline (non modificabile) in modalità <em>darkroom</em> perché è un passaggio tecnico indispensabile: senza di esso, i dati RAW rimangono una matrice di intensità monocromatiche e non possono essere interpretati come immagine RGB. Non è possibile saltarlo né bypassarlo<sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
-<p>Il demosaicing opera immediatamente dopo <code>raw black/white point</code> e prima di <code>white balance</code>, <code>input color profile</code> e tutti i moduli creativi. La sua posizione è fissa nella <em>pixelpipe</em>, poiché lavora sui dati lineari più grezzi disponibili[^manual-demosaic]. Il suo compito primario è:</p>
+<p>Il demosaicing opera immediatamente dopo <code>raw black/white point</code> e prima di <code>white balance</code>, <code>input color profile</code> e tutti i moduli creativi. La sua posizione è fissa nella <em>pixelpipe</em>, poiché lavora sui dati lineari più grezzi disponibili<sup id="fnref2:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>. Il suo compito primario è:</p>
 <ol>
 <li><strong>Interpolare i valori mancanti</strong> per ogni pixel (es. un pixel verde deve stimare i valori di rosso e blu adiacenti);</li>
 <li><strong>Ridurre artefatti cromatici</strong>, come false colori (fringing) e moiré;</li>
 <li><strong>Preservare la nitidezza fine</strong> senza introdurre aliasing o bordi frastagliati;</li>
-<li><strong>Fornire una base stabile</strong> per i moduli successivi, in particolare per il <code>capture sharpen</code> integrato[^dt38-demosaic].</li>
+<li><strong>Fornire una base stabile</strong> per i moduli successivi, in particolare per il <code>capture sharpen</code> integrato<sup id="fnref5:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>.</li>
 </ol>
 <p>A differenza di Lightroom — dove il demosaicing è completamente opaco — darktable espone tre livelli di controllo:<br />
 - <strong>Algoritmo principale</strong> (scelta tra RCD, AMaZE, Markesteijn, ecc.);<br />
 - <strong>Smoothing cromatico</strong> (per ridurre il rumore cromatico senza appiattire i dettagli);<br />
-- <strong>Capture sharpen</strong> (nitidezza applicata <em>durante</em> la ricostruzione, non dopo)[^dragan-effect].</p>
+- <strong>Capture sharpen</strong> (nitidezza applicata <em>durante</em> la ricostruzione, non dopo)<sup id="fnref:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">&para;</a></h2>
-<p>Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico della pipeline scene-referred[^pipeline-beginner]:</p>
+<p>Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico della pipeline scene-referred<sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. raw black/white point (obbligatorio, non modificabile)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. demosaic ← qui si sceglie l&#39;algoritmo e si attiva capture sharpen
@@ -3104,11 +3104,11 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Capture sharpen va attivato <em>prima</em> del denoise</p>
-<p>Il <code>capture sharpen</code> integrato nel modulo <code>demosaic</code> agisce sui dati lineari <em>prima</em> che il rumore venga amplificato dai moduli successivi. Attivarlo qui è molto più efficace (e meno rumoroso) che usare il modulo <code>sharpen</code> o <code>diffuse or sharpen</code> in seguito[^dragan-effect].</p>
+<p>Il <code>capture sharpen</code> integrato nel modulo <code>demosaic</code> agisce sui dati lineari <em>prima</em> che il rumore venga amplificato dai moduli successivi. Attivarlo qui è molto più efficace (e meno rumoroso) che usare il modulo <code>sharpen</code> o <code>diffuse or sharpen</code> in seguito<sup id="fnref3:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 </div>
 <h3 id="passo-1-scelta-dellalgoritmo">Passo 1: Scelta dell’algoritmo<a class="headerlink" href="#passo-1-scelta-dellalgoritmo" title="Permanent link">&para;</a></h3>
-<p>Per la maggior parte degli utenti, <strong>RCD (Raw Color Demosaicing)</strong> è il default bilanciato: veloce, robusto, con buona gestione del rumore e dei bordi[^manual-demosaic].<br />
-Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Markesteijn 1-pass</strong> offre maggiore precisione ma richiede più tempo di elaborazione[^dt38-demosaic].</p>
+<p>Per la maggior parte degli utenti, <strong>RCD (Raw Color Demosaicing)</strong> è il default bilanciato: veloce, robusto, con buona gestione del rumore e dei bordi<sup id="fnref3:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.<br />
+Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Markesteijn 1-pass</strong> offre maggiore precisione ma richiede più tempo di elaborazione<sup id="fnref2:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>.</p>
 <table>
 <thead>
 <tr>
@@ -3135,7 +3135,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 <td><strong>Markesteijn 1-pass</strong></td>
 <td>⚡⚡</td>
 <td>⚡⚡⚡⚡⚡</td>
-<td>Macro, architettura, immagini ad alta risoluzione, ISO elevati[^dt38-demosaic]</td>
+<td>Macro, architettura, immagini ad alta risoluzione, ISO elevati<sup id="fnref7:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup></td>
 </tr>
 <tr>
 <td><strong>PPG</strong></td>
@@ -3147,7 +3147,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </table>
 <p><img alt="Confronto algoritmi demosaicing" src="../images/demosaic-algorithms-comparison.jpg" /></p>
 <h3 id="passo-2-attivazione-del-capture-sharpen">Passo 2: Attivazione del Capture Sharpen<a class="headerlink" href="#passo-2-attivazione-del-capture-sharpen" title="Permanent link">&para;</a></h3>
-<p>Il <code>capture sharpen</code> è un’ottimizzazione critica per la nitidezza intrinseca, applicata direttamente sulle bande di colore interpolate. I suoi parametri sono accessibili solo quando l’algoritmo scelto lo supporta (RCD, Markesteijn, AMaZE)[^dragan-effect].</p>
+<p>Il <code>capture sharpen</code> è un’ottimizzazione critica per la nitidezza intrinseca, applicata direttamente sulle bande di colore interpolate. I suoi parametri sono accessibili solo quando l’algoritmo scelto lo supporta (RCD, Markesteijn, AMaZE)<sup id="fnref2:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 <ul>
 <li><strong>Abilita</strong>: checkbox <code>capture_sharpen</code> (default: disabilitato)  </li>
 <li><strong>Iterations</strong>: numero di passaggi iterativi per affinare il kernel (range: <strong>1–16</strong>, default: <strong>8</strong>)  </li>
@@ -3157,7 +3157,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Non esagerare con radius e iterations</p>
-<p>Un <code>radius &gt; 0.8 px</code> o <code>iterations &gt; 12</code> introduce artefatti di overshoot (alone bianchi/neri ai bordi) e aumenta visibilmente il rumore cromatico. Valori oltre questi limiti sono raramente utili e quasi sempre dannosi[^dragan-effect].</p>
+<p>Un <code>radius &gt; 0.8 px</code> o <code>iterations &gt; 12</code> introduce artefatti di overshoot (alone bianchi/neri ai bordi) e aumenta visibilmente il rumore cromatico. Valori oltre questi limiti sono raramente utili e quasi sempre dannosi<sup id="fnref4:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 </div>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
@@ -3174,50 +3174,50 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 <td><strong>Method</strong></td>
 <td>RCD, AMaZE, Markesteijn 1-pass, PPG, VNG4</td>
 <td>RCD</td>
-<td>Algoritmo di interpolazione principale. RCD è il più equilibrato[^manual-demosaic].</td>
+<td>Algoritmo di interpolazione principale. RCD è il più equilibrato<sup id="fnref7:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Color smoothing</strong></td>
 <td>disabled, enabled</td>
 <td>disabled</td>
-<td>Riduce il rumore cromatico nei piani omogenei (es. cielo). Abilitare solo se si osservano false colori[^manual-demosaic].</td>
+<td>Riduce il rumore cromatico nei piani omogenei (es. cielo). Abilitare solo se si osservano false colori<sup id="fnref8:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Capture sharpen</strong></td>
 <td>on/off</td>
 <td>off</td>
-<td>Abilita la nitidezza integrata durante la demosaicing[^dragan-effect].</td>
+<td>Abilita la nitidezza integrata durante la demosaicing<sup id="fnref7:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Iterations</strong></td>
 <td>1–16</td>
 <td>8</td>
-<td>Numero di passaggi per affinare il kernel di sharpen. Più alto = più preciso ma più lento[^dragan-effect].</td>
+<td>Numero di passaggi per affinare il kernel di sharpen. Più alto = più preciso ma più lento<sup id="fnref8:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Radius</strong></td>
 <td>0.2–2.0 px</td>
 <td>0.6 px</td>
-<td>Estensione spaziale del kernel. Valori alti causano overshoot[^dragan-effect].</td>
+<td>Estensione spaziale del kernel. Valori alti causano overshoot<sup id="fnref9:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Contrast sensitivity</strong></td>
 <td>0.0–1.0</td>
 <td>0.3</td>
-<td>Soglia minima di contrasto per attivare il sharpen. Valori bassi → più aggressivo[^dragan-effect].</td>
+<td>Soglia minima di contrasto per attivare il sharpen. Valori bassi → più aggressivo<sup id="fnref10:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Corner boost</strong></td>
 <td>0.0–1.0</td>
 <td>0.0</td>
-<td>Rinforzo specifico per gli angoli. Usare solo per dettagli strutturali marcati[^dragan-effect].</td>
+<td>Rinforzo specifico per gli angoli. Usare solo per dettagli strutturali marcati<sup id="fnref11:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Pannello dei parametri Demosaicing" src="../images/demosaic-parameters-panel.jpg" /></p>
 <h2 id="algoritmi-avanzati-e-casi-duso">Algoritmi avanzati e casi d’uso<a class="headerlink" href="#algoritmi-avanzati-e-casi-duso" title="Permanent link">&para;</a></h2>
 <h3 id="markesteijn-1-pass-per-iso-elevati-e-dettaglio-estremo">Markesteijn 1-pass: per ISO elevati e dettaglio estremo<a class="headerlink" href="#markesteijn-1-pass-per-iso-elevati-e-dettaglio-estremo" title="Permanent link">&para;</a></h3>
-<p>Introdotto in darktable 3.8, questo algoritmo è ottimizzato per immagini rumorose e per sensori Sony ARW, grazie a una stima statistica migliorata dei valori mancanti[^dt38-demosaic]. È l’unico algoritmo che supporta nativamente il <code>capture_sharpen</code> con <strong>controllo indipendente su luci/ombre</strong>, rendendolo ideale per:</p>
+<p>Introdotto in darktable 3.8, questo algoritmo è ottimizzato per immagini rumorose e per sensori Sony ARW, grazie a una stima statistica migliorata dei valori mancanti<sup id="fnref3:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>. È l’unico algoritmo che supporta nativamente il <code>capture_sharpen</code> con <strong>controllo indipendente su luci/ombre</strong>, rendendolo ideale per:</p>
 <ul>
 <li>Fotografia notturna (ISO ≥ 6400);  </li>
 <li>Macro con profondità di campo ridotta;  </li>
@@ -3227,7 +3227,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 - <code>Iterations</code>: <strong>10–12</strong><br />
 - <code>Radius</code>: <strong>0.5–0.7 px</strong><br />
 - <code>Contrast sensitivity</code>: <strong>0.25–0.35</strong><br />
-- <code>Corner boost</code>: <strong>0.1–0.2</strong> (solo se necessario)[^dt38-demosaic]</p>
+- <code>Corner boost</code>: <strong>0.1–0.2</strong> (solo se necessario)<sup id="fnref4:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup></p>
 <h3 id="amaze-per-massima-fedelta-cromatica-basso-iso">AMaZE: per massima fedeltà cromatica (basso ISO)<a class="headerlink" href="#amaze-per-massima-fedelta-cromatica-basso-iso" title="Permanent link">&para;</a></h3>
 <p>L’algoritmo AMaZE (Adaptive Multi-Scale Averaging) è il più conservativo: minimizza le interpolazioni aggressive e preserva la purezza cromatica originale del sensore. È ideale per:</p>
 <ul>
@@ -3235,36 +3235,53 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 <li>Scatti a ISO 100–400 su fotocamere Fujifilm X-Trans o Canon;  </li>
 <li>Quando si pianifica un’elaborazione molto aggressiva in seguito (es. filmic rgb con alta latitude).</li>
 </ul>
-<p>⚠️ Nota: AMaZE è più lento di RCD e non include <code>corner boost</code>. Il <code>capture_sharpen</code> è supportato, ma richiede valori più cauti (<code>radius ≤ 0.5 px</code>) per evitare artefatti[^manual-demosaic].</p>
+<p>⚠️ Nota: AMaZE è più lento di RCD e non include <code>corner boost</code>. Il <code>capture_sharpen</code> è supportato, ma richiede valori più cauti (<code>radius ≤ 0.5 px</code>) per evitare artefatti<sup id="fnref4:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Verifica il risultato con zoom 100% e maschera di sovrapposizione</p>
-<p>Per valutare la qualità del demosaicing, usa <code>Ctrl+1</code> per zoomare al 100% e attiva la <strong>maschera di sovrapposizione</strong> (<code>O</code>): evidenzia i falsi colori (fringing rosso/ciano) e i bordi instabili. Se compaiono alone cromatici, prova a abilitare <code>color_smoothing</code> o passa a Markesteijn[^manual-demosaic].</p>
+<p>Per valutare la qualità del demosaicing, usa <code>Ctrl+1</code> per zoomare al 100% e attiva la <strong>maschera di sovrapposizione</strong> (<code>O</code>): evidenzia i falsi colori (fringing rosso/ciano) e i bordi instabili. Se compaiono alone cromatici, prova a abilitare <code>color_smoothing</code> o passa a Markesteijn<sup id="fnref5:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Non combinare capture_sharpen con altri moduli di nitidezza</p>
-<p>Evita di usare contemporaneamente <code>capture_sharpen</code>, <code>sharpen</code>, <code>diffuse or sharpen</code> e <code>local contrast</code>. Questo crea una cascata di effetti cumulativi che distruggono la struttura naturale dell’immagine. Usa <code>capture_sharpen</code> <em>una sola volta</em>, all’inizio della pipeline[^dragan-effect].</p>
+<p>Evita di usare contemporaneamente <code>capture_sharpen</code>, <code>sharpen</code>, <code>diffuse or sharpen</code> e <code>local contrast</code>. Questo crea una cascata di effetti cumulativi che distruggono la struttura naturale dell’immagine. Usa <code>capture_sharpen</code> <em>una sola volta</em>, all’inizio della pipeline<sup id="fnref5:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 </div>
 <h3 id="ottimizzazione-per-prestazioni">Ottimizzazione per prestazioni<a class="headerlink" href="#ottimizzazione-per-prestazioni" title="Permanent link">&para;</a></h3>
 <p>Su hardware limitato (es. Mac Mini M4 Pro con GPU integrata), RCD garantisce il miglior rapporto velocità/qualità. Se l’elaborazione è lenta:
 - Disabilita <code>color_smoothing</code> (è costoso);
 - Riduci <code>iterations</code> a <strong>6</strong> per Markesteijn;
-- Usa <code>PPG</code> solo per test rapidi o anteprime[^mac-mini-m4-pro].</p>
+- Usa <code>PPG</code> solo per test rapidi o anteprime<sup id="fnref:mac-mini-m4-pro"><a class="footnote-ref" href="#fn:mac-mini-m4-pro">5</a></sup>.</p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/demosaic/">darktable 4.8 User Manual — Demosaic</a> — Documentazione ufficiale completa[^manual-demosaic]  </li>
-<li><a href="https://www.youtube.com/watch?v=5smugZ5pXN0&amp;t=240">darktable 3.8 What is new? — Video tutorial (min 4:00)</a> — Introduzione a LMMSE e Markesteijn[^dt38-demosaic]  </li>
-<li><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8&amp;t=110">The Dragan effect in darktable — Video tutorial (min 1:50)</a> — Dimostrazione pratica di <code>capture_sharpen</code> con parametri reali[^dragan-effect]  </li>
-<li><a href="https://www.youtube.com/watch?v=Qu_rTTd0mgQ&amp;t=120">Darktable Scene referred recap — Video tutorial (min 2:00)</a> — Posizionamento del modulo nella pixelpipe[^pipeline-beginner]  </li>
-<li><a href="https://example.com/manual-flusso-lavoro">Manuale Flusso Lavoro darktable (Aprile 2026)</a> — Contesto operativo completo per dt 5.4+[^manuale-flusso]</li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/demosaic/">darktable 4.8 User Manual — Demosaic</a> — Documentazione ufficiale completa<sup id="fnref6:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=5smugZ5pXN0&amp;t=240">darktable 3.8 What is new? — Video tutorial (min 4:00)</a> — Introduzione a LMMSE e Markesteijn<sup id="fnref6:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8&amp;t=110">The Dragan effect in darktable — Video tutorial (min 1:50)</a> — Dimostrazione pratica di <code>capture_sharpen</code> con parametri reali<sup id="fnref6:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>  </li>
+<li><a href="https://www.youtube.com/watch?v=Qu_rTTd0mgQ&amp;t=120">Darktable Scene referred recap — Video tutorial (min 2:00)</a> — Posizionamento del modulo nella pixelpipe<sup id="fnref3:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>  </li>
+<li><a href="https://example.com/manual-flusso-lavoro">Manuale Flusso Lavoro darktable (Aprile 2026)</a> — Contesto operativo completo per dt 5.4+<sup id="fnref:manuale-flusso"><a class="footnote-ref" href="#fn:manuale-flusso">6</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual-demosaic]: darktable 4.8 user manual - demosaic, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/demosaic/<br />
-[^dt38-demosaic]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0&amp;t=240<br />
-[^pipeline-beginner]: [ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=90<br />
-[^dragan-effect]: [ENG] The Dragan effect in darktable, https://www.youtube.com/watch?v=EuvG0lh8OB8&amp;t=110<br />
-[^mac-mini-m4-pro]: [ENG] darktable with the new Mac mini m4 pro, https://www.youtube.com/watch?v=Aqu3ULnYugw<br />
-[^manuale-flusso]: Manuale_Flusso_Lavoro_darktable, Aprile 2026</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:manual-demosaic">
+<p>darktable 4.8 user manual - demosaic, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/demosaic/&#160;<a class="footnote-backref" href="#fnref:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:manual-demosaic" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dt38-demosaic">
+<p>[ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0&amp;t=240&#160;<a class="footnote-backref" href="#fnref:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dt38-demosaic" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pipeline-beginner">
+<p>[ENG] The darktable pipeline for beginners, https://www.youtube.com/watch?v=1nPW6WPhhTo&amp;t=90&#160;<a class="footnote-backref" href="#fnref:pipeline-beginner" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pipeline-beginner" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:pipeline-beginner" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dragan-effect">
+<p>[ENG] The Dragan effect in darktable, https://www.youtube.com/watch?v=EuvG0lh8OB8&amp;t=110&#160;<a class="footnote-backref" href="#fnref:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dragan-effect" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:mac-mini-m4-pro">
+<p>[ENG] darktable with the new Mac mini m4 pro, https://www.youtube.com/watch?v=Aqu3ULnYugw&#160;<a class="footnote-backref" href="#fnref:mac-mini-m4-pro" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:manuale-flusso">
+<p>Manuale_Flusso_Lavoro_darktable, Aprile 2026&#160;<a class="footnote-backref" href="#fnref:manuale-flusso" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
