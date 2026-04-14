@@ -18,7 +18,7 @@
         <link rel="prev" href="../diffuse-sharpen/">
       
       
-        <link rel="next" href="../denoise/">
+        <link rel="next" href="../local-contrast/">
       
       
         
@@ -861,6 +861,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../sigmoid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tone Mapping: Sigmoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../color-calibration/" class="md-nav__link">
         
   
@@ -869,6 +897,34 @@
     
   
     Color Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-balance-rgb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Balance RGB
   
 
     
@@ -1033,10 +1089,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uso-interattivo-con-il-mouse" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso interattivo con il mouse
+        Panoramica
       
     </span>
   </a>
@@ -1044,13 +1100,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gestione-della-maschera" class="md-nav__link">
+  <a href="#flusso-di-lavoro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gestione della maschera
+        Flusso di lavoro
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparazione-della-maschera-passo-fondamentale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preparazione della maschera (passo fondamentale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-regolazione-interattiva-core-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Regolazione interattiva (core workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-affinamento-manuale-e-combinazione-con-altri-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Affinamento manuale e combinazione con altri moduli
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1070,6 +1165,62 @@
     <span class="md-ellipsis">
       
         Consigli operativi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consigli operativi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempi-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempi pratici
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correzione-di-un-ritratto-in-controluce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Correzione di un ritratto in controluce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paesaggio-con-finestra-soleggiata-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Paesaggio con finestra soleggiata (HDR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
       
     </span>
   </a>
@@ -1103,6 +1254,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../local-contrast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Local Contrast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../denoise/" class="md-nav__link">
         
   
@@ -1111,6 +1290,426 @@
     
   
     Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lens-correction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lens Correction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retouch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modulo Retouch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crop-rotate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../white-balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    White Balance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../highlight-reconstruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highlight Reconstruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contrast-equalizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contrast Equalizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demosaicing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demosaicing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignetting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vignetting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rotate-perspective/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rotate and Perspective
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watermark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watermark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../base-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chromatic-aberrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chromatic Aberrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../color-profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input Color Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite: Fusioni avanzate e effetti creativi
   
 
     
@@ -2023,10 +2622,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uso-interattivo-con-il-mouse" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso interattivo con il mouse
+        Panoramica
       
     </span>
   </a>
@@ -2034,13 +2633,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gestione-della-maschera" class="md-nav__link">
+  <a href="#flusso-di-lavoro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Gestione della maschera
+        Flusso di lavoro
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparazione-della-maschera-passo-fondamentale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preparazione della maschera (passo fondamentale)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-regolazione-interattiva-core-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Regolazione interattiva (core workflow)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-affinamento-manuale-e-combinazione-con-altri-moduli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Affinamento manuale e combinazione con altri moduli
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2060,6 +2698,62 @@
     <span class="md-ellipsis">
       
         Consigli operativi
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Consigli operativi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempi-pratici" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempi pratici
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Esempi pratici">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correzione-di-un-ritratto-in-controluce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Correzione di un ritratto in controluce
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paesaggio-con-finestra-soleggiata-hdr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Paesaggio con finestra soleggiata (HDR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
       
     </span>
   </a>
@@ -2098,86 +2792,166 @@
 
 
 <h1 id="tone-equalizer">Tone Equalizer<a class="headerlink" href="#tone-equalizer" title="Permanent link">&para;</a></h1>
-<p>Il Tone Equalizer opera nel dominio lineare utilizzando una <strong>maschera guidata</strong> che divide l'immagine in zone di luminanza. Il suo cuore e' il filtro <strong>EIGF</strong> (Exposure-Independent Guided Filter) che sfuoca la maschera preservando i bordi, evitando aloni.[^manual]</p>
-<h2 id="uso-interattivo-con-il-mouse">Uso interattivo con il mouse<a class="headerlink" href="#uso-interattivo-con-il-mouse" title="Permanent link">&para;</a></h2>
-<p>La funzionalita' piu' potente del Tone Equalizer:</p>
+<p>Il Tone Equalizer opera nel dominio lineare utilizzando una <strong>maschera guidata</strong> che divide l'immagine in zone di luminanza. Il suo cuore è il filtro <strong>EIGF</strong> (Exposure-Independent Guided Filter) che sfuoca la maschera preservando i bordi, evitando aloni[^manual].</p>
+<h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
+<p>Il Tone Equalizer è un modulo <em>dodge and burn</em> avanzato progettato per operare in spazio lineare RGB, sostituendo efficacemente combinazioni di moduli come <em>shadows and highlights</em>, <em>tone curve</em>, <em>base curve</em> e <em>zone system</em> (deprecato)[^dt48]. Funziona in sinergia con <em>filmic rgb</em>: insieme costituiscono il nucleo della pipeline <em>scene-referred</em>, permettendo una compressione dinamica precisa senza appiattire il contrasto locale[^dt48]. A differenza dei classici equalizzatori tonali, non modifica direttamente i pixel, ma agisce tramite una <strong>maschera intermedia</strong> — una versione sfocata e quantizzata dell’immagine stessa — che funge da “mappa di istruzioni” per dove applicare le correzioni di esposizione[^dt48].</p>
+<p><img alt="Diagramma concettuale del Tone Equalizer: input → guided mask generation → mask post-processing → exposure lookup → output" src="../images/tone-equalizer-overview.png" /></p>
+<p>Il modulo è strutturato in tre schede complementari:
+- <strong>Simple</strong>: interfaccia a 9 slider (da –8 EV a 0 EV), ideale per regolazioni rapide e intuitive.
+- <strong>Advanced</strong>: curva tonale interattiva con 9 punti di controllo, sovrapposta all’istogramma della maschera, per precisione fine.
+- <strong>Masking</strong>: controlli dedicati alla creazione, affinamento e bilanciamento della maschera stessa[^dt48].</p>
+<h2 id="flusso-di-lavoro">Flusso di lavoro<a class="headerlink" href="#flusso-di-lavoro" title="Permanent link">&para;</a></h2>
+<h3 id="1-preparazione-della-maschera-passo-fondamentale">1. Preparazione della maschera (passo fondamentale)<a class="headerlink" href="#1-preparazione-della-maschera-passo-fondamentale" title="Permanent link">&para;</a></h3>
+<p>Prima di qualsiasi regolazione tonale, è essenziale ottimizzare la maschera guidata. Una maschera mal configurata produce transizioni artificiali o effetti indesiderati (es. "halos" o "banding"). Il flusso consigliato è:</p>
+<ol>
+<li>Passa alla scheda <strong>«Masking»</strong></li>
+<li>Imposta <code>luminance estimator</code> su <strong>RGB euclidean norm</strong> (valore predefinito, più robusto per immagini con illuminazione mista)[^dt48]</li>
+<li>Scegli <code>preserve details</code> → <strong>eigf</strong> (default, garantisce uniformità di sfocatura tra ombre e luci)[^dt48]</li>
+<li>Regola <code>smoothing diameter</code>:  </li>
+<li>Per EIGF: <strong>1–10%</strong> della lunghezza del lato maggiore dell’immagine  </li>
+<li>Valore tipico: <strong>5%</strong> (equivalente a ~100 px su un’immagine 2000×3000)[^dt48]  </li>
+<li>Usa i pulsanti bacchetta magica accanto a <code>mask exposure compensation</code> e <code>mask contrast compensation</code> per centrare e dilatare automaticamente l’istogramma della maschera[^dt54]  </li>
+<li>Verifica la qualità della maschera cliccando su <strong>«display exposure mask»</strong>: la maschera deve mostrare transizioni morbide tra aree di diversa luminanza, senza granularità eccessiva né perdita di dettaglio nei bordi[^dt48]</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Perché centrare l’istogramma?</p>
+<p>L’istogramma della maschera deve coprire il più possibile l’intero range di 9 EV (da –8 a +0 EV) per garantire che tutti i 9 punti di controllo della curva siano attivamente utilizzabili. Se l’istogramma è compresso in una sola zona (es. solo tra –4 e –2 EV), i punti esterni non avranno alcun effetto[^dt48].</p>
+</div>
+<h3 id="2-regolazione-interattiva-core-workflow">2. Regolazione interattiva (core workflow)<a class="headerlink" href="#2-regolazione-interattiva-core-workflow" title="Permanent link">&para;</a></h3>
+<p>La funzionalità più potente del Tone Equalizer:</p>
 <ol>
 <li>Attiva il modulo, vai nel tab <strong>«Avanzato»</strong></li>
 <li>Porta il cursore sull'immagine, sopra un'area troppo scura</li>
 <li>Rotella <strong>verso l'alto</strong> per schiarire, <strong>verso il basso</strong> per scurire</li>
-<li>La curva si aggiorna automaticamente</li>
+<li>La curva si aggiorna automaticamente in tempo reale</li>
 <li>Ripeti su aree troppo luminose</li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Non toccare i singoli slider</p>
-<p>Usa <strong>sempre</strong> l'interazione diretta sull'immagine. E' piu' veloce e produce risultati migliori.[^manual]</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Evitare modifiche accidentali</p>
-<p>Clicca sull'intestazione del modulo prima di zoomare per evitare la modifica accidentale dell'esposizione.[^lowlight]</p>
-</div>
-<h2 id="gestione-della-maschera">Gestione della maschera<a class="headerlink" href="#gestione-della-maschera" title="Permanent link">&para;</a></h2>
-<p>Per immagini ad altissima gamma dinamica (interni con finestra soleggiata):</p>
-<ol>
-<li>Tab <strong>«Masking»</strong></li>
-<li>Clicca le bacchette magiche accanto a <strong>«Mask exposure compensation»</strong> e <strong>«Mask contrast compensation»</strong></li>
-<li>Questo ricentra e adatta l'istogramma della maschera</li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Novita' darktable 5.4</p>
-<p>La compensazione maschera e' ora direttamente accessibile dalla schermata principale (non piu' nascosta nel tab). Clic destro sui cursori tonali per la nuova <strong>ruota tinta visuale</strong> (hue wheel).[^dt54]</p>
-</div>
+<p>Durante questa operazione, il cursore mostra informazioni critiche:
+- <strong>Croce</strong>: posizione esatta del pixel
+- <strong>Cerchio esterno</strong>: intensità della maschera in EV (es. <code>–3.2 EV</code>)
+- <strong>Cerchio interno</strong>: intensità modificata dopo applicazione della curva (più chiaro = schiarito, più scuro = scurito)
+- <strong>Arco sinistro</strong>: entità della modifica (lunghezza proporzionale a ±EV applicati)[^dt48]</p>
+<p><img alt="Interfaccia interattiva del Tone Equalizer: indicatore visivo con croce, cerchi e arco di compensazione" src="../images/tone-equalizer-cursor.png" /></p>
+<h3 id="3-affinamento-manuale-e-combinazione-con-altri-moduli">3. Affinamento manuale e combinazione con altri moduli<a class="headerlink" href="#3-affinamento-manuale-e-combinazione-con-altri-moduli" title="Permanent link">&para;</a></h3>
+<p>Dopo aver impostato le basi con l’interazione mouse:
+- Passa alla scheda <strong>«Simple»</strong> per regolazioni globali rapide (es. sollevare tutti i mezzi toni di +0.3 EV)
+- Usa <strong>«Advanced»</strong> per correggere transizioni: aumenta <code>curve smoothing</code> fino a <strong>0.6</strong> per evitare oscillazioni matematiche[^dt48]
+- Combina con <em>filmic rgb</em>: se <em>filmic</em> comprime le alte luci, usa <em>tone equalizer</em> per rilanciare specifiche zone (es. volti in controluce) senza riaprire il clipping[^nightsky]</p>
 <h2 id="parametri">Parametri<a class="headerlink" href="#parametri" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
 <th>Descrizione</th>
+<th>Range / Default</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Exposure boost</strong></td>
-<td>Compensazione globale</td>
+<td>Compensazione globale di esposizione applicata prima della maschera</td>
+<td>–4.00 a +4.00 EV / <strong>0.00 EV</strong></td>
+<td>Utile per correzioni grossolane prima di entrare nel dettaglio tonale[^dt48]</td>
 </tr>
 <tr>
 <td><strong>Blacks / Shadows / Midtones / Highlights / Whites / Speculars</strong></td>
-<td>Regolazione per zona</td>
+<td>Regolazione per zona (corrisponde ai 6 punti centrali della curva Advanced)</td>
+<td>–4.00 a +4.00 EV / <strong>0.00 EV</strong></td>
+<td>Nella scheda Simple, questi sono i 6 slider centrali dei 9 totali (–8, –6, –4, –2, 0, +2 EV)[^dt48]</td>
 </tr>
 <tr>
 <td><strong>Mask exposure compensation</strong></td>
-<td>Ricentra l'istogramma della maschera[^dt54]</td>
+<td>Sposta orizzontalmente l’istogramma della maschera</td>
+<td>–4.00 a +4.00 EV / <strong>0.00 EV</strong></td>
+<td>Fondamentale dopo aver usato <em>exposure</em>: ricentra la maschera se l’immagine è stata globalmente schiarita/scurita[^dt54]</td>
 </tr>
 <tr>
 <td><strong>Mask contrast compensation</strong></td>
-<td>Adatta il contrasto della maschera[^dt54]</td>
+<td>Dilata o comprime l’istogramma della maschera</td>
+<td>–1.00 a +1.00 / <strong>0.00</strong></td>
+<td>Valori &gt;0.3 migliorano la separazione tra zone tonali simili (es. cielo e nuvole)[^dt48]</td>
+</tr>
+<tr>
+<td><strong>Curve smoothing</strong></td>
+<td>Interpolazione tra i punti di controllo della curva</td>
+<td>0.00 a 1.00 / <strong>0.00</strong></td>
+<td>Valori &gt;0.6 possono causare instabilità matematica (oscillazioni); 0.3–0.5 è il range sicuro per transizioni naturali[^dt48]</td>
+</tr>
+<tr>
+<td><strong>Filter diffusion</strong></td>
+<td>Numero di iterazioni del filtro di sfocatura</td>
+<td>1–5 / <strong>1</strong></td>
+<td>Valore 2 = sfocatura 2× più intensa; valori &gt;3 aumentano significativamente i tempi di elaborazione[^dt48]</td>
+</tr>
+<tr>
+<td><strong>Edges refinement/feathering</strong></td>
+<td>Precisione nel seguire i bordi ad alto contrasto</td>
+<td>0–10000 / <strong>100</strong></td>
+<td>Valori alti (&gt;1000) migliorano la definizione di contorni netti (es. orizzonte), ma richiedono più RAM[^dt48]</td>
 </tr>
 </tbody>
 </table>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Opacita' vs curva</p>
-<p>Se l'effetto e' troppo intenso, ridurre l'<strong>opacita'</strong> invece di modificare drasticamente la curva (che tende ad appiattire il risultato).[^nightsky]</p>
+<p class="admonition-title">Opacità vs curva</p>
+<p>Se l'effetto è troppo intenso, ridurre l'<strong>opacità</strong> invece di modificare drasticamente la curva (che tende ad appiattire il risultato). L’opacità controlla l’intensità complessiva dell’intero effetto, mantenendo la forma della curva integra[^nightsky].</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Direzione della curva</p>
-<p>Pendenza verso il basso = piu' contrasto. Pendenza verso l'alto = meno contrasto.[^nightsky]</p>
+<p>Pendenza verso il basso = piu' contrasto. Pendenza verso l'alto = meno contrasto. Una curva perfettamente orizzontale (tutti i punti a 0.00 EV) annulla ogni effetto[^nightsky].</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Monitorare il bilancio globale</p>
-<p>Quando combini Tone Equalizer e modulo Exposure, monitora costantemente il bilancio globale per evitare esposizioni indesiderate.[^nightsky]</p>
+<p>Quando combini Tone Equalizer e modulo Exposure, monitora costantemente il bilancio globale per evitare esposizioni indesiderate. Un aumento di +1.0 EV in <em>exposure</em> seguito da –0.8 EV su <em>midtones</em> in <em>tone equalizer</em> non equivale a +0.2 EV globale: la maschera può alterare il bilancio cromatico e la distribuzione tonale in modo non lineare[^nightsky].</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Non toccare i singoli slider</p>
+<p>Usa <strong>sempre</strong> l'interazione diretta sull'immagine. È più veloce e produce risultati migliori. I slider manuali sono utili solo per finissimi aggiustamenti post-interazione[^manual].</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Evitare modifiche accidentali</p>
+<p>Clicca sull'intestazione del modulo prima di zoomare per evitare la modifica accidentale dell'esposizione. Tenere premuto il tasto <strong>‘a’</strong> mentre si usa la rotellina del mouse disabilita temporaneamente il controllo tonale e abilita lo zoom/pan[^lowlight].</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Novità darktable 5.4</p>
+<p>La compensazione maschera è ora direttamente accessibile dalla schermata principale (non più nascosta nel tab). Clic destro sui cursori tonali per la nuova <strong>ruota tinta visuale</strong> (hue wheel), utile per bilanciare le tonalità durante le regolazioni locali[^dt54].</p>
+</div>
+<h3 id="esempi-pratici">Esempi pratici<a class="headerlink" href="#esempi-pratici" title="Permanent link">&para;</a></h3>
+<h4 id="correzione-di-un-ritratto-in-controluce">✅ Correzione di un ritratto in controluce<a class="headerlink" href="#correzione-di-un-ritratto-in-controluce" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Problema: soggetto scuro, sfondo sovraesposto  </li>
+<li>Soluzione:  </li>
+<li>Attivare <code>display exposure mask</code> per verificare che la maschera distingua bene il volto (–2.5 EV) dal cielo (+0.5 EV)  </li>
+<li>Con il mouse sul volto: rotellina <strong>su</strong> per +0.7 EV  </li>
+<li>Con il mouse sul cielo: rotellina <strong>giù</strong> per –0.4 EV  </li>
+<li>Ridurre <code>opacity</code> a <strong>85%</strong> per evitare un effetto "incollato"  </li>
+<li>Usare <code>mask contrast compensation</code> a <strong>+0.25</strong> per accentuare la separazione volto/cielo[^nightsky]</li>
+</ul>
+<h4 id="paesaggio-con-finestra-soleggiata-hdr">✅ Paesaggio con finestra soleggiata (HDR)<a class="headerlink" href="#paesaggio-con-finestra-soleggiata-hdr" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Problema: interni bui, finestra bianca  </li>
+<li>Soluzione:  </li>
+<li>Nella scheda <strong>Masking</strong>, impostare <code>smoothing diameter</code> a <strong>8%</strong>, <code>edges refinement</code> a <strong>500</strong>, <code>filter diffusion</code> a <strong>2</strong>  </li>
+<li>Usare la bacchetta magica su <code>mask exposure compensation</code> per centrare l’istogramma  </li>
+<li>Nella scheda <strong>Advanced</strong>, abbassare il punto a <strong>–6.0 EV</strong> (interni) di –1.2 EV e alzare il punto a <strong>+0.0 EV</strong> (finestra) di +0.3 EV  </li>
+<li>Applicare <code>curve smoothing</code> a <strong>0.45</strong> per transizioni fluide[^dt48]</li>
+</ul>
+<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p><em>Il Tone Equalizer -- Understanding the Masking Tab</em> e' un articolo tecnico dettagliato disponibile su darktable.info e discusso ampiamente nel forum pixls.us.[^pixls-te]</p>
-<p>La community darktable.fr offre tutorial in francese sul Tone Equalizer con esempi before/after.[^dtfr-te]</p>
+<p><em>Il Tone Equalizer -- Understanding the Masking Tab</em> è un articolo tecnico dettagliato disponibile su darktable.info e discusso ampiamente nel forum pixls.us[^pixls-te].<br />
+La community darktable.fr offre tutorial in francese sul Tone Equalizer con esempi before/after[^dtfr-te].<br />
+Il video <em>Full b&amp;w edits in darktable for street photography</em> dimostra l’uso avanzato del modulo per il controllo locale del contrasto in immagini monocromatiche[^f9sz].</p>
 </blockquote>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
-<p>[^manual]: <em>darktable User Manual -- Tone Equalizer</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code>
-[^dt54]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography
-[^lowlight]: <em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos</a></em> -- A Dabble in Photography
-[^nightsky]: <em><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">Night Sky Full Edit</a></em> -- A Dabble in Photography
-[^pixls-te]: <em>discuss.pixls.us -- Tone Equalizer discussions</em> | Copie locali in <code>processed/discuss-pixls/</code>
-[^dtfr-te]: <em>darktable.fr -- Tutorials Tone Equalizer</em> | Copie locali in <code>processed/darktable-fr/</code></p>
+<p>[^manual]: <em>darktable User Manual -- Tone Equalizer</em>, <a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code><br />
+[^dt48]: <em>darktable 4.8 user manual - tone equalizer</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code><br />
+[^dt54]: <em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography<br />
+[^lowlight]: <em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos</a></em> -- A Dabble in Photography<br />
+[^nightsky]: <em><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">Night Sky Full Edit</a></em> -- A Dabble in Photography<br />
+[^pixls-te]: <em>discuss.pixls.us -- Tone Equalizer discussions</em> | Copie locali in <code>processed/discuss-pixls/</code><br />
+[^dtfr-te]: <em>darktable.fr -- Tutorials Tone Equalizer</em> | Copie locali in <code>processed/darktable-fr/</code><br />
+[^f9sz]: <em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a></em> -- A Dabble in Photography</p>
 
 
 

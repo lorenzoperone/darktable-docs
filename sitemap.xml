@@ -69,7 +69,19 @@
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/base-curve/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/channel-mixer/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/chromatic-aberrations/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/color-balance-rgb/</loc>
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
@@ -78,6 +90,26 @@
     </url>
     <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/color-equalizer/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/color-profiles/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/composite/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/contrast-equalizer/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/crop-rotate/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/demosaicing/</loc>
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
@@ -97,11 +129,51 @@
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/grain/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/highlight-reconstruction/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/lens-correction/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/local-contrast/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/masking/</loc>
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/retouch/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/rotate-perspective/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/sigmoid/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
          <loc>https://lorenzoperone.github.io/darktable-docs/modules/tone-equalizer/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/vignetting/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/watermark/</loc>
+         <lastmod>2026-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://lorenzoperone.github.io/darktable-docs/modules/white-balance/</loc>
          <lastmod>2026-04-14</lastmod>
     </url>
     <url>
