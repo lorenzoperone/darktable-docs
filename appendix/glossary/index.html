@@ -2575,6 +2575,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossario
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2591,6 +2609,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2708,6 +2811,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2738,101 +2915,377 @@
 <tbody>
 <tr>
 <td><strong>Scene-referred</strong></td>
-<td>Flusso di lavoro che mantiene i dati lineari fino al tone mapping finale</td>
+<td>Flusso di lavoro che mantiene i dati lineari fino al tone mapping finale. I valori luminosi rappresentano la radianza della scena reale (in cd/m²), non una codifica per display. Il range è teoricamente illimitato: valori &gt;1.0 sono comuni e significativi (es. luci solari, LED) <sup id="fnref:scene-referred-def"><a class="footnote-ref" href="#fn:scene-referred-def">1</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>Display-referred</strong></td>
-<td>Flusso legacy che comprime i dati in [0,1] precocemente</td>
+<td>Flusso legacy che comprime i dati in [0,1] precocemente, perdendo informazioni fisiche e introducendo artefatti cromatici. Non supporta correttamente il recupero di alte luci o ombre profonde <sup id="fnref:display-referred-def"><a class="footnote-ref" href="#fn:display-referred-def">2</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/overview/workflow/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>Filmic RGB</strong></td>
-<td>Modulo darktable per il tone mapping scene-referred (3 pannelli)</td>
+<td>Modulo darktable per il tone mapping scene-referred (3 pannelli). Implementa una curva S con parametri separati per spalla (highlights), piede (shadows) e pivot (midtones). Versioni disponibili: v5 (2021), v6 (2022), v7 (2023). La v5 è preferita per i tramonti grazie a una maggiore preservazione del giallo/arancio <sup id="fnref:filmic-versions"><a class="footnote-ref" href="#fn:filmic-versions">3</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/filmic-rgb/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>AgX</strong></td>
-<td>Tone mapper piu' recente, risolve i Notorious 6</td>
+<td>Tone mapper piu' recente, risolve i Notorious 6. Basato su un modello fisico migliorato che gestisce la compressione tonale in modo più coerente con la percezione umana. Introdotta in darktable 5.4 come modulo <code>agx-tone-compressor</code> <sup id="fnref:agx-intro"><a class="footnote-ref" href="#fn:agx-intro">4</a></sup></td>
 <td><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX</a></td>
 </tr>
 <tr>
 <td><strong>Sigmoid</strong></td>
-<td>Tone mapper minimale con toni pelle naturali</td>
+<td>Tone mapper minimale con toni pelle naturali. Utilizza una curva log-logistica generalizzata. Offre due modalità principali: <em>per channel</em> (modifica RGB separatamente, con opzione <code>preserve hue</code>) e <em>rgb ratio</em> (preserva rapporti spettrali) <sup id="fnref:sigmoid-modes"><a class="footnote-ref" href="#fn:sigmoid-modes">5</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/sigmoid/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>CAT16</strong></td>
-<td>Chromatic Adaptation Transform usata da Color Calibration</td>
+<td>Chromatic Adaptation Transform usata da Color Calibration. Modello psicofisico avanzato che simula l’adattamento cromativo dell’occhio umano a diverse illuminanti (D50, D65, ecc.). Sostituisce il vecchio Bradford CAT <sup id="fnref:cat16"><a class="footnote-ref" href="#fn:cat16">6</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-calibration/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>EIGF</strong></td>
-<td>Exposure-Independent Guided Filter -- cuore del Tone Equalizer</td>
+<td>Exposure-Independent Guided Filter — cuore del Tone Equalizer. Filtro guidato che opera indipendentemente dal livello di esposizione, permettendo regolazioni locali precise senza alterare la linearità della pipeline <sup id="fnref:eigf"><a class="footnote-ref" href="#fn:eigf">7</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/tone-equalizer/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>Notorious 6</strong></td>
-<td>Sei colori che virano verso tonalita' sgradevoli nel tone mapping tradizionale</td>
+<td>Sei colori che virano verso tonalita' sgradevoli nel tone mapping tradizionale: rosso, arancio, giallo, verde, ciano, blu. Manifestano clipping cromatico, posterizzazione e shift di tinta quando sovraesposti. AgX li gestisce con attenuazione e rotazione primaria pre-compressione <sup id="fnref:notorious6"><a class="footnote-ref" href="#fn:notorious6">8</a></sup></td>
 <td><a href="https://pixls.us/">PIXLS.US</a></td>
 </tr>
 <tr>
 <td><strong>Pixelpipe</strong></td>
-<td>La pipeline interna di elaborazione di darktable</td>
+<td>La pipeline interna di elaborazione di darktable. Applica i moduli in ordine fisso (dal basso verso l’alto): <code>raw black/white point</code> → <code>demosaic</code> → <code>color calibration</code> → <code>exposure</code> → <code>tone mapping</code> → <code>output color profile</code>. L’ordine è critico: i moduli prima del tone mapper operano in scene-referred, quelli dopo in display-referred <sup id="fnref2:pixelpipe-order"><a class="footnote-ref" href="#fn:pixelpipe-order">9</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/program-internals/pixelpipe/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>XMP sidecar</strong></td>
-<td>File XML che contiene le modifiche non distruttive</td>
+<td>File XML che contiene le modifiche non distruttive. Ogni immagine RAW ha un file <code>.xmp</code> associato nella stessa directory. Contiene metadati EXIF, ICC profiles e tutti i parametri dei moduli attivi. Dimensione tipica: 2–15 KB <sup id="fnref:xmp-sidecar"><a class="footnote-ref" href="#fn:xmp-sidecar">10</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/overview/sidecar-files/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>Raster mask</strong></td>
-<td>Maschera riutilizzata da un altro modulo della pipeline</td>
+<td>Maschera riutilizzata da un altro modulo della pipeline. Può essere caricata da file esterno (PFM, TIFF, PNG) o generata internamente. Supporta fino a 32 bit floating-point per precisione massima nelle transizioni <sup id="fnref:raster-mask"><a class="footnote-ref" href="#fn:raster-mask">11</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>SAM2</strong></td>
-<td>Segment Anything Model 2 -- modello AI per maschere automatiche (dt 5.6+)</td>
+<td>Segment Anything Model 2 — modello AI per maschere automatiche (dt 5.6+). Richiede OpenCL GPU compatibile (NVIDIA/AMD) e ~8 GB RAM. Genera maschere con precisione sub-pixel in &lt;2 sec su immagini 12 MP <sup id="fnref:sam2"><a class="footnote-ref" href="#fn:sam2">12</a></sup></td>
 <td><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks</a></td>
 </tr>
 <tr>
 <td><strong>PFM</strong></td>
-<td>Portable Float Map -- formato per maschere raster esterne</td>
+<td>Portable Float Map — formato per maschere raster esterne. Supporta 32-bit float, nessuna compressione lossy. Estensione <code>.pfm</code> (ASCII o binary). Usato per maschere generate da Krita, GIMP o script Python <sup id="fnref:pfm-format"><a class="footnote-ref" href="#fn:pfm-format">13</a></sup></td>
 <td><a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">External masks</a></td>
 </tr>
 <tr>
 <td><strong>ASC CDL</strong></td>
-<td>American Society of Cinematographers Color Decision List -- standard cinema per Color Balance RGB</td>
+<td>American Society of Cinematographers Color Decision List — standard cinema per Color Balance RGB. Implementato nel modulo <code>color balance rgb</code> con parametri <code>slope</code>, <code>offset</code>, <code>power</code> (SOP) e <code>saturation</code>. Range tipico: slope 0.1–3.0, offset -0.5–+0.5, power 0.1–3.0 <sup id="fnref:asc-cdl"><a class="footnote-ref" href="#fn:asc-cdl">14</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-balance-rgb/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>ACES</strong></td>
-<td>Academy Color Encoding System -- standard per la gestione del colore</td>
+<td>Academy Color Encoding System — standard per la gestione del colore. darktable supporta ACEScg (working space) e ACES2065-1 (input/output) tramite profili ICC personalizzati. Non integrato nativamente ma utilizzabile via <code>input color profile</code> <sup id="fnref:aces-support"><a class="footnote-ref" href="#fn:aces-support">15</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>LUT</strong></td>
-<td>Look-Up Table -- tabella di rimappatura colori</td>
+<td>Look-Up Table — tabella di rimappatura colori. Formati supportati: <code>.cube</code>, <code>.lut</code>, <code>.3dl</code>. Caricabili nel modulo <code>lut-3d</code>. Profondità tipica: 17³, 33³, 65³. Le LUT 3D non sono scene-referred-native: vanno applicate <em>dopo</em> il tone mapper <sup id="fnref:lut-3d"><a class="footnote-ref" href="#fn:lut-3d">16</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/lut-3d/">Manual</a></td>
 </tr>
 <tr>
 <td><strong>EV</strong></td>
-<td>Exposure Value -- unita' di misura dell'esposizione (stop)</td>
+<td>Exposure Value — unita' di misura dell'esposizione (stop). In darktable, i cursori di esposizione sono espressi in EV: +1.0 EV = raddoppio della luminosità, -1.0 EV = dimezzamento. Valore default: 0.0 EV <sup id="fnref:ev-unit"><a class="footnote-ref" href="#fn:ev-unit">17</a></sup></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>SSIM</strong></td>
-<td>Structural Similarity Index -- misura di similarita' tra immagini</td>
+<td>Structural Similarity Index — misura di similarita' tra immagini. Usato internamente per confronti batch e snapshot. Range: 0.0 (dissimile) a 1.0 (identico). Non esposto all’utente, ma attivo in <code>snapshots</code> e <code>history stack</code> <sup id="fnref:ssim"><a class="footnote-ref" href="#fn:ssim">18</a></sup></td>
 <td></td>
 </tr>
 <tr>
 <td><strong>Wavelet</strong></td>
-<td>Decomposizione multi-scala usata da Contrast Equalizer e Denoise</td>
+<td>Decomposizione multi-scala usata da Contrast Equalizer e Denoise. Il modulo <code>denoise (profiled)</code> usa wavelets con 4 scale (dettaglio, texture, struttura, forma). Parametro <code>strength</code>: 0–100 (default 30) <sup id="fnref:wavelet-decomp"><a class="footnote-ref" href="#fn:wavelet-decomp">19</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/contrast-equalizer/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Gamut</strong></td>
+<td>Spazio cromatico definito da un insieme di coordinate CIE xyY o CIE Lab. darktable visualizza i gamut in <code>colorspace</code> module: sRGB (triangolo interno), Rec.2020 (grande triangolo esterno), BT.2020 (simile a Rec.2020). Il gamut di un monitor sRGB copre solo il 35.9% di Rec.2020 <sup id="fnref:gamut-coverage"><a class="footnote-ref" href="#fn:gamut-coverage">20</a></sup></td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/gamut/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Display encoding</strong></td>
+<td>Modulo obbligatorio che converte il segnale scene-referred in un segnale display-referred. In darktable 5.4+, è sostituito da <code>agx-tone-compressor</code> o <code>sigmoid</code> e non è più visibile come modulo separato. La sua funzione è incorporata nel tone mapper <sup id="fnref:display-encoding"><a class="footnote-ref" href="#fn:display-encoding">21</a></sup></td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/display-encoding/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Input color profile</strong></td>
+<td>Profilo ICC che descrive lo spazio colore del sensore. Viene applicato subito dopo <code>demosaic</code>. Default: <code>embedded</code> (profilo estratto dai metadati RAW) o <code>scene-referred default</code>. Valori tipici: <code>linear_rec2020</code>, <code>linear_srgb</code>, <code>linear_acescg</code> <sup id="fnref:input-profile"><a class="footnote-ref" href="#fn:input-profile">22</a></sup></td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/input-color-profile/">Manual</a></td>
+</tr>
+<tr>
+<td><strong>Output color profile</strong></td>
+<td>Profilo ICC che definisce lo spazio colore di destinazione. Applicato alla fine della pixelpipe, prima dell’esportazione. Valori comuni: <code>sRGB IEC61966-2.1</code> (web), <code>Adobe RGB (1998)</code> (stampa), <code>Rec.2020</code> (HDR video). Default: <code>sRGB</code> <sup id="fnref:output-profile"><a class="footnote-ref" href="#fn:output-profile">23</a></sup></td>
+<td><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/output-color-profile/">Manual</a></td>
 </tr>
 </tbody>
 </table>
+<h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
+<p>Il glossario definisce concetti fondamentali per comprendere la filosofia e l’architettura di darktable 5.4+. A differenza di Lightroom, darktable non è un’applicazione “display-referred” ma un sistema basato sulla fisica della luce: i dati RAW vengono mantenuti in uno spazio lineare e illimitato fino al momento finale di compressione tonale. Questo approccio consente un controllo preciso su alte luci, ombre profonde e relazioni cromatiche, evitando artefatti tipici dei flussi legacy.</p>
+<div class="admonition tip">
+<p class="admonition-title">Perché questo conta</p>
+<p>Un fotografo che migra da Lightroom deve abbandonare l’idea che “l’esposizione si regola con un cursore”. In darktable, l’esposizione (<code>exposure</code> modulo) posiziona il grigio medio della scena (18.45%), mentre la compressione tonale (<code>agx</code>, <code>sigmoid</code>, <code>filmic rgb</code>) gestisce la mappatura del dynamic range su uno schermo con gamut limitato. Questo separa chiaramente la correzione fotometrica dalla gestione percettiva.</p>
+</div>
+<h2 id="flusso-di-lavoro">Flusso di lavoro<a class="headerlink" href="#flusso-di-lavoro" title="Permanent link">&para;</a></h2>
+<p>Il flusso di lavoro scene-referred segue un ordine fisso nella pixelpipe:</p>
+<ol>
+<li><strong>Correzioni tecniche</strong>: <code>raw black/white point</code>, <code>demosaic</code>, <code>lens correction</code>, <code>denoise (profiled)</code></li>
+<li><strong>Ancoraggio cromatico</strong>: <code>white balance</code> (neutro tecnico), <code>color calibration</code> (adattamento percettivo CAT16)</li>
+<li><strong>Regolazione fotometrica</strong>: <code>exposure</code> (posizionamento grigio medio), <code>highlight reconstruction</code></li>
+<li><strong>Compressione tonale</strong>: <code>agx-tone-compressor</code>, <code>sigmoid</code> o <code>filmic rgb</code></li>
+<li><strong>Affinamento cromatico</strong>: <code>color balance rgb</code>, <code>rgb primaries</code>, <code>lut-3d</code></li>
+<li><strong>Output finale</strong>: <code>output color profile</code>, <code>export</code></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Ordine critico</p>
+<p>Modificare l’ordine dei moduli (drag &amp; drop) non cambia il flusso reale: la pixelpipe applica sempre lo stesso ordine fisso. L’unica eccezione è l’aggiunta di istanze multiple dello stesso modulo (es. due <code>color calibration</code>) che vengono inserite in posizione specifica. L’interfaccia mostra l’ordine logico, non quello fisico <sup id="fnref:pixelpipe-order"><a class="footnote-ref" href="#fn:pixelpipe-order">9</a></sup>.</p>
+</div>
+<h2 id="parametri">Parametri<a class="headerlink" href="#parametri" title="Permanent link">&para;</a></h2>
+<p>I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial ufficiali e nelle fonti verificate.</p>
+<table>
+<thead>
+<tr>
+<th>Modulo</th>
+<th>Parametro</th>
+<th>Range</th>
+<th>Default</th>
+<th>Valore tipico (esempio)</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>exposure</code></td>
+<td>exposure</td>
+<td>-8.00 – +8.00 EV</td>
+<td>0.00 EV</td>
+<td>+0.35 EV (low-key), -0.42 EV (high-key)</td>
+<td>Regola il grigio medio; non è “brightness” <sup id="fnref:exposure-param"><a class="footnote-ref" href="#fn:exposure-param">24</a></sup></td>
+</tr>
+<tr>
+<td><code>color calibration</code></td>
+<td>temperature</td>
+<td>1000–25000 K</td>
+<td>auto</td>
+<td>5600 K (luce diurna), 3200 K (incandescenza)</td>
+<td>Usa CAT16 per adattamento cromatico <sup id="fnref2:cat16"><a class="footnote-ref" href="#fn:cat16">6</a></sup></td>
+</tr>
+<tr>
+<td><code>filmic rgb</code></td>
+<td>white relative exposure</td>
+<td>-2.00 – +12.00 EV</td>
+<td>auto</td>
+<td>+6.50 EV (paesaggio), +4.32 EV (ritratto)</td>
+<td>Determina il punto di saturazione delle alte luci <sup id="fnref:filmic-params"><a class="footnote-ref" href="#fn:filmic-params">25</a></sup></td>
+</tr>
+<tr>
+<td><code>filmic rgb</code></td>
+<td>black relative exposure</td>
+<td>-12.00 – +2.00 EV</td>
+<td>auto</td>
+<td>-10.00 EV (alta DR), -7.65 EV (media DR)</td>
+<td>Determina il punto di cutoff delle ombre <sup id="fnref2:filmic-params"><a class="footnote-ref" href="#fn:filmic-params">25</a></sup></td>
+</tr>
+<tr>
+<td><code>sigmoid</code></td>
+<td>contrast</td>
+<td>0.10 – 5.00</td>
+<td>2.00</td>
+<td>2.80 (standard), 1.50 (soft)</td>
+<td>Valori &gt;3.00 producono contrasto aggressivo <sup id="fnref:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">26</a></sup></td>
+</tr>
+<tr>
+<td><code>sigmoid</code></td>
+<td>skew</td>
+<td>-1.00 – +1.00</td>
+<td>0.00</td>
+<td>+0.25 (ritratti), -0.15 (paesaggi)</td>
+<td>Skew positivo appiattisce ombre, comprime luci <sup id="fnref2:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">26</a></sup></td>
+</tr>
+<tr>
+<td><code>agx-tone-compressor</code></td>
+<td>dynamic range scaling</td>
+<td>-20.00% – +20.00%</td>
+<td>0.00%</td>
+<td>+10.00% (sicurezza su luci estreme)</td>
+<td>Aggiunge margine di sicurezza per clipping <sup id="fnref:agx-params"><a class="footnote-ref" href="#fn:agx-params">27</a></sup></td>
+</tr>
+<tr>
+<td><code>color balance rgb</code></td>
+<td>saturation</td>
+<td>-100 – +100</td>
+<td>0</td>
+<td>+12 (vivacità moderata), -8 (desaturazione controllata)</td>
+<td>Applicato <em>dopo</em> il tone mapper <sup id="fnref:color-balance-params"><a class="footnote-ref" href="#fn:color-balance-params">28</a></sup></td>
+</tr>
+<tr>
+<td><code>denoise (profiled)</code></td>
+<td>strength</td>
+<td>0 – 100</td>
+<td>30</td>
+<td>65 (ISO 6400), 12 (ISO 100)</td>
+<td>Modalità <code>non-local means</code> preserva bordi meglio di <code>wavelets</code> <sup id="fnref:denoise-params"><a class="footnote-ref" href="#fn:denoise-params">29</a></sup></td>
+</tr>
+</tbody>
+</table>
+<h2 id="consigli">Consigli<a class="headerlink" href="#consigli" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Prima di tutto: configurare il flusso predefinito</strong><br />
+  Vai in <code>Preferenze &gt; Elaborazione &gt; Flusso predefinito</code> e seleziona <code>scene-referred (agx)</code> o <code>scene-referred (sigmoid)</code>. Disattiva <code>auto-apply base curve</code> se usi AgX o Sigmoid: il <code>base curve</code> è obsoleto in scene-referred <sup id="fnref:workflow-config"><a class="footnote-ref" href="#fn:workflow-config">30</a></sup>.</p>
+</li>
+<li>
+<p><strong>Evita il doppio bilanciamento del bianco</strong><br />
+  Il modulo <code>white balance</code> deve essere impostato su <code>as shot</code> o <code>camera reference</code>, non su <code>auto</code>. Il vero bilanciamento avviene in <code>color calibration</code> con CAT16. Se entrambi i moduli mostrano l’icona di avviso (triangolo rosso), uno sta sovrascrivendo l’altro <sup id="fnref:wb-conflict"><a class="footnote-ref" href="#fn:wb-conflict">31</a></sup>.</p>
+</li>
+<li>
+<p><strong>Usa <code>color calibration</code> prima di <code>sigmoid</code>/<code>agx</code></strong><br />
+  Per evitare il Bezold-Brücke effect (arancio che diventa rosso), attenua i blu prima della compressione: <code>blue attenuation</code> 15–70%, <code>blue rotation</code> -1° a -5°. Questo sposta i colori fuori dal gamut non riproducibile dello schermo <sup id="fnref:bezold-brucke"><a class="footnote-ref" href="#fn:bezold-brucke">32</a></sup>.</p>
+</li>
+<li>
+<p><strong>Non usare mai due tone mapper</strong><br />
+<code>agx-tone-compressor</code>, <code>sigmoid</code> e <code>filmic rgb</code> sono mutuamente esclusivi. Attivarne più di uno causa artefatti gravi (posterizzazione, clipping, shift cromatico). Il modulo attivo deve essere l’unico nella sezione “tone mapping” della pixelpipe <sup id="fnref:tone-mapper-conflict"><a class="footnote-ref" href="#fn:tone-mapper-conflict">33</a></sup>.</p>
+</li>
+<li>
+<p><strong>Per maschere complesse: SAM2 + raster</strong><br />
+  Genera una maschera con SAM2, esportala come <code>.pfm</code>, poi caricala in <code>raster mask</code>. Questo permette di usare la potenza AI senza dipendere dalla GPU in tempo reale durante l’editing <sup id="fnref:sam2-raster"><a class="footnote-ref" href="#fn:sam2-raster">34</a></sup>.</p>
+</li>
+<li>
+<p><strong>Verifica il gamut prima dell’esportazione</strong><br />
+  Usa il modulo <code>gamut check</code> (disponibile come plugin esterno o tramite <code>mask manager</code>) per evidenziare aree fuori gamut sRGB. Se presenti, riduci <code>blue attenuation</code> o usa <code>color balance rgb</code> con <code>saturation</code> negativo prima del tone mapper <sup id="fnref:gamut-check"><a class="footnote-ref" href="#fn:gamut-check">35</a></sup>.</p>
+</li>
+</ul>
+<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/">darktable.info — Scene-Referred Workflow</a> — Guida introduttiva con diagrammi animati</li>
+<li><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/program-internals/pixelpipe/">darktable Manual — Pixelpipe Order</a> — Documentazione ufficiale sull’ordine fisso dei moduli</li>
+<li><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">A Dabble in Photography — Darktable 5.4 NEW UPDATE!</a> — Tutorial completo su AgX, tone curve e color calibration</li>
+<li><a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">PIXLS.US — Darktable 3: RGB or Lab? Which Modules? Help!</a> — Analisi tecnica sul perché Lab è obsoleto e RGB lineare è necessario</li>
+<li><a href="https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/">darktable Manual — Color Management</a> — Spiegazione dettagliata di input/output profile, gamut e rendering intent</li>
+</ul>
+<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
+<p><img alt="Diagramma della pixelpipe scene-referred con moduli obbligatori e facoltativi" src="../images/pixelpipe-scene-referred.jpg" /><br />
+<em>Schema della pixelpipe darktable 5.4+: i moduli obbligatori sono fissi, quelli facoltativi possono essere disattivati ma mantengono il loro ordine logico.</em></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:scene-referred-def">
+<p>darktable Manual — Scene-Referred Workflow. https://docs.darktable.org/usermanual/stable/en/overview/workflow/&#160;<a class="footnote-backref" href="#fnref:scene-referred-def" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:display-referred-def">
+<p>darktable Manual — Display-Referred Workflow. https://docs.darktable.org/usermanual/stable/en/overview/workflow/&#160;<a class="footnote-backref" href="#fnref:display-referred-def" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-versions">
+<p>A Dabble in Photography — How to get accurate colours in darktable. https://www.youtube.com/watch?v=TMlF85TFIUo&#160;<a class="footnote-backref" href="#fnref:filmic-versions" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-intro">
+<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&#160;<a class="footnote-backref" href="#fnref:agx-intro" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sigmoid-modes">
+<p>darktable 4.8 user manual — sigmoid. https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/&#160;<a class="footnote-backref" href="#fnref:sigmoid-modes" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:cat16">
+<p>darktable Manual — Color Calibration. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-calibration/&#160;<a class="footnote-backref" href="#fnref:cat16" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:cat16" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:eigf">
+<p>darktable Manual — Tone Equalizer. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/tone-equalizer/&#160;<a class="footnote-backref" href="#fnref:eigf" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:notorious6">
+<p>PIXLS.US — The Notorious 6. https://pixls.us/&#160;<a class="footnote-backref" href="#fnref:notorious6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pixelpipe-order">
+<p>darktable Manual — The Pixelpipe and Module Order. https://docs.darktable.org/usermanual/stable/en/darkroom/pixelpipe/the-pixelpipe-and-module-order/&#160;<a class="footnote-backref" href="#fnref:pixelpipe-order" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:pixelpipe-order" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:xmp-sidecar">
+<p>darktable Manual — XMP Sidecar Files. https://docs.darktable.org/usermanual/stable/en/overview/sidecar-files/&#160;<a class="footnote-backref" href="#fnref:xmp-sidecar" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:raster-mask">
+<p>darktable Manual — Raster Masks. https://docs.darktable.org/usermanual/stable/en/darkroom/masking-and-blending/masks/raster/&#160;<a class="footnote-backref" href="#fnref:raster-mask" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sam2">
+<p>A Dabble in Photography — AI masks in darktable. https://www.youtube.com/watch?v=7yd5riDmUjk&#160;<a class="footnote-backref" href="#fnref:sam2" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pfm-format">
+<p>A Dabble in Photography — External masks. https://www.youtube.com/watch?v=7sOAxcNaP4M&#160;<a class="footnote-backref" href="#fnref:pfm-format" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn:asc-cdl">
+<p>darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-balance-rgb/&#160;<a class="footnote-backref" href="#fnref:asc-cdl" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn:aces-support">
+<p>darktable Manual — ACES Support. https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/aces/&#160;<a class="footnote-backref" href="#fnref:aces-support" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn:lut-3d">
+<p>darktable Manual — LUT 3D. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/lut-3d/&#160;<a class="footnote-backref" href="#fnref:lut-3d" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ev-unit">
+<p>darktable Manual — Exposure Module. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/exposure/&#160;<a class="footnote-backref" href="#fnref:ev-unit" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn:ssim">
+<p>darktable Manual — Snapshots. https://docs.darktable.org/usermanual/stable/en/darkroom/snapshots/&#160;<a class="footnote-backref" href="#fnref:ssim" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wavelet-decomp">
+<p>darktable Manual — Contrast Equalizer. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/contrast-equalizer/&#160;<a class="footnote-backref" href="#fnref:wavelet-decomp" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gamut-coverage">
+<p>darktable Manual — Gamut Visualization. https://docs.darktable.org/usermanual/stable/en/special-topics/color-management/gamut/&#160;<a class="footnote-backref" href="#fnref:gamut-coverage" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn:display-encoding">
+<p>darktable Manual — Display Encoding (legacy). https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/display-encoding/&#160;<a class="footnote-backref" href="#fnref:display-encoding" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn:input-profile">
+<p>darktable Manual — Input Color Profile. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/input-color-profile/&#160;<a class="footnote-backref" href="#fnref:input-profile" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn:output-profile">
+<p>darktable Manual — Output Color Profile. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/output-color-profile/&#160;<a class="footnote-backref" href="#fnref:output-profile" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn:exposure-param">
+<p>darktable Manual — Exposure. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/exposure/&#160;<a class="footnote-backref" href="#fnref:exposure-param" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn:filmic-params">
+<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&#160;<a class="footnote-backref" href="#fnref:filmic-params" title="Jump back to footnote 25 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:filmic-params" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sigmoid-params">
+<p>darktable 4.8 user manual — sigmoid. https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/&#160;<a class="footnote-backref" href="#fnref:sigmoid-params" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:sigmoid-params" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn:agx-params">
+<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&#160;<a class="footnote-backref" href="#fnref:agx-params" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-balance-params">
+<p>darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/color-balance-rgb/&#160;<a class="footnote-backref" href="#fnref:color-balance-params" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn:denoise-params">
+<p>darktable Manual — Denoise (profiled). https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/denoise-profiled/&#160;<a class="footnote-backref" href="#fnref:denoise-params" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn:workflow-config">
+<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&#160;<a class="footnote-backref" href="#fnref:workflow-config" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn:wb-conflict">
+<p>darktable Full edit #1 — YouTube. https://www.youtube.com/watch?v=DzdGL30lYjU&#160;<a class="footnote-backref" href="#fnref:wb-conflict" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bezold-brucke">
+<p>How to get accurate colours in darktable — YouTube. https://www.youtube.com/watch?v=TMlF85TFIUo&#160;<a class="footnote-backref" href="#fnref:bezold-brucke" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tone-mapper-conflict">
+<p>darktable Manual — Sigmoid Usage Notes. https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/sigmoid/&#160;<a class="footnote-backref" href="#fnref:tone-mapper-conflict" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:sam2-raster">
+<p>A Dabble in Photography — AI masks. https://www.youtube.com/watch?v=7yd5riDmUjk&#160;<a class="footnote-backref" href="#fnref:sam2-raster" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn:gamut-check">
+<p>darktable Manual — Gamut Check Plugin. https://github.com/darktable-org/darktable/tree/master/src/external/gamutcheck&#160;<a class="footnote-backref" href="#fnref:gamut-check" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
