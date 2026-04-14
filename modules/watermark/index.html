@@ -3005,7 +3005,7 @@
 
 <h1 id="watermark">Watermark<a class="headerlink" href="#watermark" title="Permanent link">&para;</a></h1>
 <p>Il modulo <strong>watermark</strong> permette di sovrapporre un’immagine vettoriale (SVG) o bitmap (PNG) personalizzata all’immagine elaborata, con controllo preciso su posizionamento, scala, rotazione e opacità. È particolarmente utile per la protezione del copyright, l’aggiunta di firme, loghi o informazioni contestuali direttamente nell’output finale<sup id="fnref:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>. A differenza dei moduli di effetto (es. <code>vignetting</code> o <code>framing</code>), <code>watermark</code> opera in uno spazio indipendente dalla pipeline tonale: il segno viene applicato <em>dopo</em> tutti i moduli di correzione e mappatura, garantendo che rimanga visibile anche su sfondi complessi o fortemente elaborati<sup id="fnref:dt48-module-groups"><a class="footnote-ref" href="#fn:dt48-module-groups">2</a></sup>.</p>
-<p><img alt="Interfaccia del modulo watermark in darktable 5.4" src="../images/watermark-interface.jpg" /></p>
+<p><img alt="Interfaccia del modulo watermark in darktable 5.4" src="../../images/watermark-interface.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Watermark ≠ filigrana in stile Lightroom</p>
 <p>In Lightroom, le filigrane sono gestite esclusivamente in fase di esportazione. In darktable, <code>watermark</code> è un modulo di sviluppo attivo nella pipeline: il segno è parte integrante dello <em>history stack</em>, può essere mascherato, combinato con altri effetti (es. <code>soften</code>) e incluso in snapshot o preset<sup id="fnref3:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>.</p>
@@ -3039,7 +3039,7 @@
 </code></pre></div></li>
 <li>Copia il file nella cartella <code>~/.config/darktable/watermarks/</code><sup id="fnref3:weekly-edit-13"><a class="footnote-ref" href="#fn:weekly-edit-13">3</a></sup>.</li>
 </ul>
-<p><img alt="Cartella watermarks in sistema Linux" src="../images/watermarks-folder.jpg" /></p>
+<p><img alt="Cartella watermarks in sistema Linux" src="../../images/watermarks-folder.jpg" /></p>
 <h3 id="passo-2-caricamento-e-configurazione-base">Passo 2: Caricamento e configurazione base<a class="headerlink" href="#passo-2-caricamento-e-configurazione-base" title="Permanent link">&para;</a></h3>
 <p>Dopo aver copiato il file:</p>
 <ul>
@@ -3172,7 +3172,7 @@ Questo garantisce che il logo occupi sempre lo stesso % della larghezza, indipen
 </tr>
 </tbody>
 </table>
-<p><img alt="Pannello parametri watermark con valori tipici" src="../images/watermark-parameters-panel.jpg" /></p>
+<p><img alt="Pannello parametri watermark con valori tipici" src="../../images/watermark-parameters-panel.jpg" /></p>
 <h2 id="variabili-dinamiche-negli-svg">Variabili dinamiche negli SVG<a class="headerlink" href="#variabili-dinamiche-negli-svg" title="Permanent link">&para;</a></h2>
 <p>Gli SVG possono includere stringhe sostituibili che vengono automaticamente popolate dai metadati dell’immagine. Sono supportate le seguenti variabili<sup id="fnref2:dt48-watermark"><a class="footnote-ref" href="#fn:dt48-watermark">1</a></sup>:</p>
 <table>

@@ -3005,7 +3005,7 @@
 
 <h1 id="ai-masks-sam2-darktable">AI masks SAM2 darktable<a class="headerlink" href="#ai-masks-sam2-darktable" title="Permanent link">&para;</a></h1>
 <p>Il modulo <strong>AI masks SAM2</strong> è il sistema nativo di mascheramento basato su intelligenza artificiale introdotto in darktable 5.6, integrato direttamente nella pipeline scene-referred senza necessità di plugin esterni<sup id="fnref:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>. Sostituisce progressivamente i workflow basati su SAM2/SAM3 esterni e maschere raster tradizionali, offrendo maschere vettoriali ad alta precisione generate in tempo reale direttamente dall’immagine RAW<sup id="fnref2:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup><sup id="fnref:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup>. A differenza dei modelli precedenti, SAM2 opera in modalità <em>object-aware</em>, permettendo la segmentazione semantica di soggetti complessi (persone, animali, oggetti) con un solo clic o tramite prompt testuale<sup id="fnref3:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
-<p><img alt="Interfaccia darktable 5.6 con modulo Mask Manager attivo e indicatore &quot;object mask: analyzing image...&quot;" src="../images/sam2-analyzing.jpg" /></p>
+<p><img alt="Interfaccia darktable 5.6 con modulo Mask Manager attivo e indicatore &quot;object mask: analyzing image...&quot;" src="../../images/sam2-analyzing.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">SAM2 richiede l'abilitazione esplicita</p>
 <p>Il modulo non è attivo di default. Deve essere abilitato nelle <strong>Preferenze › Elaborazione › AI</strong> e richiede il download manuale (o automatico) del modello <code>mask sam2.1 hiera small</code> o <code>mask sam2.1 hiera base plus</code><sup id="fnref17:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>. Senza questo passaggio, il pulsante «AI mask» nel modulo <em>Mask Manager</em> rimane disabilitato<sup id="fnref18:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>.</p>
@@ -3045,7 +3045,7 @@
 - Scarica e abilita almeno un modello SAM2:
   - <code>mask sam2.1 hiera small</code>: ~180 MB, veloce, sufficiente per la maggior parte dei casi (default consigliato)<sup id="fnref7:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
   - <code>mask sam2.1 hiera base plus</code>: ~420 MB, maggiore accuratezza su dettagli fini (es. peli, tessuti)<sup id="fnref8:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></p>
-<p><img alt="Preferenze &gt; Sezione AI con modello SAM2 scaricato ed abilitato" src="../images/sam2-preferences.jpg" /></p>
+<p><img alt="Preferenze &gt; Sezione AI con modello SAM2 scaricato ed abilitato" src="../../images/sam2-preferences.jpg" /></p>
 <h3 id="passo-2-generazione-della-maschera">Passo 2: Generazione della maschera<a class="headerlink" href="#passo-2-generazione-della-maschera" title="Permanent link">&para;</a></h3>
 <p>Nella <em>Camera Oscura</em>, apri il modulo <strong>Mask Manager</strong>, quindi:
 - Clicca su <strong>+</strong> &gt; <strong>AI mask</strong> (disponibile solo se il modello è abilitato)<sup id="fnref9:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup>
@@ -3109,7 +3109,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Pannello Mask Manager con parametri SAM2 attivi" src="../images/sam2-parameters.jpg" /></p>
+<p><img alt="Pannello Mask Manager con parametri SAM2 attivi" src="../../images/sam2-parameters.jpg" /></p>
 <h2 id="integrazione-con-gpu-e-prestazioni">Integrazione con GPU e prestazioni<a class="headerlink" href="#integrazione-con-gpu-e-prestazioni" title="Permanent link">&para;</a></h2>
 <p>SAM2 utilizza ONNX Runtime per l’inferenza AI. darktable 5.6 introduce un sistema semplificato per l’accelerazione GPU<sup id="fnref4:pixls-gpu"><a class="footnote-ref" href="#fn:pixls-gpu">2</a></sup>:</p>
 <ul>
@@ -3166,7 +3166,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Confronto visivo: maschera SAM2 nativa (bordo netto, vettoriale) vs. SAM3 esterno (bordo frastagliato, raster)" src="../images/sam2-vs-sam3.jpg" /></p>
+<p><img alt="Confronto visivo: maschera SAM2 nativa (bordo netto, vettoriale) vs. SAM3 esterno (bordo frastagliato, raster)" src="../../images/sam2-vs-sam3.jpg" /></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">Video tutorial ufficiale: AI masks in darktable</a> — Guida pratica passo-passo con dimostrazioni live<sup id="fnref24:youtube-sam2"><a class="footnote-ref" href="#fn:youtube-sam2">1</a></sup></li>

@@ -3061,7 +3061,7 @@
 
 <h1 id="composite-fusioni-avanzate-e-effetti-creativi">Composite: Fusioni avanzate e effetti creativi<a class="headerlink" href="#composite-fusioni-avanzate-e-effetti-creativi" title="Permanent link">&para;</a></h1>
 <p>Il modulo <strong>composite</strong> è uno strumento avanzato per la fusione di livelli in darktable, introdotto ufficialmente come funzionalità stabile a partire dalla versione 5.0.0<sup id="fnref:dt50-update"><a class="footnote-ref" href="#fn:dt50-update">1</a></sup>. Non è un semplice “livello di sfocatura”, ma un sistema completo per combinare due versioni della stessa immagine (originale + modificata) con modalità di fusione, maschere e controlli di opacità finemente granulari<sup id="fnref:orton-tutorial"><a class="footnote-ref" href="#fn:orton-tutorial">2</a></sup>. È il cuore tecnico per replicare effetti classici come <strong>Orton</strong>, <strong>Dragan</strong>, <strong>glow</strong> o <strong>double exposure</strong>, senza uscire dall’ecosistema scene-referred di darktable<sup id="fnref:dabble-orton"><a class="footnote-ref" href="#fn:dabble-orton">3</a></sup><sup id="fnref:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup>.</p>
-<p><img alt="Interfaccia del modulo composite con impostazioni per effetto Orton" src="../images/composite-intro.jpg" /></p>
+<p><img alt="Interfaccia del modulo composite con impostazioni per effetto Orton" src="../../images/composite-intro.jpg" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Composite ≠ Soften</p>
 <p>Il modulo <strong>soften</strong> offre un'alternativa rapida per effetti glow, ma opera su un singolo livello con sfocatura interna. <strong>Composite</strong>, invece, richiede esplicitamente una <em>duplicata</em> dell’immagine ed è progettato per fusioni precise tra due stati distinti della pipeline — ideale per workflow non distruttivi e per effetti che richiedono controllo fine sulla luminanza e sul colore<sup id="fnref2:orton-tutorial"><a class="footnote-ref" href="#fn:orton-tutorial">2</a></sup>.</p>
@@ -3101,7 +3101,7 @@
 <li><strong>Monochrome</strong> (se richiesto per effetto Orton)  </li>
 <li>Eventuale <strong>invert</strong> (per effetti Dragan)  </li>
 </ul>
-<p><img alt="Duplicato configurato con Blur gaussian e Monochrome" src="../images/composite-duplicate-setup.jpg" /></p>
+<p><img alt="Duplicato configurato con Blur gaussian e Monochrome" src="../../images/composite-duplicate-setup.jpg" /></p>
 <h3 id="passo-2-attivazione-e-scelta-della-modalita-di-fusione">Passo 2: Attivazione e scelta della modalità di fusione<a class="headerlink" href="#passo-2-attivazione-e-scelta-della-modalita-di-fusione" title="Permanent link">&para;</a></h3>
 <p>Nel modulo <strong>composite</strong>, abilita il pulsante <code>enable</code> e imposta:</p>
 <table>
@@ -3151,7 +3151,7 @@ Non confondere con <code>overlay</code>, che altera il contrasto in modo non lin
 <li>Imposta <code>Feathering radius</code> a 20–50 px per transizioni naturali  </li>
 <li>Usa <code>Invert mask</code> per applicare l’effetto <em>solo fuori</em> dall’area selezionata<sup id="fnref4:dabble-dragon"><a class="footnote-ref" href="#fn:dabble-dragon">4</a></sup></li>
 </ul>
-<p><img alt="Maschera gradiente applicata a Composite per isolare lo sfondo" src="../images/composite-blend-mask.jpg" /></p>
+<p><img alt="Maschera gradiente applicata a Composite per isolare lo sfondo" src="../../images/composite-blend-mask.jpg" /></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

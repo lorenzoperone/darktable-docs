@@ -1,0 +1,10 @@
+# Immagini non recuperabili dai video tutorial
+# Generato: 2026-04-14
+#
+# Questi file sono .png (icone, cursori) e non possono essere estratti
+# dai video tutorial che producono solo screenshot .jpg.
+# Da recuperare manualmente in futuro (screenshot diretti o creazione).
+
+boolean-icon.png
+tone-equalizer-cursor.png
+tone-equalizer-overview.png

@@ -3027,7 +3027,7 @@
 
 <h1 id="highlight-reconstruction">Highlight Reconstruction<a class="headerlink" href="#highlight-reconstruction" title="Permanent link">&para;</a></h1>
 <p>Il modulo <strong>highlight reconstruction</strong> è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone <em>clippate</em> — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, <strong>highlight reconstruction agisce molto precocemente</strong>, prima di <code>input color profile</code>, <code>color calibration</code> e <code>white balance</code>, su un segnale ancora grezzo e privo di significato cromatico definito <sup id="fnref:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
-<p><img alt="Introduzione al modulo highlight reconstruction" src="../images/highlight-reconstruction-intro.jpg" /></p>
+<p><img alt="Introduzione al modulo highlight reconstruction" src="../../images/highlight-reconstruction-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Posizione critica nella pipeline</p>
 <p>Il modulo si trova subito dopo <code>demosaic</code> e prima di <code>input color profile</code>. Questa posizione è fondamentale: poiché non esiste ancora un concetto di "bianco" o "colore" ben definito, i metodi di ricostruzione devono basarsi esclusivamente su gradienti spaziali e rapporti tra pixel adiacenti — non su valori cromatici assoluti <sup id="fnref3:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</p>
@@ -3100,7 +3100,7 @@
 <li>Se la maschera non corrisponde all’avviso RAW overexposed (visualizzato premendo <code>O</code>), aggiusta il threshold <sup id="fnref5:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 <li>Valori tipici: <code>0.995</code>–<code>0.999</code> (per RAW lineari), ma può variare da <code>0.97</code> (sensori rumorosi) a <code>0.9999</code> (sensori ad alta precisione) <sup id="fnref6:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>
 </ul>
-<p><img alt="Maschera di clipping attivata" src="../images/highlight-reconstruction-clipping-mask.jpg" /></p>
+<p><img alt="Maschera di clipping attivata" src="../../images/highlight-reconstruction-clipping-mask.jpg" /></p>
 <h3 id="passo-2-scelta-del-metodo">Passo 2: Scelta del metodo<a class="headerlink" href="#passo-2-scelta-del-metodo" title="Permanent link">&para;</a></h3>
 <p>Per la maggior parte degli utenti, <strong>inpaint opposed</strong> è sufficiente. Passa a metodi avanzati solo se necessario:</p>
 <ul>
@@ -3206,7 +3206,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Pannello parametri highlight reconstruction" src="../images/highlight-reconstruction-parameters-panel.jpg" /></p>
+<p><img alt="Pannello parametri highlight reconstruction" src="../../images/highlight-reconstruction-parameters-panel.jpg" /></p>
 <h2 id="parametri-avanzati-guided-laplacians">Parametri avanzati (guided laplacians)<a class="headerlink" href="#parametri-avanzati-guided-laplacians" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3261,7 +3261,7 @@
 <p>In pratica:
 - Usa <code>highlight reconstruction</code> per la <strong>ricostruzione fine e locale</strong>, specialmente su riflessi e dettagli.
 - Usa <code>filmic rgb → Reconstruct</code> per la <strong>gestione globale e robusta</strong>, soprattutto su grandi aree uniformi (cieli, pareti).</p>
-<p><img alt="Confronto: highlight reconstruction vs filmic rgb reconstruct" src="../images/highlight-reconstruction-vs-filmic.jpg" /></p>
+<p><img alt="Confronto: highlight reconstruction vs filmic rgb reconstruct" src="../../images/highlight-reconstruction-vs-filmic.jpg" /></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Non attivare mai <code>highlight reconstruction</code> prima di <code>exposure</code> e <code>white balance</code></strong>: senza un’esposizione corretta, non c’è nulla da ricostruire; senza bilanciamento, i rapporti RGB sono instabili e la ricostruzione sarà imprecisa <sup id="fnref11:dt48-highlight"><a class="footnote-ref" href="#fn:dt48-highlight">1</a></sup>.</li>

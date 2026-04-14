@@ -3027,7 +3027,7 @@
 
 <h1 id="modulo-retouch">Modulo Retouch<a class="headerlink" href="#modulo-retouch" title="Permanent link">&para;</a></h1>
 <p>Il modulo <strong>retouch</strong> è lo strumento centrale per la rimozione selettiva di elementi indesiderati (macchie, fili, sensor dust, riflessi) e per il ritocco avanzato della pelle, del cielo o di altre aree critiche. A partire da darktable 4.8, sostituisce definitivamente il modulo deprecato <em>spot removal</em>, integrando clonazione, guarigione (<em>heal</em>), riempimento (<em>fill</em>) e sfocatura (<em>blur</em>) in un’unica interfaccia modulare, con supporto nativo alla <strong>decomposizione wavelet</strong> per un controllo multilivello dei dettagli<sup id="fnref:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
-<p><img alt="Introduzione al modulo retouch" src="../images/retouch-intro.jpg" /></p>
+<p><img alt="Introduzione al modulo retouch" src="../../images/retouch-intro.jpg" /></p>
 <div class="admonition info">
 <p class="admonition-title">Retouch è il modulo di ritocco avanzato predefinito</p>
 <p>Dal 2019, <em>retouch</em> è il modulo ufficiale per tutte le operazioni di rimozione e correzione locale. Il vecchio <em>spot removal</em> è stato rimosso dalla pipeline in darktable 4.6+ e non è più disponibile nei nuovi profili di sviluppo<sup id="fnref3:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.</p>
@@ -3058,7 +3058,7 @@
 <li><strong>Valore tipico</strong>: <code>5</code> livelli per immagini full-frame (4000×6000 px); <code>4</code> per immagini APS-C (3000×4500 px)<sup id="fnref8:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>  </li>
 <li><strong>Default</strong>: <code>0</code> (nessuna decomposizione attiva) — <strong>non usare mai questo valore per ritocchi seri</strong><sup id="fnref7:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></li>
 </ul>
-<p><img alt="Barra wavelet nel modulo retouch" src="../images/retouch-wavelet-bar.jpg" /></p>
+<p><img alt="Barra wavelet nel modulo retouch" src="../../images/retouch-wavelet-bar.jpg" /></p>
 <h3 id="passo-2-selezione-della-scala">Passo 2: Selezione della scala<a class="headerlink" href="#passo-2-selezione-della-scala" title="Permanent link">&para;</a></h3>
 <p>Dopo aver impostato i livelli, seleziona quello da modificare:</p>
 <ul>
@@ -3159,7 +3159,7 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Pannello parametri retouch" src="../images/retouch-parameters-panel.jpg" /></p>
+<p><img alt="Pannello parametri retouch" src="../../images/retouch-parameters-panel.jpg" /></p>
 <h2 id="gestione-sourcetarget">Gestione source/target<a class="headerlink" href="#gestione-sourcetarget" title="Permanent link">&para;</a></h2>
 <p>Per garantire risultati naturali, la posizione di <em>source</em> e <em>target</em> deve essere controllata con precisione:</p>
 <ul>
@@ -3180,7 +3180,7 @@
 <li><strong>Usa <em>merge from = 2</em></strong> per propagare il <em>blur</em> anche su livello 1 (massima finezza)  </li>
 <li><strong>Controlla con <em>preview single scale</em></strong>: livello 4 mostra la correzione tonale, livello 2 conferma che la texture è preservata<sup id="fnref11:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup></li>
 </ol>
-<p><img alt="Esempio di ritocco pelle con wavelet" src="../images/retouch-skin-wavelet.jpg" /></p>
+<p><img alt="Esempio di ritocco pelle con wavelet" src="../../images/retouch-skin-wavelet.jpg" /></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Per il cielo</strong>: usa <em>clone</em> su livello 5–6 con <em>source</em> da una zona priva di nubi, quindi applica <em>blur</em> leggero (<code>radius = 1.0</code>) su livello 3 per fondere i bordi<sup id="fnref2:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.  </li>
