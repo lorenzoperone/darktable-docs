@@ -3180,10 +3180,10 @@
 <h2 id="uso-nel-flusso-scene-referred">Uso nel flusso scene-referred<a class="headerlink" href="#uso-nel-flusso-scene-referred" title="Permanent link">&para;</a></h2>
 <p>L’obiettivo primario non è «centrare l’istogramma», ma <strong>posizionare il grigio medio della scena (18.45% reflectance) a un livello di luminosità coerente con la percezione umana</strong><sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. Questo valore corrisponde approssimativamente a L* = 50.0 nel colore CIE Lab, ed è il riferimento standard per la misurazione espositiva.</p>
 <ol>
-<li>Attivare la valutazione colore (<strong>++cmd+b++</strong>) per visualizzare il bordo bianco di riferimento e verificare la linearità dei toni medi<sup id="fnref2:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup>.</li>
+<li>Attivare la valutazione colore (<strong><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-b">B</kbd></span></strong>) per visualizzare il bordo bianco di riferimento e verificare la linearità dei toni medi<sup id="fnref2:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup>.</li>
 <li>Selezionare un’area neutra ben illuminata (es. parete chiara, superficie opaca) e usare lo strumento di misurazione (<code>color picker</code> accanto allo slider <code>exposure</code>) per ottenere una lettura L*.</li>
 <li>Regolare <code>exposure</code> finché il valore L* letto nell’area target si avvicina a <strong>50.0%</strong>, ignorando ombre profonde e alte luci (gestite successivamente da <code>filmic rgb</code>, <code>tone curve</code> o <code>highlight reconstruction</code>)<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</li>
-<li>Verificare che nessun canale RGB sia clippato: abilitare <code>clipping indicators</code> (<strong>++ctrl+o++</strong>) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).</li>
+<li>Verificare che nessun canale RGB sia clippato: abilitare <code>clipping indicators</code> (<strong><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span></strong>) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Evitare il black level correction per i neri</p>
@@ -3216,8 +3216,8 @@
 - <strong>Selezione basata sulla frequenza</strong>: usare <code>frequency</code> &gt; 0.5 per isolare i dettagli fini (es. piume, peli) e applicare un leggero chiarimento locale senza alterare i toni generali<sup id="fnref:P1W1tmk8HLk"><a class="footnote-ref" href="#fn:P1W1tmk8HLk">12</a></sup>.</p>
 <h3 id="3-scorciatoie-da-tastiera">3. Scorciatoie da tastiera<a class="headerlink" href="#3-scorciatoie-da-tastiera" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>++e++ + rotella mouse</strong>: regolazione rapida di <code>exposure</code><sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">3</a></sup></li>
-<li><strong>++shift+e++</strong>: attiva/disattiva il modulo <code>exposure</code></li>
+<li><strong><span class="keys"><kbd class="key-e">E</kbd></span> + rotella mouse</strong>: regolazione rapida di <code>exposure</code><sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">3</a></sup></li>
+<li><strong><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-e">E</kbd></span></strong>: attiva/disattiva il modulo <code>exposure</code></li>
 <li><strong>++ctrl+click++ sullo slider <code>exposure</code></strong>: inserimento manuale del valore (fino a ±18 EV)<sup id="fnref7:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></li>
 <li><strong>++alt+click++ sullo slider <code>black level correction</code></strong>: reset al valore predefinito (0.0)</li>
 </ul>

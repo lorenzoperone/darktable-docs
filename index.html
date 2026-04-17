@@ -516,6 +516,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#la-pipeline-di-elaborazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La pipeline di elaborazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sorgenti-di-questa-guida" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2852,6 +2863,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#la-pipeline-di-elaborazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La pipeline di elaborazione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sorgenti-di-questa-guida" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2979,8 +3001,39 @@ con un ordine logico, esempi concreti e le ragioni dietro ogni scelta.</p>
 <p>La post-produzione moderna in darktable si basa sul paradigma <strong>scene-referred</strong>:
 i dati del sensore vengono mantenuti su scala lineare per tutta la pipeline,
 e la compressione tonale avviene solo a fine processo (Filmic RGB, AgX, Sigmoid).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RAW --&gt; Bianco/Nero RAW --&gt; White Balance --&gt; Exposure --&gt; [moduli lineari]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    --&gt; Filmic RGB / AgX (tone mapping) --&gt; [moduli display] --&gt; Export
+<h2 id="la-pipeline-di-elaborazione">La pipeline di elaborazione<a class="headerlink" href="#la-pipeline-di-elaborazione" title="Permanent link">&para;</a></h2>
+<p>In darktable i dati attraversano una sequenza fissa di moduli chiamata <strong>pixelpipe</strong>.
+L'ordine e' il seguente:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────── FASE LINEARE (scene-referred) ──────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                                                                                │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  Punto nero / punto bianco RAW                                                 │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│    → Bilanciamento del bianco  (camera reference)                              │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│    → Demosaicizzazione                                                         │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│    → Riduzione rumore (profilato)                                              │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│    → Correzione obiettivo                                                      │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│    → Esposizione  (ancoraggio del grigio medio)                                │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│    → Ricostruzione alte luci                                                   │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│    → Calibrazione colore  (CAT16)                                              │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│                                                                                │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└────────────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                                    ↓
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>┌─────────────── COMPRESSIONE TONALE (tone mapping) ─────────────────────────────┐
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│                                                                                │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│    AgX  ·  Filmic RGB  ·  Sigmoideo    ← scegline UNO solo                     │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│                                                                                │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└────────────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                                    ↓
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>┌─────────────── FASE DISPLAY (display-referred) ────────────────────────────────┐
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│                                                                                │
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│    → Bilanciamento colore  (vibrazione, 4 vie, mappatura gamut)                │
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│    → Equalizzatore colore  (tonalita&#39; selettive)                               │
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│    → Equalizzatore toni  (scultura della luce per zone)                        │
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│    → Contrasto locale  /  Diffondi e nitidezza                                 │
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│    → Grana, Vignettatura, Filigrana                                            │
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│                                                                                │
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>└────────────────────────────────────────────────────────────────────────────────┘
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                                    ↓
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                            Esporta  (JPEG/TIFF)
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Prima di tutto</p>
@@ -2996,7 +3049,12 @@ Imposta il tema su <code>darktable-elegant-grey</code> per valutare correttament
 <h3 id="community-darktablefr">Community darktable.fr<a class="headerlink" href="#community-darktablefr" title="Permanent link">&para;</a></h3>
 <p><strong>746 pagine</strong> dalla community francese <a href="https://darktable.fr/">darktable.fr</a>, inclusi tutorial, guide per versione e FAQ. Copie locali in <code>processed/darktable-fr/</code>.</p>
 <h3 id="video-tutorial-manualize">Video tutorial (manualize)<a class="headerlink" href="#video-tutorial-manualize" title="Permanent link">&para;</a></h3>
-<p><strong>72 video analizzati</strong> dal canale <em>A Dabble in Photography</em> e altri tramite il progetto <a href="https://github.com/lorenzoperone/manualize">manualize</a>: trascrizioni word-level, <strong>1.088 screenshot</strong> annotati con AI (Qwen3-VL-Plus), capitoli strutturati e consigli operativi. Citati come <code>[^firststeps]</code>, <code>[^pipeline]</code>, <code>[^agx-guide]</code>, ecc.</p>
+<p><strong>72 video analizzati</strong> tramite il progetto <a href="https://github.com/lorenzoperone/manualize">manualize</a>: trascrizioni word-level, <strong>1.088 screenshot</strong> annotati con AI (Qwen3-VL-Plus), capitoli strutturati e consigli operativi. I canali video inclusi sono:</p>
+<ul>
+<li><strong>A Dabble in Photography</strong> (inglese, ~60 video) — la fonte principale: guide su AgX, Filmic RGB, Sigmoid, Color Balance RGB, maschere AI (SAM2), effetti Orton/Dragan, editing B&amp;W, portrait, landscape, lowlight</li>
+<li><strong>Fotografare per Stupire</strong> (italiano, 10 video) — tutorial in italiano: interfaccia e catalogazione, bilanciamento del bianco, controllo colore, maschere parametriche, rimozione imperfezioni, riduzione rumore, equalizzatore toni, workflow ritratto</li>
+</ul>
+<p>Citati nelle pagine come <code>[^firststeps]</code>, <code>[^pipeline]</code>, <code>[^agx-guide]</code>, ecc.</p>
 <hr />
 <p><em>Basato su darktable 5.4+ -- Aggiornato: aprile 2026</em></p>
 
