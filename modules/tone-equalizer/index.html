@@ -3097,7 +3097,7 @@
 <p>Il Tone Equalizer opera nel dominio lineare utilizzando una <strong>maschera guidata</strong> che divide l'immagine in zone di luminanza. Il suo cuore è il filtro <strong>EIGF</strong> (Exposure-Independent Guided Filter) che sfuoca la maschera preservando i bordi, evitando aloni<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">&para;</a></h2>
 <p>Il Tone Equalizer è un modulo <em>dodge and burn</em> avanzato progettato per operare in spazio lineare RGB, sostituendo efficacemente combinazioni di moduli come <em>shadows and highlights</em>, <em>tone curve</em>, <em>base curve</em> e <em>zone system</em> (deprecato)<sup id="fnref:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup>. Funziona in sinergia con <em>filmic rgb</em>: insieme costituiscono il nucleo della pipeline <em>scene-referred</em>, permettendo una compressione dinamica precisa senza appiattire il contrasto locale<sup id="fnref2:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup>. A differenza dei classici equalizzatori tonali, non modifica direttamente i pixel, ma agisce tramite una <strong>maschera intermedia</strong> — una versione sfocata e quantizzata dell’immagine stessa — che funge da “mappa di istruzioni” per dove applicare le correzioni di esposizione<sup id="fnref3:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup>.</p>
-<p><img alt="Diagramma concettuale del Tone Equalizer: input → guided mask generation → mask post-processing → exposure lookup → output" src="../images/tone-equalizer-overview.png" /></p>
+<p>Il flusso interno è: <em>input → guided mask generation → mask post-processing → exposure lookup → output</em>.</p>
 <p>Il modulo è strutturato in tre schede complementari:
 - <strong>Simple</strong>: interfaccia a 9 slider (da –8 EV a 0 EV), ideale per regolazioni rapide e intuitive.
 - <strong>Advanced</strong>: curva tonale interattiva con 9 punti di controllo, sovrapposta all’istogramma della maschera, per precisione fine.
@@ -3133,7 +3133,6 @@
 - <strong>Cerchio esterno</strong>: intensità della maschera in EV (es. <code>–3.2 EV</code>)
 - <strong>Cerchio interno</strong>: intensità modificata dopo applicazione della curva (più chiaro = schiarito, più scuro = scurito)
 - <strong>Arco sinistro</strong>: entità della modifica (lunghezza proporzionale a ±EV applicati)<sup id="fnref5:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup></p>
-<p><img alt="Interfaccia interattiva del Tone Equalizer: indicatore visivo con croce, cerchi e arco di compensazione" src="../images/tone-equalizer-cursor.png" /></p>
 <h3 id="3-affinamento-manuale-e-combinazione-con-altri-moduli">3. Affinamento manuale e combinazione con altri moduli<a class="headerlink" href="#3-affinamento-manuale-e-combinazione-con-altri-moduli" title="Permanent link">&para;</a></h3>
 <p>Dopo aver impostato le basi con l’interazione mouse:
 - Passa alla scheda <strong>«Simple»</strong> per regolazioni globali rapide (es. sollevare tutti i mezzi toni di +0.3 EV)
