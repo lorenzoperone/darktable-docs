@@ -3165,7 +3165,7 @@
 <p>darktable 5.6 introduce maschere AI integrate basate su <strong>SAM2</strong> (Segment Anything Model):<sup id="fnref:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p><img alt="AI masks introduction" src="../../images/ai-masks-intro.jpg" /></p>
 <h3 id="modelli-disponibili">Modelli disponibili<a class="headerlink" href="#modelli-disponibili" title="Permanent link">&para;</a></h3>
-<p>Sono disponibili diversi modelli AI, ognuno con caratteristiche proprie:<sup id="fnref:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
+<p>Sono disponibili diversi modelli AI, ognuno con caratteristiche proprie:<sup id="fnref:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">9</a></sup></p>
 <table>
 <thead>
 <tr>
@@ -3201,7 +3201,7 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Accelerazione GPU</p>
-<p>Su <strong>macOS (Apple Silicon)</strong> l'accelerazione CoreML e' inclusa di default. Su <strong>Windows</strong> e' incluso DirectML. Su <strong>Linux</strong> e' necessario installare ONNX Runtime con supporto GPU (CUDA per NVIDIA, ROCm per AMD, OpenVINO per Intel) tramite lo script in <code>tools/ai/</code>.<sup id="fnref2:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
+<p>Su <strong>macOS (Apple Silicon)</strong> l'accelerazione CoreML e' inclusa di default. Su <strong>Windows</strong> e' incluso DirectML. Su <strong>Linux</strong> e' necessario installare ONNX Runtime con supporto GPU (CUDA per NVIDIA, ROCm per AMD, OpenVINO per Intel) tramite lo script in <code>tools/ai/</code>.<sup id="fnref2:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">9</a></sup></p>
 <p>Per verificare che la GPU sia attiva, avviare darktable con <code>darktable -d ai</code> e cercare nel log:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[darktable_ai] execution provider: CUDA
 </code></pre></div></p>
@@ -3341,7 +3341,7 @@
 <h3 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Performance su CPU vs GPU</p>
-<p>L'inferenza AI su <strong>CPU</strong> funziona immediatamente senza configurazioni aggiuntive, ma puo' richiedere diversi secondi per immagine. Con <strong>GPU acceleration</strong> (CUDA, CoreML, DirectML), il tempo di generazione si riduce drasticamente.<sup id="fnref3:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">10</a></sup></p>
+<p>L'inferenza AI su <strong>CPU</strong> funziona immediatamente senza configurazioni aggiuntive, ma puo' richiedere diversi secondi per immagine. Con <strong>GPU acceleration</strong> (CUDA, CoreML, DirectML), il tempo di generazione si riduce drasticamente.<sup id="fnref3:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">9</a></sup></p>
 <p>Per monitorare le performance:
 - Avviare con <code>darktable -d ai</code> per il debug completo
 - Verificare il provider attivo nel log (<code>CUDA</code>, <code>CoreML</code>, <code>DirectML</code>)
@@ -3408,11 +3408,8 @@
 <li id="fn:aimasks">
 <p><em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:aimasks" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
-<li id="fn:pixls-sam2">
-<p><em>discuss.pixls.us -- Testing AI Object Masks (SAM2)</em> | <code>processed/discuss-pixls/t-testing-ai-object-masks-in-darktable-nightly-builds-56684.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-sam2" title="Jump back to footnote 9 in the text">&#8617;</a></p>
-</li>
 <li id="fn:gpu-thread">
-<p><em>discuss.pixls.us -- GPU acceleration for AI features in Darktable</em> | <code>processed/discuss-pixls/t-gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scri.md</code>&#160;<a class="footnote-backref" href="#fnref:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gpu-thread" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p><em>discuss.pixls.us -- GPU acceleration for AI features in Darktable</em> | <code>processed/discuss-pixls/t-gpu-acceleration-for-ai-features-in-darktable-help-needed-testing-install-scri.md</code>&#160;<a class="footnote-backref" href="#fnref:gpu-thread" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:gpu-thread" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:gpu-thread" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
