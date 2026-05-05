@@ -29,7 +29,7 @@
     
     
       
-        <title>Bianco e Nero -- Conversione da foto infrarosso - Guida al Post-Processing con darktable</title>
+        <title>Bianco e Nero — Conversione da foto infrarosso - Guida al Post-Processing con darktable</title>
       
     
     
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bianco e Nero -- Conversione da foto infrarosso
+              Bianco e Nero — Conversione da foto infrarosso
             
           </span>
         </div>
@@ -1666,7 +1666,7 @@
   <span class="md-ellipsis">
     
   
-    Bianco e Nero -- Conversione da foto infrarosso
+    Bianco e Nero — Conversione da foto infrarosso
   
 
     
@@ -1684,7 +1684,7 @@
   <span class="md-ellipsis">
     
   
-    Bianco e Nero -- Conversione da foto infrarosso
+    Bianco e Nero — Conversione da foto infrarosso
   
 
     
@@ -1724,7 +1724,7 @@
   <a href="#passo-1-analisi-del-raw-e-configurazione-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1 -- Analisi del RAW e configurazione pipeline
+        Passo 1 — Analisi del RAW e configurazione pipeline
       
     </span>
   </a>
@@ -1735,7 +1735,7 @@
   <a href="#passo-2-scambio-canali-rgb-con-color-calibration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2 -- Scambio canali RGB con Color Calibration
+        Passo 2 — Scambio canali RGB con Color Calibration
       
     </span>
   </a>
@@ -1746,7 +1746,7 @@
   <a href="#passo-3-conversione-in-bianco-e-nero" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 3 -- Conversione in Bianco e Nero
+        Passo 3 — Conversione in Bianco e Nero
       
     </span>
   </a>
@@ -1757,7 +1757,7 @@
   <a href="#passo-4-regolazione-esposizione-e-filmic-rgb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4 -- Regolazione esposizione e Filmic RGB
+        Passo 4 — Regolazione esposizione e Filmic RGB
       
     </span>
   </a>
@@ -1768,7 +1768,7 @@
   <a href="#passo-5-viraggio-cromatico-con-color-balance-rgb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 5 -- Viraggio cromatico con Color Balance RGB
+        Passo 5 — Viraggio cromatico con Color Balance RGB
       
     </span>
   </a>
@@ -1779,7 +1779,7 @@
   <a href="#passo-6-maschere-parametriche-basate-su-crominanza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 6 -- Maschere parametriche basate su crominanza
+        Passo 6 — Maschere parametriche basate su crominanza
       
     </span>
   </a>
@@ -1790,7 +1790,7 @@
   <a href="#passo-7-equalizzatore-tonale-per-contrasto-locale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 7 -- Equalizzatore tonale per contrasto locale
+        Passo 7 — Equalizzatore tonale per contrasto locale
       
     </span>
   </a>
@@ -1801,7 +1801,7 @@
   <a href="#passo-8-finitura-con-diffuse-or-sharpen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 8 -- Finitura con Diffuse or Sharpen
+        Passo 8 — Finitura con Diffuse or Sharpen
       
     </span>
   </a>
@@ -1839,13 +1839,91 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Riepilogo impostazioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-bilanciamento-del-bianco-con-ai-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: Bilanciamento del bianco con AI edge detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-recupero-di-alteluci-con-guided-laplacians" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: Recupero di alteluci con guided laplacians
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
+  <a href="#domande-frequenti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Riferimenti visuali
+        Domande frequenti
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domande frequenti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-immagine-bw-con-artefatti-neri-o-pixel-neri-dopo-luso-di-monochrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Immagine B&amp;W con artefatti neri o “pixel neri” dopo l’uso di monochrome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-clipping-nei-canali-dopo-lo-scambio-rgb-non-risolvibile-con-filmic-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Clipping nei canali dopo lo scambio RGB, non risolvibile con Filmic RGB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-maschere-parametriche-che-non-selezionano-correttamente-le-foglie-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Maschere parametriche che non selezionano correttamente le foglie IR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
       
     </span>
   </a>
@@ -1857,6 +1935,17 @@
     <span class="md-ellipsis">
       
         Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riferimenti-visuali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riferimenti visuali
       
     </span>
   </a>
@@ -1942,7 +2031,7 @@
   <span class="md-ellipsis">
     
   
-    Scarsa illuminazione -- Concerto e foto notturne
+    Scarsa illuminazione — Concerto e foto notturne
   
 
     
@@ -2920,7 +3009,7 @@
   <a href="#passo-1-analisi-del-raw-e-configurazione-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1 -- Analisi del RAW e configurazione pipeline
+        Passo 1 — Analisi del RAW e configurazione pipeline
       
     </span>
   </a>
@@ -2931,7 +3020,7 @@
   <a href="#passo-2-scambio-canali-rgb-con-color-calibration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2 -- Scambio canali RGB con Color Calibration
+        Passo 2 — Scambio canali RGB con Color Calibration
       
     </span>
   </a>
@@ -2942,7 +3031,7 @@
   <a href="#passo-3-conversione-in-bianco-e-nero" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 3 -- Conversione in Bianco e Nero
+        Passo 3 — Conversione in Bianco e Nero
       
     </span>
   </a>
@@ -2953,7 +3042,7 @@
   <a href="#passo-4-regolazione-esposizione-e-filmic-rgb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4 -- Regolazione esposizione e Filmic RGB
+        Passo 4 — Regolazione esposizione e Filmic RGB
       
     </span>
   </a>
@@ -2964,7 +3053,7 @@
   <a href="#passo-5-viraggio-cromatico-con-color-balance-rgb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 5 -- Viraggio cromatico con Color Balance RGB
+        Passo 5 — Viraggio cromatico con Color Balance RGB
       
     </span>
   </a>
@@ -2975,7 +3064,7 @@
   <a href="#passo-6-maschere-parametriche-basate-su-crominanza" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 6 -- Maschere parametriche basate su crominanza
+        Passo 6 — Maschere parametriche basate su crominanza
       
     </span>
   </a>
@@ -2986,7 +3075,7 @@
   <a href="#passo-7-equalizzatore-tonale-per-contrasto-locale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 7 -- Equalizzatore tonale per contrasto locale
+        Passo 7 — Equalizzatore tonale per contrasto locale
       
     </span>
   </a>
@@ -2997,7 +3086,7 @@
   <a href="#passo-8-finitura-con-diffuse-or-sharpen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 8 -- Finitura con Diffuse or Sharpen
+        Passo 8 — Finitura con Diffuse or Sharpen
       
     </span>
   </a>
@@ -3035,13 +3124,91 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Riepilogo impostazioni">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esempio-bilanciamento-del-bianco-con-ai-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: Bilanciamento del bianco con AI edge detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esempio-recupero-di-alteluci-con-guided-laplacians" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: Recupero di alteluci con guided laplacians
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
+  <a href="#domande-frequenti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Riferimenti visuali
+        Domande frequenti
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domande frequenti">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problema-immagine-bw-con-artefatti-neri-o-pixel-neri-dopo-luso-di-monochrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Immagine B&amp;W con artefatti neri o “pixel neri” dopo l’uso di monochrome
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-clipping-nei-canali-dopo-lo-scambio-rgb-non-risolvibile-con-filmic-rgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Clipping nei canali dopo lo scambio RGB, non risolvibile con Filmic RGB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problema-maschere-parametriche-che-non-selezionano-correttamente-le-foglie-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problema: Maschere parametriche che non selezionano correttamente le foglie IR
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
       
     </span>
   </a>
@@ -3053,6 +3220,17 @@
     <span class="md-ellipsis">
       
         Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#riferimenti-visuali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Riferimenti visuali
       
     </span>
   </a>
@@ -3079,20 +3257,20 @@
   
 
 
-<h1 id="bianco-e-nero-conversione-da-foto-infrarosso">Bianco e Nero -- Conversione da foto infrarosso<a class="headerlink" href="#bianco-e-nero-conversione-da-foto-infrarosso" title="Permanent link">&para;</a></h1>
+<h1 id="bianco-e-nero-conversione-da-foto-infrarosso">Bianco e Nero — Conversione da foto infrarosso<a class="headerlink" href="#bianco-e-nero-conversione-da-foto-infrarosso" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Fonte:</strong> <a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a> -- A Dabble in Photography</p>
+<p><strong>Fonte:</strong> <a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a> — A Dabble in Photography</p>
 </blockquote>
 <p>Questo caso studio mostra come trasformare un RAW infrarosso (filtro 720nm) in un'immagine monocromatica con viraggio cromatico creativo. La stessa tecnica si applica a qualsiasi foto che richiede una conversione B&amp;W controllata.</p>
 <p><img alt="Introduzione alla conversione B&amp;W da foto infrarosso" src="../../images/bw-intro.jpg" /></p>
-<p><em>Figura 1 -- Immagine infrarosso prima della conversione in bianco e nero.</em></p>
+<p><em>Figura 1 — Immagine infrarosso prima della conversione in bianco e nero.</em></p>
 <h2 id="contesto">Contesto<a class="headerlink" href="#contesto" title="Permanent link">&para;</a></h2>
 <p>Le foto infrarosse presentano una dominante rossa/magenta estrema e richiedono uno scambio dei canali RGB prima di qualsiasi altra correzione. Il filtro Hoya 720nm agisce come un ND da ~6 stop: tempi di esposizione lunghi e treppiede obbligatorio.</p>
 <div class="admonition warning">
-<p class="admonition-title">Filtro IR e qualita'</p>
-<p>Il filtro Hoya 720nm e' fortemente consigliato rispetto a marchi economici (es. URTH), che possono introdurre troppa luce rossa rendendo la correzione estremamente difficile in post-produzione.</p>
+<p class="admonition-title">Filtro IR e qualità</p>
+<p>Il filtro Hoya 720nm è fortemente consigliato rispetto a marchi economici (es. URTH), che possono introdurre troppa luce rossa rendendo la correzione estremamente difficile in post-produzione<sup id="fnref:ir-video"><a class="footnote-ref" href="#fn:ir-video">1</a></sup>.</p>
 </div>
-<h2 id="passo-1-analisi-del-raw-e-configurazione-pipeline">Passo 1 -- Analisi del RAW e configurazione pipeline<a class="headerlink" href="#passo-1-analisi-del-raw-e-configurazione-pipeline" title="Permanent link">&para;</a></h2>
+<h2 id="passo-1-analisi-del-raw-e-configurazione-pipeline">Passo 1 — Analisi del RAW e configurazione pipeline<a class="headerlink" href="#passo-1-analisi-del-raw-e-configurazione-pipeline" title="Permanent link">&para;</a></h2>
 <p>L'immagine RAW appare completamente rossa/magenta. Prima di tutto si verifica che il workflow sia impostato su <strong>scene-referred</strong> con profilo di ingresso <strong>Rec2020 RGB linear</strong>.</p>
 <table>
 <thead>
@@ -3118,10 +3296,10 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Bilanciamento del bianco su vegetazione</p>
-<p>Per le foto IR, impostare il WB su foglie o erba: la vegetazione riflette l'infrarosso e appare molto chiara/neutra, fornendo un punto di riferimento affidabile per il bilanciamento.</p>
+<p>Per le foto IR, impostare il WB su foglie o erba: la vegetazione riflette l'infrarosso e appare molto chiara/neutra, fornendo un punto di riferimento affidabile per il bilanciamento<sup id="fnref3:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
 </div>
-<h2 id="passo-2-scambio-canali-rgb-con-color-calibration">Passo 2 -- Scambio canali RGB con Color Calibration<a class="headerlink" href="#passo-2-scambio-canali-rgb-con-color-calibration" title="Permanent link">&para;</a></h2>
-<p>Il passo fondamentale e' scambiare i canali rosso e blu usando <strong>Color Calibration</strong> come mixer di canali. Questo trasforma la dominante rossa in toni piu' gestibili.</p>
+<h2 id="passo-2-scambio-canali-rgb-con-color-calibration">Passo 2 — Scambio canali RGB con Color Calibration<a class="headerlink" href="#passo-2-scambio-canali-rgb-con-color-calibration" title="Permanent link">&para;</a></h2>
+<p>Il passo fondamentale è scambiare i canali rosso e blu usando <strong>Color Calibration</strong> come mixer di canali. Questo trasforma la dominante rossa in toni più gestibili.</p>
 <table>
 <thead>
 <tr>
@@ -3154,18 +3332,18 @@
 <tr>
 <td>Normalizza</td>
 <td><strong>Attivo</strong></td>
-<td>Evita alterazioni di luminosita'</td>
+<td>Evita alterazioni di luminosità</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition important">
 <p class="admonition-title">Somma dei coefficienti = 1</p>
-<p>Quando si modificano i coefficienti del mixer di canali, assicurarsi che la somma sia 1 oppure attivare l'opzione <strong>Normalizza</strong> per evitare alterazioni indesiderate della luminosita'.</p>
+<p>Quando si modificano i coefficienti del mixer di canali, assicurarsi che la somma sia 1 oppure attivare l'opzione <strong>Normalizza</strong> per evitare alterazioni indesiderate della luminosità<sup id="fnref:color-calibration-ref"><a class="footnote-ref" href="#fn:color-calibration-ref">3</a></sup>.</p>
 </div>
 <p><img alt="Channel mixer per lo scambio dei canali RGB" src="../../images/bw-channel-mixer.jpg" /></p>
-<p><em>Figura 2 -- Configurazione del Color Calibration per lo scambio dei canali rosso e blu.</em></p>
-<h2 id="passo-3-conversione-in-bianco-e-nero">Passo 3 -- Conversione in Bianco e Nero<a class="headerlink" href="#passo-3-conversione-in-bianco-e-nero" title="Permanent link">&para;</a></h2>
-<p>Si aggiunge un'istanza di <strong>Color Calibration</strong> con il preset <strong>black and white</strong>. L'ordine nella pipeline e' cruciale: questo modulo va posizionato <strong>dopo</strong> le correzioni cromatiche, subito prima di Filmic RGB.</p>
+<p><em>Figura 2 — Configurazione del Color Calibration per lo scambio dei canali rosso e blu.</em></p>
+<h2 id="passo-3-conversione-in-bianco-e-nero">Passo 3 — Conversione in Bianco e Nero<a class="headerlink" href="#passo-3-conversione-in-bianco-e-nero" title="Permanent link">&para;</a></h2>
+<p>Si aggiunge un'istanza di <strong>Color Calibration</strong> con il preset <strong>black and white</strong>. L'ordine nella pipeline è cruciale: questo modulo va posizionato <strong>dopo</strong> le correzioni cromatiche, subito prima di Filmic RGB.</p>
 <table>
 <thead>
 <tr>
@@ -3186,10 +3364,10 @@
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Ordine della pipeline</p>
-<p>Posizionare l'istanza <em>bianco e nero</em> di Color Calibration <strong>dopo</strong> i moduli di correzione cromatica (es. subito prima di Filmic RGB) per evitare che neutralizzi le regolazioni di colore e brillantezza applicate in precedenza.</p>
+<p>Posizionare l'istanza <em>bianco e nero</em> di Color Calibration <strong>dopo</strong> i moduli di correzione cromatica (es. subito prima di Filmic RGB) per evitare che neutralizzi le regolazioni di colore e brillantezza applicate in precedenza<sup id="fnref4:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
 </div>
-<h2 id="passo-4-regolazione-esposizione-e-filmic-rgb">Passo 4 -- Regolazione esposizione e Filmic RGB<a class="headerlink" href="#passo-4-regolazione-esposizione-e-filmic-rgb" title="Permanent link">&para;</a></h2>
-<p>Dopo lo scambio canali, l'immagine puo' risultare sottoesposta o sovraesposta. Si interviene con:</p>
+<h2 id="passo-4-regolazione-esposizione-e-filmic-rgb">Passo 4 — Regolazione esposizione e Filmic RGB<a class="headerlink" href="#passo-4-regolazione-esposizione-e-filmic-rgb" title="Permanent link">&para;</a></h2>
+<p>Dopo lo scambio canali, l'immagine può risultare sottoesposta o sovraesposta. Si interviene con:</p>
 <p><strong>Esposizione:</strong>
 | Parametro | Valore |
 |-----------|--------|
@@ -3203,9 +3381,9 @@
 | Dynamic range scaling | +0.00% | Di default |</p>
 <div class="admonition tip">
 <p class="admonition-title">Bordo bianco per valutare l'esposizione</p>
-<p>Premere <code>Cmd+B</code> per visualizzare il bordo bianco attorno all'immagine: indica quando le alte luci stanno per clippare. Usarlo come riferimento per Exposure e Filmic RGB.</p>
+<p>Premere <code>Cmd+B</code> per visualizzare il bordo bianco attorno all'immagine: indica quando le alte luci stanno per clippare. Usarlo come riferimento per Exposure e Filmic RGB<sup id="fnref:process-ref"><a class="footnote-ref" href="#fn:process-ref">4</a></sup>.</p>
 </div>
-<h2 id="passo-5-viraggio-cromatico-con-color-balance-rgb">Passo 5 -- Viraggio cromatico con Color Balance RGB<a class="headerlink" href="#passo-5-viraggio-cromatico-con-color-balance-rgb" title="Permanent link">&para;</a></h2>
+<h2 id="passo-5-viraggio-cromatico-con-color-balance-rgb">Passo 5 — Viraggio cromatico con Color Balance RGB<a class="headerlink" href="#passo-5-viraggio-cromatico-con-color-balance-rgb" title="Permanent link">&para;</a></h2>
 <p>Per un B&amp;W non neutro ma con carattere, si usa <strong>Color Balance RGB</strong> in modalita' <strong>4 ways</strong>:</p>
 <table>
 <thead>
@@ -3244,10 +3422,10 @@
 </tbody>
 </table>
 <div class="admonition tip">
-<p class="admonition-title">Rotazione tonalita' complementare</p>
-<p>In Color Balance RGB, ruotare la tonalita' delle ombre di 180 rispetto al colore dominante (es. giallo-verde a 76 --&gt; blu a 256) aggiunge il complementare e neutralizza la dominante senza toccare la luminanza.</p>
+<p class="admonition-title">Rotazione tonalità complementare</p>
+<p>In Color Balance RGB, ruotare la tonalità delle ombre di 180 rispetto al colore dominante (es. giallo-verde a 76 → blu a 256) aggiunge il complementare e neutralizza la dominante senza toccare la luminanza<sup id="fnref:color-balance-ref"><a class="footnote-ref" href="#fn:color-balance-ref">5</a></sup>.</p>
 </div>
-<h2 id="passo-6-maschere-parametriche-basate-su-crominanza">Passo 6 -- Maschere parametriche basate su crominanza<a class="headerlink" href="#passo-6-maschere-parametriche-basate-su-crominanza" title="Permanent link">&para;</a></h2>
+<h2 id="passo-6-maschere-parametriche-basate-su-crominanza">Passo 6 — Maschere parametriche basate su crominanza<a class="headerlink" href="#passo-6-maschere-parametriche-basate-su-crominanza" title="Permanent link">&para;</a></h2>
 <p>Nelle foto IR i colori sono molto simili tra loro, quindi le maschere parametriche basate sulla <strong>tonalità</strong> (hue) non funzionano bene. Usare invece la <strong>crominanza</strong>:</p>
 <table>
 <thead>
@@ -3263,7 +3441,7 @@
 </tr>
 <tr>
 <td>Feathering radius</td>
-<td>Variabile (testare 100-250 px)</td>
+<td>Variabile (testare 100–250 px)</td>
 </tr>
 <tr>
 <td>Feathering guide</td>
@@ -3272,11 +3450,11 @@
 </tbody>
 </table>
 <div class="admonition info">
-<p class="admonition-title">Perche' la crominanza</p>
-<p>Nelle foto IR, creare maschere basate sulla crominanza anziche' sulla tonalita', perche' le informazioni cromatiche sono scarse e i colori sono molto simili tra loro.</p>
+<p class="admonition-title">Perché la crominanza</p>
+<p>Nelle foto IR, creare maschere basate sulla crominanza anziché sulla tonalità, perché le informazioni cromatiche sono scarse e i colori sono molto simili tra loro<sup id="fnref5:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
 </div>
-<h2 id="passo-7-equalizzatore-tonale-per-contrasto-locale">Passo 7 -- Equalizzatore tonale per contrasto locale<a class="headerlink" href="#passo-7-equalizzatore-tonale-per-contrasto-locale" title="Permanent link">&para;</a></h2>
-<p>Per dare profondita' all'immagine senza appiattire i dettagli:</p>
+<h2 id="passo-7-equalizzatore-tonale-per-contrasto-locale">Passo 7 — Equalizzatore tonale per contrasto locale<a class="headerlink" href="#passo-7-equalizzatore-tonale-per-contrasto-locale" title="Permanent link">&para;</a></h2>
+<p>Per dare profondità all'immagine senza appiattire i dettagli:</p>
 <table>
 <thead>
 <tr>
@@ -3299,18 +3477,18 @@
 <tr>
 <td>Mask contrast compensation</td>
 <td>+0.00 EV</td>
-<td>--</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Curve smoothing</td>
 <td>+0.00</td>
-<td>--</td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Equalizzatore tonale per il contrasto locale" src="../../images/bw-color-equalizer.jpg" /></p>
-<p><em>Figura 3 -- Regolazione dell'equalizzatore tonale per aumentare la profondita' dell'immagine.</em></p>
-<h2 id="passo-8-finitura-con-diffuse-or-sharpen">Passo 8 -- Finitura con Diffuse or Sharpen<a class="headerlink" href="#passo-8-finitura-con-diffuse-or-sharpen" title="Permanent link">&para;</a></h2>
+<p><em>Figura 3 — Regolazione dell'equalizzatore tonale per aumentare la profondità dell'immagine.</em></p>
+<h2 id="passo-8-finitura-con-diffuse-or-sharpen">Passo 8 — Finitura con Diffuse or Sharpen<a class="headerlink" href="#passo-8-finitura-con-diffuse-or-sharpen" title="Permanent link">&para;</a></h2>
 <p>Per recuperare texture e rimuovere eventuali aloni:</p>
 <table>
 <thead>
@@ -3338,27 +3516,27 @@
 </tr>
 <tr>
 <td>1st/3rd order anisotropy</td>
-<td>+200% per direzionalita'</td>
+<td>+200% per direzionalità</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="Effetto diffuse/dehaze per contrasto e dettagli" src="../../images/bw-diffuse-dehaze.jpg" /></p>
-<p><em>Figura 4 -- Applicazione di Diffuse or Sharpen per recuperare texture e rimuovere aloni.</em></p>
+<p><em>Figura 4 — Applicazione di Diffuse or Sharpen per recuperare texture e rimuovere aloni.</em></p>
 <h2 id="creare-uno-stile-per-il-batch-editing">Creare uno stile per il batch editing<a class="headerlink" href="#creare-uno-stile-per-il-batch-editing" title="Permanent link">&para;</a></h2>
 <p>Una volta trovata la ricetta giusta, salvarla come <strong>stile</strong> per applicarla rapidamente ad altre foto IR dello stesso set:</p>
 <ol>
 <li>Selezionare tutti i moduli modificati nello stack storico</li>
-<li>Cliccare destro --&gt; <strong>Crea stile</strong></li>
+<li>Cliccare destro → <strong>Crea stile</strong></li>
 <li>Assegnare un nome descrittivo (es. "IR B&amp;W base")</li>
 <li>Applicare alle foto successive con un clic</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Stile come punto di partenza</p>
-<p>Lo stile automatizza lo scambio dei canali e il bilanciamento del bianco. Da li', regolare esposizione e maschere per ogni singola immagine.</p>
+<p>Lo stile automatizza lo scambio dei canali e il bilanciamento del bianco. Da lì, regolare esposizione e maschere per ogni singola immagine<sup id="fnref2:ir-video"><a class="footnote-ref" href="#fn:ir-video">1</a></sup>.</p>
 </div>
 <h2 id="risultato-finale">Risultato finale<a class="headerlink" href="#risultato-finale" title="Permanent link">&para;</a></h2>
 <p><img alt="Risultato finale della conversione B&amp;W" src="../../images/bw-final.jpg" /></p>
-<p><em>Figura 5 -- Immagine finale dopo tutte le regolazioni: scambio canali, conversione B&amp;W, viraggio cromatico, contrasto locale e sharpening.</em></p>
+<p><em>Figura 5 — Immagine finale dopo tutte le regolazioni: scambio canali, conversione B&amp;W, viraggio cromatico, contrasto locale e sharpening.</em></p>
 <h2 id="riepilogo-impostazioni">Riepilogo impostazioni<a class="headerlink" href="#riepilogo-impostazioni" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -3382,7 +3560,7 @@
 <tr>
 <td><strong>Esposizione</strong></td>
 <td>Valore variabile, black level correction</td>
-<td>Correzione luminosita' base</td>
+<td>Correzione luminosità base</td>
 </tr>
 <tr>
 <td><strong>Filmic RGB</strong></td>
@@ -3411,6 +3589,36 @@
 </tr>
 </tbody>
 </table>
+<h3 id="esempio-bilanciamento-del-bianco-con-ai-edge-detection">Esempio: Bilanciamento del bianco con AI edge detection<a class="headerlink" href="#esempio-bilanciamento-del-bianco-con-ai-edge-detection" title="Permanent link">&para;</a></h3>
+<p><em>Da <a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/monochrome/">Developing monochrome images</a> (sezione CAT tab)</em><br />
+1. Aprire <strong>Color Calibration</strong>, attivare la scheda <strong>CAT</strong><br />
+2. Selezionare <code>_(AI) detect from image edges_</code> nel menu <em>illuminant</em><br />
+3. Verificare che <code>adaptation</code> sia impostato su <strong>CAT16 (2016)</strong> (default)<br />
+4. Osservare il valore <strong>CCT</strong> calcolato: se segnalato come <code>_(invalid)_</code>, confermare che il colore nel <em>color patch</em> corrisponda all’illuminante reale dell’immagine IR<br />
+5. Attivare <strong>Normalizza</strong> nell’istanza successiva di <strong>Color Calibration</strong> usata per la conversione B&amp;W<sup id="fnref:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
+<h3 id="esempio-recupero-di-alteluci-con-guided-laplacians">Esempio: Recupero di alteluci con guided laplacians<a class="headerlink" href="#esempio-recupero-di-alteluci-con-guided-laplacians" title="Permanent link">&para;</a></h3>
+<p><em>Da <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/">Highlight reconstruction</a> (sezione “guided laplacians” mode)</em><br />
+1. Inserire <strong>Highlight Reconstruction</strong> subito dopo <strong>Demosaic</strong>, prima di <strong>Input Color Profile</strong><br />
+2. Impostare <code>method = guided laplacians</code><br />
+3. Regolare <code>clipping threshold</code> fino a evidenziare solo le aree realmente sovraesposte (usare la maschera di clipping con icona accanto allo slider)<br />
+4. Impostare <code>iterations = 3</code>, <code>diameter of the reconstruction = 256</code>, <code>noise level = 0.02</code><br />
+5. Abilitare <code>inpaint a flat color</code> solo se persistono residui magenta in aree grandi (&gt;500 px di diametro)<sup id="fnref:highlight-recon-ref"><a class="footnote-ref" href="#fn:highlight-recon-ref">6</a></sup>.</p>
+<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">&para;</a></h2>
+<h3 id="problema-immagine-bw-con-artefatti-neri-o-pixel-neri-dopo-luso-di-monochrome">Problema: Immagine B&amp;W con artefatti neri o “pixel neri” dopo l’uso di <em>monochrome</em><a class="headerlink" href="#problema-immagine-bw-con-artefatti-neri-o-pixel-neri-dopo-luso-di-monochrome" title="Permanent link">&para;</a></h3>
+<p>Questo comportamento è documentato per immagini con sorgenti blu altamente saturo (es. cielo chiaro in condizioni IR). La soluzione è disabilitare il modulo <em>monochrome</em> e usare invece <strong>Color Calibration → black and white</strong> in modalità <em>monochrome</em>, che opera in modo più robusto sulle immagini lineari scene-referred<sup id="fnref:monochrome-ref"><a class="footnote-ref" href="#fn:monochrome-ref">8</a></sup>.</p>
+<h3 id="problema-clipping-nei-canali-dopo-lo-scambio-rgb-non-risolvibile-con-filmic-rgb">Problema: Clipping nei canali dopo lo scambio RGB, non risolvibile con <em>Filmic RGB</em><a class="headerlink" href="#problema-clipping-nei-canali-dopo-lo-scambio-rgb-non-risolvibile-con-filmic-rgb" title="Permanent link">&para;</a></h3>
+<p>Il clipping precoce è causato da un <strong>white point errato</strong> nel modulo <em>raw black/white point</em>. Verificare che il valore <em>white point</em> corrisponda al modello specifico della fotocamera (non modificare manualmente: i valori predefiniti sono ottimizzati per ogni sensore)<sup id="fnref:raw-bw-ref"><a class="footnote-ref" href="#fn:raw-bw-ref">7</a></sup>.</p>
+<h3 id="problema-maschere-parametriche-che-non-selezionano-correttamente-le-foglie-ir">Problema: Maschere parametriche che non selezionano correttamente le foglie IR<a class="headerlink" href="#problema-maschere-parametriche-che-non-selezionano-correttamente-le-foglie-ir" title="Permanent link">&para;</a></h3>
+<p>Le maschere basate su <em>Hue</em> falliscono perché la tonalità di vegetazione in IR è compressa in un intervallo ristretto (~0–15°). Usare invece <strong>input = Cz</strong> (crominanza in JzCzHz) con <code>feathering radius = 180 px</code> e <code>feathering guide = input after blur</code><sup id="fnref2:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
+<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/monochrome/">darktable User Manual — Developing Monochrome Images</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/">darktable User Manual — Color Calibration Module</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/">darktable User Manual — Highlight Reconstruction</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/raw-black-white-point/">darktable User Manual — RAW Black/White Point</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/">darktable User Manual — Process Workflow</a>  </li>
+</ul>
+<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
 <!-- b3:gallery:start -->
 
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">&para;</a></h2>
@@ -3418,15 +3626,32 @@
 <em>Color Zones · frame a 992s da <a href="https://youtu.be/4z70D5zRAXw">video YouTube</a></em></p>
 <!-- b3:gallery:end -->
 
-<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:ir-video">
-<p><em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ir-video" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> — A Dabble in Photography&#160;<a class="footnote-backref" href="#fnref:ir-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:ir-video" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:pixls-bw">
-<p><em>pixls.us -- Digital B&amp;W Conversion (GIMP)</em> | Copia locale: <code>processed/pixls-articles/articles-digital-b-w-conversion-gimp.md</code>&#160;<a class="footnote-backref" href="#fnref:pixls-bw" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn:monochrome-guide">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/guides-tutorials/monochrome/">Developing monochrome images</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:monochrome-guide" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:monochrome-guide" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:monochrome-guide" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:monochrome-guide" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:monochrome-guide" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-calibration-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-calibration/">Color calibration</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:color-calibration-ref" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:process-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/process/">Process</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:process-ref" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:color-balance-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance/">Color balance</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:color-balance-ref" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:highlight-recon-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/highlight-reconstruction/">Highlight reconstruction</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:highlight-recon-ref" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:raw-bw-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/raw-black-white-point/">Raw black/white point</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:raw-bw-ref" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:monochrome-ref">
+<p><em><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/monochrome/">Monochrome module</a></em>, darktable 4.8 user manual&#160;<a class="footnote-backref" href="#fnref:monochrome-ref" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
