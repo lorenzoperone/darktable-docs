@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="it" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="it" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -29,7 +26,7 @@
     
     
       
-        <title>Orton Effect & Dragan Effect in darktable - Guida al Post-Processing con darktable</title>
+        <title>Orton Effect &amp; Dragan Effect in darktable - Guida al Post-Processing con darktable</title>
       
     
     
@@ -49,8 +46,8 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
@@ -61,7 +58,17 @@
 
     
     
-  </head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -99,12 +106,12 @@
     <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -129,20 +136,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità scura"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-orange" data-md-color-accent="orange" aria-label="Modalità scura" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Modalità scura" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange"  aria-label="Modalità chiara"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-orange" data-md-color-accent="orange" aria-label="Modalità chiara" type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Modalità chiara" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
       </label>
     
   
@@ -158,24 +165,24 @@
       
         <label class="md-header__button md-icon" for="__search">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         </label>
         <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Cerca">
         
         <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -183,7 +190,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Inizializza la ricerca
@@ -201,7 +208,7 @@
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
     lorenzoperone/darktable-docs
@@ -395,7 +402,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -409,7 +416,7 @@
     <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
 
     </a>
     Guida al Post-Processing con darktable
@@ -419,7 +426,7 @@
       <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
     lorenzoperone/darktable-docs
@@ -427,7 +434,7 @@
 </a>
     </div>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -478,7 +485,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -508,7 +515,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -707,7 +714,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -737,7 +744,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1583,7 +1590,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -1613,7 +1620,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -1931,7 +1938,7 @@
       <span class="md-nav__icon md-icon"></span>
       Indice
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#panoramica-del-flusso-di-lavoro" class="md-nav__link">
@@ -2254,7 +2261,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2284,7 +2291,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -2455,7 +2462,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -2485,7 +2492,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -2684,7 +2691,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -2714,7 +2721,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -2829,7 +2836,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2859,7 +2866,7 @@
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -2988,7 +2995,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -3004,7 +3011,7 @@
       <span class="md-nav__icon md-icon"></span>
       Indice
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
   <a href="#panoramica-del-flusso-di-lavoro" class="md-nav__link">
@@ -3281,18 +3288,18 @@
   
 
 
-<h1 id="orton-effect-dragan-effect-in-darktable">Orton Effect &amp; Dragan Effect in darktable<a class="headerlink" href="#orton-effect-dragan-effect-in-darktable" title="Permanent link">&para;</a></h1>
-<p>L’<strong>Orton effect</strong> e il <strong>Dragan effect</strong> sono due tecniche di post-produzione che creano un’atmosfera onirica, luminosa e drammatica rispettivamente:<br />
-- <strong>Orton</strong>: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati<sup id="fnref:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br />
+<h1 id="orton-effect-dragan-effect-in-darktable">Orton Effect &amp; Dragan Effect in darktable<a class="headerlink" href="#orton-effect-dragan-effect-in-darktable" title="Permanent link">¶</a></h1>
+<p>L’<strong>Orton effect</strong> e il <strong>Dragan effect</strong> sono due tecniche di post-produzione che creano un’atmosfera onirica, luminosa e drammatica rispettivamente:<br>
+- <strong>Orton</strong>: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati<sup id="fnref:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br>
 - <strong>Dragan</strong>: contrasto esploso, dettagli iper-definiti, ombre profonde e luci incandescenti — nato per ritratti drammatici e street photography<sup id="fnref:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.  </p>
 <p>Entrambi <em>non esistono come moduli nativi singoli</em> in darktable, ma si costruiscono combinando moduli esistenti nella pipeline scene-referred. Il modulo <code>soften</code> implementa l’Orton in modo semplificato, mentre il Dragan richiede un flusso avanzato con <code>composite</code>, <code>blur</code>, <code>sigmoid</code> e maschere locali<sup id="fnref2:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup><sup id="fnref2:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
-<p><img alt="Confronto Orton vs Dragan su un ritratto" src="../../images/orton-dragan-comparison.jpg" /></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/orton-dragan-comparison.jpg" data-desc-position="bottom"><img alt="Confronto Orton vs Dragan su un ritratto" src="../../images/orton-dragan-comparison.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché non usare preset esterni?</p>
 <p>I preset <code>.dtstyle</code> (es. <em>Red Max Payne</em>, <em>Lomo’s Effect</em>)<sup id="fnref:maxpayne"><a class="footnote-ref" href="#fn:maxpayne">5</a></sup><sup id="fnref:lomos"><a class="footnote-ref" href="#fn:lomos">6</a></sup> offrono scorciatoie stilistiche, ma <strong>non replicano fedelmente Orton/ Dragán</strong>, perché mancano del controllo fine sulla fusione dei livelli e sulla gestione della gamma dinamica. Usali solo come punto di partenza — non come soluzione definitiva<sup id="fnref5:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</p>
 </div>
-<hr />
-<h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">¶</a></h2>
 <p>Entrambi gli effetti richiedono una <strong>duplicazione dell’immagine</strong> per lavorare su livelli separati. Il posizionamento del modulo <code>composite</code> è critico: deve essere inserito <em>prima</em> di <code>tone curve</code>/<code>AGX</code>, ma <em>dopo</em> tutti i moduli di correzione base (esposizione, bilanciamento bianco, correzione ottica)<sup id="fnref3:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzioni base (exposure, white balance, lens correction)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
@@ -3308,16 +3315,16 @@
 <p class="admonition-title">Errore comune: ordine sbagliato di composite</p>
 <p>Se <code>composite</code> è posizionato <em>dopo</em> <code>AGX</code>, la fusione avviene su dati già compressi → risultati piatti, senza profondità. Verifica sempre la posizione con il pulsante <strong>Show module order</strong> (icona a tre puntini in alto a destra del pannello moduli)<sup id="fnref8:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </div>
-<hr />
-<h2 id="flusso-pratico-orton-effect-con-soften">Flusso pratico: Orton Effect con <code>soften</code><a class="headerlink" href="#flusso-pratico-orton-effect-con-soften" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="flusso-pratico-orton-effect-con-soften">Flusso pratico: Orton Effect con <code>soften</code><a class="headerlink" href="#flusso-pratico-orton-effect-con-soften" title="Permanent link">¶</a></h2>
 <p>Il metodo più rapido e controllabile per l’Orton è usare il modulo <code>soften</code>, progettato appositamente per replicare il processo analogico di Michael Orton<sup id="fnref:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.</p>
-<h3 id="passo-1-preparazione-base">Passo 1: Preparazione base<a class="headerlink" href="#passo-1-preparazione-base" title="Permanent link">&para;</a></h3>
+<h3 id="passo-1-preparazione-base">Passo 1: Preparazione base<a class="headerlink" href="#passo-1-preparazione-base" title="Permanent link">¶</a></h3>
 <ul>
 <li>Applica <code>exposure</code>: regola l’esposizione globale a <strong>0.00 EV</strong> (non sovraesporre prima di soften).</li>
 <li>Usa <code>white balance</code>: imposta un bilanciamento neutro (es. preset <em>Daylight</em> o pipetta su grigio neutro).</li>
 <li>Attiva <code>lens correction</code>: correggi distorsione e vignettatura (<strong>distortion = 1.000</strong>, <strong>vignetting = 1.000</strong>)<sup id="fnref9:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</li>
 </ul>
-<h3 id="passo-2-configurazione-soften">Passo 2: Configurazione <code>soften</code><a class="headerlink" href="#passo-2-configurazione-soften" title="Permanent link">&para;</a></h3>
+<h3 id="passo-2-configurazione-soften">Passo 2: Configurazione <code>soften</code><a class="headerlink" href="#passo-2-configurazione-soften" title="Permanent link">¶</a></h3>
 <p>Attiva il modulo <code>soften</code> e imposta:</p>
 <table>
 <thead>
@@ -3350,17 +3357,17 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Modulo soften configurato per Orton: size 34.55%, saturation 100%, brightness +0.33 EV, mix 50%" src="../../images/soften-orton-config.jpg" /></p>
-<h3 id="passo-3-affinamento-finale">Passo 3: Affinamento finale<a class="headerlink" href="#passo-3-affinamento-finale" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/soften-orton-config.jpg" data-desc-position="bottom"><img alt="Modulo soften configurato per Orton: size 34.55%, saturation 100%, brightness +0.33 EV, mix 50%" src="../../images/soften-orton-config.jpg"></a></p>
+<h3 id="passo-3-affinamento-finale">Passo 3: Affinamento finale<a class="headerlink" href="#passo-3-affinamento-finale" title="Permanent link">¶</a></h3>
 <ul>
 <li>Aggiungi <code>AGX</code>: usa <strong>Contrast = 2.20–2.60</strong> (non &gt;3.00, altrimenti il glow diventa artificiale)<sup id="fnref6:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</li>
 <li>Usa <code>color balance rgb</code>: attenua leggermente il blu (<strong>Blue attenuation = 20%</strong>) prima di AGX per evitare clipping nei cieli<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">7</a></sup>.</li>
 <li>Applica <code>vignetting</code>: bordo scuro sottile (<strong>strength = -15%</strong>, <strong>radius = 70%</strong>) per focalizzare l’attenzione sul centro<sup id="fnref2:lomos"><a class="footnote-ref" href="#fn:lomos">6</a></sup>.</li>
 </ul>
-<hr />
-<h2 id="flusso-pratico-dragan-effect-con-composite">Flusso pratico: Dragan Effect con <code>composite</code><a class="headerlink" href="#flusso-pratico-dragan-effect-con-composite" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="flusso-pratico-dragan-effect-con-composite">Flusso pratico: Dragan Effect con <code>composite</code><a class="headerlink" href="#flusso-pratico-dragan-effect-con-composite" title="Permanent link">¶</a></h2>
 <p>Il Dragan richiede 3 livelli: <strong>originale</strong>, <strong>sfocato invertito</strong>, <strong>fuso in Multiply</strong>. È un flusso avanzato ma preciso<sup id="fnref4:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
-<h3 id="passo-1-creazione-dei-livelli">Passo 1: Creazione dei livelli<a class="headerlink" href="#passo-1-creazione-dei-livelli" title="Permanent link">&para;</a></h3>
+<h3 id="passo-1-creazione-dei-livelli">Passo 1: Creazione dei livelli<a class="headerlink" href="#passo-1-creazione-dei-livelli" title="Permanent link">¶</a></h3>
 <ol>
 <li>Clicca su <strong>Duplicate</strong> (icona copia nel pannello sinistro) → crea una copia.</li>
 <li>Nella copia, applica:</li>
@@ -3368,7 +3375,7 @@
 <li><code>invert</code>: attiva il modulo <code>invert</code> (non presente di default: abilitalo in <em>preferences &gt; modules &gt; invert</em>).</li>
 <li>Torna all’immagine originale e attiva <code>composite</code>.</li>
 </ol>
-<h3 id="passo-2-configurazione-composite">Passo 2: Configurazione <code>composite</code><a class="headerlink" href="#passo-2-configurazione-composite" title="Permanent link">&para;</a></h3>
+<h3 id="passo-2-configurazione-composite">Passo 2: Configurazione <code>composite</code><a class="headerlink" href="#passo-2-configurazione-composite" title="Permanent link">¶</a></h3>
 <p>Nel modulo <code>composite</code>, imposta:</p>
 <table>
 <thead>
@@ -3396,22 +3403,22 @@
 </tr>
 </tbody>
 </table>
-<p><img alt="Composite con blend mode Multiply e opacity 90%" src="../../images/composite-dragan-config.jpg" /></p>
-<h3 id="passo-3-rafforzamento-del-contrasto">Passo 3: Rafforzamento del contrasto<a class="headerlink" href="#passo-3-rafforzamento-del-contrasto" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/composite-dragan-config.jpg" data-desc-position="bottom"><img alt="Composite con blend mode Multiply e opacity 90%" src="../../images/composite-dragan-config.jpg"></a></p>
+<h3 id="passo-3-rafforzamento-del-contrasto">Passo 3: Rafforzamento del contrasto<a class="headerlink" href="#passo-3-rafforzamento-del-contrasto" title="Permanent link">¶</a></h3>
 <ul>
 <li>Aggiungi <code>sigmoid</code>: attivalo <em>dopo</em> <code>composite</code>.</li>
 <li><strong>contrast</strong> = <code>1.80–2.20</code>  </li>
 <li><strong>midtones</strong> = <code>0.45–0.55</code>  </li>
 <li>
-<p><strong>black point</strong> = <code>-0.10 EV</code>, <strong>white point</strong> = <code>+0.05 EV</code><br />
+<p><strong>black point</strong> = <code>-0.10 EV</code>, <strong>white point</strong> = <code>+0.05 EV</code><br>
 <em>(Questi valori evitano il clipping e preservano il dettaglio nei neri profondi)</em><sup id="fnref12:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </li>
 <li>
 <p>Usa <code>local contrast</code>: applica una maschera sul volto/soggetto con <strong>detail = 110–130%</strong>, <strong>highlights = 60%</strong>, <strong>shadows = 40%</strong> per enfatizzare texture senza bruciare le luci<sup id="fnref13:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
 </li>
 </ul>
-<hr />
-<h2 id="parametri-chiave-a-confronto">Parametri chiave a confronto<a class="headerlink" href="#parametri-chiave-a-confronto" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="parametri-chiave-a-confronto">Parametri chiave a confronto<a class="headerlink" href="#parametri-chiave-a-confronto" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -3460,31 +3467,31 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="walkthrough-da-video-tutorial">Walkthrough da video tutorial<a class="headerlink" href="#walkthrough-da-video-tutorial" title="Permanent link">&para;</a></h2>
-<h3 id="esempio-orton-con-blur-composite-metodo-alternativo">Esempio: Orton con blur + composite (metodo alternativo)<a class="headerlink" href="#esempio-orton-con-blur-composite-metodo-alternativo" title="Permanent link">&para;</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect in darktable</a> (03:30–07:40)</em><br />
-1. Duplica l’immagine → nella copia applica <code>blur</code> con <strong>blur_radius = 20 px</strong>, <strong>blur_type = gaussian</strong>.<br />
-2. Attiva <code>composite</code> sull’originale e imposta <strong>blend mode = Multiply</strong>, <strong>opacity = 90%</strong>, <strong>mask = global</strong>.<br />
-3. Aggiungi <code>sigmoid</code> dopo <code>composite</code>: <strong>contrast = 1.90</strong>, <strong>midtones = 0.50</strong>, <strong>black point = -0.08 EV</strong>, <strong>white point = +0.03 EV</strong><sup id="fnref3:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br />
+<hr>
+<h2 id="walkthrough-da-video-tutorial">Walkthrough da video tutorial<a class="headerlink" href="#walkthrough-da-video-tutorial" title="Permanent link">¶</a></h2>
+<h3 id="esempio-orton-con-blur-composite-metodo-alternativo">Esempio: Orton con blur + composite (metodo alternativo)<a class="headerlink" href="#esempio-orton-con-blur-composite-metodo-alternativo" title="Permanent link">¶</a></h3>
+<p><em>Da <a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect in darktable</a> (03:30–07:40)</em><br>
+1. Duplica l’immagine → nella copia applica <code>blur</code> con <strong>blur_radius = 20 px</strong>, <strong>blur_type = gaussian</strong>.<br>
+2. Attiva <code>composite</code> sull’originale e imposta <strong>blend mode = Multiply</strong>, <strong>opacity = 90%</strong>, <strong>mask = global</strong>.<br>
+3. Aggiungi <code>sigmoid</code> dopo <code>composite</code>: <strong>contrast = 1.90</strong>, <strong>midtones = 0.50</strong>, <strong>black point = -0.08 EV</strong>, <strong>white point = +0.03 EV</strong><sup id="fnref3:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br>
 4. Usa <code>color balance rgb</code>: attiva <strong>shadows lift</strong> con <strong>red = 1.05</strong>, <strong>green = 0.98</strong>, <strong>blue = 0.92</strong>, per riscaldare le ombre senza alterare i toni medi<sup id="fnref4:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.  </p>
-<h3 id="esempio-dragan-con-doppia-maschera-locale">Esempio: Dragan con doppia maschera locale<a class="headerlink" href="#esempio-dragan-con-doppia-maschera-locale" title="Permanent link">&para;</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a> (04:20–08:15)</em><br />
-1. Duplica l’immagine → nella copia applica <code>blur</code> (<strong>radius = 21 px</strong>) + <code>invert</code>.<br />
-2. Attiva <code>composite</code>: <strong>blend mode = Multiply</strong>, <strong>opacity = 88%</strong>, <strong>mask = global</strong>.<br />
-3. Nell’originale, aggiungi <code>local contrast</code>: <strong>mode = local laplacian</strong>, <strong>detail = 125%</strong>, <strong>highlights = 50%</strong>, <strong>shadows = 45%</strong>, <strong>mid-tone range = 0.52</strong>.<br />
-4. Disegna una maschera a mano sul volto (forma irregolare), poi imposta <strong>feathering radius = 8 px</strong>, <strong>blurring radius = 3 px</strong>, <strong>mask contrast = +0.25</strong>, <strong>mask opacity = +0.15</strong><sup id="fnref5:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.<br />
+<h3 id="esempio-dragan-con-doppia-maschera-locale">Esempio: Dragan con doppia maschera locale<a class="headerlink" href="#esempio-dragan-con-doppia-maschera-locale" title="Permanent link">¶</a></h3>
+<p><em>Da <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a> (04:20–08:15)</em><br>
+1. Duplica l’immagine → nella copia applica <code>blur</code> (<strong>radius = 21 px</strong>) + <code>invert</code>.<br>
+2. Attiva <code>composite</code>: <strong>blend mode = Multiply</strong>, <strong>opacity = 88%</strong>, <strong>mask = global</strong>.<br>
+3. Nell’originale, aggiungi <code>local contrast</code>: <strong>mode = local laplacian</strong>, <strong>detail = 125%</strong>, <strong>highlights = 50%</strong>, <strong>shadows = 45%</strong>, <strong>mid-tone range = 0.52</strong>.<br>
+4. Disegna una maschera a mano sul volto (forma irregolare), poi imposta <strong>feathering radius = 8 px</strong>, <strong>blurring radius = 3 px</strong>, <strong>mask contrast = +0.25</strong>, <strong>mask opacity = +0.15</strong><sup id="fnref5:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.<br>
 5. Infine, applica <code>color balance rgb</code>: <strong>global vibrance = 110%</strong>, <strong>contrast = 2.05</strong>, <strong>contrast gray fulcrum = 18.5%</strong>, <strong>white fulcrum = +0.15 EV</strong><sup id="fnref6:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
-<hr />
-<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">&para;</a></h2>
-<h3 id="problema-il-glow-orton-appare-sporco-o-con-artefatti-cromatici">Problema: Il glow Orton appare "sporco" o con artefatti cromatici<a class="headerlink" href="#problema-il-glow-orton-appare-sporco-o-con-artefatti-cromatici" title="Permanent link">&para;</a></h3>
+<hr>
+<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
+<h3 id="problema-il-glow-orton-appare-sporco-o-con-artefatti-cromatici">Problema: Il glow Orton appare "sporco" o con artefatti cromatici<a class="headerlink" href="#problema-il-glow-orton-appare-sporco-o-con-artefatti-cromatici" title="Permanent link">¶</a></h3>
 <p>Questo accade quando <code>soften</code> è applicato su un'immagine con bilanciamento bianco instabile o con saturazione eccessiva. Risolvi impostando prima <code>white balance</code> con la pipetta su un'area neutra (grigio chiaro), quindi limitando <code>saturation</code> in <code>soften</code> a ≤95% e verificando che <code>exposure</code> sia ≥ -0.20 EV prima del modulo<sup id="fnref2:soften-manual"><a class="footnote-ref" href="#fn:soften-manual">3</a></sup>.  </p>
-<h3 id="problema-il-dragan-produce-ombre-piatte-e-prive-di-dettaglio">Problema: Il Dragan produce ombre "piatte" e prive di dettaglio<a class="headerlink" href="#problema-il-dragan-produce-ombre-piatte-e-prive-di-dettaglio" title="Permanent link">&para;</a></h3>
+<h3 id="problema-il-dragan-produce-ombre-piatte-e-prive-di-dettaglio">Problema: Il Dragan produce ombre "piatte" e prive di dettaglio<a class="headerlink" href="#problema-il-dragan-produce-ombre-piatte-e-prive-di-dettaglio" title="Permanent link">¶</a></h3>
 <p>La causa è quasi sempre un <code>blur_radius</code> troppo elevato (&gt;25 px su immagini 6000px) o un <code>opacity</code> in <code>composite</code> troppo vicino a 100%. Riduci <code>blur_radius</code> a 18–20 px e abbassa <code>opacity</code> a 85–88%; aggiungi poi <code>local contrast</code> con <strong>shadows = 40–45%</strong>, <strong>detail = 115%</strong>, applicato tramite maschera sulle zone d’ombra<sup id="fnref7:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.  </p>
-<h3 id="problema-leffetto-scompare-dopo-lesportazione-in-jpeg">Problema: L’effetto scompare dopo l’esportazione in JPEG<a class="headerlink" href="#problema-leffetto-scompare-dopo-lesportazione-in-jpeg" title="Permanent link">&para;</a></h3>
+<h3 id="problema-leffetto-scompare-dopo-lesportazione-in-jpeg">Problema: L’effetto scompare dopo l’esportazione in JPEG<a class="headerlink" href="#problema-leffetto-scompare-dopo-lesportazione-in-jpeg" title="Permanent link">¶</a></h3>
 <p>Questo indica che il <code>composite</code> è stato posizionato <em>dopo</em> <code>dither or posterize</code> o che <code>dither or posterize</code> è disattivato. Abilita <code>dither or posterize</code> subito <em>prima</em> dell’esportazione, con <strong>method = Floyd-Steinberg auto</strong>, per prevenire banding nei gradienti glow e Dragan<sup id="fnref:dither-manual"><a class="footnote-ref" href="#fn:dither-manual">9</a></sup>.  </p>
-<hr />
-<h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Workflow ottimale per entrambi</p>
 <ol>
@@ -3505,16 +3512,16 @@
 <p class="admonition-title">Ottimizzazione per prestazioni</p>
 <p>Su immagini ad alta risoluzione (&gt;24 MP), riduci temporaneamente la preview con <strong>zoom = 1:2</strong> durante l’editing di <code>soften</code> o <code>composite</code>. Questo riduce il carico CPU/GPU senza compromettere la precisione dei parametri. Ripristina il 1:1 prima del controllo finale<sup id="fnref:performance-tips"><a class="footnote-ref" href="#fn:performance-tips">11</a></sup>.</p>
 </div>
-<hr />
-<h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">&para;</a></h2>
-<p><img alt="Color Balance RGB — L'interfaccia mostra il modulo 'color balance rgb' con una maschera disegnata (una forma irregolare " src="../../images/creative-effects-color-balance-rgb-507s-8hlk.jpg" />
+<hr>
+<h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/creative-effects-color-balance-rgb-507s-8hlk.jpg" data-desc-position="bottom"><img alt="Color Balance RGB — L'interfaccia mostra il modulo 'color balance rgb' con una maschera disegnata (una forma irregolare " src="../../images/creative-effects-color-balance-rgb-507s-8hlk.jpg"></a>
 <em>Color Balance RGB · frame a 507s da <a href="https://youtu.be/P1W1tmk8HLk">video YouTube</a></em></p>
-<p><img alt="Color Equalizer — Lo screenshot mostra l'interfaccia di darktable con il modulo 'colorzones' attivo, in modalità 'perc" src="../../images/creative-effects-color-equalizer-967s-ksjy.jpg" />
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/creative-effects-color-equalizer-967s-ksjy.jpg" data-desc-position="bottom"><img alt="Color Equalizer — Lo screenshot mostra l'interfaccia di darktable con il modulo 'colorzones' attivo, in modalità 'perc" src="../../images/creative-effects-color-equalizer-967s-ksjy.jpg"></a>
 <em>Color Equalizer · frame a 967s da <a href="https://youtu.be/PKK2QTPKsjY">video YouTube</a></em></p>
-<p><img alt="Diffuse Or Sharpen — Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con una maschera disegnata " src="../../images/creative-effects-diffuse-or-sharpen-808s-yugw.jpg" />
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/creative-effects-diffuse-or-sharpen-808s-yugw.jpg" data-desc-position="bottom"><img alt="Diffuse Or Sharpen — Lo screenshot mostra il modulo 'diffuse or sharpen' attivo in darktable, con una maschera disegnata " src="../../images/creative-effects-diffuse-or-sharpen-808s-yugw.jpg"></a>
 <em>Diffuse Or Sharpen · frame a 808s da <a href="https://youtu.be/Aqu3ULnYugw">video YouTube</a></em></p>
-<hr />
-<h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">Video tutorial Orton in darktable (inglese)</a> — metodo <code>soften</code>, <code>blur</code> + <code>composite</code><sup id="fnref7:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>  </li>
 <li><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">Video tutorial Dragan in darktable (inglese)</a> — flusso completo con <code>composite</code>, <code>invert</code>, <code>sigmoid</code><sup id="fnref11:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>  </li>
@@ -3523,43 +3530,43 @@
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/dither-or-posterize/">Manuale ufficiale <code>dither or posterize</code></a> — guida alla prevenzione del banding<sup id="fnref2:dither-manual"><a class="footnote-ref" href="#fn:dither-manual">9</a></sup>  </li>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/">Manuale ufficiale <code>color balance rgb</code></a> — controllo avanzato della tonalità e cromia<sup id="fnref:color-balance-rgb-manual"><a class="footnote-ref" href="#fn:color-balance-rgb-manual">10</a></sup>  </li>
 </ul>
-<hr />
-<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
 <li id="fn:orton-video">
-<p>A Dabble in Photography, <em>The Orton effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=OF7ZcDPQfeM&#160;<a class="footnote-backref" href="#fnref:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:orton-video" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>A Dabble in Photography, <em>The Orton effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=OF7ZcDPQfeM&nbsp;<a class="footnote-backref" href="#fnref:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:orton-video" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:orton-video" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:dragon-video">
-<p>A Dabble in Photography, <em>The Dragan effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=EuvG0lh8OB8&#160;<a class="footnote-backref" href="#fnref:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref16:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref17:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref18:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref19:dragon-video" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>A Dabble in Photography, <em>The Dragan effect in darktable</em>, YouTube, 2026. URL: https://www.youtube.com/watch?v=EuvG0lh8OB8&nbsp;<a class="footnote-backref" href="#fnref:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref10:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref11:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref12:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref13:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref14:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref15:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref16:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref17:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref18:dragon-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref19:dragon-video" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:soften-manual">
-<p>darktable User Manual v4.8, <em>soften module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/&#160;<a class="footnote-backref" href="#fnref:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:soften-manual" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>darktable User Manual v4.8, <em>soften module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/soften/&nbsp;<a class="footnote-backref" href="#fnref:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref6:soften-manual" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref7:soften-manual" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:composite-manual">
-<p>darktable User Manual v4.8, <em>composite module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/&#160;<a class="footnote-backref" href="#fnref:composite-manual" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>darktable User Manual v4.8, <em>composite module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/composite/&nbsp;<a class="footnote-backref" href="#fnref:composite-manual" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:maxpayne">
-<p>darktable.fr, <em>Style Red Max Payne Effect</em>, 2016. URL: https://darktable.fr/posts/2016/03/style-red-max-payne-effect/&#160;<a class="footnote-backref" href="#fnref:maxpayne" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>darktable.fr, <em>Style Red Max Payne Effect</em>, 2016. URL: https://darktable.fr/posts/2016/03/style-red-max-payne-effect/&nbsp;<a class="footnote-backref" href="#fnref:maxpayne" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:lomos">
-<p>darktable.fr, <em>Style Lomo's Effect</em>, 2016. URL: https://darktable.fr/posts/2016/04/style-lomos-effect/&#160;<a class="footnote-backref" href="#fnref:lomos" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:lomos" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>darktable.fr, <em>Style Lomo's Effect</em>, 2016. URL: https://darktable.fr/posts/2016/04/style-lomos-effect/&nbsp;<a class="footnote-backref" href="#fnref:lomos" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:lomos" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 <li id="fn:dt54-update">
-<p>darktable 5.4 Release Notes, <em>AGX as default tone mapper</em>, https://github.com/darktable-org/darktable/releases/tag/release-5.4.0&#160;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>darktable 5.4 Release Notes, <em>AGX as default tone mapper</em>, https://github.com/darktable-org/darktable/releases/tag/release-5.4.0&nbsp;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:agx-guide">
-<p>darktable Documentation, <em>AGX Tone Mapping Guide</em>, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx/&#160;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>darktable Documentation, <em>AGX Tone Mapping Guide</em>, https://docs.darktable.org/usermanual/5.4/en/module-reference/processing-modules/agx/&nbsp;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:dither-manual">
-<p>darktable User Manual v4.8, <em>dither or posterize module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/dither-or-posterize/&#160;<a class="footnote-backref" href="#fnref:dither-manual" title="Jump back to footnote 9 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:dither-manual" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>darktable User Manual v4.8, <em>dither or posterize module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/dither-or-posterize/&nbsp;<a class="footnote-backref" href="#fnref:dither-manual" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:dither-manual" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:color-balance-rgb-manual">
-<p>darktable User Manual v4.8, <em>color balance rgb module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/&#160;<a class="footnote-backref" href="#fnref:color-balance-rgb-manual" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p>darktable User Manual v4.8, <em>color balance rgb module</em>, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/color-balance-rgb/&nbsp;<a class="footnote-backref" href="#fnref:color-balance-rgb-manual" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:performance-tips">
-<p>darktable User Manual v4.8, <em>Performance tuning guide</em>, https://docs.darktable.org/usermanual/4.8/en/preferences-settings/performance/&#160;<a class="footnote-backref" href="#fnref:performance-tips" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<p>darktable User Manual v4.8, <em>Performance tuning guide</em>, https://docs.darktable.org/usermanual/4.8/en/preferences-settings/performance/&nbsp;<a class="footnote-backref" href="#fnref:performance-tips" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -3585,9 +3592,9 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Torna su
 </button>
         
@@ -3618,7 +3625,7 @@
       
     
     <a href="https://github.com/lorenzoperone/darktable-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
     </a>
   
 </div>
@@ -3642,5 +3649,7 @@
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
-  </body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
