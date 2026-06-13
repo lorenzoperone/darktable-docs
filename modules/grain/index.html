@@ -3361,15 +3361,13 @@
 2. Imposta <code>white balance</code> su <code>Flash</code> (corrispondente alla illuminazione di scatto)<br>
 3. Nella sezione <code>grain</code>, seleziona il preset <code>Kodak Tri-X</code> dal menu a tendina<br>
 4. Regola <code>coarseness = 1.12</code> e <code>strength = 48%</code> per adattare la grana al tono del volto<br>
-5. Confronta con lo screenshot a 870s: il grano appare uniforme sulle zone chiare, con minima accentuazione sui bordi oculari<sup id="fnref3:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup><br>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-grain-870s-3ia0.jpg" data-desc-position="bottom"><img alt="Grain — Lo screenshot mostra il modulo 'grain' attivo nel pannello destro di darktable, con parametri impost" src="../../images/grain-grain-870s-3ia0.jpg"></a></p>
+5. Confronta con lo screenshot a 870s: il grano appare uniforme sulle zone chiare, con minima accentuazione sui bordi oculari<sup id="fnref3:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>  </p>
 <h3 id="esempio-maschera-manuale-per-grana-selettiva">Esempio: Maschera manuale per grana selettiva<a class="headerlink" href="#esempio-maschera-manuale-per-grana-selettiva" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/">Weekly Edit 20 — darktable FR</a> (timestamp 1198s)</em><br>
 1. Attiva la maschera disegnata (<code>drawn mask</code>) e traccia un path preciso intorno al soggetto (es. insetto su foglia)<br>
 2. Nel modulo <code>grain</code>, clicca sull’icona della maschera (icona a forma di cerchio con punto centrale) per abilitare l’applicazione selettiva<br>
 3. Imposta <code>coarseness = 0.85</code>, <code>strength = 32%</code> per ottenere una grana fine ma presente sul soggetto<br>
-4. Disattiva la maschera per verificare che lo sfondo rimanga privo di grana: la transizione deve essere netta senza frange<sup id="fnref4:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup><br>
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-grain-1198s-zmzu.jpg" data-desc-position="bottom"><img alt="Grain — L'interfaccia mostra il modulo 'grain' con una maschera disegnata a mano (path #1) attiva sul sogget" src="../../images/grain-grain-1198s-zmzu.jpg"></a></p>
+4. Disattiva la maschera per verificare che lo sfondo rimanga privo di grana: la transizione deve essere netta senza frange<sup id="fnref4:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>  </p>
 <h2 id="tabella-preset-built-in">Tabella preset built-in<a class="headerlink" href="#tabella-preset-built-in" title="Permanent link">¶</a></h2>
 <p>darktable 4.8 include 8 preset ufficiali per <code>grain</code>, preconfigurati in base a profili di pellicola reali e testati su immagini di riferimento. Tutti i preset operano esclusivamente sul canale L di Lab e sono compatibili con flussi scene-referred<sup id="fnref2:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
 <table>
@@ -3433,12 +3431,8 @@
 <h3 id="problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine">Problema: Grana scompare dopo aver applicato <code>censorize</code> su parte dell’immagine<a class="headerlink" href="#problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine" title="Permanent link">¶</a></h3>
 <p>Il modulo <code>censorize</code> applica un blur gaussiano seguito da rumore luminoso, che sovrascrive il pattern di <code>grain</code>. Poiché <code>grain</code> non supporta maschere, non può essere riapplicato selettivamente. Soluzione: applicare <code>censorize</code> <em>prima</em> di <code>grain</code>, oppure usare <code>blurs</code> + <code>grain</code> per simulare un effetto di bokeh granuloso senza perdere il controllo globale<sup id="fnref:blurs-ref"><a class="footnote-ref" href="#fn:blurs-ref">5</a></sup>.</p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-grain-852s-3ia0.jpg" data-desc-position="bottom"><img alt="Grain — Lo screenshot mostra l'interfaccia di darktable con il modulo 'grain' attivo nel pannello destro; il" src="../../images/grain-grain-852s-3ia0.jpg"></a>
-<em>Grain · frame a 852s da <a href="https://youtu.be/HI05rl53iA0">video YouTube</a></em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-grain-870s-3ia0.jpg" data-desc-position="bottom"><img alt="Grain — Lo screenshot mostra il modulo 'grain' attivo nel pannello destro di darktable, con parametri impost" src="../../images/grain-grain-870s-3ia0.jpg"></a>
-<em>Grain · frame a 870s da <a href="https://youtu.be/HI05rl53iA0">video YouTube</a></em></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-grain-1198s-zmzu.jpg" data-desc-position="bottom"><img alt="Grain — L'interfaccia mostra il modulo 'grain' con una maschera disegnata a mano (path #1) attiva sul sogget" src="../../images/grain-grain-1198s-zmzu.jpg"></a>
-<em>Grain · frame a 1198s da <a href="https://youtu.be/eTSRnz-ZMzU">video YouTube</a></em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-grain.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Grain in darktable" src="../../images/ui-grain.png"></a>
+<em>Il modulo Grain nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/grain/">darktable 4.8 user manual — grain module</a>  </li>
