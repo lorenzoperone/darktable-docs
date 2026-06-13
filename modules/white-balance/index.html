@@ -3268,7 +3268,6 @@
 
 <h1 id="white-balance">White Balance<a class="headerlink" href="#white-balance" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>white balance</strong> è il primo modulo tecnico della pipeline di elaborazione RAW in darktable, responsabile della correzione obbligatoria del bilanciamento del bianco prima che i dati possano essere correttamente demosaicati e processati. Il suo scopo non è creativo ma <em>tecnico</em>: garantire che i grigi neutri della scena siano resi con valori RGB uguali (R = G = B) nel flusso di lavoro<sup id="fnref:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>. A differenza di Lightroom, dove il bilanciamento del bianco è un singolo strumento flessibile, in darktable esso opera in sinergia con il modulo <strong>color calibration</strong>, che gestisce la successiva adattazione cromatica percepita<sup id="fnref:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/white-balance-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo white balance" src="../../images/white-balance-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">White balance è obbligatorio — non opzionale</p>
 <p>Il modulo <code>white balance</code> è attivo per ogni immagine RAW caricata e <strong>non può essere disattivato</strong>. Anche se impostato su “as shot”, i suoi coefficienti RGB vengono comunque calcolati e applicati per permettere al modulo <code>demosaic</code> di funzionare correttamente<sup id="fnref6:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>. Questo è un requisito tecnico del flusso RAW, non una scelta editoriale.</p>
@@ -3297,12 +3296,10 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   |
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. Convalida tramite modulo color calibration (CAT tab) per adattazione percettiva
 </code></pre></div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/pipeline-wb-scene-referred.jpg" data-desc-position="bottom"><img alt="White balance nella pipeline scene-referred" src="../../images/pipeline-wb-scene-referred.jpg"></a></p>
 <h3 id="passo-1-diagnosi-visiva-con-listogramma-rgb">Passo 1: Diagnosi visiva con l’istogramma RGB<a class="headerlink" href="#passo-1-diagnosi-visiva-con-listogramma-rgb" title="Permanent link">¶</a></h3>
 <p>Prima di qualsiasi regolazione, osserva l’istogramma RGB nel pannello destro:<br>
 - Se un canale domina nettamente (es. verde molto più alto di rosso/blu), l’immagine appare con una forte dominante cromatica (tipicamente verde, poiché i sensori Bayer hanno il doppio dei pixel verdi)<sup id="fnref3:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup><sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup><br>
 - L’immagine apparirà “verde” anche se il bilanciamento è tecnicamente corretto: questo è normale e sarà risolto solo dopo il demosaicing e il profilo colore</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/wb-histogram-green-dominant.jpg" data-desc-position="bottom"><img alt="Istogramma RGB con dominante verde tipica di un RAW non bilanciato" src="../../images/wb-histogram-green-dominant.jpg"></a></p>
 <h3 id="passo-2-partenza-dal-preset-as-shot">Passo 2: Partenza dal preset “as shot”<a class="headerlink" href="#passo-2-partenza-dal-preset-as-shot" title="Permanent link">¶</a></h3>
 <p>Il preset predefinito è <strong>as shot</strong>, che legge direttamente i metadati EXIF della fotocamera. È il punto di partenza più affidabile, soprattutto se la fotocamera era stata impostata correttamente sul campo<sup id="fnref4:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.<br>
 - <strong>Non modificare mai</strong> <code>white balance</code> prima di aver verificato che <code>input color profile</code> sia impostato su “scene-referred default” o “embedded” — un profilo errato invalida ogni regolazione successiva<sup id="fnref2:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup></p>
@@ -3362,7 +3359,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/wb-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri white balance con temperature/tint e coefficienti espansi" src="../../images/wb-parameters-panel.jpg"></a></p>
 <h3 id="modalita-di-visualizzazione-slider">Modalità di visualizzazione slider<a class="headerlink" href="#modalita-di-visualizzazione-slider" title="Permanent link">¶</a></h3>
 <p>Le barre di regolazione possono essere personalizzate in <strong>Preferences &gt; Darkroom &gt; white balance slider colors</strong>:<br>
 - <strong>no color</strong> (default): slider monocromatici<br>
@@ -3405,7 +3401,6 @@
 1. Vai in <strong>Preferences &gt; Processing &gt; auto-apply chromatic adaptation defaults</strong><br>
 2. Seleziona <strong>modern</strong> (anziché legacy)<br>
 3. <code>color calibration</code> verrà applicato automaticamente <em>dopo</em> <code>white balance</code>, con parametri ottimizzati per CAT16<sup id="fnref4:color-calib-manual"><a class="footnote-ref" href="#fn:color-calib-manual">2</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/wb-vs-colorcalib-pipeline.jpg" data-desc-position="bottom"><img alt="Relazione white balance / color calibration nella pipeline" src="../../images/wb-vs-colorcalib-pipeline.jpg"></a></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Non usare mai temperature &gt; 10000 K o &lt; 3000 K</strong> senza verifica: valori estremi possono generare coefficienti RGB non fisicamente plausibili, causando clipping cromatico irrecuperabile<sup id="fnref9:wb-manual"><a class="footnote-ref" href="#fn:wb-manual">1</a></sup>.  </li>
@@ -3467,8 +3462,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-white-balance.png" data-desc-position="bottom"><img alt="Interfaccia del modulo White Balance in darktable" src="../../images/ui-white-balance.png"></a>
-<em>Il modulo White Balance nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-white-balance.png" data-desc-position="bottom"><img alt="Interfaccia del modulo white balance (Bilanciamento del bianco) in darktable" src="../../images/ui-white-balance.png"></a>
+<em>Il modulo «white balance» (Bilanciamento del bianco) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/white-balance/">darktable 4.8 user manual — white balance</a>  </li>

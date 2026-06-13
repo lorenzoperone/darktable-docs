@@ -3169,8 +3169,6 @@ La documentazione ufficiale sulla gestione del colore copre in dettaglio i fluss
 - Le correzioni tonali (es. <code>filmic rgb</code>) siano fisicamente corrette: la compressione delle alte luci avviene su valori proporzionali ai fotoni, non a valori percettivi distorti <sup id="fnref:pixls-lab"><a class="footnote-ref" href="#fn:pixls-lab">8</a></sup><br>
 - Le maschere parametriche (es. <code>JzCzhz</code>) mantengano coerenza cromatica: i canali <code>J</code>, <code>z</code>, <code>h</code> sono derivati da <code>Linear Rec 2020</code>, non da sRGB <sup id="fnref:channel-mixer-video"><a class="footnote-ref" href="#fn:channel-mixer-video">10</a></sup><br>
 - Il bilanciamento del bianco sia stabile: <code>color calibration</code> opera su dati lineari, evitando errori di propagazione presenti negli spazi non lineari <sup id="fnref:color-calibration-manual"><a class="footnote-ref" href="#fn:color-calibration-manual">9</a></sup>  </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/icc-pipeline-scene-referred.jpg" data-desc-position="bottom"><img alt="Flusso di lavoro scene-referred con profili ICC" src="../../images/icc-pipeline-scene-referred.jpg"></a><br>
-<em>Schema del flusso di conversione colore: ogni freccia rappresenta una trasformazione matematica controllata da un profilo ICC.</em></p>
 <h2 id="parametri-dettagliati-dei-moduli-icc">Parametri dettagliati dei moduli ICC<a class="headerlink" href="#parametri-dettagliati-dei-moduli-icc" title="Permanent link">¶</a></h2>
 <h3 id="input-color-profile-controlli-avanzati">Input Color Profile — Controlli avanzati<a class="headerlink" href="#input-color-profile-controlli-avanzati" title="Permanent link">¶</a></h3>
 <table>
@@ -3296,8 +3294,6 @@ La documentazione ufficiale sulla gestione del colore copre in dettaglio i fluss
 <li><code>soft proof</code> attivo con <code>gamut check</code>  </li>
 <li>Esportare in TIFF 16-bit con <code>embed ICC profile</code> abilitato  </li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workflow-lightroom-vs-darktable.jpg" data-desc-position="bottom"><img alt="Confronto workflow Lightroom vs darktable" src="../../images/workflow-lightroom-vs-darktable.jpg"></a><br>
-<em>Confronto visivo: Lightroom (sinistra) usa una curva tonale non lineare; darktable (destra) mantiene la linearità fino a <code>filmic rgb</code>.</em></p>
 <h2 id="risorse-pratiche">Risorse pratiche<a class="headerlink" href="#risorse-pratiche" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Creazione di profili custom</strong>: Guida passo-passo con Darktable Chart e X-Rite ColorChecker Passport <sup id="fnref2:pixls-profiling"><a class="footnote-ref" href="#fn:pixls-profiling">4</a></sup>  </li>

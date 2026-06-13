@@ -3212,7 +3212,6 @@
 
 <h1 id="local-contrast">Local Contrast<a class="headerlink" href="#local-contrast" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>local contrast</strong> è uno strumento di <em>enhancement</em> mirato al miglioramento del contrasto locale — ovvero il contrasto tra dettagli vicini — senza alterare il contrasto globale dell’immagine. Non è un modulo di <em>tone mapping</em>, né un sostituto di <strong>AGX</strong>, <strong>Filmic RGB</strong> o <strong>Sigmoid</strong>: opera esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, in modo indipendente dall’esposizione globale e dalla compressione tonale<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>. È particolarmente efficace per enfatizzare texture, contorni morbidi e micro-dettagli (es. peli, tessuti, granulato, superfici ruvide), ma richiede attenzione per evitare artefatti come <em>halo</em> o <em>banding</em><sup id="fnref2:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/local-contrast-interface.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo local contrast con parametri visibili" src="../../images/local-contrast-interface.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Due modalità fondamentali</p>
 <p>Il modulo offre due algoritmi distinti: <strong>local laplacian</strong> (predefinito e raccomandato) e <strong>bilateral grid</strong>. Il primo è progettato per essere robusto contro halo e inversioni di gradiente; il secondo è più semplice ma meno preciso nelle transizioni tonali<sup id="fnref5:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
@@ -3249,7 +3248,6 @@
 <li><strong>local laplacian</strong> (default): raccomandato per quasi tutti gli usi. Offre controllo fine su luci, ombre e mezzi toni<sup id="fnref10:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
 <li><strong>bilateral grid</strong>: alternativa più leggera, utile su hardware limitato o per correzioni rapide. Meno preciso nel controllo delle estremità della curva<sup id="fnref11:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/local-contrast-modes-comparison.jpg" data-desc-position="bottom"><img alt="Confronto tra local laplacian e bilateral grid" src="../../images/local-contrast-modes-comparison.jpg"></a></p>
 <h3 id="passo-2-regola-il-livello-base-di-dettaglio">Passo 2: Regola il livello base di dettaglio<a class="headerlink" href="#passo-2-regola-il-livello-base-di-dettaglio" title="Permanent link">¶</a></h3>
 <p>Il parametro <strong>detail</strong> è il principale controllo del modulo:</p>
 <ul>
@@ -3332,7 +3330,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/local-contrast-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri local contrast con curve visualizzate" src="../../images/local-contrast-parameters-panel.jpg"></a></p>
 <h2 id="parametri-avanzati-modalita-bilateral-grid">Parametri avanzati (modalità <em>bilateral grid</em>)<a class="headerlink" href="#parametri-avanzati-modalita-bilateral-grid" title="Permanent link">¶</a></h2>
 <p>Disponibili solo quando si seleziona <strong>bilateral grid</strong>:</p>
 <table>
@@ -3432,8 +3429,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-local-contrast.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Local Contrast in darktable" src="../../images/ui-local-contrast.png"></a>
-<em>Il modulo Local Contrast nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-local-contrast.png" data-desc-position="bottom"><img alt="Interfaccia del modulo local contrast (Contrasto locale) in darktable" src="../../images/ui-local-contrast.png"></a>
+<em>Il modulo «local contrast» (Contrasto locale) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/local-contrast/">darktable 4.8 user manual — local contrast</a>  </li>

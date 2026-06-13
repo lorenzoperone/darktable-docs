@@ -3784,7 +3784,6 @@
 <li><strong>G_out</strong> = Gr × R_in + Gg × G_in + Gb × B_in</li>
 <li><strong>B_out</strong> = Br × R_in + Bg × G_in + Bb × B_in</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-matrix.jpg" data-desc-position="bottom"><img alt="Channel mixer matrix explanation" src="../../images/channel-mixer-matrix.jpg"></a></p>
 <h3 id="stato-iniziale-matrice-identita">Stato iniziale: matrice identita<a class="headerlink" href="#stato-iniziale-matrice-identita" title="Permanent link">¶</a></h3>
 <p>Per impostazione predefinita, il modulo non altera l'immagine. La matrice è quella <strong>identità</strong>, dove ogni canale di uscita riceve contributo solo dal corrispondente canale di ingresso:<sup id="fnref2:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌ R_out ┐     ┌ 1  0  0 ┐     ┌ R_in ┐
@@ -3864,7 +3863,6 @@
 <p>Uno degli impieghi più utili del Channel Mixer è la creazione di immagini monocromatiche personalizzate. Seleziona la destinazione <strong>Grigio</strong> (gray) e regola i cursori R, G, B per controllare come ciascun canale contribuisce alla luminosità finale.<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GRAY_out = [r  g  b] × [R_in, G_in, B_in]
 </code></pre></div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-bw-conversion.jpg" data-desc-position="bottom"><img alt="B&amp;W conversion with channel mixer" src="../../images/channel-mixer-bw-conversion.jpg"></a></p>
 <h3 id="simulare-pellicole-tradizionali">Simulare pellicole tradizionali<a class="headerlink" href="#simulare-pellicole-tradizionali" title="Permanent link">¶</a></h3>
 <p>Diverse pellicole bianco e nero hanno sensibilità differenti ai colori. Il Channel Mixer permette di simulare queste caratteristiche:<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <table>
@@ -3953,7 +3951,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-ir-channel-swap.jpg" data-desc-position="bottom"><img alt="Infrared channel swap" src="../../images/channel-mixer-ir-channel-swap.jpg"></a></p>
 <p>Il risultato: la vegetazione (che era rossa nell'immagine IR) diventa blu/ciano, e il cielo (che era blu) diventa rosso. L'effetto è simile al filtro Wratten #80A usato in pellicola.<sup id="fnref2:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
 <h3 id="personalizzare-la-ricetta-ir">Personalizzare la ricetta IR<a class="headerlink" href="#personalizzare-la-ricetta-ir" title="Permanent link">¶</a></h3>
 <p>Non esiste una combinazione "giusta" universale. Ogni sensore e filtro produce risultati leggermente diversi. Ecco come personalizzare:<sup id="fnref3:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
@@ -4000,7 +3997,6 @@
 <p>Il valore negativo sul blu in ingresso crea un'inversione che produce tonalità più ricche e saturazione differenziata.<sup id="fnref8:ch1"><a class="footnote-ref" href="#fn:ch1">2</a></sup></p>
 </div>
 <h3 id="workflow-completo-per-infrarosso">Workflow completo per infrarosso<a class="headerlink" href="#workflow-completo-per-infrarosso" title="Permanent link">¶</a></h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-ir-final.jpg" data-desc-position="bottom"><img alt="Infrared final result" src="../../images/channel-mixer-ir-final.jpg"></a></p>
 <ol>
 <li><strong>Importa il RAW</strong> e imposta il profilo colore di ingresso su <code>Linear Rec 2020</code><sup id="fnref7:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
 <li><strong>Bilanciamento del bianco</strong>: punta su vegetazione (foglie o erba) — la riflessione IR funziona come riferimento neutro<sup id="fnref8:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></li>
@@ -4048,7 +4044,6 @@
 </div>
 <h3 id="viraggio-del-cielo">Viraggio del cielo<a class="headerlink" href="#viraggio-del-cielo" title="Permanent link">¶</a></h3>
 <p>Per modificare il colore del cielo senza alterare il resto della scena, il Channel Mixer offre un controllo chirurgico:<sup id="fnref:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-sky-retarget.jpg" data-desc-position="bottom"><img alt="Sky retargeting with channel mixer" src="../../images/channel-mixer-sky-retarget.jpg"></a></p>
 <p><strong>Esempio: cielo blu verso ciano</strong></p>
 <p>Il cielo blu ha valori RGB tipo <code>(86, 100, 159)</code>. Per spostarlo verso il ciano, occorre aggiungere verde al canale blu. La scelta del canale di ingresso è cruciale:<sup id="fnref2:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <ul>
@@ -4070,7 +4065,6 @@
 <h2 id="uso-pratico-4-tonalita-globali-ed-effetti-creativi">Uso pratico 4: Tonalita globali ed effetti creativi<a class="headerlink" href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" title="Permanent link">¶</a></h2>
 <h3 id="effetto-marrone-vintage">Effetto "marrone vintage"<a class="headerlink" href="#effetto-marrone-vintage" title="Permanent link">¶</a></h3>
 <p>Per dare a un'immagine un aspetto invecchiato con tonalità marrone:<sup id="fnref4:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/channel-mixer-brown-tint.jpg" data-desc-position="bottom"><img alt="Brown tint effect" src="../../images/channel-mixer-brown-tint.jpg"></a></p>
 <ol>
 <li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)<sup id="fnref7:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 <li>Nel Channel Mixer, modifica i canali per introdurre più rosso e verde, meno blu</li>
@@ -4335,8 +4329,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-channel-mixer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Channel Mixer (Mix di Canali) in darktable" src="../../images/ui-channel-mixer.png"></a>
-<em>Il modulo Channel Mixer (Mix di Canali) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-channel-mixer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo channel mixer (Miscelatore canali) in darktable" src="../../images/ui-channel-mixer.png"></a>
+<em>Il modulo «channel mixer» (Miscelatore canali) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>

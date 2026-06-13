@@ -3271,7 +3271,6 @@
 - <strong>Orton</strong>: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati<sup id="fnref:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.<br>
 - <strong>Dragan</strong>: contrasto esploso, dettagli iper-definiti, ombre profonde e luci incandescenti — nato per ritratti drammatici e street photography<sup id="fnref:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.  </p>
 <p>Entrambi <em>non esistono come moduli nativi singoli</em> in darktable, ma si costruiscono combinando moduli esistenti nella pipeline scene-referred. Il modulo <code>soften</code> implementa l’Orton in modo semplificato, mentre il Dragan richiede un flusso avanzato con <code>composite</code>, <code>blur</code>, <code>sigmoid</code> e maschere locali<sup id="fnref2:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup><sup id="fnref2:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/orton-dragan-comparison.jpg" data-desc-position="bottom"><img alt="Confronto Orton vs Dragan su un ritratto" src="../../images/orton-dragan-comparison.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché non usare preset esterni?</p>
 <p>I preset <code>.dtstyle</code> (es. <em>Red Max Payne</em>, <em>Lomo’s Effect</em>)<sup id="fnref:maxpayne"><a class="footnote-ref" href="#fn:maxpayne">5</a></sup><sup id="fnref:lomos"><a class="footnote-ref" href="#fn:lomos">6</a></sup> offrono scorciatoie stilistiche, ma <strong>non replicano fedelmente Orton/ Dragán</strong>, perché mancano del controllo fine sulla fusione dei livelli e sulla gestione della gamma dinamica. Usali solo come punto di partenza — non come soluzione definitiva<sup id="fnref5:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</p>
@@ -3335,7 +3334,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/soften-orton-config.jpg" data-desc-position="bottom"><img alt="Modulo soften configurato per Orton: size 34.55%, saturation 100%, brightness +0.33 EV, mix 50%" src="../../images/soften-orton-config.jpg"></a></p>
 <h3 id="passo-3-affinamento-finale">Passo 3: Affinamento finale<a class="headerlink" href="#passo-3-affinamento-finale" title="Permanent link">¶</a></h3>
 <ul>
 <li>Aggiungi <code>AGX</code>: usa <strong>Contrast = 2.20–2.60</strong> (non &gt;3.00, altrimenti il glow diventa artificiale)<sup id="fnref6:orton-video"><a class="footnote-ref" href="#fn:orton-video">1</a></sup>.</li>
@@ -3381,7 +3379,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/composite-dragan-config.jpg" data-desc-position="bottom"><img alt="Composite con blend mode Multiply e opacity 90%" src="../../images/composite-dragan-config.jpg"></a></p>
 <h3 id="passo-3-rafforzamento-del-contrasto">Passo 3: Rafforzamento del contrasto<a class="headerlink" href="#passo-3-rafforzamento-del-contrasto" title="Permanent link">¶</a></h3>
 <ul>
 <li>Aggiungi <code>sigmoid</code>: attivalo <em>dopo</em> <code>composite</code>.</li>

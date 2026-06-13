@@ -3278,7 +3278,6 @@
 
 <h1 id="modulo-retouch">Modulo Retouch<a class="headerlink" href="#modulo-retouch" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>retouch</strong> è lo strumento centrale per la rimozione selettiva di elementi indesiderati (macchie, fili, sensor dust, riflessi) e per il ritocco avanzato della pelle, del cielo o di altre aree critiche. A partire da darktable 4.8, sostituisce definitivamente il modulo deprecato <em>spot removal</em>, integrando clonazione, guarigione (<em>heal</em>), riempimento (<em>fill</em>) e sfocatura (<em>blur</em>) in un’unica interfaccia modulare, con supporto nativo alla <strong>decomposizione wavelet</strong> per un controllo multilivello dei dettagli<sup id="fnref:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/retouch-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo retouch" src="../../images/retouch-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Retouch è il modulo di ritocco avanzato predefinito</p>
 <p>Dal 2019, <em>retouch</em> è il modulo ufficiale per tutte le operazioni di rimozione e correzione locale. Il vecchio <em>spot removal</em> è stato rimosso dalla pipeline in darktable 4.6+ e non è più disponibile nei nuovi profili di sviluppo<sup id="fnref5:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup><sup id="fnref:darktable-fr-2023-12"><a class="footnote-ref" href="#fn:darktable-fr-2023-12">3</a></sup>.</p>
@@ -3309,7 +3308,6 @@
 <li><strong>Valore tipico</strong>: <code>5</code> livelli per immagini full-frame (4000×6000 px); <code>4</code> per immagini APS-C (3000×4500 px)<sup id="fnref10:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup>  </li>
 <li><strong>Default</strong>: <code>0</code> (nessuna decomposizione attiva) — <strong>non usare mai questo valore per ritocchi seri</strong><sup id="fnref9:darktable-usermanual-4.8-retouch"><a class="footnote-ref" href="#fn:darktable-usermanual-4.8-retouch">1</a></sup></li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/retouch-wavelet-bar.jpg" data-desc-position="bottom"><img alt="Barra wavelet nel modulo retouch" src="../../images/retouch-wavelet-bar.jpg"></a></p>
 <h3 id="passo-2-selezione-della-scala">Passo 2: Selezione della scala<a class="headerlink" href="#passo-2-selezione-della-scala" title="Permanent link">¶</a></h3>
 <p>Dopo aver impostato i livelli, seleziona quello da modificare:</p>
 <ul>
@@ -3410,7 +3408,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/retouch-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello parametri retouch" src="../../images/retouch-parameters-panel.jpg"></a></p>
 <h2 id="gestione-sourcetarget">Gestione source/target<a class="headerlink" href="#gestione-sourcetarget" title="Permanent link">¶</a></h2>
 <p>Per garantire risultati naturali, la posizione di <em>source</em> e <em>target</em> deve essere controllata con precisione:</p>
 <ul>
@@ -3431,7 +3428,6 @@
 <li><strong>Usa <em>merge from = 2</em></strong> per propagare il <em>blur</em> anche su livello 1 (massima finezza)  </li>
 <li><strong>Controlla con <em>preview single scale</em></strong>: livello 4 mostra la correzione tonale, livello 2 conferma che la texture è preservata<sup id="fnref13:pixls-wavelet"><a class="footnote-ref" href="#fn:pixls-wavelet">2</a></sup></li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/retouch-skin-wavelet.jpg" data-desc-position="bottom"><img alt="Esempio di ritocco pelle con wavelet" src="../../images/retouch-skin-wavelet.jpg"></a></p>
 <h2 id="walkthrough-da-video-tutorial">Walkthrough da video tutorial<a class="headerlink" href="#walkthrough-da-video-tutorial" title="Permanent link">¶</a></h2>
 <h3 id="esempio-skin-retouching-with-wavelet-decomposition-bruce-williams-darktable-fr">Esempio: Skin retouching with wavelet decomposition (Bruce Williams, darktable FR)<a class="headerlink" href="#esempio-skin-retouching-with-wavelet-decomposition-bruce-williams-darktable-fr" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://darktable.fr/posts/2019/01/darktable-ep-027-the-retouch-module/">darktable ep 027 - The Retouch module</a> (timestamp 8:12)</em><br>
@@ -3507,8 +3503,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-retouch.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Modulo Retouch in darktable" src="../../images/ui-retouch.png"></a>
-<em>Il modulo Modulo Retouch nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-retouch.png" data-desc-position="bottom"><img alt="Interfaccia del modulo retouch (Ritocco) in darktable" src="../../images/ui-retouch.png"></a>
+<em>Il modulo «retouch» (Ritocco) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>📘 <strong>Manuale ufficiale darktable 4.8 – retouch</strong><br>

@@ -3268,7 +3268,6 @@
 
 <h1 id="chromatic-aberrations">Chromatic Aberrations<a class="headerlink" href="#chromatic-aberrations" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>chromatic aberrations</strong> corregge le aberrazioni cromatiche trasversali (TCA) <em>dopo</em> la demosaicizzazione, quindi funziona su immagini già convertite in RGB — a differenza del modulo <code>raw chromatic aberrations</code>, che opera direttamente sui dati RAW Bayer<sup id="fnref:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>. È il modulo principale da utilizzare per la correzione TCA su immagini non-RAW (JPEG, TIFF, PNG) o quando il modulo <code>lens correction</code> non riesce a risolvere completamente i bordi colorati<sup id="fnref2:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/chromatic-aberrations-interface.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo chromatic aberrations in darktable 4.8" src="../../images/chromatic-aberrations-interface.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">TCA ≠ LCA: due fenomeni distinti</p>
 <p>Le <strong>aberrazioni cromatiche trasversali (TCA)</strong> compaiono come bordi colorati (rosso/ciano o blu/giallo) lungo i contorni ad alto contrasto, specialmente ai bordi dell’immagine. Sono causate da una dispersione angolare delle lunghezze d’onda diverse e sono <em>correggibili</em>. Le <strong>aberrazioni cromatiche longitudinali (LCA)</strong>, invece, appaiono come frange di colore su tutta l’area di un oggetto fuori fuoco (es. bokeh verde/rossastro) e richiedono approcci diversi (come il modulo deprecato <code>defringe</code><sup id="fnref:defringe-manual"><a class="footnote-ref" href="#fn:defringe-manual">4</a></sup>). Il modulo <code>chromatic aberrations</code> <strong>non corregge LCA</strong><sup id="fnref10:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>.</p>
@@ -3300,7 +3299,6 @@
 <li>La casella <strong>TCA overwrite</strong> sia deselezionata (per usare i parametri automatici) o, se selezionata, che i valori <code>TCA red</code> e <code>TCA blue</code> siano regolati finemente<sup id="fnref3:lens-correction-manual"><a class="footnote-ref" href="#fn:lens-correction-manual">2</a></sup></li>
 <li>Il modulo <code>raw chromatic aberrations</code> sia <strong>disabilitato</strong>, altrimenti si verificherà un conflitto di correzione<sup id="fnref:raw-chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:raw-chromatic-aberrations-manual">3</a></sup></li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lens-correction-tca.jpg" data-desc-position="bottom"><img alt="Modulo lens correction con TCA attivata" src="../../images/lens-correction-tca.jpg"></a></p>
 <h3 id="passo-2-attivazione-e-impostazione-base">Passo 2: Attivazione e impostazione base<a class="headerlink" href="#passo-2-attivazione-e-impostazione-base" title="Permanent link">¶</a></h3>
 <ol>
 <li>Attiva il modulo <code>chromatic aberrations</code></li>
@@ -3388,7 +3386,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/chromatic-aberrations-parameters.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri chromatic aberrations" src="../../images/chromatic-aberrations-parameters.jpg"></a></p>
 <h2 id="strategie-avanzate">Strategie avanzate<a class="headerlink" href="#strategie-avanzate" title="Permanent link">¶</a></h2>
 <p>Per casi complessi, il manuale ufficiale suggerisce approcci multi-istanza e mirati<sup id="fnref7:chromatic-aberrations-manual"><a class="footnote-ref" href="#fn:chromatic-aberrations-manual">1</a></sup>:</p>
 <h3 id="multi-istanza-con-modalita-distinte">Multi-istanza con modalità distinte<a class="headerlink" href="#multi-istanza-con-modalita-distinte" title="Permanent link">¶</a></h3>
@@ -3504,8 +3501,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-chromatic-aberrations.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Chromatic Aberrations in darktable" src="../../images/ui-chromatic-aberrations.png"></a>
-<em>Il modulo Chromatic Aberrations nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-chromatic-aberrations.png" data-desc-position="bottom"><img alt="Interfaccia del modulo chromatic aberrations (Aberrazioni cromatiche) in darktable" src="../../images/ui-chromatic-aberrations.png"></a>
+<em>Il modulo «chromatic aberrations» (Aberrazioni cromatiche) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/chromatic-aberrations/">Manuale ufficiale darktable 4.8 — chromatic aberrations</a>  </li>

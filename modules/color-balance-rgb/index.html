@@ -3256,7 +3256,6 @@
 
 <h1 id="color-balance-rgb">Color Balance RGB<a class="headerlink" href="#color-balance-rgb" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>color balance rgb</strong> è uno strumento avanzato di color grading cinematografico integrato nel flusso scene-referred di darktable. Progettato per operazioni creative e non correttive, si distingue per la sua capacità di manipolare cromaticità, saturazione e luminosità in modo percettivamente uniforme, mantenendo l’intonazione cromatica costante durante le regolazioni <sup id="fnref:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>. Non è adatto ai principianti: richiede una solida comprensione della teoria del colore e della separazione tra <em>primary</em> (correzione neutrale) e <em>secondary</em> (stilizzazione creativa) color grading <sup id="fnref2:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-balance-rgb-master-tab.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo color balance rgb con scheda Master attiva" src="../../images/color-balance-rgb-master-tab.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Non è un sostituto di color calibration</p>
 <p>Il modulo <strong>color balance rgb</strong> opera <em>dopo</em> la calibrazione dell’illuminante e non deve essere utilizzato per rimuovere dominanti cromatiche globali. Questo compito spetta al modulo <strong>color calibration</strong>, che agisce in uno spazio fisicamente coerente con i dati RAW <sup id="fnref7:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
@@ -3288,7 +3287,6 @@
 <li><strong>creative|teal-orange</strong>: base per lo stile cinematografico “Teal &amp; Orange” <sup id="fnref12:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 <li><strong>monochrome|high-contrast</strong>: ottimizzato per immagini in bianco e nero <sup id="fnref13:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup></li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-balance-rgb-presets.jpg" data-desc-position="bottom"><img alt="Selezione del preset 'basic colorfulness|standard' nel modulo color balance rgb" src="../../images/color-balance-rgb-presets.jpg"></a></p>
 <h3 id="passo-2-regolazione-globale-scheda-master">Passo 2: Regolazione globale (scheda Master)<a class="headerlink" href="#passo-2-regolazione-globale-scheda-master" title="Permanent link">¶</a></h3>
 <p>Inizia sempre dalla scheda <strong>Master</strong>, dove i controlli agiscono sull’intera immagine:</p>
 <ul>
@@ -3413,7 +3411,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-balance-rgb-full-panel.jpg" data-desc-position="bottom"><img alt="Pannello completo del modulo color balance rgb con schede Master e 4 Ways espanse" src="../../images/color-balance-rgb-full-panel.jpg"></a></p>
 <h2 id="parametri-avanzati-scheda-masks">Parametri avanzati (scheda Masks)<a class="headerlink" href="#parametri-avanzati-scheda-masks" title="Permanent link">¶</a></h2>
 <p>La scheda <strong>Masks</strong> contiene controlli fondamentali per la precisione del grading:</p>
 <table>
@@ -3500,7 +3497,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-balance-rgb-gamut-clipping.jpg" data-desc-position="bottom"><img alt="Visualizzazione del gamut clipping con soft roll-off" src="../../images/color-balance-rgb-gamut-clipping.jpg"></a></p>
 <h2 id="consigli-pratici-per-migranti-da-lightroomphotoshop">Consigli pratici per migranti da Lightroom/Photoshop<a class="headerlink" href="#consigli-pratici-per-migranti-da-lightroomphotoshop" title="Permanent link">¶</a></h2>
 <ul>
 <li>✅ <strong>Sostituisci “Vibrance” con <code>global vibrance</code></strong>: funziona esattamente come in Lightroom, ma con maggiore coerenza cromatica.</li>
@@ -3575,8 +3571,8 @@
 <h3 id="problema-global-saturation-fa-apparire-i-colori-artificiali">Problema: <code>global saturation</code> fa apparire i colori “artificiali”<a class="headerlink" href="#problema-global-saturation-fa-apparire-i-colori-artificiali" title="Permanent link">¶</a></h3>
 <p><code>global saturation</code> opera in spazio JzAzBz, che non compensa l’effetto Helmholtz-Kohlrausch. La soluzione è passare a <code>darktable UCS (2022)</code> nella scheda <strong>Masks</strong>, che bilancia la percezione di luminosità e croma, rendendo i colori più naturali anche a valori alti (+40%) <sup id="fnref6:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-balance-rgb.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Color Balance RGB in darktable" src="../../images/ui-color-balance-rgb.png"></a>
-<em>Il modulo Color Balance RGB nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-balance-rgb.png" data-desc-position="bottom"><img alt="Interfaccia del modulo color balance rgb (Bilanciamento colore RGB) in darktable" src="../../images/ui-color-balance-rgb.png"></a>
+<em>Il modulo «color balance rgb» (Bilanciamento colore RGB) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>📘 <strong>Manuale ufficiale darktable 4.8 – color balance rgb</strong>:<br>

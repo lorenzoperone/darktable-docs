@@ -3234,7 +3234,6 @@
 
 <h1 id="base-curve">Base Curve<a class="headerlink" href="#base-curve" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>base curve</strong> simula la curva tonale applicata in-camera per generare il JPEG dal RAW, trasformando i dati lineari del sensore in una rappresentazione visivamente coerente sullo schermo<sup id="fnref:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>. È il modulo di <em>tone mapping</em> predefinito nel workflow <strong>display-referred</strong>, attivato automaticamente quando nelle preferenze è impostato <code>auto-apply pixel workflow defaults = display-referred</code><sup id="fnref:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>. A differenza di AGX o Filmic RGB, opera nello spazio <strong>camera RGB</strong> — non nello spazio di lavoro standard (ProPhoto RGB o XYZ) — e quindi riflette le caratteristiche specifiche del sensore e della pipeline di elaborazione della fotocamera<sup id="fnref:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/base-curve-interface.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo base curve in darktable 5.4" src="../../images/base-curve-interface.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Base curve è legacy, ma ancora fondamentale</p>
 <p>Il workflow <code>display-referred (legacy)</code> con <code>base curve</code> rimane l’unica opzione per chi necessita di un’emulazione precisa del JPEG in-camera o lavora con flussi compatibili con Lightroom/Photoshop<sup id="fnref4:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>. Non è deprecato, ma è distinto dai workflow scene-referred (AGX, Filmic, Sigmoid) che operano in spazi fisicamente coerenti<sup id="fnref4:pixls-rgb-lab"><a class="footnote-ref" href="#fn:pixls-rgb-lab">4</a></sup>.</p>
@@ -3268,7 +3267,6 @@
 <li>Se non corrisponde, clicca sulla freccia a destra del nome e seleziona manualmente il preset più vicino;</li>
 <li>I preset sono organizzati per marca → modello → variante (es. <code>sony ILCE-7M4 v2</code>).</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/base-curve-preset-selection.jpg" data-desc-position="bottom"><img alt="Selezione del preset base curve per modello" src="../../images/base-curve-preset-selection.jpg"></a></p>
 <h3 id="passo-2-modifica-manuale-della-curva-opzionale">Passo 2: Modifica manuale della curva (opzionale)<a class="headerlink" href="#passo-2-modifica-manuale-della-curva-opzionale" title="Permanent link">¶</a></h3>
 <p>Solo se la curva predefinita non soddisfa le esigenze creative:</p>
 <ul>
@@ -3336,7 +3334,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/base-curve-parameters.jpg" data-desc-position="bottom"><img alt="Pannello parametri base curve con interpolazione e preserve colors" src="../../images/base-curve-parameters.jpg"></a></p>
 <h2 id="curve-predefinite-e-personalizzazione">Curve predefinite e personalizzazione<a class="headerlink" href="#curve-predefinite-e-personalizzazione" title="Permanent link">¶</a></h2>
 <p>darktable include <strong>oltre 150 curve</strong> per marche e modelli specifici, aggiornate regolarmente dal team di sviluppo<sup id="fnref6:base-curve-manual"><a class="footnote-ref" href="#fn:base-curve-manual">1</a></sup>. Le curve più comuni includono:</p>
 <table>
@@ -3470,8 +3467,8 @@
 <li><a href="https://pixls.us/articles/a-chiaroscuro-portrait/">Video tutorial: “A Chiaroscuro Portrait” — uso pratico di base curve in un flusso reale</a> <sup id="fnref:chiaroscuro"><a class="footnote-ref" href="#fn:chiaroscuro">5</a></sup></li>
 </ul>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-base-curve.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Base Curve in darktable" src="../../images/ui-base-curve.png"></a>
-<em>Il modulo Base Curve nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-base-curve.png" data-desc-position="bottom"><img alt="Interfaccia del modulo base curve (Curva base) in darktable" src="../../images/ui-base-curve.png"></a>
+<em>Il modulo «base curve» (Curva base) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>

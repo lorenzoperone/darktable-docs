@@ -3148,7 +3148,6 @@
 </blockquote>
 <h2 id="maschere-ai-sam2-dt-56">Maschere AI (SAM2, dt 5.6+)<a class="headerlink" href="#maschere-ai-sam2-dt-56" title="Permanent link">¶</a></h2>
 <p>darktable 5.6 introduce maschere AI integrate basate su <strong>SAM2</strong> (Segment Anything Model):<sup id="fnref:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ai-masks-intro.jpg" data-desc-position="bottom"><img alt="AI masks introduction" src="../../images/ai-masks-intro.jpg"></a></p>
 <h3 id="modelli-disponibili">Modelli disponibili<a class="headerlink" href="#modelli-disponibili" title="Permanent link">¶</a></h3>
 <p>Sono disponibili diversi modelli AI, ognuno con caratteristiche proprie:<sup id="fnref:gpu-thread"><a class="footnote-ref" href="#fn:gpu-thread">9</a></sup></p>
 <table>
@@ -3196,23 +3195,23 @@
 <li>Nel <strong>Gestore Maschere</strong>, aggiungere una nuova maschera di tipo <strong>AI object</strong></li>
 <li>Attendere la fase di <strong>analisi dell'immagine</strong> (appare "object mask: analyzing image...")</li>
 <li><strong>Tracciare approssimativamente</strong> sul soggetto con il pennello: la dimensione del pennello va scelta <em>prima</em> di iniziare</li>
-<li><strong>Rilasciare il pulsante del mouse</strong> per confermare immediatamente la maschera<sup id="fnref3:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ai-masks-sam2-brush.jpg" data-desc-position="bottom"><img alt="AI SAM2 brush tool" src="../../images/ai-masks-sam2-brush.jpg"></a></p>
-<ol>
-<li>L'AI genera automaticamente un contorno vettoriale preciso attorno al soggetto</li>
+<li>
+<p><strong>Rilasciare il pulsante del mouse</strong> per confermare immediatamente la maschera<sup id="fnref11:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+</li>
+<li>
+<p>L'AI genera automaticamente un contorno vettoriale preciso attorno al soggetto</p>
+</li>
 </ol>
 <h3 id="raffinamento-con-punti-di-controllo">Raffinamento con punti di controllo<a class="headerlink" href="#raffinamento-con-punti-di-controllo" title="Permanent link">¶</a></h3>
 <p>Dopo la generazione iniziale, la maschera puo' essere perfezionata:</p>
 <ul>
 <li><strong>Click sinistro</strong>: aggiungi punto <strong>positivo</strong> (includi area)</li>
-<li><strong>Click destro / centrale</strong>: aggiungi punto <strong>negativo</strong> (escludi area)<sup id="fnref4:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></li>
+<li><strong>Click destro / centrale</strong>: aggiungi punto <strong>negativo</strong> (escludi area)<sup id="fnref3:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></li>
 <li><strong>++shift+click++</strong>: rimuovi un punto di controllo esistente</li>
 <li><strong><span class="keys"><kbd class="key-a">A</kbd></span></strong>: zoom in/out senza modificare la maschera</li>
 <li><strong>++shift+wheel++</strong>: regola il feathering</li>
 <li><strong><span class="keys"><kbd class="key-m">M</kbd></span></strong>: mostra/nascondi la maschera in sovrapposizione</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ai-masks-control-points.jpg" data-desc-position="bottom"><img alt="AI masks control points" src="../../images/ai-masks-control-points.jpg"></a></p>
 <p>I parametri disponibili nel pannello proprieta' includono:</p>
 <table>
 <thead>
@@ -3254,10 +3253,9 @@
 </table>
 <h3 id="vettorizzazione-il-vantaggio-chiave">Vettorizzazione: il vantaggio chiave<a class="headerlink" href="#vettorizzazione-il-vantaggio-chiave" title="Permanent link">¶</a></h3>
 <p>Le maschere AI integrate sono <strong>vettoriali</strong>, non raster. Questo ha implicazioni fondamentali:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ai-masks-vectorized.jpg" data-desc-position="bottom"><img alt="AI masks vectorized" src="../../images/ai-masks-vectorized.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Salvataggio nel file XMP</p>
-<p>Le maschere AI vettorizzate vengono salvate direttamente nel file <strong>.xmp</strong> di darktable come dati codificati in base64 nel campo <code>mask_points</code>. Un file XMP tipico occupa solo <strong>~14 kB</strong> per l'intero set di parametri e maschere, senza alcun impatto significativo sulla dimensione del file RAW.<sup id="fnref5:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>Le maschere AI vettorizzate vengono salvate direttamente nel file <strong>.xmp</strong> di darktable come dati codificati in base64 nel campo <code>mask_points</code>. Un file XMP tipico occupa solo <strong>~14 kB</strong> per l'intero set di parametri e maschere, senza alcun impatto significativo sulla dimensione del file RAW.<sup id="fnref4:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p>Questo significa che:
 - <strong>Nessun file PFM esterno</strong> da gestire, spostare o conservare
 - <strong>Portabilita' totale</strong>: copia il file XMP e la maschera segue l'immagine
@@ -3265,21 +3263,21 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Vettorizzare maschere raster esterne</p>
-<p>Anche le maschere raster generate da plugin esterni (es. SAM3) possono essere <strong>vettorizzate</strong> tramite il pulsante <strong>Vectorize</strong> nel modulo External Raster Masks. Questo processo converte la maschera raster in un percorso vettoriale, permettendo di eliminare il file PFM e risparmiare spazio disco.<sup id="fnref6:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>Anche le maschere raster generate da plugin esterni (es. SAM3) possono essere <strong>vettorizzate</strong> tramite il pulsante <strong>Vectorize</strong> nel modulo External Raster Masks. Questo processo converte la maschera raster in un percorso vettoriale, permettendo di eliminare il file PFM e risparmiare spazio disco.<sup id="fnref5:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <h3 id="limitazioni-e-workaround">Limitazioni e workaround<a class="headerlink" href="#limitazioni-e-workaround" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Bordi complessi</p>
-<p>Il mascheramento AI puo' diventare <strong>inefficiente su bordi complessi</strong> (alberi vs. cielo, rami intrecciati, fogliame). Nei test, l'AI ha selezionato erroneamente il cielo invece della vegetazione, o ha perso dettagli fini tra i rami. In questi casi, le maschere disegnate o parametriche sono <strong>piu' veloci e precise</strong>.<sup id="fnref7:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>Il mascheramento AI puo' diventare <strong>inefficiente su bordi complessi</strong> (alberi vs. cielo, rami intrecciati, fogliame). Nei test, l'AI ha selezionato erroneamente il cielo invece della vegetazione, o ha perso dettagli fini tra i rami. In questi casi, le maschere disegnate o parametriche sono <strong>piu' veloci e precise</strong>.<sup id="fnref6:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 <p><strong>Workaround</strong>: selezionare l'area piu' semplice (es. il cielo) e <strong>invertire la maschera</strong> per isolare la vegetazione.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Prompt testuali instabili</p>
-<p>I prompt testuali nei modelli AI (es. "select sky", "select dog") possono essere <strong>instabili o fallire silenziosamente</strong>. Il modello puo' non riconoscere il soggetto desiderato o produrre risultati inaspettati. Se ci sono problemi, passare alla <strong>selezione manuale a punti</strong> (click positivi/negativi).<sup id="fnref8:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>I prompt testuali nei modelli AI (es. "select sky", "select dog") possono essere <strong>instabili o fallire silenziosamente</strong>. Il modello puo' non riconoscere il soggetto desiderato o produrre risultati inaspettati. Se ci sono problemi, passare alla <strong>selezione manuale a punti</strong> (click positivi/negativi).<sup id="fnref7:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Maschere vettoriali e forme organiche</p>
-<p>Le maschere vettoriali (incluse quelle AI) sono <strong>inadatte a forme estremamente complesse o organiche</strong>. Per cieli con alberi, bordi frattali o texture molto dettagliate, preferire maschere raster o parametriche.<sup id="fnref9:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>Le maschere vettoriali (incluse quelle AI) sono <strong>inadatte a forme estremamente complesse o organiche</strong>. Per cieli con alberi, bordi frattali o texture molto dettagliate, preferire maschere raster o parametriche.<sup id="fnref8:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <h3 id="quando-usare-le-maschere-ai-vs-alternative">Quando usare le maschere AI vs alternative<a class="headerlink" href="#quando-usare-le-maschere-ai-vs-alternative" title="Permanent link">¶</a></h3>
 <table>
@@ -3334,11 +3332,10 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Analisi iniziale dell'immagine</p>
-<p>La prima attivazione di una maschera AI richiede la fase di <strong>analisi dell'immagine</strong>, che puo' richiedere alcuni secondi. Le modifiche successive con punti di controllo sono invece quasi istantanee.<sup id="fnref10:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
+<p>La prima attivazione di una maschera AI richiede la fase di <strong>analisi dell'immagine</strong>, che puo' richiedere alcuni secondi. Le modifiche successive con punti di controllo sono invece quasi istantanee.<sup id="fnref9:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup></p>
 </div>
 <h3 id="esempi-pratici">Esempi pratici<sup id="fnref2:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup><a class="headerlink" href="#esempi-pratici" title="Permanent link">¶</a></h3>
 <p><strong>Esempio 1: Ritratto di animale (macaco)</strong></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ai-masks-final.jpg" data-desc-position="bottom"><img alt="AI masks final result" src="../../images/ai-masks-final.jpg"></a></p>
 <ul>
 <li>Maschera AI integrata (SAM2) sul soggetto: risultato eccellente con contorni precisi</li>
 <li>Applicata al modulo <em>Tone Equalizer</em> per regolare l'esposizione del soggetto</li>
@@ -3356,7 +3353,7 @@
 - Vettorizzazione della maschera raster per eliminare il file PFM
 - Risultato comparabile alla maschera AI integrata, ma con tempi di elaborazione piu' lunghi</p>
 <blockquote>
-<p>Per il workflow completo con esempi visivi: <em>AI masks in darktable</em><sup id="fnref11:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup> | Documentazione ufficiale sulle maschere raster<sup id="fnref3:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">2</a></sup></p>
+<p>Per il workflow completo con esempi visivi: <em>AI masks in darktable</em><sup id="fnref10:aimasks"><a class="footnote-ref" href="#fn:aimasks">8</a></sup> | Documentazione ufficiale sulle maschere raster<sup id="fnref3:manual-raster"><a class="footnote-ref" href="#fn:manual-raster">2</a></sup></p>
 </blockquote>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">

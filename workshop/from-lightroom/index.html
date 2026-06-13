@@ -3412,7 +3412,6 @@
 
 <h1 id="migrazione-da-lightroom-a-darktable-workshop-pratico">Migrazione da Lightroom a darktable: Workshop pratico<a class="headerlink" href="#migrazione-da-lightroom-a-darktable-workshop-pratico" title="Permanent link">¶</a></h1>
 <p>Questo workshop guida passo-passo un utente proveniente da Lightroom nell’elaborazione di una fotografia RAW in <strong>darktable 5.4+</strong>, replicando un flusso tipico di sviluppo <em>Lightroom-style</em> — ma rispettando l’architettura tecnica e la filosofia di darktable: <strong>scene-referred, non-destructive, modulare e controllabile</strong><sup id="fnref:darktable-not-lightroom"><a class="footnote-ref" href="#fn:darktable-not-lightroom">1</a></sup>. Non si tratta di “fare come Lightroom”, ma di <em>tradurre il proprio linguaggio creativo</em> in un sistema più profondo, meno opaco e completamente aperto<sup id="fnref:lightroom-darktable-express-01"><a class="footnote-ref" href="#fn:lightroom-darktable-express-01">14</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workshop-lr-dt-comparison.jpg" data-desc-position="bottom"><img alt="Workflow Lightroom vs darktable" src="../../images/workshop-lr-dt-comparison.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">darktable ≠ clone gratuito</p>
 <p>darktable non è un “Lightroom open source”: è un sistema di elaborazione basato su modelli fisici della luce (RGB lineare, scene-referred), mentre Lightroom opera in spazio gamma-encodato e con curve predefinite indesiderabili<sup id="fnref2:darktable-not-lightroom"><a class="footnote-ref" href="#fn:darktable-not-lightroom">1</a></sup>. Questa differenza fondamentale implica che <em>non esiste un mapping 1:1 tra i moduli</em>, ma solo equivalenze funzionali.</p>
@@ -3442,7 +3441,6 @@ Ogni modulo è posizionato nella pipeline in ordine ottimale per preservare la q
 → Seleziona la foto nella <em>lighttable</em><br>
 → Premi <code>D</code> per entrare in <em>darkroom</em><br>
 → Attiva la visualizzazione dell’istogramma (<code>Ctrl+H</code>)  </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workshop-darkroom-ui.jpg" data-desc-position="bottom"><img alt="Interfaccia darkroom con istogramma" src="../../images/workshop-darkroom-ui.jpg"></a></p>
 <p>Osserva:
 - L’istogramma mostra una distribuzione asimmetrica? (es. pila a sinistra = sottoesposta)<br>
 - Il picco rosso/blu è fuori scala? → indica sbilanciamento cromatico o clipping<br>
@@ -3485,7 +3483,6 @@ In darktable: modulo <strong><code>exposure</code></strong>, scheda <em>Exposure
 - Attiva <code>O</code>: le zone in rosso sono <em>clippate</em> (luminanza &gt; 1.0).<br>
 - Se il rosso appare su cieli o luci speculari, riduci <code>Exposure compensation</code>.<br>
 - Se non appare mai, l’immagine è probabilmente sottoesposta.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workshop-exposure-overlay.jpg" data-desc-position="bottom"><img alt="Esposizione con overexposure overlay" src="../../images/workshop-exposure-overlay.jpg"></a></p>
 <hr>
 <h2 id="passo-3-bilanciamento-del-bianco-white-balance">Passo 3: Bilanciamento del bianco (<code>white balance</code>)<a class="headerlink" href="#passo-3-bilanciamento-del-bianco-white-balance" title="Permanent link">¶</a></h2>
 <p>In Lightroom: <em>Basic &gt; Temp/Tint</em><br>
@@ -3545,7 +3542,6 @@ In darktable: modulo <strong><code>color calibration</code></strong>, scheda <em
 <p>✅ <strong>Cosa osservare</strong>:<br>
 - Abilita <code>gamut warning</code> (icona occhio): le aree gialle indicano colori fuori gamut sRGB.<br>
 - Se compaiono molti gialli dopo <code>saturation</code>, abbassa <code>gamut compression</code>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workshop-color-calibration-gamut.jpg" data-desc-position="bottom"><img alt="Color calibration con gamut warning" src="../../images/workshop-color-calibration-gamut.jpg"></a></p>
 <hr>
 <h2 id="passo-5-curva-tonale-tone-curve">Passo 5: Curva tonale (<code>tone curve</code>)<a class="headerlink" href="#passo-5-curva-tonale-tone-curve" title="Permanent link">¶</a></h2>
 <p>In Lightroom: <em>Tone Curve &gt; Parametric</em> o <em>Point Curve</em><br>
@@ -3590,7 +3586,6 @@ In darktable: modulo <strong><code>tone curve</code></strong>, scheda <em>Tone c
 <p>✅ <strong>Cosa osservare</strong>:<br>
 - La curva deve essere sempre monotona crescente (nessun “gobbo”).<br>
 - Se la curva scende, hai invertito i punti → premi <code>Reset curve</code>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/workshop-tone-curve-point.jpg" data-desc-position="bottom"><img alt="Tone curve point-based" src="../../images/workshop-tone-curve-point.jpg"></a></p>
 <hr>
 <h2 id="passo-6-nitidezza-e-rumore-sharpening-denoise-profiled">Passo 6: Nitidezza e rumore (<code>sharpening</code> + <code>denoise (profiled)</code>)<a class="headerlink" href="#passo-6-nitidezza-e-rumore-sharpening-denoise-profiled" title="Permanent link">¶</a></h2>
 <p>In Lightroom: <em>Detail &gt; Sharpening + Noise Reduction</em><br>

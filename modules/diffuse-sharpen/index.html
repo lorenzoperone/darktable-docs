@@ -3783,7 +3783,6 @@
 <p class="admonition-title">Risorse computazionali</p>
 <p>Questo modulo e' <strong>estremamente esigente</strong>. E' un risolutore di equazioni differenziali parziali anisotropo e multiscala. Il tempo di esecuzione cresce con il numero di iterazioni. L'uso di <strong>OpenCL e' fortemente raccomandato</strong>.<sup id="fnref22:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/diffuse-sharpen-intro.jpg" data-desc-position="bottom"><img alt="Diffuse or Sharpen module interface" src="../../images/diffuse-sharpen-intro.jpg"></a></p>
 <hr>
 <h2 id="cose-la-diffusione">Cos'e' la diffusione<a class="headerlink" href="#cose-la-diffusione" title="Permanent link">¶</a></h2>
 <p>La diffusione e' un processo fisico attraverso il quale le particelle si muovono e si distribuiscono gradualmente nel tempo, da una sorgente che le genera. Nell'elaborazione delle immagini, la diffusione si verifica principalmente in due contesti:<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
@@ -4057,7 +4056,6 @@
 <p class="admonition-title">Preservare i neri</p>
 <p>Quando il contrasto locale "mangia" i neri, usare <code>edge_threshold</code> positivo e una <strong>maschera parametrica</strong> per escludere le zone molto scure. Nel workflow B/N di street photography, il narratore usa una maschera parametrica su Jz con <code>emphasize mask</code> per proteggere le ombre profonde.<sup id="fnref3:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/diffuse-local-contrast.jpg" data-desc-position="bottom"><img alt="Local contrast enhancement with Diffuse or Sharpen" src="../../images/diffuse-local-contrast.jpg"></a></p>
 <h3 id="dehaze">Dehaze<a class="headerlink" href="#dehaze" title="Permanent link">¶</a></h3>
 <p><strong>Scopo:</strong> Rimuovere foschia e nebbia atmosferica.<sup id="fnref17:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Parametri tipici dal workflow reale:</strong>
@@ -4071,7 +4069,6 @@
 <p class="admonition-title">Dehaze al posto dell'high-pass</p>
 <p>Usare il preset <em>dehaze</em> in Diffuse or Sharpen invece del tradizionale filtro high-pass. Offre nitidezza piu' pulita ed evita i bordi neri indesiderati tipici dell'approccio high-pass.<sup id="fnref:dragan"><a class="footnote-ref" href="#fn:dragan">6</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/diffuse-dehaze.jpg" data-desc-position="bottom"><img alt="Dehaze effect using Diffuse or Sharpen" src="../../images/diffuse-dehaze.jpg"></a></p>
 <h3 id="bloom">Bloom<a class="headerlink" href="#bloom" title="Permanent link">¶</a></h3>
 <p><strong>Scopo:</strong> Creare un bagliore morbido sulle alte luci, simile all'effetto Orton.<sup id="fnref18:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <p><strong>Parametri tipici dal workflow reale:</strong>
@@ -4084,7 +4081,6 @@
 <p class="admonition-title">Esempio pratico: ammorbidire il cielo</p>
 <p>Nel tutorial di street photography B/N, il narratore applica il bloom al cielo usando una <strong>maschera disegnata a mano</strong> per delimitare l'area. Le speed positive (+50%) creano una diffusione morbida che attenua i contorni del cielo, riducendo la distrazione visiva.<sup id="fnref4:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/diffuse-bloom.jpg" data-desc-position="bottom"><img alt="Bloom effect with Diffuse or Sharpen" src="../../images/diffuse-bloom.jpg"></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione ai preset</p>
 <p>Applicare un preset sovrascrive le impostazioni ma puo' causare la <strong>perdita delle maschere</strong> precedentemente create. Ricrearle dopo l'applicazione del preset.<sup id="fnref5:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
@@ -4181,7 +4177,6 @@
 <li><strong>Bloom</strong> sul cielo per ammorbidire e ridurre la distrazione visiva, con maschera disegnata a mano (speed = +50%, isotropo)</li>
 <li><strong>Local contrast</strong> ad alta frequenza con maschera parametrica per escludere i neri (<code>radius_span</code> = 512, 15 iterazioni, anisotropia elevata)</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/diffuse-final.jpg" data-desc-position="bottom"><img alt="Final result of B&amp;W street photography editing" src="../../images/diffuse-final.jpg"></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Limitazioni delle maschere colore</p>
 <p>Non e' possibile creare una maschera basata sul colore quando il modulo <code>Diffuse or Sharpen</code> si trova <strong>sopra</strong> il modulo <code>black and white</code> nella pipeline -- il colore non e' ancora disponibile in quella posizione.<sup id="fnref6:street-bw"><a class="footnote-ref" href="#fn:street-bw">2</a></sup></p>
@@ -4326,8 +4321,8 @@
 <p>Il deblur può amplificare il clipping nei neri se il livello nero non è stato corretto. Prima di applicare <code>Lens deblur</code>, verificare che il modulo <code>Exposure</code> abbia <code>black level correction</code> impostato a un valore negativo (es. <code>−0.0002</code>) per ripristinare i dettagli nelle ombre. Se persiste, usare <code>edge_threshold = +0.20</code> per limitare la diffusione nelle aree scure<sup id="fnref:DzdGL30lYjU"><a class="footnote-ref" href="#fn:DzdGL30lYjU">11</a></sup>.</p>
 <hr>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-diffuse-sharpen.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Diffuse or Sharpen (Diffondi o Nitidezza) in darktable" src="../../images/ui-diffuse-sharpen.png"></a>
-<em>Il modulo Diffuse or Sharpen (Diffondi o Nitidezza) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-diffuse-sharpen.png" data-desc-position="bottom"><img alt="Interfaccia del modulo diffuse or sharpen (Diffusione o nitidezza) in darktable" src="../../images/ui-diffuse-sharpen.png"></a>
+<em>Il modulo «diffuse or sharpen» (Diffusione o nitidezza) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>

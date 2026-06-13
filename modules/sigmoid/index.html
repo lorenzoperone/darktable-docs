@@ -3312,7 +3312,6 @@
 
 <h1 id="tone-mapping-sigmoid">Tone Mapping: Sigmoid<a class="headerlink" href="#tone-mapping-sigmoid" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>sigmoid</strong> è un tone mapper basato su una curva log-logistica generalizzata, progettato per mappare la gamma dinamica <em>scene-referred</em> (illimitata) nel range limitato del display (0–100%) senza introdurre shift cromatici indesiderati<sup id="fnref:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>. È uno dei tre moduli principali di compressione tonale in darktable — insieme a <code>filmic rgb</code> e <code>agx</code> — e rimane particolarmente apprezzato per la sua semplicità, prevedibilità e controllo fine sulle transizioni tonali, specialmente in ritratti e immagini con ampie zone di pelle o cielo uniforme<sup id="fnref:filmic-sigmoid-p4"><a class="footnote-ref" href="#fn:filmic-sigmoid-p4">3</a></sup><sup id="fnref:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/sigmoid-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo Sigmoid" src="../../images/sigmoid-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Sigmoid è un modulo <em>display transform</em></p>
 <p>Sigmoid opera nella fase <em>display-referred</em> della pipeline: tutti i moduli posti <strong>prima</strong> di sigmoid lavorano in spazio scene-referred (dati RAW non compressi); tutti quelli <strong>dopo</strong> operano su dati già mappati al display. Non va mai usato insieme a <code>filmic rgb</code> o <code>base curve</code><sup id="fnref11:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
@@ -3345,7 +3344,6 @@
 <li>Seleziona un’area rappresentativa del grigio medio (non troppo chiara né troppo scura)</li>
 <li>Clicca su “set middle gray” → darktable regolerà automaticamente <code>exposure</code> per portare quel punto a ~50% L (LCh) o 18% riflettanza<sup id="fnref8:filmic-sigmoid-p3"><a class="footnote-ref" href="#fn:filmic-sigmoid-p3">2</a></sup>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/sigmoid-middle-gray.jpg" data-desc-position="bottom"><img alt="Selezione area grigio medio con exposure" src="../../images/sigmoid-middle-gray.jpg"></a></p>
 <h3 id="passo-2-contrasto">Passo 2: Contrasto<a class="headerlink" href="#passo-2-contrasto" title="Permanent link">¶</a></h3>
 <p>Il parametro <strong>Contrast</strong> agisce sulla pendenza della regione lineare centrale della curva sigmoidale<sup id="fnref4:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>:</p>
 <ul>
@@ -3439,7 +3437,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/sigmoid-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri Sigmoid" src="../../images/sigmoid-parameters-panel.jpg"></a></p>
 <h2 id="parametri-avanzati-primaries">Parametri avanzati: Primaries<a class="headerlink" href="#parametri-avanzati-primaries" title="Permanent link">¶</a></h2>
 <p>Espandendo la sezione <em>Primaries</em>, si accede a controlli specifici per la gestione cromatica <em>prima</em> della mappatura tonale — analoghi a quelli presenti in <code>filmic rgb</code> e <code>agx</code>, ma con finalità più tecniche<sup id="fnref6:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 <table>
@@ -3492,7 +3489,6 @@
 <li>Con <code>preserve hue</code> a <code>0–50%</code>: introduce una distorsione controllata dell’Hue — i rossi diventano arancioni, i blu diventano ciano, i verdi diventano gialli<sup id="fnref19:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.  </li>
 <li>Uso tipico: effetti “cinematografici”, tramonti caldi, luci notturne con dominanti artistiche<sup id="fnref2:sigmoid-fr"><a class="footnote-ref" href="#fn:sigmoid-fr">4</a></sup>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/sigmoid-color-processing.jpg" data-desc-position="bottom"><img alt="Confronto modalità color processing" src="../../images/sigmoid-color-processing.jpg"></a></p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Non usare sigmoid insieme ad altri display transforms</strong>: disattiva <code>filmic rgb</code> o <code>base curve</code> prima di abilitare sigmoid<sup id="fnref20:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</li>
@@ -3567,8 +3563,8 @@
 <p>Clicca sull'icona a forma di freccia verso il basso (▼) nell’angolo in alto a destra del modulo <code>sigmoid</code>. Seleziona il preset desiderato: i parametri verranno caricati immediatamente e applicati in tempo reale<sup id="fnref24:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</p>
 </div>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-sigmoid.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Tone Mapping: Sigmoid in darktable" src="../../images/ui-sigmoid.png"></a>
-<em>Il modulo Tone Mapping: Sigmoid nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-sigmoid.png" data-desc-position="bottom"><img alt="Interfaccia del modulo sigmoid (Sigmoideo) in darktable" src="../../images/ui-sigmoid.png"></a>
+<em>Il modulo «sigmoid» (Sigmoideo) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>

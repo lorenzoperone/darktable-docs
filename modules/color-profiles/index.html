@@ -3234,7 +3234,6 @@
 
 <h1 id="input-color-profile">Input Color Profile<a class="headerlink" href="#input-color-profile" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>input color profile</strong> definisce come darktable interpreterà i dati cromatici dell’immagine in ingresso, convertendoli dallo spazio colore nativo della sorgente (fotocamera, scanner, file JPEG/TIFF) a uno spazio colore di lavoro standardizzato. È il primo modulo <em>obbligatorio</em> nella pipeline di elaborazione RAW e agisce prima di qualsiasi regolazione espositiva o cromatica — un errore qui compromette irreversibilmente tutti i passaggi successivi<sup id="fnref:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/input-color-profile-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo input color profile" src="../../images/input-color-profile-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Posizione critica nella pipeline</p>
 <p>Il modulo <code>input color profile</code> si trova <strong>subito dopo <code>raw black/white point</code></strong> e <strong>prima di <code>white balance</code></strong>, nel flusso scene-referred. Non è modificabile per immagini RAW: se disabilitato, appare grigio e bloccato nella pipeline<sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">2</a></sup>. Questa posizione garantisce che la mappatura colore avvenga sui dati grezzi, non su valori già bilanciati o esposti<sup id="fnref8:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
@@ -3264,7 +3263,6 @@
 - Controlla che il menù <code>input profile</code> mostri una voce specifica per la tua fotocamera (es. <code>Fujifilm X-T2 enhanced matrix</code>) anziché <code>generic matrix</code>.
 - Se vedi <code>embedded icc profile</code>, significa che l’immagine non è RAW ma JPEG/TIFF/DNG con profilo incorporato<sup id="fnref2:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.
 - Usa il tooltip (passa il mouse sul menù) per verificare i dettagli: nome del profilo, gamma, intento di rendering<sup id="fnref3:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/pipeline-input-profile-raw.jpg" data-desc-position="bottom"><img alt="Input color profile nella pipeline RAW" src="../../images/pipeline-input-profile-raw.jpg"></a></p>
 <h3 id="passo-2-profilo-personalizzato-solo-per-casi-avanzati">Passo 2: Profilo personalizzato (solo per casi avanzati)<a class="headerlink" href="#passo-2-profilo-personalizzato-solo-per-casi-avanzati" title="Permanent link">¶</a></h3>
 <p>Puoi fornire un profilo ICC personalizzato solo se:
 - Hai generato un profilo con uno strumento esterno (es. <code>Argyll CMS</code>, <code>DisplayCAL</code>)
@@ -3305,7 +3303,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/input-color-profile-parameters.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri input color profile" src="../../images/input-color-profile-parameters.jpg"></a></p>
 <h2 id="gamut-clipping-quando-e-come-usarlo">Gamut Clipping: quando e come usarlo<a class="headerlink" href="#gamut-clipping-quando-e-come-usarlo" title="Permanent link">¶</a></h2>
 <p>Il clipping è un intervento di emergenza, non una regolazione standard:</p>
 <ul>
@@ -3335,7 +3332,6 @@
 <li><strong><code>color calibration</code></strong>: riceve dati già convertiti nel <code>working profile</code>. Se il working profile è <code>sRGB</code>, la calibrazione avrà meno margine per manipolare i primari<sup id="fnref15:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>.</li>
 <li><strong><code>AGX</code> / <code>Filmic RGB</code></strong>: dipendono dalla linearità e dall’accuratezza della mappatura iniziale. Un input profile scorretto causa under/over-saturazione sistematica, specialmente nei rossi e nei blu<sup id="fnref5:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">6</a></sup>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/input-wb-interaction.jpg" data-desc-position="bottom"><img alt="Interazione tra input color profile e white balance" src="../../images/input-wb-interaction.jpg"></a></p>
 <h2 id="consigli-pratici-per-migranti-da-lightroom">Consigli pratici per migranti da Lightroom<a class="headerlink" href="#consigli-pratici-per-migranti-da-lightroom" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -3426,8 +3422,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-profiles.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Input Color Profile in darktable" src="../../images/ui-color-profiles.png"></a>
-<em>Il modulo Input Color Profile nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-profiles.png" data-desc-position="bottom"><img alt="Interfaccia del modulo input color profile (Profilo colore di ingresso) in darktable" src="../../images/ui-color-profiles.png"></a>
+<em>Il modulo «input color profile» (Profilo colore di ingresso) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Manuale ufficiale darktable 4.8 — Input Color Profile</strong><sup id="fnref16:manual-48-input"><a class="footnote-ref" href="#fn:manual-48-input">1</a></sup>  </li>

@@ -3046,7 +3046,6 @@
 
 <h1 id="gamut-mapping-unbounded-colors">Gamut Mapping: Unbounded Colors<a class="headerlink" href="#gamut-mapping-unbounded-colors" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>Gamut Mapping: Unbounded Colors</strong> non è un modulo attivabile dall’utente, ma una <em>caratteristica fondamentale della pipeline di elaborazione</em> di darktable, attiva per impostazione predefinita fin dalla versione 3.0 e pienamente integrata nel workflow scene-referred a partire dalla versione 4.0<sup id="fnref:unbounded-colors"><a class="footnote-ref" href="#fn:unbounded-colors">1</a></sup>. Non si tratta di un controllo interattivo come AGX o Filmic RGB, bensì del principio architetturale che consente a darktable di gestire valori RGB superiori a <code>1.0</code> (ovvero oltre il 100% display-referred) senza clipping prematuro — preservando così informazioni cromatiche e tonali critiche fino all’ultimo stadio della pipeline<sup id="fnref2:unbounded-colors"><a class="footnote-ref" href="#fn:unbounded-colors">1</a></sup><sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/unbounded-colors-concept.jpg" data-desc-position="bottom"><img alt="Illustrazione concettuale: flusso di dati con valori RGB &quot;fuori gamut&quot; che attraversano la pipeline senza essere troncati" src="../../images/unbounded-colors-concept.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Unbounded colors ≠ colore “sbagliato”</p>
 <p>I valori RGB &gt; 1.0 non indicano un errore, ma rappresentano luminanze reali superiori alla massima emissione del tuo schermo (es. il sole, luci al neon, riflessi su vetro). Questi valori sono fisicamente validi e necessari per un mapping tonale corretto<sup id="fnref5:unbounded-colors"><a class="footnote-ref" href="#fn:unbounded-colors">1</a></sup>.</p>
@@ -3080,7 +3079,6 @@
 <li>Nel modulo <strong>exposure</strong>, assicurati che <code>clip negative RGB from gamut</code> sia <strong>disattivato</strong> (default) — questo parametro appartiene invece a <strong>color calibration</strong>, non a exposure<sup id="fnref8:unbounded-colors"><a class="footnote-ref" href="#fn:unbounded-colors">1</a></sup>.</li>
 <li>Nel modulo <strong>color calibration</strong>, il parametro <code>clip negative RGB from gamut</code> è <strong>attivo per default</strong>, ma riguarda solo i valori negativi (da evitare), non quelli positivi “unbounded”<sup id="fnref9:unbounded-colors"><a class="footnote-ref" href="#fn:unbounded-colors">1</a></sup><sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-calibration-clip-negative.jpg" data-desc-position="bottom"><img alt="Modulo color calibration con clip negative RGB from gamut attivo (default)" src="../../images/color-calibration-clip-negative.jpg"></a></p>
 <h3 id="passo-2-utilizza-i-moduli-progettati-per-lo-spazio-non-limitato">Passo 2: Utilizza i moduli progettati per lo spazio non limitato<a class="headerlink" href="#passo-2-utilizza-i-moduli-progettati-per-lo-spazio-non-limitato" title="Permanent link">¶</a></h3>
 <p>Solo i moduli compatibili con il workflow scene-referred sfruttano appieno i vantaggi di <em>unbounded colors</em>. Evita quelli legacy:</p>
 <table>
@@ -3177,7 +3175,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-calibration-parameters.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri principali di color calibration" src="../../images/color-calibration-parameters.jpg"></a></p>
 <h2 id="gestione-pratica-dei-colori-fuori-gamut">Gestione pratica dei colori fuori gamut<a class="headerlink" href="#gestione-pratica-dei-colori-fuori-gamut" title="Permanent link">¶</a></h2>
 <p>I casi d’uso più comuni per <em>unbounded colors</em> riguardano la gestione di colori saturi e luminosi che “esplodono” fuori dal gamut sRGB (es. luci natalizie rosse, cieli blu intenso, fiori viola fluorescenti):</p>
 <h3 id="caso-1-luci-natalizie-e-oggetti-molto-saturi">Caso 1: Luci natalizie e oggetti molto saturi<a class="headerlink" href="#caso-1-luci-natalizie-e-oggetti-molto-saturi" title="Permanent link">¶</a></h3>
@@ -3188,7 +3185,6 @@
 <li>Applicare <code>red attenuation = 25%</code> nella scheda <em>Primaries</em> (prima del tone mapping) per ridurre la saturazione del canale rosso in input<sup id="fnref5:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup></li>
 <li>Usare <code>AGX</code> o <code>Filmic RGB</code> per la compressione tonale finale, che gestirà i valori &gt;1.0 senza artefatti</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/spot-color-mapping-red-light.jpg" data-desc-position="bottom"><img alt="Misurazione spot di una luce rossa con color calibration" src="../../images/spot-color-mapping-red-light.jpg"></a></p>
 <h3 id="caso-2-recupero-di-alte-luci-con-dettaglio-cromatico">Caso 2: Recupero di alte luci con dettaglio cromatico<a class="headerlink" href="#caso-2-recupero-di-alte-luci-con-dettaglio-cromatico" title="Permanent link">¶</a></h3>
 <p>Quando le alte luci sono sovraesposte ma contengono informazioni cromatiche (es. nuvole illuminate dal sole), <em>unbounded colors</em> permette di:
 - Preservare i valori RGB &gt;1.0 anche dopo il bilanciamento del bianco

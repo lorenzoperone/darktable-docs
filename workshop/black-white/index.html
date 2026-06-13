@@ -3247,7 +3247,6 @@
 <p><strong>Fonte:</strong> <a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a> — A Dabble in Photography</p>
 </blockquote>
 <p>Questo caso studio mostra come trasformare un RAW infrarosso (filtro 720nm) in un'immagine monocromatica con viraggio cromatico creativo. La stessa tecnica si applica a qualsiasi foto che richiede una conversione B&amp;W controllata.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/bw-intro.jpg" data-desc-position="bottom"><img alt="Introduzione alla conversione B&amp;W da foto infrarosso" src="../../images/bw-intro.jpg"></a></p>
 <p><em>Figura 1 — Immagine infrarosso prima della conversione in bianco e nero.</em></p>
 <h2 id="contesto">Contesto<a class="headerlink" href="#contesto" title="Permanent link">¶</a></h2>
 <p>Le foto infrarosse presentano una dominante rossa/magenta estrema e richiedono uno scambio dei canali RGB prima di qualsiasi altra correzione. Il filtro Hoya 720nm agisce come un ND da ~6 stop: tempi di esposizione lunghi e treppiede obbligatorio.</p>
@@ -3325,7 +3324,6 @@
 <p class="admonition-title">Somma dei coefficienti = 1</p>
 <p>Quando si modificano i coefficienti del mixer di canali, assicurarsi che la somma sia 1 oppure attivare l'opzione <strong>Normalizza</strong> per evitare alterazioni indesiderate della luminosità<sup id="fnref:color-calibration-ref"><a class="footnote-ref" href="#fn:color-calibration-ref">3</a></sup>.</p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/bw-channel-mixer.jpg" data-desc-position="bottom"><img alt="Channel mixer per lo scambio dei canali RGB" src="../../images/bw-channel-mixer.jpg"></a></p>
 <p><em>Figura 2 — Configurazione del Color Calibration per lo scambio dei canali rosso e blu.</em></p>
 <h2 id="passo-3-conversione-in-bianco-e-nero">Passo 3 — Conversione in Bianco e Nero<a class="headerlink" href="#passo-3-conversione-in-bianco-e-nero" title="Permanent link">¶</a></h2>
 <p>Si aggiunge un'istanza di <strong>Color Calibration</strong> con il preset <strong>black and white</strong>. L'ordine nella pipeline è cruciale: questo modulo va posizionato <strong>dopo</strong> le correzioni cromatiche, subito prima di Filmic RGB.</p>
@@ -3471,7 +3469,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/bw-color-equalizer.jpg" data-desc-position="bottom"><img alt="Equalizzatore tonale per il contrasto locale" src="../../images/bw-color-equalizer.jpg"></a></p>
 <p><em>Figura 3 — Regolazione dell'equalizzatore tonale per aumentare la profondità dell'immagine.</em></p>
 <h2 id="passo-8-finitura-con-diffuse-or-sharpen">Passo 8 — Finitura con Diffuse or Sharpen<a class="headerlink" href="#passo-8-finitura-con-diffuse-or-sharpen" title="Permanent link">¶</a></h2>
 <p>Per recuperare texture e rimuovere eventuali aloni:</p>
@@ -3505,7 +3502,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/bw-diffuse-dehaze.jpg" data-desc-position="bottom"><img alt="Effetto diffuse/dehaze per contrasto e dettagli" src="../../images/bw-diffuse-dehaze.jpg"></a></p>
 <p><em>Figura 4 — Applicazione di Diffuse or Sharpen per recuperare texture e rimuovere aloni.</em></p>
 <h2 id="creare-uno-stile-per-il-batch-editing">Creare uno stile per il batch editing<a class="headerlink" href="#creare-uno-stile-per-il-batch-editing" title="Permanent link">¶</a></h2>
 <p>Una volta trovata la ricetta giusta, salvarla come <strong>stile</strong> per applicarla rapidamente ad altre foto IR dello stesso set:</p>
@@ -3520,7 +3516,6 @@
 <p>Lo stile automatizza lo scambio dei canali e il bilanciamento del bianco. Da lì, regolare esposizione e maschere per ogni singola immagine<sup id="fnref2:ir-video"><a class="footnote-ref" href="#fn:ir-video">1</a></sup>.</p>
 </div>
 <h2 id="risultato-finale">Risultato finale<a class="headerlink" href="#risultato-finale" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/bw-final.jpg" data-desc-position="bottom"><img alt="Risultato finale della conversione B&amp;W" src="../../images/bw-final.jpg"></a></p>
 <p><em>Figura 5 — Immagine finale dopo tutte le regolazioni: scambio canali, conversione B&amp;W, viraggio cromatico, contrasto locale e sharpening.</em></p>
 <h2 id="riepilogo-impostazioni">Riepilogo impostazioni<a class="headerlink" href="#riepilogo-impostazioni" title="Permanent link">¶</a></h2>
 <table>

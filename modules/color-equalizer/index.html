@@ -3512,7 +3512,6 @@
 
 <h1 id="color-equalizer">Color Equalizer<a class="headerlink" href="#color-equalizer" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>Color Equalizer</strong> e' uno strumento di manipolazione cromatica avanzata che opera nello spazio colore <strong>HSL</strong> (Hue, Saturation, Lightness). Permette di regolare selettivamente tonalita', saturazione e luminosita' per specifiche gamme di colore tramite curve interattive e un sistema di mascheramento cromatico integrato.<sup id="fnref:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-eq-intro.jpg" data-desc-position="bottom"><img alt="Color equalizer introduction" src="../../images/color-eq-intro.jpg"></a></p>
 <h2 id="come-funziona">Come funziona<a class="headerlink" href="#come-funziona" title="Permanent link">¶</a></h2>
 <p>Il Color Equalizer analizza l'immagine e costruisce una maschera basata sulle proprieta' cromatiche dei pixel. A differenza di <strong>Color Balance RGB</strong> -- che lavora nello spazio RGB lineare con bilanciamento per ombre/mezzetinte/luci -- il Color Equalizer opera su una rappresentazione HSL, consentendo selezioni basate sulla <strong>tonalita'</strong> (hue) del colore.</p>
 <h3 id="spazio-hsl-e-mascheramento-cromatico">Spazio HSL e mascheramento cromatico<a class="headerlink" href="#spazio-hsl-e-mascheramento-cromatico" title="Permanent link">¶</a></h3>
@@ -3549,17 +3548,14 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Permette di ruotare i colori lungo il cerchio cromatico. Ogni nodo sulla curva rappresenta una tonalita' e puo' essere spostato in gradi (+/- 180 gradi). A differenza di saturazione e luminosita', la curva hue permette di regolare l'<strong>ampiezza dell'effetto</strong> per ogni nodo.<sup id="fnref44:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-eq-hue-tab.jpg" data-desc-position="bottom"><img alt="Hue tab interface" src="../../images/color-eq-hue-tab.jpg"></a></p>
 <p><strong>Uso tipico:</strong> Correggere dominanti cromatiche selettive, trasformare colori specifici (es. rendere un cielo piu' caldo), isolare colori per conversioni creative.</p>
 </div>
 <div class="tabbed-block">
 <p>Controlla l'intensita' dei colori per ogni gamma tonale. Nodi positivi aumentano la saturazione, negativi la riducono. Non supporta la regolazione dell'ampiezza dell'effetto.<sup id="fnref45:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-eq-saturation-tab.jpg" data-desc-position="bottom"><img alt="Saturation tab" src="../../images/color-eq-saturation-tab.jpg"></a></p>
 <p><strong>Uso tipico:</strong> Aumentare la vividezza di colori specifici senza alterare il resto dell'immagine, desaturare selettivamente elementi di disturbo.</p>
 </div>
 <div class="tabbed-block">
 <p>Regola la luminosita' per ogni tonalita'. Opera come un equalizzatore tonale ma selettivo per colore anziche' per luminanza.<sup id="fnref46:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-eq-brightness-tab.jpg" data-desc-position="bottom"><img alt="Brightness tab" src="../../images/color-eq-brightness-tab.jpg"></a></p>
 <p><strong>Uso tipico:</strong> Illuminare i toni della pelle, scurire cieli, controllare la luminanza di elementi specifici prima della conversione in B/N.</p>
 </div>
 </div>
@@ -3589,7 +3585,6 @@
 </div>
 <h2 id="quando-usare-color-equalizer-vs-color-balance-rgb">Quando usare Color Equalizer vs Color Balance RGB<a class="headerlink" href="#quando-usare-color-equalizer-vs-color-balance-rgb" title="Permanent link">¶</a></h2>
 <p>I due moduli hanno scopi complementari ma distinti:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-balance-4ways.jpg" data-desc-position="bottom"><img alt="Color Balance RGB 4-ways interface" src="../../images/color-balance-4ways.jpg"></a></p>
 <table>
 <thead>
 <tr>
@@ -3890,7 +3885,6 @@
 </li>
 </ol>
 <h2 id="riepilogo-rapido">Riepilogo rapido<a class="headerlink" href="#riepilogo-rapido" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/color-eq-final.jpg" data-desc-position="bottom"><img alt="Final color equalizer result" src="../../images/color-eq-final.jpg"></a></p>
 <table>
 <thead>
 <tr>
@@ -3938,8 +3932,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-equalizer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Color Equalizer in darktable" src="../../images/ui-color-equalizer.png"></a>
-<em>Il modulo Color Equalizer nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-equalizer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo color equalizer (Equalizzatore colore) in darktable" src="../../images/ui-color-equalizer.png"></a>
+<em>Il modulo «color equalizer» (Equalizzatore colore) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>

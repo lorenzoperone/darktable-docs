@@ -3312,7 +3312,6 @@
 
 <h1 id="lens-correction">Lens Correction<a class="headerlink" href="#lens-correction" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>lens correction</strong> è il punto di partenza tecnico della pipeline darktable per la correzione ottica automatica e manuale. Gestisce tre difetti fisici fondamentali introdotti dall’obiettivo: <strong>distorsione geometrica</strong>, <strong>aberrazione cromatica trasversale (TCA)</strong> e <strong>vignettatura fotometrica</strong>, in modo non distruttivo e basato sui dati EXIF o sul database esterno <a href="https://lensfun.github.io/">Lensfun</a><sup id="fnref:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>. A partire da darktable 5.4, il modulo supporta anche la simulazione inversa di tali difetti (<em>distort mode</em>), utile per effetti creativi o test di calibrazione<sup id="fnref2:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lens-correction-interface.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo lens correction con griglia sovrapposta per allineamento" src="../../images/lens-correction-interface.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Correzione lente = primo passo obbligatorio</p>
 <p>Il modulo lens correction deve essere applicato <strong>prima</strong> di qualsiasi regolazione tonale o cromatica. Correggere distorsione o TCA <em>dopo</em> un tone mapping come AGX può generare artefatti di interpolazione irreversibili e degradare la qualità dei bordi<sup id="fnref9:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup><sup id="fnref:manuale-flusso"><a class="footnote-ref" href="#fn:manuale-flusso">3</a></sup>.</p>
@@ -3412,7 +3411,6 @@
 ✅ <strong>Valore tipico per ritratto</strong>: <code>focal distance = 1.5–3.0 m</code><br>
 ❌ <strong>Non lasciare vuoto</strong>: se manca, la vignettatura sarà inaccurata<sup id="fnref11:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lens-correction-photometric-params.jpg" data-desc-position="bottom"><img alt="Modulo lens correction con parametri fotometrici evidenziati" src="../../images/lens-correction-photometric-params.jpg"></a></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">¶</a></h2>
 <h3 id="controlli-lensfun-metodo-selezionato">Controlli Lensfun (metodo selezionato)<a class="headerlink" href="#controlli-lensfun-metodo-selezionato" title="Permanent link">¶</a></h3>
 <table>
@@ -3528,7 +3526,6 @@
 <p>✅ <strong>Valore tipico per correzione standard</strong>: <code>strength = +20%</code>, <code>radius = 65%</code>, <code>steepness = 70%</code><br>
 🔍 <strong>Visualizza la maschera</strong>: clicca l’icona <em>mask</em> accanto a <code>strength</code> per vedere l’area influenzata<sup id="fnref13:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup>.</p>
 </blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lens-correction-manual-vignette-mask.jpg" data-desc-position="bottom"><img alt="Controllo manuale vignettatura con maschera visualizzata" src="../../images/lens-correction-manual-vignette-mask.jpg"></a></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">¶</a></h2>
 <h3 id="identificazione-errata-di-obiettivo">Identificazione errata di obiettivo<a class="headerlink" href="#identificazione-errata-di-obiettivo" title="Permanent link">¶</a></h3>
 <p>Se Lensfun non riconosce correttamente il tuo obiettivo (es. obiettivo terzo produttore o adattato), segui questa procedura:</p>
@@ -3600,8 +3597,8 @@
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-lens-correction.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Lens Correction in darktable" src="../../images/ui-lens-correction.png"></a>
-<em>Il modulo Lens Correction nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-lens-correction.png" data-desc-position="bottom"><img alt="Interfaccia del modulo lens correction (Correzione obiettivo) in darktable" src="../../images/ui-lens-correction.png"></a>
+<em>Il modulo «lens correction» (Correzione obiettivo) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 User Manual — Lens Correction</a> — Documentazione ufficiale completa<sup id="fnref18:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>

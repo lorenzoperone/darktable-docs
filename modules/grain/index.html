@@ -3256,7 +3256,6 @@
 
 <h1 id="grain">Grain<a class="headerlink" href="#grain" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>grain</strong> simula la grana tipica delle pellicole analogiche, aggiungendo una texture sottile e organica all’immagine. A differenza di filtri di rumore o di sfocatura, il grain opera in modo fisicamente plausibile: è calcolato esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, preservando la struttura cromatica e la nitidezza dei dettagli<sup id="fnref:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>. Questo approccio lo rende particolarmente adatto per applicazioni artistiche (ritratti, street, b/n) dove si desidera un aspetto “cinematografico” senza compromettere la definizione o introdurre artefatti cromatici<sup id="fnref:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo grain" src="../../images/grain-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Grain lavora solo sul canale L di Lab</p>
 <p>Il modulo non modifica i canali a/b di Lab, né i canali RGB. Questo significa che il grain è <em>luminoso</em>, non cromatico: non altera la saturazione, la tonalità o la bilancia dei colori. È quindi sicuro da usare prima o dopo il tone mapping, purché non venga applicato in combinazione con moduli che degradano la precisione del canale L (es. compressione JPEG lossy pre-elaborazione)<sup id="fnref5:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
@@ -3302,7 +3301,6 @@
 <li><strong>Medio (25–50%)</strong>: intensità standard, sufficiente per creare profondità e coesione visiva senza dominare la scena<sup id="fnref7:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</li>
 <li><strong>Alto (55–85%)</strong>: effetto marcato, adatto a stili vintage o b/n ad alto impatto. Oltre l’85% tende a appiattire le transizioni tonali<sup id="fnref11:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-portrait-bw.jpg" data-desc-position="bottom"><img alt="Grain applicato su un ritratto in b/n" src="../../images/grain-portrait-bw.jpg"></a></p>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -3341,7 +3339,6 @@
 <li>Applica <code>grain</code> globalmente con <code>coarseness = 0.8–1.2</code>, <code>strength = 30–40%</code>  </li>
 <li>Verifica che la grana sul soggetto rimanga più definita rispetto allo sfondo  </li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/grain-blurs-combo.jpg" data-desc-position="bottom"><img alt="Grain + blurs su uno sfondo sfocato" src="../../images/grain-blurs-combo.jpg"></a></p>
 <h3 id="grano-per-immagini-in-bianco-e-nero">Grano per immagini in bianco e nero<a class="headerlink" href="#grano-per-immagini-in-bianco-e-nero" title="Permanent link">¶</a></h3>
 <p>Nel workflow b/n, il grain è fondamentale per sostituire la “struttura” persa con la rimozione del colore. Usa questi valori tipici:</p>
 <ul>
@@ -3431,8 +3428,8 @@
 <h3 id="problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine">Problema: Grana scompare dopo aver applicato <code>censorize</code> su parte dell’immagine<a class="headerlink" href="#problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine" title="Permanent link">¶</a></h3>
 <p>Il modulo <code>censorize</code> applica un blur gaussiano seguito da rumore luminoso, che sovrascrive il pattern di <code>grain</code>. Poiché <code>grain</code> non supporta maschere, non può essere riapplicato selettivamente. Soluzione: applicare <code>censorize</code> <em>prima</em> di <code>grain</code>, oppure usare <code>blurs</code> + <code>grain</code> per simulare un effetto di bokeh granuloso senza perdere il controllo globale<sup id="fnref:blurs-ref"><a class="footnote-ref" href="#fn:blurs-ref">5</a></sup>.</p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-grain.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Grain in darktable" src="../../images/ui-grain.png"></a>
-<em>Il modulo Grain nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-grain.png" data-desc-position="bottom"><img alt="Interfaccia del modulo grain (Grana) in darktable" src="../../images/ui-grain.png"></a>
+<em>Il modulo «grain» (Grana) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/grain/">darktable 4.8 user manual — grain module</a>  </li>

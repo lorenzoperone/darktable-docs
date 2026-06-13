@@ -3346,7 +3346,6 @@
 
 <h1 id="demosaicing">Demosaicing<a class="headerlink" href="#demosaicing" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>demosaicing</strong> è il primo modulo tecnico obbligatorio nella pipeline di elaborazione RAW di darktable. Ricostruisce l’intero spazio colore RGB da un singolo canale per pixel (disposto secondo il pattern del filtro Bayer o X-Trans), trasformando i dati grezzi del sensore in un’immagine visualizzabile con informazioni complete su rosso, verde e blu per ogni punto. È fondamentale per la qualità finale della nitidezza, della risoluzione cromatica e della gestione del rumore, specialmente a ISO elevati<sup id="fnref:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup><sup id="fnref:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/demosaic-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo Demosaicing" src="../../images/demosaic-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Demosaicing è obbligatorio e non disabilitabile</p>
 <p>Il modulo <code>demosaic</code> appare grigio e bloccato nella pipeline (non modificabile) in modalità <em>darkroom</em> perché è un passaggio tecnico indispensabile: senza di esso, i dati RAW rimangono una matrice di intensità monocromatiche e non possono essere interpretati come immagine RGB. Non è possibile saltarlo né bypassarlo<sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>.</p>
@@ -3418,7 +3417,6 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/demosaic-algorithms-comparison.jpg" data-desc-position="bottom"><img alt="Confronto algoritmi demosaicing" src="../../images/demosaic-algorithms-comparison.jpg"></a></p>
 <h3 id="passo-2-attivazione-del-capture-sharpen">Passo 2: Attivazione del Capture Sharpen<a class="headerlink" href="#passo-2-attivazione-del-capture-sharpen" title="Permanent link">¶</a></h3>
 <p>Il <code>capture sharpen</code> è un’ottimizzazione critica per la nitidezza intrinseca, applicata direttamente sulle bande di colore interpolate. I suoi parametri sono accessibili solo quando l’algoritmo scelto lo supporta (RCD, Markesteijn, AMaZE)<sup id="fnref2:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
 <ul>
@@ -3487,7 +3485,6 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/demosaic-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri Demosaicing" src="../../images/demosaic-parameters-panel.jpg"></a></p>
 <h2 id="algoritmi-avanzati-e-casi-duso">Algoritmi avanzati e casi d’uso<a class="headerlink" href="#algoritmi-avanzati-e-casi-duso" title="Permanent link">¶</a></h2>
 <h3 id="markesteijn-1-pass-per-iso-elevati-e-dettaglio-estremo">Markesteijn 1-pass: per ISO elevati e dettaglio estremo<a class="headerlink" href="#markesteijn-1-pass-per-iso-elevati-e-dettaglio-estremo" title="Permanent link">¶</a></h3>
 <p>Introdotto in darktable 3.8, questo algoritmo è ottimizzato per immagini rumorose e per sensori Sony ARW, grazie a una stima statistica migliorata dei valori mancanti<sup id="fnref3:dt38-demosaic"><a class="footnote-ref" href="#fn:dt38-demosaic">2</a></sup>. È l’unico algoritmo che supporta nativamente il <code>capture_sharpen</code> con <strong>controllo indipendente su luci/ombre</strong>, rendendolo ideale per:</p>
@@ -3594,8 +3591,8 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-demosaicing.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Demosaicing in darktable" src="../../images/ui-demosaicing.png"></a>
-<em>Il modulo Demosaicing nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-demosaicing.png" data-desc-position="bottom"><img alt="Interfaccia del modulo demosaic (Demosaicizzazione) in darktable" src="../../images/ui-demosaicing.png"></a>
+<em>Il modulo «demosaic» (Demosaicizzazione) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/demosaic/">darktable 4.8 User Manual — Demosaic</a> — Documentazione ufficiale completa<sup id="fnref16:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>  </li>

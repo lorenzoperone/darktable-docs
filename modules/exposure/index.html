@@ -3371,7 +3371,6 @@
 <blockquote>
 <p><strong>Nota tecnica</strong>: L’area mapping richiede che il modulo <code>exposure</code> sia posizionato <em>prima</em> di <code>input color profile</code> nella pipeline, poiché la conversione da RGB camera a Lab dipende dal profilo colore. Su JPEG/PNG, spostare <code>exposure</code> dopo <code>input color profile</code> o usare il preset <em>v3.0 for JPEG/non-RAW input</em><sup id="fnref7:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 </blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/exposure-spot-mapping.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo Exposure con area mapping attivo: pulsante rosso 'spot exposure mapping' evidenziato, cerchio di selezione sul fiore viola, valori L* = 52.9% e esposizione corretta +0.858 EV" src="../../images/exposure-spot-mapping.jpg"></a></p>
 <h2 id="uso-nel-flusso-scene-referred">Uso nel flusso scene-referred<a class="headerlink" href="#uso-nel-flusso-scene-referred" title="Permanent link">¶</a></h2>
 <p>L’obiettivo primario non è «centrare l’istogramma», ma <strong>posizionare il grigio medio della scena (18.45% reflectance) a un livello di luminosità coerente con la percezione umana</strong><sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. Questo valore corrisponde approssimativamente a L* = 50.0 nel colore CIE Lab, ed è il riferimento standard per la misurazione espositiva.</p>
 <ol>
@@ -3399,7 +3398,6 @@
 <blockquote>
 <p>Questo approccio è più efficiente che ricreare la stessa maschera in ogni modulo, soprattutto quando si lavora con immagini ad alta risoluzione o su hardware limitato. La maschera viene memorizzata una volta sola nella pipeline e riutilizzata come texture raster<sup id="fnref2:dt54"><a class="footnote-ref" href="#fn:dt54">6</a></sup>.</p>
 </blockquote>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/exposure-raster-mask.jpg" data-desc-position="bottom"><img alt="Maschera ellittica creata nell’istanza 'exposure background', poi riutilizzata come raster mask in 'tone equalizer'" src="../../images/exposure-raster-mask.jpg"></a></p>
 <h2 id="consigli-operativi-avanzati">Consigli operativi avanzati<a class="headerlink" href="#consigli-operativi-avanzati" title="Permanent link">¶</a></h2>
 <h3 id="1-esposizione-per-la-fusione-hdrexr">1. Esposizione per la fusione HDR/EXR<a class="headerlink" href="#1-esposizione-per-la-fusione-hdrexr" title="Permanent link">¶</a></h3>
 <p>Quando si preparano immagini per la fusione (HDR, enfuse, PhotoFlow), l’esposizione deve essere ottimizzata per <strong>massimizzare la copertura dinamica senza clipping</strong>:
@@ -3474,8 +3472,8 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 </tbody>
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-exposure.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Exposure in darktable" src="../../images/ui-exposure.png"></a>
-<em>Il modulo Exposure nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-exposure.png" data-desc-position="bottom"><img alt="Interfaccia del modulo exposure (Esposizione) in darktable" src="../../images/ui-exposure.png"></a>
+<em>Il modulo «exposure» (Esposizione) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/stable/en/module-reference/processing-modules/exposure/">darktable User Manual — Exposure</a>  </li>

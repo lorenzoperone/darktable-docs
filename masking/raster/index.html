@@ -3034,7 +3034,6 @@
 
 <h1 id="raster-masks-external-plugins">Raster Masks: External Plugins<a class="headerlink" href="#raster-masks-external-plugins" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>raster masks external plugins</strong> non è un singolo modulo nativo di darktable, ma una <em>categoria funzionale</em> che descrive il flusso di lavoro per importare, convertire e applicare maschere raster generate esternamente (es. con AI tools come SAM2/SAM3, Affinity Photo o Photoshop) nel pipeline di elaborazione di darktable 5.4+<sup id="fnref:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup><sup id="fnref:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>. Questo workflow consente di sfruttare algoritmi di segmentazione avanzati non disponibili nativamente, integrandoli in modo non distruttivo nella pipeline scene-referred<sup id="fnref:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/raster-external-workflow.jpg" data-desc-position="bottom"><img alt="Workflow di importazione maschera raster esterna in darktable" src="../../images/raster-external-workflow.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Raster mask ≠ vettoriale</p>
 <p>Una <em>raster mask</em> è un'immagine in scala di grigi (8/16 bit), dove ogni pixel ha un valore di opacità da 0.0 (trasparente) a 1.0 (opaco). A differenza delle maschere vettoriali (disegnate o AI-integrate), non è scalabile senza perdita di qualità e richiede un formato specifico: <strong>PFM (Portable FloatMap)</strong> per preservare la precisione floating-point necessaria alla pipeline scene-referred<sup id="fnref5:raster-manual"><a class="footnote-ref" href="#fn:raster-manual">1</a></sup><sup id="fnref7:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>.</p>
@@ -3075,7 +3074,6 @@
 <li>✅ Evita modifiche cromatiche aggressive (es. <code>color balance rgb</code> con <code>highlights = -25%</code>) che alterano la percezione AI<sup id="fnref12:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>  </li>
 <li>❌ Non usare <code>velvia</code>, <code>LUT 3D</code> o <code>tone equalizer</code> prima dell’esportazione — possono confondere gli algoritmi esterni  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/raster-prep-duplicate.jpg" data-desc-position="bottom"><img alt="Interfaccia darktable con modulo duplicate manager attivo e crop/lens correction disattivati" src="../../images/raster-prep-duplicate.jpg"></a></p>
 <h3 id="passo-2-esportazione-in-tiffpng">Passo 2: Esportazione in TIFF/PNG<a class="headerlink" href="#passo-2-esportazione-in-tiffpng" title="Permanent link">¶</a></h3>
 <p>L’esportazione deve rispettare questi vincoli tecnici<sup id="fnref4:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <table>
@@ -3121,7 +3119,6 @@
 <li><code>ffmpeg</code>: <code>ffmpeg -i input.png -pix_fmt grayf32le -f rawvideo output.pfm</code>  </li>
 <li>❌ Non usare strumenti che introducono gamma o tonemapping (es. GIMP con “convert to sRGB”)  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/raster-export-png.jpg" data-desc-position="bottom"><img alt="Finestra di esportazione in Affinity Photo con PNG selezionato e dimensioni 6240×4160 px" src="../../images/raster-export-png.jpg"></a></p>
 <h3 id="passo-4-importazione-in-darktable">Passo 4: Importazione in darktable<a class="headerlink" href="#passo-4-importazione-in-darktable" title="Permanent link">¶</a></h3>
 <p>Una volta ottenuto il file <code>.pfm</code>, procedi così<sup id="fnref6:external-masks-video"><a class="footnote-ref" href="#fn:external-masks-video">2</a></sup>:</p>
 <ol>
@@ -3188,7 +3185,6 @@
 <li>Combinare maschere raster e vettoriali nello stesso modulo  </li>
 </ul>
 <p>Il processo è accessibile tramite <code>mask manager</code> → <code>convert to vector</code> dopo aver importato la PFM<sup id="fnref3:ai-subsystem-pr"><a class="footnote-ref" href="#fn:ai-subsystem-pr">3</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/raster-overlay-dog.jpg" data-desc-position="bottom"><img alt="Maschera raster importata visualizzata come overlay viola su un cane in movimento" src="../../images/raster-overlay-dog.jpg"></a></p>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Usa due istanze dello stesso modulo</strong>: es. due <code>exposure</code>, una per il cielo (con maschera raster <code>sky.pfm</code>) e una per il primo piano (con <code>ground.pfm</code>). Questo evita conflitti di blending<sup id="fnref:landscape-ai-video"><a class="footnote-ref" href="#fn:landscape-ai-video">4</a></sup>  </li>

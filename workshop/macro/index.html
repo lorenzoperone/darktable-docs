@@ -3244,7 +3244,6 @@
 
 <h1 id="macro-close-up-photography-in-darktable">Macro Close-Up Photography in darktable<a class="headerlink" href="#macro-close-up-photography-in-darktable" title="Permanent link">¶</a></h1>
 <p>Il flusso di lavoro per la <strong>macro close-up photography</strong> in darktable richiede un approccio specifico: alta fedeltà cromatica, controllo millimetrico del contrasto locale, gestione precisa delle alte luci (spesso sovraesposte su fondi neri o sfocati), e supporto nativo al <em>focus stacking</em> tramite integrazione esterna<sup id="fnref:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>. A differenza della fotografia paesaggistica o ritrattistica, la macro richiede una pipeline che preservi i dettagli microscopici senza introdurre artefatti di denoising, desaturazione o clipping tonale.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/macro-workflow-overview.jpg" data-desc-position="bottom"><img alt="Workflow macro in darktable: focus peaking, spot mapping, guided laplacians, local contrast" src="../../images/macro-workflow-overview.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Macro ≠ solo ingrandimento</p>
 <p>La post-produzione macro non è semplice “zoom e nitidezza”. È una gestione di tre livelli simultanei:<br>
@@ -3273,7 +3272,6 @@
 <li>Regola la sensibilità (<code>Shift + P</code>) fino a quando i bordi nitidi (es. contorno di un petalo, antenne di un insetto) appaiono con un contorno rosso fluoresccente  </li>
 <li>Seleziona l’immagine con il massimo dettaglio nel punto di interesse (non necessariamente quella più centrale)  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/macro-focus-peaking.jpg" data-desc-position="bottom"><img alt="Focus peaking attivo su un fiore: contorni rossi evidenziano i petali a fuoco" src="../../images/macro-focus-peaking.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">Focus peaking è essenziale per macro</p>
 <p>In darktable 5.4+, il focus peaking usa l’algoritmo <em>Laplacian of Gaussian</em> (LoG) ottimizzato per alti rapporti di contrasto locali — ideale per bordi netti su sfondi sfocati<sup id="fnref3:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup>. Non è un surrogato del focus stacking, ma lo strumento per scegliere correttamente l’immagine di riferimento.</p>
@@ -3291,7 +3289,6 @@
 <li><code>chroma_target</code>: 42–65% (saturazione media per pigmenti naturali)  </li>
 <li><code>lightness_target</code>: 48–54%  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/macro-spot-mapping.jpg" data-desc-position="bottom"><img alt="Spot exposure mapping attivo su un fiore: cerchio rosso sul petalo, valore L=52.9%" src="../../images/macro-spot-mapping.jpg"></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Non usare Auto Tune Levels su macro</p>
 <p>Il pulsante <em>Auto Tune Levels</em> è progettato per scene con ampia gamma dinamica (paesaggi). Su macro, spesso interpreta lo sfondo nero come “nero reale” e taglia i dettagli nelle ombre. Usa invece <code>spot exposure mapping</code> per un controllo deterministico<sup id="fnref2:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup>.</p>
@@ -3308,7 +3305,6 @@
 <li><code>diameter of reconstruction</code>: <code>64 px</code> (ottimale per dettagli submillimetrici)  </li>
 <li>Usa una maschera circolare per applicare la ricostruzione <em>solo</em> sulle aree interessate (es. goccia su foglia)  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/macro-guided-laplacians.jpg" data-desc-position="bottom"><img alt="Guided laplacians attivo su una goccia d'acqua: curva tonale modificata nella zona bianca" src="../../images/macro-guided-laplacians.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Perché Guided Laplacians e non LCH?</p>
 <p>Il metodo <em>guided laplacians</em> preserva la struttura geometrica locale (bordi, texture) meglio di LCH o colour-based. È stato introdotto in darktable 4.0 proprio per casi d’uso come la macro e la microfotografia<sup id="fnref3:dt40-update"><a class="footnote-ref" href="#fn:dt40-update">2</a></sup><sup id="fnref:dt40-features"><a class="footnote-ref" href="#fn:dt40-features">3</a></sup>.</p>
@@ -3326,7 +3322,6 @@
 <li><code>clarity in highlights</code>: <code>38%</code> (per far emergere i riflessi senza bruciare)  </li>
 <li><code>clarity in shadows</code>: <code>8%</code> (minimo, per non esaltare il rumore nelle ombre)  </li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/macro-local-contrast-mask.jpg" data-desc-position="bottom"><img alt="Local contrast con maschera parametrica su venature di foglia: area verde evidenziata" src="../../images/macro-local-contrast-mask.jpg"></a></p>
 <h3 id="passo-5-rifinitura-finale">Passo 5: Rifinitura finale<a class="headerlink" href="#passo-5-rifinitura-finale" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Denoise</strong>: usa <code>denoise (profiled)</code> → <code>strength</code>: <code>12%</code>, <code>spatial extent</code>: <code>1.2</code>, <code>range extent</code>: <code>0.8</code> — sufficiente per ISO 400–800 tipici della macro su treppiede  </li>

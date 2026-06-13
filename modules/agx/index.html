@@ -3754,7 +3754,6 @@
 
 <h1 id="tone-mapping-agx">Tone Mapping: AGX<a class="headerlink" href="#tone-mapping-agx" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>AGX</strong> (Academy Color Encoding System-inspired tone mapping) e' il tone mapper predefinito in darktable 5.4+. Sostituisce gradualmente Filmic RGB e Sigmoid, offrendo un approccio ispirato al workflow cinematografico ACES per la compressione tonale scene-referred.<sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">8</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/agx-intro.jpg" data-desc-position="bottom"><img alt="Introduzione al modulo AGX" src="../../images/agx-intro.jpg"></a></p>
 <div class="admonition info">
 <p class="admonition-title">AGX e' il default da darktable 5.4</p>
 <p>Dalla versione 5.4, AGX e' il modulo di tone mapping predefinito nella pipeline scene-referred. Questo significa che ogni nuova immagine RAW verra' elaborata con AGX automaticamente.<sup id="fnref7:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
@@ -3785,7 +3784,6 @@
 <li>Calcola automaticamente i punti di bianco e nero dell'immagine</li>
 <li>Funziona meglio se l'esposizione globale e' gia' stata regolata<sup id="fnref3:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">4</a></sup></li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/pipeline-agx-default.jpg" data-desc-position="bottom"><img alt="AGX nella pipeline di darktable" src="../../images/pipeline-agx-default.jpg"></a></p>
 <h3 id="passo-2-contrasto">Passo 2: Contrasto<a class="headerlink" href="#passo-2-contrasto" title="Permanent link">¶</a></h3>
 <p>Il parametro <strong>Contrast</strong> controlla la pendenza della curva S globale:<sup id="fnref5:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ul>
@@ -3885,7 +3883,6 @@
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/agx-parameters-panel.jpg" data-desc-position="bottom"><img alt="Pannello dei parametri AGX" src="../../images/agx-parameters-panel.jpg"></a></p>
 <h2 id="parametri-avanzati-della-curva">Parametri avanzati della curva<a class="headerlink" href="#parametri-avanzati-della-curva" title="Permanent link">¶</a></h2>
 <p>Espandendo la sezione <em>Advanced Curve Parameters</em>, si trovano controlli aggiuntivi:<sup id="fnref7:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <table>
@@ -3938,10 +3935,8 @@
 <li><strong>Parametri avanzati della curva</strong> -- usa solo se shoulder/toe non sono sufficienti</li>
 </ul>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/agx-curve-display.jpg" data-desc-position="bottom"><img alt="Visualizzazione della curva tonale AGX" src="../../images/agx-curve-display.jpg"></a></p>
 <h2 id="gestione-del-colore-in-agx">Gestione del colore in AGX<a class="headerlink" href="#gestione-del-colore-in-agx" title="Permanent link">¶</a></h2>
 <p>La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda <em>Color</em> o tramite il modulo <em>Color Calibration</em> con tab <em>Primaries</em>.<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/dt54-hue-wheel.jpg" data-desc-position="bottom"><img alt="Nuova ruota cromatica dt 5.4" src="../../images/dt54-hue-wheel.jpg"></a></p>
 <h3 id="attenuazione-delle-primarie-before-tone-mapping">Attenuazione delle primarie (Before Tone Mapping)<a class="headerlink" href="#attenuazione-delle-primarie-before-tone-mapping" title="Permanent link">¶</a></h3>
 <p>Prima della compressione tonale, puoi desaturare selettivamente i canali RGB:<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <table>
@@ -4062,7 +4057,6 @@
 <p class="admonition-title">Tecnica del rettangolo</p>
 <p>Quando usi la pipetta per il pivot, non cliccare su un singolo pixel. Trascina un rettangolo sulla zona di interesse (es. il soggetto principale) per campionare l'esposizione media di quell'area.<sup id="fnref30:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/agx-pivot-eyedropper.jpg" data-desc-position="bottom"><img alt="Uso della pipetta per il pivot AGX" src="../../images/agx-pivot-eyedropper.jpg"></a></p>
 <h2 id="casi-duso-pratici">Casi d'uso pratici<a class="headerlink" href="#casi-duso-pratici" title="Permanent link">¶</a></h2>
 <h3 id="ritratti">Ritratti<a class="headerlink" href="#ritratti" title="Permanent link">¶</a></h3>
 <p>Per i ritratti, AGX offre toni della pelle naturali e buona gestione delle alte luci:<sup id="fnref10:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
@@ -4078,7 +4072,6 @@
 <p class="admonition-title">Toni della pelle</p>
 <p>Se i toni della pelle risultano troppo saturi, usa il <em>Color Equalizer</em> sulla saturazione per desaturare selettivamente la zona dei rossi/arancioni.<sup id="fnref3:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/dragan-skin-desaturation.jpg" data-desc-position="bottom"><img alt="Desaturazione della pelle effetto Dragan" src="../../images/dragan-skin-desaturation.jpg"></a></p>
 <h3 id="paesaggi">Paesaggi<a class="headerlink" href="#paesaggi" title="Permanent link">¶</a></h3>
 <p>I paesaggi beneficiano della gestione avanzata della dinamica di AGX:<sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
 <ol>
@@ -4093,7 +4086,6 @@
 <p class="admonition-title">Maschere parametriche</p>
 <p>Per paesaggi complessi, usa maschere parametriche su moduli Exposure aggiuntivi per lavorare separatamente su cielo, terreno e soggetti.<sup id="fnref4:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/dt54-tone-eq-mask.jpg" data-desc-position="bottom"><img alt="Maschera Tone EQ per paesaggi" src="../../images/dt54-tone-eq-mask.jpg"></a></p>
 <h3 id="tramonti">Tramonti<a class="headerlink" href="#tramonti" title="Permanent link">¶</a></h3>
 <p>I tramonti sono la sfida piu' difficile per un tone mapper a causa dei colori estremamente saturi:<sup id="fnref11:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <ol>
@@ -4108,7 +4100,6 @@
 <p class="admonition-title">Attenzione al color banding</p>
 <p>I tramonti con colori molto saturi possono mostrare <em>color banding</em> (bande di colore) nelle zone di transizione. Se succede, aumenta l'attenuazione del blu e del rosso, poi recupera con <em>recover purity</em>.<sup id="fnref:dt52-release"><a class="footnote-ref" href="#fn:dt52-release">6</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/agx-preserve-hue.jpg" data-desc-position="bottom"><img alt="Funzionalita Preserve Hue per i tramonti" src="../../images/agx-preserve-hue.jpg"></a></p>
 <h3 id="scene-in-scarsa-luce-lowlight">Scene in scarsa luce (Lowlight)<a class="headerlink" href="#scene-in-scarsa-luce-lowlight" title="Permanent link">¶</a></h3>
 <p>Per foto scattate in condizioni di scarsa luce:<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
 <ol>
@@ -4123,7 +4114,6 @@
 <p class="admonition-title">Foto ISO alti</p>
 <p>Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.<sup id="fnref6:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
 </div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lowlight-agx-settings.jpg" data-desc-position="bottom"><img alt="Impostazioni AGX per scene lowlight" src="../../images/lowlight-agx-settings.jpg"></a></p>
 <h3 id="effetto-dragan-ritratti-drammatici">Effetto Dragan (ritratti drammatici)<a class="headerlink" href="#effetto-dragan-ritratti-drammatici" title="Permanent link">¶</a></h3>
 <p>Per il look ad alto contrasto stile Andrzej Dragan:<sup id="fnref:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
 <ol>
@@ -4275,7 +4265,6 @@
 <h3 id="3-ignorare-lattenuazione-delle-primarie">3. Ignorare l'attenuazione delle primarie<a class="headerlink" href="#3-ignorare-lattenuazione-delle-primarie" title="Permanent link">¶</a></h3>
 <p><strong>Problema</strong>: Colori molto saturi (tramonti, luci al neon) causano clipping cromatico e color banding.<sup id="fnref5:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <p><strong>Soluzione</strong>: Attenua i blu (e talvolta i rossi) <em>prima</em> del tone mapping, poi recupera con <em>recover purity</em>.<sup id="fnref6:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/lowlight-color-balance.jpg" data-desc-position="bottom"><img alt="Bilanciamento colore dopo AGX" src="../../images/lowlight-color-balance.jpg"></a></p>
 <h3 id="4-pivot-mal-posizionato">4. Pivot mal posizionato<a class="headerlink" href="#4-pivot-mal-posizionato" title="Permanent link">¶</a></h3>
 <p><strong>Problema</strong>: Il pivot di default (0 EV, 18% output) potrebbe non corrispondere al soggetto principale.<sup id="fnref16:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
 <p><strong>Soluzione</strong>: Usa la pipetta per campionare la zona dell'immagine che deve avere il massimo contrasto.<sup id="fnref17:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup></p>
@@ -4411,8 +4400,8 @@
 <h3 id="problema-maschere-parametriche-non-funzionano-con-agx">Problema: Maschere parametriche non funzionano con AGX<a class="headerlink" href="#problema-maschere-parametriche-non-funzionano-con-agx" title="Permanent link">¶</a></h3>
 <p>Le maschere parametriche richiedono che i moduli siano posizionati <em>prima</em> di AGX nella pipeline (es. <code>exposure</code>, <code>color equalizer</code>). Se applichi una maschera a un modulo <em>dopo</em> AGX, i valori tonali saranno già compressi e la maschera perderà precisione. Usa sempre <code>tone equalizer</code> o <code>color calibration</code> <em>prima</em> di AGX per mascherature precise<sup id="fnref2:discussion-pixls-54755"><a class="footnote-ref" href="#fn:discussion-pixls-54755">10</a></sup>  </p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-agx.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Tone Mapping: AGX in darktable" src="../../images/ui-agx.png"></a>
-<em>Il modulo Tone Mapping: AGX nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-agx.png" data-desc-position="bottom"><img alt="Interfaccia del modulo AgX in darktable" src="../../images/ui-agx.png"></a>
+<em>Il modulo «AgX» nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>

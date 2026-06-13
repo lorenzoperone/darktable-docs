@@ -3446,7 +3446,6 @@
 
 <h1 id="contrast-equalizer">Contrast Equalizer<a class="headerlink" href="#contrast-equalizer" title="Permanent link">¶</a></h1>
 <p>Il modulo <strong>contrast equalizer</strong> è uno strumento avanzato per il controllo del contrasto locale e globale basato sulla decomposizione wavelet. Opera nello spazio colore CIE LCh (Luminanza, Crominanza, Tonalità), permettendo di regolare separatamente luminosità (<em>luma</em>) e saturazione (<em>chroma</em>) a diverse scale di dettaglio — dalle strutture grossolane (<em>coarse</em>) a quelle finissime (<em>fine</em>) — senza introdurre artefatti cromatici o gradient reversal<sup id="fnref:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>. È il modulo di riferimento per nitidezza selettiva, bloom controllato, riduzione del rumore multiscala e chiaroscuro strutturale in darktable 5.4+<sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">2</a></sup><sup id="fnref:pixls-rgb"><a class="footnote-ref" href="#fn:pixls-rgb">3</a></sup>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/contrast-equalizer-luma-orig.jpg" data-desc-position="bottom"><img alt="Interfaccia del modulo contrast equalizer con scheda luma attiva" src="../../images/contrast-equalizer-luma-orig.jpg"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Contrast Equalizer ≠ Local Contrast</p>
 <p>Il modulo <em>local contrast</em> applica un filtro Laplaciano su una singola scala, mentre <em>contrast equalizer</em> lavora su <strong>6–7 scale wavelet indipendenti</strong>, offrendo granularità superiore e compatibilità con la pipeline scene-referred. Usalo quando hai bisogno di controllo fine (es. preservare i peli di un insetto senza accentuare il rumore dello sfondo)<sup id="fnref9:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup><sup id="fnref2:video-firststeps"><a class="footnote-ref" href="#fn:video-firststeps">4</a></sup>.</p>
@@ -3486,7 +3485,6 @@
 <p>Prima di modificare qualsiasi curva, <strong>zooma all’80–100%</strong>. Le bande alternate (chiare/scure) nel fondo della griglia indicano quali scale sono visibili a quella risoluzione:<br>
 - Le bande <strong>visibili</strong> = scale che avranno effetto immediato<br>
 - Le bande <strong>non visibili</strong> = scale troppo piccole per essere percepite — evita di modificarle<sup id="fnref3:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>  </p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/contrast-equalizer-scale-zoom.jpg" data-desc-position="bottom"><img alt="Griglia wavelet con bande alternate visibili" src="../../images/contrast-equalizer-scale-zoom.jpg"></a></p>
 <h3 id="passo-2-usa-la-modalita-difference-per-testare-le-curve">Passo 2: Usa la modalità “difference” per testare le curve<a class="headerlink" href="#passo-2-usa-la-modalita-difference-per-testare-le-curve" title="Permanent link">¶</a></h3>
 <p>Attiva la <strong>modalità blend “difference”</strong> (clicca sull’icona della maschera nella barra degli strumenti). In questa modalità, solo le aree modificate appaiono in bianco/nero:<br>
 - Sollevare un punto sulla curva <em>luma</em> → compare il contorno dei dettagli a quella scala<br>
@@ -3544,7 +3542,6 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/contrast-equalizer-tabs.jpg" data-desc-position="bottom"><img alt="Pannello completo delle tre schede: luma, chroma, edges" src="../../images/contrast-equalizer-tabs.jpg"></a></p>
 <h3 id="scale-wavelet-disponibili-default-7-scale">Scale wavelet disponibili (default: 7 scale)<a class="headerlink" href="#scale-wavelet-disponibili-default-7-scale" title="Permanent link">¶</a></h3>
 <p>Le 7 scale corrispondono a raggi approssimati di dettaglio (calcolati in pixel a 100% zoom):<br>
 | Scala | Raggio approssimativo | Tipico utilizzo |<br>
@@ -3741,8 +3738,8 @@ Questo ti permette di verificare <em>esattamente</em> quale struttura stai influ
 <p>💡 I preset possono essere modificati e salvati come nuovi preset personalizzati. Il valore di <strong>mix</strong> non è memorizzato nel preset: viene sempre applicato al valore corrente<sup id="fnref15:dt48-manual"><a class="footnote-ref" href="#fn:dt48-manual">1</a></sup>.</p>
 </blockquote>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-contrast-equalizer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Contrast Equalizer in darktable" src="../../images/ui-contrast-equalizer.png"></a>
-<em>Il modulo Contrast Equalizer nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-contrast-equalizer.png" data-desc-position="bottom"><img alt="Interfaccia del modulo contrast equalizer (Equalizzatore contrasto) in darktable" src="../../images/ui-contrast-equalizer.png"></a>
+<em>Il modulo «contrast equalizer» (Equalizzatore contrasto) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/contrast-equalizer/">darktable 4.8 user manual — contrast equalizer</a>  </li>
