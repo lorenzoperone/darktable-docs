@@ -3574,8 +3574,6 @@
 <p>Questo avviene perché <code>hue shift</code> opera su coordinate cromatiche (CIE u′v′ o JzAzBz), che richiedono almeno una minima quantità di croma per essere visibili. Per immagini monocromatiche, prima applica <code>global chroma = +3%</code> per introdurre una base di croma manipolabile, quindi <code>hue shift</code> <sup id="fnref2:f9szYMJ9wYo-0545"><a class="footnote-ref" href="#fn:f9szYMJ9wYo-0545">8</a></sup>.</p>
 <h3 id="problema-global-saturation-fa-apparire-i-colori-artificiali">Problema: <code>global saturation</code> fa apparire i colori “artificiali”<a class="headerlink" href="#problema-global-saturation-fa-apparire-i-colori-artificiali" title="Permanent link">¶</a></h3>
 <p><code>global saturation</code> opera in spazio JzAzBz, che non compensa l’effetto Helmholtz-Kohlrausch. La soluzione è passare a <code>darktable UCS (2022)</code> nella scheda <strong>Masks</strong>, che bilancia la percezione di luminosità e croma, rendendo i colori più naturali anche a valori alti (+40%) <sup id="fnref6:dt48-color-balance-rgb"><a class="footnote-ref" href="#fn:dt48-color-balance-rgb">1</a></sup>.</p>
-<!-- b3:gallery:start -->
-
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-color-balance-rgb.png" data-desc-position="bottom"><img alt="Interfaccia del modulo Color Balance RGB in darktable" src="../../images/ui-color-balance-rgb.png"></a>
 <em>Il modulo Color Balance RGB nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
