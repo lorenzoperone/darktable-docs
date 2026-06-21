@@ -3233,14 +3233,13 @@
 </tbody>
 </table>
 <h2 id="video-tutorial-analizzati-manualize">Video tutorial analizzati (manualize)<a class="headerlink" href="#video-tutorial-analizzati-manualize" title="Permanent link">¶</a></h2>
-<p>Questa guida integra l'analisi automatizzata di <strong>12 video-tutorial</strong> del canale <em>A Dabble in Photography</em>, per un totale di <strong>1.088 screenshot</strong> annotati e centinaia di consigli operativi estratti.</p>
+<p>Questa guida integra l'analisi automatizzata di <strong>12 video-tutorial</strong> del canale <em>A Dabble in Photography</em>, da cui sono stati estratti centinaia di consigli operativi e parametri di esempio.</p>
 <table>
 <thead>
 <tr>
 <th>#</th>
 <th>Video</th>
 <th>Argomento</th>
-<th>Screenshot</th>
 <th>Parametri chiave estratti</th>
 </tr>
 </thead>
@@ -3249,84 +3248,72 @@
 <td>1</td>
 <td><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></td>
 <td>Primi passi</td>
-<td>28</td>
 <td><code>preferences → processing → auto-apply pixel workflow defaults = ON</code>, <code>chromatic adaptation = modern</code> <sup id="fnref:adabble-ep01"><a class="footnote-ref" href="#fn:adabble-ep01">18</a></sup></td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline</a></td>
 <td>Pipeline per principianti</td>
-<td>74</td>
 <td>Ordine ottimale: <code>demosaic → input color profile → filmic rgb → exposure → white balance → color calibration → tone equalizer</code> <sup id="fnref:adabble-pipeline"><a class="footnote-ref" href="#fn:adabble-pipeline">19</a></sup></td>
 </tr>
 <tr>
 <td>3</td>
 <td><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX</a></td>
 <td>Tone mapping AgX</td>
-<td>94</td>
 <td><code>AgX</code> preimpostato: <code>dynamic range = 14.1</code>, <code>black relative exposure = -6.5</code>, <code>white relative exposure = +7.6</code>, <code>contrast = 0.75</code> <sup id="fnref:adabble-agx"><a class="footnote-ref" href="#fn:adabble-agx">20</a></sup></td>
 </tr>
 <tr>
 <td>4</td>
 <td><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></td>
 <td>Novità 5.4</td>
-<td>89</td>
 <td>Nuovo modulo <code>AI object segmentation</code>, miglioramento del <code>tone equalizer</code> (supporto maschere esterne <code>.png</code> 16-bit) <sup id="fnref:adabble-54-update"><a class="footnote-ref" href="#fn:adabble-54-update">21</a></sup></td>
 </tr>
 <tr>
 <td>5</td>
 <td><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos</a></td>
 <td>Foto scarsa luce</td>
-<td>102</td>
 <td><code>denoise (profiled)</code>: <code>strength = 0.82</code>, <code>sharpen = 0.35</code>, <code>wavelets scale = 3</code>, <code>non-local means patch size = 7</code> <sup id="fnref:adabble-lowlight"><a class="footnote-ref" href="#fn:adabble-lowlight">22</a></sup></td>
 </tr>
 <tr>
 <td>6</td>
 <td><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">Night Sky Full Edit</a></td>
 <td>Cielo notturno</td>
-<td>83</td>
 <td><code>exposure</code>: <code>exposure compensation = +1.2</code>, <code>black point = 0.012</code>, <code>white point = 0.985</code>; <code>filmic rgb</code>: <code>dynamic range = 13.8</code> <sup id="fnref:adabble-nightsky"><a class="footnote-ref" href="#fn:adabble-nightsky">23</a></sup></td>
 </tr>
 <tr>
 <td>7</td>
 <td><a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect</a></td>
 <td>Ritratto drammatico</td>
-<td>88</td>
 <td><code>sharpen</code>: <code>radius = 2.1</code>, <code>amount = 0.65</code>, <code>threshold = 0.02</code>; <code>color zones</code>: <code>saturation = +42</code>, <code>hue shift = -8°</code> <sup id="fnref:adabble-dragan"><a class="footnote-ref" href="#fn:adabble-dragan">24</a></sup></td>
 </tr>
 <tr>
 <td>8</td>
 <td><a href="https://www.youtube.com/watch?v=OF7ZcDPQfeM">The Orton effect</a></td>
 <td>Bagliore morbido</td>
-<td>61</td>
 <td><code>soften</code>: <code>blur radius = 12.4</code>, <code>opacity = 0.48</code>, <code>blend mode = soft light</code>; <code>exposure</code>: <code>gamma = 0.72</code> <sup id="fnref:adabble-orton"><a class="footnote-ref" href="#fn:adabble-orton">25</a></sup></td>
 </tr>
 <tr>
 <td>9</td>
 <td><a href="https://www.youtube.com/watch?v=7sOAxcNaP4M">External raster masks</a></td>
 <td>Maschere esterne</td>
-<td>53</td>
 <td>Formato accettato: <code>.png</code> 16-bit grayscale, dimensione identica all’immagine, canale alpha ignorato <sup id="fnref2:adabble-raster-masks"><a class="footnote-ref" href="#fn:adabble-raster-masks">26</a></sup></td>
 </tr>
 <tr>
 <td>10</td>
 <td><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks</a></td>
 <td>Maschere AI (SAM2)</td>
-<td>95</td>
 <td>Input richiesto: immagine <code>.png</code> 16-bit con ROI disegnato a mano; output: maschera binaria <code>.png</code> 16-bit <sup id="fnref2:adabble-ai-masks"><a class="footnote-ref" href="#fn:adabble-ai-masks">27</a></sup></td>
 </tr>
 <tr>
 <td>11</td>
 <td><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></td>
 <td>Paesaggio con AI</td>
-<td>123</td>
 <td><code>AI segmentation</code>: <code>model = sam2_hiera_large</code>, <code>points per mask = 12</code>, <code>iou threshold = 0.87</code> <sup id="fnref:adabble-landscape-ai"><a class="footnote-ref" href="#fn:adabble-landscape-ai">28</a></sup></td>
 </tr>
 <tr>
 <td>12</td>
 <td><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 Release</a></td>
 <td>Novità 5.2</td>
-<td>86</td>
 <td>Introduzione di <code>color calibration</code> come sostituto di <code>channel mixer</code>, con <code>chromatic adaptation = modern</code> <sup id="fnref:adabble-52-release"><a class="footnote-ref" href="#fn:adabble-52-release">29</a></sup></td>
 </tr>
 </tbody>
@@ -3498,7 +3485,7 @@
 <li><strong><a href="https://darktable.fr/tags/raw-photography-tutorials/">darktable.fr — Raw Photography Tutorials</a></strong>: 4 video comparativi <code>filmic v5</code> vs <code>sigmoid</code>, con sottotitoli traducibili in francese <sup id="fnref:darktable-fr-raw-photography"><a class="footnote-ref" href="#fn:darktable-fr-raw-photography">9</a></sup>.  </li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
-<p><em>Questa guida aggrega contenuti da 4 fonti scritte (1.090 pagine scrappate) e 12 video-tutorial (1.088 screenshot analizzati) tramite il progetto <a href="https://github.com/lorenzoperone/manualize">manualize</a>.</em></p>
+<p><em>Questa guida aggrega contenuti da 4 fonti scritte (1.090 pagine scrappate) e 12 video-tutorial analizzati tramite il progetto <a href="https://github.com/lorenzoperone/manualize">manualize</a>.</em></p>
 <div class="footnote">
 <hr>
 <ol>
