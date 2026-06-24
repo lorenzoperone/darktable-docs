@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable">
       
       
         <meta name="author" content="Lorenzo Perone">
@@ -12,7 +12,7 @@
         <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/lens-correction/">
       
       
-        <link rel="prev" href="../denoise/">
+        <link rel="prev" href="../neural-restore/">
       
       
         <link rel="next" href="../retouch/">
@@ -1008,6 +1008,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../color-harmonizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Harmonizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../diffuse-sharpen/" class="md-nav__link">
         
   
@@ -1100,6 +1128,34 @@
     
   
     Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neural-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neural Restore
   
 
     
@@ -1833,6 +1889,34 @@
     
   
     Composite: Fusioni avanzate e effetti creativi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
   
 
     
@@ -3550,7 +3634,7 @@
 4. Regola <code>TCA red = +12.3</code> e <code>TCA blue = -18.7</code> finché le frange cromatiche ai bordi verticali scompaiono<br>
 5. Verifica che <code>mode = correct</code> e <code>scale = auto</code> sia attivo<sup id="fnref:dt-yt-comparison"><a class="footnote-ref" href="#fn:dt-yt-comparison">2</a></sup></p>
 <h3 id="esempio-simulazione-distort-per-test-di-calibrazione">Esempio: Simulazione distort per test di calibrazione<a class="headerlink" href="#esempio-simulazione-distort-per-test-di-calibrazione" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 user manual — lens correction</a> (section “mode”)</em><br>
+<p><em>Da <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/">darktable user manual — lens correction</a> (section “mode”)</em><br>
 1. Seleziona <code>correction method = Lensfun database</code><br>
 2. Imposta <code>mode = distort</code><br>
 3. Scegli <code>target geometry = fisheye</code><br>
@@ -3598,10 +3682,10 @@
 </table>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-lens-correction.png" data-desc-position="bottom"><img alt="Interfaccia del modulo lens correction (Correzione obiettivo) in darktable" src="../../images/ui-lens-correction.png"></a>
-<em>Il modulo «lens correction» (Correzione obiettivo) nell'interfaccia di darktable 5.4 (vista darkroom).</em></p>
+<em>Il modulo «lens correction» (Correzione obiettivo) nell'interfaccia di darktable (vista darkroom).</em></p>
 <h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
-<li>📘 <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/">darktable 4.8 User Manual — Lens Correction</a> — Documentazione ufficiale completa<sup id="fnref18:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
+<li>📘 <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/">darktable User Manual — Lens Correction</a> — Documentazione ufficiale completa<sup id="fnref18:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
 <li>🎥 <a href="https://www.youtube.com/watch?v=TahuhILulgY&amp;t=240">A Dabble in Photography — Lens Correction Workflow</a> — Tutorial pratico con correzione manuale di TCA<sup id="fnref2:dt-yt-comparison"><a class="footnote-ref" href="#fn:dt-yt-comparison">2</a></sup></li>
 <li>🌐 <a href="https://lensfun.github.io/lenslist/">Lensfun Project — Supported Lenses</a> — Lista aggiornata di obiettivi supportati<sup id="fnref19:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
 <li>🛠️ <a href="https://lensfun.github.io/manual/v0.3.2/lensfun-update-data.html">lensfun-update-data — Manuale CLI</a> — Aggiorna il database localmente<sup id="fnref20:dt48-lens-correction"><a class="footnote-ref" href="#fn:dt48-lens-correction">1</a></sup></li>
@@ -3611,7 +3695,7 @@
 <hr>
 <ol>
 <li id="fn:dt48-lens-correction">
-<p>darktable 4.8 user manual - lens correction, https://docs.darktable.org/usermanual/4.8/en/module-reference/processing-modules/lens-correction/&nbsp;<a class="footnote-backref" href="#fnref:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref39:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref40:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref41:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>darktable user manual - lens correction, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/&nbsp;<a class="footnote-backref" href="#fnref:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref39:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref40:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref41:dt48-lens-correction" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:dt-yt-comparison">
 <p>[ENG] Comparison Darktable vs C1 vs LR, A Dabble in Photography, https://www.youtube.com/watch?v=TahuhILulgY&nbsp;<a class="footnote-backref" href="#fnref:dt-yt-comparison" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt-yt-comparison" title="Jump back to footnote 2 in the text">↩</a></p>

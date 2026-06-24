@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable 5.4+">
+        <meta name="description" content="Guida operativa al flusso di lavoro scene-referred in darktable">
       
       
         <meta name="author" content="Lorenzo Perone">
@@ -1416,6 +1416,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../modules/color-harmonizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Color Harmonizer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../modules/diffuse-sharpen/" class="md-nav__link">
         
   
@@ -1508,6 +1536,34 @@
     
   
     Denoise (profiled)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/neural-restore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neural Restore
   
 
     
@@ -1928,6 +1984,34 @@
     
   
     Composite: Fusioni avanzate e effetti creativi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/scopes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scopes
   
 
     
@@ -3626,7 +3710,7 @@
 <td>Attiva l’applicazione automatica di metadati predefiniti</td>
 <td><code>off</code></td>
 <td>boolean</td>
-<td>Quando attivato, mostra i campi visibili del <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/shared/metadata-editor/">metadata editor</a>.</td>
+<td>Quando attivato, mostra i campi visibili del <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/metadata-editor/">metadata editor</a>.</td>
 </tr>
 <tr>
 <td><code>metadata</code></td>
@@ -3640,7 +3724,7 @@
 <td>Etichette da applicare in blocco a tutti i file importati</td>
 <td>vuoto</td>
 <td>stringa CSV (es. <code>vacanze,praga,2026</code>)</td>
-<td>I tag vengono salvati nel database e sincronizzati negli XMP. Puoi usare preset salvati nel modulo <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/shared/tagging/">tagging</a>.</td>
+<td>I tag vengono salvati nel database e sincronizzati negli XMP. Puoi usare preset salvati nel modulo <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/">tagging</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -3709,7 +3793,7 @@
 <h3 id="passaggio-4-eccellenza-4-5-stelle">Passaggio 4: Eccellenza (4-5 stelle)<a class="headerlink" href="#passaggio-4-eccellenza-4-5-stelle" title="Permanent link">¶</a></h3>
 <p>Dopo l'editing, assegna 4 stelle alle foto destinate alla pubblicazione e 5 stelle ai master di portfolio. Le etichette colore aggiungono un livello semantico (es. rosso = «da ri-editare», verde = «approvata dal cliente»).</p>
 <h3 id="workflow-alternativo-ottimizzato-basato-sul-manuale-ufficiale">Workflow alternativo ottimizzato (basato sul manuale ufficiale)<a class="headerlink" href="#workflow-alternativo-ottimizzato-basato-sul-manuale-ufficiale" title="Permanent link">¶</a></h3>
-<p>Il manuale darktable 4.8 propone un flusso <em>incrementale filtrato</em>, particolarmente efficace per grandi batch:</p>
+<p>Il manuale darktable propone un flusso <em>incrementale filtrato</em>, particolarmente efficace per grandi batch:</p>
 <ol>
 <li>Imposta il filtro <em>View</em> in alto a destra su <code>Rating = 1 star</code>.<br>
    → Mostra <strong>solo</strong> le immagini appena importate (poiché <code>initial rating = 1</code> è il default)<sup id="fnref3:dt48-module-import"><a class="footnote-ref" href="#fn:dt48-module-import">5</a></sup>.</li>
@@ -3723,7 +3807,7 @@
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alla cancellazione definitiva</p>
-<p>Se lo spazio è critico, puoi eliminare permanentemente le immagini con rating <code>0</code> o <code>rejected</code> selezionandole e usando <em>trash/delete</em> nel modulo <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/lighttable/selected-image/">actions on selection</a>.<br>
+<p>Se lo spazio è critico, puoi eliminare permanentemente le immagini con rating <code>0</code> o <code>rejected</code> selezionandole e usando <em>trash/delete</em> nel modulo <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/selected-image/">actions on selection</a>.<br>
 <strong>Attenzione</strong>: questa azione elimina <strong>fisicamente</strong> i file dal disco e non può essere annullata. È sicura <em>solo</em> se hai un backup verificato (es. rsync su NAS o backup su cloud)<sup id="fnref2:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">9</a></sup>.</p>
 </div>
 <h2 id="migrazione-da-lightroom-importazione-intelligente-degli-xmp">Migrazione da Lightroom: importazione intelligente degli XMP<a class="headerlink" href="#migrazione-da-lightroom-importazione-intelligente-degli-xmp" title="Permanent link">¶</a></h2>
@@ -3873,10 +3957,10 @@
 <p>La funzione <code>recursive directory</code> non attraversa cartelle nascoste (quelle che iniziano con <code>.</code>) né cartelle con nomi contenenti caratteri Unicode non ASCII (es. <code>Fotògrafía</code>). Usa <code>add to library</code> con navigazione manuale per queste strutture<sup id="fnref2:dt48-module-import"><a class="footnote-ref" href="#fn:dt48-module-import">5</a></sup>.</p>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/import-review/">darktable User Manual — Import &amp; Review (v4.8)</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/lighttable/import/">darktable User Manual — Module Reference: import (v4.8)</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/preferences-settings/import/">darktable User Manual — Preferences: Import (v4.8)</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/4.8/en/overview/sidecar-files/sidecar-import/">darktable User Manual — Sidecar Files Import (v4.8)</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">darktable User Manual — Import &amp; Review (v4.8)</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/">darktable User Manual — Module Reference: import (v4.8)</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/import/">darktable User Manual — Preferences: Import (v4.8)</a>  </li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar-import/">darktable User Manual — Sidecar Files Import (v4.8)</a>  </li>
 <li><a href="https://darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/">darktable FR — Importer des photos avec darktable 4.2.0</a> (video tutorial in francese)</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
@@ -3884,7 +3968,7 @@
 <hr>
 <ol>
 <li id="fn:manual-overview">
-<p><em>darktable User Manual -- Overview</em>, <a href="https://docs.darktable.org/usermanual/stable/en/overview/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-overview.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-overview" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><em>darktable User Manual -- Overview</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-overview.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-overview" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:dt54">
 <p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 2 in the text">↩</a></p>
@@ -3893,22 +3977,22 @@
 <p>Piero Vera, <em>Darktable editing workflow: scene-referred update</em> -- Sezione cernita dettagliata con screenshot&nbsp;<a class="footnote-backref" href="#fnref:piero-vera" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-import">
-<p><em>darktable 4.8 user manual — import &amp; review</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/import-review/">docs.darktable.org/usermanual/4.8/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><em>darktable user manual — import &amp; review</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">docs.darktable.org/usermanual/development/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-module-import">
-<p><em>darktable 4.8 user manual — module reference: import</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/lighttable/import/">docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/lighttable/import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a></p>
+<p><em>darktable user manual — module reference: import</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/">docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-preferences-import">
-<p><em>darktable 4.8 user manual — preferences: import</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/preferences-settings/import/">docs.darktable.org/usermanual/4.8/en/preferences-settings/import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-preferences-import" title="Jump back to footnote 6 in the text">↩</a></p>
+<p><em>darktable user manual — preferences: import</em>, <a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/import/">docs.darktable.org/usermanual/development/en/preferences-settings/import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-preferences-import" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-sidecar-import">
-<p><em>darktable 4.8 user manual — importing sidecar files generated by other applications</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/overview/sidecar-files/sidecar-import/">docs.darktable.org/usermanual/4.8/en/overview/sidecar-files/sidecar-import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-sidecar-import" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-sidecar-import" title="Jump back to footnote 7 in the text">↩</a></p>
+<p><em>darktable user manual — importing sidecar files generated by other applications</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar-import/">docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar-import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-sidecar-import" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-sidecar-import" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-storage">
-<p><em>darktable 4.8 user manual — preferences: storage</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/preferences-settings/storage/">docs.darktable.org/usermanual/4.8/en/preferences-settings/storage/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-storage" title="Jump back to footnote 8 in the text">↩</a></p>
+<p><em>darktable user manual — preferences: storage</em>, <a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/storage/">docs.darktable.org/usermanual/development/en/preferences-settings/storage/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-storage" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-import-review">
-<p><em>darktable 4.8 user manual — import &amp; review</em>, sezione <em>Culling Process</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/overview/workflow/import-review/">docs.darktable.org/usermanual/4.8/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a></p>
+<p><em>darktable user manual — import &amp; review</em>, sezione <em>Culling Process</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">docs.darktable.org/usermanual/development/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:dt42-fr-video">
 <p><em>darktable FR — Importer des photos avec darktable 4.2.0</em>, <a href="https://darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/">darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt42-fr-video" title="Jump back to footnote 10 in the text">↩</a></p>
@@ -3917,7 +4001,7 @@
 <p><em>A Dabble in Photography — darktable 5.4 NEW UPDATE</em>, <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">youtube.com/watch?v=yiTqUgoWg6Q</a>&nbsp;<a class="footnote-backref" href="#fnref:dt54-video" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-tagging">
-<p><em>darktable 4.8 user manual — tagging</em>, <a href="https://docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/shared/tagging/">docs.darktable.org/usermanual/4.8/en/module-reference/utility-modules/shared/tagging/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-tagging" title="Jump back to footnote 12 in the text">↩</a></p>
+<p><em>darktable user manual — tagging</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/">docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-tagging" title="Jump back to footnote 12 in the text">↩</a></p>
 </li>
 </ol>
 </div>
