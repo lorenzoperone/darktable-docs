@@ -26,7 +26,7 @@
     
     
       
-        <title>Demosaicing - Guida al Post-Processing con darktable</title>
+        <title>Demosaicing - Guida al post-processing con darktable</title>
       
     
     
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../.." title="Guida al Post-Processing con darktable" class="md-header__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+    <a href="../.." title="Guida al post-processing con darktable" class="md-header__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
@@ -117,7 +117,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Guida al Post-Processing con darktable
+            Guida al post-processing con darktable
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -413,13 +413,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Guida al Post-Processing con darktable" class="md-nav__button md-logo" aria-label="Guida al Post-Processing con darktable" data-md-component="logo">
+    <a href="../.." title="Guida al post-processing con darktable" class="md-nav__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
 
     </a>
-    Guida al Post-Processing con darktable
+    Guida al post-processing con darktable
   </label>
   
     <div class="md-nav__source">
@@ -2447,7 +2447,7 @@
   <span class="md-ellipsis">
     
   
-    Flusso Scene-Referred
+    Flusso scene-referred
   
 
     
@@ -3591,7 +3591,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 </ul>
 <p>⚠️ Nota: AMaZE è più lento di RCD e non include <code>corner boost</code>. Il <code>capture_sharpen</code> è supportato, ma richiede valori più cauti (<code>radius ≤ 0.5 px</code>) per evitare artefatti<sup id="fnref4:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
 <h3 id="dual-demosaic-combinazione-intelligente-per-zone-eterogenee">Dual demosaic: combinazione intelligente per zone eterogenee<a class="headerlink" href="#dual-demosaic-combinazione-intelligente-per-zone-eterogenee" title="Permanent link">¶</a></h3>
-<p>Darktable supporta algoritmi duali come <strong>RCD + VNG4</strong>, che applicano due metodi distinti e li fondono in base alla struttura locale dell’immagine<sup id="fnref5:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>. Questo approccio è particolarmente utile per immagini con aree ad alta frequenza (es. dettagli di tessuto, foglie) e aree a bassa frequenza (cielo uniforme, pareti lisce).</p>
+<p>darktable supporta algoritmi duali come <strong>RCD + VNG4</strong>, che applicano due metodi distinti e li fondono in base alla struttura locale dell’immagine<sup id="fnref5:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>. Questo approccio è particolarmente utile per immagini con aree ad alta frequenza (es. dettagli di tessuto, foglie) e aree a bassa frequenza (cielo uniforme, pareti lisce).</p>
 <ul>
 <li>Il primo algoritmo (es. <code>RCD</code>) elabora i dettagli fini;  </li>
 <li>Il secondo (es. <code>VNG4</code>) gestisce le zone omogenee con minor rumore cromatico;  </li>
@@ -3642,7 +3642,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 - Riduci <code>iterations</code> a <strong>6</strong> per Markesteijn;
 - Usa <code>PPG</code> solo per test rapidi o anteprime<sup id="fnref:mac-mini-m4-pro"><a class="footnote-ref" href="#fn:mac-mini-m4-pro">5</a></sup>.</p>
 <h3 id="preset-built-in-del-modulo-demosaic">Preset built-in del modulo demosaic<a class="headerlink" href="#preset-built-in-del-modulo-demosaic" title="Permanent link">¶</a></h3>
-<p>Darktable include preset preconfigurati per casi comuni, accessibili dal menu hamburger del modulo<sup id="fnref10:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>:</p>
+<p>darktable include preset preconfigurati per casi comuni, accessibili dal menu hamburger del modulo<sup id="fnref10:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
