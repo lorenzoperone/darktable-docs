@@ -9,13 +9,13 @@
         <meta name="author" content="Lorenzo Perone">
       
       
-        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/grain/">
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/negadoctor/">
       
       
-        <link rel="prev" href="../color-profiles/">
+        <link rel="prev" href="../grain/">
       
       
-        <link rel="next" href="../negadoctor/">
+        <link rel="next" href="../composite/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Grain - Guida al post-processing con darktable</title>
+        <title>Negadoctor - Guida al post-processing con darktable</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#grain" class="md-skip">
+        <a href="#negadoctor" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grain
+              Negadoctor
             
           </span>
         </div>
@@ -1677,6 +1677,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../grain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1696,7 +1724,7 @@
   <span class="md-ellipsis">
     
   
-    Grain
+    Negadoctor
   
 
     
@@ -1714,7 +1742,7 @@
   <span class="md-ellipsis">
     
   
-    Grain
+    Negadoctor
   
 
     
@@ -1763,10 +1791,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-coarseness-scegli-la-pellicola" class="md-nav__link">
+  <a href="#preparazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1: Coarseness — scegli la “pellicola”
+        Preparazione
       
     </span>
   </a>
@@ -1774,10 +1802,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-strength-regola-la-presenza" class="md-nav__link">
+  <a href="#passo-1-selezione-film-stock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2: Strength — regola la “presenza”
+        Passo 1: Selezione Film Stock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-film-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2: Film Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3: Corrections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-print-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 4: Print Properties
       
     </span>
   </a>
@@ -1801,82 +1862,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consigli-avanzati" class="md-nav__link">
+  <a href="#consigli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Consigli avanzati
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli avanzati">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#combinazione-con-il-modulo-blurs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combinazione con il modulo blurs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grano-per-immagini-in-bianco-e-nero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Grano per immagini in bianco e nero
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-e-compatibilita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance e compatibilità
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-simulazione-kodak-tri-x-400-da-weekly-edit-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Simulazione Kodak Tri-X 400 da Weekly Edit 20
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-maschera-manuale-per-grana-selettiva" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Maschera manuale per grana selettiva
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tabella-preset-built-in" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabella preset built-in
+        Consigli
       
     </span>
   </a>
@@ -1884,82 +1873,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
+  <a href="#risorse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-grain-non-appare-dopo-lexport-in-jpeg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grain non appare dopo l’export in JPEG
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-effetto-plastico-o-digitale-anche-con-bassi-valori-di-strength" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Effetto “plastico” o “digitale” anche con bassi valori di strength
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-grana-visibile-solo-su-monitor-4k-invisibile-su-schermo-standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grana visibile solo su monitor 4K, invisibile su schermo standard
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grana scompare dopo aver applicato censorize su parte dell’immagine
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Riferimenti visuali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-aggiuntive" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse aggiuntive
+        Risorse
       
     </span>
   </a>
@@ -1981,34 +1898,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../negadoctor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Negadoctor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3272,10 +3161,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-coarseness-scegli-la-pellicola" class="md-nav__link">
+  <a href="#preparazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1: Coarseness — scegli la “pellicola”
+        Preparazione
       
     </span>
   </a>
@@ -3283,10 +3172,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-strength-regola-la-presenza" class="md-nav__link">
+  <a href="#passo-1-selezione-film-stock" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2: Strength — regola la “presenza”
+        Passo 1: Selezione Film Stock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-film-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2: Film Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3: Corrections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-4-print-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 4: Print Properties
       
     </span>
   </a>
@@ -3310,82 +3232,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#consigli-avanzati" class="md-nav__link">
+  <a href="#consigli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Consigli avanzati
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli avanzati">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#combinazione-con-il-modulo-blurs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combinazione con il modulo blurs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#grano-per-immagini-in-bianco-e-nero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Grano per immagini in bianco e nero
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-e-compatibilita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance e compatibilità
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-simulazione-kodak-tri-x-400-da-weekly-edit-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Simulazione Kodak Tri-X 400 da Weekly Edit 20
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-maschera-manuale-per-grana-selettiva" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Maschera manuale per grana selettiva
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tabella-preset-built-in" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tabella preset built-in
+        Consigli
       
     </span>
   </a>
@@ -3393,82 +3243,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
+  <a href="#risorse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-grain-non-appare-dopo-lexport-in-jpeg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grain non appare dopo l’export in JPEG
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-effetto-plastico-o-digitale-anche-con-bassi-valori-di-strength" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Effetto “plastico” o “digitale” anche con bassi valori di strength
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-grana-visibile-solo-su-monitor-4k-invisibile-su-schermo-standard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grana visibile solo su monitor 4K, invisibile su schermo standard
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Grana scompare dopo aver applicato censorize su parte dell’immagine
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Riferimenti visuali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-aggiuntive" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse aggiuntive
+        Risorse
       
     </span>
   </a>
@@ -3506,209 +3284,155 @@
   
 
 
-<h1 id="grain">Grain<a class="headerlink" href="#grain" title="Permanent link">¶</a></h1>
-<p>Il modulo <strong>grain</strong> simula la grana tipica delle pellicole analogiche, aggiungendo una texture sottile e organica all’immagine. A differenza di filtri di rumore o di sfocatura, il grain opera in modo fisicamente plausibile: è calcolato esclusivamente sul canale <strong>L</strong> dello spazio colore <strong>Lab</strong>, preservando la struttura cromatica e la nitidezza dei dettagli<sup id="fnref:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>. Questo approccio lo rende particolarmente adatto per applicazioni artistiche (ritratti, street, b/n) dove si desidera un aspetto “cinematografico” senza compromettere la definizione o introdurre artefatti cromatici<sup id="fnref:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
+<h1 id="negadoctor">Negadoctor<a class="headerlink" href="#negadoctor" title="Permanent link">¶</a></h1>
+<p>Il modulo <strong>negadoctor</strong> è lo strumento dedicato di darktable per l'elaborazione di negativi pellicola scansionati o fotografati digitalmente. A differenza di una semplice inversione, negadoctor gestisce la complessa scienza del colore delle emulsioni, rimuovendo la maschera arancione delle pellicole a colori e simulando le proprietà della carta di stampa fotochimica.<sup id="fnref:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 <div class="admonition info">
-<p class="admonition-title">Grain lavora solo sul canale L di Lab</p>
-<p>Il modulo non modifica i canali a/b di Lab, né i canali RGB. Questo significa che il grain è <em>luminoso</em>, non cromatico: non altera la saturazione, la tonalità o la bilancia dei colori. È quindi sicuro da usare prima o dopo il tone mapping, purché non venga applicato in combinazione con moduli che degradano la precisione del canale L (es. compressione JPEG lossy pre-elaborazione)<sup id="fnref5:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
+<p class="admonition-title">Sostituisce il vecchio modulo Invert</p>
+<p>Negadoctor è il metodo moderno e raccomandato per convertire i negativi in positivi, offrendo un controllo molto superiore rispetto al vecchio modulo <em>invert</em> (ora deprecato) o alle curve manuali.<sup id="fnref8:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">¶</a></h2>
-<p>Il modulo grain è intenzionalmente minimalista: offre solo due controlli principali, entrambi scalati per emulare comportamenti realistici della pellicola:</p>
+<p>Il modulo opera attraverso tre schede principali che guidano l'utente dalla correzione tecnica all'interpretazione creativa:<sup id="fnref2:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 <ol>
-<li><strong>Coarseness</strong> (dimensione della grana): controlla la scala spaziale del pattern, mappata approssimativamente su una scala ISO equivalente. Valori più alti simulano pellicole ad alta sensibilità (ISO 800–3200), con grana visibile e irregolare<sup id="fnref6:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
-<li><strong>Strength</strong> (intensità della grana): regola l’ampiezza della variazione di luminanza introdotta dal pattern. Non è un semplice “opacità”: agisce come un guadagno sul segnale di grana, influenzando sia il contrasto locale che la percezione della profondità tonale<sup id="fnref7:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
+<li><strong>Film Properties</strong> (Proprietà pellicola) -- Definisce il punto di nero (base film), il punto di bianco e il range dinamico del negativo.</li>
+<li><strong>Corrections</strong> (Correzioni) -- Corregge le dominanti cromatiche nelle ombre e nelle luci, utili per pellicole vecchie o sbilanciamenti della luce di scansione.</li>
+<li><strong>Print Properties</strong> (Proprietà di stampa) -- Simula il comportamento della carta fotografica (grado, lucentezza) per definire il contrasto e l'aspetto finale dell'immagine.<sup id="fnref9:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></li>
 </ol>
-<p>A differenza di altri software (es. Lightroom), darktable <strong>non genera grana parametrica in tempo reale tramite shader GPU</strong>, ma utilizza un algoritmo deterministico basato su noise Perlin semplificato, calcolato in CPU durante la pipeline di elaborazione. Ciò garantisce riproducibilità perfetta tra sessioni e dispositivi, ma richiede un leggero overhead computazionale<sup id="fnref:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.</p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
-<p>Il grain è un modulo <em>finale</em>, da applicare <strong>dopo</strong> tutti gli interventi di correzione tonale, cromatica e geometrica. La sua posizione ideale nella pipeline è subito prima del modulo <strong>output color profile</strong>, per garantire che la grana sia integrata correttamente nello spazio di destinazione<sup id="fnref2:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Esposizione → Bilanciamento bianco → Denoise
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Tone mapping (AGX / Filmic RGB)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Correzioni cromatiche (color balance rgb, color calibration)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   |
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. Grain ← posizione ottimale
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   |
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. Output color profile → Export
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Grain non è rumore: usalo per il carattere, non per mascherare</p>
-<p>Il grain non sostituisce la riduzione del rumore. Se l’immagine presenta rumore digitale (granulosità casuale, artefatti cromatici), applicare prima <code>denoise (profiled)</code> o <code>denoise (wavelets)</code>. Il grain va aggiunto <em>solo</em> quando il segnale è pulito: serve a dare personalità, non a nascondere difetti<sup id="fnref5:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
-</div>
-<h3 id="passo-1-coarseness-scegli-la-pellicola">Passo 1: Coarseness — scegli la “pellicola”<a class="headerlink" href="#passo-1-coarseness-scegli-la-pellicola" title="Permanent link">¶</a></h3>
-<p>Il primo passo è impostare la dimensione della grana in base all’effetto desiderato:</p>
-<ul>
-<li><strong>Basso (0.1–0.5)</strong>: grana fine, simile a Kodak Portra 160 o Fuji Acros II. Ideale per ritratti in studio o paesaggi ad alta definizione<sup id="fnref8:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
-<li><strong>Medio (0.6–1.2)</strong>: grana media, simile a Kodak Tri-X 400 o Ilford HP5+. Usato comunemente per street photography e reportage<sup id="fnref6:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</li>
-<li><strong>Alto (1.3–2.0)</strong>: grana marcata, simile a Kodak P3200 o Cinestill 800T. Richiede immagini ben esposte e con buon contrasto, altrimenti rischia di apparire artificiale<sup id="fnref9:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
-</ul>
+<p>L'elaborazione con negadoctor richiede un approccio rigoroso. Si consiglia vivamente di seguire l'ordine dei parametri come appaiono nell'interfaccia, dall'alto verso il basso.<sup id="fnref3:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+<h3 id="preparazione">Preparazione<a class="headerlink" href="#preparazione" title="Permanent link">¶</a></h3>
+<p>Prima di attivare negadoctor, assicurati di:<sup id="fnref4:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+<ol>
+<li><strong>Esposizione:</strong> Se fotografi il negativo, "esponi a destra" (ETTR) per sfruttare tutta la gamma dinamica del sensore senza clippare.</li>
+<li><strong>Bilanciamento del Bianco:</strong> Usa un'immagine di profilo della sorgente luminosa (senza pellicola) per impostare il WB corretto nel modulo <em>white balance</em>. Applica questo WB a tutte le foto del rullino.</li>
+<li><strong>Profilo Input:</strong> Nel modulo <em>input color profile</em>, imposta il <em>working profile</em> su <strong>linear Rec. 2020 RGB</strong> o su un profilo ICC specifico per l'emulsione della pellicola.</li>
+<li><strong>Disabilita Tone Mapper:</strong> Si raccomanda di disabilitare moduli come <em>filmic rgb</em> o <em>base curve</em> poiché negadoctor gestisce la conversione tonale.</li>
+</ol>
 <div class="admonition warning">
-<p class="admonition-title">Evita valori &gt;2.0</p>
-<p>Coarseness oltre 2.0 produce pattern troppo grandi e regolari, perdendo l’aspetto organico della pellicola. Può causare aliasing visibile su schermi ad alta densità pixel (Retina, 4K+). Non è mai necessario superare questo limite<sup id="fnref10:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
+<p class="admonition-title">Attenzione al Tone Equalizer</p>
+<p>Se intendi usare il modulo <em>tone equalizer</em>, devi spostarlo <strong>dopo</strong> negadoctor nella pixelpipe, poiché non è progettato per funzionare con i dati negativi grezzi.<sup id="fnref10:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 </div>
-<h3 id="passo-2-strength-regola-la-presenza">Passo 2: Strength — regola la “presenza”<a class="headerlink" href="#passo-2-strength-regola-la-presenza" title="Permanent link">¶</a></h3>
-<p>La forza controlla quanto la grana influenzi la percezione visiva:</p>
+<h3 id="passo-1-selezione-film-stock">Passo 1: Selezione Film Stock<a class="headerlink" href="#passo-1-selezione-film-stock" title="Permanent link">¶</a></h3>
+<p>Inizia selezionando il tipo di pellicola dal menu a tendina <strong>film stock</strong>:<sup id="fnref5:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 <ul>
-<li><strong>Basso (5–20%)</strong>: grana quasi impercettibile, utile per dare “calore” a immagini digitali troppo lisce.</li>
-<li><strong>Medio (25–50%)</strong>: intensità standard, sufficiente per creare profondità e coesione visiva senza dominare la scena<sup id="fnref7:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</li>
-<li><strong>Alto (55–85%)</strong>: effetto marcato, adatto a stili vintage o b/n ad alto impatto. Oltre l’85% tende a appiattire le transizioni tonali<sup id="fnref11:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
+<li><strong>Color</strong>: Attiva i controlli specifici per i canali R, G, B (necessario per rimuovere la maschera arancione).</li>
+<li><strong>Black and white</strong>: Semplifica l'interfaccia nascondendo i controlli colore non necessari.</li>
 </ul>
+<h3 id="passo-2-film-properties">Passo 2: Film Properties<a class="headerlink" href="#passo-2-film-properties" title="Permanent link">¶</a></h3>
+<p>Questa scheda allinea i punti tecnici del negativo.</p>
+<ol>
+<li><strong>Color of the film base</strong>: Usa la pipetta per campionare un'area di pellicola <strong>non esposta</strong> (i bordi del frame). Questo calcolerà automaticamente i valori <em>D min</em>. Per il B&amp;W puoi lasciare il valore predefinito (bianco).<sup id="fnref11:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></li>
+<li><strong>D min</strong>: Rappresenta il valore minimo della base film. Per il colore, vedrai tre slider (R, G, B).</li>
+<li><strong>D max</strong>: Definisce il range dinamico (punto di bianco). Usa la pipetta su un'area <strong>esposta</strong> (evitando la base non esposta) per calcolarlo automaticamente senza clipping.</li>
+<li><strong>Scan exposure bias</strong>: Regola il punto nero. Usa la pipetta sulle zone più scure dell'immagine esposta (o sull'intera immagine, escludendo la base non esposta) per settare l'offset corretto.</li>
+</ol>
+<h3 id="passo-3-corrections">Passo 3: Corrections<a class="headerlink" href="#passo-3-corrections" title="Permanent link">¶</a></h3>
+<p>Utilizza questa scheda solo se necessario, ad esempio per pellicole deteriorate o se la luce di scansione non corrisponde a quella originale.<sup id="fnref6:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+<ol>
+<li><strong>Shadows color cast</strong>: Regola R, G, B nelle ombre. Usa la pipetta su un'area grigia neutra nelle ombre. <em>Fallo prima di toccare le luci.</em></li>
+<li><strong>Highlights white balance</strong>: Regola R, G, B nelle luci. Usa la pipetta su un'area grigia neutra nelle alte luci.</li>
+</ol>
+<h3 id="passo-4-print-properties">Passo 4: Print Properties<a class="headerlink" href="#passo-4-print-properties" title="Permanent link">¶</a></h3>
+<p>Qui definisci il look finale, simile a una stamperia digitale.<sup id="fnref7:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+<ol>
+<li><strong>Paper black</strong>: Seleziona la pipetta e disegna un rettangolo sull'area esposta (escludendo i bordi non esposti) per mappare il nero della carta al nero digitale.</li>
+<li><strong>Paper grade</strong>: Controlla il contrasto (gamma). Il default è <strong>4</strong>. Come regola generale, il valore di <em>Paper grade</em> meno il valore di <em>D max</em> dovrebbe risultare tra <strong>2 e 3</strong>.</li>
+<li><strong>Paper gloss</strong>: Comprime le alte luci. Spostalo a sinistra per ridurre il clipping e simulare stampe opache.</li>
+<li><strong>Print exposure adjustment</strong>: Regolazione finale dell'esposizione. Puoi aumentarlo diminuendo contemporaneamente il <em>paper gloss</em> per schiarire i mezzi toni senza bruciare le luci.</li>
+</ol>
 <h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
-<th>Range</th>
+<th>Range/Note</th>
 <th>Default</th>
 <th>Descrizione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Coarseness</strong></td>
-<td>0.01 – 2.00</td>
-<td>1.00</td>
-<td>Scala della grana. Valori &gt;1.0 simulano pellicole ISO ≥400. È mappato su una scala logaritmica per maggiore controllo nei bassi valori<sup id="fnref13:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</td>
+<td><strong>Film stock</strong></td>
+<td>Color / Black and white</td>
+<td>-</td>
+<td>Seleziona il tipo di pellicola.<sup id="fnref16:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
 </tr>
 <tr>
-<td><strong>Strength</strong></td>
-<td>0% – 100%</td>
-<td>50%</td>
-<td>Intensità del pattern di grana. Non è un’opacità: modula l’escursione di luminanza del noise. Valori &gt;70% possono ridurre la percezione del microcontrasto<sup id="fnref14:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</td>
+<td><strong>Color of the film base</strong></td>
+<td>Picker / Color swatch</td>
+<td>White</td>
+<td>Campiona la pellicola non esposta per rimuovere la dominante della base.<sup id="fnref17:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>D min</strong></td>
+<td>1 slider (B&amp;W) o 3 slider (RGB)</td>
+<td>Variabile</td>
+<td>Densità minima della base (punto di nero del negativo). Calcolata automaticamente dal picker precedente.<sup id="fnref18:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>D max</strong></td>
+<td>Slider</td>
+<td>Variabile</td>
+<td>Range dinamico della pellicola (punto di bianco). A sinistra = negativo più luminoso, a destra = più scuro.<sup id="fnref19:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Scan exposure bias</strong></td>
+<td>Slider</td>
+<td>Variabile</td>
+<td>Imposta il punto nero tecnico. A sinistra = più luminoso, a destra = più scuro.<sup id="fnref20:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Paper grade</strong></td>
+<td>Slider (Gamma)</td>
+<td>4</td>
+<td>Controllo del contrasto. Valori tipici risultanti (con D max sottratto): 2 - 3.<sup id="fnref21:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Paper black</strong></td>
+<td>Picker / Slider</td>
+<td>Variabile</td>
+<td>Mappa il nero della carta al nero della pipeline digitale (offset).<sup id="fnref22:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Paper gloss</strong></td>
+<td>Slider</td>
+<td>Variabile</td>
+<td>Compressione delle alte luci (speculari). A sinistra comprime, simulando carta opaca.<sup id="fnref23:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>Print exposure adjustment</strong></td>
+<td>Slider</td>
+<td>Variabile</td>
+<td>Esposizione finale della stampa. Aumenta per schiarire i mezzi toni.<sup id="fnref24:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></td>
 </tr>
 </tbody>
 </table>
+<h2 id="consigli">Consigli<a class="headerlink" href="#consigli" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Usa i preset per partire rapidamente</p>
-<p>darktable include preset preconfigurati per pellicole iconiche (es. <code>Kodak Tri-X</code>, <code>Ilford Delta 3200</code>). Sono accessibili dal menu a tendina in alto nel modulo grain. I preset sono ottimizzati per un uso immediato e possono essere modificati successivamente<sup id="fnref8:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>.</p>
+<p class="admonition-title">L'ordine è fondamentale</p>
+<p>Il manuale raccomanda vivamente di impostare i parametri nell'ordine esatto in cui appaiono nella GUI: <em>Film stock</em> -&gt; <em>Film properties</em> -&gt; <em>Corrections</em> -&gt; <em>Print properties</em>. Lavorare dall'alto verso il basso in ogni scheda.<sup id="fnref12:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
 </div>
-<h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">¶</a></h2>
-<h3 id="combinazione-con-il-modulo-blurs">Combinazione con il modulo <code>blurs</code><a class="headerlink" href="#combinazione-con-il-modulo-blurs" title="Permanent link">¶</a></h3>
-<p>Il grain può essere potenziato da una leggera sfocatura selettiva dello sfondo, per simulare l’effetto “bokeh granuloso” delle pellicole cinematografiche. Procedi così:</p>
-<ol>
-<li>Applica <code>blurs</code> con tipo <code>lens</code>, raggio 2–5 px, 5–7 lamelle, concavity 0.8–1.0  </li>
-<li>Usa una maschera disegnata per isolare solo lo sfondo  </li>
-<li>Applica <code>grain</code> globalmente con <code>coarseness = 0.8–1.2</code>, <code>strength = 30–40%</code>  </li>
-<li>Verifica che la grana sul soggetto rimanga più definita rispetto allo sfondo  </li>
-</ol>
-<h3 id="grano-per-immagini-in-bianco-e-nero">Grano per immagini in bianco e nero<a class="headerlink" href="#grano-per-immagini-in-bianco-e-nero" title="Permanent link">¶</a></h3>
-<p>Nel workflow b/n, il grain è fondamentale per sostituire la “struttura” persa con la rimozione del colore. Usa questi valori tipici:</p>
+<div class="admonition tip">
+<p class="admonition-title">Evita la polvere con i Picker</p>
+<p>Quando usi gli strumenti di selezione (picker), fai attenzione a non includere polvere o graffi, poiché potrebbero alterare i dati campionati e falsare la calibrazione del colore o dell'esposizione.<sup id="fnref13:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Gestione dei bordi</p>
+<p>Per <strong>D max</strong> e <strong>Print exposure</strong>, non includere mai la pellicola non esposta (i bordi scuri o chiari del frame) nell'area di selezione del picker. Al contrario, per <strong>Color of the film base</strong>, devi selezionare <em>solo</em> la pellicola non esposta.<sup id="fnref14:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Profili ICC personalizzati</p>
+<p>Per una massima fedeltà, puoi utilizzare profili ICC specifici per l'emulsione della tua pellicola nel modulo <em>input color profile</em> (impostando il <em>working profile</em> su quel profilo o su linear Rec. 2020).<sup id="fnref15:manual-negadoctor"><a class="footnote-ref" href="#fn:manual-negadoctor">1</a></sup></p>
+</div>
+<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
 <ul>
-<li><code>Coarseness</code>: 0.9–1.4 (per enfatizzare la trama della pelle o del tessuto)  </li>
-<li><code>Strength</code>: 45–65% (più alto rispetto al colore, perché la grana diventa l’unica fonte di texture)  </li>
-<li><strong>Attenzione</strong>: evita di applicare <code>grain</code> dopo <code>monochrome</code>, poiché quest’ultimo opera in RGB e potrebbe alterare la distribuzione del noise. Preferisci <code>grain</code> prima di <code>monochrome</code> o in un flusso scene-referred<sup id="fnref:pixls-bw-conversion"><a class="footnote-ref" href="#fn:pixls-bw-conversion">4</a></sup>.</li>
-</ul>
-<h3 id="performance-e-compatibilita">Performance e compatibilità<a class="headerlink" href="#performance-e-compatibilita" title="Permanent link">¶</a></h3>
-<ul>
-<li>Il modulo <code>grain</code> è stato ottimizzato per prestazioni in darktable 4.4+: il codice SSE2 è stato rimosso e sostituito con implementazioni parallele più efficienti<sup id="fnref3:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.  </li>
-<li>Funziona in tutti i flussi di lavoro (scene-referred e display-referred), ma dà risultati più coerenti nel primo<sup id="fnref4:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.  </li>
-<li>Non supporta maschere parametriche o disegnate: è sempre applicato globalmente<sup id="fnref12:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</li>
-</ul>
-<h3 id="esempio-simulazione-kodak-tri-x-400-da-weekly-edit-20">Esempio: Simulazione Kodak Tri-X 400 da Weekly Edit 20<a class="headerlink" href="#esempio-simulazione-kodak-tri-x-400-da-weekly-edit-20" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/">Weekly Edit 20: Rajoutons du grain — darktable FR</a> (timestamp 870s)</em><br>
-1. Carica l’immagine RAW (es. <code>Welder RAW</code>) e applica <code>exposure</code> per correggere l’esposizione a +0.7 EV<br>
-2. Imposta <code>white balance</code> su <code>Flash</code> (corrispondente alla illuminazione di scatto)<br>
-3. Nella sezione <code>grain</code>, seleziona il preset <code>Kodak Tri-X</code> dal menu a tendina<br>
-4. Regola <code>coarseness = 1.12</code> e <code>strength = 48%</code> per adattare la grana al tono del volto<br>
-5. Confronta con lo screenshot a 870s: il grano appare uniforme sulle zone chiare, con minima accentuazione sui bordi oculari<sup id="fnref3:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>  </p>
-<h3 id="esempio-maschera-manuale-per-grana-selettiva">Esempio: Maschera manuale per grana selettiva<a class="headerlink" href="#esempio-maschera-manuale-per-grana-selettiva" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/">Weekly Edit 20 — darktable FR</a> (timestamp 1198s)</em><br>
-1. Attiva la maschera disegnata (<code>drawn mask</code>) e traccia un path preciso intorno al soggetto (es. insetto su foglia)<br>
-2. Nel modulo <code>grain</code>, clicca sull’icona della maschera (icona a forma di cerchio con punto centrale) per abilitare l’applicazione selettiva<br>
-3. Imposta <code>coarseness = 0.85</code>, <code>strength = 32%</code> per ottenere una grana fine ma presente sul soggetto<br>
-4. Disattiva la maschera per verificare che lo sfondo rimanga privo di grana: la transizione deve essere netta senza frange<sup id="fnref4:darktable-fr-grain-2016"><a class="footnote-ref" href="#fn:darktable-fr-grain-2016">2</a></sup>  </p>
-<h2 id="tabella-preset-built-in">Tabella preset built-in<a class="headerlink" href="#tabella-preset-built-in" title="Permanent link">¶</a></h2>
-<p>darktable 4.8 include 8 preset ufficiali per <code>grain</code>, preconfigurati in base a profili di pellicola reali e testati su immagini di riferimento. Tutti i preset operano esclusivamente sul canale L di Lab e sono compatibili con flussi scene-referred<sup id="fnref2:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
-<table>
-<thead>
-<tr>
-<th>Preset</th>
-<th>Quando usarlo</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Kodak Tri-X</code></td>
-<td>Street photography in luce mista o bassa; soggetti con texture media (tessuti, pelle, cemento)</td>
-<td>Basato su ISO 400; <code>coarseness ≈ 1.1</code>, <code>strength ≈ 45%</code><sup id="fnref15:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Ilford Delta 3200</code></td>
-<td>Reportage notturno o immagini ad alto contrasto con forte dinamica</td>
-<td>Grana molto irregolare; <code>coarseness = 1.85</code>, <code>strength = 62%</code><sup id="fnref16:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Kodak Portra 160</code></td>
-<td>Ritratti in studio o paesaggi con dettaglio fine</td>
-<td>Grana quasi invisibile; <code>coarseness = 0.32</code>, <code>strength = 18%</code><sup id="fnref17:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Fuji Acros II</code></td>
-<td>B/N architettonico o documentario con controllo assoluto del microcontrasto</td>
-<td>Grana fine e omogenea; <code>coarseness = 0.28</code>, <code>strength = 12%</code><sup id="fnref18:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Cinestill 800T</code></td>
-<td>Stili cinematografici con dominanti arancio/ambra</td>
-<td>Grana media con leggera anisotropia; <code>coarseness = 1.25</code>, <code>strength = 53%</code><sup id="fnref19:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Agfa APX 400</code></td>
-<td>Fotografia analogica vintage con resa morbida</td>
-<td>Grana leggermente sfumata; <code>coarseness = 0.95</code>, <code>strength = 38%</code><sup id="fnref20:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Fomapan 400</code></td>
-<td>B/N ad alto impatto con grana pronunciata ma non invasiva</td>
-<td>Grana medio-fine con elevata coesione tonale; <code>coarseness = 1.05</code>, <code>strength = 47%</code><sup id="fnref21:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-<tr>
-<td><code>Custom</code></td>
-<td>Personalizzazione avanzata o workflow ibridi (es. integrazione con LUT esterne)</td>
-<td>Valori iniziali: <code>coarseness = 1.00</code>, <code>strength = 50%</code><sup id="fnref22:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup></td>
-</tr>
-</tbody>
-</table>
-<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
-<h3 id="problema-grain-non-appare-dopo-lexport-in-jpeg">Problema: Grain non appare dopo l’export in JPEG<a class="headerlink" href="#problema-grain-non-appare-dopo-lexport-in-jpeg" title="Permanent link">¶</a></h3>
-<p>Il grain è calcolato sul canale L di Lab, ma alcuni profili ICC di output (es. <code>sRGB</code> con gamma 2.2) comprimono eccessivamente le variazioni di luminanza sottili. Inoltre, l’export JPEG con qualità &lt;95% introduce artefatti che mascherano la grana. Soluzione: usare <code>output color profile</code> con <code>sRGB (linear)</code> o <code>Adobe RGB (1998)</code> e impostare <code>JPEG quality = 98%</code><sup id="fnref3:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
-<h3 id="problema-effetto-plastico-o-digitale-anche-con-bassi-valori-di-strength">Problema: Effetto “plastico” o “digitale” anche con bassi valori di strength<a class="headerlink" href="#problema-effetto-plastico-o-digitale-anche-con-bassi-valori-di-strength" title="Permanent link">¶</a></h3>
-<p>Questo accade quando <code>grain</code> è applicato <em>prima</em> di <code>filmic rgb</code> o <code>base curve</code>. Il modulo <code>grain</code> richiede un segnale già mappato in uno spazio tonale stabile: se applicato su dati lineari non compressi, la sua variazione di luminanza viene amplificata artificialmente. Soluzione: posizionare <code>grain</code> <em>dopo</em> <code>filmic rgb</code> e <em>prima</em> di <code>output color profile</code><sup id="fnref2:dt44-performance"><a class="footnote-ref" href="#fn:dt44-performance">3</a></sup>.</p>
-<h3 id="problema-grana-visibile-solo-su-monitor-4k-invisibile-su-schermo-standard">Problema: Grana visibile solo su monitor 4K, invisibile su schermo standard<a class="headerlink" href="#problema-grana-visibile-solo-su-monitor-4k-invisibile-su-schermo-standard" title="Permanent link">¶</a></h3>
-<p>Dipende dalla densità di pixel e dalla distanza di visione. Il pattern di grana è fisso in pixel, non scalato. Su monitor ad alta densità (≥220 PPI), la grana è percepibile a 50 cm; su schermi standard (≤110 PPI), serve avvicinarsi a ≤30 cm. Soluzione: aumentare <code>coarseness</code> di +0.15–0.25 per schermi Retina/4K, mantenendo <code>strength</code> invariato<sup id="fnref4:dt48-grain"><a class="footnote-ref" href="#fn:dt48-grain">1</a></sup>.</p>
-<h3 id="problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine">Problema: Grana scompare dopo aver applicato <code>censorize</code> su parte dell’immagine<a class="headerlink" href="#problema-grana-scompare-dopo-aver-applicato-censorize-su-parte-dellimmagine" title="Permanent link">¶</a></h3>
-<p>Il modulo <code>censorize</code> applica un blur gaussiano seguito da rumore luminoso, che sovrascrive il pattern di <code>grain</code>. Poiché <code>grain</code> non supporta maschere, non può essere riapplicato selettivamente. Soluzione: applicare <code>censorize</code> <em>prima</em> di <code>grain</code>, oppure usare <code>blurs</code> + <code>grain</code> per simulare un effetto di bokeh granuloso senza perdere il controllo globale<sup id="fnref:blurs-ref"><a class="footnote-ref" href="#fn:blurs-ref">5</a></sup>.</p>
-<h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-grain.png" data-desc-position="bottom"><img alt="Interfaccia del modulo grain (Grana) in darktable" src="../../images/ui-grain.png"></a>
-<em>Il modulo «grain» (Grana) nell'interfaccia di darktable (vista darkroom).</em></p>
-<h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/grain/">darktable user manual — grain module</a>  </li>
-<li><a href="https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/">Weekly Edit 20: Rajoutons du grain — darktable FR (video tutorial)</a>  </li>
-<li><a href="https://darktable.fr/posts/2023/06/notes-version-4.4/#am%C3%A9lioration-des-performances">Performance improvements in darktable 4.4 — official notes</a>  </li>
-<li><a href="https://pixls.us/articles/digital-b-w-conversion-gimp/">PIXLS.US — Digital B&amp;W Conversion (GIMP)</a> (principi applicabili anche a grain in b/n)  </li>
-<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/blurs/">darktable user manual — blurs module</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/">darktable user manual — denoise (profiled) module</a>  </li>
+<li><strong>Manuale Ufficiale:</strong> <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/negadoctor/">darktable user manual - negadoctor</a></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn:dt48-grain">
-<p>darktable user manual - grain, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/grain/&nbsp;<a class="footnote-backref" href="#fnref:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:dt48-grain" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:dt48-grain" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:darktable-fr-grain-2016">
-<p>Weekly Edit 20: Rajoutons du grain - darktable FR, https://darktable.fr/posts/2016/12/traitement-par-darktable-20-rajoutons-du-grain/&nbsp;<a class="footnote-backref" href="#fnref:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:darktable-fr-grain-2016" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:dt44-performance">
-<p>Version 4.4.0 - darktable FR, https://darktable.fr/posts/2023/06/notes-version-4.4/#am%C3%A9lioration-des-performances&nbsp;<a class="footnote-backref" href="#fnref:dt44-performance" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt44-performance" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt44-performance" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt44-performance" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:pixls-bw-conversion">
-<p>PIXLS.US - Digital B&amp;W Conversion (GIMP), https://pixls.us/articles/digital-b-w-conversion-gimp/&nbsp;<a class="footnote-backref" href="#fnref:pixls-bw-conversion" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:blurs-ref">
-<p>darktable user manual - blurs, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/blurs/&nbsp;<a class="footnote-backref" href="#fnref:blurs-ref" title="Jump back to footnote 5 in the text">↩</a></p>
+<li id="fn:manual-negadoctor">
+<p>https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/negadoctor/&nbsp;<a class="footnote-backref" href="#fnref:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:manual-negadoctor" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>
