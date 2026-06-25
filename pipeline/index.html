@@ -9,13 +9,13 @@
         <meta name="author" content="Lorenzo Perone">
       
       
-        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/masking/">
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/pipeline/">
       
       
-        <link rel="prev" href="../color/gamut/">
+        <link rel="prev" href="../workflow/export/">
       
       
-        <link rel="next" href="parametric/">
+        <link rel="next" href="module-order/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Maschere e selezioni - Guida al post-processing con darktable</title>
+        <title>Il pixelpipe - Guida al post-processing con darktable</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#maschere-e-selezioni" class="md-skip">
+        <a href="#il-pixelpipe" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Maschere e selezioni
+              Il pixelpipe
             
           </span>
         </div>
@@ -267,11 +267,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../pipeline/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -347,13 +349,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../masking/" class="md-tabs__link">
           
   
   
@@ -716,28 +716,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -755,7 +758,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -770,10 +773,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../pipeline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Il pixelpipe
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -789,6 +819,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#perche-lordine-conta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perché l'ordine conta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-pagine-di-questa-sezione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le pagine di questa sezione
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -801,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/module-order/" class="md-nav__link">
+      <a href="module-order/" class="md-nav__link">
         
   
   
@@ -829,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/anatomia-modulo/" class="md-nav__link">
+      <a href="anatomia-modulo/" class="md-nav__link">
         
   
   
@@ -857,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/history-stack/" class="md-nav__link">
+      <a href="history-stack/" class="md-nav__link">
         
   
   
@@ -885,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/preset-istanze/" class="md-nav__link">
+      <a href="preset-istanze/" class="md-nav__link">
         
   
   
@@ -2780,31 +2852,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2822,7 +2891,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2837,37 +2906,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Maschere e selezioni
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../masking/" class="md-nav__link">
         
   
   
@@ -2883,59 +2925,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#tipi-di-maschere" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tipi di maschere
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#principi-generali" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Principi generali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2948,7 +2937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="parametric/" class="md-nav__link">
+      <a href="../masking/parametric/" class="md-nav__link">
         
   
   
@@ -2976,7 +2965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="drawn/" class="md-nav__link">
+      <a href="../masking/drawn/" class="md-nav__link">
         
   
   
@@ -3004,7 +2993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="combining/" class="md-nav__link">
+      <a href="../masking/combining/" class="md-nav__link">
         
   
   
@@ -3032,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ai-masks/" class="md-nav__link">
+      <a href="../masking/ai-masks/" class="md-nav__link">
         
   
   
@@ -3060,7 +3049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="raster/" class="md-nav__link">
+      <a href="../masking/raster/" class="md-nav__link">
         
   
   
@@ -3433,10 +3422,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#tipi-di-maschere" class="md-nav__link">
+  <a href="#perche-lordine-conta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tipi di maschere
+        Perché l'ordine conta
       
     </span>
   </a>
@@ -3444,21 +3433,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#principi-generali" class="md-nav__link">
+  <a href="#le-pagine-di-questa-sezione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Principi generali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
+        Le pagine di questa sezione
       
     </span>
   </a>
@@ -3485,55 +3463,25 @@
   
 
 
-<h1 id="maschere-e-selezioni">Maschere e selezioni<a class="headerlink" href="#maschere-e-selezioni" title="Permanent link">¶</a></h1>
-<p>Le maschere sono lo strumento che trasforma darktable in un editor di precisione chirurgica. Ogni modulo puo' essere applicato non all'intera immagine ma solo a una porzione.<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
-<h2 id="tipi-di-maschere">Tipi di maschere<a class="headerlink" href="#tipi-di-maschere" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="drawn/">Maschere disegnate</a> -- Forme tracciate direttamente sull'immagine</li>
-<li><a href="parametric/">Maschere parametriche</a> -- Selezione automatica per luminosita'/colore</li>
-<li><a href="combining/">Combinare le maschere</a> -- Drawn + Parametric + Raster + AI</li>
-</ul>
-<h2 id="principi-generali">Principi generali<a class="headerlink" href="#principi-generali" title="Permanent link">¶</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Dove creare le maschere</p>
-<p>Creare le maschere nel modulo piu' basso della pipeline (es. Exposure) per riusarle come raster mask in tutti i moduli a valle. Questo massimizza la compatibilita'.<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">2</a></sup><sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Visualizzazione</p>
-<p>Premere <span class="keys"><kbd class="key-m">M</kbd></span> per mostrare/nascondere l'overlay della maschera. Premere <span class="keys"><kbd class="key-c">C</kbd></span> sullo slider parametrico per vedere il canale in scala di grigi.<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
-</div>
+<h1 id="il-pixelpipe">Il pixelpipe<a class="headerlink" href="#il-pixelpipe" title="Permanent link">¶</a></h1>
+<p>In darktable non esistono "livelli" come in Photoshop né uno storico di azioni distruttive come in molti editor. Ogni modifica è un <strong>modulo</strong> che elabora i pixel in un ordine fisso e prevedibile: il <strong>pixelpipe</strong> (o <em>pixel pipeline</em>). Capire come funziona è il salto concettuale più importante per chi arriva da Lightroom — perché spiega <em>perché</em> le regolazioni vanno messe in un certo ordine e <em>perché</em> due moduli apparentemente simili danno risultati diversi a seconda di dove agiscono.</p>
 <div class="admonition info">
-<p class="admonition-title">Non serve la perfezione</p>
-<p>Il feathering graduale tra maschera e sfondo nasconde le imperfezioni dei bordi, rendendo la precisione pixel-perfect non necessaria.<sup id="fnref:aimasks"><a class="footnote-ref" href="#fn:aimasks">4</a></sup></p>
+<p class="admonition-title">L'idea in una riga</p>
+<p>darktable non "applica filtri sull'immagine visualizzata": costruisce una <strong>catena di elaborazione</strong> che parte dai dati grezzi del sensore (scene-referred, lineari rispetto alla luce) e arriva all'immagine finale (display-referred). L'ordine dei moduli nella catena conta.</p>
 </div>
-<blockquote>
-<p>La documentazione ufficiale copre in dettaglio tutti i tipi di maschera, i blend modes e le opzioni di raffinamento.<sup id="fnref3:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
-<p>La serie di 7 video di Bruce Williams Photography e' la risorsa piu' completa sulle maschere in darktable.<sup id="fnref:bruce-williams"><a class="footnote-ref" href="#fn:bruce-williams">5</a></sup></p>
-<p>Il tutorial PIXLS.US sulla <em>Luminosity Masking</em> offre un approccio pratico alla selezione per luminanza.<sup id="fnref:pixls-luminosity"><a class="footnote-ref" href="#fn:pixls-luminosity">6</a></sup></p>
-</blockquote>
-<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:manual">
-<p><em>darktable User Manual -- Masking and Blending</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-*.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:dt54">
-<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:landscape">
-<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Landscape edit with AI</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:aimasks">
-<p><em><a href="https://www.youtube.com/watch?v=7yd5riDmUjk">AI masks in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:aimasks" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:bruce-williams">
-<p>Bruce Williams Photography, <em>Masks Part 1-7</em> -- Serie completa YouTube&nbsp;<a class="footnote-backref" href="#fnref:bruce-williams" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-<li id="fn:pixls-luminosity">
-<p><em>PIXLS.US -- Luminosity Masking in Darktable</em>, <a href="https://pixls.us/articles/luminosity-masking-in-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-luminosity-masking-in-darktable.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-luminosity" title="Jump back to footnote 6 in the text">↩</a></p>
-</li>
-</ol>
+<h2 id="perche-lordine-conta">Perché l'ordine conta<a class="headerlink" href="#perche-lordine-conta" title="Permanent link">¶</a></h2>
+<p>I moduli <strong>non</strong> vengono applicati nell'ordine in cui li attivi, ma in un <strong>ordine interno fisso</strong> (il <em>module order</em>), pensato perché ogni operazione lavori sui dati nello stato più adatto. Per esempio: la riduzione del rumore agisce presto, sui dati lineari del sensore; il tone mapping (<em>filmic rgb</em>, <em>sigmoid</em>, <em>agx</em>) comprime la gamma dinamica più a valle; il color grading creativo arriva ancora dopo.</p>
+<p>Questo è anche il motivo per cui la guida raccomanda una <a href="../workflow/">sequenza di lavoro</a> precisa: non è una preferenza stilistica, ma l'allineamento col modo in cui il pixelpipe tratta i dati.</p>
+<h2 id="le-pagine-di-questa-sezione">Le pagine di questa sezione<a class="headerlink" href="#le-pagine-di-questa-sezione" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong><a href="module-order/">Il pixelpipe e l'ordine dei moduli</a></strong> — come è strutturata la catena, i preset di ordine versionati (<em>v5.0</em>, <em>v3.0</em>) e quando cambiarli.</li>
+<li><strong><a href="anatomia-modulo/">Anatomia di un modulo</a></strong> — header, controlli, attivazione, e cosa significano le icone di ogni modulo.</li>
+<li><strong><a href="history-stack/">Cronologia (history stack)</a></strong> — come darktable registra ogni modifica in modo non distruttivo, la compressione della cronologia e undo/redo.</li>
+<li><strong><a href="preset-istanze/">Preset e istanze multiple</a></strong> — salvare configurazioni riutilizzabili e applicare lo stesso modulo più volte con maschere diverse.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Non distruttivo per design</p>
+<p>Tutte le modifiche sono parametri salvati in un file collaterale <code>.xmp</code> accanto al RAW: l'originale non viene mai toccato. Puoi tornare indietro su qualsiasi passo in qualsiasi momento — vedi <a href="history-stack/">cronologia</a>.</p>
 </div>
 
 
