@@ -9,13 +9,13 @@
         <meta name="author" content="Lorenzo Perone">
       
       
-        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/denoise/">
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/modules/soften/">
       
       
-        <link rel="prev" href="../haze-removal/">
+        <link rel="prev" href="../blurs/">
       
       
-        <link rel="next" href="../neural-restore/">
+        <link rel="next" href="../tone-equalizer/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Denoise (profiled) - Guida al post-processing con darktable</title>
+        <title>Soften - Guida al post-processing con darktable</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#denoise-profiled" class="md-skip">
+        <a href="#soften" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Denoise (profiled)
+              Soften
             
           </span>
         </div>
@@ -1145,10 +1145,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../soften/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soften
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1164,6 +1191,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-principali" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri principali
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1257,37 +1370,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Denoise (profiled)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../denoise/" class="md-nav__link">
         
   
   
@@ -1303,297 +1389,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#panoramica" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Panoramica
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flusso di lavoro consigliato
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modalita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modalità
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parametri" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parametri">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#controlli-comuni-validi-per-tutte-le-modalita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Controlli comuni (validi per tutte le modalità)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-specifici-non-local-means-modalita-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri specifici — Non-local means (modalità manuale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-specifici-wavelets-modalita-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri specifici — Wavelets (modalità manuale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consigli-operativi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consigli operativi
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#esempi-pratici" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempi pratici
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Esempi pratici">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#caso-1-ritratto-in-studio-iso-200-canon-eos-r6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 1: Ritratto in studio (ISO 200, Canon EOS R6)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#caso-2-paesaggio-notturno-iso-6400-sony-a7iv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 2: Paesaggio notturno (ISO 6400, Sony A7IV)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#caso-3-foto-di-evento-indoor-iso-12800-fujifilm-x-h2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 3: Foto di evento indoor (ISO 12800, Fujifilm X-H2)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-denoise-per-fotografia-notturna-con-esposizione-12-ev" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Denoise per fotografia notturna con esposizione +1.2 EV
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-riduzione-rumore-cromatico-residuo-su-ritratto-in-luce-fluorescente" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Riduzione rumore cromatico residuo su ritratto in luce fluorescente
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-rumore-verdeviola-persistente-nelle-ombre-anche-dopo-denoising" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Rumore verde/viola persistente nelle ombre anche dopo denoising
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-immagine-diventa-plastica-o-acquerellata-con-non-local-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Immagine diventa “plastica” o “acquerellata” con non-local means
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: denoise (profiled) non riconosce il mio modello di fotocamera
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preset-integrati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset integrati
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#altri-moduli-di-riduzione-rumore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Altri moduli di riduzione rumore
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Riferimenti visuali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-avanzate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse avanzate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3472,10 +3267,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modalita" class="md-nav__link">
+  <a href="#parametri-principali" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modalità
+        Parametri principali
       
     </span>
   </a>
@@ -3483,60 +3278,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parametri" class="md-nav__link">
+  <a href="#consigli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parametri
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Parametri">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#controlli-comuni-validi-per-tutte-le-modalita" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Controlli comuni (validi per tutte le modalità)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-specifici-non-local-means-modalita-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri specifici — Non-local means (modalità manuale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-specifici-wavelets-modalita-manuale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri specifici — Wavelets (modalità manuale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consigli-operativi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consigli operativi
+        Consigli
       
     </span>
   </a>
@@ -3544,165 +3289,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#esempi-pratici" class="md-nav__link">
+  <a href="#risorse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempi pratici
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Esempi pratici">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#caso-1-ritratto-in-studio-iso-200-canon-eos-r6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 1: Ritratto in studio (ISO 200, Canon EOS R6)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#caso-2-paesaggio-notturno-iso-6400-sony-a7iv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 2: Paesaggio notturno (ISO 6400, Sony A7IV)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#caso-3-foto-di-evento-indoor-iso-12800-fujifilm-x-h2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ✅ Caso 3: Foto di evento indoor (ISO 12800, Fujifilm X-H2)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-denoise-per-fotografia-notturna-con-esposizione-12-ev" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Denoise per fotografia notturna con esposizione +1.2 EV
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-riduzione-rumore-cromatico-residuo-su-ritratto-in-luce-fluorescente" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Riduzione rumore cromatico residuo su ritratto in luce fluorescente
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-rumore-verdeviola-persistente-nelle-ombre-anche-dopo-denoising" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Rumore verde/viola persistente nelle ombre anche dopo denoising
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-immagine-diventa-plastica-o-acquerellata-con-non-local-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Immagine diventa “plastica” o “acquerellata” con non-local means
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: denoise (profiled) non riconosce il mio modello di fotocamera
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preset-integrati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset integrati
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#altri-moduli-di-riduzione-rumore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Altri moduli di riduzione rumore
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#riferimenti-visuali" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Riferimenti visuali
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-avanzate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse avanzate
+        Risorse
       
     </span>
   </a>
@@ -3740,391 +3330,90 @@
   
 
 
-<h1 id="denoise-profiled">Denoise (profiled)<a class="headerlink" href="#denoise-profiled" title="Permanent link">¶</a></h1>
-<p>Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in modo intelligente. Attivarlo <strong>prima</strong> dei selettori automatici (esposizione, calibrazione colore) perché il rumore confonde gli algoritmi<sup id="fnref:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. Questo posizionamento è critico: il modulo opera <em>prima</em> di <code>input color profile</code> nella pipeline pixelpipe, garantendo che i parametri di denoising siano applicati sui dati raw correttamente scalati rispetto al profilo di rumore del sensore<sup id="fnref:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>. Ciò permette una correzione più precisa della varianza del rumore — che non è costante, ma dipende dalla luminosità del segnale e dall’ISO effettivo<sup id="fnref2:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</p>
+<h1 id="soften">Soften<a class="headerlink" href="#soften" title="Permanent link">¶</a></h1>
+<p>Il modulo <strong>soften</strong> (ammorbidisci) è uno strumento creativo che permette di creare un'immagine digitalmente ammorbidita utilizzando l'effetto Orton. Questa tecnica prende il nome dal fotografo Michael Orton, che originariamente otteneva questo risultato su pellicola diapositiva combinando due esposizioni della stessa scena: una ben esposta e una sovraesposta. In camera oscura, le due immagini venivano sovrapposte, con quella sovraesposta che risultava sfocata.<sup id="fnref:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></p>
+<p>Il modulo <code>soften</code> riproduce fedelmente questo processo nel dominio digitale, fondendo un'immagine nitida con una versione sovraesposta e sfocata della stessa fotografia per ottenere un look "sognante" e delicato.<sup id="fnref2:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></p>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">¶</a></h2>
-<p><code>denoise (profiled)</code> è il modulo principale per la riduzione rumore in darktable 5.4+, progettato per essere sia facile da usare che altamente efficace. A differenza di algoritmi generici, sfrutta database di profili di rumore misurati empiricamente su oltre <strong>300 modelli di fotocamere</strong> (Canon, Nikon, Sony, Fujifilm, Panasonic, ecc.)<sup id="fnref3:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>. Ogni profilo contiene curve di varianza rumore in funzione della luminanza per diversi valori ISO (es. ISO 100, 200, 400, 800, 1600, 3200, 6400, 12800), con interpolazione automatica per valori intermedi<sup id="fnref4:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>. Il modulo supporta due algoritmi fondamentali — <em>non-local means</em> e <em>wavelets</em> — entrambi disponibili in modalità <strong>auto</strong> (interfaccia semplificata) e <strong>manual</strong> (controllo fine per ogni scala di dettaglio). Non richiede alcuna installazione esterna ed è incluso di default in darktable 5.4+.</p>
-<div class="admonition info">
-<p class="admonition-title">Posizionamento nella pipeline</p>
-<p>Il modulo deve essere inserito <strong>subito dopo <code>raw black/white point</code> e prima di <code>demosaic</code></strong>, o comunque <strong>prima di <code>input color profile</code></strong>. Questo garantisce che il denoising agisca sui dati raw non ancora trasformati in spazio colore, dove il rumore è meglio modellabile e i profili ISO sono accurati<sup id="fnref8:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>. Inserire <code>denoise (profiled)</code> dopo <code>exposure</code> o <code>filmic rgb</code> compromette l’efficacia del profilo.</p>
-</div>
-<h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
+<p>Il funzionamento del modulo si basa sulla simulazione della tecnica analogica:</p>
 <ol>
-<li><strong>Prima fase (raw processing)</strong>:  </li>
-<li>Applica <code>raw black/white point</code> → <code>denoise (profiled)</code> → <code>demosaic</code> → <code>input color profile</code>.  </li>
-<li>
-<p>Se necessario, attiva <code>capture sharpening</code> nel modulo <code>Demosaic</code> con <code>contrast sensitivity</code> tra <strong>0.15 e 0.35</strong>, per compensare la leggera perdita di nitidezza senza amplificare il rumore<sup id="fnref3:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup><sup id="fnref3:pipeline"><a class="footnote-ref" href="#fn:pipeline">2</a></sup>.</p>
-</li>
-<li>
-<p><strong>Seconda fase (post-demosaic)</strong>:  </p>
-</li>
-<li>Usa <code>contrast equalizer</code> per denoise mirato su scale specifiche (es. sopprimere rumore cromatico a bassa frequenza senza toccare i dettagli fini)<sup id="fnref:48-contrast-equalizer"><a class="footnote-ref" href="#fn:48-contrast-equalizer">9</a></sup>.  </li>
-<li>
-<p>Per immagini ad altissimo ISO (&gt;6400) o con rumore strutturato (es. lunghe esposizioni notturne), aggiungi un secondo <code>denoise (profiled)</code> in modalità <em>wavelets Y0U0V0</em>, impostato su blend mode <em>chroma</em> per affinare solo il rumore cromatico<sup id="fnref11:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</p>
-</li>
-<li>
-<p><strong>Fase finale (opzionale)</strong>:  </p>
-</li>
-<li>Per casi estremi (astrofotografia, scatti in condizioni di luce molto scarsa), combina con <code>astrophoto denoise</code> <em>solo dopo</em> <code>denoise (profiled)</code> e <em>prima di <code>shadows and highlights</code></em>, poiché è computazionalmente pesante<sup id="fnref:48-astrophoto"><a class="footnote-ref" href="#fn:48-astrophoto">6</a></sup>.</li>
+<li><strong>Sovraesposizione</strong>: Viene generata una copia dell'immagine con luminosità aumentata.</li>
+<li><strong>Sfocatura</strong>: Questa copia viene sfocata per ridurre i dettagli.</li>
+<li><strong>Miscelazione</strong>: L'immagine originale (nitida) e la versione modificata (sfocata e luminosa) vengono combinate per creare l'effetto finale.<sup id="fnref5:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></li>
 </ol>
-<blockquote>
-<p>✅ <strong>Ordine ottimale della pipeline per ISO &gt; 3200</strong>:<br>
-<code>raw black/white point</code> → <code>denoise (profiled)</code> → <code>demosaic</code> (con capture sharpening) → <code>input color profile</code> → <code>exposure</code> → <code>filmic rgb</code> → <code>contrast equalizer</code> (denoise spline attivata) → <code>astrophoto denoise</code> (solo se necessario).</p>
-</blockquote>
-<h2 id="modalita">Modalità<a class="headerlink" href="#modalita" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th>Modalità</th>
-<th>Uso consigliato</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Non-local means</strong></td>
-<td>ISO bassi-medi (≤1600), texture fine (ritratti, paesaggi con dettagli delicati)</td>
-<td>Preserva meglio i dettagli e la microstruttura; richiede più RAM e CPU. Default <code>patch size</code>: <strong>3</strong>, <code>search radius</code>: <strong>7</strong>, <code>scattering</code>: <strong>12</strong><sup id="fnref12:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-</tr>
-<tr>
-<td><strong>Wavelets</strong></td>
-<td>ISO alti (≥1600), rumore strutturato (notturno, indoor con poca luce)</td>
-<td>Più efficiente in termini di risorse; consente controllo indipendente di luma e chroma. Default <code>Y0U0V0</code> mode con <code>strength</code>: <strong>0.75</strong>, <code>preserve shadows</code>: <strong>0.5</strong>, <code>bias correction</code>: <strong>0.0</strong><sup id="fnref13:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-</tr>
-<tr>
-<td><strong>Auto</strong></td>
-<td>Uso generale, workflow rapido</td>
-<td>Bilancia automaticamente luma/chroma in base al profilo ISO. Utile per batch processing con preset ISO-specifici.</td>
-</tr>
-</tbody>
-</table>
+<p>A differenza di semplici filtri di sfocatura, l'effetto Orton preserva parzialmente la struttura dell'immagine originale grazie al parametro di miscelazione, aggiungendo al contempo una luminosità eterea tipica delle scene oniriche o dei ritratti artistici.<sup id="fnref3:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></p>
+<h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
+<p>Il modulo <code>soften</code> è un modulo di effetto e solitamente dovrebbe essere applicato verso la fine della pipeline di elaborazione, dopo aver corretto l'esposizione, il colore e aver eseguito il tone mapping.</p>
+<ol>
+<li><strong>Correzioni di base</strong>: Completa prima il tuo lavoro standard (esposizione, profilo colore, eventuali ritagli).</li>
+<li><strong>Applica Soften</strong>: Attiva il modulo <code>soften</code>.</li>
+<li><strong>Regolazione sequenziale</strong>:<ul>
+<li>Inizia impostando il livello di sfocatura (<strong>size</strong>).</li>
+<li>Regola la luminosità (<strong>brightness</strong>) per determinare quanto l'effetto "bagliore" deve influenzare l'immagine.</li>
+<li>Usa il controllo <strong>mix</strong> per bilanciare l'intensità dell'effetto rispetto all'immagine originale.</li>
+</ul>
+</li>
+</ol>
 <div class="admonition tip">
-<p class="admonition-title">Modalità avanzata vs. auto</p>
-<p>La modalità <em>auto</em> imposta tutti i parametri in base all’ISO rilevato e al profilo del sensore. Passando a <em>manual</em>, il cursore <code>adjust autoset parameters</code> viene sostituito da controlli granulari: <code>patch size</code>, <code>scattering</code>, <code>Y0 curve</code>, <code>U0V0 curve</code>, ecc. Questo permette di intervenire su singole scale di rumore — ad esempio, alzare solo la parte sinistra della curva <code>Y0</code> per eliminare il rumore “grana grossa” senza toccare i dettagli fini<sup id="fnref9:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</p>
+<p class="admonition-title">Valutazione a schermo intero</p>
+<p>Poiché questo è un effetto globale, valuta sempre il risultato a schermo intero o a una riduzione significativa (zoom out). Lavorare costantemente al 100% può ingannare sulla reale percezione della morbidezza dell'immagine.</p>
 </div>
-<h2 id="parametri">Parametri<a class="headerlink" href="#parametri" title="Permanent link">¶</a></h2>
-<h3 id="controlli-comuni-validi-per-tutte-le-modalita">Controlli comuni (validi per tutte le modalità)<a class="headerlink" href="#controlli-comuni-validi-per-tutte-le-modalita" title="Permanent link">¶</a></h3>
+<h2 id="parametri-principali">Parametri principali<a class="headerlink" href="#parametri-principali" title="Permanent link">¶</a></h2>
+<p>Il modulo offre quattro controlli principali per manipolare l'effetto.<sup id="fnref4:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></p>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
-<th>Descrizione</th>
-<th>Valori tipici</th>
+<th>Range tipico</th>
 <th>Default</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Profile</strong></td>
-<td>Profilo rumore selezionato. darktable lo sceglie automaticamente da Exif (modello + ISO), con interpolazione lineare tra i due profili ISO più vicini (es. ISO 2500 → interpolazione tra ISO 2000 e 3200)<sup id="fnref14:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td>Lista a tendina con voci come <code>Canon EOS R5 ISO 800 (interpolated)</code></td>
-<td>Auto-selezionato</td>
-<td>Cliccando sulla prima voce si ripristina il profilo automatico.</td>
-</tr>
-<tr>
-<td><strong>Mode</strong></td>
-<td>Algoritmo e livello di controllo: <code>non-local means auto</code>, <code>non-local means manual</code>, <code>wavelets Y0U0V0 auto</code>, <code>wavelets Y0U0V0 manual</code>, <code>wavelets RGB auto</code>, <code>wavelets RGB manual</code><sup id="fnref15:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td>—</td>
-<td><code>wavelets Y0U0V0 auto</code></td>
-<td><code>Y0U0V0</code> è fortemente preferita rispetto a <code>RGB</code> per maggiore precisione e minori artefatti<sup id="fnref16:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-</tr>
-<tr>
-<td><strong>Whitebalance-adaptive transform</strong></td>
-<td>Adatta l’algoritmo alla moltiplicazione dei canali RGB operata dal bilanciamento del bianco. <strong>Abilitare sempre</strong>, tranne in un secondo modulo con blend mode cromatico<sup id="fnref17:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>on</code> / <code>off</code></td>
-<td><code>on</code></td>
-<td>Disabilitare solo se usato in cascata con un secondo <code>denoise (profiled)</code> in blend mode <em>chroma</em>.</td>
-</tr>
-<tr>
-<td><strong>Adjust autoset parameters</strong></td>
-<td>Regola l’“ISO efficace”: <code>actual_ISO × slider_value</code>. Utile per compensare l’aumento di rumore dopo un aumento di esposizione (es. +1.5 EV → impostare a <code>1.5</code>)<sup id="fnref18:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>0.1</code> – <code>4.0</code></td>
-<td><code>1.0</code></td>
-<td>Valori &gt;1.5 indicano rumore equivalente a un ISO superiore (es. ISO 800 + <code>2.0</code> = rumore come ISO 1600).</td>
-</tr>
-<tr>
-<td><strong>Strength</strong></td>
-<td>Intensità complessiva del denoising. Non è lineare: valori &lt;0.5 preservano dettagli, &gt;1.2 possono appiattire texture<sup id="fnref19:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>0.0</code> – <code>2.0</code> (soft limit), ma accetta fino a <code>5.0</code> con click destro</td>
-<td><code>0.75</code></td>
-<td>Per ISO 100–400: usare <code>0.3–0.6</code>; per ISO 6400+: <code>1.0–1.8</code>.</td>
-</tr>
-<tr>
-<td><strong>Preserve shadows</strong></td>
-<td>Controlla quanto aggressivamente il denoising agisce sulle zone scure. Valori bassi = più denoise nelle ombre<sup id="fnref20:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>0.0</code> – <code>1.0</code></td>
-<td><code>0.5</code></td>
-<td>Per ISO elevati: abbassare a <code>0.2–0.3</code>; per ISO bassi: mantenere a <code>0.6–0.8</code> per evitare “ombra grigia”.</td>
-</tr>
-<tr>
-<td><strong>Bias correction</strong></td>
-<td>Corregge deviazioni cromatiche nelle ombre causate dal denoising (es. verde o viola). Valori positivi correggono tonalità verdi, negativi quelle violacee<sup id="fnref21:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>-1.0</code> – <code>+1.0</code></td>
-<td><code>0.0</code></td>
-<td>Tipico range correttivo: <code>-0.3</code> (ombra troppo viola) a <code>+0.4</code> (ombra troppo verde).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="parametri-specifici-non-local-means-modalita-manuale">Parametri specifici — Non-local means (modalità manuale)<a class="headerlink" href="#parametri-specifici-non-local-means-modalita-manuale" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parametro</th>
 <th>Descrizione</th>
-<th>Valori tipici</th>
-<th>Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Patch size</strong></td>
-<td>Dimensione del “quadratino” usato per confrontare somiglianze tra pixel. Maggiore = più stabile ma meno dettagli.</td>
-<td><code>1</code> – <code>7</code> (default: <code>3</code>)</td>
-<td>Valori &gt;5 rallentano leggermente l’elaborazione ma migliorano la coerenza su rumore coarse-grain<sup id="fnref22:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
+<td><strong>size</strong></td>
+<td>Non specificato</td>
+<td>Non specificato</td>
+<td>La dimensione della sfocatura applicata all'immagine sovraesposta. Più grande è il valore, più morbido sarà il risultato.<sup id="fnref6:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></td>
 </tr>
 <tr>
-<td><strong>Search radius</strong></td>
-<td>Distanza massima (in pixel) entro cui cercare patch simili. Ha impatto quadratico sul tempo di calcolo<sup id="fnref23:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>1</code> – <code>15</code> (default: <code>7</code>)</td>
-<td>Evitare valori &gt;10: <code>scattering</code> è più efficiente per lo stesso scopo.</td>
+<td><strong>saturation</strong></td>
+<td>Non specificato</td>
+<td>Non specificato</td>
+<td>La saturazione dell'immagine sovraesposta. Può essere usato per rendere i colori dell'effetto più vividi o più tenui.<sup id="fnref7:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></td>
 </tr>
 <tr>
-<td><strong>Scattering</strong></td>
-<td>Estende la ricerca di patch simili <em>senza</em> aumentare il numero di confronti → migliora l’efficienza. Ottimo per rumore cromatico<sup id="fnref24:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td><code>0</code> – <code>20</code> (default: <code>12</code>)</td>
-<td>Valori &gt;15 riducono il contrasto locale: usare con moderazione su immagini con alta gamma dinamica.</td>
+<td><strong>brightness</strong></td>
+<td>Non specificato</td>
+<td>Non specificato</td>
+<td>La luminosità (espressa in EV) dell'immagine sovraesposta. Controlla l'intensità del bagliore aggiunto all'immagine.<sup id="fnref8:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></td>
+</tr>
+<tr>
+<td><strong>mix</strong></td>
+<td>Non specificato</td>
+<td>Non specificato</td>
+<td>Definisce come le due immagini vengono miscelate. Un valore del 50% rappresenta un mix equo tra l'immagine ben esposta e quella sovraesposta.<sup id="fnref9:manual-soften"><a class="footnote-ref" href="#fn:manual-soften">1</a></sup></td>
 </tr>
 </tbody>
 </table>
-<h3 id="parametri-specifici-wavelets-modalita-manuale">Parametri specifici — Wavelets (modalità manuale)<a class="headerlink" href="#parametri-specifici-wavelets-modalita-manuale" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parametro</th>
-<th>Descrizione</th>
-<th>Valori tipici</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Y0 curve</strong></td>
-<td>Curva di denoise per la componente di luminanza. La parte sinistra agisce sul rumore “grana grossa”, la destra su quello “grana fine”<sup id="fnref25:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td>Controllo spline con 7 punti</td>
-<td>Per ISO 3200: alzare il primo punto a <code>0.9</code>, lasciare l’ultimo a <code>0.2</code>.</td>
-</tr>
-<tr>
-<td><strong>U0V0 curve</strong></td>
-<td>Curva di denoise per le componenti cromatiche (U=blu-giallo, V=rosso-verde). Può essere più aggressiva della Y0<sup id="fnref26:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td>Controllo spline con 7 punti</td>
-<td>Per ISO 6400+: alzare i primi 3 punti a <code>1.0–1.2</code>, lasciare gli ultimi 2 a <code>0.0</code>.</td>
-</tr>
-<tr>
-<td><strong>RGB curves</strong></td>
-<td>Disponibili solo in modalità <code>RGB</code>. Sconsigliate: producono artefatti cromatici e richiedono tre passaggi separati con <code>color calibration</code><sup id="fnref27:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</td>
-<td>Tre curve indipendenti (R, G, B)</td>
-<td>Non usare mai in workflow standard. Solo per test tecnici avanzati.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
+<h2 id="consigli">Consigli<a class="headerlink" href="#consigli" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Auto-preset per ISO</p>
-<p>Creare preset auto-applicati basati sull'ISO range: un preset per ISO &lt; 800, uno per 800–3200, uno per &gt; 3200<sup id="fnref2:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>. Per ISO 100–400: <code>Strength = 0.4</code>, <code>Preserve shadows = 0.75</code>, <code>Bias correction = 0.0</code>. Per ISO 1600–6400: <code>Strength = 1.1</code>, <code>Preserve shadows = 0.25</code>, <code>Bias correction = +0.2</code>. Per ISO &gt; 12800: <code>Strength = 1.6</code>, <code>Preserve shadows = 0.1</code>, <code>Bias correction = +0.35</code>.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Capture Sharpening</p>
-<p>Attivare <strong>capture sharpening</strong> nel modulo <strong>Demosaic</strong> all'inizio della pipeline per compensare la perdita di nitidezza. Regolare la <em>contrast sensitivity</em> per non accentuare il rumore<sup id="fnref2:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup><sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">2</a></sup>. Valore ottimale: <code>0.25</code> per ISO ≤800, <code>0.18</code> per ISO 1600–6400, <code>0.12</code> per ISO ≥12800.</p>
+<p class="admonition-title">Utilizzo per ritratti</p>
+<p>L'effetto Orton è storicamente popolare nei ritratti e nelle foto di natura per creare un'atmosfera romantica. Per i ritratti, mantieni il <strong>size</strong> moderato per evitare che i tratti del viso perdano ogni definizione.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Evitare doppio denoise non necessario</p>
-<p>Usare <strong>un solo modulo <code>denoise (profiled)</code> nella pipeline principale</strong>. Un secondo modulo è giustificato <em>solo</em> se: (1) si usa blend mode <em>chroma</em> per affinare il rumore cromatico, oppure (2) si lavora su immagini astrofotografiche con rumore residuo dopo il primo passaggio<sup id="fnref10:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>. Due moduli identici in serie causano perdita eccessiva di dettagli e “effetto plastica”.</p>
+<p class="admonition-title">Attenzione alla nitidezza</p>
+<p>Aumentare eccessivamente il parametro <strong>size</strong> può rendere l'immagine completamente fuori fuoco, perdendo il punto focale. Usa il parametro <strong>mix</strong> per ritirare sempre un po' di nitidezza dall'immagine di base.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Denoise mirato con contrast equalizer</p>
-<p>Dopo <code>denoise (profiled)</code>, usa <code>contrast equalizer</code> per interventi localizzati:<br>
-- Nella scheda <strong>Luma</strong>, alza la <em>denoising spline</em> (linea nera in basso) solo sui punti corrispondenti alle scale di rumore residue (es. punto 3 da sinistra per rumore medio-fine).<br>
-- Nella scheda <strong>Chroma</strong>, alza la denoising spline sui primi 2–3 punti per eliminare il “rumore a macchia” nei colori saturi<sup id="fnref2:48-contrast-equalizer"><a class="footnote-ref" href="#fn:48-contrast-equalizer">9</a></sup>.<br>
-- Imposta <code>mix</code> a <code>0.6–0.8</code> per un effetto sottile e naturale.</p>
-</div>
-<h2 id="esempi-pratici">Esempi pratici<a class="headerlink" href="#esempi-pratici" title="Permanent link">¶</a></h2>
-<h3 id="caso-1-ritratto-in-studio-iso-200-canon-eos-r6">✅ Caso 1: Ritratto in studio (ISO 200, Canon EOS R6)<a class="headerlink" href="#caso-1-ritratto-in-studio-iso-200-canon-eos-r6" title="Permanent link">¶</a></h3>
+<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Modalità</strong>: <code>non-local means auto</code>  </li>
-<li><strong>Parametri</strong>: <code>Strength = 0.5</code>, <code>Preserve shadows = 0.7</code>, <code>Bias correction = 0.0</code>  </li>
-<li><strong>Perché</strong>: rumore minimo, priorità alla texture della pelle. Il <code>patch size = 3</code> e <code>scattering = 10</code> preservano i pori senza introdurre artefatti.</li>
-</ul>
-<h3 id="caso-2-paesaggio-notturno-iso-6400-sony-a7iv">✅ Caso 2: Paesaggio notturno (ISO 6400, Sony A7IV)<a class="headerlink" href="#caso-2-paesaggio-notturno-iso-6400-sony-a7iv" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Modalità</strong>: <code>wavelets Y0U0V0 manual</code>  </li>
-<li><strong>Parametri</strong>: <code>Y0 curve</code> = [0.9, 0.8, 0.7, 0.5, 0.3, 0.2, 0.1], <code>U0V0 curve</code> = [1.1, 1.1, 1.0, 0.8, 0.4, 0.1, 0.0]  </li>
-<li><strong>Perché</strong>: rumore luma dominante a bassa frequenza + rumore cromatico isolato (pixel rossi/verdi). La curva U0V0 aggressiva elimina il “colore saltuario” senza toccare i dettagli stellari.</li>
-</ul>
-<h3 id="caso-3-foto-di-evento-indoor-iso-12800-fujifilm-x-h2">✅ Caso 3: Foto di evento indoor (ISO 12800, Fujifilm X-H2)<a class="headerlink" href="#caso-3-foto-di-evento-indoor-iso-12800-fujifilm-x-h2" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Pipeline</strong>: <code>denoise (profiled)</code> (wavelets, <code>Strength = 1.4</code>) → <code>contrast equalizer</code> (scheda Luma, denoising spline alzata al punto 2 e 3) → <code>astrophoto denoise</code> (<code>patch size = 5</code>, <code>luma = 0.3</code>, <code>chroma = 0.8</code>)  </li>
-<li><strong>Perché</strong>: il rumore è eterogeneo (grana grossa + rumore cromatico + pattern strutturato). La combinazione sfrutta i punti di forza di ogni modulo senza sovrapposizioni.</li>
-</ul>
-<h3 id="esempio-denoise-per-fotografia-notturna-con-esposizione-12-ev">Esempio: Denoise per fotografia notturna con esposizione +1.2 EV<a class="headerlink" href="#esempio-denoise-per-fotografia-notturna-con-esposizione-12-ev" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a> (timestamp 12:45)</em><br>
-1. Apri l’immagine RAW sottoesposta (ISO 6400, esposizione -1.2 EV).<br>
-2. Applica <code>exposure</code> con <code>+1.2 EV</code> per recuperare le luci.<br>
-3. Attiva <code>denoise (profiled)</code> in modalità <code>wavelets Y0U0V0 auto</code>.<br>
-4. Imposta <code>adjust autoset parameters = 2.0</code> per compensare il rumore aggiuntivo equivalente a ISO 12800.<br>
-5. Regola <code>Strength = 1.3</code> e <code>Preserve shadows = 0.2</code>.<br>
-6. Conferma con <code>demosaic</code> → <code>input color profile</code> → <code>filmic rgb</code><sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">2</a></sup>.</p>
-<h3 id="esempio-riduzione-rumore-cromatico-residuo-su-ritratto-in-luce-fluorescente">Esempio: Riduzione rumore cromatico residuo su ritratto in luce fluorescente<a class="headerlink" href="#esempio-riduzione-rumore-cromatico-residuo-su-ritratto-in-luce-fluorescente" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a> (timestamp 24:18)</em><br>
-1. Completa la pipeline principale con <code>denoise (profiled)</code> in <code>wavelets Y0U0V0 auto</code>.<br>
-2. Aggiungi un <strong>secondo modulo <code>denoise (profiled)</code></strong>, impostato su <code>mode = wavelets Y0U0V0 manual</code>.<br>
-3. Imposta <code>blend mode = chroma</code> e disattiva <code>whitebalance-adaptive transform</code>.<br>
-4. Nella curva <code>U0V0</code>, alza i primi quattro punti a <code>1.0–1.2</code>, lasciando gli ultimi tre a <code>0.0</code>.<br>
-5. Imposta <code>Strength = 0.9</code> e <code>preserve shadows = 0.1</code>.<br>
-6. Usa <code>contrast equalizer</code> in seguito per affinare ulteriormente il rumore a scala fine<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup>.</p>
-<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
-<h3 id="problema-rumore-verdeviola-persistente-nelle-ombre-anche-dopo-denoising">Problema: Rumore verde/viola persistente nelle ombre anche dopo denoising<a class="headerlink" href="#problema-rumore-verdeviola-persistente-nelle-ombre-anche-dopo-denoising" title="Permanent link">¶</a></h3>
-<p>La bias correction non risolve completamente il problema cromatico residuo. La causa è spesso un’eccessiva attenuazione delle componenti U/V rispetto a Y, che amplifica il rapporto di errore cromatico. La soluzione è combinare <code>bias correction</code> con un intervento mirato su <code>U0V0 curve</code>: abbassare leggermente il punto centrale (punto 4) mentre si alzano i primi due punti, per bilanciare la correzione globale con un’azione locale<sup id="fnref5:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</p>
-<h3 id="problema-immagine-diventa-plastica-o-acquerellata-con-non-local-means">Problema: Immagine diventa “plastica” o “acquerellata” con <code>non-local means</code><a class="headerlink" href="#problema-immagine-diventa-plastica-o-acquerellata-con-non-local-means" title="Permanent link">¶</a></h3>
-<p>Questo artefatto è tipico di valori eccessivi di <code>search radius &gt; 9</code> o <code>scattering &gt; 15</code>, specialmente su immagini con alta gamma dinamica. Ridurre <code>search radius</code> a <code>5–7</code> e aumentare <code>scattering</code> a <code>10–12</code> mantiene l’efficacia senza appiattire il contrasto locale. Se il problema persiste, passare a <code>wavelets Y0U0V0 manual</code> e regolare solo la parte sinistra della curva <code>Y0</code><sup id="fnref6:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>.</p>
-<h3 id="problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera">Problema: <code>denoise (profiled)</code> non riconosce il mio modello di fotocamera<a class="headerlink" href="#problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera" title="Permanent link">¶</a></h3>
-<p>darktable cerca il profilo tramite tag Exif <code>Make</code>, <code>Model</code> e <code>ExposureIndex</code>. Se il firmware della fotocamera scrive valori non standard (es. <code>Model = "X-H2S"</code> invece di <code>"FUJIFILM X-H2S"</code>), il profilo non viene trovato. Soluzione: usare <code>raw denoise</code> come alternativa temporanea, oppure generare un profilo personalizzato con <a href="https://github.com/BR0k3N/noise-profile-generator">Noise Profile Generator (NPG)</a><sup id="fnref:pixls-noise"><a class="footnote-ref" href="#fn:pixls-noise">4</a></sup>.</p>
-<h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
-<p>darktable include 7 preset preconfigurati per <code>denoise (profiled)</code>, accessibili dal menu a tendina <em>Preset</em> in alto a destra del modulo<sup id="fnref7:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">5</a></sup>:</p>
-<table>
-<thead>
-<tr>
-<th>Preset</th>
-<th>Quando usarlo</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Low noise (ISO 100–400)</strong></td>
-<td>Studio, paesaggi in luce piena</td>
-<td><code>Strength = 0.4</code>, <code>Preserve shadows = 0.8</code>, <code>Y0 curve</code> piatta a <code>0.3</code></td>
-</tr>
-<tr>
-<td><strong>Medium noise (ISO 800–3200)</strong></td>
-<td>Eventi indoor, ritratti in luce artificiale</td>
-<td><code>Strength = 0.9</code>, <code>Preserve shadows = 0.4</code>, <code>U0V0 curve</code> alzata a sinistra</td>
-</tr>
-<tr>
-<td><strong>High noise (ISO 6400–12800)</strong></td>
-<td>Concerti, reportage notturno</td>
-<td><code>Strength = 1.4</code>, <code>Preserve shadows = 0.15</code>, <code>Y0 curve</code> [0.95, 0.85, 0.7, 0.4, 0.2, 0.1, 0.05]</td>
-</tr>
-<tr>
-<td><strong>Astrophotography (ISO 1600+)</strong></td>
-<td>Lunghe esposizioni, cielo stellato</td>
-<td><code>Mode = wavelets Y0U0V0 manual</code>, <code>U0V0 curve</code> max ai primi 4 punti</td>
-</tr>
-<tr>
-<td><strong>Portrait skin (ISO 200–800)</strong></td>
-<td>Pelle umana, texture fine</td>
-<td><code>Mode = non-local means manual</code>, <code>patch size = 3</code>, <code>scattering = 10</code></td>
-</tr>
-<tr>
-<td><strong>Landscape detail (ISO 100–400)</strong></td>
-<td>Montagne, architettura, alta risoluzione</td>
-<td><code>Strength = 0.35</code>, <code>Preserve shadows = 0.7</code>, <code>Y0 curve</code> quasi piatta</td>
-</tr>
-<tr>
-<td><strong>Chroma only</strong></td>
-<td>Per uso in cascata con blend mode <em>chroma</em></td>
-<td><code>Mode = wavelets Y0U0V0 manual</code>, <code>Y0 curve</code> a zero, <code>U0V0 curve</code> attiva</td>
-</tr>
-</tbody>
-</table>
-<h2 id="altri-moduli-di-riduzione-rumore">Altri moduli di riduzione rumore<a class="headerlink" href="#altri-moduli-di-riduzione-rumore" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th>Modulo</th>
-<th>Uso</th>
-<th>Posizionamento ideale</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Raw denoise</strong></td>
-<td>Denoise <em>sui dati raw grezzi</em>, prima del demosaic. Basato su dcraw. Utile per sensori con rumore particolarmente omogeneo (es. vecchie DSLR)<sup id="fnref:48-raw-denoise"><a class="footnote-ref" href="#fn:48-raw-denoise">7</a></sup>.</td>
-<td>Subito dopo <code>raw black/white point</code>, prima di <code>denoise (profiled)</code></td>
-<td>Usa curve <em>coarse/fine</em> per rumore a diverse scale. Non usa profili ISO: meno preciso ma più universale.</td>
-</tr>
-<tr>
-<td><strong>Surface blur</strong></td>
-<td>Sfuocatura conservativa dei bordi con filtro bilaterale. <strong>Non è un modulo di denoise primario</strong><sup id="fnref:48-surface-blur"><a class="footnote-ref" href="#fn:48-surface-blur">8</a></sup>.</td>
-<td>Dopo <code>input color profile</code>, in blend mode <em>chroma</em> o <em>luminance</em></td>
-<td>Utile per rimuovere <em>moire cromatico</em> o uniformare tonalità della pelle. Evitare su immagini con rumore luma diffuso.</td>
-</tr>
-<tr>
-<td><strong>Astrophoto denoise</strong></td>
-<td>Ottimizzato per fotografia astronomica: algoritmo non-local means con maggiore enfasi su strutture deboli<sup id="fnref2:48-astrophoto"><a class="footnote-ref" href="#fn:48-astrophoto">6</a></sup>.</td>
-<td>Dopo <code>denoise (profiled)</code> e prima di <code>shadows and highlights</code></td>
-<td>Richiede tempi di elaborazione lunghi: usare solo su immagini con rumore residuo visibile a 100% zoom.</td>
-</tr>
-<tr>
-<td><strong>Contrast equalizer</strong></td>
-<td>Denoise <em>mirato su scale specifiche</em> nel dominio wavelet. Complementare a <code>denoise (profiled)</code><sup id="fnref3:48-contrast-equalizer"><a class="footnote-ref" href="#fn:48-contrast-equalizer">9</a></sup>.</td>
-<td>Dopo <code>denoise (profiled)</code> e prima di <code>shadows and highlights</code></td>
-<td>La <em>denoising spline</em> nella scheda Luma/Chroma permette di eliminare rumore solo su determinate scale di dettaglio.</td>
-</tr>
-<tr>
-<td><strong>AI Denoise (darktable ≥5.5)</strong></td>
-<td>Modulo sperimentale basato su modello NAFNet (ONNX). Richiede download manuale del modello<sup id="fnref:pixls-ai"><a class="footnote-ref" href="#fn:pixls-ai">10</a></sup>.</td>
-<td>Dopo <code>input color profile</code>, prima di <code>output color profile</code></td>
-<td>Non sostituisce <code>denoise (profiled)</code>: è più lento e richiede GPU/CUDA per prestazioni accettabili. Da usare solo per casi estremi.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Per la creazione di profili rumore personalizzati: <em>PIXLS.US — How to Create Camera Noise Profiles for Darktable</em><sup id="fnref2:pixls-noise"><a class="footnote-ref" href="#fn:pixls-noise">4</a></sup> | Copia locale: <code>processed/pixls-articles/articles-how-to-create-camera-noise-profiles-for-darktable.md</code></p>
-</blockquote>
-<h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-denoise.png" data-desc-position="bottom"><img alt="Interfaccia del modulo denoise (profiled) (Riduzione rumore (profilato)) in darktable" src="../../images/ui-denoise.png"></a>
-<em>Il modulo «denoise (profiled)» (Riduzione rumore (profilato)) nell'interfaccia di darktable (vista darkroom).</em></p>
-<h2 id="risorse-avanzate">Risorse avanzate<a class="headerlink" href="#risorse-avanzate" title="Permanent link">¶</a></h2>
-<ul>
-<li><strong><a href="https://github.com/darktable-org/darktable/tree/main/data/noise_profiles">darktable Noise Profile Database</a></strong>: repository ufficiale con tutti i profili ISO per ogni sensore supportato.  </li>
-<li><strong><a href="https://github.com/BR0k3N/noise-profile-generator">Noise Profile Generator (NPG)</a></strong>: tool CLI per generare profili personalizzati da sequenze di dark frame.  </li>
-<li><strong><a href="https://pixls.us/forums/t/darktable-denoise-comparison-charts/55212">Darktable Denoise Comparison Charts</a></strong>: benchmark visivi tra <code>non-local means</code>, <code>wavelets</code>, <code>astrophoto denoise</code> su diversi ISO (PIXLS.US forum).  </li>
+<li><strong>Manuale Utente darktable</strong>: Sezione dedicata al modulo <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/soften/">soften</a>.</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn:manual">
-<p><em>darktable User Manual — Denoise (profiled)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-denoise-profiled.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:pipeline">
-<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:pipeline" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:dt54">
-<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:pixls-noise">
-<p><em>PIXLS.US — How to Create Camera Noise Profiles for Darktable</em>, <a href="https://pixls.us/articles/how-to-create-camera-noise-profiles-for-darktable/">pixls.us</a> | <code>processed/pixls-articles/articles-how-to-create-camera-noise-profiles-for-darktable.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-noise" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:pixls-noise" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:48-profiled">
-<p><em>darktable user manual — denoise (profiled)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-denoise-profiled.md</code>&nbsp;<a class="footnote-backref" href="#fnref:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref7:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref8:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref9:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref10:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref11:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref12:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref13:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref14:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref15:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref16:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref17:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref18:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref19:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref20:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref21:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref22:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref23:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref24:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref25:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref26:48-profiled" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref27:48-profiled" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-<li id="fn:48-astrophoto">
-<p><em>darktable user manual — astrophoto denoise</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/astrophoto-denoise/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-astrophoto-denoise.md</code>&nbsp;<a class="footnote-backref" href="#fnref:48-astrophoto" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:48-astrophoto" title="Jump back to footnote 6 in the text">↩</a></p>
-</li>
-<li id="fn:48-raw-denoise">
-<p><em>darktable user manual — raw denoise</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/raw-denoise/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-raw-denoise.md</code>&nbsp;<a class="footnote-backref" href="#fnref:48-raw-denoise" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
-<li id="fn:48-surface-blur">
-<p><em>darktable user manual — surface blur</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/surface-blur/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-surface-blur.md</code>&nbsp;<a class="footnote-backref" href="#fnref:48-surface-blur" title="Jump back to footnote 8 in the text">↩</a></p>
-</li>
-<li id="fn:48-contrast-equalizer">
-<p><em>darktable user manual — contrast equalizer</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/contrast-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-contrast-equalizer.md</code>&nbsp;<a class="footnote-backref" href="#fnref:48-contrast-equalizer" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:48-contrast-equalizer" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref3:48-contrast-equalizer" title="Jump back to footnote 9 in the text">↩</a></p>
-</li>
-<li id="fn:pixls-ai">
-<p><em>Alternative NIND-Denoise Plugin for Darktable</em>, <a href="https://discuss.pixls.us/t/alternative-nind-denoise-plugin-for-darktable/56567">discuss.pixls.us</a> | <code>processed/discuss-pixls/discuss-pixls-56567-alternative-nind-denoise-plugin-for-darktable.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-ai" title="Jump back to footnote 10 in the text">↩</a></p>
+<li id="fn:manual-soften">
+<p>darktable user manual - soften. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/soften/&nbsp;<a class="footnote-backref" href="#fnref:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:manual-soften" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:manual-soften" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 </ol>
 </div>
