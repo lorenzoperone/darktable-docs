@@ -9,31 +9,31 @@
         <meta name="author" content="Lorenzo Perone">
       
       
-        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/export/styles/">
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/preferences/">
       
       
-        <link rel="prev" href="../formats/">
+        <link rel="prev" href="../export/styles/">
       
       
-        <link rel="next" href="../../preferences/">
+        <link rel="next" href="processing/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Stili e Automazione - Guida al post-processing con darktable</title>
+        <title>Preferenze - Guida al post-processing con darktable</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -52,13 +52,13 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stili-e-automazione" class="md-skip">
+        <a href="#preferenze" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -103,7 +103,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Intestazione">
-    <a href="../.." title="Guida al post-processing con darktable" class="md-header__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
+    <a href=".." title="Guida al post-processing con darktable" class="md-header__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stili e Automazione
+              Preferenze
             
           </span>
         </div>
@@ -230,7 +230,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../lighttable/" class="md-tabs__link">
+        <a href="../lighttable/" class="md-tabs__link">
           
   
   
@@ -271,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../workflow/" class="md-tabs__link">
+        <a href="../workflow/" class="md-tabs__link">
           
   
   
@@ -291,7 +291,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../pipeline/" class="md-tabs__link">
+        <a href="../pipeline/" class="md-tabs__link">
           
   
   
@@ -311,7 +311,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../modules/" class="md-tabs__link">
+        <a href="../modules/" class="md-tabs__link">
           
   
   
@@ -331,7 +331,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../workshop/" class="md-tabs__link">
+        <a href="../workshop/" class="md-tabs__link">
           
   
   
@@ -351,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../color/" class="md-tabs__link">
+        <a href="../color/" class="md-tabs__link">
           
   
   
@@ -371,11 +371,31 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../masking/" class="md-tabs__link">
+        <a href="../masking/" class="md-tabs__link">
           
   
   
   Maschere
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../export/" class="md-tabs__link">
+          
+  
+  
+  Esportazione
 
         </a>
       </li>
@@ -393,27 +413,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-  
-  Esportazione
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../preferences/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -433,7 +433,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../appendix/glossary/" class="md-tabs__link">
+        <a href="../appendix/glossary/" class="md-tabs__link">
           
   
   
@@ -473,7 +473,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigazione" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Guida al post-processing con darktable" class="md-nav__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
+    <a href=".." title="Guida al post-processing con darktable" class="md-nav__button md-logo" aria-label="Guida al post-processing con darktable" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3m-3 15a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-1 1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25"></path></svg>
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -584,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lighttable/" class="md-nav__link">
+      <a href="../lighttable/" class="md-nav__link">
         
   
   
@@ -612,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lighttable/modalita/" class="md-nav__link">
+      <a href="../lighttable/modalita/" class="md-nav__link">
         
   
   
@@ -640,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lighttable/organizzazione/" class="md-nav__link">
+      <a href="../lighttable/organizzazione/" class="md-nav__link">
         
   
   
@@ -668,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lighttable/metadati-tag/" class="md-nav__link">
+      <a href="../lighttable/metadati-tag/" class="md-nav__link">
         
   
   
@@ -696,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lighttable/styles-cronologia/" class="md-nav__link">
+      <a href="../lighttable/styles-cronologia/" class="md-nav__link">
         
   
   
@@ -785,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/" class="md-nav__link">
+      <a href="../workflow/" class="md-nav__link">
         
   
   
@@ -813,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/import/" class="md-nav__link">
+      <a href="../workflow/import/" class="md-nav__link">
         
   
   
@@ -841,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/exposure/" class="md-nav__link">
+      <a href="../workflow/exposure/" class="md-nav__link">
         
   
   
@@ -869,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/color/" class="md-nav__link">
+      <a href="../workflow/color/" class="md-nav__link">
         
   
   
@@ -897,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/tone/" class="md-nav__link">
+      <a href="../workflow/tone/" class="md-nav__link">
         
   
   
@@ -925,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflow/export/" class="md-nav__link">
+      <a href="../workflow/export/" class="md-nav__link">
         
   
   
@@ -1014,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipeline/" class="md-nav__link">
+      <a href="../pipeline/" class="md-nav__link">
         
   
   
@@ -1042,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipeline/module-order/" class="md-nav__link">
+      <a href="../pipeline/module-order/" class="md-nav__link">
         
   
   
@@ -1070,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipeline/anatomia-modulo/" class="md-nav__link">
+      <a href="../pipeline/anatomia-modulo/" class="md-nav__link">
         
   
   
@@ -1098,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipeline/history-stack/" class="md-nav__link">
+      <a href="../pipeline/history-stack/" class="md-nav__link">
         
   
   
@@ -1126,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pipeline/preset-istanze/" class="md-nav__link">
+      <a href="../pipeline/preset-istanze/" class="md-nav__link">
         
   
   
@@ -1215,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/" class="md-nav__link">
+      <a href="../modules/" class="md-nav__link">
         
   
   
@@ -1243,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/agx/" class="md-nav__link">
+      <a href="../modules/agx/" class="md-nav__link">
         
   
   
@@ -1271,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/exposure/" class="md-nav__link">
+      <a href="../modules/exposure/" class="md-nav__link">
         
   
   
@@ -1299,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/filmic-rgb/" class="md-nav__link">
+      <a href="../modules/filmic-rgb/" class="md-nav__link">
         
   
   
@@ -1327,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/sigmoid/" class="md-nav__link">
+      <a href="../modules/sigmoid/" class="md-nav__link">
         
   
   
@@ -1355,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-calibration/" class="md-nav__link">
+      <a href="../modules/color-calibration/" class="md-nav__link">
         
   
   
@@ -1383,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-balance-rgb/" class="md-nav__link">
+      <a href="../modules/color-balance-rgb/" class="md-nav__link">
         
   
   
@@ -1411,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/channel-mixer/" class="md-nav__link">
+      <a href="../modules/channel-mixer/" class="md-nav__link">
         
   
   
@@ -1439,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-equalizer/" class="md-nav__link">
+      <a href="../modules/color-equalizer/" class="md-nav__link">
         
   
   
@@ -1467,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-harmonizer/" class="md-nav__link">
+      <a href="../modules/color-harmonizer/" class="md-nav__link">
         
   
   
@@ -1495,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/rgb-primaries/" class="md-nav__link">
+      <a href="../modules/rgb-primaries/" class="md-nav__link">
         
   
   
@@ -1523,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/velvia/" class="md-nav__link">
+      <a href="../modules/velvia/" class="md-nav__link">
         
   
   
@@ -1551,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/diffuse-sharpen/" class="md-nav__link">
+      <a href="../modules/diffuse-sharpen/" class="md-nav__link">
         
   
   
@@ -1579,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/blurs/" class="md-nav__link">
+      <a href="../modules/blurs/" class="md-nav__link">
         
   
   
@@ -1607,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/soften/" class="md-nav__link">
+      <a href="../modules/soften/" class="md-nav__link">
         
   
   
@@ -1635,7 +1635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/tone-equalizer/" class="md-nav__link">
+      <a href="../modules/tone-equalizer/" class="md-nav__link">
         
   
   
@@ -1663,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/local-contrast/" class="md-nav__link">
+      <a href="../modules/local-contrast/" class="md-nav__link">
         
   
   
@@ -1691,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/haze-removal/" class="md-nav__link">
+      <a href="../modules/haze-removal/" class="md-nav__link">
         
   
   
@@ -1719,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/denoise/" class="md-nav__link">
+      <a href="../modules/denoise/" class="md-nav__link">
         
   
   
@@ -1747,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/neural-restore/" class="md-nav__link">
+      <a href="../modules/neural-restore/" class="md-nav__link">
         
   
   
@@ -1775,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/lens-correction/" class="md-nav__link">
+      <a href="../modules/lens-correction/" class="md-nav__link">
         
   
   
@@ -1803,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/retouch/" class="md-nav__link">
+      <a href="../modules/retouch/" class="md-nav__link">
         
   
   
@@ -1831,7 +1831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/liquify/" class="md-nav__link">
+      <a href="../modules/liquify/" class="md-nav__link">
         
   
   
@@ -1859,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/censorize/" class="md-nav__link">
+      <a href="../modules/censorize/" class="md-nav__link">
         
   
   
@@ -1887,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/crop-rotate/" class="md-nav__link">
+      <a href="../modules/crop-rotate/" class="md-nav__link">
         
   
   
@@ -1915,7 +1915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/white-balance/" class="md-nav__link">
+      <a href="../modules/white-balance/" class="md-nav__link">
         
   
   
@@ -1943,7 +1943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/highlight-reconstruction/" class="md-nav__link">
+      <a href="../modules/highlight-reconstruction/" class="md-nav__link">
         
   
   
@@ -1971,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/contrast-equalizer/" class="md-nav__link">
+      <a href="../modules/contrast-equalizer/" class="md-nav__link">
         
   
   
@@ -1999,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/demosaicing/" class="md-nav__link">
+      <a href="../modules/demosaicing/" class="md-nav__link">
         
   
   
@@ -2027,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/vignetting/" class="md-nav__link">
+      <a href="../modules/vignetting/" class="md-nav__link">
         
   
   
@@ -2055,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/graduated-density/" class="md-nav__link">
+      <a href="../modules/graduated-density/" class="md-nav__link">
         
   
   
@@ -2083,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/rotate-perspective/" class="md-nav__link">
+      <a href="../modules/rotate-perspective/" class="md-nav__link">
         
   
   
@@ -2111,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/watermark/" class="md-nav__link">
+      <a href="../modules/watermark/" class="md-nav__link">
         
   
   
@@ -2139,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/base-curve/" class="md-nav__link">
+      <a href="../modules/base-curve/" class="md-nav__link">
         
   
   
@@ -2167,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/chromatic-aberrations/" class="md-nav__link">
+      <a href="../modules/chromatic-aberrations/" class="md-nav__link">
         
   
   
@@ -2195,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/defringe/" class="md-nav__link">
+      <a href="../modules/defringe/" class="md-nav__link">
         
   
   
@@ -2223,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-profiles/" class="md-nav__link">
+      <a href="../modules/color-profiles/" class="md-nav__link">
         
   
   
@@ -2251,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/lut-3d/" class="md-nav__link">
+      <a href="../modules/lut-3d/" class="md-nav__link">
         
   
   
@@ -2279,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/color-mapping/" class="md-nav__link">
+      <a href="../modules/color-mapping/" class="md-nav__link">
         
   
   
@@ -2307,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/grain/" class="md-nav__link">
+      <a href="../modules/grain/" class="md-nav__link">
         
   
   
@@ -2335,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/negadoctor/" class="md-nav__link">
+      <a href="../modules/negadoctor/" class="md-nav__link">
         
   
   
@@ -2363,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/composite/" class="md-nav__link">
+      <a href="../modules/composite/" class="md-nav__link">
         
   
   
@@ -2391,7 +2391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/scopes/" class="md-nav__link">
+      <a href="../modules/scopes/" class="md-nav__link">
         
   
   
@@ -2419,7 +2419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/masking/" class="md-nav__link">
+      <a href="../modules/masking/" class="md-nav__link">
         
   
   
@@ -2508,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/" class="md-nav__link">
+      <a href="../workshop/" class="md-nav__link">
         
   
   
@@ -2536,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/black-white/" class="md-nav__link">
+      <a href="../workshop/black-white/" class="md-nav__link">
         
   
   
@@ -2564,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/portrait/" class="md-nav__link">
+      <a href="../workshop/portrait/" class="md-nav__link">
         
   
   
@@ -2592,7 +2592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/landscape/" class="md-nav__link">
+      <a href="../workshop/landscape/" class="md-nav__link">
         
   
   
@@ -2620,7 +2620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/lowlight/" class="md-nav__link">
+      <a href="../workshop/lowlight/" class="md-nav__link">
         
   
   
@@ -2648,7 +2648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/hdr/" class="md-nav__link">
+      <a href="../workshop/hdr/" class="md-nav__link">
         
   
   
@@ -2676,7 +2676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/street/" class="md-nav__link">
+      <a href="../workshop/street/" class="md-nav__link">
         
   
   
@@ -2704,7 +2704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/macro/" class="md-nav__link">
+      <a href="../workshop/macro/" class="md-nav__link">
         
   
   
@@ -2732,7 +2732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/from-lightroom/" class="md-nav__link">
+      <a href="../workshop/from-lightroom/" class="md-nav__link">
         
   
   
@@ -2760,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/creative-effects/" class="md-nav__link">
+      <a href="../workshop/creative-effects/" class="md-nav__link">
         
   
   
@@ -2788,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workshop/color-grading/" class="md-nav__link">
+      <a href="../workshop/color-grading/" class="md-nav__link">
         
   
   
@@ -2877,7 +2877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../color/" class="md-nav__link">
+      <a href="../color/" class="md-nav__link">
         
   
   
@@ -2905,7 +2905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../color/scene-referred/" class="md-nav__link">
+      <a href="../color/scene-referred/" class="md-nav__link">
         
   
   
@@ -2933,7 +2933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../color/white-balance/" class="md-nav__link">
+      <a href="../color/white-balance/" class="md-nav__link">
         
   
   
@@ -2961,7 +2961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../color/icc-profiles/" class="md-nav__link">
+      <a href="../color/icc-profiles/" class="md-nav__link">
         
   
   
@@ -2989,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../color/gamut/" class="md-nav__link">
+      <a href="../color/gamut/" class="md-nav__link">
         
   
   
@@ -3078,7 +3078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/" class="md-nav__link">
+      <a href="../masking/" class="md-nav__link">
         
   
   
@@ -3106,7 +3106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/parametric/" class="md-nav__link">
+      <a href="../masking/parametric/" class="md-nav__link">
         
   
   
@@ -3134,7 +3134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/drawn/" class="md-nav__link">
+      <a href="../masking/drawn/" class="md-nav__link">
         
   
   
@@ -3162,7 +3162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/combining/" class="md-nav__link">
+      <a href="../masking/combining/" class="md-nav__link">
         
   
   
@@ -3190,7 +3190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/ai-masks/" class="md-nav__link">
+      <a href="../masking/ai-masks/" class="md-nav__link">
         
   
   
@@ -3218,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../masking/raster/" class="md-nav__link">
+      <a href="../masking/raster/" class="md-nav__link">
         
   
   
@@ -3226,6 +3226,151 @@
     
   
     Raster Masks: External Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9">
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Esportazione
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formati di Esportazione
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/styles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stili e Automazione
   
 
     
@@ -3271,17 +3416,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked="">
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Esportazione
+    Preferenze
   
 
     
@@ -3292,72 +3437,16 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Esportazione
+    Preferenze
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Esportazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../formats/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Formati di Esportazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -3382,7 +3471,7 @@
   <span class="md-ellipsis">
     
   
-    Stili e Automazione
+    Preferenze
   
 
     
@@ -3400,7 +3489,7 @@
   <span class="md-ellipsis">
     
   
-    Stili e Automazione
+    Preferenze
   
 
     
@@ -3426,244 +3515,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#preset-vs-stili" class="md-nav__link">
+  <a href="#le-pagine-di-questa-sezione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset vs. Stili
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creare-un-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creare un preset
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creare un preset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#preset-auto-applicati-consigliati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset auto-applicati consigliati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-avanzati-dei-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri avanzati dei preset
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creare-uno-stile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creare uno stile
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creare uno stile">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moduli-raccomandati-per-gli-stili-darktable-54" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Moduli raccomandati per gli stili (darktable 5.4+)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-editing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Batch editing
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Batch editing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copiaincolla-history-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Copia/incolla history stack
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Copia/incolla history stack">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moduli-sicuri-per-il-copia-incolla-batch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Moduli sicuri per il copia-incolla batch
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodo-primary-secondary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metodo primary + secondary
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestione-prestazioni-e-ottimizzazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestione prestazioni e ottimizzazione
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Gestione prestazioni e ottimizzazione">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#impostazioni-chiave-per-il-lighttable-da-preferenze-generale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Impostazioni chiave per il lighttable (da Preferenze &gt; Generale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prestazioni-del-modulo-diffuse-sharpen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prestazioni del modulo Diffuse &amp; Sharpen
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consigli-operativi-avanzati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consigli operativi avanzati
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli operativi avanzati">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-stili-per-fotografia-professionale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Stili per fotografia professionale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-debug-degli-stili-non-applicati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Debug degli stili non applicati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-backup-e-condivisione-degli-stili" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Backup e condivisione degli stili
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
+        Le pagine di questa sezione
       
     </span>
   </a>
@@ -3679,67 +3534,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
-        
-          
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Preferenze
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Preferenze
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
               
                 
   
@@ -3747,35 +3541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Preferenze
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../preferences/processing/" class="md-nav__link">
+      <a href="processing/" class="md-nav__link">
         
   
   
@@ -3803,7 +3569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/ai/" class="md-nav__link">
+      <a href="ai/" class="md-nav__link">
         
   
   
@@ -3831,7 +3597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/general-import/" class="md-nav__link">
+      <a href="general-import/" class="md-nav__link">
         
   
   
@@ -3859,7 +3625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/shortcuts/" class="md-nav__link">
+      <a href="shortcuts/" class="md-nav__link">
         
   
   
@@ -3948,7 +3714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/glossary/" class="md-nav__link">
+      <a href="../appendix/glossary/" class="md-nav__link">
         
   
   
@@ -3976,7 +3742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/shortcuts/" class="md-nav__link">
+      <a href="../appendix/shortcuts/" class="md-nav__link">
         
   
   
@@ -4004,7 +3770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/resources/" class="md-nav__link">
+      <a href="../appendix/resources/" class="md-nav__link">
         
   
   
@@ -4032,7 +3798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendix/faq/" class="md-nav__link">
+      <a href="../appendix/faq/" class="md-nav__link">
         
   
   
@@ -4087,244 +3853,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#preset-vs-stili" class="md-nav__link">
+  <a href="#le-pagine-di-questa-sezione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset vs. Stili
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creare-un-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creare un preset
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creare un preset">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#preset-auto-applicati-consigliati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset auto-applicati consigliati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-avanzati-dei-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri avanzati dei preset
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#creare-uno-stile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creare uno stile
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Creare uno stile">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moduli-raccomandati-per-gli-stili-darktable-54" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Moduli raccomandati per gli stili (darktable 5.4+)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-editing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Batch editing
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Batch editing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#copiaincolla-history-stack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Copia/incolla history stack
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Copia/incolla history stack">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#moduli-sicuri-per-il-copia-incolla-batch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Moduli sicuri per il copia-incolla batch
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metodo-primary-secondary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metodo primary + secondary
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestione-prestazioni-e-ottimizzazione" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestione prestazioni e ottimizzazione
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Gestione prestazioni e ottimizzazione">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#impostazioni-chiave-per-il-lighttable-da-preferenze-generale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Impostazioni chiave per il lighttable (da Preferenze &gt; Generale)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prestazioni-del-modulo-diffuse-sharpen" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prestazioni del modulo Diffuse &amp; Sharpen
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consigli-operativi-avanzati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consigli operativi avanzati
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli operativi avanzati">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-stili-per-fotografia-professionale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Stili per fotografia professionale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-debug-degli-stili-non-applicati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Debug degli stili non applicati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-backup-e-condivisione-degli-stili" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Backup e condivisione degli stili
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
+        Le pagine di questa sezione
       
     </span>
   </a>
@@ -4351,418 +3883,27 @@
   
 
 
-<h1 id="stili-e-automazione">Stili e Automazione<a class="headerlink" href="#stili-e-automazione" title="Permanent link">¶</a></h1>
-<p>Preset e stili sono gli strumenti che trasformano un flusso manuale in uno veloce e consistente.<sup id="fnref:manual-presets"><a class="footnote-ref" href="#fn:manual-presets">1</a></sup><sup id="fnref:manual-styles"><a class="footnote-ref" href="#fn:manual-styles">2</a></sup></p>
-<h2 id="preset-vs-stili">Preset vs. Stili<a class="headerlink" href="#preset-vs-stili" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Preset</th>
-<th>Stile</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Ambito</strong></td>
-<td>Singolo modulo</td>
-<td>Multi-modulo</td>
-</tr>
-<tr>
-<td><strong>Auto-applicazione</strong></td>
-<td>Si' (basata su EXIF)</td>
-<td>No (manuale o batch)</td>
-</tr>
-<tr>
-<td><strong>Formato file</strong></td>
-<td>Interno al database</td>
-<td><code>.dtstyle</code> (esportabile)</td>
-</tr>
-<tr>
-<td><strong>Uso tipico</strong></td>
-<td>Lens correction per obiettivo, denoise per ISO</td>
-<td>Look completo (AgX + TE + CB)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="creare-un-preset">Creare un preset<a class="headerlink" href="#creare-un-preset" title="Permanent link">¶</a></h2>
-<ol>
-<li>Configura il modulo</li>
-<li>Icona hamburger &gt; <strong>«Salva nuovo preset»</strong></li>
-<li>Nome descrittivo</li>
-<li>Condizioni EXIF per auto-applicazione (opzionale)</li>
-</ol>
+<h1 id="preferenze">Preferenze<a class="headerlink" href="#preferenze" title="Permanent link">¶</a></h1>
+<p>Le <strong>preferenze</strong> di darktable si aprono dall'icona a ingranaggio in alto a destra. Sono molte e quasi tutte hanno default sensati: questa sezione si concentra sulle <strong>poche che contano davvero</strong> per la qualità, le prestazioni e il flusso di lavoro — il resto puoi lasciarlo com'è finché non hai un motivo preciso per cambiarlo.</p>
 <div class="admonition tip">
-<p class="admonition-title">Organizzazione (dt 5.2+)</p>
-<p>Creare sottomenu con il carattere pipe nel nome: <code>Paesaggio|Tramonto</code>, <code>Ritratto|Studio</code>.<sup id="fnref:dt52"><a class="footnote-ref" href="#fn:dt52">5</a></sup></p>
-</div>
-<h3 id="preset-auto-applicati-consigliati">Preset auto-applicati consigliati<a class="headerlink" href="#preset-auto-applicati-consigliati" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Modulo</th>
-<th>Condizione</th>
-<th>Esempio</th>
-<th>Valore tipico</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Lens correction</strong></td>
-<td>Modello obiettivo</td>
-<td>Auto per ogni lente</td>
-<td><code>lens_model = "XF16-55mmF2.8 R LM WR"</code></td>
-</tr>
-<tr>
-<td><strong>Denoise (profiled)</strong></td>
-<td>ISO range</td>
-<td>Leggero &lt; 800, medio 800-3200, forte &gt; 3200</td>
-<td><code>iso_min = 100</code>, <code>iso_max = 3200</code>, <code>denoise_level = 0.35</code> (non-local means)</td>
-</tr>
-<tr>
-<td><strong>Color calibration</strong></td>
-<td>Corpo macchina</td>
-<td>Profilo specifico per fotocamera</td>
-<td><code>camera_model = "FUJIFILM X-H2S"</code></td>
-</tr>
-<tr>
-<td><strong>Demosaic</strong></td>
-<td>Sempre</td>
-<td>Capture sharpening attivato<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">4</a></sup></td>
-<td><code>sharpen = TRUE</code>, <code>sharpen_radius = 1.0</code>, <code>sharpen_amount = 0.4</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="parametri-avanzati-dei-preset">Parametri avanzati dei preset<a class="headerlink" href="#parametri-avanzati-dei-preset" title="Permanent link">¶</a></h3>
-<p>Ogni preset può includere condizioni di applicazione basate su metadati EXIF. I parametri supportati includono:</p>
-<table>
-<thead>
-<tr>
-<th>Campo EXIF</th>
-<th>Esempio valore</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>camera_model</code></td>
-<td><code>"FUJIFILM X-H2S"</code></td>
-<td>Case-sensitive, deve corrispondere esattamente ai metadati RAW</td>
-</tr>
-<tr>
-<td><code>lens_model</code></td>
-<td><code>"XF16-55mmF2.8 R LM WR"</code></td>
-<td>Richiede la versione più recente del database Lensfun</td>
-</tr>
-<tr>
-<td><code>iso_min</code> / <code>iso_max</code></td>
-<td><code>800</code>, <code>3200</code></td>
-<td>Intervallo ISO intero (non float)</td>
-</tr>
-<tr>
-<td><code>exposure_time_min</code></td>
-<td><code>0.002</code></td>
-<td>Espresso in secondi (1/500s = 0.002)</td>
-</tr>
-<tr>
-<td><code>focal_length_min</code></td>
-<td><code>16</code></td>
-<td>In mm, intero</td>
-</tr>
-<tr>
-<td><code>aperture_min</code></td>
-<td><code>2.8</code></td>
-<td>Con un solo decimale</td>
-</tr>
-</tbody>
-</table>
-<p>I preset vengono salvati nel database SQLite di darktable (<code>library.db</code>) nella tabella <code>presets</code>. Non è possibile modificarne i valori tramite editor esterni senza rischiare danni al database<sup id="fnref2:manual-presets"><a class="footnote-ref" href="#fn:manual-presets">1</a></sup>.</p>
-<h2 id="creare-uno-stile">Creare uno stile<a class="headerlink" href="#creare-uno-stile" title="Permanent link">¶</a></h2>
+<p class="admonition-title">Le 4 cose da controllare appena installato</p>
 <ol>
-<li>Edita un'immagine fino al look desiderato</li>
-<li>Lighttable &gt; modulo <strong>Stili</strong> &gt; <strong>«Crea»</strong></li>
-<li>Seleziona solo i moduli da includere <em>(vedi tabella sotto)</em></li>
-<li>Nome significativo (es. <code>Paesaggio drammatico -- AgX + TE + CB warm</code>)</li>
+<li><strong><a href="processing/">Elaborazione → OpenCL</a></strong>: attiva la GPU se disponibile — è il singolo fattore che più incide sulla reattività in darkroom.</li>
+<li><strong><a href="general-import/">Generali/Importazione</a></strong>: assicurati che il <em>workflow</em> sia <strong>scene-referred</strong> (auto-apply), così ogni nuova foto parte con la pipeline moderna.</li>
+<li><strong><a href="ai/">Funzionalità AI</a></strong>: se vuoi <em>neural restore</em> o le maschere AI, qui abiliti il master switch e scarichi i modelli.</li>
+<li><strong><a href="shortcuts/">Scorciatoie</a></strong>: opzionale, ma personalizzarle ripaga in velocità.</li>
 </ol>
-<div class="admonition danger">
-<p class="admonition-title">Sovrascrittura</p>
-<p>Quando applichi uno stile in modalita' <strong>sovrascrittura</strong>, perdi tutta la history stack precedente. Usa sempre <strong>«appendi»</strong> se hai gia' regolazioni.<sup id="fnref2:manual-styles"><a class="footnote-ref" href="#fn:manual-styles">2</a></sup></p>
 </div>
-<h3 id="moduli-raccomandati-per-gli-stili-darktable-54">Moduli raccomandati per gli stili (darktable 5.4+)<a class="headerlink" href="#moduli-raccomandati-per-gli-stili-darktable-54" title="Permanent link">¶</a></h3>
-<p>Per garantire compatibilità e risultati prevedibili, includi <em>solo</em> i moduli elencati di seguito nello stile. Altri moduli possono causare conflitti o comportamenti imprevisti.</p>
-<table>
-<thead>
-<tr>
-<th>Modulo</th>
-<th>Default attivo?</th>
-<th>Perché includerlo</th>
-<th>Range tipico</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>exposure</code></td>
-<td>Sì</td>
-<td>Base fondamentale per scene-referred</td>
-<td><code>-1.5</code> a <code>+1.5</code> EV</td>
-</tr>
-<tr>
-<td><code>color calibration</code> (CAT tab)</td>
-<td>Sì</td>
-<td>Adattamento cromatico percettivo</td>
-<td><code>temperature = 5500–7500 K</code>, <code>tint = -15–+15</code></td>
-</tr>
-<tr>
-<td><code>filmic rgb</code></td>
-<td>No (ma fortemente raccomandato)</td>
-<td>Tone mapping moderno</td>
-<td><code>white exposure = +2.0–+3.5 EV</code>, <code>black exposure = -2.5–-9.0 EV</code></td>
-</tr>
-<tr>
-<td><code>tone equalizer</code></td>
-<td>No (ma utile per look artistici)</td>
-<td>Controllo fine delle bande tonali</td>
-<td><code>lift = -0.15</code>, <code>gamma = +0.05</code>, <code>gain = +0.10</code></td>
-</tr>
-<tr>
-<td><code>color balance rgb</code></td>
-<td>No</td>
-<td>Bilanciamento creativo dopo CAT</td>
-<td><code>shadows = [0.95, 1.0, 1.05]</code>, <code>midtones = [1.0, 0.97, 1.03]</code></td>
-</tr>
-<tr>
-<td><code>sharpen</code></td>
-<td>No</td>
-<td>Sharpening finale non distruttivo</td>
-<td><code>sharpen_radius = 1.0</code>, <code>sharpen_amount = 0.3–0.6</code></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div class="admonition info">
-<p class="admonition-title">Stili e flusso scene-referred</p>
-</div>
-<p>Gli stili devono essere costruiti <em>esclusivamente</em> in un flusso scene-referred (<code>scene-referred (agx)</code> o <code>scene-referred (sigmoid)</code>). L'applicazione di uno stile creato in modalità display-referred su un'immagine scene-referred produce artefatti cromatici irreversibili<sup id="fnref:manuale-flusso-lavoro"><a class="footnote-ref" href="#fn:manuale-flusso-lavoro">8</a></sup>.</p>
-</blockquote>
-<h2 id="batch-editing">Batch editing<a class="headerlink" href="#batch-editing" title="Permanent link">¶</a></h2>
-<h3 id="copiaincolla-history-stack">Copia/incolla history stack<a class="headerlink" href="#copiaincolla-history-stack" title="Permanent link">¶</a></h3>
-<ol>
-<li>Edita un'immagine master</li>
-<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> &gt; seleziona moduli da copiare <em>(vedi tabella sotto)</em></li>
-<li>Seleziona immagini di destinazione</li>
-<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span> &gt; scegli <strong>«Appendi»</strong><sup id="fnref2:manual-batch"><a class="footnote-ref" href="#fn:manual-batch">3</a></sup></li>
-</ol>
-<h4 id="moduli-sicuri-per-il-copia-incolla-batch">Moduli sicuri per il copia-incolla batch<a class="headerlink" href="#moduli-sicuri-per-il-copia-incolla-batch" title="Permanent link">¶</a></h4>
-<p>Non tutti i moduli sono idonei per il copia-incolla. Quelli con parametri dipendenti dal contenuto dell’immagine (es. maschere, curve personalizzate) possono causare errori.</p>
-<table>
-<thead>
-<tr>
-<th>Modulo</th>
-<th>Sicuro per batch?</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>exposure</code></td>
-<td>✅ Sì</td>
-<td>Valore assoluto, indipendente dall’immagine</td>
-</tr>
-<tr>
-<td><code>color calibration</code> (CAT)</td>
-<td>✅ Sì</td>
-<td>Basato su illuminante globale</td>
-</tr>
-<tr>
-<td><code>filmic rgb</code></td>
-<td>✅ Sì</td>
-<td>Funziona bene in batch se il DR della scena è simile</td>
-</tr>
-<tr>
-<td><code>tone equalizer</code></td>
-<td>⚠️ Cautela</td>
-<td>Le bande tonali devono corrispondere alla distribuzione luminosa media</td>
-</tr>
-<tr>
-<td><code>sharpen</code></td>
-<td>✅ Sì</td>
-<td>Ma regolare <code>sharpen_radius</code> in base alla risoluzione</td>
-</tr>
-<tr>
-<td><code>local contrast</code></td>
-<td>❌ No</td>
-<td>Dipende dalla struttura locale dell’immagine</td>
-</tr>
-<tr>
-<td><code>color zones</code></td>
-<td>❌ No</td>
-<td>Curve personalizzate non trasferibili tra immagini diverse</td>
-</tr>
-<tr>
-<td><code>retouch</code></td>
-<td>❌ No</td>
-<td>Maschere e cloni sono immagine-specifici</td>
-</tr>
-</tbody>
-</table>
-<h3 id="metodo-primary-secondary">Metodo primary + secondary<a class="headerlink" href="#metodo-primary-secondary" title="Permanent link">¶</a></h3>
-<p>Per serie con luce variabile:<sup id="fnref:manual-batch"><a class="footnote-ref" href="#fn:manual-batch">3</a></sup></p>
-<ol>
-<li><strong>Primary grading</strong>: Calibrazione Colore per neutralizzare ogni setup di luce<br>
-   → Usa <code>color calibration</code> con metodo <code>(AI) detect from image surfaces</code> o <code>as shot in camera</code></li>
-<li><strong>Secondary grading</strong>: Look creativo copiato su tutta la serie (solo moduli artistici)<br>
-   → Applica in appendi uno stile con <code>filmic rgb</code>, <code>tone equalizer</code>, <code>color balance rgb</code></li>
-</ol>
-<blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Workflow focus stacking</p>
-</div>
-<p>Per sequenze di focus stacking (es. macro), applica prima lo stile <em>primary grading</em> su tutte le immagini della serie, quindi esporta in TIFF a 16 bit senza compressione. Questo garantisce che ogni frame abbia lo stesso spazio colore e bilanciamento prima dello stacking esterno<sup id="fnref:focus-stacking"><a class="footnote-ref" href="#fn:focus-stacking">7</a></sup>.</p>
-</blockquote>
-<h2 id="gestione-prestazioni-e-ottimizzazione">Gestione prestazioni e ottimizzazione<a class="headerlink" href="#gestione-prestazioni-e-ottimizzazione" title="Permanent link">¶</a></h2>
-<p>L’efficienza del batch editing dipende fortemente dalle impostazioni di sistema. Le fonti video confermano che una configurazione ottimizzata riduce drasticamente i tempi di elaborazione.</p>
-<h3 id="impostazioni-chiave-per-il-lighttable-da-preferenze-generale">Impostazioni chiave per il lighttable (da Preferenze &gt; Generale)<a class="headerlink" href="#impostazioni-chiave-per-il-lighttable-da-preferenze-generale" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parametro</th>
-<th>Valore consigliato</th>
-<th>Effetto</th>
-<th>Fonte</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>high quality processing from size</code></td>
-<td><code>720p</code></td>
-<td>Garantisce anteprime ad alta qualità per zoom 100%</td>
-<td><a href="https://www.youtube.com/watch?v=Aqu3ULnYugw&amp;t=270">Mac Mini M4 Pro benchmark</a></td>
-</tr>
-<tr>
-<td><code>enable disk backend for full preview cache</code></td>
-<td><code>True</code></td>
-<td>Riduce il carico sulla RAM, accelera il caricamento</td>
-<td><a href="https://www.youtube.com/watch?v=Aqu3ULnYugw&amp;t=145">iMac Intel test</a></td>
-</tr>
-<tr>
-<td><code>enable smooth scrolling for lighttable thumbnails</code></td>
-<td><code>True</code></td>
-<td>Scorrimento fluido anche su cataloghi &gt; 1000 immagini</td>
-<td><a href="https://www.youtube.com/watch?v=Aqu3ULnYugw&amp;t=145">iMac Intel test</a></td>
-</tr>
-<tr>
-<td><code>generate thumbnails in background</code></td>
-<td><code>True</code></td>
-<td>Caricamento asincrono delle miniature durante la navigazione</td>
-<td><a href="https://www.youtube.com/watch?v=Aqu3ULnYugw&amp;t=145">iMac Intel test</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="prestazioni-del-modulo-diffuse-sharpen">Prestazioni del modulo Diffuse &amp; Sharpen<a class="headerlink" href="#prestazioni-del-modulo-diffuse-sharpen" title="Permanent link">¶</a></h3>
-<p>Il modulo <code>diffuse and sharpen</code> (introdotto in dt 5.2) è particolarmente sensibile alle impostazioni GPU. Su macOS con chip Apple Silicon:</p>
+<h2 id="le-pagine-di-questa-sezione">Le pagine di questa sezione<a class="headerlink" href="#le-pagine-di-questa-sezione" title="Permanent link">¶</a></h2>
 <ul>
-<li>Con OpenCL abilitato: velocità di elaborazione <strong>3.2× superiore</strong> rispetto alla CPU sola  </li>
-<li>Con OpenCL disabilitato: rallentamento fino al <strong>78%</strong> su immagini 4K<sup id="fnref:mac-mini-m4-pro"><a class="footnote-ref" href="#fn:mac-mini-m4-pro">6</a></sup></li>
+<li><strong><a href="processing/">Elaborazione e OpenCL/GPU</a></strong> — accelerazione GPU, qualità di rendering, default del pixelpipe e gestione della memoria.</li>
+<li><strong><a href="ai/">Funzionalità AI e modelli</a></strong> — abilitare le AI features, scegliere l'acceleratore (es. Apple CoreML), gestire i modelli ONNX usati da <em>neural restore</em> e dalle maschere AI.</li>
+<li><strong><a href="general-import/">Generali e importazione</a></strong> — lingua e interfaccia, e i default applicati a ogni importazione (incluso il <em>workflow</em> scene-referred).</li>
+<li><strong><a href="shortcuts/">Scorciatoie da tastiera</a></strong> — personalizzare e salvare i propri set di scorciatoie.</li>
 </ul>
-<blockquote>
-<div class="admonition warning">
-<p class="admonition-title">GPU e maschere</p>
-</div>
-<p>Il modulo <code>diffuse and sharpen</code> non supporta maschere quando OpenCL è attivo su macOS. Per usare maschere, disabilitare OpenCL temporaneamente nelle Preferenze &gt; Elaborazione<sup id="fnref2:mac-mini-m4-pro"><a class="footnote-ref" href="#fn:mac-mini-m4-pro">6</a></sup>.</p>
-</blockquote>
-<h2 id="consigli-operativi-avanzati">Consigli operativi avanzati<a class="headerlink" href="#consigli-operativi-avanzati" title="Permanent link">¶</a></h2>
-<h3 id="1-stili-per-fotografia-professionale">1. Stili per fotografia professionale<a class="headerlink" href="#1-stili-per-fotografia-professionale" title="Permanent link">¶</a></h3>
-<p>Gli stili non devono essere “universali”: devono riflettere il tuo stile personale e il tipo di committenza.</p>
-<table>
-<thead>
-<tr>
-<th>Tipo di lavoro</th>
-<th>Stile consigliato</th>
-<th>Moduli inclusi</th>
-<th>Nota</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fotografia di matrimonio</td>
-<td><code>Matrimonio – Warm Skin Tone</code></td>
-<td><code>exposure</code>, <code>color calibration</code>, <code>filmic rgb</code>, <code>color balance rgb</code></td>
-<td>Priorizza accuratezza cromatica della pelle</td>
-</tr>
-<tr>
-<td>Street photography</td>
-<td><code>Street – High Contrast B&amp;W</code></td>
-<td><code>exposure</code>, <code>color calibration</code>, <code>tone equalizer</code>, <code>sharpen</code></td>
-<td>Nessun <code>filmic rgb</code>: uso diretto di <code>tone equalizer</code> per controllo granulare</td>
-</tr>
-<tr>
-<td>Paesaggio HDR</td>
-<td><code>Paesaggio – Extended DR</code></td>
-<td><code>exposure</code>, <code>color calibration</code>, <code>filmic rgb</code>, <code>local contrast</code></td>
-<td>Solo se <code>local contrast</code> è regolato a ≤ 0.25 per evitare artefatti</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2-debug-degli-stili-non-applicati">2. Debug degli stili non applicati<a class="headerlink" href="#2-debug-degli-stili-non-applicati" title="Permanent link">¶</a></h3>
-<p>Se uno stile non si applica:</p>
-<ul>
-<li>✅ Verifica che l’immagine sia in modalità <strong>scene-referred</strong> (Preferenze &gt; Elaborazione &gt; Flusso predefinito)  </li>
-<li>✅ Controlla che i moduli inclusi nello stile siano <strong>attivi</strong> (icona accensione accesa)  </li>
-<li>✅ Assicurati che non ci siano <strong>moduli bloccati</strong> (icona lucchetto chiusa) nella history stack  </li>
-<li>❌ Non usare stili con <code>demosaic</code> o <code>highlight reconstruction</code>: questi moduli devono essere regolati caso per caso<sup id="fnref2:manuale-flusso-lavoro"><a class="footnote-ref" href="#fn:manuale-flusso-lavoro">8</a></sup></li>
-</ul>
-<h3 id="3-backup-e-condivisione-degli-stili">3. Backup e condivisione degli stili<a class="headerlink" href="#3-backup-e-condivisione-degli-stili" title="Permanent link">¶</a></h3>
-<p>Gli stili vengono salvati come file <code>.dtstyle</code> in formato XML. Per condividerli:</p>
-<ol>
-<li>Lighttable &gt; modulo <strong>Stili</strong> &gt; clic destro sullo stile &gt; <strong>«Esporta»</strong>  </li>
-<li>Il file generato contiene solo i moduli selezionati e i loro parametri (nessun dato immagine)  </li>
-<li>Per importare: Lighttable &gt; modulo <strong>Stili</strong> &gt; <strong>«Importa»</strong> &gt; seleziona il file <code>.dtstyle</code></li>
-</ol>
-<blockquote>
-<div class="admonition info">
-<p class="admonition-title">Compatibilità cross-platform</p>
-</div>
-<p>I file <code>.dtstyle</code> sono pienamente compatibili tra Linux, macOS e Windows. Tuttavia, alcuni moduli (es. <code>diffuse and sharpen</code>) potrebbero mostrare leggere differenze di rendering a causa delle ottimizzazioni GPU<sup id="fnref3:mac-mini-m4-pro"><a class="footnote-ref" href="#fn:mac-mini-m4-pro">6</a></sup>.</p>
-</blockquote>
-<h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://docs.darktable.org/usermanual/development/en/darkroom/processing-modules/presets/">darktable User Manual — Presets</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/styles/">darktable User Manual — Styles</a>  </li>
-<li><a href="https://docs.darktable.org/usermanual/development/en/guides-tutorials/batch-editing/">darktable User Manual — Batch-editing</a>  </li>
-<li><a href="https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/">darktable.info — Scene-Referred Workflow (2026)</a>  </li>
-<li><a href="https://pixls.us/articles/a-q-a-with-photographer-riley-brandt/">PIXLS.US — A Q&amp;A with Photographer Riley Brandt</a> — <em>Capitolo 2.21: Presets and Styles</em>  </li>
-<li><a href="https://darktable.fr/posts/2016/03/creation-de-styles-pour-darktable/">darktable.fr — Creazione di stili</a> — <em>Guida comunitaria in francese</em>  </li>
-<li><a href="https://darktable.fr/categories/styles/">t3mujinpack — Pack di stili per Fujifilm e Kodak</a> — <em>15+ stili filmici gratuiti</em>  </li>
-</ul>
-<h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:manual-presets">
-<p><em>darktable User Manual -- Presets</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/processing-modules/presets/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:manual-presets" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-presets" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-<li id="fn:manual-styles">
-<p><em>darktable User Manual -- Styles</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/styles/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-utility-modules-lighttable-styles.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-styles" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-styles" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:manual-batch">
-<p><em>darktable User Manual -- Batch-editing</em>, <a href="https://docs.darktable.org/usermanual/development/en/guides-tutorials/batch-editing/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:manual-batch" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-batch" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:dt54">
-<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:dt52">
-<p><em><a href="https://www.youtube.com/watch?v=YcLJMaDbfRA">darktable 5.2 Release</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt52" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-<li id="fn:mac-mini-m4-pro">
-<p><em><a href="https://www.youtube.com/watch?v=Aqu3ULnYugw">darktable with the new Mac mini m4 pro</a></em> -- A Dabble in Photography, [05:05–07:30]&nbsp;<a class="footnote-backref" href="#fnref:mac-mini-m4-pro" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:mac-mini-m4-pro" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref3:mac-mini-m4-pro" title="Jump back to footnote 6 in the text">↩</a></p>
-</li>
-<li id="fn:focus-stacking">
-<p><em><a href="https://www.youtube.com/watch?v=0rFk_k12ebE">Focus stacking from darktable</a></em> -- A Dabble in Photography, [01:50–04:50]&nbsp;<a class="footnote-backref" href="#fnref:focus-stacking" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
-<li id="fn:manuale-flusso-lavoro">
-<p><em>Manuale del Flusso di Lavoro</em>, Aprile 2026, darktable+, Capitolo 3 — Ancoraggio Fotometrico, esposizione e calibrazione del colore&nbsp;<a class="footnote-backref" href="#fnref:manuale-flusso-lavoro" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:manuale-flusso-lavoro" title="Jump back to footnote 8 in the text">↩</a></p>
-</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Dove vivono le impostazioni</p>
+<p>Le preferenze sono salvate in <code>darktablerc</code> nella cartella di configurazione di darktable (su macOS <code>~/.config/darktable/</code>), separata dalla libreria e dai file collaterali <code>.xmp</code> delle foto. Fare un backup di questa cartella mette al sicuro preferenze, scorciatoie e preset.</p>
 </div>
 
 
@@ -4837,10 +3978,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

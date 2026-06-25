@@ -9,13 +9,13 @@
         <meta name="author" content="Lorenzo Perone">
       
       
-        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/workflow/tone/">
+        <link rel="canonical" href="https://lorenzoperone.github.io/darktable-docs/preferences/general-import/">
       
       
-        <link rel="prev" href="../color/">
+        <link rel="prev" href="../ai/">
       
       
-        <link rel="next" href="../export/">
+        <link rel="next" href="../shortcuts/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Tone Mapping - Guida al post-processing con darktable</title>
+        <title>Preferenze: generali e importazione - Guida al post-processing con darktable</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tone-mapping" class="md-skip">
+        <a href="#preferenze-generali-e-importazione" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tone Mapping
+              Preferenze: generali e importazione
             
           </span>
         </div>
@@ -267,13 +267,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../workflow/" class="md-tabs__link">
           
   
   
@@ -409,11 +407,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../preferences/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -728,31 +728,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -770,7 +767,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -788,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../workflow/" class="md-nav__link">
         
   
   
@@ -816,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../import/" class="md-nav__link">
+      <a href="../../workflow/import/" class="md-nav__link">
         
   
   
@@ -844,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exposure/" class="md-nav__link">
+      <a href="../../workflow/exposure/" class="md-nav__link">
         
   
   
@@ -872,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../color/" class="md-nav__link">
+      <a href="../../workflow/color/" class="md-nav__link">
         
   
   
@@ -897,37 +894,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tone Mapping
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../workflow/tone/" class="md-nav__link">
         
   
   
@@ -943,315 +913,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Indice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Indice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#agx-la-scelta-consigliata-per-darktable-54" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AgX: la scelta consigliata per darktable 5.4+
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AgX: la scelta consigliata per darktable 5.4+">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#procedura-operativa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Procedura operativa
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-avanzati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri avanzati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preparazione-con-agx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preparazione con AgX
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#casi-duso-specifici" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Casi d'uso specifici
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sigmoid-lalternativa-rapida" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sigmoid: l'alternativa rapida
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Sigmoid: l'alternativa rapida">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parametri-chiave-di-sigmoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri chiave di Sigmoid
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#filmic-rgb-il-controllo-totale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filmic RGB: il controllo totale
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Filmic RGB: il controllo totale">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#procedura-operativa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Procedura operativa
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-fondamentali-di-filmic-rgb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri fondamentali di Filmic RGB
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tone-equalizer-il-dodging-burning-intelligente" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tone Equalizer: il dodging &amp; burning intelligente
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tone Equalizer: il dodging &amp; burning intelligente">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flusso-di-lavoro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flusso di lavoro
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-chiave" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri chiave
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consigli-operativi-per-migranti-da-lightroomphotoshop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consigli operativi per migranti da Lightroom/Photoshop
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli operativi per migranti da Lightroom/Photoshop">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esempio-regolazione-fine-del-pivot-con-la-pipetta" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Regolazione fine del pivot con la pipetta
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-ottimizzazione-automatica-dei-punti-bianconero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Ottimizzazione automatica dei punti bianco/nero
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-correzione-di-clipping-cromatico-con-primaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Correzione di clipping cromatico con Primaries
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: La curva tonale mostra una porzione arancione anche con parametri moderati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Il modulo Sigmoid produce artefatti sui capelli o sulle texture fini
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-pratiche" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse pratiche
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fonti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fonti
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1264,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
+      <a href="../../workflow/export/" class="md-nav__link">
         
   
   
@@ -3734,28 +3395,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked="">
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10">
-        
-          
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -3773,7 +3437,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3791,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -3819,7 +3483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/processing/" class="md-nav__link">
+      <a href="../processing/" class="md-nav__link">
         
   
   
@@ -3847,7 +3511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/ai/" class="md-nav__link">
+      <a href="../ai/" class="md-nav__link">
         
   
   
@@ -3872,10 +3536,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../preferences/general-import/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferenze: generali e importazione
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3891,6 +3582,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#panoramica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Panoramica
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro consigliato">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-1-configurazione-dellinterfaccia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 1: Configurazione dell'interfaccia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-2-definire-le-regole-di-denominazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 2: Definire le regole di denominazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-3-importazione-e-cernita" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passo 3: Importazione e Cernita
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-principali-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri principali (General)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parametri-principali-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parametri principali (Import)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consigli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consigli
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risorse-aggiuntive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risorse aggiuntive
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fonti
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3903,7 +3730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../preferences/shortcuts/" class="md-nav__link">
+      <a href="../shortcuts/" class="md-nav__link">
         
   
   
@@ -4131,22 +3958,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#agx-la-scelta-consigliata-per-darktable-54" class="md-nav__link">
+  <a href="#panoramica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AgX: la scelta consigliata per darktable 5.4+
+        Panoramica
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AgX: la scelta consigliata per darktable 5.4+">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flusso-di-lavoro-consigliato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flusso di lavoro consigliato
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Flusso di lavoro consigliato">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#procedura-operativa" class="md-nav__link">
+  <a href="#passo-1-configurazione-dellinterfaccia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Procedura operativa
+        Passo 1: Configurazione dell'interfaccia
       
     </span>
   </a>
@@ -4154,10 +3992,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parametri-avanzati" class="md-nav__link">
+  <a href="#passo-2-definire-le-regole-di-denominazione" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parametri avanzati
+        Passo 2: Definire le regole di denominazione
       
     </span>
   </a>
@@ -4165,21 +4003,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preparazione-con-agx" class="md-nav__link">
+  <a href="#passo-3-importazione-e-cernita" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preparazione con AgX
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#casi-duso-specifici" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Casi d'uso specifici
+        Passo 3: Importazione e Cernita
       
     </span>
   </a>
@@ -4192,216 +4019,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sigmoid-lalternativa-rapida" class="md-nav__link">
+  <a href="#parametri-principali-general" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sigmoid: l'alternativa rapida
+        Parametri principali (General)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Sigmoid: l'alternativa rapida">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parametri-chiave-di-sigmoid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri chiave di Sigmoid
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#filmic-rgb-il-controllo-totale" class="md-nav__link">
+  <a href="#parametri-principali-import" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Filmic RGB: il controllo totale
+        Parametri principali (Import)
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Filmic RGB: il controllo totale">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#procedura-operativa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Procedura operativa
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-fondamentali-di-filmic-rgb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri fondamentali di Filmic RGB
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tone-equalizer-il-dodging-burning-intelligente" class="md-nav__link">
+  <a href="#consigli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tone Equalizer: il dodging &amp; burning intelligente
+        Consigli
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Tone Equalizer: il dodging &amp; burning intelligente">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#flusso-di-lavoro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flusso di lavoro
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parametri-chiave" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parametri chiave
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#consigli-operativi-per-migranti-da-lightroomphotoshop" class="md-nav__link">
+  <a href="#risorse-aggiuntive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Consigli operativi per migranti da Lightroom/Photoshop
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Consigli operativi per migranti da Lightroom/Photoshop">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#esempio-regolazione-fine-del-pivot-con-la-pipetta" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Regolazione fine del pivot con la pipetta
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-ottimizzazione-automatica-dei-punti-bianconero" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Ottimizzazione automatica dei punti bianco/nero
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#esempio-correzione-di-clipping-cromatico-con-primaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Esempio: Correzione di clipping cromatico con Primaries
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#domande-frequenti" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Domande frequenti
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Domande frequenti">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: La curva tonale mostra una porzione arancione anche con parametri moderati
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Problema: Il modulo Sigmoid produce artefatti sui capelli o sulle texture fini
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#risorse-pratiche" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Risorse pratiche
+        Risorse aggiuntive
       
     </span>
   </a>
@@ -4439,362 +4093,190 @@
   
 
 
-<h1 id="tone-mapping">Tone Mapping<a class="headerlink" href="#tone-mapping" title="Permanent link">¶</a></h1>
-<p>Il passaggio dai dati lineari infiniti alla gamma dinamica limitata del monitor e' gestito dai moduli di tone mapping. darktable offre tre percorsi principali. <strong>Usa solo uno dei tre alla volta</strong>: non sovrapporre Filmic, Sigmoid e AgX.</p>
-<h2 id="agx-la-scelta-consigliata-per-darktable-54">AgX: la scelta consigliata per darktable 5.4+<a class="headerlink" href="#agx-la-scelta-consigliata-per-darktable-54" title="Permanent link">¶</a></h2>
-<p>AgX e' il tone mapper piu' recente ed e' progettato per gestire il viraggio dei colori saturi verso tonalita' sgradevoli quando si avvicinano al clipping -- il fenomeno dei <strong>«Notorious 6»</strong>.<sup id="fnref:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">1</a></sup><br>
-L’algoritmo è basato su modelli fisici della risposta cromatica della pellicola analogica e include una gestione esplicita della <em>chromaticity compression</em> per evitare la perdita di purezza cromatica nelle alte luci<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup>. Il modulo è attivo di default nelle nuove installazioni di darktable 5.4+ quando è selezionato il profilo <em>scene-referred (agx)</em> nelle preferenze globali<sup id="fnref2:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup>.</p>
-<h3 id="procedura-operativa">Procedura operativa<a class="headerlink" href="#procedura-operativa" title="Permanent link">¶</a></h3>
-<ol>
-<li>Assicurati che AgX sia attivo (default con <em>scene-referred (agx)</em> nelle preferenze)</li>
-<li>I parametri predefiniti funzionano gia' bene nella maggior parte dei casi</li>
-<li>Se l'immagine sembra piatta, aumenta leggermente il <strong>contrasto</strong></li>
-<li>Usa <strong>Preserve Hue</strong> per la fedelta' cromatica nelle alte luci</li>
-<li>Il <strong>pivot</strong> controlla il punto di contrasto massimo</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Usare la pipetta sul pivot</p>
-<p>Usare la pipetta (eyedropper) su <strong>'pivot exposure'</strong> per definire la zona di massimo contrasto. La pipetta su <strong>'output target'</strong> modifica entrambi i parametri simultaneamente.<sup id="fnref3:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
+<h1 id="preferenze-generali-e-importazione">Preferenze: generali e importazione<a class="headerlink" href="#preferenze-generali-e-importazione" title="Permanent link">¶</a></h1>
+<p>Le preferenze di <strong>darktable</strong> sono divise in schede per controllare diversi aspetti dell'ambiente di lavoro. Le schede <strong>General</strong> e <strong>Import</strong> sono fondamentali per configurare l'interfaccia utente e definire come le immagini entrano nel catalogo (Library), un passaggio cruciale per chi migra da Lightroom e deve adattarsi al sistema di gestione file non distruttivo di darktable.<sup id="fnref:manual-prefs"><a class="footnote-ref" href="#fn:manual-prefs">1</a></sup></p>
+<div class="admonition info">
+<p class="admonition-title">Differenza rispetto a Lightroom</p>
+<p>A differenza di Lightroom, che importa sempre le immagini in un catalogo unificato, darktable offre la flessibilità di "Aggiungere alla libreria" (referenziando i file in-place) o "Copiare e importare" (spostando i file). Questa distinzione è configurata nelle preferenze di importazione.<sup id="fnref:manual-import-review"><a class="footnote-ref" href="#fn:manual-import-review">4</a></sup></p>
 </div>
-<h3 id="parametri-avanzati">Parametri avanzati<a class="headerlink" href="#parametri-avanzati" title="Permanent link">¶</a></h3>
+<h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">¶</a></h2>
+<p>Le impostazioni coperte da questa documentazione riguardano due aree distinte:</p>
+<ol>
+<li><strong>General</strong>: Controlla l'aspetto visivo dell'interfaccia, inclusi temi, caratteri e DPI. Queste impostazioni influenzano la percezione del colore e la comodità d'uso.<sup id="fnref3:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></li>
+<li><strong>Import</strong>: Definisce le regole predefinite per la denominazione dei file, la struttura delle directory e i metadati iniziali quando si importano nuove immagini. Queste impostazioni sono strettamente legate al modulo <em>Import</em> nella vista Lighttable.<sup id="fnref4:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></li>
+</ol>
+<p>Configurare correttamente queste preferenze prima di iniziare un nuovo progetto garantisce un flusso di lavoro ordinato e una valutazione del colore accurata.</p>
+<h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
+<p>Il setup iniziale di darktable per un nuovo utente dovrebbe seguire questo ordine logico:<sup id="fnref:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup><sup id="fnref:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Configurazione Interfaccia (Scheda General)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Configurazione Regole di Importazione (Scheda Import)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Importazione Immagini (Modulo Import)
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   |
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. Cernita (Rating)
+</code></pre></div>
+<h3 id="passo-1-configurazione-dellinterfaccia">Passo 1: Configurazione dell'interfaccia<a class="headerlink" href="#passo-1-configurazione-dellinterfaccia" title="Permanent link">¶</a></h3>
+<p>Prima di editare, è cruciale impostare l'ambiente visivo corretto:</p>
+<ol>
+<li>Apri <strong>Preferences &gt; general</strong>.</li>
+<li>Imposta il <strong>theme</strong> su uno dei temi "grey" (es. <code>darktable-elegant-grey</code>). Questo assicura che lo sfondo sia un grigio medio, riducendo illusioni ottiche durante la modifica del colore.<sup id="fnref4:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></li>
+<li>Regola <strong>font size</strong> e <strong>GUI controls and text DPI</strong> se necessario per adattarsi al tuo monitor (Default DPI: 96).<sup id="fnref5:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></li>
+</ol>
+<h3 id="passo-2-definire-le-regole-di-denominazione">Passo 2: Definire le regole di denominazione<a class="headerlink" href="#passo-2-definire-le-regole-di-denominazione" title="Permanent link">¶</a></h3>
+<p>Per mantenere l'archivio ordinato, configura le variabili di denominazione in <strong>Preferences &gt; import</strong>:<sup id="fnref2:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></p>
+<ol>
+<li>Definisci il <strong>base filmroll’s directory</strong> (es. <code>$(PICTURES_FOLDER)/Darktable</code>).</li>
+<li>Imposta il <strong>filmroll name</strong> per organizzare le sessioni (es. <code>$(YEAR)$(MONTH)$(DAY)_$(JOBCODE)</code>).</li>
+<li>Imposta il <strong>file naming pattern</strong> per i singoli file (es. <code>$(YEAR)$(MONTH)$(DAY)_$(SEQUENCE).$(FILE_EXTENSION)</code>).</li>
+</ol>
+<h3 id="passo-3-importazione-e-cernita">Passo 3: Importazione e Cernita<a class="headerlink" href="#passo-3-importazione-e-cernita" title="Permanent link">¶</a></h3>
+<p>Utilizza il modulo <strong>Import</strong> nella vista Lighttable:</p>
+<ol>
+<li>Scegli tra <strong>add to library</strong> (se i file sono già nel posto giusto) o <strong>copy &amp; import</strong> (per copiare da una scheda SD).<sup id="fnref2:manual-import-review"><a class="footnote-ref" href="#fn:manual-import-review">4</a></sup></li>
+<li>Applica il rating iniziale definito nelle preferenze (default 1 stella).</li>
+<li>Esegui la cernita: premi <code>1</code>-<code>5</code> per promuovere le immagini o <code>R</code> per rifiutarle. Darktable assegna automaticamente 1 stella alle nuove importazioni, facilitando il filtraggio iniziale.<sup id="fnref3:manual-import-review"><a class="footnote-ref" href="#fn:manual-import-review">4</a></sup></li>
+</ol>
+<h2 id="parametri-principali-general">Parametri principali (General)<a class="headerlink" href="#parametri-principali-general" title="Permanent link">¶</a></h2>
+<p>La scheda <strong>General</strong> controlla l'esperienza utente e la resa cromatica dell'interfaccia.<sup id="fnref2:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></p>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
-<th>Funzione</th>
-<th>Valore tipico</th>
-<th>Consiglio</th>
+<th>Range/Opzioni</th>
+<th>Default</th>
+<th>Descrizione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Contrast</strong></td>
-<td>Contrasto globale</td>
-<td><code>2.00–3.20</code> (default <code>2.80</code>)</td>
-<td>Partire dal valore di default; valori &gt;3.50 introducono artefatti in ombre/alti toni<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
+<td><strong>interface language</strong></td>
+<td>Lista lingue sistema</td>
+<td>System default</td>
+<td>Imposta la lingua dell'interfaccia. Richiede riavvio.</td>
 </tr>
 <tr>
-<td><strong>Pivot exposure</strong></td>
-<td>Punto di contrasto massimo</td>
-<td><code>-2.00 EV</code> a <code>+2.00 EV</code> (default <code>0.00 EV</code>)</td>
-<td>Usare la pipetta sul soggetto; valori positivi spostano il massimo contrasto verso le luci<sup id="fnref9:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
+<td><strong>theme</strong></td>
+<td>Lista temi CSS</td>
+<td>darktable-elegant-grey</td>
+<td>Controlla l'aspetto dell'interfaccia. I temi "grey" sono raccomandati per la valutazione del colore (middle gray).</td>
 </tr>
 <tr>
-<td><strong>Shoulder power</strong></td>
-<td>Compressione alte luci</td>
-<td><code>1.20–2.00</code> (default <code>1.55</code>)</td>
-<td>Aumentare per controllare picchi di luminanza senza desaturazione (es. cielo estivo)<sup id="fnref10:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
+<td><strong>use system font size</strong></td>
+<td>Checkbox</td>
+<td>Checked</td>
+<td>Se attivo, usa la dimensione del font definita dal sistema operativo.</td>
 </tr>
 <tr>
-<td><strong>Toe power</strong></td>
-<td>Compressione ombre</td>
-<td><code>1.20–2.00</code> (default <code>1.55</code>)</td>
-<td>Ridurre per preservare dettagli nelle ombre profonde (es. interni notturni)<sup id="fnref11:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
+<td><strong>font size in points</strong></td>
+<td>Numerico</td>
+<td>Variabile</td>
+<td>Dimensione del font personalizzata se "use system font size" è disattivato.</td>
 </tr>
 <tr>
-<td><strong>Preserve Hue</strong></td>
-<td>Fedelta' cromatica</td>
-<td><code>0–100%</code> (default <code>100%</code>)</td>
-<td>Disabilitare per i tramonti<sup id="fnref12:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup>; mantenere &gt;80% per ritratti pelle<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">8</a></sup></td>
-</tr>
-<tr>
-<td><strong>Primaries</strong></td>
-<td>Gestione gamut</td>
-<td>Attivabile solo se <code>Preserve Hue &lt; 100%</code></td>
-<td>Solo per mitigare problemi di clipping cromatico<sup id="fnref10:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></td>
+<td><strong>GUI controls and text DPI</strong></td>
+<td>Numerico</td>
+<td>96 DPI</td>
+<td>Ridimensiona l'interfaccia globale. Aumenta per ingrandire i controlli, diminuisci per adattare più contenuti. <code>-1</code> usa le impostazioni di sistema. Richiede riavvio.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title">Cursori da evitare</p>
-<ul>
-<li><strong>Dynamic range scaling</strong>: aumenta il rischio di clipping senza beneficio reale<sup id="fnref5:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup>  </li>
-<li><strong>White/black target</strong>: creano un effetto sbiadito (simulazione pellicola) — generalmente non modificare<sup id="fnref6:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup>  </li>
-<li><strong>Parametri avanzati della curva</strong>: non modificare se shoulder/toe power gia' sufficienti<sup id="fnref7:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup>  </li>
-</ul>
+<p class="admonition-title">Attenzione alla percezione del colore</p>
+<p>L'uso di interfacce troppo scure o troppo chiare può ingannare la percezione visiva, portando a eccessivi interventi di contrasto e saturazione. È "altamente raccomandato" utilizzare temi grigi per il lavoro di fotoritocco.<sup id="fnref6:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></p>
 </div>
-<div class="admonition info">
-<p class="admonition-title">La porzione arancione della curva</p>
-<p>NON e' un errore — indica la perdita della curva a S. Se shoulder/toe power smettono di rispondere, modificare il parametro <strong>'curve gamma'</strong> per ripristinare il controllo.<sup id="fnref4:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
-</div>
-<h3 id="preparazione-con-agx">Preparazione con AgX<a class="headerlink" href="#preparazione-con-agx" title="Permanent link">¶</a></h3>
-<div class="admonition important">
-<p class="admonition-title">Impostare i punti nero e bianco</p>
-<p>Sempre all'inizio del workflow AgX, impostare i punti nero e bianco usando la selezione area o i metadati della fotocamera.<sup id="fnref6:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup><br>
-Il valore tipico di <strong>black relative exposure</strong> è compreso tra <code>-9.00 EV</code> e <code>-11.00 EV</code>, mentre <strong>white relative exposure</strong> varia da <code>+4.00 EV</code> a <code>+7.50 EV</code>, a seconda della scena.<sup id="fnref7:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Colori molto saturi</p>
-<p>Attenuare i colori molto saturi (blu intensi) nel tab <strong>Primaries</strong> PRIMA della compressione tonale per prevenire il clipping cromatico e i blocchi di colore su schermi SDR.<sup id="fnref8:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup><br>
-Per immagini con forti dominanti blu (es. cieli estivi o luci LED), applicare un’attenuazione blu fino a <code>71.48%</code> e una rotazione negativa di <code>-3.0°</code> per spostare i toni verso il ciano-verde.<sup id="fnref9:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-</div>
-<blockquote>
-<p>La documentazione ufficiale del modulo AgX descrive in dettaglio la gestione della saturazione che segue il comportamento della pellicola analogica, risolvendo il problema dei Notorious 6.<sup id="fnref2:manual-agx"><a class="footnote-ref" href="#fn:manual-agx">1</a></sup></p>
-</blockquote>
-<h3 id="casi-duso-specifici">Casi d'uso specifici<a class="headerlink" href="#casi-duso-specifici" title="Permanent link">¶</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Tramonti</label><label for="__tabbed_1_2">Lowlight</label><label for="__tabbed_1_3">Paesaggi</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Disabilitare <strong>'preserve hue'</strong> per migliorare la resa (effetto Bezold-Brucke). La saturazione nella sezione Look agisce solo sui toni medi.<sup id="fnref13:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup><br>
-Inoltre, ridurre <strong>'preserve hue'</strong> a <code>0–30%</code> permette una maggiore espressione cromatica nei rossi/arancioni, evitando il viraggio verso il rosa/magenta tipico di altri tone mapper.<sup id="fnref:landscape"><a class="footnote-ref" href="#fn:landscape">9</a></sup></p>
-</div>
-<div class="tabbed-block">
-<p>Usare <strong>'shoulder power'</strong> e <strong>'toe power'</strong> invece del cursore contrasto generico per un controllo preciso luci/ombre. Non aumentare eccessivamente il contrasto per preservare i dettagli facciali.<sup id="fnref2:lowlight"><a class="footnote-ref" href="#fn:lowlight">8</a></sup><br>
-Per scene con illuminazione artificiale (es. interni notturni), impostare <code>toe power = 1.20</code> e <code>contrast = 2.20</code> per evitare il “grigiore” tipico delle ombre digitali.<sup id="fnref3:lowlight"><a class="footnote-ref" href="#fn:lowlight">8</a></sup></p>
-</div>
-<div class="tabbed-block">
-<p>Ridurre il parametro <strong>'preserve hue'</strong> in Sigmoid/AgX quando si editano tramonti per prevenire la generazione di falsi colori.<sup id="fnref2:landscape"><a class="footnote-ref" href="#fn:landscape">9</a></sup><br>
-Combinare con un’attenuazione blu del <code>16.75%</code> e rotazione di <code>-3.0°</code> per portare i toni fuori dal gamut non riproducibile.<sup id="fnref11:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-</div>
-</div>
-</div>
-<h2 id="sigmoid-lalternativa-rapida">Sigmoid: l'alternativa rapida<a class="headerlink" href="#sigmoid-lalternativa-rapida" title="Permanent link">¶</a></h2>
-<p>Sigmoid offre una transizione fluida delle alte luci verso il bianco, con pochissimi parametri. Ideale per chi vuole un risultato «pronto all'uso».<sup id="fnref:manual-sigmoid"><a class="footnote-ref" href="#fn:manual-sigmoid">2</a></sup><br>
-A differenza di AgX, Sigmoid opera in modo <em>display-referred</em>, quindi non richiede un setup preliminare dei punti nero/bianco. È particolarmente efficace su immagini già ben esposte, dove il recupero di dettagli è minimo ma la coerenza cromatica è prioritaria.<sup id="fnref2:manual-sigmoid"><a class="footnote-ref" href="#fn:manual-sigmoid">2</a></sup></p>
-<p><strong>Quando preferire Sigmoid ad AgX:</strong></p>
-<ul>
-<li>Ritratti con toni pelle delicati  </li>
-<li>Foto in condizioni di luce uniforme  </li>
-<li>Editing batch dove vuoi consistenza con il minimo sforzo  </li>
-</ul>
-<blockquote>
-<p>Sigmoid tende a produrre toni pelle piu' naturali «out of the box» rispetto ad AgX e Filmic.<sup id="fnref3:manual-sigmoid"><a class="footnote-ref" href="#fn:manual-sigmoid">2</a></sup></p>
-</blockquote>
-<h3 id="parametri-chiave-di-sigmoid">Parametri chiave di Sigmoid<a class="headerlink" href="#parametri-chiave-di-sigmoid" title="Permanent link">¶</a></h3>
+<h2 id="parametri-principali-import">Parametri principali (Import)<a class="headerlink" href="#parametri-principali-import" title="Permanent link">¶</a></h2>
+<p>La scheda <strong>Import</strong> e il modulo omonimo gestiscono come i file vengono catalogati e nominati. Molti di questi parametri possono essere preimpostati nelle preferenze per evitare di reinserirli ogni volta.<sup id="fnref3:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></p>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
-<th>Range</th>
+<th>Range/Opzioni</th>
 <th>Default</th>
-<th>Note</th>
+<th>Descrizione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Contrast</strong></td>
-<td><code>0.50–3.00</code></td>
-<td><code>1.50</code></td>
-<td>Valori &gt;2.00 possono introdurre artefatti nei mezzi toni pelle<sup id="fnref2:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></td>
-</tr>
-<tr>
-<td><strong>Skew</strong></td>
-<td><code>-1.00</code> a <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Sposta il punto di massimo contrasto: valori negativi privilegiano le ombre<sup id="fnref3:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></td>
-</tr>
-<tr>
-<td><strong>Target black / white</strong></td>
-<td><code>0.001%</code> – <code>100.00%</code></td>
-<td><code>0.0152%</code> / <code>100.00%</code></td>
-<td>Modifica la profondità del nero e la brillantezza del bianco senza alterare la gamma dinamica<sup id="fnref4:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></td>
-</tr>
-<tr>
-<td><strong>Preserve Hue</strong></td>
-<td><code>0–100%</code></td>
-<td><code>100%</code></td>
-<td>Mantiene la tinta originale nelle alte luci; disattivarla migliora la resa dei tramonti<sup id="fnref5:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></td>
-</tr>
-</tbody>
-</table>
-<h2 id="filmic-rgb-il-controllo-totale">Filmic RGB: il controllo totale<a class="headerlink" href="#filmic-rgb-il-controllo-totale" title="Permanent link">¶</a></h2>
-<p>Filmic RGB e' stato lo standard del flusso scene-referred per anni. Mappa la gamma dinamica attraverso tre pannelli.<sup id="fnref:manual-filmic"><a class="footnote-ref" href="#fn:manual-filmic">3</a></sup><br>
-Il modulo supporta versioni multiple (v5, v6, v7): la <strong>v5 (2021)</strong> è ancora raccomandata per immagini con forti tonalità calde (tramonti, luci incandescenti), poiché preserva meglio i gialli e gli arancioni rispetto alle versioni successive.<sup id="fnref:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup><br>
-La versione v7 introduce un <em>highlight saturation mix</em> più aggressivo, utile per immagini con luci fredde (es. neve al mattino), ma meno adatta ai paesaggi con sole basso.<sup id="fnref2:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></p>
-<h3 id="procedura-operativa_1">Procedura operativa<a class="headerlink" href="#procedura-operativa_1" title="Permanent link">¶</a></h3>
-<ol>
-<li><strong>Pannello Scene</strong>: regola punto nero e bianco relativi usando il selettore automatico (pipetta)</li>
-<li><strong>Pannello Look</strong>: curva S per il contrasto artistico; latitudine per l'ampiezza dei toni medi</li>
-<li><strong>Pannello Display</strong>: luminanza target del bianco e del nero per l'uscita finale</li>
-<li><strong>Preservazione crominanza</strong>: imposta su «No» o «Max RGB» per evitare colori slavati</li>
-</ol>
-<div class="admonition danger">
-<p class="admonition-title">Curva sotto lo 0%</p>
-<p>La curva non deve mai scendere sotto lo 0% (l'avviso arancione indica negativita'). Causa artefatti nei toni scuri.<sup id="fnref:firststeps"><a class="footnote-ref" href="#fn:firststeps">6</a></sup></p>
-</div>
-<h3 id="parametri-fondamentali-di-filmic-rgb">Parametri fondamentali di Filmic RGB<a class="headerlink" href="#parametri-fondamentali-di-filmic-rgb" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Parametro</th>
-<th>Range</th>
-<th>Default</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>White relative exposure</strong></td>
-<td><code>-2.00</code> a <code>+8.00 EV</code></td>
-<td><code>+4.56 EV</code></td>
-<td>Impostare con la pipetta sulle luci più brillanti ma non bruciate<sup id="fnref3:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></td>
-</tr>
-<tr>
-<td><strong>Black relative exposure</strong></td>
-<td><code>-12.00</code> a <code>-4.00 EV</code></td>
-<td><code>-7.65 EV</code></td>
-<td>Impostare con la pipetta sulle ombre più dense ma con dettaglio<sup id="fnref4:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></td>
-</tr>
-<tr>
-<td><strong>Latitude</strong></td>
-<td><code>0.10–1.00</code></td>
-<td><code>0.50</code></td>
-<td>Valori &lt;0.40 aumentano la desaturazione verso i neri; &gt;0.60 mantengono più saturazione in ombre<sup id="fnref5:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></td>
-</tr>
-<tr>
-<td><strong>Contrast</strong></td>
-<td><code>0.10–2.00</code></td>
-<td><code>1.00</code></td>
-<td>Valori &gt;1.30 possono causare artefatti su texture fini (capelli, tessuti)<sup id="fnref6:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></td>
-</tr>
-<tr>
-<td><strong>Auto tune levels</strong></td>
-<td>On/Off</td>
+<td><strong>ignore exif rating</strong></td>
+<td>Checkbox</td>
 <td>Off</td>
-<td>Attivarlo dopo aver impostato i punti nero/bianco per ottimizzare la curva automaticamente<sup id="fnref7:filmic-v5"><a class="footnote-ref" href="#fn:filmic-v5">12</a></sup></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Per un confronto approfondito tra i tre tone mapper, la community pixls.us offre analisi dettagliate nei thread <em>Compare and contrast: Filmic RGB vs AgX</em> e <em>Filmic vs Sigmoid vs AgX: some thoughts</em>.<sup id="fnref:pixls-filmic-vs"><a class="footnote-ref" href="#fn:pixls-filmic-vs">10</a></sup></p>
-</blockquote>
-<h2 id="tone-equalizer-il-dodging-burning-intelligente">Tone Equalizer: il dodging &amp; burning intelligente<a class="headerlink" href="#tone-equalizer-il-dodging-burning-intelligente" title="Permanent link">¶</a></h2>
-<p>Il modulo <strong>tone equalizer</strong>, introdotto in darktable 4.8, sostituisce i vecchi moduli <em>shadows and highlights</em>, <em>tone curve</em>, <em>zone system</em> e <em>base curve</em> quando usato insieme a <em>filmic rgb</em> o <em>agx</em>.<sup id="fnref:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup> Opera in spazio RGB lineare e utilizza una <strong>maschera guidata</strong> (guided mask) per applicare correzioni locali senza compromettere il contrasto locale.<sup id="fnref2:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></p>
-<h3 id="flusso-di-lavoro">Flusso di lavoro<a class="headerlink" href="#flusso-di-lavoro" title="Permanent link">¶</a></h3>
-<ol>
-<li><strong>Creare la maschera</strong>: il modulo genera automaticamente una maschera monocromatica basata sulla luminosità dell’immagine  </li>
-<li><strong>Affinare la maschera</strong>: usare la scheda <em>masking</em> per regolare diffusione, sfumatura e quantizzazione  </li>
-<li><strong>Applicare l’equalizzazione</strong>: regolare i livelli di esposizione per zone specifiche (da –8 EV a 0 EV)  </li>
-</ol>
-<p>Il principio è semplice: ogni pixel viene corretto in base al valore di luminosità della maschera in quel punto — non in base al suo valore RGB originale. Questo garantisce che aree con simile luminosità ricevano la stessa correzione, preservando i bordi e il micro-contrast.<sup id="fnref3:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></p>
-<h3 id="parametri-chiave">Parametri chiave<a class="headerlink" href="#parametri-chiave" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Sezione</th>
-<th>Parametro</th>
-<th>Range</th>
-<th>Default</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Simple</strong></td>
-<td><code>-8 EV</code> … <code>0 EV</code> sliders</td>
-<td><code>-2.00</code> a <code>+2.00 EV</code></td>
-<td><code>0.00 EV</code></td>
-<td>Ogni slider controlla una banda di 1 EV; usare la pipetta per selezionare la zona da correggere<sup id="fnref5:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></td>
+<td>Se attivo, ignora il rating presente nei metadati Exif del file.</td>
 </tr>
 <tr>
-<td><strong>Advanced</strong></td>
-<td>Curve smoothing</td>
-<td><code>0.00–1.00</code></td>
-<td><code>0.30</code></td>
-<td>Valori &gt;0.60 possono introdurre oscillazioni nella curva<sup id="fnref6:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></td>
+<td><strong>initial rating</strong></td>
+<td>0 - 5 stelle</td>
+<td>1 stella</td>
+<td>Imposta il rating assegnato automaticamente alle immagini appena importate.<sup id="fnref7:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></td>
 </tr>
 <tr>
-<td><strong>Masking</strong></td>
-<td>Smoothing diameter</td>
-<td><code>0.5–25%</code></td>
-<td><code>5%</code></td>
-<td>Per <em>eigf</em> (default), usare <code>1–10%</code>; per <em>guided filter</em>, fino a <code>25%</code><sup id="fnref7:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></td>
+<td><strong>apply metadata</strong></td>
+<td>Checkbox</td>
+<td>Off</td>
+<td>Se attivo, applica automaticamente campi metadati e tag definiti dall'utente durante l'importazione.</td>
 </tr>
 <tr>
-<td><strong>Masking</strong></td>
-<td>Edges refinement/feathering</td>
-<td><code>0–10000</code></td>
-<td><code>100</code></td>
-<td>Valori alti (&gt;500) seguono meglio i bordi; valori bassi (&lt;100) producono transizioni più morbide<sup id="fnref8:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></td>
+<td><strong>base filmroll’s directory</strong></td>
+<td>Stringa con variabili</td>
+<td><code>$(PICTURES_FOLDER)/Darktable</code></td>
+<td>Directory base dove vengono salvati i rullini filmati. Supporta variabili come <code>$(HOME)</code> o <code>$(PICTURES_FOLDER)</code>.</td>
+</tr>
+<tr>
+<td><strong>filmroll name</strong></td>
+<td>Stringa con variabili</td>
+<td><code>$(YEAR)$(MONTH)$(DAY)_$(JOBCODE)</code></td>
+<td>Nome della sottodirectory per il rullino. La variabile <code>$(JOBCODE)</code> è definita nel modulo <em>Session</em>.</td>
+</tr>
+<tr>
+<td><strong>file naming pattern</strong></td>
+<td>Stringa con variabili</td>
+<td><code>$(YEAR)$(MONTH)$(DAY)_$(SEQUENCE).$(FILE_EXTENSION)</code></td>
+<td>Pattern di rinomina dei file. Utilizza variabili data/ora e sequenza.</td>
+</tr>
+<tr>
+<td><strong>keep original filename</strong></td>
+<td>Checkbox</td>
+<td>Off</td>
+<td>Se attivo, mantiene il nome del file originale invece di usare il pattern di rinomina.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
-<p class="admonition-title">Uso avanzato: maschera + cursori</p>
-<p>Con il modulo attivo, muovi il mouse sull’anteprima e usa la rotellina per regolare istantaneamente l’esposizione della zona sotto il cursore. L’indicatore mostra in tempo reale l’EV della maschera e l’entità della correzione applicata.<sup id="fnref4:manual-tone-eq"><a class="footnote-ref" href="#fn:manual-tone-eq">4</a></sup></p>
+<p class="admonition-title">Variabili utili per l'importazione</p>
+<p>Le variabili come <code>$(YEAR)</code>, <code>$(MONTH)</code>, <code>$(DAY)</code>, <code>$(HOUR)</code>, <code>$(SEQUENCE)</code> e <code>$(JOBCODE)</code> permettono di creare strutture di cartelle dinamiche. Ad esempio, <code>$(YEAR)$(MONTH)$(DAY)_$(JOBCODE)</code> creerà automaticamente cartelle basate sulla data e un codice sessione definito al momento dello scatto o dell'importazione.<sup id="fnref5:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup><sup id="fnref:manual-session"><a class="footnote-ref" href="#fn:manual-session">5</a></sup></p>
 </div>
-<h2 id="consigli-operativi-per-migranti-da-lightroomphotoshop">Consigli operativi per migranti da Lightroom/Photoshop<a class="headerlink" href="#consigli-operativi-per-migranti-da-lightroomphotoshop" title="Permanent link">¶</a></h2>
+<h2 id="consigli">Consigli<a class="headerlink" href="#consigli" title="Permanent link">¶</a></h2>
 <ul>
-<li>✅ <strong>Non cercare equivalenze 1:1</strong>: i tone mapper di darktable sono <em>scene-referred</em>, quindi non replicano i preset “VSCO” o “Kodak Portra” in modo diretto.  </li>
-<li>✅ <strong>Usa sempre i metadati RAW</strong>: i valori di <em>black/white relative exposure</em> derivano direttamente dalle informazioni del sensore — non dai valori di Lightroom.  </li>
-<li>✅ <strong>Evita il double-processing</strong>: non applicare <em>exposure</em> prima di <em>filmic</em> o <em>agx</em>: quest’ultimo gestisce già la mappatura globale.  </li>
-<li>❌ <strong>Non usare “fill light” o “recovery”</strong>: questi concetti non esistono in darktable; il recupero luci avviene tramite <em>highlight reconstruction</em>, <em>sigmoid</em>, o <em>agx shoulder</em>.  </li>
-<li>❌ <strong>Non usare “clarity” come in LR</strong>: in darktable, <em>local contrast</em> o <em>diffuse or sharpen</em> sono strumenti distinti, non sostituti di un tone mapper.</li>
+<li><strong>Usa il tema grigio</strong>: Per una valutazione del colore accurata, evita temi con colori saturi o contrasti eccessivi nell'interfaccia. Il tema predefinito <code>darktable-elegant-grey</code> è calibrato sul grigio medio (18%).<sup id="fnref7:manual-general"><a class="footnote-ref" href="#fn:manual-general">2</a></sup></li>
+<li><strong>Sfrutta il Jobcode</strong>: Se scatti in tethering o vuoi organizzare gli scatti per "sessioni", usa la variabile <code>$(JOBCODE)</code> nel pattern di importazione. Questo ti permette di raggruppare gli scatti per progetto o evento automaticamente.<sup id="fnref2:manual-session"><a class="footnote-ref" href="#fn:manual-session">5</a></sup></li>
+<li><strong>Cernita rapida</strong>: Sfrutta il rating iniziale (1 stella) per filtrare rapidamente le nuove importazioni. Imposta la vista Lighttable per mostrare solo le immagini con 1 stella e promuovi solo le migliori con i tasti <code>2</code>-<code>5</code>.<sup id="fnref4:manual-import-review"><a class="footnote-ref" href="#fn:manual-import-review">4</a></sup></li>
+<li><strong>Non usare "Recursive directory" per importazioni massive</strong>: Se importi da una struttura complessa, evita di spuntare "recursive directory" su cartelle contenenti migliaia di immagini, poiché questo rallenterà la generazione delle anteprime e riempirà la cache inutilizzatamente.<sup id="fnref6:manual-import"><a class="footnote-ref" href="#fn:manual-import">3</a></sup></li>
 </ul>
-<h3 id="esempio-regolazione-fine-del-pivot-con-la-pipetta">Esempio: Regolazione fine del pivot con la pipetta<a class="headerlink" href="#esempio-regolazione-fine-del-pivot-con-la-pipetta" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a> (timestamp 02:15)</em><br>
-1. Attiva il modulo AgX e vai alla scheda <em>input exposure range</em><br>
-2. Clicca sull’icona della pipetta accanto a <strong>pivot exposure</strong><br>
-3. Clicca su una zona di media luminosità del soggetto principale (es. pelle, foglia verde, parete grigia)<br>
-4. Il valore di <em>pivot exposure</em> si aggiorna automaticamente (es. <code>+0.27 EV</code>)<br>
-5. Verifica che la curva tonale mostri un punto di flesso coerente con l’area selezionata — se la curva appare appiattita, aumenta leggermente il <em>contrast</em> a <code>2.95</code><sup id="fnref:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
-<h3 id="esempio-ottimizzazione-automatica-dei-punti-bianconero">Esempio: Ottimizzazione automatica dei punti bianco/nero<a class="headerlink" href="#esempio-ottimizzazione-automatica-dei-punti-bianconero" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a> (timestamp 03:42)</em><br>
-1. Apri un’immagine RAW con forte contrasto (es. siluetta in controluce)<br>
-2. Nel modulo AgX, clicca su <strong>auto tune levels</strong><br>
-3. Il sistema calcola automaticamente <code>white relative exposure = +6.50 EV</code> e <code>black relative exposure = -10.00 EV</code><br>
-4. Controlla visivamente che le zone di massima luminanza (es. riflessi su vetro) e minima (es. ombre sotto un tavolo) conservino dettagli<br>
-5. Se il cielo appare troppo compresso, aumenta <em>shoulder power</em> da <code>1.55</code> a <code>1.75</code><sup id="fnref3:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-<h3 id="esempio-correzione-di-clipping-cromatico-con-primaries">Esempio: Correzione di clipping cromatico con Primaries<a class="headerlink" href="#esempio-correzione-di-clipping-cromatico-con-primaries" title="Permanent link">¶</a></h3>
-<p><em>Da <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a> (timestamp 06:28)</em><br>
-1. Apri un’immagine con forti luci blu (es. palco con LED blu)<br>
-2. Vai alla scheda <em>primaries</em> del modulo AgX<br>
-3. Imposta <strong>blue attenuation = 71.48%</strong>, <strong>blue rotation = -3.0°</strong>, <strong>recover purity = 15.00%</strong><br>
-4. Verifica che le aree blu non presentino blocchi di colore uniforme<br>
-5. Se i toni rimangono artificiali, riduci ulteriormente <em>blue attenuation</em> a <code>65.00%</code><sup id="fnref4:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-<h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
-<h3 id="problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati">Problema: La curva tonale mostra una porzione arancione anche con parametri moderati<a class="headerlink" href="#problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati" title="Permanent link">¶</a></h3>
-<p>Questo indica che la curva sta entrando in una regione non invertibile (overshoot). Riduci <em>latitude</em> o aumenta <em>shoulder power</em> per ristabilire la forma a S. Se persiste, modifica <em>curve gamma</em> a <code>0.95</code> per riequilibrare la transizione.<sup id="fnref2:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
-<h3 id="problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280">Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80<a class="headerlink" href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" title="Permanent link">¶</a></h3>
-<p>Verifica che il modulo <em>exposure</em> sia stato usato per posizionare correttamente il grigio medio prima di AgX. Un valore errato di <em>exposure</em> (es. <code>-0.80 EV</code>) può annullare l’effetto del contrasto. Riporta <em>exposure</em> a <code>0.00 EV</code> e regola nuovamente con la pipetta su una zona neutra.<sup id="fnref5:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
-<h3 id="problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini">Problema: Il modulo Sigmoid produce artefatti sui capelli o sulle texture fini<a class="headerlink" href="#problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini" title="Permanent link">¶</a></h3>
-<p>Riduci il parametro <em>skew</em> a <code>-0.25</code> e imposta <em>preserve hue</em> a <code>95%</code>. Evita valori di <em>contrast</em> superiori a <code>1.80</code> su immagini con ISO &gt;1600, dove il rumore amplifica gli artefatti.<sup id="fnref:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></p>
-<h2 id="risorse-pratiche">Risorse pratiche<a class="headerlink" href="#risorse-pratiche" title="Permanent link">¶</a></h2>
+<h2 id="risorse-aggiuntive">Risorse aggiuntive<a class="headerlink" href="#risorse-aggiuntive" title="Permanent link">¶</a></h2>
 <ul>
-<li>📺 <a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a> — focus su <em>primaries</em> e <em>preserve hue</em>  </li>
-<li>📺 <a href="https://www.youtube.com/watch?v=K7ALyEU9fHY">Darktable Filmic v5</a> — Analisi tecnica della curva, opzione <em>Safe</em>, e confronto tra v5/v6/v7  </li>
-<li>📺 <a href="https://www.youtube.com/watch?v=TMlF85TFIUo">How to get accurate colours in darktable</a> — Effetto Bezold-Brücke, workflow per tramonti, uso di maschere parametriche  </li>
-<li>📘 <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/">darktable User Manual — Tone Equalizer</a> — Documentazione ufficiale completa, con diagrammi di flusso  </li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">darktable user manual - import &amp; review</a> — Guida ufficiale al flusso di importazione e cernita.</li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/general/">darktable user manual - Preferences &gt; General</a> — Dettagli sui temi e impostazioni interfaccia.</li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/import/">darktable user manual - Preferences &gt; Import</a> — Variabili e regole di denominazione file.</li>
+<li><a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/">darktable user manual - Import Module</a> — Controlli del modulo di importazione nella vista Lighttable.</li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>
 <ol>
-<li id="fn:manual-agx">
-<p><em>darktable User Manual -- AgX</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/agx/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:manual-agx" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-agx" title="Jump back to footnote 1 in the text">↩</a></p>
+<li id="fn:manual-prefs">
+<p>darktable user manual - Preferences &amp; Settings. https://docs.darktable.org/usermanual/development/en/preferences-settings/#&nbsp;<a class="footnote-backref" href="#fnref:manual-prefs" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
-<li id="fn:manual-sigmoid">
-<p><em>darktable User Manual -- Sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-sigmoid.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-sigmoid" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-sigmoid" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-sigmoid" title="Jump back to footnote 2 in the text">↩</a></p>
+<li id="fn:manual-general">
+<p>darktable user manual - general. https://docs.darktable.org/usermanual/development/en/preferences-settings/general/&nbsp;<a class="footnote-backref" href="#fnref:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual-general" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual-general" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
-<li id="fn:manual-filmic">
-<p><em>darktable User Manual -- Filmic RGB</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-filmic-rgb.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-filmic" title="Jump back to footnote 3 in the text">↩</a></p>
+<li id="fn:manual-import">
+<p>darktable user manual - import. https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/&nbsp;<a class="footnote-backref" href="#fnref:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual-import" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual-import" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
-<li id="fn:manual-tone-eq">
-<p><em>darktable User Manual -- Tone Equalizer</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref8:manual-tone-eq" title="Jump back to footnote 4 in the text">↩</a></p>
+<li id="fn:manual-import-review">
+<p>darktable user manual - import &amp; review. https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/#&nbsp;<a class="footnote-backref" href="#fnref:manual-import-review" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-import-review" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-import-review" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-import-review" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
-<li id="fn:agx-guide">
-<p><em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref7:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref8:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref9:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref10:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref11:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref12:agx-guide" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref13:agx-guide" title="Jump back to footnote 5 in the text">↩</a></p>
-</li>
-<li id="fn:firststeps">
-<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 6 in the text">↩</a></p>
-</li>
-<li id="fn:dt54">
-<p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt54" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt54" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
-<li id="fn:lowlight">
-<p><em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:lowlight" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:lowlight" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref3:lowlight" title="Jump back to footnote 8 in the text">↩</a></p>
-</li>
-<li id="fn:landscape">
-<p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Darktable landscape edit with AI</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:landscape" title="Jump back to footnote 9 in the text">↩</a></p>
-</li>
-<li id="fn:pixls-filmic-vs">
-<p><em>discuss.pixls.us -- Compare and contrast: Filmic RGB vs AgX</em> | Copia locale: <code>processed/discuss-pixls/</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-filmic-vs" title="Jump back to footnote 10 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-tutorial">
-<p><em><a href="https://darktable.fr/posts/2023/01/utilisation-du-module-sigmoid/">Utilisation du module Sigmoid</a></em> -- darktable.fr (tutoriel francese)&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-tutorial" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-tutorial" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref3:sigmoid-tutorial" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref4:sigmoid-tutorial" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref5:sigmoid-tutorial" title="Jump back to footnote 11 in the text">↩</a></p>
-</li>
-<li id="fn:filmic-v5">
-<p><em><a href="https://www.youtube.com/watch?v=K7ALyEU9fHY">Darktable Filmic v5</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref3:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref4:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref5:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref6:filmic-v5" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref7:filmic-v5" title="Jump back to footnote 12 in the text">↩</a></p>
+<li id="fn:manual-session">
+<p>darktable user manual - session. https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/tethering/session/#&nbsp;<a class="footnote-backref" href="#fnref:manual-session" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-session" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 </ol>
 </div>
