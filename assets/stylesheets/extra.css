@@ -1,36 +1,20 @@
-/* Pulsante "Segnala una modifica" nella sidebar TOC */
-.report-issue-toc {
-  padding: 0.6rem 1rem 1rem;
-}
-
-.report-issue-toc__link {
-  display: flex;
+/* Pulsante "Segnala una modifica" nella header bar */
+.md-header__button--report {
+  display: inline-flex;
   align-items: center;
-  gap: 0.45em;
-  padding: 0.45em 0.8em;
-  border-radius: 0.25rem;
-  font-size: 0.72rem;
+  gap: 0.3em;
+}
+
+.md-header__button-label {
+  font-size: 0.7rem;
   font-weight: 500;
-  line-height: 1.3;
-  text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
-
-  /* Contrasto garantito su entrambi i temi */
-  color: var(--md-primary-fg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  background-color: var(--md-default-bg-color);
+  display: none;
 }
 
-.report-issue-toc__link:hover {
-  color: var(--md-primary-bg-color);
-  background-color: var(--md-primary-fg-color);
-  border-color: var(--md-primary-fg-color);
-}
-
-.report-issue-toc__link svg {
-  width: 0.9em;
-  height: 0.9em;
-  flex-shrink: 0;
+@media screen and (min-width: 76.25em) {
+  .md-header__button-label {
+    display: inline;
+  }
 }
 
 /* Mermaid diagrams */

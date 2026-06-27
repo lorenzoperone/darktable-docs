@@ -101,6 +101,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -205,6 +206,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -453,6 +461,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -2811,8 +2840,6 @@
       
         
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -3073,33 +3100,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -4103,8 +4103,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4365,33 +4363,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -4421,16 +4392,8 @@
 <hr>
 <h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">¶</a></h2>
 <p>Entrambi gli effetti richiedono una <strong>duplicazione dell’immagine</strong> per lavorare su livelli separati. Il posizionamento del modulo <code>composite</code> è critico: deve essere inserito <em>prima</em> di <code>tone curve</code>/<code>AGX</code>, ma <em>dopo</em> tutti i moduli di correzione base (esposizione, bilanciamento bianco, correzione ottica)<sup id="fnref3:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Correzioni base (exposure, white balance, lens correction)
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   |
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Duplicazione → creazione livello “sfocato” (Orton) o “inversione + fusione” (Dragan)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   |
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Composite → fusione con modalità Multiply / Screen / Overlay
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   |
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4. AGX / Sigmoid → compressione tonale finale
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   |
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. Affinamenti locali (local contrast, sharpen, color balance rgb)
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A["1. Correzioni base (exposure, white balance, lens correction)"] --&gt; B["2. Duplicazione - creazione livello sfocato (Orton) o inversione + fusione (Dragan)"] --&gt; C["3. Composite - fusione con modalita Multiply / Screen / Overlay"] --&gt; D["4. AGX / Sigmoid - compressione tonale finale"] --&gt; E["5. Affinamenti locali (local contrast, sharpen, color balance rgb)"]</code></pre>
 <div class="admonition warning">
 <p class="admonition-title">Errore comune: ordine sbagliato di composite</p>
 <p>Se <code>composite</code> è posizionato <em>dopo</em> <code>AGX</code>, la fusione avviene su dati già compressi → risultati piatti, senza profondità. Verifica sempre la posizione con il pulsante <strong>Show module order</strong> (icona a tre puntini in alto a destra del pannello moduli)<sup id="fnref8:dragon-video"><a class="footnote-ref" href="#fn:dragon-video">2</a></sup>.</p>
@@ -4687,6 +4650,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:26:54 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

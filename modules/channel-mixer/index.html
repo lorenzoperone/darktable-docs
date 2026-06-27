@@ -101,6 +101,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -205,6 +206,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -453,6 +461,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -1462,8 +1491,6 @@
       
         
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -1974,33 +2001,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -4353,8 +4353,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4865,33 +4863,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -5195,7 +5166,7 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Scegli il canale con il differenziale maggiore</p>
-<p>Per minimizzare gli effetti collaterali, seleziona il canale di ingresso in cui la differenza tra il valore del colore target e quello dei colori da preservare è massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica.<sup id="fnref5:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
+<p>Per minimizzare gli effetti collaterali, seleziona il canale di ingresso in cui la differenza tra il valore del colore target e quello dei colori da preservare è massima. Il valore del cursore e il valore del pixel in ingresso hanno la stessa importanza matematica.<sup id="fnref7:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 </div>
 <h3 id="viraggio-verso-il-magenta">Viraggio verso il magenta<a class="headerlink" href="#viraggio-verso-il-magenta" title="Permanent link">¶</a></h3>
 <p>Per un cielo al tramonto che tende al magenta senza alterare gialli e arancioni:<sup id="fnref3:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
@@ -5203,16 +5174,16 @@
 <li>Posiziona <strong>campioni live</strong> (color picker) sul cielo e sulle zone da preservare</li>
 <li>Monitora i valori RGB in tempo reale sul vettorscopio</li>
 <li>Aggiungi rosso o sottrai verde/blu dal canale blu di destinazione</li>
-<li>Confronta diverse combinazioni: aggiungere rosso schiarisce, sottrarre verde/blu scurisce<sup id="fnref6:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Confronta diverse combinazioni: aggiungere rosso schiarisce, sottrarre verde/blu scurisce<sup id="fnref8:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h2 id="uso-pratico-4-tonalita-globali-ed-effetti-creativi">Uso pratico 4: Tonalita globali ed effetti creativi<a class="headerlink" href="#uso-pratico-4-tonalita-globali-ed-effetti-creativi" title="Permanent link">¶</a></h2>
 <h3 id="effetto-marrone-vintage">Effetto "marrone vintage"<a class="headerlink" href="#effetto-marrone-vintage" title="Permanent link">¶</a></h3>
 <p>Per dare a un'immagine un aspetto invecchiato con tonalità marrone:<sup id="fnref4:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 <ol>
-<li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)<sup id="fnref7:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Identifica un grigio neutro con il color picker (es. valori circa <code>61, 62, 61</code>)<sup id="fnref9:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 <li>Nel Channel Mixer, modifica i canali per introdurre più rosso e verde, meno blu</li>
-<li>Il marrone nel modello additivo è: molto rosso, meno verde, ancora meno blu (es. <code>161, 106, 64</code>)<sup id="fnref8:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
-<li>Bilancia la luminosità compensando con valori negativi dove necessario<sup id="fnref9:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Il marrone nel modello additivo è: molto rosso, meno verde, ancora meno blu (es. <code>161, 106, 64</code>)<sup id="fnref10:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Bilancia la luminosità compensando con valori negativi dove necessario<sup id="fnref11:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h3 id="falsi-colori-estremi">Falsi colori estremi<a class="headerlink" href="#falsi-colori-estremi" title="Permanent link">¶</a></h3>
 <p>Per effetti creativi estremi (non fotograficamente realistici), si possono usare coefficienti molto alti e illuminanti personalizzati. L'immagine risultante avrà tonalità innaturali ma artisticamente interessanti.<sup id="fnref4:ir"><a class="footnote-ref" href="#fn:ir">4</a></sup></p>
@@ -5307,7 +5278,7 @@
 <h3 id="gestione-delle-maschere">Gestione delle maschere<a class="headerlink" href="#gestione-delle-maschere" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Non mascherare il bilanciamento del bianco</p>
-<p>Evita di applicare maschere al Channel Mixer quando lo usi per bilanciamento del bianco o calibrazione globale. Differenze di bilanciamento cromatico localizzate risultano innaturali. Preferisci correzioni globali e sottili.<sup id="fnref10:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
+<p>Evita di applicare maschere al Channel Mixer quando lo usi per bilanciamento del bianco o calibrazione globale. Differenze di bilanciamento cromatico localizzate risultano innaturali. Preferisci correzioni globali e sottili.<sup id="fnref12:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></p>
 </div>
 <p>Le maschere parametriche sono invece molto utili quando il Channel Mixer viene usato per <strong>correzioni selettive</strong> (es. correggere solo le luci LED blu). In questo caso, maschera basandoti sul canale cromatica dominante o sulla luminanza.<sup id="fnref9:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="ordine-nella-pipeline">Ordine nella pipeline<a class="headerlink" href="#ordine-nella-pipeline" title="Permanent link">¶</a></h3>
@@ -5380,11 +5351,11 @@
 <h3 id="esempio-3-correggere-dominante-blu-globale">Esempio 3: Correggere dominante blu globale<a class="headerlink" href="#esempio-3-correggere-dominante-blu-globale" title="Permanent link">¶</a></h3>
 <ol>
 <li>Identifica una zona che dovrebbe essere grigio neutro</li>
-<li>Usa il <strong>color picker</strong> per verificare i valori RGB (es. <code>61, 62, 61</code>)<sup id="fnref11:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Usa il <strong>color picker</strong> per verificare i valori RGB (es. <code>61, 62, 61</code>)<sup id="fnref13:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 <li>Se i valori indicano una dominante blu (B più alto di R e G), aggiungi un modulo <strong>Color Calibration</strong></li>
 <li>Nella destinazione <strong>Blu</strong>, riduci l'input Blu sotto 1.0 (es. 0.85)</li>
 <li>In alternativa, aggiungi input Rosso alla destinazione Blu per compensare</li>
-<li>Verifica con il color picker che la zona neutra abbia ora valori RGB equilibrati<sup id="fnref12:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
+<li>Verifica con il color picker che la zona neutra abbia ora valori RGB equilibrati<sup id="fnref14:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup></li>
 </ol>
 <h3 id="esempio-correzione-dominante-verde-su-sfondo-macro-da-video-tutorial">Esempio: Correzione dominante verde su sfondo macro (da video tutorial)<a class="headerlink" href="#esempio-correzione-dominante-verde-su-sfondo-macro-da-video-tutorial" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=MJJR8DJ3rr8">Some Color calibration ideas</a> (timestamp 05:20–09:40)</em><br>
@@ -5396,10 +5367,10 @@
 <h3 id="esempio-viraggio-del-cielo-da-blu-a-ciano-da-video-tutorial">Esempio: Viraggio del cielo da blu a ciano (da video tutorial)<a class="headerlink" href="#esempio-viraggio-del-cielo-da-blu-a-ciano-da-video-tutorial" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a> (timestamp 05:40–09:40)</em><br>
 1. Apri un modulo <strong>Color Calibration</strong> nuovo<br>
-2. Usa il <strong>color picker</strong> per misurare il cielo: <code>(86, 100, 159)</code><sup id="fnref:QX_HItCqDtE"><a class="footnote-ref" href="#fn:QX_HItCqDtE">7</a></sup><br>
+2. Usa il <strong>color picker</strong> per misurare il cielo: <code>(86, 100, 159)</code><sup id="fnref5:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup><br>
 3. Nella scheda <strong>Blu</strong>, imposta <code>input G = 0.25</code> (anziché 0.00) per aggiungere verde al blu<br>
 4. Mantieni <code>input R = 1.000</code>, <code>input B = 1.000</code> per preservare la luminanza (somma = 2.25 → <code>Normalize Channels</code> attivo)<br>
-5. Verifica sul vettorscopio che il picco del cielo si sposti da <code>159</code> a <code>182</code> nel canale verde, confermando il viraggio verso il ciano<sup id="fnref2:QX_HItCqDtE"><a class="footnote-ref" href="#fn:QX_HItCqDtE">7</a></sup>  </p>
+5. Verifica sul vettorscopio che il picco del cielo si sposti da <code>159</code> a <code>182</code> nel canale verde, confermando il viraggio verso il ciano<sup id="fnref6:ch2"><a class="footnote-ref" href="#fn:ch2">3</a></sup>  </p>
 <h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
 <p>Il modulo <strong>Color Calibration</strong>, che sostituisce Channel Mixer, include preset specifici per scenari comuni. Questi preset sono accessibili dal pulsante <strong>preset</strong> in alto a destra del modulo e sono validi solo nella scheda <strong>Grigio</strong>, <strong>Rosso</strong>, <strong>Verde</strong>, <strong>Blu</strong> o <strong>CAT</strong>.</p>
 <table>
@@ -5435,7 +5406,7 @@
 </table>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-il-canale-verde-diventa-sporco-dopo-aver-applicato-un-valore-elevato-di-input-g-su-destinazione-rosso">Problema: Il canale verde diventa "sporco" dopo aver applicato un valore elevato di <code>input G</code> su destinazione <code>Rosso</code><a class="headerlink" href="#problema-il-canale-verde-diventa-sporco-dopo-aver-applicato-un-valore-elevato-di-input-g-su-destinazione-rosso" title="Permanent link">¶</a></h3>
-<p>Questo accade perché un alto coefficiente verde in uscita rosso introduce componenti cromatiche non correlate: il verde non è linearmente ortogonale al rosso nel sistema RGB. La soluzione è limitare <code>input G</code> a ≤ 0.40 e bilanciare con <code>input R = 0.60</code> per mantenere la somma ≤ 1.0, oppure usare <code>RGB Primaries</code> per regolazioni più stabili.<sup id="fnref:pixls-rgbprimaries"><a class="footnote-ref" href="#fn:pixls-rgbprimaries">8</a></sup></p>
+<p>Questo accade perché un alto coefficiente verde in uscita rosso introduce componenti cromatiche non correlate: il verde non è linearmente ortogonale al rosso nel sistema RGB. La soluzione è limitare <code>input G</code> a ≤ 0.40 e bilanciare con <code>input R = 0.60</code> per mantenere la somma ≤ 1.0, oppure usare <code>RGB Primaries</code> per regolazioni più stabili.<sup id="fnref:pixls-rgbprimaries"><a class="footnote-ref" href="#fn:pixls-rgbprimaries">7</a></sup></p>
 <h3 id="problema-limmagine-diventa-completamente-nera-dopo-aver-impostato-input-r-100-input-g-100-input-b-100-su-grigio">Problema: L’immagine diventa completamente nera dopo aver impostato <code>input R = -1.00</code>, <code>input G = -1.00</code>, <code>input B = -1.00</code> su <code>Grigio</code><a class="headerlink" href="#problema-limmagine-diventa-completamente-nera-dopo-aver-impostato-input-r-100-input-g-100-input-b-100-su-grigio" title="Permanent link">¶</a></h3>
 <p>Questo è previsto: la somma è <code>-3.00</code>, quindi ogni pixel subisce una sottrazione totale. Per ottenere un effetto "inverso", usa <code>invert</code> (modulo dedicato) o <code>RGB Curve</code> con curva invertita, non Channel Mixer.<sup id="fnref10:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></p>
 <h3 id="problema-il-modulo-sembra-non-avere-effetto-su-immagini-gia-in-srgb-o-jpeg">Problema: Il modulo sembra non avere effetto su immagini già in sRGB o JPEG<a class="headerlink" href="#problema-il-modulo-sembra-non-avere-effetto-su-immagini-gia-in-srgb-o-jpeg" title="Permanent link">¶</a></h3>
@@ -5485,7 +5456,7 @@
 <p><em><a href="https://www.youtube.com/watch?v=IRIVqQoqPnU">Channel Mixer Part 1</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:ch1" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:ch1" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:ch2">
-<p><em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref6:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref7:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref8:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref9:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref10:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref11:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref12:ch2" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref5:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref6:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref7:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref8:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref9:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref10:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref11:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref12:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref13:ch2" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref14:ch2" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:ir">
 <p><em><a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref5:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref6:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref7:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref8:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref9:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref10:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref11:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref12:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref13:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref14:ir" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref15:ir" title="Jump back to footnote 4 in the text">↩</a></p>
@@ -5496,11 +5467,8 @@
 <li id="fn:MJJR8">
 <p><em><a href="https://www.youtube.com/watch?v=MJJR8DJ3rr8">Some Color calibration ideas</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:MJJR8" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:MJJR8" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref3:MJJR8" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
-<li id="fn:QX_HItCqDtE">
-<p><em><a href="https://www.youtube.com/watch?v=QX_HItCqDtE">Channel Mixer Part 2</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:QX_HItCqDtE" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:QX_HItCqDtE" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
 <li id="fn:pixls-rgbprimaries">
-<p><em>PIXLS.US — RGB Primaries module explained</em>, <a href="https://pixls.us/articles/rgb-primaries/">pixls.us/articles/rgb-primaries</a> | <code>processed/pixls-articles/rgb-primaries.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-rgbprimaries" title="Jump back to footnote 8 in the text">↩</a></p>
+<p><em>PIXLS.US — RGB Primaries module explained</em>, <a href="https://pixls.us/articles/rgb-primaries/">pixls.us/articles/rgb-primaries</a> | <code>processed/pixls-articles/rgb-primaries.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-rgbprimaries" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -5511,6 +5479,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:21:28 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

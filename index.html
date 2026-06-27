@@ -99,6 +99,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -203,6 +204,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -451,6 +459,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -548,8 +577,6 @@
       </a>
       
         
-
-
 
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
@@ -661,33 +688,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -3948,8 +3948,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4060,33 +4058,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -4154,37 +4125,36 @@ e la compressione tonale avviene solo a fine processo (Filmic RGB, AgX, Sigmoid)
 <h2 id="la-pipeline-di-elaborazione">La pipeline di elaborazione<a class="headerlink" href="#la-pipeline-di-elaborazione" title="Permanent link">¶</a></h2>
 <p>In darktable i dati attraversano una sequenza fissa di moduli chiamata <strong>pixelpipe</strong>.
 L'ordine e' il seguente:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────── FASE LINEARE (scene-referred) ──────────────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                                                                                │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  Punto nero / punto bianco RAW                                                 │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│    → Bilanciamento del bianco  (camera reference)                              │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│    → Demosaicizzazione                                                         │
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│    → Riduzione rumore (profilato)                                              │
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│    → Correzione obiettivo                                                      │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│    → Esposizione  (ancoraggio del grigio medio)                                │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│    → Ricostruzione alte luci                                                   │
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│    → Calibrazione colore  (CAT16)                                              │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│                                                                                │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>└────────────────────────────────────────────────────────────────────────────────┘
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                                    ↓
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>┌─────────────── COMPRESSIONE TONALE (tone mapping) ─────────────────────────────┐
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│                                                                                │
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│    AgX  ·  Filmic RGB  ·  Sigmoideo    ← scegline UNO solo                     │
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│                                                                                │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└────────────────────────────────────────────────────────────────────────────────┘
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                                    ↓
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>┌─────────────── FASE DISPLAY (display-referred) ────────────────────────────────┐
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│                                                                                │
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│    → Bilanciamento colore  (vibrazione, 4 vie, mappatura gamut)                │
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│    → Equalizzatore colore  (tonalita' selettive)                               │
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│    → Equalizzatore toni  (scultura della luce per zone)                        │
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│    → Contrasto locale  /  Diffondi e nitidezza                                 │
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│    → Grana, Vignettatura, Filigrana                                            │
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│                                                                                │
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>└────────────────────────────────────────────────────────────────────────────────┘
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                                    ↓
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                            Esporta  (JPEG/TIFF)
-</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    subgraph LINEARE["FASE LINEARE (scene-referred)"]
+        A["Punto nero / punto bianco RAW"]
+        A --&gt; B["Bilanciamento del bianco"]
+        B --&gt; C["Demosaicizzazione"]
+        C --&gt; D["Riduzione rumore (profilato)"]
+        D --&gt; E["Correzione obiettivo"]
+        E --&gt; F["Esposizione"]
+        F --&gt; G["Ricostruzione alte luci"]
+        G --&gt; H["Calibrazione colore (CAT16)"]
+    end
+    subgraph TONE["COMPRESSIONE TONALE (scegline UNO)"]
+        H --&gt; I{"AgX"}
+        H --&gt; J{"Filmic RGB"}
+        H --&gt; K{"Sigmoideo"}
+    end
+    subgraph DISPLAY["FASE DISPLAY (display-referred)"]
+        I --&gt; L["Bilanciamento colore"]
+        J --&gt; L
+        K --&gt; L
+        L --&gt; M["Equalizzatore colore"]
+        M --&gt; N["Equalizzatore toni"]
+        N --&gt; O["Contrasto locale / Diffondi e nitidezza"]
+        O --&gt; P["Grana, Vignettatura, Filigrana"]
+    end
+    P --&gt; Q["Esporta (JPEG/TIFF)"]
+
+    style LINEARE fill:#1b4332,color:#fff
+    style TONE fill:#7b2cbf,color:#fff
+    style DISPLAY fill:#14213d,color:#fff</code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Prima di tutto</p>
 <p>Vai in <strong>Preferenze &gt; Elaborazione &gt; Flusso predefinito</strong> e seleziona <code>scene-referred (agx)</code>.
@@ -4205,8 +4175,6 @@ Imposta il tema su <code>darktable-elegant-grey</code> per valutare correttament
 <li><strong>Fotografare per Stupire</strong> (italiano, 10 video) — tutorial in italiano: interfaccia e catalogazione, bilanciamento del bianco, controllo colore, maschere parametriche, rimozione imperfezioni, riduzione rumore, equalizzatore toni, workflow ritratto</li>
 </ul>
 <p>Citati nelle pagine come <code>[^firststeps]</code>, <code>[^pipeline]</code>, <code>[^agx-guide]</code>, ecc.</p>
-<hr>
-<p><em>Guida aggiornata alle ultime funzionalità di darktable</em></p>
 
 
 
@@ -4214,6 +4182,27 @@ Imposta il tema su <code>darktable-elegant-grey</code> per valutare correttament
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:23:24 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

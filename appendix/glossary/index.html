@@ -101,6 +101,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -205,6 +206,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -453,6 +461,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -3704,8 +3733,6 @@
       
         
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -3788,33 +3815,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -3925,8 +3925,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4009,33 +4007,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -4080,7 +4051,7 @@
 </tr>
 <tr>
 <td><strong>AgX</strong></td>
-<td>Tone mapper piu' recente, risolve i Notorious 6. Basato su un modello fisico migliorato che gestisce la compressione tonale in modo più coerente con la percezione umana. Introdotta in darktable 5.4 come modulo <code>agx-tone-compressor</code> <sup id="fnref:agx-intro"><a class="footnote-ref" href="#fn:agx-intro">4</a></sup></td>
+<td>Tone mapper piu' recente, risolve i Notorious 6. Basato su un modello fisico migliorato che gestisce la compressione tonale in modo più coerente con la percezione umana. Introdotta in darktable 5.4 come modulo <code>agx-tone-compressor</code> <sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
 <td><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AGX</a></td>
 </tr>
 <tr>
@@ -4236,7 +4207,7 @@
 <td>-2.00 – +12.00 EV</td>
 <td>auto</td>
 <td>+6.50 EV (paesaggio), +4.32 EV (ritratto)</td>
-<td>Determina il punto di saturazione delle alte luci <sup id="fnref:filmic-params"><a class="footnote-ref" href="#fn:filmic-params">25</a></sup></td>
+<td>Determina il punto di saturazione delle alte luci <sup id="fnref3:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
 </tr>
 <tr>
 <td><code>filmic rgb</code></td>
@@ -4244,7 +4215,7 @@
 <td>-12.00 – +2.00 EV</td>
 <td>auto</td>
 <td>-10.00 EV (alta DR), -7.65 EV (media DR)</td>
-<td>Determina il punto di cutoff delle ombre <sup id="fnref2:filmic-params"><a class="footnote-ref" href="#fn:filmic-params">25</a></sup></td>
+<td>Determina il punto di cutoff delle ombre <sup id="fnref4:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
 </tr>
 <tr>
 <td><code>sigmoid</code></td>
@@ -4252,7 +4223,7 @@
 <td>0.10 – 5.00</td>
 <td>2.00</td>
 <td>2.80 (standard), 1.50 (soft)</td>
-<td>Valori &gt;3.00 producono contrasto aggressivo <sup id="fnref:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">26</a></sup></td>
+<td>Valori &gt;3.00 producono contrasto aggressivo <sup id="fnref:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">25</a></sup></td>
 </tr>
 <tr>
 <td><code>sigmoid</code></td>
@@ -4260,7 +4231,7 @@
 <td>-1.00 – +1.00</td>
 <td>0.00</td>
 <td>+0.25 (ritratti), -0.15 (paesaggi)</td>
-<td>Skew positivo appiattisce ombre, comprime luci <sup id="fnref2:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">26</a></sup></td>
+<td>Skew positivo appiattisce ombre, comprime luci <sup id="fnref2:sigmoid-params"><a class="footnote-ref" href="#fn:sigmoid-params">25</a></sup></td>
 </tr>
 <tr>
 <td><code>agx-tone-compressor</code></td>
@@ -4268,7 +4239,7 @@
 <td>-20.00% – +20.00%</td>
 <td>0.00%</td>
 <td>+10.00% (sicurezza su luci estreme)</td>
-<td>Aggiunge margine di sicurezza per clipping <sup id="fnref:agx-params"><a class="footnote-ref" href="#fn:agx-params">27</a></sup></td>
+<td>Aggiunge margine di sicurezza per clipping <sup id="fnref5:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup></td>
 </tr>
 <tr>
 <td><code>color balance rgb</code></td>
@@ -4276,7 +4247,7 @@
 <td>-100 – +100</td>
 <td>0</td>
 <td>+12 (vivacità moderata), -8 (desaturazione controllata)</td>
-<td>Applicato <em>dopo</em> il tone mapper <sup id="fnref:color-balance-params"><a class="footnote-ref" href="#fn:color-balance-params">28</a></sup></td>
+<td>Applicato <em>dopo</em> il tone mapper <sup id="fnref:color-balance-params"><a class="footnote-ref" href="#fn:color-balance-params">26</a></sup></td>
 </tr>
 <tr>
 <td><code>denoise (profiled)</code></td>
@@ -4284,7 +4255,7 @@
 <td>0 – 100</td>
 <td>30</td>
 <td>65 (ISO 6400), 12 (ISO 100)</td>
-<td>Modalità <code>non-local means</code> preserva bordi meglio di <code>wavelets</code> <sup id="fnref:denoise-params"><a class="footnote-ref" href="#fn:denoise-params">29</a></sup></td>
+<td>Modalità <code>non-local means</code> preserva bordi meglio di <code>wavelets</code> <sup id="fnref:denoise-params"><a class="footnote-ref" href="#fn:denoise-params">27</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4292,27 +4263,27 @@
 <ul>
 <li>
 <p><strong>Prima di tutto: configurare il flusso predefinito</strong><br>
-  Vai in <code>Preferenze &gt; Elaborazione &gt; Flusso predefinito</code> e seleziona <code>scene-referred (agx)</code> o <code>scene-referred (sigmoid)</code>. Disattiva <code>auto-apply base curve</code> se usi AgX o Sigmoid: il <code>base curve</code> è obsoleto in scene-referred <sup id="fnref:workflow-config"><a class="footnote-ref" href="#fn:workflow-config">30</a></sup>.</p>
+  Vai in <code>Preferenze &gt; Elaborazione &gt; Flusso predefinito</code> e seleziona <code>scene-referred (agx)</code> o <code>scene-referred (sigmoid)</code>. Disattiva <code>auto-apply base curve</code> se usi AgX o Sigmoid: il <code>base curve</code> è obsoleto in scene-referred <sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">4</a></sup>.</p>
 </li>
 <li>
 <p><strong>Evita il doppio bilanciamento del bianco</strong><br>
-  Il modulo <code>white balance</code> deve essere impostato su <code>as shot</code> o <code>camera reference</code>, non su <code>auto</code>. Il vero bilanciamento avviene in <code>color calibration</code> con CAT16. Se entrambi i moduli mostrano l’icona di avviso (triangolo rosso), uno sta sovrascrivendo l’altro <sup id="fnref:wb-conflict"><a class="footnote-ref" href="#fn:wb-conflict">31</a></sup>.</p>
+  Il modulo <code>white balance</code> deve essere impostato su <code>as shot</code> o <code>camera reference</code>, non su <code>auto</code>. Il vero bilanciamento avviene in <code>color calibration</code> con CAT16. Se entrambi i moduli mostrano l’icona di avviso (triangolo rosso), uno sta sovrascrivendo l’altro <sup id="fnref:wb-conflict"><a class="footnote-ref" href="#fn:wb-conflict">28</a></sup>.</p>
 </li>
 <li>
 <p><strong>Usa <code>color calibration</code> prima di <code>sigmoid</code>/<code>agx</code></strong><br>
-  Per evitare il Bezold-Brücke effect (arancio che diventa rosso), attenua i blu prima della compressione: <code>blue attenuation</code> 15–70%, <code>blue rotation</code> -1° a -5°. Questo sposta i colori fuori dal gamut non riproducibile dello schermo <sup id="fnref:bezold-brucke"><a class="footnote-ref" href="#fn:bezold-brucke">32</a></sup>.</p>
+  Per evitare il Bezold-Brücke effect (arancio che diventa rosso), attenua i blu prima della compressione: <code>blue attenuation</code> 15–70%, <code>blue rotation</code> -1° a -5°. Questo sposta i colori fuori dal gamut non riproducibile dello schermo <sup id="fnref:bezold-brucke"><a class="footnote-ref" href="#fn:bezold-brucke">29</a></sup>.</p>
 </li>
 <li>
 <p><strong>Non usare mai due tone mapper</strong><br>
-<code>agx-tone-compressor</code>, <code>sigmoid</code> e <code>filmic rgb</code> sono mutuamente esclusivi. Attivarne più di uno causa artefatti gravi (posterizzazione, clipping, shift cromatico). Il modulo attivo deve essere l’unico nella sezione “tone mapping” della pixelpipe <sup id="fnref:tone-mapper-conflict"><a class="footnote-ref" href="#fn:tone-mapper-conflict">33</a></sup>.</p>
+<code>agx-tone-compressor</code>, <code>sigmoid</code> e <code>filmic rgb</code> sono mutuamente esclusivi. Attivarne più di uno causa artefatti gravi (posterizzazione, clipping, shift cromatico). Il modulo attivo deve essere l’unico nella sezione “tone mapping” della pixelpipe <sup id="fnref:tone-mapper-conflict"><a class="footnote-ref" href="#fn:tone-mapper-conflict">30</a></sup>.</p>
 </li>
 <li>
 <p><strong>Per maschere complesse: SAM2 + raster</strong><br>
-  Genera una maschera con SAM2, esportala come <code>.pfm</code>, poi caricala in <code>raster mask</code>. Questo permette di usare la potenza AI senza dipendere dalla GPU in tempo reale durante l’editing <sup id="fnref:sam2-raster"><a class="footnote-ref" href="#fn:sam2-raster">34</a></sup>.</p>
+  Genera una maschera con SAM2, esportala come <code>.pfm</code>, poi caricala in <code>raster mask</code>. Questo permette di usare la potenza AI senza dipendere dalla GPU in tempo reale durante l’editing <sup id="fnref:sam2-raster"><a class="footnote-ref" href="#fn:sam2-raster">31</a></sup>.</p>
 </li>
 <li>
 <p><strong>Verifica il gamut prima dell’esportazione</strong><br>
-  Usa il modulo <code>gamut check</code> (disponibile come plugin esterno o tramite <code>mask manager</code>) per evidenziare aree fuori gamut sRGB. Se presenti, riduci <code>blue attenuation</code> o usa <code>color balance rgb</code> con <code>saturation</code> negativo prima del tone mapper <sup id="fnref:gamut-check"><a class="footnote-ref" href="#fn:gamut-check">35</a></sup>.</p>
+  Usa il modulo <code>gamut check</code> (disponibile come plugin esterno o tramite <code>mask manager</code>) per evidenziare aree fuori gamut sRGB. Se presenti, riduci <code>blue attenuation</code> o usa <code>color balance rgb</code> con <code>saturation</code> negativo prima del tone mapper <sup id="fnref:gamut-check"><a class="footnote-ref" href="#fn:gamut-check">32</a></sup>.</p>
 </li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
@@ -4336,11 +4307,11 @@
 <li id="fn:filmic-versions">
 <p>A Dabble in Photography — How to get accurate colours in darktable. https://www.youtube.com/watch?v=TMlF85TFIUo&nbsp;<a class="footnote-backref" href="#fnref:filmic-versions" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
-<li id="fn:agx-intro">
-<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&nbsp;<a class="footnote-backref" href="#fnref:agx-intro" title="Jump back to footnote 4 in the text">↩</a></p>
+<li id="fn:dt54-update">
+<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&nbsp;<a class="footnote-backref" href="#fnref:dt54-update" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54-update" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54-update" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt54-update" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt54-update" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:sigmoid-modes">
-<p>darktable user manual — sigmoid. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-modes" title="Jump back to footnote 5 in the text">↩</a></p>
+<p>darktable user manual — sigmoid (§ modalità per channel / rgb ratio). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-modes" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:cat16">
 <p>darktable Manual — Color Calibration. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/&nbsp;<a class="footnote-backref" href="#fnref:cat16" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:cat16" title="Jump back to footnote 6 in the text">↩</a></p>
@@ -4367,7 +4338,7 @@
 <p>A Dabble in Photography — External masks. https://www.youtube.com/watch?v=7sOAxcNaP4M&nbsp;<a class="footnote-backref" href="#fnref:pfm-format" title="Jump back to footnote 13 in the text">↩</a></p>
 </li>
 <li id="fn:asc-cdl">
-<p>darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/&nbsp;<a class="footnote-backref" href="#fnref:asc-cdl" title="Jump back to footnote 14 in the text">↩</a></p>
+<p>darktable Manual — Color Balance RGB (§ ASC CDL). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/&nbsp;<a class="footnote-backref" href="#fnref:asc-cdl" title="Jump back to footnote 14 in the text">↩</a></p>
 </li>
 <li id="fn:aces-support">
 <p>darktable Manual — ACES Support. https://docs.darktable.org/usermanual/development/en/special-topics/color-management/aces/&nbsp;<a class="footnote-backref" href="#fnref:aces-support" title="Jump back to footnote 15 in the text">↩</a></p>
@@ -4399,38 +4370,29 @@
 <li id="fn:exposure-param">
 <p>darktable Manual — Exposure. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/&nbsp;<a class="footnote-backref" href="#fnref:exposure-param" title="Jump back to footnote 24 in the text">↩</a></p>
 </li>
-<li id="fn:filmic-params">
-<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&nbsp;<a class="footnote-backref" href="#fnref:filmic-params" title="Jump back to footnote 25 in the text">↩</a><a class="footnote-backref" href="#fnref2:filmic-params" title="Jump back to footnote 25 in the text">↩</a></p>
-</li>
 <li id="fn:sigmoid-params">
-<p>darktable user manual — sigmoid. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-params" title="Jump back to footnote 26 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-params" title="Jump back to footnote 26 in the text">↩</a></p>
-</li>
-<li id="fn:agx-params">
-<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&nbsp;<a class="footnote-backref" href="#fnref:agx-params" title="Jump back to footnote 27 in the text">↩</a></p>
+<p>darktable user manual — sigmoid (§ skew). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-params" title="Jump back to footnote 25 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-params" title="Jump back to footnote 25 in the text">↩</a></p>
 </li>
 <li id="fn:color-balance-params">
-<p>darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/&nbsp;<a class="footnote-backref" href="#fnref:color-balance-params" title="Jump back to footnote 28 in the text">↩</a></p>
+<p>darktable Manual — Color Balance RGB (§ saturation). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/&nbsp;<a class="footnote-backref" href="#fnref:color-balance-params" title="Jump back to footnote 26 in the text">↩</a></p>
 </li>
 <li id="fn:denoise-params">
-<p>darktable Manual — Denoise (profiled). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/&nbsp;<a class="footnote-backref" href="#fnref:denoise-params" title="Jump back to footnote 29 in the text">↩</a></p>
-</li>
-<li id="fn:workflow-config">
-<p>darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q&nbsp;<a class="footnote-backref" href="#fnref:workflow-config" title="Jump back to footnote 30 in the text">↩</a></p>
+<p>darktable Manual — Denoise (profiled). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/&nbsp;<a class="footnote-backref" href="#fnref:denoise-params" title="Jump back to footnote 27 in the text">↩</a></p>
 </li>
 <li id="fn:wb-conflict">
-<p>darktable Full edit #1 — YouTube. https://www.youtube.com/watch?v=DzdGL30lYjU&nbsp;<a class="footnote-backref" href="#fnref:wb-conflict" title="Jump back to footnote 31 in the text">↩</a></p>
+<p>darktable Full edit #1 — YouTube. https://www.youtube.com/watch?v=DzdGL30lYjU&nbsp;<a class="footnote-backref" href="#fnref:wb-conflict" title="Jump back to footnote 28 in the text">↩</a></p>
 </li>
 <li id="fn:bezold-brucke">
-<p>How to get accurate colours in darktable — YouTube. https://www.youtube.com/watch?v=TMlF85TFIUo&nbsp;<a class="footnote-backref" href="#fnref:bezold-brucke" title="Jump back to footnote 32 in the text">↩</a></p>
+<p>How to get accurate colours in darktable — YouTube. https://www.youtube.com/watch?v=TMlF85TFIUo&nbsp;<a class="footnote-backref" href="#fnref:bezold-brucke" title="Jump back to footnote 29 in the text">↩</a></p>
 </li>
 <li id="fn:tone-mapper-conflict">
-<p>darktable Manual — Sigmoid Usage Notes. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:tone-mapper-conflict" title="Jump back to footnote 33 in the text">↩</a></p>
+<p>darktable Manual — Sigmoid Usage Notes. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:tone-mapper-conflict" title="Jump back to footnote 30 in the text">↩</a></p>
 </li>
 <li id="fn:sam2-raster">
-<p>A Dabble in Photography — AI masks. https://www.youtube.com/watch?v=7yd5riDmUjk&nbsp;<a class="footnote-backref" href="#fnref:sam2-raster" title="Jump back to footnote 34 in the text">↩</a></p>
+<p>A Dabble in Photography — AI masks. https://www.youtube.com/watch?v=7yd5riDmUjk&nbsp;<a class="footnote-backref" href="#fnref:sam2-raster" title="Jump back to footnote 31 in the text">↩</a></p>
 </li>
 <li id="fn:gamut-check">
-<p>darktable Manual — Gamut Check Plugin. https://github.com/darktable-org/darktable/tree/master/src/external/gamutcheck&nbsp;<a class="footnote-backref" href="#fnref:gamut-check" title="Jump back to footnote 35 in the text">↩</a></p>
+<p>darktable Manual — Gamut Check Plugin. https://github.com/darktable-org/darktable/tree/master/src/external/gamutcheck&nbsp;<a class="footnote-backref" href="#fnref:gamut-check" title="Jump back to footnote 32 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -4441,6 +4403,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:18:32 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

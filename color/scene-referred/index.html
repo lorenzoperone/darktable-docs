@@ -101,6 +101,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -205,6 +206,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -453,6 +461,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -2956,8 +2985,6 @@
       
         
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -3146,33 +3173,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -4031,8 +4031,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4221,33 +4219,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -4310,20 +4281,20 @@
 </tbody>
 </table>
 <h3 id="esempio-pratico">Esempio pratico<a class="headerlink" href="#esempio-pratico" title="Permanent link">¶</a></h3>
-<p>Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred, quando alzi l'esposizione, l'arancione vira verso un giallo-limone artificiale. Nel flusso scene-referred, l'arancione rimane arancione anche a esposizioni elevate — purché il tone mapper sia configurato correttamente: con <code>sigmoid</code> in modalità <em>per channel</em> e <em>preserve hue</em> impostato a <code>85%</code>, la transizione da arancione a bianco avviene lungo una curva cromatica naturale, senza deviazioni verso il giallo.<sup id="fnref:sigmoid-preserve-hue"><a class="footnote-ref" href="#fn:sigmoid-preserve-hue">6</a></sup></p>
+<p>Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred, quando alzi l'esposizione, l'arancione vira verso un giallo-limone artificiale. Nel flusso scene-referred, l'arancione rimane arancione anche a esposizioni elevate — purché il tone mapper sia configurato correttamente: con <code>sigmoid</code> in modalità <em>per channel</em> e <em>preserve hue</em> impostato a <code>85%</code>, la transizione da arancione a bianco avviene lungo una curva cromatica naturale, senza deviazioni verso il giallo.<sup id="fnref:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></p>
 <div class="admonition tip">
 <p class="admonition-title">Configurazione iniziale</p>
 <p><strong>Preferenze &gt; Elaborazione &gt; Flusso predefinito</strong>: seleziona <code>scene-referred (agx)</code>. Imposta anche <em>auto apply pixel workflow defaults</em> su <em>scene-referred</em> e <em>chromatic adaptation</em> su <em>modern</em>.<sup id="fnref:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup><br>
-Inoltre, abilita <strong>Color assessment mode</strong> (Ctrl+B) per visualizzare l’immagine su sfondo grigio 18%, essenziale per valutare correttamente l’esposizione tonale.<sup id="fnref:color-assessment"><a class="footnote-ref" href="#fn:color-assessment">7</a></sup></p>
+Inoltre, abilita <strong>Color assessment mode</strong> (Ctrl+B) per visualizzare l’immagine su sfondo grigio 18%, essenziale per valutare correttamente l’esposizione tonale.<sup id="fnref2:dt54-workflow"><a class="footnote-ref" href="#fn:dt54-workflow">7</a></sup></p>
 </div>
 <h2 id="la-pipeline-scene-referred">La pipeline scene-referred<a class="headerlink" href="#la-pipeline-scene-referred" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>RAW --&gt; Raw B/W Point --&gt; White Balance (camera ref) --&gt; Demosaic
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    --&gt; Exposure --&gt; Color Calibration (CAT16)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    --&gt; [moduli lineari: Color Balance RGB, Tone EQ, Denoise Profiled, ...]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    --&gt; Tone Mapping (AgX / Sigmoid / Filmic)
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    --&gt; [moduli display: Vignette, Watermark, Sharpen, ...]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    --&gt; Output Color Profile --&gt; Export
-</code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    A["RAW"] --&gt; B["Raw B/W Point"] --&gt; C["White Balance (camera ref)"] --&gt; D["Demosaic"]
+    --&gt; E["Exposure"] --&gt; F["Color Calibration (CAT16)"]
+    --&gt; G["moduli lineari: Color Balance RGB, Tone EQ, Denoise Profiled, ..."]
+    --&gt; H["Tone Mapping (AgX / Sigmoid / Filmic)"]
+    --&gt; I["moduli display: Vignette, Watermark, Sharpen, ..."]
+    --&gt; J["Output Color Profile"] --&gt; K["Export"]</code></pre>
 <div class="admonition danger">
 <p class="admonition-title">Moduli disabilitati</p>
 <p>NON modificare <em>raw black/white point</em>, <em>input color profile</em>, <em>output color profile</em>. Sono essenziali per la pipeline.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup><br>
@@ -4401,7 +4372,7 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <td><code>-1.0</code>–<code>+1.0</code></td>
 <td><code>0.0</code></td>
 <td><code>-0.2</code>–<code>+0.3</code></td>
-<td>Sposta il fulcro della compressione: <code>+0.3</code> preserva dettagli nelle luci, <code>-0.2</code> approfondisce le ombre senza schiacciarle.<sup id="fnref:sigmoid-skew"><a class="footnote-ref" href="#fn:sigmoid-skew">13</a></sup></td>
+<td>Sposta il fulcro della compressione: <code>+0.3</code> preserva dettagli nelle luci, <code>-0.2</code> approfondisce le ombre senza schiacciarle.<sup id="fnref3:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>color processing</code></td>
@@ -4415,40 +4386,40 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <td><code>0%</code>–<code>100%</code></td>
 <td><code>100%</code></td>
 <td><code>70%</code>–<code>90%</code></td>
-<td>A <code>100%</code>: comportamento identico a <code>rgb ratio</code>. A <code>70%</code>: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.<sup id="fnref2:sigmoid-preserve-hue"><a class="footnote-ref" href="#fn:sigmoid-preserve-hue">6</a></sup></td>
+<td>A <code>100%</code>: comportamento identico a <code>rgb ratio</code>. A <code>70%</code>: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.<sup id="fnref4:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>target black</code></td>
 <td><code>0.0</code>–<code>0.1</code></td>
 <td><code>0.0</code></td>
 <td><code>0.0</code></td>
-<td>Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare <em>global offset</em> in <code>color balance rgb</code>.<sup id="fnref:sigmoid-target-black"><a class="footnote-ref" href="#fn:sigmoid-target-black">14</a></sup></td>
+<td>Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare <em>global offset</em> in <code>color balance rgb</code>.<sup id="fnref5:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>target white</code></td>
 <td><code>1.0</code>–<code>10.0</code></td>
 <td><code>1.0</code></td>
 <td><code>1.0</code>–<code>2.5</code></td>
-<td>Valori &gt;2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.<sup id="fnref:sigmoid-target-white"><a class="footnote-ref" href="#fn:sigmoid-target-white">15</a></sup></td>
+<td>Valori &gt;2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.<sup id="fnref6:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>red/green/blue attenuation</code></td>
 <td><code>0.0</code>–<code>1.0</code></td>
 <td><code>0.0</code></td>
 <td><code>0.15</code>–<code>0.40</code></td>
-<td>Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore <code>0.25</code> per cieli, <code>0.35</code> per luci artificiali intense.<sup id="fnref:sigmoid-attenuation"><a class="footnote-ref" href="#fn:sigmoid-attenuation">16</a></sup></td>
+<td>Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore <code>0.25</code> per cieli, <code>0.35</code> per luci artificiali intense.<sup id="fnref7:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>recover purity</code></td>
 <td><code>0%</code>–<code>100%</code></td>
 <td><code>100%</code></td>
 <td><code>80%</code>–<code>100%</code></td>
-<td>Ripristina la saturazione nelle medie luci. A <code>80%</code>: mantiene un leggero “smorzamento” naturale delle alte luci.<sup id="fnref:sigmoid-recover-purity"><a class="footnote-ref" href="#fn:sigmoid-recover-purity">17</a></sup></td>
+<td>Ripristina la saturazione nelle medie luci. A <code>80%</code>: mantiene un leggero “smorzamento” naturale delle alte luci.<sup id="fnref8:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p>✅ <strong>Best practice</strong>: usa sempre il preset <em>smooth</em> come punto di partenza per <code>sigmoid</code>. Modifica <em>red/green/blue rotation</em> solo se necessario: valori tipici sono <code>R: -2°</code>, <code>G: +1°</code>, <code>B: -3°</code> per correggere lievi sbilanciamenti cromatici nei bianchi puri.<sup id="fnref:sigmoid-smooth-preset"><a class="footnote-ref" href="#fn:sigmoid-smooth-preset">18</a></sup></p>
+<p>✅ <strong>Best practice</strong>: usa sempre il preset <em>smooth</em> come punto di partenza per <code>sigmoid</code>. Modifica <em>red/green/blue rotation</em> solo se necessario: valori tipici sono <code>R: -2°</code>, <code>G: +1°</code>, <code>B: -3°</code> per correggere lievi sbilanciamenti cromatici nei bianchi puri.<sup id="fnref2:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></p>
 </blockquote>
 <h3 id="filmic-rgb-tone-mapping-robusto-alternativa-a-sigmoid"><code>filmic rgb</code> — Tone mapping robusto (alternativa a sigmoid)<a class="headerlink" href="#filmic-rgb-tone-mapping-robusto-alternativa-a-sigmoid" title="Permanent link">¶</a></h3>
 <table>
@@ -4467,28 +4438,28 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <td><code>-5.0</code>–<code>+5.0</code> EV</td>
 <td><code>+0.7</code> EV</td>
 <td><code>+0.5</code>–<code>+0.9</code> EV</td>
-<td>Compensa la mancanza della curva tonale in-camera. Disattiva se usi <em>exposure</em> con valore personalizzato.<sup id="fnref:filmic-exposure"><a class="footnote-ref" href="#fn:filmic-exposure">19</a></sup></td>
+<td>Compensa la mancanza della curva tonale in-camera. Disattiva se usi <em>exposure</em> con valore personalizzato.<sup id="fnref:filmic-exposure"><a class="footnote-ref" href="#fn:filmic-exposure">13</a></sup></td>
 </tr>
 <tr>
 <td><code>black relative exposure</code></td>
 <td><code>-5.0</code>–<code>+5.0</code> EV</td>
 <td><code>-6.5</code> EV</td>
 <td><code>-5.0</code>–<code>-7.0</code> EV</td>
-<td>Determina quanto nero appare nero: <code>-6.0</code> per immagini high-key, <code>-7.0</code> per low-key.<sup id="fnref:filmic-black"><a class="footnote-ref" href="#fn:filmic-black">20</a></sup></td>
+<td>Determina quanto nero appare nero: <code>-6.0</code> per immagini high-key, <code>-7.0</code> per low-key.<sup id="fnref:filmic-black"><a class="footnote-ref" href="#fn:filmic-black">14</a></sup></td>
 </tr>
 <tr>
 <td><code>grey point</code></td>
 <td><code>0.01</code>–<code>1.0</code></td>
 <td><code>0.1845</code></td>
 <td><code>0.18</code>–<code>0.20</code></td>
-<td>Corrisponde al 18.45% di riflettanza: non modificarlo se non stai calibrando per un dispositivo specifico.<sup id="fnref:filmic-grey"><a class="footnote-ref" href="#fn:filmic-grey">21</a></sup></td>
+<td>Corrisponde al 18.45% di riflettanza: non modificarlo se non stai calibrando per un dispositivo specifico.<sup id="fnref:filmic-grey"><a class="footnote-ref" href="#fn:filmic-grey">15</a></sup></td>
 </tr>
 <tr>
 <td><code>dynamic range</code></td>
 <td><code>1.0</code>–<code>20.0</code> stops</td>
 <td><code>12.0</code> stops</td>
 <td><code>10.0</code>–<code>14.0</code> stops</td>
-<td>Imposta la compressione totale: <code>12.0</code> per SDR, <code>14.0</code> per HDR destinato a monitor OLED.<sup id="fnref:filmic-dynamic-range"><a class="footnote-ref" href="#fn:filmic-dynamic-range">22</a></sup></td>
+<td>Imposta la compressione totale: <code>12.0</code> per SDR, <code>14.0</code> per HDR destinato a monitor OLED.<sup id="fnref:filmic-dynamic-range"><a class="footnote-ref" href="#fn:filmic-dynamic-range">16</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4509,28 +4480,28 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <td><code>as shot</code>, <code>detect from image surfaces</code>, <code>detect from image edges</code>, <code>custom</code></td>
 <td><code>as shot</code></td>
 <td><code>detect from image surfaces</code></td>
-<td>Il metodo <em>surfaces</em> è più affidabile per interni illuminati uniformemente; <em>edges</em> per paesaggi con contrasto elevato.<sup id="fnref:cat16-illuminant"><a class="footnote-ref" href="#fn:cat16-illuminant">23</a></sup></td>
+<td>Il metodo <em>surfaces</em> è più affidabile per interni illuminati uniformemente; <em>edges</em> per paesaggi con contrasto elevato.<sup id="fnref:cat16-illuminant"><a class="footnote-ref" href="#fn:cat16-illuminant">17</a></sup></td>
 </tr>
 <tr>
 <td><code>temperature</code></td>
 <td><code>1000K</code>–<code>25000K</code></td>
 <td>auto</td>
 <td><code>5000K</code>–<code>6500K</code></td>
-<td>Regola solo se il rilevamento automatico fallisce: differenze &gt;±200K sono visibili solo in ombre profonde.<sup id="fnref:cat16-temp"><a class="footnote-ref" href="#fn:cat16-temp">24</a></sup></td>
+<td>Regola solo se il rilevamento automatico fallisce: differenze &gt;±200K sono visibili solo in ombre profonde.<sup id="fnref:cat16-temp"><a class="footnote-ref" href="#fn:cat16-temp">18</a></sup></td>
 </tr>
 <tr>
 <td><code>tint</code></td>
 <td><code>-100</code>–<code>+100</code></td>
 <td>auto</td>
 <td><code>-10</code>–<code>+15</code></td>
-<td>Corregge dominanti verdi/magenta: valori oltre ±20 indicano problemi di illuminazione mista.<sup id="fnref:cat16-tint"><a class="footnote-ref" href="#fn:cat16-tint">25</a></sup></td>
+<td>Corregge dominanti verdi/magenta: valori oltre ±20 indicano problemi di illuminazione mista.<sup id="fnref:cat16-tint"><a class="footnote-ref" href="#fn:cat16-tint">19</a></sup></td>
 </tr>
 <tr>
 <td><code>chromatic adaptation</code></td>
 <td><code>Bradford</code>, <code>Von Kries</code>, <code>CAT02</code>, <code>CAT16</code></td>
 <td><code>CAT16</code></td>
 <td><code>CAT16</code></td>
-<td>CAT16 è lo standard ISO 20654: garantisce coerenza cromatica su tutte le intensità luminose.<sup id="fnref:cat16-standard"><a class="footnote-ref" href="#fn:cat16-standard">26</a></sup></td>
+<td>CAT16 è lo standard ISO 20654: garantisce coerenza cromatica su tutte le intensità luminose.<sup id="fnref:cat16-standard"><a class="footnote-ref" href="#fn:cat16-standard">20</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4538,30 +4509,30 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <h3 id="fusione-e-mascheratura-in-spazio-scene-referred">✅ Fusione e mascheratura in spazio scene-referred<a class="headerlink" href="#fusione-e-mascheratura-in-spazio-scene-referred" title="Permanent link">¶</a></h3>
 <p>Nel flusso scene-referred, la fusione (<em>blending</em>) richiede attenzione specifica:</p>
 <ul>
-<li>I <strong>blend modes</strong> come <code>overlay</code>, <code>softlight</code>, <code>hardlight</code> <strong>non sono disponibili</strong> nello spazio <code>RGB (scene)</code> perché assumono un fulcro fisso a 50% grigio — concetto inesistente in scala lineare.<sup id="fnref:blend-modes-scene"><a class="footnote-ref" href="#fn:blend-modes-scene">27</a></sup>  </li>
+<li>I <strong>blend modes</strong> come <code>overlay</code>, <code>softlight</code>, <code>hardlight</code> <strong>non sono disponibili</strong> nello spazio <code>RGB (scene)</code> perché assumono un fulcro fisso a 50% grigio — concetto inesistente in scala lineare.<sup id="fnref:blend-modes-scene"><a class="footnote-ref" href="#fn:blend-modes-scene">21</a></sup>  </li>
 <li>Usa invece <code>addition</code>, <code>multiply</code>, <code>divide</code>, o <code>normal</code>, tutti compatibili con valori &gt;1.0 — ma <strong>devi impostare il <code>blend fulcrum</code></strong> (valore di riferimento per la fusione).  </li>
-<li>Per <code>multiply</code>: un <code>fulcrum = 0.18</code> (grigio medio) rende i valori &lt;0.18 più scuri e quelli &gt;0.18 più chiari, replicando un filtro ND variabile.<sup id="fnref:blend-fulcrum-multiply"><a class="footnote-ref" href="#fn:blend-fulcrum-multiply">28</a></sup>  </li>
+<li>Per <code>multiply</code>: un <code>fulcrum = 0.18</code> (grigio medio) rende i valori &lt;0.18 più scuri e quelli &gt;0.18 più chiari, replicando un filtro ND variabile.<sup id="fnref:blend-fulcrum-multiply"><a class="footnote-ref" href="#fn:blend-fulcrum-multiply">22</a></sup>  </li>
 <li>Per <code>addition</code>: <code>fulcrum = 0.0</code> somma direttamente i valori; <code>fulcrum = 0.5</code> applica una correzione proporzionale, utile per correzioni locali di esposizione.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alle maschere parametriche</p>
 <p>Quando usi maschere parametriche in <code>RGB (scene)</code> space, i valori di soglia (es. <em>red channel min/max</em>) devono essere impostati tenendo conto della scala lineare:<br>
 - Un valore di <code>red = 0.8</code> corrisponde a una luminosità reale ~4× superiore a <code>0.4</code>.<br>
-- Per selezionare solo le luci intense (es. riflessi), usa <code>red min: 1.2</code>, <code>red max: +∞</code> — non <code>0.8–1.0</code> come in display-referred.<sup id="fnref:parametric-mask-scene"><a class="footnote-ref" href="#fn:parametric-mask-scene">29</a></sup></p>
+- Per selezionare solo le luci intense (es. riflessi), usa <code>red min: 1.2</code>, <code>red max: +∞</code> — non <code>0.8–1.0</code> come in display-referred.<sup id="fnref:parametric-mask-scene"><a class="footnote-ref" href="#fn:parametric-mask-scene">23</a></sup></p>
 </div>
 <h3 id="workflow-iterativo-per-immagini-ad-alta-dinamica">✅ Workflow iterativo per immagini ad alta dinamica<a class="headerlink" href="#workflow-iterativo-per-immagini-ad-alta-dinamica" title="Permanent link">¶</a></h3>
 <p>Per foto con luci bruciate (es. sole inquadrato, finestre sovraesposte):</p>
 <ol>
-<li>Attiva <code>highlight reconstruction</code> <strong>prima di <code>demosaic</code></strong>, con <em>method = guided</em> e <em>strength = 0.6</em> → recupera struttura cromatica senza artefatti.<sup id="fnref:highlight-reconstruction"><a class="footnote-ref" href="#fn:highlight-reconstruction">30</a></sup>  </li>
+<li>Attiva <code>highlight reconstruction</code> <strong>prima di <code>demosaic</code></strong>, con <em>method = guided</em> e <em>strength = 0.6</em> → recupera struttura cromatica senza artefatti.<sup id="fnref:highlight-reconstruction"><a class="footnote-ref" href="#fn:highlight-reconstruction">24</a></sup>  </li>
 <li>Usa <code>exposure</code> per posizionare il grigio medio (<code>0.18</code>) sul soggetto principale — ignora temporaneamente le luci.  </li>
 <li>Applica <code>sigmoid</code> con <code>skew = +0.25</code>, <code>contrast = 2.2</code>, <code>preserve hue = 75%</code>.  </li>
 <li>Se le luci restano “piatte”, aumenta <code>red attenuation = 0.3</code>, <code>blue attenuation = 0.25</code>, <code>recover purity = 85%</code>.  </li>
-<li>Verifica il risultato con <code>vectorscope</code>: i colori devono rimanere all’interno del triangolo sRGB, senza accumuli ai bordi (segno di hue skewing eccessivo).<sup id="fnref:vectorscope-check"><a class="footnote-ref" href="#fn:vectorscope-check">31</a></sup></li>
+<li>Verifica il risultato con <code>vectorscope</code>: i colori devono rimanere all’interno del triangolo sRGB, senza accumuli ai bordi (segno di hue skewing eccessivo).<sup id="fnref3:dt54-workflow"><a class="footnote-ref" href="#fn:dt54-workflow">7</a></sup></li>
 </ol>
 <h3 id="gestione-del-rumore-in-scene-referred">✅ Gestione del rumore in scene-referred<a class="headerlink" href="#gestione-del-rumore-in-scene-referred" title="Permanent link">¶</a></h3>
 <p>Il <code>denoise profiled</code> funziona meglio <strong>prima</strong> di <code>exposure</code> e <code>color calibration</code>, perché:
 - Il rumore digitale influenza negativamente i selettori automatici di bilanciamento del bianco.
-- Il profilo di rumore è calibrato sul dato RAW lineare: applicarlo dopo la compressione tonale riduce l’efficacia del denoise.<sup id="fnref:denoise-order"><a class="footnote-ref" href="#fn:denoise-order">33</a></sup></p>
+- Il profilo di rumore è calibrato sul dato RAW lineare: applicarlo dopo la compressione tonale riduce l’efficacia del denoise.<sup id="fnref:dt54-workflow"><a class="footnote-ref" href="#fn:dt54-workflow">7</a></sup></p>
 <p>Valori consigliati per ISO 3200 (sensore APS-C):
 - <code>non-local means</code>: <code>spatial = 2.8</code>, <code>range = 0.12</code><br>
 - <code>wavelets</code>: <code>scale 1 = 0.03</code>, <code>scale 2 = 0.015</code>, <code>scale 3 = 0.005</code></p>
@@ -4570,110 +4541,86 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <li><a href="https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/">darktable.info — Scene-Referred Workflow (2026)</a> — <em>Spiegazione chiara con diagrammi</em>  </li>
 <li><a href="https://avidandrew.com/darktable-scene-referred-workflow.html">Avid Andrew — The Darktable Scene-Referred Workflow</a> — <em>Guida completa con immagini</em>  </li>
 <li><a href="https://notebook.stereofictional.com/how-to-get-started-with-darktable-2026-edition">Nis' Notebook — How to Get Started with darktable, 2026 Edition</a> — <em>Meta-guida con tutte le risorse migliori</em>  </li>
-<li><a href="https://pixls.us/articles/darktable-sigmoid-deep-dive/">PIXLS.US — Sigmoid Deep Dive</a> — <em>Analisi tecnica dei parametri primaries e hue preservation</em><sup id="fnref:pixls-sigmoid"><a class="footnote-ref" href="#fn:pixls-sigmoid">32</a></sup></li>
+<li><a href="https://pixls.us/articles/darktable-sigmoid-deep-dive/">PIXLS.US — Sigmoid Deep Dive</a> — <em>Analisi tecnica dei parametri primaries e hue preservation</em><sup id="fnref:pixls-sigmoid"><a class="footnote-ref" href="#fn:pixls-sigmoid">25</a></sup></li>
 </ul>
 <h2 id="fonti">Fonti<a class="headerlink" href="#fonti" title="Permanent link">¶</a></h2>
 <div class="footnote">
 <hr>
 <ol>
 <li id="fn:manual-scene">
-<p><em>darktable User Manual -- Scene-referred and display-referred workflow</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-*.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-scene" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><em>darktable User Manual — Scene-referred and display-referred workflow</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:manual-scene" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:firststeps">
-<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:pipeline">
-<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 3 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:pixls-rgb">
-<p><em>PIXLS.US -- darktable 3: RGB or Lab?</em>, <a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">pixls.us</a> | <code>processed/pixls-articles/articles-darktable-3-rgb-or-lab-which-modules-help.md</code>&nbsp;<a class="footnote-backref" href="#fnref:pixls-rgb" title="Jump back to footnote 4 in the text">↩</a></p>
+<p><em>PIXLS.US — darktable 3: RGB or Lab?</em>, <a href="https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/">pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:pixls-rgb" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:dtfr-scene">
-<p><em>darktable.fr -- Apprendre</em>, <a href="https://darktable.fr/apprendre/">darktable.fr</a> | <code>processed/darktable-fr/apprendre.md</code>&nbsp;<a class="footnote-backref" href="#fnref:dtfr-scene" title="Jump back to footnote 5 in the text">↩</a></p>
+<p><em>darktable.fr — Apprendre</em>, <a href="https://darktable.fr/apprendre/">darktable.fr</a>&nbsp;<a class="footnote-backref" href="#fnref:dtfr-scene" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
-<li id="fn:sigmoid-preserve-hue">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#preserve-hue-per-channel-mode-only">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-preserve-hue" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-preserve-hue" title="Jump back to footnote 6 in the text">↩</a></p>
+<li id="fn:sigmoid-manual">
+<p><em>darktable user manual — sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref3:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref4:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref5:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref6:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref7:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a><a class="footnote-backref" href="#fnref8:sigmoid-manual" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
-<li id="fn:color-assessment">
-<p><em>darktable 5.4 — A Introductory Beginner Workflow</em>, <a href="https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755">discuss.pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:color-assessment" title="Jump back to footnote 7 in the text">↩</a></p>
+<li id="fn:dt54-workflow">
+<p><em>darktable 5.4 — A Introductory Beginner Workflow</em>, <a href="https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755">discuss.pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:dt54-workflow" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54-workflow" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54-workflow" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:raw-bw-point">
-<p><em>darktable user manual - the pixelpipe &amp; module order</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/pixelpipe/the-pixelpipe-and-module-order/#changing-module-order">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:raw-bw-point" title="Jump back to footnote 8 in the text">↩</a></p>
+<p><em>darktable user manual — the pixelpipe &amp; module order</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/pixelpipe/the-pixelpipe-and-module-order/#changing-module-order">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:raw-bw-point" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:rec2020-linear">
 <p><em>[ENG] Linear Rec2020</em>, <a href="https://www.youtube.com/watch?v=DsZYv_aRWjE">A Dabble in Photography</a>&nbsp;<a class="footnote-backref" href="#fnref:rec2020-linear" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:adobe-rgb-gamut">
-<p><em>darktable user manual - darktable's color pipeline</em>, <a href="https://docs.darktable.org/usermanual/development/en/special-topics/color-pipeline/#display-referred-workflow">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:adobe-rgb-gamut" title="Jump back to footnote 10 in the text">↩</a></p>
+<p><em>darktable user manual — darktable's color pipeline</em>, <a href="https://docs.darktable.org/usermanual/development/en/special-topics/color-pipeline/#display-referred-workflow">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:adobe-rgb-gamut" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:prophoto-limitations">
-<p><em>darktable user manual - color management</em>, <a href="https://docs.darktable.org/usermanual/development/en/special-topics/color-management/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:prophoto-limitations" title="Jump back to footnote 11 in the text">↩</a></p>
+<p><em>darktable user manual — color management</em>, <a href="https://docs.darktable.org/usermanual/development/en/special-topics/color-management/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:prophoto-limitations" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 <li id="fn:input-profile-warning">
-<p><em>darktable user manual - processing</em>, <a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/processing/#image-processing">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:input-profile-warning" title="Jump back to footnote 12 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-skew">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#skew">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-skew" title="Jump back to footnote 13 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-target-black">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#target-black">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-target-black" title="Jump back to footnote 14 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-target-white">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#target-white">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-target-white" title="Jump back to footnote 15 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-attenuation">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#red-green-blue-attenuation">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-attenuation" title="Jump back to footnote 16 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-recover-purity">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#recover-purity">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-recover-purity" title="Jump back to footnote 17 in the text">↩</a></p>
-</li>
-<li id="fn:sigmoid-smooth-preset">
-<p><em>darktable user manual - sigmoid</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#primaries">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-smooth-preset" title="Jump back to footnote 18 in the text">↩</a></p>
+<p><em>darktable user manual — processing</em>, <a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/processing/#image-processing">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:input-profile-warning" title="Jump back to footnote 12 in the text">↩</a></p>
 </li>
 <li id="fn:filmic-exposure">
-<p><em>darktable user manual - filmic rgb</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#exposure-compensation">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-exposure" title="Jump back to footnote 19 in the text">↩</a></p>
+<p><em>darktable user manual — filmic rgb (§ exposure compensation)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#exposure-compensation">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-exposure" title="Jump back to footnote 13 in the text">↩</a></p>
 </li>
 <li id="fn:filmic-black">
-<p><em>darktable user manual - filmic rgb</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#black-relative-exposure">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-black" title="Jump back to footnote 20 in the text">↩</a></p>
+<p><em>darktable user manual — filmic rgb (§ black relative exposure)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#black-relative-exposure">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-black" title="Jump back to footnote 14 in the text">↩</a></p>
 </li>
 <li id="fn:filmic-grey">
-<p><em>darktable user manual - filmic rgb</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#grey-point">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-grey" title="Jump back to footnote 21 in the text">↩</a></p>
+<p><em>darktable user manual — filmic rgb (§ grey point)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#grey-point">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-grey" title="Jump back to footnote 15 in the text">↩</a></p>
 </li>
 <li id="fn:filmic-dynamic-range">
-<p><em>darktable user manual - filmic rgb</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#dynamic-range">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-dynamic-range" title="Jump back to footnote 22 in the text">↩</a></p>
+<p><em>darktable user manual — filmic rgb (§ dynamic range)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#dynamic-range">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:filmic-dynamic-range" title="Jump back to footnote 16 in the text">↩</a></p>
 </li>
 <li id="fn:cat16-illuminant">
-<p><em>darktable user manual - color calibration</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#illuminant">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-illuminant" title="Jump back to footnote 23 in the text">↩</a></p>
+<p><em>darktable user manual — color calibration (§ illuminant)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#illuminant">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-illuminant" title="Jump back to footnote 17 in the text">↩</a></p>
 </li>
 <li id="fn:cat16-temp">
-<p><em>darktable user manual - color calibration</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#temperature">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-temp" title="Jump back to footnote 24 in the text">↩</a></p>
+<p><em>darktable user manual — color calibration (§ temperature)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#temperature">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-temp" title="Jump back to footnote 18 in the text">↩</a></p>
 </li>
 <li id="fn:cat16-tint">
-<p><em>darktable user manual - color calibration</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#tint">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-tint" title="Jump back to footnote 25 in the text">↩</a></p>
+<p><em>darktable user manual — color calibration (§ tint)</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#tint">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-tint" title="Jump back to footnote 19 in the text">↩</a></p>
 </li>
 <li id="fn:cat16-standard">
-<p><em>ISO 20654:2020 — Colorimetry — Chromatic adaptation</em>, <a href="https://www.iso.org/standard/74925.html">iso.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-standard" title="Jump back to footnote 26 in the text">↩</a></p>
+<p><em>ISO 20654:2020 — Colorimetry — Chromatic adaptation</em>, <a href="https://www.iso.org/standard/74925.html">iso.org</a>&nbsp;<a class="footnote-backref" href="#fnref:cat16-standard" title="Jump back to footnote 20 in the text">↩</a></p>
 </li>
 <li id="fn:blend-modes-scene">
-<p><em>darktable user manual - blend modes</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#arithmetic-modes">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:blend-modes-scene" title="Jump back to footnote 27 in the text">↩</a></p>
+<p><em>darktable user manual — blend modes (§ arithmetic modes)</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#arithmetic-modes">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:blend-modes-scene" title="Jump back to footnote 21 in the text">↩</a></p>
 </li>
 <li id="fn:blend-fulcrum-multiply">
-<p><em>darktable user manual - blend modes</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#multiply">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:blend-fulcrum-multiply" title="Jump back to footnote 28 in the text">↩</a></p>
+<p><em>darktable user manual — blend modes (§ multiply)</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#multiply">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:blend-fulcrum-multiply" title="Jump back to footnote 22 in the text">↩</a></p>
 </li>
 <li id="fn:parametric-mask-scene">
-<p><em>darktable user manual - overview</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/overview/#blending-options">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:parametric-mask-scene" title="Jump back to footnote 29 in the text">↩</a></p>
+<p><em>darktable user manual — overview</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/overview/#blending-options">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:parametric-mask-scene" title="Jump back to footnote 23 in the text">↩</a></p>
 </li>
 <li id="fn:highlight-reconstruction">
-<p><em>darktable user manual - highlight reconstruction</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:highlight-reconstruction" title="Jump back to footnote 30 in the text">↩</a></p>
-</li>
-<li id="fn:vectorscope-check">
-<p><em>darktable 5.4 — A Introductory Beginner Workflow</em>, <a href="https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755">discuss.pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:vectorscope-check" title="Jump back to footnote 31 in the text">↩</a></p>
+<p><em>darktable user manual — highlight reconstruction</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:highlight-reconstruction" title="Jump back to footnote 24 in the text">↩</a></p>
 </li>
 <li id="fn:pixls-sigmoid">
-<p><em>PIXLS.US — Sigmoid Deep Dive</em>, <a href="https://pixls.us/articles/darktable-sigmoid-deep-dive/">pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:pixls-sigmoid" title="Jump back to footnote 32 in the text">↩</a></p>
-</li>
-<li id="fn:denoise-order">
-<p><em>darktable 5.4 — A Introductory Beginner Workflow</em>, <a href="https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755">discuss.pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:denoise-order" title="Jump back to footnote 33 in the text">↩</a></p>
+<p><em>PIXLS.US — Sigmoid Deep Dive</em>, <a href="https://pixls.us/articles/darktable-sigmoid-deep-dive/">pixls.us</a>&nbsp;<a class="footnote-backref" href="#fnref:pixls-sigmoid" title="Jump back to footnote 25 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -4684,6 +4631,27 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:26:54 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 

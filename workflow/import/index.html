@@ -101,6 +101,7 @@
     
       
 
+
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
@@ -205,6 +206,13 @@
 </div>
       
     
+
+    <a class="md-header__button md-icon md-header__button--report" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Segnala una modifica su GitHub">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm1-5C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8"></path></svg>
+      <span class="md-header__button-label">Segnala</span>
+    </a>
+
     
       <div class="md-header__source">
         <a href="https://github.com/lorenzoperone/darktable-docs" title="Apri repository" class="md-source" data-md-component="source">
@@ -453,6 +461,27 @@
     
   
 </header>
+
+<script>
+  (function() {
+    function buildIssueUrl() {
+      var title = document.title
+        .replace(/ — .+$/, "").replace(/ - .+$/, "").trim();
+      var url = window.location.href;
+      var body = "### Pagina\n" + title + "\n\n" +
+                 "### URL\n" + url + "\n\n" +
+                 "### Tipo di modifica\n" +
+                 "Errore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+                 "### Descrizione\n" +
+                 "<!-- Descrivi cosa andrebbe corretto o migliorato -->\n\n";
+      return "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+             "?title=" + encodeURIComponent("[modifica] " + title) +
+             "&body=" + encodeURIComponent(body);
+    }
+    var link = document.getElementById("report-issue-link");
+    if (link) link.href = buildIssueUrl();
+  })();
+</script>
     
     <div class="md-container" data-md-component="container">
       
@@ -864,8 +893,6 @@
       
         
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -1243,33 +1270,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
       
     </li>
   
@@ -4220,8 +4220,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
-
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -4599,33 +4597,6 @@
     </ul>
   
 </nav>
-
-<div class="report-issue-toc">
-  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
-      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-    </svg>
-    Segnala una modifica
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
-    var url = window.location.href;
-    var body = "### Pagina\n" + title + "\n\n" +
-               "### URL\n" + url + "\n\n" +
-               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
-               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-    var link = document.getElementById("report-issue-link");
-    if (link) {
-      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                  "?title=" + encodeURIComponent("[modifica] " + title) +
-                  "&body=" + encodeURIComponent(body);
-    }
-  });
-</script>
                   </div>
                 </div>
               </div>
@@ -4722,7 +4693,7 @@
 <td>❌ No</td>
 <td>✅ Sì</td>
 <td>✅ Sì</td>
-<td>Richiede che la fotocamera sia <em>unmounted</em> da altri processi prima di avviare darktable<sup id="fnref:dt48-import"><a class="footnote-ref" href="#fn:dt48-import">4</a></sup>.</td>
+<td>Richiede che la fotocamera sia <em>unmounted</em> da altri processi prima di avviare darktable<sup id="fnref3:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">4</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -4862,12 +4833,12 @@
 <li>Filtra <code>Rating = 4 stars</code>. Completa l’editing, esporta, quindi assegna <code>5</code>.</li>
 </ol>
 <blockquote>
-<p>Questo approccio riduce drasticamente il carico cognitivo: lavori sempre su un insieme piccolo e omogeneo, con obiettivi chiari per ogni fase<sup id="fnref:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">9</a></sup>.</p>
+<p>Questo approccio riduce drasticamente il carico cognitivo: lavori sempre su un insieme piccolo e omogeneo, con obiettivi chiari per ogni fase<sup id="fnref:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">4</a></sup>.</p>
 </blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione alla cancellazione definitiva</p>
 <p>Se lo spazio è critico, puoi eliminare permanentemente le immagini con rating <code>0</code> o <code>rejected</code> selezionandole e usando <em>trash/delete</em> nel modulo <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/selected-image/">actions on selection</a>.<br>
-<strong>Attenzione</strong>: questa azione elimina <strong>fisicamente</strong> i file dal disco e non può essere annullata. È sicura <em>solo</em> se hai un backup verificato (es. rsync su NAS o backup su cloud)<sup id="fnref2:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">9</a></sup>.</p>
+<strong>Attenzione</strong>: questa azione elimina <strong>fisicamente</strong> i file dal disco e non può essere annullata. È sicura <em>solo</em> se hai un backup verificato (es. rsync su NAS o backup su cloud)<sup id="fnref2:dt48-import-review"><a class="footnote-ref" href="#fn:dt48-import-review">4</a></sup>.</p>
 </div>
 <h2 id="migrazione-da-lightroom-importazione-intelligente-degli-xmp">Migrazione da Lightroom: importazione intelligente degli XMP<a class="headerlink" href="#migrazione-da-lightroom-importazione-intelligente-degli-xmp" title="Permanent link">¶</a></h2>
 <p>darktable supporta nativamente l’importazione di file XMP generati da Lightroom, consentendo il recupero parziale del lavoro già fatto.</p>
@@ -4999,19 +4970,19 @@
 2. Clicca <em>scan for devices</em>, quindi <em>mount camera</em>.<br>
 3. Nella finestra <em>import</em>, imposta <code>override today’s date</code> a <code>2026-04-15T09:12:00</code> (ora effettiva di scatto, non di importazione).<br>
 4. Imposta <code>file naming pattern</code> su <code>$(EXIF_YEAR)-$(EXIF_MONTH)-$(EXIF_DAY)_$(JOBCODE)_$(SEQUENCE).$(FILE_EXTENSION)</code>.<br>
-5. Clicca <em>copy &amp; import from camera</em>: i file vengono copiati con timestamp coerente e nome prevedibile (<code>2026-04-15_Rossi_20260415_001.CR3</code>).<sup id="fnref:dt54-video"><a class="footnote-ref" href="#fn:dt54-video">11</a></sup></p>
+5. Clicca <em>copy &amp; import from camera</em>: i file vengono copiati con timestamp coerente e nome prevedibile (<code>2026-04-15_Rossi_20260415_001.CR3</code>).<sup id="fnref:dt54-video"><a class="footnote-ref" href="#fn:dt54-video">10</a></sup></p>
 <h3 id="esempio-geotagging-con-offset-manuale-video-tutorial">Esempio: Geotagging con offset manuale (video tutorial)<a class="headerlink" href="#esempio-geotagging-con-offset-manuale-video-tutorial" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/">darktable FR — Importer des photos avec darktable 4.2.0</a> (timestamp 08:22)</em><br>
 1. Carica un file GPX registrato con Garmin elettronico.<br>
 2. Seleziona una foto scattata davanti all’orologio del municipio di Praga.<br>
 3. Nel modulo <em>geotagging</em>, modifica <code>date/time</code> in <code>2026:04:15 14:32:18</code> (ora UTC letta dall’orologio GPS).<br>
 4. L’offset calcolato appare come <code>-02:14:03</code> → clicca <em>lock</em>.<br>
-5. Seleziona tutte le foto del roll e clicca <em>apply offset</em>: tutti i timestamp vengono corretti con precisione sub-secondo.<sup id="fnref:dt42-fr-video"><a class="footnote-ref" href="#fn:dt42-fr-video">10</a></sup></p>
+5. Seleziona tutte le foto del roll e clicca <em>apply offset</em>: tutti i timestamp vengono corretti con precisione sub-secondo.<sup id="fnref:dt42-fr-video"><a class="footnote-ref" href="#fn:dt42-fr-video">9</a></sup></p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-importazione-fallita-con-errore-device-busy-su-fotocamera-canon">Problema: Importazione fallita con errore "device busy" su fotocamera Canon<a class="headerlink" href="#problema-importazione-fallita-con-errore-device-busy-su-fotocamera-canon" title="Permanent link">¶</a></h3>
 <p>Il sistema operativo (es. GNOME) ha montato automaticamente la fotocamera come dispositivo di archiviazione. darktable non può accedere al bus USB finché il dispositivo è occupato. Soluzione: smontare manualmente la fotocamera da Nautilus prima di lanciare darktable, oppure disabilitare l’auto-mount in <code>Settings &gt; Removable Media</code><sup id="fnref:dt48-module-import"><a class="footnote-ref" href="#fn:dt48-module-import">5</a></sup>.</p>
 <h3 id="problema-i-tag-gerarchici-importati-da-lightroom-non-appaiono-in-collections">Problema: I tag gerarchici importati da Lightroom non appaiono in <code>collections</code><a class="headerlink" href="#problema-i-tag-gerarchici-importati-da-lightroom-non-appaiono-in-collections" title="Permanent link">¶</a></h3>
-<p>I tag Lightroom vengono importati correttamente, ma il modulo <em>collections</em> filtra per attributo <code>tag</code> e non mostra i nodi genitori (es. <code>Luoghi &gt; Italia</code> non compare se non è stato definito come tag esplicito). Per visualizzarli, vai in <em>tagging</em> → clicca sul nodo → seleziona <em>set as a tag</em> per renderlo esplicito<sup id="fnref:dt48-tagging"><a class="footnote-ref" href="#fn:dt48-tagging">12</a></sup>.</p>
+<p>I tag Lightroom vengono importati correttamente, ma il modulo <em>collections</em> filtra per attributo <code>tag</code> e non mostra i nodi genitori (es. <code>Luoghi &gt; Italia</code> non compare se non è stato definito come tag esplicito). Per visualizzarli, vai in <em>tagging</em> → clicca sul nodo → seleziona <em>set as a tag</em> per renderlo esplicito<sup id="fnref:dt48-tagging"><a class="footnote-ref" href="#fn:dt48-tagging">11</a></sup>.</p>
 <h3 id="problema-recursive-directory-non-mostra-file-in-sottocartelle-annidate">Problema: <code>recursive directory</code> non mostra file in sottocartelle annidate<a class="headerlink" href="#problema-recursive-directory-non-mostra-file-in-sottocartelle-annidate" title="Permanent link">¶</a></h3>
 <p>La funzione <code>recursive directory</code> non attraversa cartelle nascoste (quelle che iniziano con <code>.</code>) né cartelle con nomi contenenti caratteri Unicode non ASCII (es. <code>Fotògrafía</code>). Usa <code>add to library</code> con navigazione manuale per queste strutture<sup id="fnref2:dt48-module-import"><a class="footnote-ref" href="#fn:dt48-module-import">5</a></sup>.</p>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
@@ -5035,8 +5006,8 @@
 <li id="fn:piero-vera">
 <p>Piero Vera, <em>Darktable editing workflow: scene-referred update</em> -- Sezione cernita dettagliata con screenshot&nbsp;<a class="footnote-backref" href="#fnref:piero-vera" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
-<li id="fn:dt48-import">
-<p><em>darktable user manual — import &amp; review</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">docs.darktable.org/usermanual/development/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import" title="Jump back to footnote 4 in the text">↩</a></p>
+<li id="fn:dt48-import-review">
+<p><em>darktable user manual — import &amp; review</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">docs.darktable.org/usermanual/development/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import-review" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-import-review" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-import-review" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-module-import">
 <p><em>darktable user manual — module reference: import</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/">docs.darktable.org/usermanual/development/en/module-reference/utility-modules/lighttable/import/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48-module-import" title="Jump back to footnote 5 in the text">↩</a></p>
@@ -5050,17 +5021,14 @@
 <li id="fn:dt48-storage">
 <p><em>darktable user manual — preferences: storage</em>, <a href="https://docs.darktable.org/usermanual/development/en/preferences-settings/storage/">docs.darktable.org/usermanual/development/en/preferences-settings/storage/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-storage" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
-<li id="fn:dt48-import-review">
-<p><em>darktable user manual — import &amp; review</em>, sezione <em>Culling Process</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/import-review/">docs.darktable.org/usermanual/development/en/overview/workflow/import-review/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48-import-review" title="Jump back to footnote 9 in the text">↩</a></p>
-</li>
 <li id="fn:dt42-fr-video">
-<p><em>darktable FR — Importer des photos avec darktable 4.2.0</em>, <a href="https://darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/">darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt42-fr-video" title="Jump back to footnote 10 in the text">↩</a></p>
+<p><em>darktable FR — Importer des photos avec darktable 4.2.0</em>, <a href="https://darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/">darktable.fr/posts/2023/01/importer-des-photos-avec-darktable-4.2.0/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt42-fr-video" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:dt54-video">
-<p><em>A Dabble in Photography — darktable 5.4 NEW UPDATE</em>, <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">youtube.com/watch?v=yiTqUgoWg6Q</a>&nbsp;<a class="footnote-backref" href="#fnref:dt54-video" title="Jump back to footnote 11 in the text">↩</a></p>
+<p><em>A Dabble in Photography — darktable 5.4 NEW UPDATE</em>, <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">youtube.com/watch?v=yiTqUgoWg6Q</a>&nbsp;<a class="footnote-backref" href="#fnref:dt54-video" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:dt48-tagging">
-<p><em>darktable user manual — tagging</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/">docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-tagging" title="Jump back to footnote 12 in the text">↩</a></p>
+<p><em>darktable user manual — tagging</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/">docs.darktable.org/usermanual/development/en/module-reference/utility-modules/shared/tagging/</a>&nbsp;<a class="footnote-backref" href="#fnref:dt48-tagging" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 </ol>
 </div>
@@ -5071,6 +5039,27 @@
 
 
 
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Ultimo aggiornamento">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:21:28 UTC">27 giugno 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
 
 
 
