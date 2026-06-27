@@ -296,10 +296,10 @@ Per illuminazione mista o correzioni complesse, puoi usare **istanze multiple** 
 
 *Da [Channel Mixer Part 2](https://www.youtube.com/watch?v=QX_HItCqDtE) (timestamp 05:40–09:40)*  
 1. Apri un modulo **Color Calibration** nuovo  
-2. Usa il **color picker** per misurare il cielo: `(86, 100, 159)`[^QX_HItCqDtE]  
+2. Usa il **color picker** per misurare il cielo: `(86, 100, 159)`[^ch2]  
 3. Nella scheda **Blu**, imposta `input G = 0.25` (anziché 0.00) per aggiungere verde al blu  
 4. Mantieni `input R = 1.000`, `input B = 1.000` per preservare la luminanza (somma = 2.25 → `Normalize Channels` attivo)  
-5. Verifica sul vettorscopio che il picco del cielo si sposti da `159` a `182` nel canale verde, confermando il viraggio verso il ciano[^QX_HItCqDtE]  
+5. Verifica sul vettorscopio che il picco del cielo si sposti da `159` a `182` nel canale verde, confermando il viraggio verso il ciano[^ch2]  
 
 ## Preset integrati
 
@@ -344,5 +344,5 @@ Channel Mixer opera in spazio **scene-referred linear RGB**, quindi richiede un 
 [^ir]: *[Develop infrared photos with darktable](https://www.youtube.com/watch?v=PKK2QTPKsjY)* -- A Dabble in Photography
 [^pipeline]: *[The darktable pipeline for beginners](https://www.youtube.com/watch?v=1nPW6WPhhTo)* -- A Dabble in Photography
 [^MJJR8]: *[Some Color calibration ideas](https://www.youtube.com/watch?v=MJJR8DJ3rr8)* -- A Dabble in Photography
-[^QX_HItCqDtE]: *[Channel Mixer Part 2](https://www.youtube.com/watch?v=QX_HItCqDtE)* -- A Dabble in Photography
+[^ch2]: *[Channel Mixer Part 2](https://www.youtube.com/watch?v=QX_HItCqDtE)* -- A Dabble in Photography
 [^pixls-rgbprimaries]: *PIXLS.US — RGB Primaries module explained*, [pixls.us/articles/rgb-primaries](https://pixls.us/articles/rgb-primaries/) | `processed/pixls-articles/rgb-primaries.md`

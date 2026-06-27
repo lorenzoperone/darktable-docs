@@ -5,7 +5,7 @@
 | **Scene-referred** | Flusso di lavoro che mantiene i dati lineari fino al tone mapping finale. I valori luminosi rappresentano la radianza della scena reale (in cd/m²), non una codifica per display. Il range è teoricamente illimitato: valori >1.0 sono comuni e significativi (es. luci solari, LED) [^scene-referred-def] | [Manual](https://docs.darktable.org/usermanual/development/en/overview/workflow/) |
 | **Display-referred** | Flusso legacy che comprime i dati in [0,1] precocemente, perdendo informazioni fisiche e introducendo artefatti cromatici. Non supporta correttamente il recupero di alte luci o ombre profonde [^display-referred-def] | [Manual](https://docs.darktable.org/usermanual/development/en/overview/workflow/) |
 | **Filmic RGB** | Modulo darktable per il tone mapping scene-referred (3 pannelli). Implementa una curva S con parametri separati per spalla (highlights), piede (shadows) e pivot (midtones). Versioni disponibili: v5 (2021), v6 (2022), v7 (2023). La v5 è preferita per i tramonti grazie a una maggiore preservazione del giallo/arancio [^filmic-versions] | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/) |
-| **AgX** | Tone mapper piu' recente, risolve i Notorious 6. Basato su un modello fisico migliorato che gestisce la compressione tonale in modo più coerente con la percezione umana. Introdotta in darktable 5.4 come modulo `agx-tone-compressor` [^agx-intro] | [A guide to AGX](https://www.youtube.com/watch?v=iaZ2-QvOHyA) |
+| **AgX** | Tone mapper piu' recente, risolve i Notorious 6. Basato su un modello fisico migliorato che gestisce la compressione tonale in modo più coerente con la percezione umana. Introdotta in darktable 5.4 come modulo `agx-tone-compressor` [^dt54-update] | [A guide to AGX](https://www.youtube.com/watch?v=iaZ2-QvOHyA) |
 | **Sigmoid** | Tone mapper minimale con toni pelle naturali. Utilizza una curva log-logistica generalizzata. Offre due modalità principali: *per channel* (modifica RGB separatamente, con opzione `preserve hue`) e *rgb ratio* (preserva rapporti spettrali) [^sigmoid-modes] | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/) |
 | **CAT16** | Chromatic Adaptation Transform usata da Color Calibration. Modello psicofisico avanzato che simula l’adattamento cromativo dell’occhio umano a diverse illuminanti (D50, D65, ecc.). Sostituisce il vecchio Bradford CAT [^cat16] | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/) |
 | **EIGF** | Exposure-Independent Guided Filter — cuore del Tone Equalizer. Filtro guidato che opera indipendentemente dal livello di esposizione, permettendo regolazioni locali precise senza alterare la linearità della pipeline [^eigf] | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/) |
@@ -55,18 +55,18 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 |--------|-----------|-------|---------|--------------------------|------|
 | `exposure` | exposure | -8.00 – +8.00 EV | 0.00 EV | +0.35 EV (low-key), -0.42 EV (high-key) | Regola il grigio medio; non è “brightness” [^exposure-param] |
 | `color calibration` | temperature | 1000–25000 K | auto | 5600 K (luce diurna), 3200 K (incandescenza) | Usa CAT16 per adattamento cromatico [^cat16] |
-| `filmic rgb` | white relative exposure | -2.00 – +12.00 EV | auto | +6.50 EV (paesaggio), +4.32 EV (ritratto) | Determina il punto di saturazione delle alte luci [^filmic-params] |
-| `filmic rgb` | black relative exposure | -12.00 – +2.00 EV | auto | -10.00 EV (alta DR), -7.65 EV (media DR) | Determina il punto di cutoff delle ombre [^filmic-params] |
+| `filmic rgb` | white relative exposure | -2.00 – +12.00 EV | auto | +6.50 EV (paesaggio), +4.32 EV (ritratto) | Determina il punto di saturazione delle alte luci [^dt54-update] |
+| `filmic rgb` | black relative exposure | -12.00 – +2.00 EV | auto | -10.00 EV (alta DR), -7.65 EV (media DR) | Determina il punto di cutoff delle ombre [^dt54-update] |
 | `sigmoid` | contrast | 0.10 – 5.00 | 2.00 | 2.80 (standard), 1.50 (soft) | Valori >3.00 producono contrasto aggressivo [^sigmoid-params] |
 | `sigmoid` | skew | -1.00 – +1.00 | 0.00 | +0.25 (ritratti), -0.15 (paesaggi) | Skew positivo appiattisce ombre, comprime luci [^sigmoid-params] |
-| `agx-tone-compressor` | dynamic range scaling | -20.00% – +20.00% | 0.00% | +10.00% (sicurezza su luci estreme) | Aggiunge margine di sicurezza per clipping [^agx-params] |
+| `agx-tone-compressor` | dynamic range scaling | -20.00% – +20.00% | 0.00% | +10.00% (sicurezza su luci estreme) | Aggiunge margine di sicurezza per clipping [^dt54-update] |
 | `color balance rgb` | saturation | -100 – +100 | 0 | +12 (vivacità moderata), -8 (desaturazione controllata) | Applicato *dopo* il tone mapper [^color-balance-params] |
 | `denoise (profiled)` | strength | 0 – 100 | 30 | 65 (ISO 6400), 12 (ISO 100) | Modalità `non-local means` preserva bordi meglio di `wavelets` [^denoise-params] |
 
 ## Consigli
 
 - **Prima di tutto: configurare il flusso predefinito**  
-  Vai in `Preferenze > Elaborazione > Flusso predefinito` e seleziona `scene-referred (agx)` o `scene-referred (sigmoid)`. Disattiva `auto-apply base curve` se usi AgX o Sigmoid: il `base curve` è obsoleto in scene-referred [^workflow-config].
+  Vai in `Preferenze > Elaborazione > Flusso predefinito` e seleziona `scene-referred (agx)` o `scene-referred (sigmoid)`. Disattiva `auto-apply base curve` se usi AgX o Sigmoid: il `base curve` è obsoleto in scene-referred [^dt54-update].
 
 - **Evita il doppio bilanciamento del bianco**  
   Il modulo `white balance` deve essere impostato su `as shot` o `camera reference`, non su `auto`. Il vero bilanciamento avviene in `color calibration` con CAT16. Se entrambi i moduli mostrano l’icona di avviso (triangolo rosso), uno sta sovrascrivendo l’altro [^wb-conflict].
@@ -96,8 +96,8 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 [^scene-referred-def]: darktable Manual — Scene-Referred Workflow. https://docs.darktable.org/usermanual/development/en/overview/workflow/
 [^display-referred-def]: darktable Manual — Display-Referred Workflow. https://docs.darktable.org/usermanual/development/en/overview/workflow/
 [^filmic-versions]: A Dabble in Photography — How to get accurate colours in darktable. https://www.youtube.com/watch?v=TMlF85TFIUo
-[^agx-intro]: darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q
-[^sigmoid-modes]: darktable user manual — sigmoid. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/
+[^dt54-update]: darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q
+[^sigmoid-modes]: darktable user manual — sigmoid (§ modalità per channel / rgb ratio). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/
 [^cat16]: darktable Manual — Color Calibration. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/
 [^eigf]: darktable Manual — Tone Equalizer. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/
 [^notorious6]: PIXLS.US — The Notorious 6. https://pixls.us/
@@ -106,7 +106,7 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 [^raster-mask]: darktable Manual — Raster Masks. https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/masks/raster/
 [^sam2]: A Dabble in Photography — AI masks in darktable. https://www.youtube.com/watch?v=7yd5riDmUjk
 [^pfm-format]: A Dabble in Photography — External masks. https://www.youtube.com/watch?v=7sOAxcNaP4M
-[^asc-cdl]: darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/
+[^asc-cdl]: darktable Manual — Color Balance RGB (§ ASC CDL). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/
 [^aces-support]: darktable Manual — ACES Support. https://docs.darktable.org/usermanual/development/en/special-topics/color-management/aces/
 [^lut-3d]: darktable Manual — LUT 3D. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lut-3d/
 [^ev-unit]: darktable Manual — Exposure Module. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/
@@ -117,12 +117,9 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 [^input-profile]: darktable Manual — Input Color Profile. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/input-color-profile/
 [^output-profile]: darktable Manual — Output Color Profile. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/output-color-profile/
 [^exposure-param]: darktable Manual — Exposure. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/
-[^filmic-params]: darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q
-[^sigmoid-params]: darktable user manual — sigmoid. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/
-[^agx-params]: darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q
-[^color-balance-params]: darktable Manual — Color Balance RGB. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/
+[^sigmoid-params]: darktable user manual — sigmoid (§ skew). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/
+[^color-balance-params]: darktable Manual — Color Balance RGB (§ saturation). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/
 [^denoise-params]: darktable Manual — Denoise (profiled). https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/
-[^workflow-config]: darktable 5.4 NEW UPDATE! — YouTube. https://www.youtube.com/watch?v=yiTqUgoWg6Q
 [^wb-conflict]: darktable Full edit #1 — YouTube. https://www.youtube.com/watch?v=DzdGL30lYjU
 [^bezold-brucke]: How to get accurate colours in darktable — YouTube. https://www.youtube.com/watch?v=TMlF85TFIUo
 [^tone-mapper-conflict]: darktable Manual — Sigmoid Usage Notes. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/

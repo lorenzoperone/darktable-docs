@@ -15,11 +15,11 @@ Il paradigma **scene-referred** ha ridefinito le fondamenta di darktable a parti
 
 ### Esempio pratico
 
-Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred, quando alzi l'esposizione, l'arancione vira verso un giallo-limone artificiale. Nel flusso scene-referred, l'arancione rimane arancione anche a esposizioni elevate — purché il tone mapper sia configurato correttamente: con `sigmoid` in modalità *per channel* e *preserve hue* impostato a `85%`, la transizione da arancione a bianco avviene lungo una curva cromatica naturale, senza deviazioni verso il giallo.[^sigmoid-preserve-hue]
+Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred, quando alzi l'esposizione, l'arancione vira verso un giallo-limone artificiale. Nel flusso scene-referred, l'arancione rimane arancione anche a esposizioni elevate — purché il tone mapper sia configurato correttamente: con `sigmoid` in modalità *per channel* e *preserve hue* impostato a `85%`, la transizione da arancione a bianco avviene lungo una curva cromatica naturale, senza deviazioni verso il giallo.[^sigmoid-manual]
 
 !!! tip "Configurazione iniziale"
     **Preferenze > Elaborazione > Flusso predefinito**: seleziona `scene-referred (agx)`. Imposta anche *auto apply pixel workflow defaults* su *scene-referred* e *chromatic adaptation* su *modern*.[^firststeps]  
-    Inoltre, abilita **Color assessment mode** (Ctrl+B) per visualizzare l’immagine su sfondo grigio 18%, essenziale per valutare correttamente l’esposizione tonale.[^color-assessment]
+    Inoltre, abilita **Color assessment mode** (Ctrl+B) per visualizzare l’immagine su sfondo grigio 18%, essenziale per valutare correttamente l’esposizione tonale.[^dt54-workflow]
 
 ## La pipeline scene-referred
 
@@ -62,15 +62,15 @@ Il modulo `sigmoid` è il tone mapper più flessibile per flussi scene-referred,
 | Parametro | Range | Default | Valore tipico | Descrizione |
 |-----------|-------|---------|---------------|-------------|
 | `contrast` | `0.0`–`10.0` | `2.0` | `1.8`–`2.5` | Controlla la pendenza della curva log-logistica. Valori >3.0 comprimono fortemente le luci, rischiando posterizzazione se non accompagnati da *red/green/blue attenuation*. |
-| `skew` | `-1.0`–`+1.0` | `0.0` | `-0.2`–`+0.3` | Sposta il fulcro della compressione: `+0.3` preserva dettagli nelle luci, `-0.2` approfondisce le ombre senza schiacciarle.[^sigmoid-skew] |
+| `skew` | `-1.0`–`+1.0` | `0.0` | `-0.2`–`+0.3` | Sposta il fulcro della compressione: `+0.3` preserva dettagli nelle luci, `-0.2` approfondisce le ombre senza schiacciarle.[^sigmoid-manual] |
 | `color processing` | `per channel`, `rgb ratio` | `per channel` | `per channel` | `rgb ratio` preserva perfettamente la cromaticità ma desatura fortemente i colori puri; `per channel` permette regolazioni fini con *preserve hue*. |
-| `preserve hue` | `0%`–`100%` | `100%` | `70%`–`90%` | A `100%`: comportamento identico a `rgb ratio`. A `70%`: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.[^sigmoid-preserve-hue] |
-| `target black` | `0.0`–`0.1` | `0.0` | `0.0` | Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare *global offset* in `color balance rgb`.[^sigmoid-target-black] |
-| `target white` | `1.0`–`10.0` | `1.0` | `1.0`–`2.5` | Valori >2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.[^sigmoid-target-white] |
-| `red/green/blue attenuation` | `0.0`–`1.0` | `0.0` | `0.15`–`0.40` | Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore `0.25` per cieli, `0.35` per luci artificiali intense.[^sigmoid-attenuation] |
-| `recover purity` | `0%`–`100%` | `100%` | `80%`–`100%` | Ripristina la saturazione nelle medie luci. A `80%`: mantiene un leggero “smorzamento” naturale delle alte luci.[^sigmoid-recover-purity] |
+| `preserve hue` | `0%`–`100%` | `100%` | `70%`–`90%` | A `100%`: comportamento identico a `rgb ratio`. A `70%`: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.[^sigmoid-manual] |
+| `target black` | `0.0`–`0.1` | `0.0` | `0.0` | Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare *global offset* in `color balance rgb`.[^sigmoid-manual] |
+| `target white` | `1.0`–`10.0` | `1.0` | `1.0`–`2.5` | Valori >2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.[^sigmoid-manual] |
+| `red/green/blue attenuation` | `0.0`–`1.0` | `0.0` | `0.15`–`0.40` | Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore `0.25` per cieli, `0.35` per luci artificiali intense.[^sigmoid-manual] |
+| `recover purity` | `0%`–`100%` | `100%` | `80%`–`100%` | Ripristina la saturazione nelle medie luci. A `80%`: mantiene un leggero “smorzamento” naturale delle alte luci.[^sigmoid-manual] |
 
-> ✅ **Best practice**: usa sempre il preset *smooth* come punto di partenza per `sigmoid`. Modifica *red/green/blue rotation* solo se necessario: valori tipici sono `R: -2°`, `G: +1°`, `B: -3°` per correggere lievi sbilanciamenti cromatici nei bianchi puri.[^sigmoid-smooth-preset]
+> ✅ **Best practice**: usa sempre il preset *smooth* come punto di partenza per `sigmoid`. Modifica *red/green/blue rotation* solo se necessario: valori tipici sono `R: -2°`, `G: +1°`, `B: -3°` per correggere lievi sbilanciamenti cromatici nei bianchi puri.[^sigmoid-manual]
 
 ### `filmic rgb` — Tone mapping robusto (alternativa a sigmoid)
 
@@ -114,13 +114,13 @@ Per foto con luci bruciate (es. sole inquadrato, finestre sovraesposte):
 2. Usa `exposure` per posizionare il grigio medio (`0.18`) sul soggetto principale — ignora temporaneamente le luci.  
 3. Applica `sigmoid` con `skew = +0.25`, `contrast = 2.2`, `preserve hue = 75%`.  
 4. Se le luci restano “piatte”, aumenta `red attenuation = 0.3`, `blue attenuation = 0.25`, `recover purity = 85%`.  
-5. Verifica il risultato con `vectorscope`: i colori devono rimanere all’interno del triangolo sRGB, senza accumuli ai bordi (segno di hue skewing eccessivo).[^vectorscope-check]
+5. Verifica il risultato con `vectorscope`: i colori devono rimanere all’interno del triangolo sRGB, senza accumuli ai bordi (segno di hue skewing eccessivo).[^dt54-workflow]
 
 ### ✅ Gestione del rumore in scene-referred
 
 Il `denoise profiled` funziona meglio **prima** di `exposure` e `color calibration`, perché:
 - Il rumore digitale influenza negativamente i selettori automatici di bilanciamento del bianco.
-- Il profilo di rumore è calibrato sul dato RAW lineare: applicarlo dopo la compressione tonale riduce l’efficacia del denoise.[^denoise-order]
+- Il profilo di rumore è calibrato sul dato RAW lineare: applicarlo dopo la compressione tonale riduce l’efficacia del denoise.[^dt54-workflow]
 
 Valori consigliati per ISO 3200 (sensore APS-C):
 - `non-local means`: `spatial = 2.8`, `range = 0.12`  
@@ -135,36 +135,28 @@ Valori consigliati per ISO 3200 (sensore APS-C):
 
 ## Fonti
 
-[^manual-scene]: *darktable User Manual -- Scene-referred and display-referred workflow*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/overview/workflow/) | `processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-*.md`
-[^firststeps]: *[darktable first steps ep01](https://www.youtube.com/watch?v=P4cL61ZHqFw)* -- A Dabble in Photography
-[^pipeline]: *[The darktable pipeline for beginners](https://www.youtube.com/watch?v=1nPW6WPhhTo)* -- A Dabble in Photography
-[^pixls-rgb]: *PIXLS.US -- darktable 3: RGB or Lab?*, [pixls.us](https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/) | `processed/pixls-articles/articles-darktable-3-rgb-or-lab-which-modules-help.md`
-[^dtfr-scene]: *darktable.fr -- Apprendre*, [darktable.fr](https://darktable.fr/apprendre/) | `processed/darktable-fr/apprendre.md`
-[^sigmoid-preserve-hue]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#preserve-hue-per-channel-mode-only)
-[^color-assessment]: *darktable 5.4 — A Introductory Beginner Workflow*, [discuss.pixls.us](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755)
-[^raw-bw-point]: *darktable user manual - the pixelpipe & module order*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/pixelpipe/the-pixelpipe-and-module-order/#changing-module-order)
+[^manual-scene]: *darktable User Manual — Scene-referred and display-referred workflow*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/overview/workflow/)
+[^firststeps]: *[darktable first steps ep01](https://www.youtube.com/watch?v=P4cL61ZHqFw)* — A Dabble in Photography
+[^pipeline]: *[The darktable pipeline for beginners](https://www.youtube.com/watch?v=1nPW6WPhhTo)* — A Dabble in Photography
+[^pixls-rgb]: *PIXLS.US — darktable 3: RGB or Lab?*, [pixls.us](https://pixls.us/articles/darktable-3-rgb-or-lab-which-modules-help/)
+[^dtfr-scene]: *darktable.fr — Apprendre*, [darktable.fr](https://darktable.fr/apprendre/)
+[^sigmoid-manual]: *darktable user manual — sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/)
+[^dt54-workflow]: *darktable 5.4 — A Introductory Beginner Workflow*, [discuss.pixls.us](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755)
+[^raw-bw-point]: *darktable user manual — the pixelpipe & module order*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/pixelpipe/the-pixelpipe-and-module-order/#changing-module-order)
 [^rec2020-linear]: *[ENG] Linear Rec2020*, [A Dabble in Photography](https://www.youtube.com/watch?v=DsZYv_aRWjE)
-[^adobe-rgb-gamut]: *darktable user manual - darktable's color pipeline*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/special-topics/color-pipeline/#display-referred-workflow)
-[^prophoto-limitations]: *darktable user manual - color management*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/special-topics/color-management/)
-[^input-profile-warning]: *darktable user manual - processing*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/preferences-settings/processing/#image-processing)
-[^sigmoid-skew]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#skew)
-[^sigmoid-target-black]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#target-black)
-[^sigmoid-target-white]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#target-white)
-[^sigmoid-attenuation]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#red-green-blue-attenuation)
-[^sigmoid-recover-purity]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#recover-purity)
-[^sigmoid-smooth-preset]: *darktable user manual - sigmoid*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/#primaries)
-[^filmic-exposure]: *darktable user manual - filmic rgb*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#exposure-compensation)
-[^filmic-black]: *darktable user manual - filmic rgb*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#black-relative-exposure)
-[^filmic-grey]: *darktable user manual - filmic rgb*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#grey-point)
-[^filmic-dynamic-range]: *darktable user manual - filmic rgb*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#dynamic-range)
-[^cat16-illuminant]: *darktable user manual - color calibration*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#illuminant)
-[^cat16-temp]: *darktable user manual - color calibration*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#temperature)
-[^cat16-tint]: *darktable user manual - color calibration*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#tint)
+[^adobe-rgb-gamut]: *darktable user manual — darktable's color pipeline*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/special-topics/color-pipeline/#display-referred-workflow)
+[^prophoto-limitations]: *darktable user manual — color management*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/special-topics/color-management/)
+[^input-profile-warning]: *darktable user manual — processing*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/preferences-settings/processing/#image-processing)
+[^filmic-exposure]: *darktable user manual — filmic rgb (§ exposure compensation)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#exposure-compensation)
+[^filmic-black]: *darktable user manual — filmic rgb (§ black relative exposure)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#black-relative-exposure)
+[^filmic-grey]: *darktable user manual — filmic rgb (§ grey point)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#grey-point)
+[^filmic-dynamic-range]: *darktable user manual — filmic rgb (§ dynamic range)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#dynamic-range)
+[^cat16-illuminant]: *darktable user manual — color calibration (§ illuminant)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#illuminant)
+[^cat16-temp]: *darktable user manual — color calibration (§ temperature)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#temperature)
+[^cat16-tint]: *darktable user manual — color calibration (§ tint)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/#tint)
 [^cat16-standard]: *ISO 20654:2020 — Colorimetry — Chromatic adaptation*, [iso.org](https://www.iso.org/standard/74925.html)
-[^blend-modes-scene]: *darktable user manual - blend modes*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#arithmetic-modes)
-[^blend-fulcrum-multiply]: *darktable user manual - blend modes*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#multiply)
-[^parametric-mask-scene]: *darktable user manual - overview*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/overview/#blending-options)
-[^highlight-reconstruction]: *darktable user manual - highlight reconstruction*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/)
-[^vectorscope-check]: *darktable 5.4 — A Introductory Beginner Workflow*, [discuss.pixls.us](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755)
+[^blend-modes-scene]: *darktable user manual — blend modes (§ arithmetic modes)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#arithmetic-modes)
+[^blend-fulcrum-multiply]: *darktable user manual — blend modes (§ multiply)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/blend-modes/#multiply)
+[^parametric-mask-scene]: *darktable user manual — overview*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/overview/#blending-options)
+[^highlight-reconstruction]: *darktable user manual — highlight reconstruction*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/)
 [^pixls-sigmoid]: *PIXLS.US — Sigmoid Deep Dive*, [pixls.us](https://pixls.us/articles/darktable-sigmoid-deep-dive/)
-[^denoise-order]: *darktable 5.4 — A Introductory Beginner Workflow*, [discuss.pixls.us](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755)

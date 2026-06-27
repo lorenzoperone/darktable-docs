@@ -122,7 +122,3 @@ Questa documentazione aggrega e cita contenuti da quattro famiglie di fonti:
 
 Citati nelle pagine come `[^firststeps]`, `[^pipeline]`, `[^agx-guide]`, ecc.
 
----
-
-*Guida aggiornata alle ultime funzionalità di darktable*
-

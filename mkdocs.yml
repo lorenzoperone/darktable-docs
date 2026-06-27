@@ -63,6 +63,10 @@ plugins:
       lang: it
   - awesome-pages
   - tags
+  - git-revision-date-localized:
+      locale: it
+      type: date
+      fallback_to_build_date: true
   - glightbox:
       touchNavigation: true
       loop: false
