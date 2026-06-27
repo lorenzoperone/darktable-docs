@@ -1,29 +1,46 @@
-.report-issue {
-  text-align: center;
-  margin: 1.5rem 0 1rem;
+/* Pulsante "Segnala una modifica" nella sidebar TOC */
+.report-issue-toc {
+  padding: 0.6rem 1rem 1rem;
 }
 
-.report-issue__btn {
-  display: inline-flex;
+.report-issue-toc__link {
+  display: flex;
   align-items: center;
-  gap: 0.4em;
-  padding: 0.5em 1.2em;
-  border-radius: 0.3rem;
-  font-size: 0.85rem;
+  gap: 0.45em;
+  padding: 0.45em 0.8em;
+  border-radius: 0.25rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  color: var(--md-primary-bg-color, #fff);
-  background-color: var(--md-primary-fg-color, #ff6e40);
+  line-height: 1.3;
   text-decoration: none;
-  transition: opacity 0.15s;
+  transition: background-color 0.15s, color 0.15s;
+
+  /* Contrasto garantito su entrambi i temi */
+  color: var(--md-primary-fg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background-color: var(--md-default-bg-color);
 }
 
-.report-issue__btn:hover {
-  opacity: 0.85;
-  color: var(--md-primary-bg-color, #fff);
+.report-issue-toc__link:hover {
+  color: var(--md-primary-bg-color);
+  background-color: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
 }
 
-.report-issue__btn svg {
-  width: 1em;
-  height: 1em;
+.report-issue-toc__link svg {
+  width: 0.9em;
+  height: 0.9em;
   flex-shrink: 0;
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  text-align: center;
+  margin: 1.2rem 0;
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
 }

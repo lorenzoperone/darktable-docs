@@ -124,5 +124,5 @@ Citati nelle pagine come `[^firststeps]`, `[^pipeline]`, `[^agx-guide]`, ecc.
 
 ---
 
-*Basato su darktable 5.4+ -- Aggiornato: aprile 2026*
+*Guida aggiornata alle ultime funzionalità di darktable*
 
