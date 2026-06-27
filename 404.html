@@ -461,7 +461,11 @@
              "&body=" + encodeURIComponent(body);
     }
     var link = document.getElementById("report-issue-link");
-    if (link) link.href = buildIssueUrl();
+    if (link) {
+      link.addEventListener("click", function() {
+        this.href = buildIssueUrl();
+      });
+    }
   })();
 </script>
     

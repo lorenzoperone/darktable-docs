@@ -479,7 +479,11 @@
              "&body=" + encodeURIComponent(body);
     }
     var link = document.getElementById("report-issue-link");
-    if (link) link.href = buildIssueUrl();
+    if (link) {
+      link.addEventListener("click", function() {
+        this.href = buildIssueUrl();
+      });
+    }
   })();
 </script>
     
@@ -4288,27 +4292,11 @@
 Inoltre, abilita <strong>Color assessment mode</strong> (Ctrl+B) per visualizzare l’immagine su sfondo grigio 18%, essenziale per valutare correttamente l’esposizione tonale.<sup id="fnref2:dt54-workflow"><a class="footnote-ref" href="#fn:dt54-workflow">7</a></sup></p>
 </div>
 <h2 id="la-pipeline-scene-referred">La pipeline scene-referred<a class="headerlink" href="#la-pipeline-scene-referred" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-    subgraph LINEARE["Fase lineare"]
-        A["RAW"] --&gt; B["Punto nero/&lt;br/&gt;bianco RAW"]
-        B --&gt; C["Bilanciamento&lt;br/&gt;del bianco"]
-        C --&gt; D["Demosaicizzazione"]
-        D --&gt; E["Esposizione"]
-        E --&gt; F["Calibrazione&lt;br/&gt;colore (CAT16)"]
-    end
-    subgraph TONE["Moduli lineari"]
-        F --&gt; G["CB RGB, Tone EQ,&lt;br/&gt;Denoise, ..."]
-    end
-    subgraph DISPLAY["Fase display"]
-        G --&gt; H["Tone mapping&lt;br/&gt;(AgX/Sigmoid/Filmic)"]
-        H --&gt; I["Vignettatura,&lt;br/&gt;Filigrana, Nitidezza"]
-        I --&gt; J["Profilo output"]
-    end
-    J --&gt; K["Esporta"]
-
-    style LINEARE fill:#1b4332,color:#fff
-    style TONE fill:#7b2cbf,color:#fff
-    style DISPLAY fill:#14213d,color:#fff</code></pre>
+<pre class="mermaid"><code>flowchart TD
+    A["Fase lineare (scene-referred)&lt;br/&gt;RAW → bilanciamento bianco&lt;br/&gt;→ demosaicizzazione → esposizione&lt;br/&gt;→ calibrazione colore (CAT16)"] --&gt; B["Moduli lineari&lt;br/&gt;(CB RGB, Tone EQ, Denoise...)"]
+    B --&gt; C{"Tone mapping&lt;br/&gt;AgX / Sigmoid / Filmic"}
+    C --&gt; D["Fase display&lt;br/&gt;vignettatura, filigrana,&lt;br/&gt;nitidezza, profilo output"]
+    D --&gt; E["Esporta"]</code></pre>
 <div class="admonition danger">
 <p class="admonition-title">Moduli disabilitati</p>
 <p>NON modificare <em>raw black/white point</em>, <em>input color profile</em>, <em>output color profile</em>. Sono essenziali per la pipeline.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">3</a></sup><br>
@@ -4658,7 +4646,7 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:59:59 UTC">27 giugno 2026</span>
+    27 giugno 2026
   </span>
 
     

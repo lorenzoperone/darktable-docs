@@ -479,7 +479,11 @@
              "&body=" + encodeURIComponent(body);
     }
     var link = document.getElementById("report-issue-link");
-    if (link) link.href = buildIssueUrl();
+    if (link) {
+      link.addEventListener("click", function() {
+        this.href = buildIssueUrl();
+      });
+    }
   })();
 </script>
     
@@ -4228,8 +4232,11 @@
 <p>A differenza di Lightroom, dove la visualizzazione è fissa, darktable permette di cambiare radicalmente l'interazione con la libreria attraverso queste modalità, mantenendo sempre accessibili i filtri e le collezioni nei pannelli laterali.<sup id="fnref2:lighttable-view-layout"><a class="footnote-ref" href="#fn:lighttable-view-layout">2</a></sup></p>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
 <p>L'utilizzo delle modalità dipende dalla fase del processo DAM (Digital Asset Management) in cui ti trovi:</p>
-<pre class="mermaid"><code>flowchart LR
-    A["Importa"] --&gt; B["Lighttable&lt;br/&gt;zoomabile"] --&gt; C["Culling&lt;br/&gt;(selezione)"] --&gt; D["Anteprima&lt;br/&gt;intero"] --&gt; E["File manager&lt;br/&gt;(organizzazione)"]</code></pre>
+<pre class="mermaid"><code>flowchart TD
+    A["Importa"] --&gt; B["Lighttable zoomabile"]
+    B --&gt; C["Culling (selezione)"]
+    C --&gt; D["Anteprima intero"]
+    D --&gt; E["File manager (organizzazione)"]</code></pre>
 <h3 id="passo-1-esplorazione-con-zoomable-lighttable">Passo 1: Esplorazione con Zoomable Lighttable<a class="headerlink" href="#passo-1-esplorazione-con-zoomable-lighttable" title="Permanent link">¶</a></h3>
 <p>Per navigare grandi set di immagini (es. dopo un importo massiccio), usa la modalità <strong>zoomable lighttable</strong>. Questo ti permette di avere una panoramica visiva più ampia rispetto alla semplice griglia del filemanager.<sup id="fnref:zoomable-lighttable"><a class="footnote-ref" href="#fn:zoomable-lighttable">3</a></sup></p>
 <h3 id="passo-2-ispezione-rapida-con-full-preview">Passo 2: Ispezione rapida con Full Preview<a class="headerlink" href="#passo-2-ispezione-rapida-con-full-preview" title="Permanent link">¶</a></h3>
@@ -4366,7 +4373,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:59:59 UTC">27 giugno 2026</span>
+    27 giugno 2026
   </span>
 
     
