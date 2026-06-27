@@ -1,0 +1,194 @@
+site_name: "Guida al post-processing con darktable"
+site_description: "Guida operativa al flusso di lavoro scene-referred in darktable"
+site_author: "Lorenzo Perone"
+site_url: "https://lorenzoperone.github.io/darktable-docs/"
+repo_url: "https://github.com/lorenzoperone/darktable-docs"
+repo_name: "lorenzoperone/darktable-docs"
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: it
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Modalità scura
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Modalità chiara
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/camera-enhance
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lorenzoperone/darktable-docs
+
+plugins:
+  - search:
+      lang: it
+  - awesome-pages
+  - tags
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      zoomable: true
+      draggable: true
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Lighttable:
+    - lighttable/index.md
+    - lighttable/modalita.md
+    - lighttable/organizzazione.md
+    - lighttable/metadati-tag.md
+    - lighttable/styles-cronologia.md
+  - Flusso di lavoro:
+    - workflow/index.md
+    - workflow/import.md
+    - workflow/exposure.md
+    - workflow/color.md
+    - workflow/tone.md
+    - workflow/export.md
+  - Pipeline:
+    - pipeline/index.md
+    - pipeline/module-order.md
+    - pipeline/anatomia-modulo.md
+    - pipeline/history-stack.md
+    - pipeline/preset-istanze.md
+  - Moduli:
+    - modules/index.md
+    - modules/agx.md
+    - modules/exposure.md
+    - modules/filmic-rgb.md
+    - modules/sigmoid.md
+    - modules/color-calibration.md
+    - modules/color-balance-rgb.md
+    - modules/channel-mixer.md
+    - modules/color-equalizer.md
+    - modules/color-harmonizer.md
+    - modules/rgb-primaries.md
+    - modules/velvia.md
+    - modules/diffuse-sharpen.md
+    - modules/blurs.md
+    - modules/soften.md
+    - modules/tone-equalizer.md
+    - modules/local-contrast.md
+    - modules/haze-removal.md
+    - modules/denoise.md
+    - modules/neural-restore.md
+    - modules/lens-correction.md
+    - modules/retouch.md
+    - modules/liquify.md
+    - modules/censorize.md
+    - modules/crop-rotate.md
+    - modules/white-balance.md
+    - modules/highlight-reconstruction.md
+    - modules/contrast-equalizer.md
+    - modules/demosaicing.md
+    - modules/vignetting.md
+    - modules/graduated-density.md
+    - modules/rotate-perspective.md
+    - modules/watermark.md
+    - modules/base-curve.md
+    - modules/chromatic-aberrations.md
+    - modules/defringe.md
+    - modules/color-profiles.md
+    - modules/lut-3d.md
+    - modules/color-mapping.md
+    - modules/grain.md
+    - modules/negadoctor.md
+    - modules/composite.md
+    - modules/scopes.md
+    - modules/masking.md
+  - Workshop:
+    - workshop/index.md
+    - workshop/black-white.md
+    - workshop/portrait.md
+    - workshop/landscape.md
+    - workshop/lowlight.md
+    - workshop/hdr.md
+    - workshop/street.md
+    - workshop/macro.md
+    - workshop/from-lightroom.md
+    - workshop/creative-effects.md
+    - workshop/color-grading.md
+  - Colore:
+    - color/index.md
+    - color/scene-referred.md
+    - color/white-balance.md
+    - color/icc-profiles.md
+    - color/gamut.md
+  - Maschere:
+    - masking/index.md
+    - masking/parametric.md
+    - masking/drawn.md
+    - masking/combining.md
+    - masking/ai-masks.md
+    - masking/raster.md
+  - Esportazione:
+    - export/index.md
+    - export/formats.md
+    - export/styles.md
+  - Preferenze:
+    - preferences/index.md
+    - preferences/processing.md
+    - preferences/ai.md
+    - preferences/general-import.md
+    - preferences/shortcuts.md
+  - Appendice:
+    - appendix/glossary.md
+    - appendix/shortcuts.md
+    - appendix/resources.md
+    - appendix/faq.md

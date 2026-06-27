@@ -1,0 +1,72 @@
+# MkDocs build output
+site/
+
+# Processed content (scraped from third-party sources, regenerable from scraper)
+processed/
+
+# AI-generated drafts (working files)
+drafts/
+
+# Internal indexes (build artifacts)
+indexes/
+
+# Scraper source database and raw files
+sources/
+
+# Internal tooling scripts (local automation, not useful for public)
+g*.py
+g*.sh
+g*.lua
+a*.py
+b*.py
+c*.py
+analyze_index.py
+fix_encoding.py
+migrate_refs.py
+refresh_screenshots.py
+copy_screenshots_smart.py
+version_bump.py
+
+# Scraper package
+scraper/
+
+# Project internal documentation
+project-docs/
+CLAUDE.md
+QWEN.md
+PROGRESS.md
+PROJECT_PLAN.md
+
+# Local/misc
+resume.qwen
+/index.md
+/report.md
+serve.sh
+*.log
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Editor
+.vscode/settings.json
+.idea/
+.history/
+
+# Claude Code runtime artifacts
+.claude/
+
+# Jupyter
+*.ipynb_checkpoints/

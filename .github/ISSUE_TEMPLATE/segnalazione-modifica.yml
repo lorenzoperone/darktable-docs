@@ -1,0 +1,53 @@
+name: "Segnala una modifica"
+description: "Segnala un errore, un'inesattezza o un miglioramento per una pagina del manuale"
+title: "Modifica: "
+labels: ["documentazione"]
+body:
+  - type: input
+    id: pagina
+    attributes:
+      label: "Pagina"
+      description: "Nome della pagina da modificare"
+      placeholder: "es. Esposizione, Bilanciamento colore, Workshop Ritratto…"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: "URL della pagina"
+      description: "Link diretto alla pagina sul sito"
+      placeholder: "https://lorenzoperone.github.io/darktable-docs/…"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: "Tipo di segnalazione"
+      options:
+        - "Errore nel contenuto"
+        - "Informazione obsoleta"
+        - "Screenshot mancante o errato"
+        - "Errore di battitura / grammatica"
+        - "Suggerimento di miglioramento"
+        - "Altro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descrizione
+    attributes:
+      label: "Descrizione"
+      description: "Descrivi il problema o la modifica suggerita"
+      placeholder: "In questa pagina manca la spiegazione di… / Il valore consigliato per… è errato perché…"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "Screenshot (opzionale)"
+      description: "Trascina qui un'immagine se utile"
+    validations:
+      required: false

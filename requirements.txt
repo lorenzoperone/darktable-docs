@@ -1,0 +1,12 @@
+# MkDocs + Material theme (docs)
+mkdocs-material>=9.5
+mkdocs-awesome-pages-plugin>=2.9
+mkdocs-glightbox>=0.4
+
+# Scraper
+requests>=2.31
+beautifulsoup4>=4.12
+html2text>=2024.2
+typer>=0.12
+pyyaml>=6.0
+rich>=13.0
