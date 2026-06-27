@@ -1065,6 +1065,8 @@
       
         
 
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -1103,6 +1105,33 @@
     </ul>
   
 </nav>
+
+<div class="report-issue-toc">
+  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
+    </svg>
+    Segnala una modifica
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
+    var url = window.location.href;
+    var body = "### Pagina\n" + title + "\n\n" +
+               "### URL\n" + url + "\n\n" +
+               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
+    var link = document.getElementById("report-issue-link");
+    if (link) {
+      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+                  "?title=" + encodeURIComponent("[modifica] " + title) +
+                  "&body=" + encodeURIComponent(body);
+    }
+  });
+</script>
       
     </li>
   
@@ -3852,6 +3881,8 @@
                   <div class="md-sidebar__inner">
                     
 
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Indice">
   
   
@@ -3890,6 +3921,33 @@
     </ul>
   
 </nav>
+
+<div class="report-issue-toc">
+  <a class="report-issue-toc__link" href="#" id="report-issue-link" target="_blank" rel="noopener" title="Apri una issue su GitHub per segnalare errori o suggerire modifiche">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+      <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
+      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
+    </svg>
+    Segnala una modifica
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var title = document.title.replace(" — Guida al post-processing con darktable", "").replace(" - Guida al post-processing con darktable", "").trim();
+    var url = window.location.href;
+    var body = "### Pagina\n" + title + "\n\n" +
+               "### URL\n" + url + "\n\n" +
+               "### Tipo di modifica\nErrore nel contenuto / Informazioni obsolete / Screenshot errato / Altro\n\n" +
+               "### Descrizione\n<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
+    var link = document.getElementById("report-issue-link");
+    if (link) {
+      link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
+                  "?title=" + encodeURIComponent("[modifica] " + title) +
+                  "&body=" + encodeURIComponent(body);
+    }
+  });
+</script>
                   </div>
                 </div>
               </div>
@@ -3900,7 +3958,6 @@
               
               <article class="md-content__inner md-typeset">
                 
-  
                   
 
 
@@ -3914,6 +3971,37 @@
 <p class="admonition-title">L'idea in una riga</p>
 <p>darktable non "applica filtri sull'immagine visualizzata": costruisce una <strong>catena di elaborazione</strong> che parte dai dati grezzi del sensore (scene-referred, lineari rispetto alla luce) e arriva all'immagine finale (display-referred). L'ordine dei moduli nella catena conta.</p>
 </div>
+<pre class="mermaid"><code>flowchart LR
+    subgraph LINEARE["Fase lineare (scene-referred)"]
+        A["RAW"] --&gt; B["Punto nero/bianco"]
+        B --&gt; C["Bilanciamento bianco"]
+        C --&gt; D["Demosaicizzazione"]
+        D --&gt; E["Riduzione rumore"]
+        E --&gt; F["Correzione obiettivo"]
+        F --&gt; G["Esposizione"]
+        G --&gt; H["Ricostruzione alte luci"]
+        H --&gt; I["Calibrazione colore"]
+    end
+    subgraph TONE["Compressione tonale"]
+        I --&gt; J{"Scegli UNO"}
+        J --&gt; K["AgX"]
+        J --&gt; L["Filmic RGB"]
+        J --&gt; M["Sigmoideo"]
+    end
+    subgraph DISPLAY["Fase display"]
+        K --&gt; N["Bilanciamento colore"]
+        L --&gt; N
+        M --&gt; N
+        N --&gt; O["Equalizzatore colore"]
+        O --&gt; P["Equalizzatore toni"]
+        P --&gt; Q["Contrasto locale"]
+        Q --&gt; R["Esporta"]
+    end
+
+    style LINEARE fill:#1b4332,color:#fff
+    style TONE fill:#7b2cbf,color:#fff
+    style DISPLAY fill:#14213d,color:#fff
+    style J fill:#f77f00,color:#000</code></pre>
 <h2 id="perche-lordine-conta">Perché l'ordine conta<a class="headerlink" href="#perche-lordine-conta" title="Permanent link">¶</a></h2>
 <p>I moduli <strong>non</strong> vengono applicati nell'ordine in cui li attivi, ma in un <strong>ordine interno fisso</strong> (il <em>module order</em>), pensato perché ogni operazione lavori sui dati nello stato più adatto. Per esempio: la riduzione del rumore agisce presto, sui dati lineari del sensore; il tone mapping (<em>filmic rgb</em>, <em>sigmoid</em>, <em>agx</em>) comprime la gamma dinamica più a valle; il color grading creativo arriva ancora dopo.</p>
 <p>Questo è anche il motivo per cui la guida raccomanda una <a href="../workflow/">sequenza di lavoro</a> precisa: non è una preferenza stilistica, ma l'allineamento col modo in cui il pixelpipe tratta i dati.</p>
@@ -3941,35 +4029,6 @@
 
 
                 
-
-  <hr>
-  <div class="report-issue">
-    <a class="report-issue__btn" href="#" id="report-issue-link" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-        <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"></path>
-        <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"></path>
-      </svg>
-      Segnala una modifica
-    </a>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var title = document.title.replace(" — Guida al post-processing con darktable", "").trim();
-      var url = window.location.href;
-      var body = "### Pagina\n" + title + "\n\n" +
-                 "### URL\n" + url + "\n\n" +
-                 "### Descrizione della modifica\n" +
-                 "<!-- Descrivi cosa andrebbe corretto o migliorato in questa pagina -->\n\n";
-      var link = document.getElementById("report-issue-link");
-      if (link) {
-        link.href = "https://github.com/lorenzoperone/darktable-docs/issues/new" +
-                    "?title=" + encodeURIComponent("Modifica: " + title) +
-                    "&body=" + encodeURIComponent(body);
-      }
-    });
-  </script>
-
               </article>
             </div>
           
@@ -4034,6 +4093,10 @@
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+      
+        <script src="../assets/javascripts/mermaid-init.js"></script>
       
     
   
