@@ -61,37 +61,18 @@ In darktable i dati attraversano una sequenza fissa di moduli chiamata **pixelpi
 L'ordine e' il seguente:
 
 ```mermaid
-flowchart TD
-    subgraph LINEARE["FASE LINEARE (scene-referred)"]
-        A["Punto nero / punto bianco RAW"]
-        A --> B["Bilanciamento del bianco"]
-        B --> C["Demosaicizzazione"]
-        C --> D["Riduzione rumore (profilato)"]
-        D --> E["Correzione obiettivo"]
-        E --> F["Esposizione"]
-        F --> G["Ricostruzione alte luci"]
-        G --> H["Calibrazione colore (CAT16)"]
-    end
-    subgraph TONE["COMPRESSIONE TONALE (scegline UNO)"]
-        H --> I{"AgX"}
-        H --> J{"Filmic RGB"}
-        H --> K{"Sigmoideo"}
-    end
-    subgraph DISPLAY["FASE DISPLAY (display-referred)"]
-        I --> L["Bilanciamento colore"]
-        J --> L
-        K --> L
-        L --> M["Equalizzatore colore"]
-        M --> N["Equalizzatore toni"]
-        N --> O["Contrasto locale /<br/>Diffondi e nitidezza"]
-        O --> P["Grana, Vignettatura, Filigrana"]
-    end
-    P --> Q["Esporta (JPEG/TIFF)"]
+flowchart LR
+    A["🔬 Fase lineare<br/><i>scene-referred</i><br/>8 moduli tecnici"] --> B{"🎨 Tone mapping<br/><i>scegline uno</i>"}
+    B --> C["🖥️ Fase display<br/><i>display-referred</i><br/>5 moduli creativi"]
+    C --> D["📤 Esporta"]
 
-    style LINEARE fill:#1b4332,color:#fff
-    style TONE fill:#7b2cbf,color:#fff
-    style DISPLAY fill:#14213d,color:#fff
+    style A fill:#1b4332,color:#fff,stroke:#2d6a4f
+    style B fill:#7b2cbf,color:#fff,stroke:#9d4edd
+    style C fill:#14213d,color:#fff,stroke:#1d3557
+    style D fill:#e76f51,color:#fff,stroke:#e76f51
 ```
+
+Il dettaglio completo della pipeline è nella [sezione pipeline](pipeline/index.md).
 
 !!! tip "Prima di tutto"
     Vai in **Preferenze > Elaborazione > Flusso predefinito** e seleziona `scene-referred (agx)`.
