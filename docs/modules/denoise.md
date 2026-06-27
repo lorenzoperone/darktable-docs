@@ -1,6 +1,6 @@
 # Denoise (profiled)
 
-Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in modo intelligente. Attivarlo **prima** dei selettori automatici (esposizione, calibrazione colore) perché il rumore confonde gli algoritmi[^manual]. Questo posizionamento è critico: il modulo opera *prima* di `input color profile` nella pipeline pixelpipe, garantendo che i parametri di denoising siano applicati sui dati raw correttamente scalati rispetto al profilo di rumore del sensore[^48-profiled]. Ciò permette una correzione più precisa della varianza del rumore — che non è costante, ma dipende dalla luminosità del segnale e dall’ISO effettivo[^48-profiled].
+Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in modo intelligente. Attivarlo **prima** dei selettori automatici (esposizione, calibrazione colore) perché il rumore confonde gli algoritmi[^48-profiled]. Questo posizionamento è critico: il modulo opera *prima* di `input color profile` nella pipeline pixelpipe, garantendo che i parametri di denoising siano applicati sui dati raw correttamente scalati rispetto al profilo di rumore del sensore[^48-profiled]. Ciò permette una correzione più precisa della varianza del rumore — che non è costante, ma dipende dalla luminosità del segnale e dall’ISO effettivo[^48-profiled].
 
 ## Panoramica
 
@@ -69,7 +69,7 @@ Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in 
 ## Consigli operativi
 
 !!! tip "Auto-preset per ISO"
-    Creare preset auto-applicati basati sull'ISO range: un preset per ISO < 800, uno per 800–3200, uno per > 3200[^manual]. Per ISO 100–400: `Strength = 0.4`, `Preserve shadows = 0.75`, `Bias correction = 0.0`. Per ISO 1600–6400: `Strength = 1.1`, `Preserve shadows = 0.25`, `Bias correction = +0.2`. Per ISO > 12800: `Strength = 1.6`, `Preserve shadows = 0.1`, `Bias correction = +0.35`.
+    Creare preset auto-applicati basati sull'ISO range: un preset per ISO < 800, uno per 800–3200, uno per > 3200[^48-profiled]. Per ISO 100–400: `Strength = 0.4`, `Preserve shadows = 0.75`, `Bias correction = 0.0`. Per ISO 1600–6400: `Strength = 1.1`, `Preserve shadows = 0.25`, `Bias correction = +0.2`. Per ISO > 12800: `Strength = 1.6`, `Preserve shadows = 0.1`, `Bias correction = +0.35`.
 
 !!! info "Capture Sharpening"
     Attivare **capture sharpening** nel modulo **Demosaic** all'inizio della pipeline per compensare la perdita di nitidezza. Regolare la *contrast sensitivity* per non accentuare il rumore[^dt54][^pipeline]. Valore ottimale: `0.25` per ISO ≤800, `0.18` per ISO 1600–6400, `0.12` per ISO ≥12800.
@@ -167,11 +167,10 @@ darktable include 7 preset preconfigurati per `denoise (profiled)`, accessibili 
 
 ## Fonti
 
-[^manual]: *darktable User Manual — Denoise (profiled)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-denoise-profiled.md`
+[^48-profiled]: *darktable User Manual — Denoise (profiled)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-denoise-profiled.md`
 [^pipeline]: *[The darktable pipeline for beginners](https://www.youtube.com/watch?v=1nPW6WPhhTo)* — A Dabble in Photography
 [^dt54]: *[darktable 5.4 UPDATE](https://www.youtube.com/watch?v=yiTqUgoWg6Q)* — A Dabble in Photography
 [^pixls-noise]: *PIXLS.US — How to Create Camera Noise Profiles for Darktable*, [pixls.us](https://pixls.us/articles/how-to-create-camera-noise-profiles-for-darktable/) | `processed/pixls-articles/articles-how-to-create-camera-noise-profiles-for-darktable.md`
-[^48-profiled]: *darktable user manual — denoise (profiled)*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/denoise-profiled/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-denoise-profiled.md`
 [^48-astrophoto]: *darktable user manual — astrophoto denoise*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/astrophoto-denoise/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-astrophoto-denoise.md`
 [^48-raw-denoise]: *darktable user manual — raw denoise*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/raw-denoise/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-raw-denoise.md`
 [^48-surface-blur]: *darktable user manual — surface blur*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/surface-blur/) | `processed/darktable-usermanual-en/usermanual-48-en-module-reference-surface-blur.md`

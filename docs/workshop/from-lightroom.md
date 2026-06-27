@@ -276,7 +276,7 @@ Questo è normale: `sharpening` amplifica il rumore esistente. La soluzione è a
 - 📹 [“Faire comme Lightroom mais avec darktable” (David LaCivita)](https://www.youtube.com/watch?v=...) — confronto diretto risultati[^faire-comme-lightroom]  
 - 📚 [Guida ufficiale darktable 5.4 (inglese)](https://www.darktable.org/usermanual/) — riferimento tecnico completo[^manual-agx]  
 - 🛠️ [darktable-fr.org](https://darktable.fr) — tutorial in francese con esempi pratici e traduzioni[^darktable-fr]  
-- 📹 [“darktable 5.4 - A Introductory Beginner Workflow” (Pixls.us forum)](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755) — walkthrough interattivo con file CR3 scaricabile[^discuss-pixls-walkthrough]  
+- 📹 [“darktable 5.4 - A Introductory Beginner Workflow” (Pixls.us forum)](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755) — walkthrough interattivo con file CR3 scaricabile[^discuss-pixls-demosaic]  
 - 📘 [darktable.info — Scene-Referred Workflow](https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/) — spiegazione concettuale con diagrammi[^darktable-info-scene-referred]  
 
 ---
@@ -306,7 +306,6 @@ Questo è normale: `sharpening` amplifica il rumore esistente. La soluzione è a
 [^process-color-assessment]: darktable.org, ["User Manual – process"](https://docs.darktable.org/usermanual/development/en/overview/workflow/process/#color-assessment-mode)
 [^color-balance-rgb-input]: darktable.org, ["User Manual – color balance rgb"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/#)
 [^color-balance-rgb-presets]: darktable.org, ["User Manual – color balance rgb presets"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/#presets)
-[^color-balance-presets-teal-orange]: darktable.org, ["User Manual – color balance presets"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
-[^color-balance-presets-kodak]: darktable.org, ["User Manual – color balance presets"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
-[^discuss-pixls-walkthrough]: discuss.pixls.us, ["darktable 5.4 - A Introductory Beginner Workflow"](https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755)
+[^color-balance-presets-teal-orange]: darktable.org, ["User Manual – color balance presets (§ teal/orange)"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
+[^color-balance-presets-kodak]: darktable.org, ["User Manual – color balance presets (§ Kodak Portra)"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
 [^darktable-info-scene-referred]: darktable.info, ["Scene-Referred Workflow"](https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/)

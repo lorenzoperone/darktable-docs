@@ -204,7 +204,7 @@ Applicare la nitidezza come ultimo passo, solo se necessario:
 3. Impostare i valori: `Jz min = 160`, `Jz max = 280`, `Cz min = 0`, `Cz max = 120`  
 4. Attivare `combine masks = exclusive` e aggiungere una maschera disegnata per escludere il sole e le nubi più dense  
 5. Applicare `exposure = +0.312 EV`, `contrast = +21.7%`, `opacity = 78%`  
-6. Riutilizzare la stessa maschera come **raster mask** in **Color Balance RGB**, con `highlights hue = 32° (giallo chiaro)` e `chroma = +18%`[^video-3mdy-sky]  
+6. Riutilizzare la stessa maschera come **raster mask** in **Color Balance RGB**, con `highlights hue = 32° (giallo chiaro)` e `chroma = +18%`[^video-3mdy]  
 
 ## Esempio: Recupero dettagli nuvole con Filmic RGB  
 *Da [darktable Night Sky Full Edit](https://www.youtube.com/watch?v=5P0Yj_vqy5w) (timestamp 01:50–04:10)*  
@@ -221,7 +221,7 @@ Applicare la nitidezza come ultimo passo, solo se necessario:
 Quando si usa `input = g` (luminanza) per selezionare il cielo, i bordi possono risultare troppo definiti, soprattutto su nubi sottili. La soluzione è sostituire `g` con `Jz` nello spazio CIE JzCzHz, che offre una separazione più precisa tra cielo e primo piano grazie alla sua maggiore linearità nella gamma luminosa alta. Si consiglia un `feathering radius ≥ 120 px` e l’uso di `input after blur` come guida per lo sfumatura[^manual-jzczhz]  
 
 ### Problema: Colore del cielo diventa artificiale dopo applicazione di Color Balance RGB  
-Ciò accade quando il `white fulcrum` è impostato troppo alto (> +0.15 EV), causando una sovrapposizione indesiderata tra toni freddi e caldi. Ridurre il `white fulcrum` a `+0.00 EV` e usare `master mode = 4 ways` con `midtones hue = 220° (blu cobalto)` e `highlights hue = 30° (giallo tenue)` produce transizioni più naturali. Verificare sempre con la visualizzazione `mask preview` attiva[^video-3mdy-blue]  
+Ciò accade quando il `white fulcrum` è impostato troppo alto (> +0.15 EV), causando una sovrapposizione indesiderata tra toni freddi e caldi. Ridurre il `white fulcrum` a `+0.00 EV` e usare `master mode = 4 ways` con `midtones hue = 220° (blu cobalto)` e `highlights hue = 30° (giallo tenue)` produce transizioni più naturali. Verificare sempre con la visualizzazione `mask preview` attiva[^video-3mdy]  
 
 ### Problema: Maschera raster non appare nei moduli successivi  
 Le maschere raster sono disponibili **solo nei moduli successivi al punto di creazione** nel pipeline. Se una maschera creata in un modulo Exposure non è visibile in Color Equalizer, significa che Color Equalizer è posizionato *prima* di Exposure nell’ordine dei moduli. Correggere l’ordine con il pulsante `↑↓` nel pannello dei moduli o abilitare `show all modules` in `preferences > darkroom > module ordering`[^manual-raster-mask]  
@@ -235,8 +235,7 @@ Le maschere raster sono disponibili **solo nei moduli successivi al punto di cre
 
 ## Fonti  
 
-[^video-3mdy-sky]: *[Darktable Tutorial: Landscape Photography Workflow](https://www.youtube.com/watch?v=3MDYhWt5kGc)* — Fotografare per Stupire, timestamp 07:00–10:00
+[^video-3mdy]: *[Darktable Tutorial: Landscape Photography Workflow](https://www.youtube.com/watch?v=3MDYhWt5kGc)* — Fotografare per Stupire, timestamp 07:00–10:00
 [^video-5p0y-filmic]: *[darktable Night Sky Full Edit](https://www.youtube.com/watch?v=5P0Yj_vqy5w)* — A Dabble in Photography, timestamp 01:50–04:10
-[^video-3mdy-blue]: *[Darktable Tutorial: Landscape Photography Workflow](https://www.youtube.com/watch?v=3MDYhWt5kGc)* — Fotografare per Stupire, timestamp 07:00–10:00
 [^manual-jzczhz]: *darktable user manual — masking & blending*, [JzCzHz space documentation](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/parametric-masks/#jzczhz-space)
 [^manual-raster-mask]: *darktable user manual — masking & blending*, [raster mask availability](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/raster-masks/#availability)

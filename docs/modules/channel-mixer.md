@@ -344,5 +344,4 @@ Channel Mixer opera in spazio **scene-referred linear RGB**, quindi richiede un 
 [^ir]: *[Develop infrared photos with darktable](https://www.youtube.com/watch?v=PKK2QTPKsjY)* -- A Dabble in Photography
 [^pipeline]: *[The darktable pipeline for beginners](https://www.youtube.com/watch?v=1nPW6WPhhTo)* -- A Dabble in Photography
 [^MJJR8]: *[Some Color calibration ideas](https://www.youtube.com/watch?v=MJJR8DJ3rr8)* -- A Dabble in Photography
-[^ch2]: *[Channel Mixer Part 2](https://www.youtube.com/watch?v=QX_HItCqDtE)* -- A Dabble in Photography
 [^pixls-rgbprimaries]: *PIXLS.US — RGB Primaries module explained*, [pixls.us/articles/rgb-primaries](https://pixls.us/articles/rgb-primaries/) | `processed/pixls-articles/rgb-primaries.md`
