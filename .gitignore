@@ -20,6 +20,7 @@ g*.lua
 a*.py
 b*.py
 c*.py
+!hooks/content_date.py
 analyze_index.py
 fix_encoding.py
 migrate_refs.py

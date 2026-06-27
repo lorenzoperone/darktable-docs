@@ -1,29 +1,46 @@
 (function () {
-  function getTheme() {
-    var scheme = document.documentElement.getAttribute("data-md-color-scheme");
-    return scheme === "slate" ? "dark" : "default";
+  function getScheme() {
+    return document.documentElement.getAttribute("data-md-color-scheme");
+  }
+
+  function getMermaidConfig(scheme) {
+    if (scheme === "slate") {
+      return {
+        theme: "dark",
+        themeVariables: {
+          fontFamily: "Inter, sans-serif",
+          fontSize: "15px"
+        }
+      };
+    }
+    return {
+      theme: "base",
+      themeVariables: {
+        primaryColor: "#fff3e0",
+        primaryTextColor: "#212121",
+        primaryBorderColor: "#e65100",
+        lineColor: "#e65100",
+        secondaryColor: "#fafafa",
+        tertiaryColor: "#fff8f3",
+        fontFamily: "Inter, sans-serif",
+        fontSize: "15px"
+      }
+    };
   }
 
   function initMermaid() {
     if (typeof mermaid === "undefined") return;
-    mermaid.initialize({
-      startOnLoad: false,
-      theme: getTheme(),
-      flowchart: { curve: "basis", htmlLabels: true },
-      themeVariables: {
-        fontFamily: "Inter, sans-serif"
-      }
-    });
+    var config = getMermaidConfig(getScheme());
+    mermaid.initialize(Object.assign(
+      { startOnLoad: false, flowchart: { curve: "basis", htmlLabels: true } },
+      config
+    ));
 
-    // Material custom fence outputs <pre class="mermaid"><code>...</code></pre>
-    // Replace with <div class="mermaid"> containing unescaped text
     document.querySelectorAll("pre.mermaid").forEach(function (pre) {
       if (pre.dataset.mermaidReady) return;
       pre.dataset.mermaidReady = "true";
-
       var code = pre.querySelector("code");
       var text = code ? code.textContent : pre.textContent;
-
       var div = document.createElement("div");
       div.className = "mermaid";
       div.textContent = text;
@@ -37,19 +54,16 @@
 
   document.addEventListener("DOMContentLoaded", initMermaid);
 
-  // Re-render on theme toggle
   var observer = new MutationObserver(function () {
-    var scheme = document.documentElement.getAttribute("data-md-color-scheme");
+    var scheme = getScheme();
     if (scheme !== (window._lastMermaidScheme || null)) {
       window._lastMermaidScheme = scheme;
-      // Re-init with new theme on next tick (after mermaid.js reloads aren't needed — 
-      // just re-run with the new theme)
       if (typeof mermaid !== "undefined") {
-        mermaid.initialize({
-          theme: scheme === "slate" ? "dark" : "default",
-          flowchart: { curve: "basis", htmlLabels: true },
-          themeVariables: { fontFamily: "Inter, sans-serif" }
-        });
+        var config = getMermaidConfig(scheme);
+        mermaid.initialize(Object.assign(
+          { flowchart: { curve: "basis", htmlLabels: true } },
+          config
+        ));
         mermaid.run();
       }
     }

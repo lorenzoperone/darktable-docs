@@ -24,27 +24,11 @@ Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred,
 ## La pipeline scene-referred
 
 ```mermaid
-flowchart LR
-    subgraph LINEARE["Fase lineare"]
-        A["RAW"] --> B["Punto nero/<br/>bianco RAW"]
-        B --> C["Bilanciamento<br/>del bianco"]
-        C --> D["Demosaicizzazione"]
-        D --> E["Esposizione"]
-        E --> F["Calibrazione<br/>colore (CAT16)"]
-    end
-    subgraph TONE["Moduli lineari"]
-        F --> G["CB RGB, Tone EQ,<br/>Denoise, ..."]
-    end
-    subgraph DISPLAY["Fase display"]
-        G --> H["Tone mapping<br/>(AgX/Sigmoid/Filmic)"]
-        H --> I["Vignettatura,<br/>Filigrana, Nitidezza"]
-        I --> J["Profilo output"]
-    end
-    J --> K["Esporta"]
-
-    style LINEARE fill:#1b4332,color:#fff
-    style TONE fill:#7b2cbf,color:#fff
-    style DISPLAY fill:#14213d,color:#fff
+flowchart TD
+    A["Fase lineare (scene-referred)<br/>RAW → bilanciamento bianco<br/>→ demosaicizzazione → esposizione<br/>→ calibrazione colore (CAT16)"] --> B["Moduli lineari<br/>(CB RGB, Tone EQ, Denoise...)"]
+    B --> C{"Tone mapping<br/>AgX / Sigmoid / Filmic"}
+    C --> D["Fase display<br/>vignettatura, filigrana,<br/>nitidezza, profilo output"]
+    D --> E["Esporta"]
 ```
 
 !!! danger "Moduli disabilitati"

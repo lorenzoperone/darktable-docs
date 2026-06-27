@@ -6,37 +6,10 @@ In darktable non esistono "livelli" come in Photoshop né uno storico di azioni 
     darktable non "applica filtri sull'immagine visualizzata": costruisce una **catena di elaborazione** che parte dai dati grezzi del sensore (scene-referred, lineari rispetto alla luce) e arriva all'immagine finale (display-referred). L'ordine dei moduli nella catena conta.
 
 ```mermaid
-flowchart LR
-    subgraph LINEARE["Fase lineare (scene-referred)"]
-        A["RAW"] --> B["Punto nero/bianco"]
-        B --> C["Bilanciamento bianco"]
-        C --> D["Demosaicizzazione"]
-        D --> E["Riduzione rumore"]
-        E --> F["Correzione obiettivo"]
-        F --> G["Esposizione"]
-        G --> H["Ricostruzione alte luci"]
-        H --> I["Calibrazione colore"]
-    end
-    subgraph TONE["Compressione tonale"]
-        I --> J{"Scegli UNO"}
-        J --> K["AgX"]
-        J --> L["Filmic RGB"]
-        J --> M["Sigmoideo"]
-    end
-    subgraph DISPLAY["Fase display"]
-        K --> N["Bilanciamento colore"]
-        L --> N
-        M --> N
-        N --> O["Equalizzatore colore"]
-        O --> P["Equalizzatore toni"]
-        P --> Q["Contrasto locale"]
-        Q --> R["Esporta"]
-    end
-
-    style LINEARE fill:#1b4332,color:#fff
-    style TONE fill:#7b2cbf,color:#fff
-    style DISPLAY fill:#14213d,color:#fff
-    style J fill:#f77f00,color:#000
+flowchart TD
+    A["Fase lineare (scene-referred)<br/>RAW → demosaicizzazione → esposizione<br/>→ riduzione rumore → calibrazione colore"] --> B{"Tone mapping<br/>— scegli uno —<br/>AgX · Filmic RGB · Sigmoideo"}
+    B --> C["Fase display (display-referred)<br/>bilanciamento colore · contrasto locale<br/>equalizzatore toni · finitura"]
+    C --> D["Esporta"]
 ```
 
 ## Perché l'ordine conta

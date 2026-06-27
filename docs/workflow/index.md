@@ -21,10 +21,11 @@ Dall'importazione all'esportazione: ogni passo nel giusto ordine.
 | 10 | [Esportazione](export.md) | Export | sRGB per web, AdobeRGB per stampa |
 
 ```mermaid
-flowchart LR
-    A["RAW"] --> B["Correzioni<br/>tecniche"] --> C["Esposizione"] --> D["Calibrazione<br/>colore"]
-    --> E["Tone mapping<br/>(AgX/Sigmoid/Filmic)"] --> F["Equalizzatore<br/>toni"]
-    --> G["Bilanciamento<br/>colore RGB"] --> H["Maschere"] --> I["Finitura"] --> J["Esporta"]
+flowchart TD
+    A["RAW"] --> B["Correzioni tecniche<br/>(esposizione, bilanciamento,<br/>calibrazione colore)"]
+    B --> C["Tone mapping<br/>(AgX / Sigmoid / Filmic)"]
+    C --> D["Color grading e maschere<br/>(Tone EQ, CB RGB, finitura)"]
+    D --> E["Esporta"]
 ```
 
 ## 10 principi universali

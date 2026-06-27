@@ -20,8 +20,11 @@ A differenza di Lightroom, dove la visualizzazione è fissa, darktable permette 
 L'utilizzo delle modalità dipende dalla fase del processo DAM (Digital Asset Management) in cui ti trovi:
 
 ```mermaid
-flowchart LR
-    A["Importa"] --> B["Lighttable<br/>zoomabile"] --> C["Culling<br/>(selezione)"] --> D["Anteprima<br/>intero"] --> E["File manager<br/>(organizzazione)"]
+flowchart TD
+    A["Importa"] --> B["Lighttable zoomabile"]
+    B --> C["Culling (selezione)"]
+    C --> D["Anteprima intero"]
+    D --> E["File manager (organizzazione)"]
 ```
 
 ### Passo 1: Esplorazione con Zoomable Lighttable

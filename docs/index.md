@@ -66,10 +66,6 @@ flowchart LR
     B --> C["🖥️ Fase display<br/><i>display-referred</i><br/>5 moduli creativi"]
     C --> D["📤 Esporta"]
 
-    style A fill:#1b4332,color:#fff,stroke:#2d6a4f
-    style B fill:#7b2cbf,color:#fff,stroke:#9d4edd
-    style C fill:#14213d,color:#fff,stroke:#1d3557
-    style D fill:#e76f51,color:#fff,stroke:#e76f51
 ```
 
 Il dettaglio completo della pipeline è nella [sezione pipeline](pipeline/index.md).
