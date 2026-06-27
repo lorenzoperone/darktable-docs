@@ -27,14 +27,9 @@ Il processo si articola in **quattro fasi obbligatorie**, tutte critiche per il 
 
 Il workflow standard, dimostrato in [A Dabble in Photography](https://www.youtube.com/watch?v=7sOAxcNaP4M), è il seguente[^external-masks-video]:
 
-```
-1. Preparazione: duplica l'immagine → disattiva TUTTI i moduli geometrici  
-   |
-2. Esportazione: TIFF 16-bit, no ICC, stessa risoluzione (es. 6240×4160 px)  
-   |
-3. Esterno: apri in Affinity Photo → crea maschera AI → esporta in PNG → converte in PFM  
-   |
-4. Importazione: abilita modulo (es. exposure) → clicca 'mask manager' → 'import raster mask'  
+```mermaid
+flowchart TD
+    A["1. Preparazione: duplica l'immagine - disattiva TUTTI i moduli geometrici"] --> B["2. Esportazione: TIFF 16-bit, no ICC, stessa risoluzione (es. 6240x4160 px)"] --> C["3. Esterno: apri in Affinity Photo - crea maschera AI - esporta in PNG - converte in PFM"] --> D["4. Importazione: abilita modulo (es. exposure) - clicca 'mask manager' - 'import raster mask'"]
 ```
 
 ### Passo 1: Preparazione dell’immagine base

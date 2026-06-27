@@ -31,16 +31,9 @@ A differenza dei filtri spaziali tradizionali, la decomposizione wavelet *à tro
 
 Il flusso ottimale segue la gerarchia fisica della luce e dei sensori:
 
-```
-1. Correzioni tecniche (lens correction, denoise profilato)
-   |
-2. Esposizione (grigio medio a ~18.45%)
-   |
-3. Contrast Equalizer (nitidezza, bloom, controllo rumore)
-   |
-4. Tone Mapping (AGX/Sigmoid)
-   |
-5. Gestione colore (color calibration, color balance rgb)
+```mermaid
+flowchart TD
+    A["1. Correzioni tecniche (lens correction, denoise profilato)"] --> B["2. Esposizione (grigio medio a ~18.45%)"] --> C["3. Contrast Equalizer (nitidezza, bloom, controllo rumore)"] --> D["4. Tone Mapping (AGX/Sigmoid)"] --> E["5. Gestione colore (color calibration, color balance rgb)"]
 ```
 
 ### Passo 1: Imposta la scala di visualizzazione

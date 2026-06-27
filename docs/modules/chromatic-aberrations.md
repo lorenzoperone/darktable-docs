@@ -20,12 +20,9 @@ A differenza del modulo `lens correction`, che corregge TCA usando profili Lensf
 
 Il flusso ottimale per la correzione TCA è gerarchico e sequenziale[^chromatic-aberrations-manual]:
 
-```
-1. Correzione primaria in lens correction (TCA sliders)
-   |
-2. Affinamento con chromatic aberrations
-   |
-3. Eventuale correzione locale con maschere (opzionale)
+```mermaid
+flowchart TD
+    A["1. Correzione primaria in lens correction (TCA sliders)"] --> B["2. Affinamento con chromatic aberrations"] --> C["3. Eventuale correzione locale con maschere (opzionale)"]
 ```
 
 !!! tip "Correggi prima nel modulo lens correction"

@@ -18,16 +18,9 @@ darktable utilizza l’aritmetica in virgola mobile (floating-point) internament
 
 Il flusso di lavoro con *unbounded colors* non richiede azioni esplicite da parte dell’utente: è sempre attivo e trasparente. Tuttavia, comprenderne il ruolo è essenziale per evitare errori comuni:
 
-```
-1. Esposizione (modulo exposure)
-   ↓
-2. Bilanciamento del bianco (white balance / color calibration)
-   ↓
-3. Correzione cromatica avanzata (color calibration → primaries/spot mapping)
-   ↓
-4. Compressione tonale (AGX / Filmic RGB)
-   ↓
-5. Output finale (output color profile + optional tone curve)
+```mermaid
+flowchart TD
+    A["1. Esposizione (modulo exposure)"] --> B["2. Bilanciamento del bianco (white balance / color calibration)"] --> C["3. Correzione cromatica avanzata (color calibration - primaries/spot mapping)"] --> D["4. Compressione tonale (AGX / Filmic RGB)"] --> E["5. Output finale (output color profile + optional tone curve)"]
 ```
 
 !!! tip "Non forzare il clipping"

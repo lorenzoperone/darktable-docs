@@ -18,12 +18,9 @@ A differenza di Filmic RGB, AGX gestisce la saturazione seguendo il comportament
 
 Il flusso di lavoro tipico con AGX si articola in tre fasi:[^agx-guide][^pipeline-beginner]
 
-```
-1. Esposizione (modulo exposure)
-   |
-2. AGX -- compressione tonale
-   |
-3. Bilanciamento colore (color balance rgb)
+```mermaid
+flowchart TD
+    A["1. Esposizione (modulo exposure)"] --> B["2. AGX - compressione tonale"] --> C["3. Bilanciamento colore (color balance rgb)"]
 ```
 
 !!! tip "Regola d'oro: esponi prima, comprimi dopo"

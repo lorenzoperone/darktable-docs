@@ -12,16 +12,9 @@ Il flusso di lavoro per la **macro close-up photography** in darktable richiede 
 
 Il workflow macro in darktable si articola in **5 fasi sequenziali**, con priorità assoluta alla conservazione dei dati RAW:
 
-```
-1. Preparazione & Focus Peaking (lighttable)
-   ↓
-2. Spot Exposure & Color Mapping (exposure + color calibration)
-   ↓
-3. Ricostruzione luci con Guided Laplacians (highlight reconstruction)
-   ↓
-4. Contrasto locale selettivo (local contrast + masks)
-   ↓
-5. Rifinitura finale: rumore, vignettatura, cornice (denoise, vignetting, watermark)
+```mermaid
+flowchart TD
+    A["1. Preparazione & Focus Peaking (lighttable)"] --> B["2. Spot Exposure & Color Mapping (exposure + color calibration)"] --> C["3. Ricostruzione luci con Guided Laplacians (highlight reconstruction)"] --> D["4. Contrasto locale selettivo (local contrast + masks)"] --> E["5. Rifinitura finale: rumore, vignettatura, cornice (denoise, vignetting, watermark)"]
 ```
 
 Ogni fase opera su dati *scene-referred*, senza conversione prematura in output-referred. Questo garantisce che le correzioni siano fisicamente coerenti con la profondità di campo reale e la distribuzione luminosa dell’oggetto.

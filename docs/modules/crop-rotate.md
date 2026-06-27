@@ -22,12 +22,9 @@ A differenza del vecchio `crop and rotate`, non offre controlli per l’angolo n
 
 Il flusso di lavoro ottimale per il ritaglio in darktable segue una sequenza rigorosa di tre passaggi, rispettando l’ordine della pipeline[^pipeline-beginner][^dt38-what-new]:
 
-```
-1. rotate and perspective → correzione angolo e prospettiva
-   |
-2. orientation → flip orizzontale/verticale (se necessario)
-   |
-3. crop → ritaglio artistico finale
+```mermaid
+flowchart TD
+    A["1. rotate and perspective → correzione angolo e prospettiva"] --> B["2. orientation → flip orizzontale/verticale (se necessario)"] --> C["3. crop → ritaglio artistico finale"]
 ```
 
 !!! tip "Regola d’oro: ritaglia sempre per ultimo"

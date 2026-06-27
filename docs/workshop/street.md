@@ -14,18 +14,9 @@ Il workflow per la street photography in bianco e nero in darktable 5.4+ si basa
 
 Il workflow segue un ordine rigoroso, ispirato alle tecniche analogiche di dodging & burning e alla pratica del *“less is more”* tipica della street[^bw-video]:
 
-```
-1. Preparazione: duplicato + ritaglio compositivo
-   |
-2. Bilanciamento del bianco e correzione geometrica (se necessaria)
-   |
-3. Conversione in bianco e nero con color calibration (non con equalizzatore B/N legacy)
-   |
-4. Contrasto globale con esposizione (non con filmic o AGX)
-   |
-5. Contrasto locale selettivo (local contrast + maschere)
-   |
-6. Nitidezza mirata e vignettatura finale
+```mermaid
+flowchart TD
+    A["1. Preparazione: duplicato + ritaglio compositivo"] --> B["2. Bilanciamento del bianco e correzione geometrica (se necessaria)"] --> C["3. Conversione in bianco e nero con color calibration (non con equalizzatore B/N legacy)"] --> D["4. Contrasto globale con esposizione (non con filmic o AGX)"] --> E["5. Contrasto locale selettivo (local contrast + maschere)"] --> F["6. Nitidezza mirata e vignettatura finale"]
 ```
 
 Questo ordine evita l’accumulo di artefatti: ad esempio, applicare `local contrast` *prima* della conversione B/N genera distorsioni cromatiche indesiderate[^bw-video]. Il modulo `color calibration` è usato **due volte**: una per il bilanciamento del bianco (tab *White Balance*), una per la conversione (tab *Colorfulness*, con `gray` abilitato)[^street-video-1].

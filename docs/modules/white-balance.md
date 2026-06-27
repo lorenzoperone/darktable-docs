@@ -24,14 +24,9 @@ Il modulo fornisce tre modalità di controllo complementari:
 
 Il flusso ideale per il bilanciamento del bianco segue una sequenza rigorosa, specie nei workflow *scene-referred* (AGX, Filmic RGB):
 
-```
-1. Verifica iniziale (istogramma RGB + visualizzazione verde)
-   |
-2. Scelta del preset più vicino ("as shot" o "camera reference")
-   |
-3. Affinamento manuale con pipetta su area neutra o regolazione temperature/tint
-   |
-4. Convalida tramite modulo color calibration (CAT tab) per adattazione percettiva
+```mermaid
+flowchart TD
+    A["1. Verifica iniziale (istogramma RGB + visualizzazione verde)"] --> B["2. Scelta del preset più vicino (\"as shot\" o \"camera reference\")"] --> C["3. Affinamento manuale con pipetta su area neutra o regolazione temperature/tint"] --> D["4. Convalida tramite modulo color calibration (CAT tab) per adattazione percettiva"]
 ```
 
 ### Passo 1: Diagnosi visiva con l’istogramma RGB

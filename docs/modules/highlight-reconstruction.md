@@ -26,16 +26,9 @@ Il modulo offre **cinque metodi principali**, ciascuno con un diverso compromess
 
 Il flusso ottimale prevede un'integrazione stretta con `exposure`, `white balance` e `filmic rgb`:
 
-```
-1. Esposizione globale (modulo exposure)
-   |
-2. White balance (per stabilizzare i rapporti RGB)
-   |
-3. Highlight reconstruction (prima di qualsiasi profilo colore)
-   |
-4. Input color profile + Color calibration
-   |
-5. Tone mapping (AGX / Filmic RGB) → con eventuale ricostruzione secondaria integrata
+```mermaid
+flowchart TD
+    A["1. Esposizione globale (modulo exposure)"] --> B["2. White balance (per stabilizzare i rapporti RGB)"] --> C["3. Highlight reconstruction (prima di qualsiasi profilo colore)"] --> D["4. Input color profile + Color calibration"] --> E["5. Tone mapping (AGX / Filmic RGB) → con eventuale ricostruzione secondaria integrata"]
 ```
 
 ### Passo 1: Verifica e impostazione del clipping threshold

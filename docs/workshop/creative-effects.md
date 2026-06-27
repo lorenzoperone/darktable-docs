@@ -15,16 +15,9 @@ Entrambi *non esistono come moduli nativi singoli* in darktable, ma si costruisc
 
 Entrambi gli effetti richiedono una **duplicazione dell’immagine** per lavorare su livelli separati. Il posizionamento del modulo `composite` è critico: deve essere inserito *prima* di `tone curve`/`AGX`, ma *dopo* tutti i moduli di correzione base (esposizione, bilanciamento bianco, correzione ottica)[^dragon-video].
 
-```
-1. Correzioni base (exposure, white balance, lens correction)
-   |
-2. Duplicazione → creazione livello “sfocato” (Orton) o “inversione + fusione” (Dragan)
-   |
-3. Composite → fusione con modalità Multiply / Screen / Overlay
-   |
-4. AGX / Sigmoid → compressione tonale finale
-   |
-5. Affinamenti locali (local contrast, sharpen, color balance rgb)
+```mermaid
+flowchart TD
+    A["1. Correzioni base (exposure, white balance, lens correction)"] --> B["2. Duplicazione - creazione livello sfocato (Orton) o inversione + fusione (Dragan)"] --> C["3. Composite - fusione con modalita Multiply / Screen / Overlay"] --> D["4. AGX / Sigmoid - compressione tonale finale"] --> E["5. Affinamenti locali (local contrast, sharpen, color balance rgb)"]
 ```
 
 !!! warning "Errore comune: ordine sbagliato di composite"

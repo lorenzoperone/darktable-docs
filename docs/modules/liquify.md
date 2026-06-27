@@ -21,16 +21,9 @@ Il funzionamento di liquify si basa su tre concetti fondamentali:[^liquify-manua
 
 L'utilizzo tipico di liquify segue questi passaggi:[^liquify-manual]
 
-```
-1. Attiva il modulo liquify
-   |
-2. Seleziona lo strumento (Punto, Linea o Curva)
-   |
-3. Crea i nodi sull'immagine
-   |
-4. Regola raggio, forza e piumatura
-   |
-5. Usa lo strumento "Node" per modifiche fini
+```mermaid
+flowchart TD
+    A["1. Attiva il modulo liquify"] --> B["2. Seleziona lo strumento (Punto, Linea o Curva)"] --> C["3. Crea i nodi sull'immagine"] --> D["4. Regola raggio, forza e piumatura"] --> E["5. Usa lo strumento \"Node\" per modifiche fini"]
 ```
 
 ### Passo 1: Creazione della forma

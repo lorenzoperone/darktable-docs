@@ -19,14 +19,9 @@ Le preferenze di elaborazione in darktable controllano tre strati distinti di pe
 
 Per configurare correttamente darktable, segui questo ordine logico:
 
-```
-1. Imposta il flusso di lavoro (Scene-referred)
-   |
-2. Configura le risorse di sistema (RAM/GPU)
-   |
-3. Attiva e verifica OpenCL
-   |
-4. (Opzionale) Configura l'accelerazione AI
+```mermaid
+flowchart TD
+    A["1. Imposta il flusso di lavoro (Scene-referred)"] --> B["2. Configura le risorse di sistema (RAM/GPU)"] --> C["3. Attiva e verifica OpenCL"] --> D["4. (Opzionale) Configura l'accelerazione AI"]
 ```
 
 ### Passo 1: Impostare il flusso predefinito

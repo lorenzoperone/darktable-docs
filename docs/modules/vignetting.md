@@ -18,12 +18,9 @@ A differenza di strumenti come `exposure` con maschera ellittica, `vignetting` o
 
 Il flusso tipico prevede tre fasi sequenziali, da eseguire *dopo* le correzioni tecniche fondamentali (demosaic, lens correction, exposure, white balance)[^process-manual]:
 
-```
-1. Correzioni tecniche (lens correction, exposure)
-   |
-2. Vignetting — effetto artistico
-   |
-3. Affinamento cromatico (color balance rgb)
+```mermaid
+flowchart TD
+    A["1. Correzioni tecniche (lens correction, exposure)"] --> B["2. Vignetting — effetto artistico"] --> C["3. Affinamento cromatico (color balance rgb)"]
 ```
 
 ### Passo 1: Attiva la visualizzazione della maschera

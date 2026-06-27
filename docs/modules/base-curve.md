@@ -21,16 +21,9 @@ A differenza dei moduli `tone curve` o `rgb curve`, `base curve`:
 
 Il flusso tipico con `base curve` segue un ordine rigoroso, essenziale per preservare la coerenza del segnale:
 
-```
-1. demosaic
-   |
-2. white balance (Camera Reference)
-   |
-3. base curve ← punto critico: qui avviene la prima non-linearizzazione
-   |
-4. input color profile → conversione nello spazio di lavoro (es. ProPhoto RGB)
-   |
-5. esposizione globale (exposure), contrasto (contrast brightness saturation), ecc.
+```mermaid
+flowchart TD
+    A["1. demosaic"] --> B["2. white balance (Camera Reference)"] --> C["3. base curve - punto critico: qui avviene la prima non-linearizzazione"] --> D["4. input color profile - conversione nello spazio di lavoro (es. ProPhoto RGB)"] --> E["5. esposizione globale (exposure), contrasto (contrast brightness saturation), ecc."]
 ```
 
 ### Passo 1: Verifica e selezione della curva

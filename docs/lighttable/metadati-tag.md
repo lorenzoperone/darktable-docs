@@ -18,14 +18,9 @@ Queste informazioni sono persistenti: vengono scritte nei file sidecar e possono
 
 Per gli utenti provenienti da Lightroom, il flusso tipico di assegnazione metadati in darktable segue questo ordine:[^manual-meta-editor][^manual-tagging]
 
-```
-1. Importazione e Selezione
-   |
-2. Tagging (Categorizzazione generale)
-   |
-3. Metadata Editor (Dettagli specifici)
-   |
-4. Esportazione (con inclusione metadati)
+```mermaid
+flowchart TD
+    A["1. Importazione e Selezione"] --> B["2. Tagging (Categorizzazione generale)"] --> C["3. Metadata Editor (Dettagli specifici)"] --> D["4. Esportazione (con inclusione metadati)"]
 ```
 
 ### Passo 1: Applicazione dei Tag (Tagging)

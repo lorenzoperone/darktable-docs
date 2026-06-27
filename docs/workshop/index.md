@@ -42,10 +42,11 @@ Dall'analisi dei video-tutorial di *A Dabble in Photography* e degli articoli pi
 
 Ogni pagina segue questa struttura:
 
-```
-Contesto --> Analisi RAW --> Correzioni tecniche
-    --> Tone mapping --> Maschere --> Color grading
-    --> Finitura --> Riepilogo impostazioni
+```mermaid
+flowchart LR
+    A["Contesto"] --> B["Analisi RAW"] --> C["Correzioni tecniche"]
+    --> D["Tone mapping"] --> E["Maschere"] --> F["Color grading"]
+    --> G["Finitura"] --> H["Riepilogo impostazioni"]
 ```
 
 Le tabelle **Riepilogo impostazioni** a fine pagina riassumono tutti i moduli e i parametri usati, per riferimento rapido.

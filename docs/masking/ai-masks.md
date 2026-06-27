@@ -29,14 +29,9 @@ Il flusso operativo si basa su tre fasi distinte ma integrate:
 
 Il flusso ottimale per sfruttare SAM2 segue un ordine rigoroso, allineato al paradigma scene-referred[^manual-flusso]:
 
-```
-1. Correzioni tecniche (Lens Correction, Denoise profilato)
-   |
-2. Esposizione globale (modulo Exposure)
-   |
-3. Generazione SAM2 → Rifinitura maschera → Applicazione
-   |
-4. Regolazioni locali (con maschera applicata)
+```mermaid
+flowchart TD
+    A["1. Correzioni tecniche (Lens Correction, Denoise profilato)"] --> B["2. Esposizione globale (modulo Exposure)"] --> C["3. Generazione SAM2 - Rifinitura maschera - Applicazione"] --> D["4. Regolazioni locali (con maschera applicata)"]
 ```
 
 ### Passo 1: Abilitazione e configurazione del modello

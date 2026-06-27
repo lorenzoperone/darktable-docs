@@ -16,12 +16,9 @@ I file SVG devono essere salvati nella cartella `$HOME/.config/darktable/waterma
 
 Il flusso di lavoro tipico prevede tre fasi distinte:
 
-```
-1. Creazione o importazione del watermark (SVG/PNG)
-   |
-2. Configurazione del modulo (posizionamento, scala, testo)
-   |
-3. Applicazione finale (prima dell'esportazione)
+```mermaid
+flowchart TD
+    A["1. Creazione o importazione del watermark (SVG/PNG)"] --> B["2. Configurazione del modulo (posizionamento, scala, testo)"] --> C["3. Applicazione finale (prima dell'esportazione)"]
 ```
 
 !!! warning "Attenzione alla posizione nel flusso"

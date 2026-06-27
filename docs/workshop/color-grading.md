@@ -24,14 +24,9 @@ A differenza di Lightroom, qui ogni parametro ha una definizione CIE rigorosa:
 
 Il flusso ottimale segue l’ordine della pipeline scene-referred [^workflow-manual]:
 
-```
-1. Esposizione (exposure)
-   |
-2. Calibrazione colore (color calibration, tab CAT)
-   |
-3. Color balance rgb (per grading creativo)
-   |
-4. Fine-tuning locale (con maschere)
+```mermaid
+flowchart TD
+    A["1. Esposizione (exposure)"] --> B["2. Calibrazione colore (color calibration, tab CAT)"] --> C["3. Color balance rgb (per grading creativo)"] --> D["4. Fine-tuning locale (con maschere)"]
 ```
 
 !!! warning "Non invertire l'ordine"

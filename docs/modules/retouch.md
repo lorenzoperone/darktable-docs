@@ -18,12 +18,9 @@ A differenza di Lightroom’s Spot Removal o Photoshop’s Healing Brush, *retou
 
 Il flusso ottimale per ritocchi professionali si articola in tre fasi sequenziali[^pixls-wavelet][^darktable-usermanual-retouch]:
 
-```
-1. Esposizione & bilanciamento colore (exposure, white balance, color calibration)
-   |
-2. Decomposizione wavelet (modulo retouch → sezione "wavelet decompose")
-   |
-3. Ritocco selettivo per scala (cloning/healing su livelli 4–6; blur su livelli 1–3)
+```mermaid
+flowchart TD
+    A["1. Esposizione & bilanciamento colore (exposure, white balance, color calibration)"] --> B["2. Decomposizione wavelet (modulo retouch - sezione wavelet decompose)"] --> C["3. Ritocco selettivo per scala (cloning/healing su livelli 4-6; blur su livelli 1-3)"]
 ```
 
 !!! tip "Wavelet prima di tutto"

@@ -20,10 +20,11 @@ Dall'importazione all'esportazione: ogni passo nel giusto ordine.
 | 9 | [Finitura](../modules/diffuse-sharpen.md) | Diffuse or Sharpen | Con parsimonia |
 | 10 | [Esportazione](export.md) | Export | sRGB per web, AdobeRGB per stampa |
 
-```
-RAW --> Correzioni tecniche --> Esposizione --> Calibrazione colore
-    --> Tone mapping (AgX/Sigmoid/Filmic) --> Tone Equalizer
-    --> Color Balance RGB --> [Maschere] --> [Finitura] --> Export
+```mermaid
+flowchart LR
+    A["RAW"] --> B["Correzioni tecniche"] --> C["Esposizione"] --> D["Calibrazione colore"]
+    --> E["Tone mapping (AgX/Sigmoid/Filmic)"] --> F["Tone Equalizer"]
+    --> G["Color Balance RGB"] --> H["Maschere"] --> I["Finitura"] --> J["Export"]
 ```
 
 ## 10 principi universali

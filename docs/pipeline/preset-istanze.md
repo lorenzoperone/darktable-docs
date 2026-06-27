@@ -16,14 +16,9 @@ Le funzionalità trattate in questa sezione riguardano due aspetti distinti ma c
 
 L'utilizzo combinato di preset e istanze multiple segue tipicamente questo schema logico:
 
-```
-1. Configurazione manuale di un modulo
-   |
-2. Salvataggio come Preset (opzionale: con regole EXIF)
-   |
-3. Applicazione automatica o manuale del preset
-   |
-4. Creazione di nuove istanze per correzioni mirate
+```mermaid
+flowchart TD
+    A["1. Configurazione manuale di un modulo"] --> B["2. Salvataggio come Preset (opzionale: con regole EXIF)"] --> C["3. Applicazione automatica o manuale del preset"] --> D["4. Creazione di nuove istanze per correzioni mirate"]
 ```
 
 ### Passo 1: Creare un Preset

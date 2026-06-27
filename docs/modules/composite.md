@@ -23,14 +23,9 @@ Questo approccio consente di costruire effetti complessi mantenendo la separazio
 
 Il flusso standard per un effetto Orton o Dragan si articola in quattro fasi chiare[^dabble-orton][^dabble-dragon]:
 
-```
-1. Correzione globale (exposure → AgX → color balance rgb)
-   |
-2. Duplicazione dell’immagine (Ctrl+D)
-   |
-3. Elaborazione del duplicato (Blur → B&W → eventuali inversioni)
-   |
-4. Composite: fusione con Multiply/Screen + maschera opzionale
+```mermaid
+flowchart TD
+    A["1. Correzione globale (exposure → AgX → color balance rgb)"] --> B["2. Duplicazione dell'immagine (Ctrl+D)"] --> C["3. Elaborazione del duplicato (Blur → B&W → eventuali inversioni)"] --> D["4. Composite: fusione con Multiply/Screen + maschera opzionale"]
 ```
 
 !!! info "Posizionamento critico nella pipeline"

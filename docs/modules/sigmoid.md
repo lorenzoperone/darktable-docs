@@ -18,14 +18,9 @@ A differenza di `filmic rgb`, sigmoid non include controlli nativi per la gestio
 
 Il flusso ottimale con sigmoid segue rigorosamente la gerarchia della pipeline scene-referred[^sigmoid-manual]:
 
-```
-1. Esposizione (modulo exposure)
-   |
-2. Bilanciamento colore (color balance rgb / color calibration)
-   |
-3. Sigmoid -- compressione tonale
-   |
-4. Regolazioni finali (sharpening, local contrast, etc.)
+```mermaid
+flowchart TD
+    A["1. Esposizione (modulo exposure)"] --> B["2. Bilanciamento colore (color balance rgb / color calibration)"] --> C["3. Sigmoid - compressione tonale"] --> D["4. Regolazioni finali (sharpening, local contrast, etc.)"]
 ```
 
 !!! tip "Regola d'oro: esponi prima, mappa dopo"

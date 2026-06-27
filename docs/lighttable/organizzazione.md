@@ -20,14 +20,9 @@ Le funzionalità chiave includono:
 
 Il flusso tipico per organizzare una sessione di riproduzione in darktable segue questi passi logici:[^collections][^star-color][^collection-filters]
 
-```
-1. Import (Importa immagini)
-   |
-2. Collections (Seleziona fonte: Folder/Film Roll)
-   |
-3. Star Ratings (Cernita rapida con tastiera)
-   |
-4. Collection Filters (Filtra per stelle/colore per la selezione finale)
+```mermaid
+flowchart TD
+    A["1. Import (Importa immagini)"] --> B["2. Collections (Seleziona fonte: Folder/Film Roll)"] --> C["3. Star Ratings (Cernita rapida con tastiera)"] --> D["4. Collection Filters (Filtra per stelle/colore per la selezione finale)"]
 ```
 
 ### Passo 1: Definire la Collezione base

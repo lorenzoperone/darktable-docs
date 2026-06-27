@@ -23,16 +23,9 @@ A differenza di Lightroom — dove il demosaicing è completamente opaco — dar
 
 Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico della pipeline scene-referred[^pipeline-beginner]:
 
-```
-1. raw black/white point (obbligatorio, non modificabile)
-   |
-2. demosaic ← qui si sceglie l'algoritmo e si attiva capture sharpen
-   |
-3. white balance (camera reference)
-   |
-4. input color profile
-   |
-5. exposure (posizionamento del grigio medio)
+```mermaid
+flowchart TD
+    A["1. raw black/white point (obbligatorio, non modificabile)"] --> B["2. demosaic - qui si sceglie l'algoritmo e si attiva capture sharpen"] --> C["3. white balance (camera reference)"] --> D["4. input color profile"] --> E["5. exposure (posizionamento del grigio medio)"]
 ```
 
 !!! tip "Capture sharpen va attivato *prima* del denoise"

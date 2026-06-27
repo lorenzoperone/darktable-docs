@@ -20,12 +20,9 @@ Gli stili supportano una struttura gerarchica utilizzando il simbolo della pipe 
 
 Il flusso tipico per creare e applicare uno stile (copy history) prevede tre fasi:[^styles-man][^history-stack]
 
-```
-1. Modifica dell'immagine sorgente (Darkroom)
-   |
-2. Creazione dello stile (History Stack)
-   |
-3. Applicazione alle immagini destinazione (Lighttable)
+```mermaid
+flowchart TD
+    A["1. Modifica dell'immagine sorgente (Darkroom)"] --> B["2. Creazione dello stile (History Stack)"] --> C["3. Applicazione alle immagini destinazione (Lighttable)"]
 ```
 
 ### Passo 1: Creazione dello stile dalla History Stack

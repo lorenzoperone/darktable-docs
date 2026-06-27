@@ -16,14 +16,9 @@ Questo workshop ti guida passo-passo su un’immagine RAW di paesaggio al tramon
 
 Il workflow HDR in darktable si articola in **quattro fasi sequenziali**, ciascuna con obiettivi specifici:
 
-```
-1. Esposizione corretta → recupero dati grezzi
-   |
-2. Compressione globale → Sigmoid o AGX (scelta dipende dal tipo di immagine)
-   |
-3. Controllo locale → Tone Equalizer (per dettagli nelle luci/ombre senza appiattire)
-   |
-4. Affinamento cromatico → Color Calibration + Bilanciamento RGB (per evitare clipping cromatico)
+```mermaid
+flowchart TD
+    A["1. Esposizione corretta - recupero dati grezzi"] --> B["2. Compressione globale - Sigmoid o AGX (scelta dipende dal tipo di immagine)"] --> C["3. Controllo locale - Tone Equalizer (per dettagli nelle luci/ombre senza appiattire)"] --> D["4. Affinamento cromatico - Color Calibration + Bilanciamento RGB (per evitare clipping cromatico)"]
 ```
 
 !!! warning "Non saltare la fase 1"

@@ -110,13 +110,14 @@ Per utenti provenienti da Lightroom o Photoshop, il flusso di lavoro *scene-refe
 - `sharpen`: applicare *dopo* `filmic rgb`, altrimenti genera artefatti cromatici [^pixls-rgb-or-lab]  
 
 ### Esempio pratico: ritratto in luce scarsa
-```text
-demosaic → input color profile → filmic rgb (DR=13.2, contrast=0.82) → 
-exposure (+0.95) → white balance (temp=5200K, tint=+5) → 
-color calibration (red=+3, blue=-2) → 
-tone equalizer (luminance mask, smoothing=0.85) → 
-denoise (profiled, strength=0.78) → 
-sharpen (radius=1.4, amount=0.52)
+```mermaid
+flowchart LR
+    A["demosaic"] --> B["input color profile"] --> C["filmic rgb (DR=13.2, contrast=0.82)"]
+    --> D["exposure (+0.95)"] --> E["white balance (temp=5200K, tint=+5)"]
+    --> F["color calibration (red=+3, blue=-2)"]
+    --> G["tone equalizer (luminance mask, smoothing=0.85)"]
+    --> H["denoise (profiled, strength=0.78)"]
+    --> I["sharpen (radius=1.4, amount=0.52)"]
 ```
 
 ## Consigli operativi avanzati

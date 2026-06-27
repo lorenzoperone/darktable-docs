@@ -21,12 +21,9 @@ A differenza del modulo *crop and rotate*, che opera con una semplice trasformaz
 
 Il workflow ideale segue tre fasi sequenziali, con priorità alla precisione strutturale prima di ogni rotazione finale:
 
-```
-1. Identificazione delle strutture (structure)
-   |
-2. Adattamento automatico (fit)
-   |
-3. Rotazione finale (rotation) + ritaglio automatico
+```mermaid
+flowchart TD
+    A["1. Identificazione delle strutture (structure)"] --> B["2. Adattamento automatico (fit)"] --> C["3. Rotazione finale (rotation) + ritaglio automatico"]
 ```
 
 ### Passo 1: Definizione delle strutture

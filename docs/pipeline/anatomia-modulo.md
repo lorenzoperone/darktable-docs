@@ -22,16 +22,9 @@ I passaggi 2 e 3 sono opzionali e non supportati da tutti i moduli. Ad esempio, 
 
 Comprendere l'anatomia del modulo è cruciale per sfruttare le capacità avanzate di darktable, come il mascheramento selettivo e il blending.
 
-```
-Input (dal modulo precedente)
-   |
-   |---> 1. Operazione (es. Exposure, Color Calibration)
-   |
-   |---> 2. Blending (es. Normal, Multiply)
-   |
-   |---> 3. Mascheratura (Drawn mask, Parametric mask)
-   |
-   |---> 4. Output Finale (al modulo successivo)
+```mermaid
+flowchart TD
+    A["Input (dal modulo precedente)"] --> B["1. Operazione (es. Exposure, Color Calibration)"] --> C["2. Blending (es. Normal, Multiply)"] --> D["3. Mascheratura (Drawn mask, Parametric mask)"] --> E["4. Output Finale (al modulo successivo)"]
 ```
 
 !!! tip "Istanze Multiple e Maschere Inverse"

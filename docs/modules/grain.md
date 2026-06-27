@@ -18,16 +18,9 @@ A differenza di altri software (es. Lightroom), darktable **non genera grana par
 
 Il grain è un modulo *finale*, da applicare **dopo** tutti gli interventi di correzione tonale, cromatica e geometrica. La sua posizione ideale nella pipeline è subito prima del modulo **output color profile**, per garantire che la grana sia integrata correttamente nello spazio di destinazione[^darktable-fr-grain-2016].
 
-```
-1. Esposizione → Bilanciamento bianco → Denoise
-   |
-2. Tone mapping (AGX / Filmic RGB)
-   |
-3. Correzioni cromatiche (color balance rgb, color calibration)
-   |
-4. Grain ← posizione ottimale
-   |
-5. Output color profile → Export
+```mermaid
+flowchart TD
+    A["1. Esposizione - Bilanciamento bianco - Denoise"] --> B["2. Tone mapping (AGX / Filmic RGB)"] --> C["3. Correzioni cromatiche (color balance rgb, color calibration)"] --> D["4. Grain - posizione ottimale"] --> E["5. Output color profile - Export"]
 ```
 
 !!! tip "Grain non è rumore: usalo per il carattere, non per mascherare"

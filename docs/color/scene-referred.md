@@ -23,13 +23,14 @@ Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred,
 
 ## La pipeline scene-referred
 
-```
-RAW --> Raw B/W Point --> White Balance (camera ref) --> Demosaic
-    --> Exposure --> Color Calibration (CAT16)
-    --> [moduli lineari: Color Balance RGB, Tone EQ, Denoise Profiled, ...]
-    --> Tone Mapping (AgX / Sigmoid / Filmic)
-    --> [moduli display: Vignette, Watermark, Sharpen, ...]
-    --> Output Color Profile --> Export
+```mermaid
+flowchart LR
+    A["RAW"] --> B["Raw B/W Point"] --> C["White Balance (camera ref)"] --> D["Demosaic"]
+    --> E["Exposure"] --> F["Color Calibration (CAT16)"]
+    --> G["moduli lineari: Color Balance RGB, Tone EQ, Denoise Profiled, ..."]
+    --> H["Tone Mapping (AgX / Sigmoid / Filmic)"]
+    --> I["moduli display: Vignette, Watermark, Sharpen, ..."]
+    --> J["Output Color Profile"] --> K["Export"]
 ```
 
 !!! danger "Moduli disabilitati"

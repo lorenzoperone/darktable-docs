@@ -13,17 +13,18 @@ Il flusso qui descritto è stato testato su una foto RAW Canon EOS R6 (CR3) e re
 **Esposizione → Bilanciamento colore → Dettagli → Correzioni geometriche → Stile finale**.  
 Ogni modulo è posizionato nella pipeline in ordine ottimale per preservare la qualità e il controllo[^suivre-tutoriels-lr].
 
-```
-1. raw overexposure compensation (se necessario)
-2. exposure
-3. white balance
-4. color calibration (primaries tab)
-5. tone curve
-6. sharpening
-7. denoise (profiled)
-8. lens correction
-9. vignetting
-10. color balance rgb
+```mermaid
+flowchart TD
+    A["1. raw overexposure compensation (se necessario)"]
+    --> B["2. exposure"]
+    --> C["3. white balance"]
+    --> D["4. color calibration (primaries tab)"]
+    --> E["5. tone curve"]
+    --> F["6. sharpening"]
+    --> G["7. denoise (profiled)"]
+    --> H["8. lens correction"]
+    --> I["9. vignetting"]
+    --> J["10. color balance rgb"]
 ```
 
 > ⚠️ **Attenzione**: In darktable, i moduli agiscono *in sequenza rigida*. L’ordine conta: ad esempio, `sharpening` deve venire *prima* di `denoise`, altrimenti il rumore viene accentuato[^de-lightroom-a-darktable-02].

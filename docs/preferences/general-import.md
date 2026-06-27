@@ -18,14 +18,9 @@ Configurare correttamente queste preferenze prima di iniziare un nuovo progetto 
 
 Il setup iniziale di darktable per un nuovo utente dovrebbe seguire questo ordine logico:[^manual-general][^manual-import]
 
-```
-1. Configurazione Interfaccia (Scheda General)
-   |
-2. Configurazione Regole di Importazione (Scheda Import)
-   |
-3. Importazione Immagini (Modulo Import)
-   |
-4. Cernita (Rating)
+```mermaid
+flowchart TD
+    A["1. Configurazione Interfaccia (Scheda General)"] --> B["2. Configurazione Regole di Importazione (Scheda Import)"] --> C["3. Importazione Immagini (Modulo Import)"] --> D["4. Cernita (Rating)"]
 ```
 
 ### Passo 1: Configurazione dell'interfaccia

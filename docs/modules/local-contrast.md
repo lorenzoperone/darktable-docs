@@ -22,14 +22,9 @@ La sua azione è simile a quella del modulo **shadows and highlights**, ma con d
 
 Il flusso ottimale prevede tre fasi sequenziali, con **local contrast** sempre in posizione *finale* della pipeline (dopo tone mapping e bilanciamento cromatico):
 
-```
-1. Esposizione globale (modulo exposure)
-   |
-2. Tone mapping (AGX / Sigmoid / Filmic RGB)
-   |
-3. Bilanciamento colore (color calibration, color balance rgb)
-   |
-4. Local contrast → solo per enfatizzare texture e dettaglio
+```mermaid
+flowchart TD
+    A["1. Esposizione globale (modulo exposure)"] --> B["2. Tone mapping (AGX / Sigmoid / Filmic RGB)"] --> C["3. Bilanciamento colore (color calibration, color balance rgb)"] --> D["4. Local contrast - solo per enfatizzare texture e dettaglio"]
 ```
 
 !!! tip "Ordine critico: dopo AGX, prima di sharpen"

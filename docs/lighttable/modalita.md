@@ -19,11 +19,9 @@ A differenza di Lightroom, dove la visualizzazione è fissa, darktable permette 
 
 L'utilizzo delle modalità dipende dalla fase del processo DAM (Digital Asset Management) in cui ti trovi:
 
-```
-Importazione -> Zoomable Lighttable (esplorazione)
-              -> Culling (selezione rapida)
-              -> Full Preview (verifica focus)
-              -> FileManager (organizzazione finale)
+```mermaid
+flowchart LR
+    A["Importazione"] --> B["Zoomable Lighttable (esplorazione)"] --> C["Culling (selezione rapida)"] --> D["Full Preview (verifica focus)"] --> E["FileManager (organizzazione finale)"]
 ```
 
 ### Passo 1: Esplorazione con Zoomable Lighttable
