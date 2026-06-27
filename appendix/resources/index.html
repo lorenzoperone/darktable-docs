@@ -4570,12 +4570,12 @@
 </ul>
 <h3 id="esempio-pratico-ritratto-in-luce-scarsa">Esempio pratico: ritratto in luce scarsa<a class="headerlink" href="#esempio-pratico-ritratto-in-luce-scarsa" title="Permanent link">¶</a></h3>
 <pre class="mermaid"><code>flowchart LR
-    A["demosaic"] --&gt; B["input color profile"] --&gt; C["filmic rgb (DR=13.2, contrast=0.82)"]
-    --&gt; D["exposure (+0.95)"] --&gt; E["white balance (temp=5200K, tint=+5)"]
-    --&gt; F["color calibration (red=+3, blue=-2)"]
-    --&gt; G["tone equalizer (luminance mask, smoothing=0.85)"]
-    --&gt; H["denoise (profiled, strength=0.78)"]
-    --&gt; I["sharpen (radius=1.4, amount=0.52)"]</code></pre>
+    A["Demosaicizzazione"] --&gt; B["Profilo input"] --&gt; C["Filmic RGB&lt;br/&gt;(DR=13.2)"]
+    --&gt; D["Esposizione&lt;br/&gt;(+0.95)"] --&gt; E["Bilanciamento&lt;br/&gt;bianco (5200K)"]
+    --&gt; F["Calibrazione&lt;br/&gt;colore (R+3, B-2)"]
+    --&gt; G["Equalizzatore toni&lt;br/&gt;(maschera luminanza)"]
+    --&gt; H["Riduzione rumore&lt;br/&gt;(forza 0.78)"]
+    --&gt; I["Nitidezza&lt;br/&gt;(raggio 1.4)"]</code></pre>
 <h2 id="consigli-operativi-avanzati">Consigli operativi avanzati<a class="headerlink" href="#consigli-operativi-avanzati" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Parametri ottimali per workflow 5.4+</p>
@@ -4715,7 +4715,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:26:54 UTC">27 giugno 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 giugno 2026 10:59:59 UTC">27 giugno 2026</span>
   </span>
 
     
