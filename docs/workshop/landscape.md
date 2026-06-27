@@ -237,5 +237,5 @@ Le maschere raster sono disponibili **solo nei moduli successivi al punto di cre
 
 [^video-3mdy]: *[Darktable Tutorial: Landscape Photography Workflow](https://www.youtube.com/watch?v=3MDYhWt5kGc)* — Fotografare per Stupire, timestamp 07:00–10:00
 [^video-5p0y-filmic]: *[darktable Night Sky Full Edit](https://www.youtube.com/watch?v=5P0Yj_vqy5w)* — A Dabble in Photography, timestamp 01:50–04:10
-[^manual-jzczhz]: *darktable user manual — masking & blending*, [JzCzHz space documentation](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/parametric-masks/#jzczhz-space)
-[^manual-raster-mask]: *darktable user manual — masking & blending*, [raster mask availability](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/raster-masks/#availability)
+[^manual-jzczhz]: *darktable user manual — masking & blending (§ JzCzHz space)*, [JzCzHz space documentation](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/parametric-masks/#jzczhz-space)
+[^manual-raster-mask]: *darktable user manual — masking & blending (§ raster mask availability)*, [raster mask availability](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/raster-masks/#availability)

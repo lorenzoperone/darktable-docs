@@ -60,37 +60,37 @@ e la compressione tonale avviene solo a fine processo (Filmic RGB, AgX, Sigmoid)
 In darktable i dati attraversano una sequenza fissa di moduli chiamata **pixelpipe**.
 L'ordine e' il seguente:
 
-```
-┌─────────────────── FASE LINEARE (scene-referred) ──────────────────────────────┐
-│                                                                                │
-│  Punto nero / punto bianco RAW                                                 │
-│    → Bilanciamento del bianco  (camera reference)                              │
-│    → Demosaicizzazione                                                         │
-│    → Riduzione rumore (profilato)                                              │
-│    → Correzione obiettivo                                                      │
-│    → Esposizione  (ancoraggio del grigio medio)                                │
-│    → Ricostruzione alte luci                                                   │
-│    → Calibrazione colore  (CAT16)                                              │
-│                                                                                │
-└────────────────────────────────────────────────────────────────────────────────┘
-                                    ↓
-┌─────────────── COMPRESSIONE TONALE (tone mapping) ─────────────────────────────┐
-│                                                                                │
-│    AgX  ·  Filmic RGB  ·  Sigmoideo    ← scegline UNO solo                     │
-│                                                                                │
-└────────────────────────────────────────────────────────────────────────────────┘
-                                    ↓
-┌─────────────── FASE DISPLAY (display-referred) ────────────────────────────────┐
-│                                                                                │
-│    → Bilanciamento colore  (vibrazione, 4 vie, mappatura gamut)                │
-│    → Equalizzatore colore  (tonalita' selettive)                               │
-│    → Equalizzatore toni  (scultura della luce per zone)                        │
-│    → Contrasto locale  /  Diffondi e nitidezza                                 │
-│    → Grana, Vignettatura, Filigrana                                            │
-│                                                                                │
-└────────────────────────────────────────────────────────────────────────────────┘
-                                    ↓
-                            Esporta  (JPEG/TIFF)
+```mermaid
+flowchart TD
+    subgraph LINEARE["FASE LINEARE (scene-referred)"]
+        A["Punto nero / punto bianco RAW"]
+        A --> B["Bilanciamento del bianco"]
+        B --> C["Demosaicizzazione"]
+        C --> D["Riduzione rumore (profilato)"]
+        D --> E["Correzione obiettivo"]
+        E --> F["Esposizione"]
+        F --> G["Ricostruzione alte luci"]
+        G --> H["Calibrazione colore (CAT16)"]
+    end
+    subgraph TONE["COMPRESSIONE TONALE (scegline UNO)"]
+        H --> I{"AgX"}
+        H --> J{"Filmic RGB"}
+        H --> K{"Sigmoideo"}
+    end
+    subgraph DISPLAY["FASE DISPLAY (display-referred)"]
+        I --> L["Bilanciamento colore"]
+        J --> L
+        K --> L
+        L --> M["Equalizzatore colore"]
+        M --> N["Equalizzatore toni"]
+        N --> O["Contrasto locale / Diffondi e nitidezza"]
+        O --> P["Grana, Vignettatura, Filigrana"]
+    end
+    P --> Q["Esporta (JPEG/TIFF)"]
+
+    style LINEARE fill:#1b4332,color:#fff
+    style TONE fill:#7b2cbf,color:#fff
+    style DISPLAY fill:#14213d,color:#fff
 ```
 
 !!! tip "Prima di tutto"
