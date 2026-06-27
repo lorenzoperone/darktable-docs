@@ -23,7 +23,7 @@ Il flusso tipico con `base curve` segue un ordine rigoroso, essenziale per prese
 
 ```mermaid
 flowchart TD
-    A["1. demosaic"] --> B["2. white balance (Camera Reference)"] --> C["3. base curve - punto critico: qui avviene la prima non-linearizzazione"] --> D["4. input color profile - conversione nello spazio di lavoro (es. ProPhoto RGB)"] --> E["5. esposizione globale (exposure), contrasto (contrast brightness saturation), ecc."]
+    A["1. Demosaicizzazione"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Curva base<br/>(prima non-linearizzazione)"] --> D["4. Profilo input<br/>(spazio di lavoro)"] --> E["5. Esposizione,<br/>contrasto, ecc."]
 ```
 
 ### Passo 1: Verifica e selezione della curva

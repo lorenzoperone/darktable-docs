@@ -18,7 +18,7 @@ Il flusso di lavoro tipico prevede tre fasi distinte:
 
 ```mermaid
 flowchart TD
-    A["1. Creazione o importazione del watermark (SVG/PNG)"] --> B["2. Configurazione del modulo (posizionamento, scala, testo)"] --> C["3. Applicazione finale (prima dell'esportazione)"]
+    A["1. Crea o importa<br/>filigrana (SVG/PNG)"] --> B["2. Configura modulo<br/>(posizione, scala, testo)"] --> C["3. Applica<br/>(prima dell'esportazione)"]
 ```
 
 !!! warning "Attenzione alla posizione nel flusso"

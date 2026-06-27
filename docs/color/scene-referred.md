@@ -25,12 +25,26 @@ Immagina un tramonto con un sole arancione intenso. Nel flusso display-referred,
 
 ```mermaid
 flowchart LR
-    A["RAW"] --> B["Raw B/W Point"] --> C["White Balance (camera ref)"] --> D["Demosaic"]
-    --> E["Exposure"] --> F["Color Calibration (CAT16)"]
-    --> G["moduli lineari: Color Balance RGB, Tone EQ, Denoise Profiled, ..."]
-    --> H["Tone Mapping (AgX / Sigmoid / Filmic)"]
-    --> I["moduli display: Vignette, Watermark, Sharpen, ..."]
-    --> J["Output Color Profile"] --> K["Export"]
+    subgraph LINEARE["Fase lineare"]
+        A["RAW"] --> B["Punto nero/<br/>bianco RAW"]
+        B --> C["Bilanciamento<br/>del bianco"]
+        C --> D["Demosaicizzazione"]
+        D --> E["Esposizione"]
+        E --> F["Calibrazione<br/>colore (CAT16)"]
+    end
+    subgraph TONE["Moduli lineari"]
+        F --> G["CB RGB, Tone EQ,<br/>Denoise, ..."]
+    end
+    subgraph DISPLAY["Fase display"]
+        G --> H["Tone mapping<br/>(AgX/Sigmoid/Filmic)"]
+        H --> I["Vignettatura,<br/>Filigrana, Nitidezza"]
+        I --> J["Profilo output"]
+    end
+    J --> K["Esporta"]
+
+    style LINEARE fill:#1b4332,color:#fff
+    style TONE fill:#7b2cbf,color:#fff
+    style DISPLAY fill:#14213d,color:#fff
 ```
 
 !!! danger "Moduli disabilitati"

@@ -29,7 +29,7 @@ Il workflow standard, dimostrato in [A Dabble in Photography](https://www.youtub
 
 ```mermaid
 flowchart TD
-    A["1. Preparazione: duplica l'immagine - disattiva TUTTI i moduli geometrici"] --> B["2. Esportazione: TIFF 16-bit, no ICC, stessa risoluzione (es. 6240x4160 px)"] --> C["3. Esterno: apri in Affinity Photo - crea maschera AI - esporta in PNG - converte in PFM"] --> D["4. Importazione: abilita modulo (es. exposure) - clicca 'mask manager' - 'import raster mask'"]
+    A["1. Duplica immagine,<br/>disattiva moduli<br/>geometrici"] --> B["2. Esporta TIFF 16-bit<br/>(no ICC, risoluzione<br/>originale)"] --> C["3. Editor esterno:<br/>maschera AI, esporta<br/>PNG, converti in PFM"] --> D["4. Importa maschera<br/>raster nel Mask<br/>Manager"]
 ```
 
 ### Passo 1: Preparazione dell’immagine base

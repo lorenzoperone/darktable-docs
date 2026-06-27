@@ -22,7 +22,7 @@ Il flusso tipico per creare e applicare uno stile (copy history) prevede tre fas
 
 ```mermaid
 flowchart TD
-    A["1. Modifica dell'immagine sorgente (Darkroom)"] --> B["2. Creazione dello stile (History Stack)"] --> C["3. Applicazione alle immagini destinazione (Lighttable)"]
+    A["1. Modifica immagine<br/>sorgente (darkroom)"] --> B["2. Crea stile<br/>(cronologia)"] --> C["3. Applica alle<br/>destinazioni (lighttable)"]
 ```
 
 ### Passo 1: Creazione dello stile dalla History Stack

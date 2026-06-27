@@ -22,7 +22,7 @@ Il flusso ideale prevede tre fasi sequenziali, rispettando l’ordine gerarchico
 
 ```mermaid
 flowchart TD
-    A["1. Correzione primaria (color calibration)"] --> B["2. Compressione tonale (AGX o Filmic RGB)"] --> C["3. Color grading secondario (color balance rgb)"]
+    A["1. Correzione primaria<br/>(calibrazione colore)"] --> B["2. Compressione tonale<br/>(AGX o Filmic RGB)"] --> C["3. Color grading<br/>(bilanciamento<br/>colore RGB)"]
 ```
 
 !!! tip "Usa solo dopo la compressione tonale"

@@ -20,7 +20,7 @@ Il setup iniziale di darktable per un nuovo utente dovrebbe seguire questo ordin
 
 ```mermaid
 flowchart TD
-    A["1. Configurazione Interfaccia (Scheda General)"] --> B["2. Configurazione Regole di Importazione (Scheda Import)"] --> C["3. Importazione Immagini (Modulo Import)"] --> D["4. Cernita (Rating)"]
+    A["1. Configura interfaccia<br/>(scheda General)"] --> B["2. Regole importazione<br/>(scheda Import)"] --> C["3. Importa immagini"] --> D["4. Cernita (rating)"]
 ```
 
 ### Passo 1: Configurazione dell'interfaccia

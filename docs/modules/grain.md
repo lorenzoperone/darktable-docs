@@ -20,7 +20,7 @@ Il grain è un modulo *finale*, da applicare **dopo** tutti gli interventi di co
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione - Bilanciamento bianco - Denoise"] --> B["2. Tone mapping (AGX / Filmic RGB)"] --> C["3. Correzioni cromatiche (color balance rgb, color calibration)"] --> D["4. Grain - posizione ottimale"] --> E["5. Output color profile - Export"]
+    A["1. Esposizione +<br/>WB + rumore"] --> B["2. Tone mapping<br/>(AGX/Filmic)"] --> C["3. Correzioni<br/>cromatiche"] --> D["4. Grana<br/>(posizione ottimale)"] --> E["5. Profilo output<br/>+ esporta"]
 ```
 
 !!! tip "Grain non è rumore: usalo per il carattere, non per mascherare"

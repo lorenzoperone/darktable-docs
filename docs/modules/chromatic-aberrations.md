@@ -22,7 +22,7 @@ Il flusso ottimale per la correzione TCA è gerarchico e sequenziale[^chromatic-
 
 ```mermaid
 flowchart TD
-    A["1. Correzione primaria in lens correction (TCA sliders)"] --> B["2. Affinamento con chromatic aberrations"] --> C["3. Eventuale correzione locale con maschere (opzionale)"]
+    A["1. Correzione primaria<br/>(correzione obiettivo,<br/>slider TCA)"] --> B["2. Affinamento con<br/>aberrazioni cromatiche"] --> C["3. Correzione locale<br/>con maschere"]
 ```
 
 !!! tip "Correggi prima nel modulo lens correction"

@@ -22,7 +22,7 @@ Il flusso tipico per organizzare una sessione di riproduzione in darktable segue
 
 ```mermaid
 flowchart TD
-    A["1. Import (Importa immagini)"] --> B["2. Collections (Seleziona fonte: Folder/Film Roll)"] --> C["3. Star Ratings (Cernita rapida con tastiera)"] --> D["4. Collection Filters (Filtra per stelle/colore per la selezione finale)"]
+    A["1. Importa immagini"] --> B["2. Collezioni<br/>(cartella/rullino)"] --> C["3. Valutazione stelle<br/>(cernita rapida)"] --> D["4. Filtri collezione<br/>(stelle/colore)"]
 ```
 
 ### Passo 1: Definire la Collezione base

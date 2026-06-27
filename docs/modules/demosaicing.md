@@ -25,7 +25,7 @@ Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico dell
 
 ```mermaid
 flowchart TD
-    A["1. raw black/white point (obbligatorio, non modificabile)"] --> B["2. demosaic - qui si sceglie l'algoritmo e si attiva capture sharpen"] --> C["3. white balance (camera reference)"] --> D["4. input color profile"] --> E["5. exposure (posizionamento del grigio medio)"]
+    A["1. Punto nero/bianco<br/>RAW (fisso)"] --> B["2. Demosaicizzazione<br/>(algoritmo + capture<br/>sharpen)"] --> C["3. Bilanciamento<br/>del bianco"] --> D["4. Profilo input"] --> E["5. Esposizione<br/>(grigio medio)"]
 ```
 
 !!! tip "Capture sharpen va attivato *prima* del denoise"

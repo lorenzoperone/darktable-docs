@@ -25,7 +25,7 @@ Il flusso standard per un effetto Orton o Dragan si articola in quattro fasi chi
 
 ```mermaid
 flowchart TD
-    A["1. Correzione globale (exposure → AgX → color balance rgb)"] --> B["2. Duplicazione dell'immagine (Ctrl+D)"] --> C["3. Elaborazione del duplicato (Blur → B&W → eventuali inversioni)"] --> D["4. Composite: fusione con Multiply/Screen + maschera opzionale"]
+    A["1. Correzione globale<br/>(esposizione, AGX,<br/>bilanciamento colore)"] --> B["2. Duplica immagine<br/>(Ctrl+D)"] --> C["3. Elabora duplicato<br/>(blur, B/N, inversioni)"] --> D["4. Composito<br/>(Multiply/Screen<br/>+ maschera)"]
 ```
 
 !!! info "Posizionamento critico nella pipeline"

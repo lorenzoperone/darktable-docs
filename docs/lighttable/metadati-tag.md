@@ -20,7 +20,7 @@ Per gli utenti provenienti da Lightroom, il flusso tipico di assegnazione metada
 
 ```mermaid
 flowchart TD
-    A["1. Importazione e Selezione"] --> B["2. Tagging (Categorizzazione generale)"] --> C["3. Metadata Editor (Dettagli specifici)"] --> D["4. Esportazione (con inclusione metadati)"]
+    A["1. Importa e seleziona"] --> B["2. Tagging<br/>(categorizzazione)"] --> C["3. Metadati<br/>(titolo, copyright)"] --> D["4. Esporta<br/>(con metadati)"]
 ```
 
 ### Passo 1: Applicazione dei Tag (Tagging)

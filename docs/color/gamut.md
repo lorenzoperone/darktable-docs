@@ -20,7 +20,7 @@ Il flusso di lavoro con *unbounded colors* non richiede azioni esplicite da part
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione (modulo exposure)"] --> B["2. Bilanciamento del bianco (white balance / color calibration)"] --> C["3. Correzione cromatica avanzata (color calibration - primaries/spot mapping)"] --> D["4. Compressione tonale (AGX / Filmic RGB)"] --> E["5. Output finale (output color profile + optional tone curve)"]
+    A["1. Esposizione"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Correzione cromatica<br/>(primaries / spot mapping)"] --> D["4. Compressione<br/>tonale (AGX/Filmic)"] --> E["5. Output finale<br/>(profilo output)"]
 ```
 
 !!! tip "Non forzare il clipping"

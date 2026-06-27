@@ -44,9 +44,9 @@ Ogni pagina segue questa struttura:
 
 ```mermaid
 flowchart LR
-    A["Contesto"] --> B["Analisi RAW"] --> C["Correzioni tecniche"]
-    --> D["Tone mapping"] --> E["Maschere"] --> F["Color grading"]
-    --> G["Finitura"] --> H["Riepilogo impostazioni"]
+    A["Contesto"] --> B["Analisi<br/>RAW"] --> C["Correzioni<br/>tecniche"]
+    --> D["Tone<br/>mapping"] --> E["Maschere"] --> F["Color<br/>grading"]
+    --> G["Finitura"] --> H["Riepilogo"]
 ```
 
 Le tabelle **Riepilogo impostazioni** a fine pagina riassumono tutti i moduli e i parametri usati, per riferimento rapido.

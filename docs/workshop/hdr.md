@@ -18,7 +18,7 @@ Il workflow HDR in darktable si articola in **quattro fasi sequenziali**, ciascu
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione corretta - recupero dati grezzi"] --> B["2. Compressione globale - Sigmoid o AGX (scelta dipende dal tipo di immagine)"] --> C["3. Controllo locale - Tone Equalizer (per dettagli nelle luci/ombre senza appiattire)"] --> D["4. Affinamento cromatico - Color Calibration + Bilanciamento RGB (per evitare clipping cromatico)"]
+    A["1. Esposizione corretta<br/>(recupero dati grezzi)"] --> B["2. Compressione globale<br/>(Sigmoid o AGX)"] --> C["3. Controllo locale<br/>(Tone Equalizer)"] --> D["4. Affinamento cromatico<br/>(Calibrazione + CB RGB)"]
 ```
 
 !!! warning "Non saltare la fase 1"

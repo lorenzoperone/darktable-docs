@@ -24,7 +24,7 @@ Il flusso di lavoro ottimale per il ritaglio in darktable segue una sequenza rig
 
 ```mermaid
 flowchart TD
-    A["1. rotate and perspective → correzione angolo e prospettiva"] --> B["2. orientation → flip orizzontale/verticale (se necessario)"] --> C["3. crop → ritaglio artistico finale"]
+    A["1. Ruota e prospettiva<br/>(angolo e prospettiva)"] --> B["2. Orientamento<br/>(flip H/V)"] --> C["3. Ritaglia e ruota<br/>(ritaglio artistico)"]
 ```
 
 !!! tip "Regola d’oro: ritaglia sempre per ultimo"

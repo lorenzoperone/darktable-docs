@@ -20,7 +20,7 @@ Il flusso tipico prevede tre fasi sequenziali, da eseguire *dopo* le correzioni 
 
 ```mermaid
 flowchart TD
-    A["1. Correzioni tecniche (lens correction, exposure)"] --> B["2. Vignetting — effetto artistico"] --> C["3. Affinamento cromatico (color balance rgb)"]
+    A["1. Correzioni tecniche<br/>(obiettivo, esposizione)"] --> B["2. Vignettatura<br/>(effetto artistico)"] --> C["3. Affinamento cromatico<br/>(bilanciamento colore RGB)"]
 ```
 
 ### Passo 1: Attiva la visualizzazione della maschera

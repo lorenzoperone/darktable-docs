@@ -16,7 +16,7 @@ Il workflow segue un ordine rigoroso, ispirato alle tecniche analogiche di dodgi
 
 ```mermaid
 flowchart TD
-    A["1. Preparazione: duplicato + ritaglio compositivo"] --> B["2. Bilanciamento del bianco e correzione geometrica (se necessaria)"] --> C["3. Conversione in bianco e nero con color calibration (non con equalizzatore B/N legacy)"] --> D["4. Contrasto globale con esposizione (non con filmic o AGX)"] --> E["5. Contrasto locale selettivo (local contrast + maschere)"] --> F["6. Nitidezza mirata e vignettatura finale"]
+    A["1. Duplicato +<br/>ritaglio compositivo"] --> B["2. Bilanciamento<br/>bianco + geometria"] --> C["3. Conversione B/N<br/>(color calibration)"] --> D["4. Contrasto globale<br/>(esposizione)"] --> E["5. Contrasto locale<br/>+ maschere"] --> F["6. Nitidezza +<br/>vignettatura"]
 ```
 
 Questo ordine evita l’accumulo di artefatti: ad esempio, applicare `local contrast` *prima* della conversione B/N genera distorsioni cromatiche indesiderate[^bw-video]. Il modulo `color calibration` è usato **due volte**: una per il bilanciamento del bianco (tab *White Balance*), una per la conversione (tab *Colorfulness*, con `gray` abilitato)[^street-video-1].

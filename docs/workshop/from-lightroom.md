@@ -15,16 +15,16 @@ Ogni modulo è posizionato nella pipeline in ordine ottimale per preservare la q
 
 ```mermaid
 flowchart TD
-    A["1. raw overexposure compensation (se necessario)"]
-    --> B["2. exposure"]
-    --> C["3. white balance"]
-    --> D["4. color calibration (primaries tab)"]
-    --> E["5. tone curve"]
-    --> F["6. sharpening"]
-    --> G["7. denoise (profiled)"]
-    --> H["8. lens correction"]
-    --> I["9. vignetting"]
-    --> J["10. color balance rgb"]
+    A["1. Compensazione<br/>sovraesposizione RAW"]
+    --> B["2. Esposizione"]
+    --> C["3. Bilanciamento<br/>del bianco"]
+    --> D["4. Calibrazione<br/>colore (primaries)"]
+    --> E["5. Curva toni"]
+    --> F["6. Nitidezza"]
+    --> G["7. Riduzione rumore"]
+    --> H["8. Correzione<br/>obiettivo"]
+    --> I["9. Vignettatura"]
+    --> J["10. Bilanciamento<br/>colore RGB"]
 ```
 
 > ⚠️ **Attenzione**: In darktable, i moduli agiscono *in sequenza rigida*. L’ordine conta: ad esempio, `sharpening` deve venire *prima* di `denoise`, altrimenti il rumore viene accentuato[^de-lightroom-a-darktable-02].

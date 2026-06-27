@@ -24,7 +24,7 @@ Comprendere l'anatomia del modulo è cruciale per sfruttare le capacità avanzat
 
 ```mermaid
 flowchart TD
-    A["Input (dal modulo precedente)"] --> B["1. Operazione (es. Exposure, Color Calibration)"] --> C["2. Blending (es. Normal, Multiply)"] --> D["3. Mascheratura (Drawn mask, Parametric mask)"] --> E["4. Output Finale (al modulo successivo)"]
+    A["Input<br/>(dal modulo precedente)"] --> B["1. Operazione<br/>(esposizione, calibrazione)"] --> C["2. Fusione<br/>(normal, multiply)"] --> D["3. Mascheratura<br/>(disegnata, parametrica)"] --> E["4. Output<br/>(al modulo successivo)"]
 ```
 
 !!! tip "Istanze Multiple e Maschere Inverse"

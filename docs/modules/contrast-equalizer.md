@@ -33,7 +33,7 @@ Il flusso ottimale segue la gerarchia fisica della luce e dei sensori:
 
 ```mermaid
 flowchart TD
-    A["1. Correzioni tecniche (lens correction, denoise profilato)"] --> B["2. Esposizione (grigio medio a ~18.45%)"] --> C["3. Contrast Equalizer (nitidezza, bloom, controllo rumore)"] --> D["4. Tone Mapping (AGX/Sigmoid)"] --> E["5. Gestione colore (color calibration, color balance rgb)"]
+    A["1. Correzioni tecniche<br/>(obiettivo, rumore)"] --> B["2. Esposizione<br/>(grigio medio ~18%)"] --> C["3. Equalizzatore<br/>contrasto (nitidezza,<br/>bloom)"] --> D["4. Tone mapping<br/>(AGX/Sigmoid)"] --> E["5. Gestione colore<br/>(calibrazione, CB RGB)"]
 ```
 
 ### Passo 1: Imposta la scala di visualizzazione

@@ -83,7 +83,7 @@ flowchart TD
         K --> L
         L --> M["Equalizzatore colore"]
         M --> N["Equalizzatore toni"]
-        N --> O["Contrasto locale / Diffondi e nitidezza"]
+        N --> O["Contrasto locale /<br/>Diffondi e nitidezza"]
         O --> P["Grana, Vignettatura, Filigrana"]
     end
     P --> Q["Esporta (JPEG/TIFF)"]

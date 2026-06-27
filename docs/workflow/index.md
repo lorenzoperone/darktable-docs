@@ -22,9 +22,9 @@ Dall'importazione all'esportazione: ogni passo nel giusto ordine.
 
 ```mermaid
 flowchart LR
-    A["RAW"] --> B["Correzioni tecniche"] --> C["Esposizione"] --> D["Calibrazione colore"]
-    --> E["Tone mapping (AgX/Sigmoid/Filmic)"] --> F["Tone Equalizer"]
-    --> G["Color Balance RGB"] --> H["Maschere"] --> I["Finitura"] --> J["Export"]
+    A["RAW"] --> B["Correzioni<br/>tecniche"] --> C["Esposizione"] --> D["Calibrazione<br/>colore"]
+    --> E["Tone mapping<br/>(AgX/Sigmoid/Filmic)"] --> F["Equalizzatore<br/>toni"]
+    --> G["Bilanciamento<br/>colore RGB"] --> H["Maschere"] --> I["Finitura"] --> J["Esporta"]
 ```
 
 ## 10 principi universali

@@ -14,7 +14,7 @@ Il workflow macro in darktable si articola in **5 fasi sequenziali**, con priori
 
 ```mermaid
 flowchart TD
-    A["1. Preparazione & Focus Peaking (lighttable)"] --> B["2. Spot Exposure & Color Mapping (exposure + color calibration)"] --> C["3. Ricostruzione luci con Guided Laplacians (highlight reconstruction)"] --> D["4. Contrasto locale selettivo (local contrast + masks)"] --> E["5. Rifinitura finale: rumore, vignettatura, cornice (denoise, vignetting, watermark)"]
+    A["1. Focus Peaking<br/>(lighttable)"] --> B["2. Spot Exposure +<br/>Color Mapping"] --> C["3. Ricostruzione luci<br/>(Guided Laplacians)"] --> D["4. Contrasto locale<br/>(+ maschere)"] --> E["5. Rifinitura finale<br/>(rumore, vignettatura,<br/>filigrana)"]
 ```
 
 Ogni fase opera su dati *scene-referred*, senza conversione prematura in output-referred. Questo garantisce che le correzioni siano fisicamente coerenti con la profondità di campo reale e la distribuzione luminosa dell’oggetto.

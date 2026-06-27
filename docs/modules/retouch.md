@@ -20,7 +20,7 @@ Il flusso ottimale per ritocchi professionali si articola in tre fasi sequenzial
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione & bilanciamento colore (exposure, white balance, color calibration)"] --> B["2. Decomposizione wavelet (modulo retouch - sezione wavelet decompose)"] --> C["3. Ritocco selettivo per scala (cloning/healing su livelli 4-6; blur su livelli 1-3)"]
+    A["1. Esposizione +<br/>bilanciamento colore"] --> B["2. Decomposizione<br/>wavelet (retouch)"] --> C["3. Ritocco per scala<br/>(clone/heal livelli 4-6,<br/>blur livelli 1-3)"]
 ```
 
 !!! tip "Wavelet prima di tutto"

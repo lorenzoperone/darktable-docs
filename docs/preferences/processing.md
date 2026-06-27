@@ -21,7 +21,7 @@ Per configurare correttamente darktable, segui questo ordine logico:
 
 ```mermaid
 flowchart TD
-    A["1. Imposta il flusso di lavoro (Scene-referred)"] --> B["2. Configura le risorse di sistema (RAM/GPU)"] --> C["3. Attiva e verifica OpenCL"] --> D["4. (Opzionale) Configura l'accelerazione AI"]
+    A["1. Flusso di lavoro<br/>(scene-referred)"] --> B["2. Risorse di sistema<br/>(RAM/GPU)"] --> C["3. Attiva OpenCL"] --> D["4. Accelerazione AI<br/>(opzionale)"]
 ```
 
 ### Passo 1: Impostare il flusso predefinito

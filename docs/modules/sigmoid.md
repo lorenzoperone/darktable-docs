@@ -20,7 +20,7 @@ Il flusso ottimale con sigmoid segue rigorosamente la gerarchia della pipeline s
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione (modulo exposure)"] --> B["2. Bilanciamento colore (color balance rgb / color calibration)"] --> C["3. Sigmoid - compressione tonale"] --> D["4. Regolazioni finali (sharpening, local contrast, etc.)"]
+    A["1. Esposizione"] --> B["2. Bilanciamento colore<br/>(CB RGB / calibrazione)"] --> C["3. Sigmoideo<br/>(compressione tonale)"] --> D["4. Regolazioni finali<br/>(nitidezza, contrasto<br/>locale)"]
 ```
 
 !!! tip "Regola d'oro: esponi prima, mappa dopo"

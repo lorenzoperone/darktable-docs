@@ -23,7 +23,7 @@ L'utilizzo tipico di liquify segue questi passaggi:[^liquify-manual]
 
 ```mermaid
 flowchart TD
-    A["1. Attiva il modulo liquify"] --> B["2. Seleziona lo strumento (Punto, Linea o Curva)"] --> C["3. Crea i nodi sull'immagine"] --> D["4. Regola raggio, forza e piumatura"] --> E["5. Usa lo strumento \"Node\" per modifiche fini"]
+    A["1. Attiva liquify"] --> B["2. Scegli strumento<br/>(punto, linea, curva)"] --> C["3. Crea nodi<br/>sull'immagine"] --> D["4. Regola raggio,<br/>forza, piumatura"] --> E["5. Strumento nodo<br/>(modifiche fini)"]
 ```
 
 ### Passo 1: Creazione della forma

@@ -112,12 +112,12 @@ Per utenti provenienti da Lightroom o Photoshop, il flusso di lavoro *scene-refe
 ### Esempio pratico: ritratto in luce scarsa
 ```mermaid
 flowchart LR
-    A["demosaic"] --> B["input color profile"] --> C["filmic rgb (DR=13.2, contrast=0.82)"]
-    --> D["exposure (+0.95)"] --> E["white balance (temp=5200K, tint=+5)"]
-    --> F["color calibration (red=+3, blue=-2)"]
-    --> G["tone equalizer (luminance mask, smoothing=0.85)"]
-    --> H["denoise (profiled, strength=0.78)"]
-    --> I["sharpen (radius=1.4, amount=0.52)"]
+    A["Demosaicizzazione"] --> B["Profilo input"] --> C["Filmic RGB<br/>(DR=13.2)"]
+    --> D["Esposizione<br/>(+0.95)"] --> E["Bilanciamento<br/>bianco (5200K)"]
+    --> F["Calibrazione<br/>colore (R+3, B-2)"]
+    --> G["Equalizzatore toni<br/>(maschera luminanza)"]
+    --> H["Riduzione rumore<br/>(forza 0.78)"]
+    --> I["Nitidezza<br/>(raggio 1.4)"]
 ```
 
 ## Consigli operativi avanzati

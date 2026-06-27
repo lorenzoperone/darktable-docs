@@ -17,7 +17,7 @@ Entrambi gli effetti richiedono una **duplicazione dell’immagine** per lavorar
 
 ```mermaid
 flowchart TD
-    A["1. Correzioni base (exposure, white balance, lens correction)"] --> B["2. Duplicazione - creazione livello sfocato (Orton) o inversione + fusione (Dragan)"] --> C["3. Composite - fusione con modalita Multiply / Screen / Overlay"] --> D["4. AGX / Sigmoid - compressione tonale finale"] --> E["5. Affinamenti locali (local contrast, sharpen, color balance rgb)"]
+    A["1. Correzioni base<br/>(esposizione, WB,<br/>correzione obiettivo)"] --> B["2. Duplica livello<br/>(sfocatura Orton /<br/>inversione Dragan)"] --> C["3. Composito<br/>(Multiply/Screen/<br/>Overlay)"] --> D["4. Tone mapping<br/>(AGX/Sigmoid)"] --> E["5. Ritocchi locali<br/>(contrasto, nitidezza,<br/>colore)"]
 ```
 
 !!! warning "Errore comune: ordine sbagliato di composite"

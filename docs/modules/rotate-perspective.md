@@ -23,7 +23,7 @@ Il workflow ideale segue tre fasi sequenziali, con priorità alla precisione str
 
 ```mermaid
 flowchart TD
-    A["1. Identificazione delle strutture (structure)"] --> B["2. Adattamento automatico (fit)"] --> C["3. Rotazione finale (rotation) + ritaglio automatico"]
+    A["1. Identifica<br/>strutture"] --> B["2. Adattamento<br/>automatico (fit)"] --> C["3. Rotazione finale<br/>+ ritaglio automatico"]
 ```
 
 ### Passo 1: Definizione delle strutture

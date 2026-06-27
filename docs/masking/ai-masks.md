@@ -31,7 +31,7 @@ Il flusso ottimale per sfruttare SAM2 segue un ordine rigoroso, allineato al par
 
 ```mermaid
 flowchart TD
-    A["1. Correzioni tecniche (Lens Correction, Denoise profilato)"] --> B["2. Esposizione globale (modulo Exposure)"] --> C["3. Generazione SAM2 - Rifinitura maschera - Applicazione"] --> D["4. Regolazioni locali (con maschera applicata)"]
+    A["1. Correzioni tecniche<br/>(obiettivo, rumore)"] --> B["2. Esposizione<br/>globale"] --> C["3. Genera SAM2,<br/>rifinisci, applica"] --> D["4. Regolazioni locali<br/>(con maschera)"]
 ```
 
 ### Passo 1: Abilitazione e configurazione del modello

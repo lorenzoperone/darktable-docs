@@ -21,7 +21,7 @@ L'utilizzo delle modalità dipende dalla fase del processo DAM (Digital Asset Ma
 
 ```mermaid
 flowchart LR
-    A["Importazione"] --> B["Zoomable Lighttable (esplorazione)"] --> C["Culling (selezione rapida)"] --> D["Full Preview (verifica focus)"] --> E["FileManager (organizzazione finale)"]
+    A["Importa"] --> B["Lighttable<br/>zoomabile"] --> C["Culling<br/>(selezione)"] --> D["Anteprima<br/>intero"] --> E["File manager<br/>(organizzazione)"]
 ```
 
 ### Passo 1: Esplorazione con Zoomable Lighttable

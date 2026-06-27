@@ -20,7 +20,7 @@ Il flusso di lavoro tipico con AGX si articola in tre fasi:[^agx-guide][^pipelin
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione (modulo exposure)"] --> B["2. AGX - compressione tonale"] --> C["3. Bilanciamento colore (color balance rgb)"]
+    A["1. Esposizione"] --> B["2. AGX<br/>(compressione tonale)"] --> C["3. Bilanciamento<br/>colore RGB"]
 ```
 
 !!! tip "Regola d'oro: esponi prima, comprimi dopo"

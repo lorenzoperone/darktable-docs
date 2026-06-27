@@ -26,7 +26,7 @@ Il flusso ideale per il bilanciamento del bianco segue una sequenza rigorosa, sp
 
 ```mermaid
 flowchart TD
-    A["1. Verifica iniziale (istogramma RGB + visualizzazione verde)"] --> B["2. Scelta del preset più vicino (\"as shot\" o \"camera reference\")"] --> C["3. Affinamento manuale con pipetta su area neutra o regolazione temperature/tint"] --> D["4. Convalida tramite modulo color calibration (CAT tab) per adattazione percettiva"]
+    A["1. Verifica iniziale<br/>(istogramma RGB)"] --> B["2. Preset<br/>(\"as shot\")"] --> C["3. Affinamento manuale<br/>(pipetta su area neutra<br/>o temp/tint)"] --> D["4. Convalida con<br/>calibrazione colore<br/>(CAT16)"]
 ```
 
 ### Passo 1: Diagnosi visiva con l’istogramma RGB

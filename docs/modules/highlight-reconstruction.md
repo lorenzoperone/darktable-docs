@@ -28,7 +28,7 @@ Il flusso ottimale prevede un'integrazione stretta con `exposure`, `white balanc
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione globale (modulo exposure)"] --> B["2. White balance (per stabilizzare i rapporti RGB)"] --> C["3. Highlight reconstruction (prima di qualsiasi profilo colore)"] --> D["4. Input color profile + Color calibration"] --> E["5. Tone mapping (AGX / Filmic RGB) → con eventuale ricostruzione secondaria integrata"]
+    A["1. Esposizione<br/>globale"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Ricostruzione<br/>alte luci"] --> D["4. Profilo input +<br/>Calibrazione colore"] --> E["5. Tone mapping<br/>(AGX/Filmic)"]
 ```
 
 ### Passo 1: Verifica e impostazione del clipping threshold

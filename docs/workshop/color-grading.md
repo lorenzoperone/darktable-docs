@@ -26,7 +26,7 @@ Il flusso ottimale segue l’ordine della pipeline scene-referred [^workflow-man
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione (exposure)"] --> B["2. Calibrazione colore (color calibration, tab CAT)"] --> C["3. Color balance rgb (per grading creativo)"] --> D["4. Fine-tuning locale (con maschere)"]
+    A["1. Esposizione"] --> B["2. Calibrazione<br/>colore (CAT16)"] --> C["3. Bilanciamento<br/>colore RGB"] --> D["4. Ritocchi locali<br/>(con maschere)"]
 ```
 
 !!! warning "Non invertire l'ordine"

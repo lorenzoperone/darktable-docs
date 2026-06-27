@@ -18,7 +18,7 @@ L'utilizzo combinato di preset e istanze multiple segue tipicamente questo schem
 
 ```mermaid
 flowchart TD
-    A["1. Configurazione manuale di un modulo"] --> B["2. Salvataggio come Preset (opzionale: con regole EXIF)"] --> C["3. Applicazione automatica o manuale del preset"] --> D["4. Creazione di nuove istanze per correzioni mirate"]
+    A["1. Configura modulo<br/>manualmente"] --> B["2. Salva come preset<br/>(con regole EXIF)"] --> C["3. Applica preset<br/>(auto o manuale)"] --> D["4. Crea nuove istanze<br/>per correzioni mirate"]
 ```
 
 ### Passo 1: Creare un Preset

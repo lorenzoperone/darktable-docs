@@ -20,7 +20,7 @@ Il flusso ideale segue una sequenza rigorosa per massimizzare precisione e preve
 
 ```mermaid
 flowchart TD
-    A["1. Importazione - verifica EXIF (camera/lens/focal length)"] --> B["2. Lens Correction - attiva automaticamente tramite preset"] --> C["3. Rotate & Perspective - raddrizza linee dopo la correzione geometrica"] --> D["4. Crop - ritaglia bordi neri residui (opzionale ma raccomandato)"]
+    A["1. Verifica EXIF<br/>(camera/obiettivo)"] --> B["2. Correzione obiettivo<br/>(attivazione auto)"] --> C["3. Ruota e prospettiva<br/>(raddrizza linee)"] --> D["4. Ritaglia e ruota<br/>(bordi neri residui)"]
 ```
 
 !!! tip "Automatizza con i preset"
