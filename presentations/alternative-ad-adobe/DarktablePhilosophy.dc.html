@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:22px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent); margin:0;}
+.eyebrow.cool{color:var(--accent2);}
+.eyebrow.warn{color:var(--bad);}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:46px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+h2{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:24px; margin:0;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:24px; min-height:0;}
+p{margin:0; font-size:17px; line-height:1.55; color:var(--fg);}
+.muted{color:var(--muted);}
+
+.quote{background:var(--panel); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:28px 32px; font-family:'Space Grotesk',sans-serif; font-size:24px; font-weight:600; line-height:1.4;}
+.bullets{display:flex; gap:28px;}
+.bcard{flex:1; background:var(--panel2); border-radius:8px; padding:20px 22px; display:flex; flex-direction:column; gap:8px;}
+.bcard .label{font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--accent2); font-size:15px;}
+.bcard p{font-size:15px; color:var(--muted); line-height:1.5;}
+.src{font-size:12px; color:var(--muted); font-style:italic;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">04 / 25</div>
+  <div class="eyebrow">02 &middot; darktable</div>
+  <h1>Non &egrave; un Lightroom gratuito</h1>
+  <div class="body">
+    <div class="quote">&laquo;Modello fisico della luce, RGB lineare, scene-referred &mdash; contro il gamma-encoded di Lightroom. Non esiste un mapping 1:1 tra i moduli, solo equivalenze funzionali.&raquo;</div>
+    <div class="bullets">
+      <div class="bcard">
+        <div class="label">Scene-referred</div>
+        <p>I dati restano proporzionali alla luce reale della scena fino a tardi nella pipeline: pi&ugrave; margine, meno clipping.</p>
+      </div>
+      <div class="bcard">
+        <div class="label">Pipeline rigida</div>
+        <p>I moduli agiscono in sequenza fissa: l'ordine non &egrave; un dettaglio, &egrave; parte del risultato.</p>
+      </div>
+      <div class="bcard">
+        <div class="label">Non un clone</div>
+        <p>Si tratta di tradurre il proprio linguaggio creativo, non di replicare i cursori di Lightroom uno a uno.</p>
+      </div>
+    </div>
+    <div class="src">Fonte: darktable.fr &mdash; comunit&agrave; francese darktable, serie &laquo;De Lightroom &agrave; darktable&raquo;</div>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>darktable</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

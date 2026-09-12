@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:20px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent2); margin:0;}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:20px; min-height:0; justify-content:center;}
+p{margin:0; font-size:16px; line-height:1.5;}
+.muted{color:var(--muted);}
+
+.models{display:flex; gap:20px; align-items:stretch;}
+.model{flex:1; border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:12px;}
+.model.sub{background:var(--panel); border:1px solid var(--line);}
+.model.one{background:oklch(76% 0.14 148 / 0.1); border:1px solid oklch(76% 0.14 148 / 0.4);}
+.model .who{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px;}
+.model.sub .who{color:var(--muted);}
+.model.one .who{color:var(--good);}
+.model .how{font-size:15px; line-height:1.5;}
+.model .imp{font-size:14px; color:var(--muted); line-height:1.5;}
+.honest{background:var(--panel2); border-radius:8px; padding:18px 24px; font-size:15.5px;}
+.honest strong{font-family:'Space Grotesk',sans-serif;}
+.caveat{font-size:12.5px; color:var(--muted); font-style:italic;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">18 / 25</div>
+  <div class="eyebrow">05 &middot; Affinity</div>
+  <h1>La vera differenza &egrave; la licenza</h1>
+  <div class="body">
+    <div class="models">
+      <div class="model sub">
+        <div class="who">Adobe Creative Cloud</div>
+        <div class="how">Abbonamento: si paga ogni mese, per sempre.</div>
+        <div class="imp">Quando smetti di pagare perdi l'accesso agli strumenti &mdash; e i file nei formati proprietari restano difficili da aprire altrove.</div>
+      </div>
+      <div class="model one">
+        <div class="who">Affinity</div>
+        <div class="how">Acquisto singolo: si paga una volta e il programma resta tuo.</div>
+        <div class="imp">Stessa licenza su Mac, Windows e iPad. Oggi la suite &egrave; sotto Canva, che ne ha cambiato le condizioni commerciali nel tempo.</div>
+      </div>
+    </div>
+    <div class="honest"><strong>La stessa onest&agrave; usata per darktable:</strong> non esiste una parit&agrave; funzionale 1:1 documentata con Photoshop e InDesign. Chi migra cambia strumento, non scarica un clone &mdash; alcune abitudini vanno ricostruite.</div>
+    <p class="caveat">Modello di licenza e assetto societario: informazione generale, non verificata nei materiali del progetto. Da controllare sul sito ufficiale prima di consigliarla in aula.</p>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>Affinity</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

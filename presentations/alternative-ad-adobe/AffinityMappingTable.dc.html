@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:16px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent2); margin:0;}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:42px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:14px; min-height:0;}
+p{margin:0; font-size:16px; line-height:1.5;}
+.muted{color:var(--muted);}
+
+table{width:100%; border-collapse:collapse; background:var(--panel); border-radius:8px; overflow:hidden;}
+th{font-family:'Space Grotesk',sans-serif; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); text-align:left; padding:12px 16px; border-bottom:1px solid var(--line);}
+td{padding:11px 16px; font-size:14.5px; border-bottom:1px solid var(--line); vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+.ps{color:var(--muted);}
+.af{font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--accent2);}
+.nt{font-size:13.5px;}
+.caveat{font-size:12.5px; color:var(--muted); font-style:italic;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">17 / 25</div>
+  <div class="eyebrow">05 &middot; Affinity</div>
+  <h1>Photoshop &rarr; Affinity Photo, a confronto</h1>
+  <div class="body">
+    <table>
+      <tr><th>In Photoshop</th><th>In Affinity Photo</th><th>Nota per chi migra</th></tr>
+      <tr><td class="ps">Livelli e maschere di livello</td><td class="af">Livelli e maschere</td><td class="nt">Concetto identico, scorciatoie diverse</td></tr>
+      <tr><td class="ps">Livelli di regolazione</td><td class="af">Regolazioni e filtri live</td><td class="nt">Anche i filtri diventano non distruttivi, non solo le regolazioni</td></tr>
+      <tr><td class="ps">Riempimento in base al contenuto</td><td class="af">Pennello di inpainting</td><td class="nt">Stesso scopo, resa diversa: va riprovato, non dato per scontato</td></tr>
+      <tr><td class="ps">Photomerge (panorami, HDR)</td><td class="af">Panorama e HDR nativi</td><td class="nt">Integrati nel programma, senza passaggi esterni</td></tr>
+      <tr><td class="ps">Camera Raw come filtro</td><td class="af">Develop persona</td><td class="nt">Ambiente dedicato allo sviluppo dentro l'app</td></tr>
+      <tr><td class="ps">Azioni</td><td class="af">Macro</td><td class="nt">Registrabili e riutilizzabili, ma non importabili dalle azioni Photoshop</td></tr>
+      <tr><td class="ps">Salva per il web / Esporta</td><td class="af">Export persona</td><td class="nt">Gestione a slice ed esportazioni multiple in un colpo solo</td></tr>
+    </table>
+    <p class="caveat">Mappatura orientativa basata su conoscenza generale dei due prodotti, non verificata nei materiali del progetto: va confermata sulla versione che userai.</p>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>Affinity</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

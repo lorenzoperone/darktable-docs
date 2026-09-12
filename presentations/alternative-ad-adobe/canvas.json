@@ -1,0 +1,34 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1280, "h": 720 },
+    { "file": "Agenda.dc.html", "x": 1360, "y": 0, "w": 1280, "h": 720 },
+    { "file": "WhyAlternatives.dc.html", "x": 2720, "y": 0, "w": 1280, "h": 720 },
+    { "file": "DarktablePhilosophy.dc.html", "x": 4080, "y": 0, "w": 1280, "h": 720 },
+    { "file": "DarktableWorkflow.dc.html", "x": 5440, "y": 0, "w": 1280, "h": 720 },
+
+    { "file": "DarktableModuleMap.dc.html", "x": 0, "y": 840, "w": 1280, "h": 720 },
+    { "file": "DarktableTips.dc.html", "x": 1360, "y": 840, "w": 1280, "h": 720 },
+    { "file": "Digikam.dc.html", "x": 2720, "y": 840, "w": 1280, "h": 720 },
+    { "file": "DigikamDuo.dc.html", "x": 4080, "y": 840, "w": 1280, "h": 720 },
+    { "file": "RawWarning.dc.html", "x": 5440, "y": 840, "w": 1280, "h": 720 },
+
+    { "file": "MigrationDetails.dc.html", "x": 0, "y": 1680, "w": 1280, "h": 720 },
+    { "file": "MigrationCaseStudy.dc.html", "x": 1360, "y": 1680, "w": 1280, "h": 720 },
+    { "file": "MigrationKeywordExample.dc.html", "x": 2720, "y": 1680, "w": 1280, "h": 720 },
+    { "file": "MigrationSafeWrites.dc.html", "x": 4080, "y": 1680, "w": 1280, "h": 720 },
+    { "file": "Affinity.dc.html", "x": 5440, "y": 1680, "w": 1280, "h": 720 },
+
+    { "file": "AffinityDepth.dc.html", "x": 0, "y": 2520, "w": 1280, "h": 720 },
+    { "file": "AffinityMappingTable.dc.html", "x": 1360, "y": 2520, "w": 1280, "h": 720 },
+    { "file": "AffinityLicensing.dc.html", "x": 2720, "y": 2520, "w": 1280, "h": 720 },
+    { "file": "Storage.dc.html", "x": 4080, "y": 2520, "w": 1280, "h": 720 },
+    { "file": "StorageAPITable.dc.html", "x": 5440, "y": 2520, "w": 1280, "h": 720 },
+
+    { "file": "StorageMigrationJourney.dc.html", "x": 0, "y": 3360, "w": 1280, "h": 720 },
+    { "file": "StorageVerdict.dc.html", "x": 1360, "y": 3360, "w": 1280, "h": 720 },
+    { "file": "Checklist.dc.html", "x": 2720, "y": 3360, "w": 1280, "h": 720 },
+    { "file": "Resources.dc.html", "x": 4080, "y": 3360, "w": 1280, "h": 720 },
+    { "file": "ClosingQA.dc.html", "x": 5440, "y": 3360, "w": 1280, "h": 720 }
+  ],
+  "launch": { "view": "canvas" }
+}

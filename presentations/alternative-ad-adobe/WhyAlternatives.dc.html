@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:22px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent); margin:0;}
+.eyebrow.cool{color:var(--accent2);}
+.eyebrow.warn{color:var(--bad);}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:46px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+h2{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:24px; margin:0;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:24px; min-height:0;}
+p{margin:0; font-size:17px; line-height:1.55; color:var(--fg);}
+.muted{color:var(--muted);}
+
+.cols{flex:1; display:flex; gap:48px; min-height:0;}
+.col-left{flex:1; display:flex; flex-direction:column; gap:20px; justify-content:center;}
+.bullet{display:flex; gap:14px; align-items:flex-start;}
+.bullet svg{flex-shrink:0; margin-top:3px;}
+.bullet p{font-size:18px;}
+.col-right{flex:1.2; display:flex; flex-direction:column; justify-content:center;}
+table{width:100%; border-collapse:collapse; background:var(--panel); border-radius:8px; overflow:hidden;}
+th{font-family:'Space Grotesk',sans-serif; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); text-align:left; padding:14px 16px; border-bottom:1px solid var(--line);}
+td{padding:14px 16px; font-size:15px; border-bottom:1px solid var(--line);}
+tr:last-child td{border-bottom:none;}
+.prod{font-family:'Space Grotesk',sans-serif; font-weight:600;}
+.alt{color:var(--accent2); font-weight:600;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">03 / 25</div>
+  <div class="eyebrow">01 &middot; Perch&eacute; alternative</div>
+  <h1>Costi ricorrenti, formati chiusi</h1>
+  <div class="body">
+    <div class="cols">
+      <div class="col-left">
+        <div class="bullet">
+          <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="1.6"/><path d="M10 5v5l3 2" stroke="oklch(78% 0.15 55)" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          <p>Creative Cloud &egrave; un abbonamento continuo: si smette di pagare, si smette di lavorare sui propri file.</p>
+        </div>
+        <div class="bullet">
+          <svg width="20" height="20" viewBox="0 0 20 20"><rect x="3" y="8" width="14" height="9" rx="2" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="1.6"/><path d="M6 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="1.6"/></svg>
+          <p>Lock-in: gli sviluppi Lightroom (<code>.crs</code>) e i cataloghi sono formati chiusi, leggibili solo da Adobe.</p>
+        </div>
+        <div class="bullet">
+          <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 2 L18 6 V13 C18 17 14 19 10 20 C6 19 2 17 2 13 V6 Z" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="1.6"/></svg>
+          <p>La domanda che conta: chi possiede davvero il tuo archivio, tra dieci anni?</p>
+        </div>
+      </div>
+      <div class="col-right">
+        <table>
+          <tr><th>Prodotto Adobe</th><th>Alternativa</th><th>Ruolo</th></tr>
+          <tr><td class="prod">Lightroom</td><td class="alt">darktable</td><td>sviluppo RAW non distruttivo</td></tr>
+          <tr><td class="prod">Lightroom (catalogo)</td><td class="alt">digiKam</td><td>tag, volti, ricerca, libreria</td></tr>
+          <tr><td class="prod">Photoshop / Illustrator / InDesign</td><td class="alt">Affinity Suite</td><td>raster, vettoriale, impaginazione</td></tr>
+          <tr><td class="prod">SmugMug</td><td class="alt">Synology Photos</td><td>storage e condivisione libreria</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>Perch&eacute; alternative</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

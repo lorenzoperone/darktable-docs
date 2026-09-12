@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:20px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent); margin:0;}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:18px; min-height:0;}
+p{margin:0; font-size:16px; line-height:1.5;}
+.muted{color:var(--muted);}
+
+.illus{font-size:12px; color:var(--muted); font-style:italic;}
+.case{display:flex; gap:20px; align-items:stretch;}
+.side{flex:1; background:var(--panel); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:10px;}
+.side .lbl{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);}
+.tags{display:flex; flex-wrap:wrap; gap:8px;}
+.tag{font-size:14px; padding:6px 12px; border-radius:6px; background:var(--panel2); color:var(--fg);}
+.tag.messy{border:1px solid oklch(68% 0.18 25 / 0.45);}
+.tag.clean{border:1px solid oklch(76% 0.14 148 / 0.5); color:var(--good); font-weight:500;}
+.arrowcol{width:56px; display:flex; align-items:center; justify-content:center;}
+.note{font-size:14.5px; color:var(--muted);}
+.hard{background:var(--panel2); border-radius:8px; padding:16px 22px; display:flex; gap:16px; align-items:flex-start;}
+.hard .t{font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--accent); font-size:13px; text-transform:uppercase; letter-spacing:.08em; flex-shrink:0; margin-top:2px;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">13 / 25</div>
+  <div class="eyebrow">04 &middot; Migrazione</div>
+  <h1>Normalizzare i tag: come funziona</h1>
+  <div class="body">
+    <div class="case">
+      <div class="side">
+        <div class="lbl">Prima &mdash; quattro fonti, quattro convenzioni</div>
+        <div class="tags">
+          <div class="tag messy">vacanza</div>
+          <div class="tag messy">Vacanze</div>
+          <div class="tag messy">vacanaza</div>
+          <div class="tag messy">holiday</div>
+          <div class="tag messy">VACANZA</div>
+        </div>
+        <p class="note">Cinque tag distinti nel database: chi cerca "vacanza" ne trova un quinto delle foto.</p>
+      </div>
+      <div class="arrowcol">
+        <svg width="40" height="24" viewBox="0 0 40 24"><path d="M2 12h32M28 5l8 7-8 7" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="side">
+        <div class="lbl">Dopo &mdash; un tag canonico</div>
+        <div class="tags">
+          <div class="tag clean">vacanza</div>
+        </div>
+        <p class="note">Tutte le foto delle cinque varianti sono riassociate al tag unico, senza perdere nessuna associazione esistente.</p>
+      </div>
+    </div>
+    <div class="hard">
+      <div class="t">Il caso difficile</div>
+      <p>Le omonimie: due persone con lo stesso nome in generazioni diverse dello stesso albero familiare. Qui nessun algoritmo decide da solo &mdash; serve un riferimento esterno (l'albero genealogico) e, sui casi residui, l'occhio di chi conosce l'archivio.</p>
+    </div>
+    <p class="illus">Esempio illustrativo del tipo di normalizzazione applicata; i valori mostrati non sono tag reali dell'archivio.</p>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>Migrazione</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

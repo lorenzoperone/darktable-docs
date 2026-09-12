@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:20px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent2); margin:0;}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:44px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:20px; min-height:0;}
+p{margin:0; font-size:16px; line-height:1.5;}
+.muted{color:var(--muted);}
+
+.split{flex:1; display:flex; align-items:stretch; gap:0;}
+.half{flex:1; background:var(--panel); border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:12px;}
+.half .app{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px;}
+.half.cat .app{color:var(--accent2);}
+.half.dev .app{color:var(--accent);}
+.half .role{font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.task{display:flex; gap:10px; align-items:flex-start; font-size:15px;}
+.dot{width:6px; height:6px; border-radius:50%; margin-top:8px; flex-shrink:0;}
+.half.cat .dot{background:var(--accent2);}
+.half.dev .dot{background:var(--accent);}
+.middle{width:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;}
+.middle .lbl{font-size:11px; color:var(--muted); text-align:center; font-family:'Space Grotesk',sans-serif; letter-spacing:.04em;}
+.bottom{background:var(--panel2); border-radius:8px; padding:16px 22px; font-size:15px;}
+.bottom strong{font-family:'Space Grotesk',sans-serif;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">09 / 25</div>
+  <div class="eyebrow">03 &middot; digiKam</div>
+  <h1>Due programmi al posto di uno</h1>
+  <div class="body">
+    <div class="split">
+      <div class="half cat">
+        <div class="role">Catalogo</div>
+        <div class="app">digiKam</div>
+        <div class="task"><div class="dot"></div><p>Importazione e organizzazione fisica dei file</p></div>
+        <div class="task"><div class="dot"></div><p>Tag, volti, luoghi, valutazioni</p></div>
+        <div class="task"><div class="dot"></div><p>Ricerca e selezione degli scatti da lavorare</p></div>
+        <div class="task"><div class="dot"></div><p>Album ed esportazione finale</p></div>
+      </div>
+      <div class="middle">
+        <svg width="60" height="40" viewBox="0 0 60 40">
+          <path d="M6 14h40M40 8l8 6-8 6" fill="none" stroke="oklch(78% 0.15 55)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M54 28H14M20 22l-8 6 8 6" fill="none" stroke="oklch(78% 0.13 200)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="lbl">apri nell'editor<br>esterno e torna</div>
+      </div>
+      <div class="half dev">
+        <div class="role">Sviluppo</div>
+        <div class="app">darktable</div>
+        <div class="task"><div class="dot"></div><p>Sviluppo RAW scene-referred</p></div>
+        <div class="task"><div class="dot"></div><p>Moduli, maschere, correzioni ottiche</p></div>
+        <div class="task"><div class="dot"></div><p>Stili riutilizzabili e copia/incolla della storia</p></div>
+        <div class="task"><div class="dot"></div><p>Esportazione nei formati di consegna</p></div>
+      </div>
+    </div>
+    <div class="bottom"><strong>Il punto:</strong> Lightroom fa entrambe le cose in un'unica applicazione. Nel mondo aperto i due ruoli si separano &mdash; pi&ugrave; specializzazione, ma anche due programmi da imparare e da tenere allineati sugli stessi metadati.</div>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>digiKam</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:22px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent); margin:0;}
+.eyebrow.cool{color:var(--accent2);}
+.eyebrow.warn{color:var(--bad);}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:46px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+h2{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:24px; margin:0;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:24px; min-height:0;}
+p{margin:0; font-size:17px; line-height:1.55; color:var(--fg);}
+.muted{color:var(--muted);}
+
+.rows{flex:1; display:flex; flex-direction:column; gap:10px; justify-content:center;}
+.row{display:flex; align-items:center; gap:22px; padding:12px 18px; background:var(--panel); border-radius:6px; border:1px solid var(--line);}
+.row.pause{background:transparent; border:1px dashed var(--line);}
+.num{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; color:var(--muted); width:28px;}
+.rowtitle{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:18px; flex:1;}
+.rowdesc{color:var(--muted); font-size:14px; flex:2;}
+.chip{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; color:var(--bg); background:var(--accent); padding:5px 12px; border-radius:999px; white-space:nowrap;}
+.row.pause .chip{background:transparent; color:var(--muted); border:1px solid var(--line);}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">02 / 25</div>
+  <div class="eyebrow">Agenda</div>
+  <h1>Come useremo le due ore</h1>
+  <div class="rows">
+    <div class="row">
+      <div class="num">1</div>
+      <div class="rowtitle">Perché cercare alternative</div>
+      <div class="rowdesc">costi ricorrenti, lock-in, la mappa Adobe &rarr; alternativa</div>
+      <div class="chip">10 min</div>
+    </div>
+    <div class="row">
+      <div class="num">2</div>
+      <div class="rowtitle">darktable vs Lightroom</div>
+      <div class="rowdesc">filosofia scene-referred e workflow dal vivo</div>
+      <div class="chip">20 min</div>
+    </div>
+    <div class="row">
+      <div class="num">3</div>
+      <div class="rowtitle">digiKam</div>
+      <div class="rowdesc">il catalogo: tag, volti, geolocalizzazione</div>
+      <div class="chip">15 min</div>
+    </div>
+    <div class="row pause">
+      <div class="num">&middot;</div>
+      <div class="rowtitle muted">Pausa</div>
+      <div class="rowdesc"></div>
+      <div class="chip">10 min</div>
+    </div>
+    <div class="row">
+      <div class="num">4</div>
+      <div class="rowtitle">Migrare un archivio reale</div>
+      <div class="rowdesc">cosa si salva, cosa si perde &mdash; un caso reale su quattro archivi fusi</div>
+      <div class="chip">25 min</div>
+    </div>
+    <div class="row">
+      <div class="num">5</div>
+      <div class="rowtitle">Affinity vs Photoshop / Illustrator / InDesign</div>
+      <div class="rowdesc">una suite, tre ruoli</div>
+      <div class="chip">20 min</div>
+    </div>
+    <div class="row">
+      <div class="num">6</div>
+      <div class="rowtitle">Synology Photos vs SmugMug</div>
+      <div class="rowdesc">un caso reale di migrazione</div>
+      <div class="chip">20 min</div>
+    </div>
+    <div class="row">
+      <div class="num">7</div>
+      <div class="rowtitle">Checklist pratica + Domande</div>
+      <div class="rowdesc">cosa fare, in che ordine, prima di migrare</div>
+      <div class="chip">20 min</div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>Agenda</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

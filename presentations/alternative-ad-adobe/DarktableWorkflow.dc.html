@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: oklch(16% 0.015 60);
+  --panel: oklch(23% 0.02 60);
+  --panel2: oklch(27% 0.02 60);
+  --fg: oklch(95% 0.015 80);
+  --muted: oklch(68% 0.03 70);
+  --accent: oklch(78% 0.15 55);
+  --accent2: oklch(78% 0.13 200);
+  --good: oklch(76% 0.14 148);
+  --bad: oklch(68% 0.18 25);
+  --line: oklch(34% 0.02 60);
+}
+*{box-sizing:border-box;}
+body{margin:0;}
+a{color:var(--accent); text-decoration:none;}
+a:hover{color:var(--accent2);}
+.slide{
+  width:1280px; height:720px; background:var(--bg); color:var(--fg);
+  font-family:'IBM Plex Sans', system-ui, sans-serif;
+  padding:60px 76px 56px; display:flex; flex-direction:column; gap:22px;
+  position:relative; overflow:hidden;
+}
+.eyebrow{font-family:'Space Grotesk',sans-serif; font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:14px; color:var(--accent); margin:0;}
+.eyebrow.cool{color:var(--accent2);}
+.eyebrow.warn{color:var(--bad);}
+h1{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:46px; line-height:1.12; margin:0; letter-spacing:-.01em;}
+h2{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:24px; margin:0;}
+.pageno{position:absolute; top:60px; right:76px; font-size:13px; color:var(--muted); font-family:'Space Grotesk',sans-serif;}
+.foot{position:absolute; left:76px; right:76px; bottom:32px; display:flex; justify-content:space-between; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:12px; font-family:'Space Grotesk',sans-serif; letter-spacing:.02em;}
+.body{flex:1; display:flex; flex-direction:column; gap:24px; min-height:0;}
+p{margin:0; font-size:17px; line-height:1.55; color:var(--fg);}
+.muted{color:var(--muted);}
+
+.flow{flex:1; display:flex; align-items:center; gap:0; justify-content:center;}
+.stage{flex:1; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px 14px; text-align:center; display:flex; flex-direction:column; gap:6px;}
+.stage .n{font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--accent); font-size:13px;}
+.stage .t{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px;}
+.arrow{width:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.callout{background:var(--panel2); border-radius:8px; padding:18px 24px; display:flex; gap:16px; align-items:center;}
+.callout .tag{font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--bad); font-size:14px; text-transform:uppercase; letter-spacing:.08em; flex-shrink:0;}
+.callout p{font-size:15px;}
+code{background:var(--panel); padding:2px 6px; border-radius:4px; font-size:0.92em;}
+</style>
+</helmet>
+<div class="slide">
+  <div class="pageno">05 / 25</div>
+  <div class="eyebrow">02 &middot; darktable</div>
+  <h1>La pipeline in pratica</h1>
+  <div class="body">
+    <div class="flow">
+      <div class="stage"><div class="n">1</div><div class="t">Esposizione</div></div>
+      <div class="arrow"><svg width="24" height="16" viewBox="0 0 24 16"><path d="M1 8h20M15 2l7 6-7 6" fill="none" stroke="oklch(68% 0.03 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage"><div class="n">2</div><div class="t">Bilanciamento colore</div></div>
+      <div class="arrow"><svg width="24" height="16" viewBox="0 0 24 16"><path d="M1 8h20M15 2l7 6-7 6" fill="none" stroke="oklch(68% 0.03 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage"><div class="n">3</div><div class="t">Tono &mdash; filmic rgb</div></div>
+      <div class="arrow"><svg width="24" height="16" viewBox="0 0 24 16"><path d="M1 8h20M15 2l7 6-7 6" fill="none" stroke="oklch(68% 0.03 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage"><div class="n">4</div><div class="t">Dettaglio</div></div>
+      <div class="arrow"><svg width="24" height="16" viewBox="0 0 24 16"><path d="M1 8h20M15 2l7 6-7 6" fill="none" stroke="oklch(68% 0.03 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage"><div class="n">5</div><div class="t">Geometria</div></div>
+      <div class="arrow"><svg width="24" height="16" viewBox="0 0 24 16"><path d="M1 8h20M15 2l7 6-7 6" fill="none" stroke="oklch(68% 0.03 70)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="stage"><div class="n">6</div><div class="t">Grading finale</div></div>
+    </div>
+    <div class="callout">
+      <div class="tag">L'ordine non &egrave; opzionale</div>
+      <p><code>sharpening</code> deve venire sempre <em>prima</em> di <code>denoise (profiled)</code>: nell'ordine inverso, la nitidezza amplifica il rumore invece di ridurlo.</p>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Alternative ad Adobe</span>
+    <span>darktable</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
