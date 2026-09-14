@@ -62,9 +62,9 @@ L'ordine e' il seguente:
 
 ```mermaid
 flowchart LR
-    A["🔬 Fase lineare<br/><i>scene-referred</i><br/>8 moduli tecnici"] --> B{"🎨 Tone mapping<br/><i>scegline uno</i>"}
-    B --> C["🖥️ Fase display<br/><i>display-referred</i><br/>5 moduli creativi"]
-    C --> D["📤 Esporta"]
+    A["Fase lineare<br/><i>scene-referred</i><br/>8 moduli tecnici"] --> B{"Tone mapping<br/><i>scegline uno</i>"}
+    B --> C["Fase display<br/><i>display-referred</i><br/>5 moduli creativi"]
+    C --> D["Esporta"]
 
 ```
 
@@ -92,7 +92,7 @@ Questa documentazione aggrega e cita contenuti da quattro famiglie di fonti:
 
 ### Video tutorial (manualize)
 
-**72 video analizzati** tramite il progetto [manualize](https://github.com/lorenzoperone/manualize): trascrizioni word-level, capitoli strutturati e consigli operativi estratti. I canali video inclusi sono:
+**72 video analizzati** tramite manualize (strumento interno che estrae trascrizioni word-level, capitoli strutturati e consigli operativi dai video). I canali video inclusi sono:
 
 - **A Dabble in Photography** (inglese, ~60 video) — la fonte principale: guide su AgX, Filmic RGB, Sigmoid, Color Balance RGB, maschere AI (SAM2), effetti Orton/Dragan, editing B&W, portrait, landscape, lowlight
 - **Fotografare per Stupire** (italiano, 10 video) — tutorial in italiano: interfaccia e catalogazione, bilanciamento del bianco, controllo colore, maschere parametriche, rimozione imperfezioni, riduzione rumore, equalizzatore toni, workflow ritratto

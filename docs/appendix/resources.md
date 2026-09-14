@@ -169,6 +169,6 @@ flowchart TD
 [^adabble-ai-masks]: A Dabble in Photography, *AI masks*, 2026. URL: https://www.youtube.com/watch?v=7yd5riDmUjk
 [^adabble-landscape-ai]: A Dabble in Photography, *Landscape edit with AI*, 2026. URL: https://www.youtube.com/watch?v=OERXOFz9lEo
 [^adabble-52-release]: A Dabble in Photography, *darktable 5.2 Release*, 2026. URL: https://www.youtube.com/watch?v=YcLJMaDbfRA
-[^adabble-params]: Analisi manuale dei 12 video *A Dabble in Photography*, progetto manualize, 2026. URL: https://github.com/lorenzoperone/manualize
+[^adabble-params]: Analisi manuale dei 12 video *A Dabble in Photography*, progetto manualize (strumento interno per l'estrazione di trascrizioni e capitoli da video-tutorial), 2026.
 
-*Questa guida aggrega contenuti da 4 fonti scritte (1.090 pagine scrappate) e 12 video-tutorial analizzati tramite il progetto [manualize](https://github.com/lorenzoperone/manualize).*
+*Questa guida aggrega contenuti da 4 fonti scritte (1.090 pagine scrappate) e 12 video-tutorial analizzati tramite manualize, uno strumento interno che estrae trascrizioni word-level, capitoli strutturati e consigli operativi dai video.*
