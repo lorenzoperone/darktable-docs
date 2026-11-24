@@ -103,6 +103,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Percorso: percorso.md
   - Lighttable:
     - lighttable/index.md
     - lighttable/modalita.md
