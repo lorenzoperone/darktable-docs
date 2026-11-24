@@ -44,6 +44,9 @@ L’obiettivo primario non è «centrare l’istogramma», ma **posizionare il g
     - Il parametro *relative black exposure* nella scheda *scene* di `filmic rgb` [^manual]
     - Una curva tonale con *toe* accentuato in `base curve` o `tone curve` [^manual]
 
+!!! example "Prova tu: trascina il cursore"
+    --8<-- "snippets/sweep-exposure.md"
+
 ## Uso come contenitore maschera
 
 Un pattern avanzato e documentato nei workflow professionali: **duplicare il modulo `exposure` e usarne la prima istanza esclusivamente per definire una maschera**, senza applicare alcuna modifica all’esposizione[^landscape][^nightsky]. Questa maschera può poi essere riutilizzata come **raster mask** in tutti i moduli a valle (es. `color balance rgb`, `tone equalizer`, `sharpen`).
