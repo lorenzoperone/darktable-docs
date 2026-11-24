@@ -1,7 +1,9 @@
 # Guida al Post-Processing con darktable
 
-Documentazione aggregata e guida operativa al flusso di lavoro scene-referred  
-in **darktable 5.4+**, pubblicata via GitHub Pages.
+Guida operativa in italiano al flusso di lavoro scene-referred in **darktable**
+(version-agnostic, verificata su darktable 5.6), pubblicata via GitHub Pages.
+Due anime: un **percorso didattico** (livelli, esercizi con RAW, lezioni interattive)
+e un **manuale di riferimento** (moduli, colore, maschere, pipeline).
 
 🔗 **Guida online**: https://lorenzoperone.github.io/darktable-docs/
 
@@ -11,34 +13,48 @@ in **darktable 5.4+**, pubblicata via GitHub Pages.
 
 ```
 darktable-docs/
-├── docs/               # Sorgente MkDocs (Markdown)
-│   ├── index.md
-│   ├── images/         # Screenshot (207 immagini, aggiornati via refresh_screenshots.py)
-│   ├── workflow/       # Flusso di lavoro completo
-│   ├── modules/        # Moduli darktable (Exposure, Filmic, ecc.)
-│   ├── color/          # Teoria del colore
-│   ├── masking/        # Maschere e selezioni
-│   ├── export/         # Esportazione
-│   └── appendix/       # Glossario, shortcut, risorse
-├── scraper/            # Script di scaricamento incrementale
-│   ├── config.yaml     # Sorgenti configurate
-│   ├── db.py           # Database SQLite (tracking pagine)
-│   ├── downloader.py   # Crawling HTTP + html2text
-│   ├── exporter.py     # Esportazione Markdown da DB
-│   └── cli.py          # CLI: fetch / status / export / search
-├── sources/            # Database SQLite (gitignored per dati pesanti)
-├── processed/          # Markdown esportati dal DB + video-tutorials/
-├── refresh_screenshots.py   # Aggiorna docs/images/ in-place (approccio A)
-├── copy_screenshots_smart.py # Copia con nuovi nomi tracciabili (approccio B)
-├── migrate_refs.py     # Aggiorna riferimenti .md dopo renaming (approccio B)
-├── analyze_index.py    # Analisi indice globale scraper
-├── generate_page.py    # Genera pagine doc via LLM
-├── serve.sh            # Preview locale
-├── mkdocs.yml          # Config MkDocs + Material theme
+├── docs/                  # Sorgente MkDocs (Markdown, ~100 pagine)
+│   ├── index.md, percorso.md        # home e percorso a 3 livelli
+│   ├── esercizi/          # 3 esercizi con RAW scaricabili, soluzioni passo-passo, kit tutor (zip)
+│   ├── workflow/          # Flusso di lavoro (include la lezione interattiva)
+│   ├── lighttable/        # Libreria: modalità, organizzazione, metadati, stili
+│   ├── pipeline/          # Pixelpipe, ordine dei moduli, cronologia, preset
+│   ├── modules/           # Moduli darktable (un titolo "italiano (inglese)" per pagina)
+│   ├── color/  masking/  export/  preferences/
+│   ├── workshop/          # Casi pratici di editing
+│   ├── appendix/          # Glossario, nomi dei moduli IT/EN, scorciatoie, FAQ, risorse
+│   ├── images/            # Screenshot dei moduli; images/lezioni/ = render e XMP delle lezioni
+│   └── assets/            # CSS + javascripts/lesson.js (widget interattivi)
+├── snippets/              # Frammenti inclusi nelle pagine (esploratori di parametro)
+├── tutor/                 # Pannello Lua "tutor" per darktable (vedi tutor/README.md)
+├── hooks/                 # Hook MkDocs (date di contenuto)
+├── mkdocs.yml             # Config MkDocs + Material theme
+├── requirements.txt
 └── .github/workflows/
-    ├── publish.yml     # Build + deploy → GitHub Pages
-    └── scrape.yml      # Aggiornamento manuale banca dati
+    ├── publish.yml        # Build + deploy → GitHub Pages (push su main)
+    ├── check.yml          # mkdocs build --strict su PR e rami non-main
+    └── scrape.yml         # Aggiornamento manuale banca dati
 ```
+
+Gli strumenti di lavoro descritti più sotto (scraper, linter, generazione contenuti, fact-check,
+generatore delle lezioni) sono locali e non sono versionati in questo repository.
+
+---
+
+## Contenuti interattivi
+
+- **Lezione interattiva e soluzioni degli esercizi**: ogni passo aggiunge un modulo alla
+  cronologia (*history stack*) di una foto; le immagini sono rese **senza interfaccia grafica**
+  con `darktable-cli`, troncando la cronologia XMP (`darktable:history_end`). Quindi sono
+  riproducibili a ogni nuova versione e non sono screenshot. Ogni passo ha il suo XMP scaricabile
+  (solo il blocco darktable, senza metadati personali) e un widget di confronto prima/dopo.
+- **Esploratori di parametro**: cursori su render precalcolati (AgX contrast, esposizione,
+  temperatura dell'illuminante) nelle pagine dei moduli, inclusi con `snippets/`.
+- **Tutor in darktable**: per ogni lezione uno zip (`docs/esercizi/kit/`) con un pannello Lua che
+  mostra le istruzioni, verifica il passo e, su richiesta, applica la soluzione. Provato su
+  darktable 5.6.2; installazione nel `LEGGIMI.txt` dello zip e in `tutor/README.md`.
+- **Qualità dei valori**: i default e gli intervalli citati nelle pagine si verificano contro i
+  sorgenti di darktable alla versione installata e contro i preset nativi, non da memoria.
 
 ---
 
@@ -80,7 +96,7 @@ dt-scrape search "white balance" --site darktable-usermanual-en
 
 | Nome | URL | Tipo |
 |------|-----|------|
-| `darktable-usermanual-en` | https://docs.darktable.org/usermanual/stable/en/ | HTML |
+| `darktable-usermanual-en` | https://docs.darktable.org/usermanual/development/en/ | HTML |
 | `pixls-articles` | https://pixls.us/articles/ | HTML |
 | `discuss-pixls` | https://discuss.pixls.us/c/software/darktable | HTML |
 | `darktable-fr` | https://darktable.fr/ | HTML |

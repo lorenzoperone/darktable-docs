@@ -28,6 +28,11 @@ refresh_screenshots.py
 copy_screenshots_smart.py
 version_bump.py
 
+# Ondata I: generatore lezioni + fact-check (contengono percorsi del NAS di Lorenzo)
+i3_*.py
+i6_*.py
+lessons/
+
 # Scraper package
 scraper/
 
