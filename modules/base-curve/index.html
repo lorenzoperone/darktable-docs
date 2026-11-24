@@ -2621,10 +2621,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-la-curva-base-viene-ignorata-dopo-aver-cambiato-il-modulo-input-color-profile" class="md-nav__link">
+  <a href="#problema-la-curva-base-non-ha-effetto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: La curva base viene ignorata dopo aver cambiato il modulo input color profile
+        Problema: La curva base non ha effetto
       
     </span>
   </a>
@@ -4516,10 +4516,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-la-curva-base-viene-ignorata-dopo-aver-cambiato-il-modulo-input-color-profile" class="md-nav__link">
+  <a href="#problema-la-curva-base-non-ha-effetto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: La curva base viene ignorata dopo aver cambiato il modulo input color profile
+        Problema: La curva base non ha effetto
       
     </span>
   </a>
@@ -4792,8 +4792,8 @@
 5. Aggiungi due nodi: <code>(0.32, 0.35)</code> per alleggerire i petali e <code>(0.88, 0.85)</code> per preservare la saturazione verde nelle foglie;<br>
 6. Imposta <code>preserve colors = average RGB</code> per bilanciare la saturazione cromatica su superfici omogenee<sup id="fnref2:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
-<h3 id="problema-la-curva-base-viene-ignorata-dopo-aver-cambiato-il-modulo-input-color-profile">Problema: La curva base viene ignorata dopo aver cambiato il modulo <code>input color profile</code><a class="headerlink" href="#problema-la-curva-base-viene-ignorata-dopo-aver-cambiato-il-modulo-input-color-profile" title="Permanent link">¶</a></h3>
-<p>Quando si modifica <code>input color profile</code> dopo <code>base curve</code>, la pipeline può ricalcolare il segnale in modo non coerente. La soluzione è reimpostare l’ordine tramite <code>module order</code>: spostare <code>base curve</code> immediatamente dopo <code>white balance</code> e prima di <code>input color profile</code>. Se il problema persiste, disattivare e riattivare <code>base curve</code> per forzare il refresh del segnale<sup id="fnref3:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>.</p>
+<h3 id="problema-la-curva-base-non-ha-effetto">Problema: La curva base non ha effetto<a class="headerlink" href="#problema-la-curva-base-non-ha-effetto" title="Permanent link">¶</a></h3>
+<p>Verifica che il modulo sia attivo e che non sia attivo anche un tone mapper (AgX, sigmoid o filmic): in un flusso scene-referred i due si sovrappongono e conviene usarne uno solo. L'ordine dei moduli nel pixelpipe è fisso: <em>base curve</em> viene dopo <em>input color profile</em> e dopo i moduli colore scene-referred<sup id="fnref3:processing-manual"><a class="footnote-ref" href="#fn:processing-manual">3</a></sup>.</p>
 <h3 id="problema-il-grafico-della-curva-appare-piatto-anche-dopo-aver-aggiunto-nodi">Problema: Il grafico della curva appare "piatto" anche dopo aver aggiunto nodi<a class="headerlink" href="#problema-il-grafico-della-curva-appare-piatto-anche-dopo-aver-aggiunto-nodi" title="Permanent link">¶</a></h3>
 <p>Ciò accade quando <code>scale for graph</code> è impostato a 0.0 (scala lineare). Aumentare il valore a <strong>1.0–2.0</strong> espande visivamente la porzione inferiore del grafico, rendendo visibili i nodi nelle ombre. Questo non modifica la curva reale, ma solo la sua rappresentazione grafica<sup id="fnref3:curves-manual"><a class="footnote-ref" href="#fn:curves-manual">2</a></sup>.</p>
 <h3 id="problema-dopo-aver-applicato-fusion-limmagine-presenta-artefatti-granulari-in-zone-uniformi">Problema: Dopo aver applicato <code>fusion</code>, l’immagine presenta artefatti granulari in zone uniformi<a class="headerlink" href="#problema-dopo-aver-applicato-fusion-limmagine-presenta-artefatti-granulari-in-zone-uniformi" title="Permanent link">¶</a></h3>

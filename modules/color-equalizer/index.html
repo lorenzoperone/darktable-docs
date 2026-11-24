@@ -2087,10 +2087,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#posizionamento-nella-pipeline" class="md-nav__link">
+  <a href="#posizione-nel-pixelpipe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Posizionamento nella pipeline
+        Posizione nel pixelpipe
       
     </span>
   </a>
@@ -4821,10 +4821,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#posizionamento-nella-pipeline" class="md-nav__link">
+  <a href="#posizione-nel-pixelpipe" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Posizionamento nella pipeline
+        Posizione nel pixelpipe
       
     </span>
   </a>
@@ -5033,7 +5033,7 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Combinazione</p>
-<p>I due moduli possono essere usati insieme nella pipeline: Color Balance RGB per il bilanciamento globale, Color Equalizer per correzioni selettive successive.<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup></p>
+<p>I due moduli possono essere usati insieme nella pipeline: Color Balance RGB per il bilanciamento globale, Color Equalizer per correzioni selettive successive.<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup></p>
 </div>
 <h2 id="parametri-dettagliati">Parametri dettagliati<a class="headerlink" href="#parametri-dettagliati" title="Permanent link">¶</a></h2>
 <h3 id="hue-analysis-radius">Hue analysis radius<a class="headerlink" href="#hue-analysis-radius" title="Permanent link">¶</a></h3>
@@ -5208,43 +5208,8 @@
 <p>Verificare che <strong>Color Equalizer</strong> sia posizionato <strong>dopo</strong> <code>denoise (profiled)</code> e <strong>prima</strong> di <code>filmic rgb</code>. Se gli artefatti persistono, ridurre <strong>Hue analysis radius</strong> a 1.0–2.5 px e aumentare <strong>Saturation threshold</strong> a 15–20% per restringere la maschera<sup id="fnref3:pixls-smooth"><a class="footnote-ref" href="#fn:pixls-smooth">7</a></sup>.</p>
 <h3 id="problema-non-riesco-a-isolare-il-verde-della-vegetazione-senza-influenzare-la-pelle">Problema: "Non riesco a isolare il verde della vegetazione senza influenzare la pelle"<a class="headerlink" href="#problema-non-riesco-a-isolare-il-verde-della-vegetazione-senza-influenzare-la-pelle" title="Permanent link">¶</a></h3>
 <p>Usare una <strong>maschera parametrica</strong> basata su <code>Cz</code> (crominanza) &gt; 30% e <code>hz</code> (tonalità) tra 120°–180°, quindi applicare il Color Equalizer su quella maschera. Evitare di dipendere esclusivamente dal <code>saturation threshold</code>, poiché pelle e foglie possono avere sovrapposizioni di saturazione<sup id="fnref4:pixls-smooth"><a class="footnote-ref" href="#fn:pixls-smooth">7</a></sup>.</p>
-<h2 id="posizionamento-nella-pipeline">Posizionamento nella pipeline<a class="headerlink" href="#posizionamento-nella-pipeline" title="Permanent link">¶</a></h2>
-<p>Il posizionamento del Color Equalizer nella catena di elaborazione e' cruciale per il risultato:</p>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Posizionamento</th>
-<th>Motivazione</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Correzione cromativa generica</td>
-<td>Dopo Color Calibration, prima di Filmic/Sigmoid</td>
-<td>Opera su colori ancora lineari, massimo controllo<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup></td>
-</tr>
-<tr>
-<td>Conversione B/N</td>
-<td><strong>Tra due istanze di Color Calibration</strong></td>
-<td>Controlla la luminanza dei colori prima della desaturazione<sup id="fnref12:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></td>
-</tr>
-<tr>
-<td>Ritocco finale</td>
-<td>Dopo Filmic/Sigmoid, prima dell'export</td>
-<td>Correzioni sottili sul risultato tonale finale</td>
-</tr>
-<tr>
-<td>Con maschere parametriche</td>
-<td>Dopo il modulo che genera la luminanza di riferimento</td>
-<td>La maschera parametrica opera correttamente sulla luminanza processata</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Pipeline consigliata per B/N</p>
-<p><code>RAW -&gt; White Balance -&gt; Tone Equalizer -&gt; Color Calibration (1) -&gt; Color Equalizer -&gt; Color Calibration (2, desaturato) -&gt; Filmic/Sigmoid</code><sup id="fnref10:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
-</div>
+<h2 id="posizione-nel-pixelpipe">Posizione nel pixelpipe<a class="headerlink" href="#posizione-nel-pixelpipe" title="Permanent link">¶</a></h2>
+<p>L'ordine dei moduli nel pixelpipe è fisso: il color equalizer si trova dopo <em>color calibration</em> e prima del tone mapper (AgX, sigmoid, filmic), insieme a <em>color balance rgb</em><sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">6</a></sup>. Opera quindi su colori ancora lineari, dove ha il massimo controllo, e non può essere spostato dopo il tone mapper. Per la conversione in bianco e nero ricorda che la conversione di <em>color calibration</em> (scheda <em>gray</em>) avviene prima del color equalizer: per controllare la luminanza dei singoli colori nel B/N usa il mixer <em>gray</em> di <em>color calibration</em> stessa.</p>
 <h2 id="consigli-per-colori-accurati">Consigli per colori accurati<a class="headerlink" href="#consigli-per-colori-accurati" title="Permanent link">¶</a></h2>
 <ol>
 <li>
@@ -5266,7 +5231,7 @@
 <p><strong>Preservare i neutri:</strong> Usare la saturation threshold per proteggere le aree vicine al grigio dalle modifiche cromatiche.<sup id="fnref40:ce-in-depth"><a class="footnote-ref" href="#fn:ce-in-depth">1</a></sup></p>
 </li>
 <li>
-<p><strong>Istanze multiple:</strong> Come con Color Calibration, e' possibile usare piu' istanze di Color Equalizer con maschere diverse per controllare aree separate dell'immagine.<sup id="fnref11:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
+<p><strong>Istanze multiple:</strong> Come con Color Calibration, e' possibile usare piu' istanze di Color Equalizer con maschere diverse per controllare aree separate dell'immagine.<sup id="fnref10:b-and-w"><a class="footnote-ref" href="#fn:b-and-w">2</a></sup></p>
 </li>
 </ol>
 <h2 id="riepilogo-rapido">Riepilogo rapido<a class="headerlink" href="#riepilogo-rapido" title="Permanent link">¶</a></h2>
@@ -5327,7 +5292,7 @@
 <p><em><a href="https://www.youtube.com/watch?v=hvn7CCGh-ts">The Colour Equaliser in depth</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref39:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref40:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref41:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref42:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref43:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref44:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref45:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref46:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref47:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref48:ce-in-depth" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:b-and-w">
-<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edit in darktable for street photography</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref10:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref11:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref12:b-and-w" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full B&amp;W edit in darktable for street photography</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:b-and-w" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref10:b-and-w" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:pop">
 <p><em><a href="https://www.youtube.com/watch?v=PWyCbGHE3C0">How to make your images POP!</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pop" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:pop" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:pop" title="Jump back to footnote 3 in the text">↩</a></p>

@@ -1201,10 +1201,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parametri-dettagliati-del-modulo-exposure" class="md-nav__link">
+  <a href="#parametri-del-modulo-exposure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parametri dettagliati del modulo Exposure
+        Parametri del modulo exposure
       
     </span>
   </a>
@@ -4450,10 +4450,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parametri-dettagliati-del-modulo-exposure" class="md-nav__link">
+  <a href="#parametri-del-modulo-exposure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parametri dettagliati del modulo Exposure
+        Parametri del modulo exposure
       
     </span>
   </a>
@@ -4746,14 +4746,14 @@
 </div>
 <div class="admonition important">
 <p class="admonition-title">L'esposizione e' una scelta artistica</p>
-<p>Un'immagine high-key avra' il grigio medio piu' chiaro; un'immagine low-key piu' scuro. L'obiettivo non e' che l'istogramma sia «centrato», ma che il soggetto principale abbia la luminosita' percettivamente giusta.<sup id="fnref2:manual-exposure"><a class="footnote-ref" href="#fn:manual-exposure">1</a></sup></p>
+<p>Un'immagine high-key avra' il grigio medio piu' chiaro; un'immagine low-key piu' scuro. L'obiettivo non e' che l'istogramma sia «centrato», ma che il soggetto principale abbia la luminosita' percettivamente giusta.<sup id="fnref3:manual-exposure"><a class="footnote-ref" href="#fn:manual-exposure">1</a></sup></p>
 </div>
 <p>Il manuale ufficiale descrive le due modalita' di regolazione (<em>manual</em> e <em>automatic</em>) e il concetto di <em>area exposure mapping</em> per immagini con gamma dinamica ampia:</p>
 <blockquote>
-<p>In <em>automatic</em> mode, darktable selects an area from the image and adjusts the exposure to match a target lightness value. The area can be set using a drawn mask or a parametric mask.<sup id="fnref3:manual-exposure"><a class="footnote-ref" href="#fn:manual-exposure">1</a></sup></p>
+<p>In <em>automatic</em> mode, darktable selects an area from the image and adjusts the exposure to match a target lightness value. The area can be set using a drawn mask or a parametric mask.<sup id="fnref4:manual-exposure"><a class="footnote-ref" href="#fn:manual-exposure">1</a></sup></p>
 </blockquote>
-<h3 id="parametri-dettagliati-del-modulo-exposure">Parametri dettagliati del modulo Exposure<a class="headerlink" href="#parametri-dettagliati-del-modulo-exposure" title="Permanent link">¶</a></h3>
-<p>Il modulo <code>exposure</code> in darktable 5.4+ dispone di <strong>otto parametri fondamentali</strong>, tutti operanti nello spazio scene-referred lineare prima di qualsiasi compressione tonale:</p>
+<h3 id="parametri-del-modulo-exposure">Parametri del modulo exposure<a class="headerlink" href="#parametri-del-modulo-exposure" title="Permanent link">¶</a></h3>
+<p>Il modulo <code>exposure</code> lavora nello spazio scene-referred lineare, prima di qualsiasi compressione tonale. I valori predefiniti sono quelli di darktable 5.6, letti dal codice sorgente<sup id="fnref2:manual-exposure"><a class="footnote-ref" href="#fn:manual-exposure">1</a></sup>.</p>
 <table>
 <thead>
 <tr>
@@ -4770,63 +4770,53 @@
 <td>selezione</td>
 <td><code>manual</code>, <code>automatic</code></td>
 <td><code>manual</code></td>
-<td>Determina se l’esposizione è impostata manualmente o calcolata automaticamente su un’area definita.</td>
+<td>In modalità manuale imposti tu esposizione e livello del nero; in modalità automatica (solo RAW) darktable calcola l’esposizione da un'analisi dell'istogramma, utile ad esempio per il deflickering di sequenze time-lapse.</td>
 </tr>
 <tr>
 <td><code>compensate camera exposure</code></td>
-<td>slider</td>
-<td><code>-5.0</code> a <code>+5.0 EV</code></td>
-<td><code>0.0 EV</code></td>
-<td>Corregge lo scostamento tra l’esposizione misurata dalla fotocamera e quella effettiva (es. per errori di misurazione o ISO non standard). Valori tipici: <code>-0.7 EV</code> per RAW Fujifilm X-H2S<sup id="fnref3:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">10</a></sup>.</td>
+<td>interruttore</td>
+<td>acceso/spento</td>
+<td>spento</td>
+<td>Rimuove la compensazione di esposizione registrata dalla fotocamera nei dati Exif (modalità manuale).</td>
 </tr>
 <tr>
 <td><code>exposure</code></td>
-<td>slider</td>
-<td><code>-8.0</code> a <code>+8.0 EV</code></td>
-<td><code>0.0 EV</code></td>
-<td>Regolazione principale dell’esposizione globale. Incrementi di <code>±0.1 EV</code> sono sufficienti per affinamenti precisi; <code>±1.0 EV</code> equivale a un’intera stop. Valore tipico per recupero in bassa luce: <code>+1.000 EV</code><sup id="fnref3:lowlight"><a class="footnote-ref" href="#fn:lowlight">7</a></sup>.</td>
+<td>cursore</td>
+<td><code>-18</code> a <code>+18 EV</code> (il cursore mostra un intervallo più stretto; clic destro per inserire un valore)</td>
+<td><code>0 EV</code></td>
+<td>Regolazione principale dell’esposizione globale. Con il flusso scene-referred il valore di partenza applicato all'apertura è <code>+0.7 EV</code> (preset <em>scene-referred default</em>).</td>
 </tr>
 <tr>
 <td><code>black level correction</code></td>
-<td>slider</td>
-<td><code>-0.01</code> a <code>+0.01</code></td>
-<td><code>0.0000</code></td>
-<td>Compensa piccole deviazioni del livello nero hardware (es. offset del sensore). Non deve mai superare <code>±0.001</code> per evitare clipping negativo<sup id="fnref7:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup>.</td>
+<td>cursore</td>
+<td><code>-1</code> a <code>+1</code></td>
+<td><code>0</code></td>
+<td>Regola il punto del nero per recuperare valori RGB negativi. Non usarlo per aggiungere densità ai neri: per quello serve il tone mapper.</td>
 </tr>
 <tr>
-<td><code>clipping threshold</code></td>
-<td>slider</td>
-<td><code>0.001%</code> a <code>10.0%</code></td>
-<td><code>0.010%</code></td>
-<td>Soglia percentuale di pixel considerati “bruciati” o “schiacciati”. Usato da <code>auto tune levels</code> e dagli algoritmi di rilevamento area. Valore consigliato per precisione: <code>0.005%</code><sup id="fnref4:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">10</a></sup>.</td>
+<td><code>percentile</code></td>
+<td>cursore</td>
+<td><code>0</code> a <code>100%</code></td>
+<td><code>50%</code></td>
+<td>Solo modalità automatica: posizione dell'istogramma usata per correggere l'esposizione.</td>
 </tr>
 <tr>
-<td><code>spot exposure mapping</code></td>
-<td>toggle</td>
-<td><code>off</code> / <code>on</code></td>
-<td><code>off</code></td>
-<td>Abilita la nuova funzionalità introdotta in darktable 4.0 per trasferire l’esposizione misurata su un’area specifica (es. un fiore) ad altre immagini<sup id="fnref4:dt40-new"><a class="footnote-ref" href="#fn:dt40-new">11</a></sup>.</td>
+<td><code>target level</code></td>
+<td>cursore</td>
+<td><code>-18</code> a <code>+18 EV</code></td>
+<td><code>-4 EV</code></td>
+<td>Solo modalità automatica: livello obiettivo rispetto al punto bianco della fotocamera.</td>
 </tr>
 <tr>
-<td><code>drawn mask</code></td>
-<td>maschera</td>
-<td><code>no mask used</code>, <code>1 shape used</code>, ecc.</td>
-<td><code>no mask used</code></td>
-<td>Conteggio delle forme vettoriali applicate al modulo (cerchio, ellisse, gradiente, path). Richiede espansione della sezione “masks” per configurazione avanzata<sup id="fnref3:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</td>
-</tr>
-<tr>
-<td><code>opacity</code></td>
-<td>slider</td>
-<td><code>0%</code> a <code>100%</code></td>
-<td><code>100%</code></td>
-<td>Opacità globale dell’effetto esposizione. Utile per blending con altre istanze o per simulare filtri ND variabili<sup id="fnref3:b&amp;w-street"><a class="footnote-ref" href="#fn:b&amp;w-street">15</a></sup>.</td>
+<td><code>area exposure mapping</code></td>
+<td>sezione</td>
+<td>valore L in CIE Lab, modalità <em>measure</em>/<em>correction</em></td>
+<td>—</td>
+<td>Imposta o misura la luminosità di un'area di riferimento per uniformare l'esposizione di una serie di immagini.</td>
 </tr>
 </tbody>
 </table>
-<p>Ogni parametro agisce su un livello distinto della pipeline:
-- <code>compensate camera exposure</code> opera <em>prima</em> della lettura del raw black/white point;
-- <code>exposure</code> e <code>black level correction</code> operano nello spazio lineare <em>post-demosaic</em>, ma <em>pre-tonemapping</em>;
-- <code>clipping threshold</code> influenza solo gli algoritmi automatici (<code>auto tune levels</code>, <code>spot exposure mapping</code>) e non modifica l’immagine direttamente<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup>.</p>
+<p>Il modulo <code>exposure</code> si può usare anche con maschere disegnate e parametriche: la sezione <em>masks</em> del modulo mostra quante forme sono applicate, e l'opacità regola l'intensità dell'effetto per fondere più istanze<sup id="fnref:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</p>
 <h3 id="flusso-di-lavoro-avanzato-con-maschere">Flusso di lavoro avanzato con maschere<a class="headerlink" href="#flusso-di-lavoro-avanzato-con-maschere" title="Permanent link">¶</a></h3>
 <p>Il modulo <code>exposure</code> è uno dei più frequentemente usati in combinazione con <strong>maschere disegnate</strong> e <strong>maschere parametriche</strong>, soprattutto per:
 - creazione di vignette artistiche (ellisse invertita);
@@ -4855,7 +4845,7 @@ Funziona in due modalità:
 - Ridimensionare l’ellisse per coprire l’intera immagine;
 - <strong>Invertire la maschera</strong> (toggle <code>invert mask</code>);
 - Impostare <code>exposure = -0.60 EV</code>, <code>opacity = 100%</code>, <code>feathering radius = 120 px</code>;
-- Regolare <code>mask contrast = +20%</code> per aumentare la transizione netta tra centro e bordi<sup id="fnref:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</p>
+- Regolare <code>mask contrast = +20%</code> per aumentare la transizione netta tra centro e bordi<sup id="fnref2:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</p>
 <h4 id="3-recupero-di-dettagli-in-ombre-con-maschera-di-luminanza">3. Recupero di dettagli in ombre con maschera di luminanza<a class="headerlink" href="#3-recupero-di-dettagli-in-ombre-con-maschera-di-luminanza" title="Permanent link">¶</a></h4>
 <p>Quando si desidera schiarire <em>solo le ombre senza toccare i mezzi toni</em>:
 - Creare una maschera parametrica <code>lightness</code> con <code>min = 0.0%</code>, <code>max = 25.0%</code>, <code>softness = 15%</code>;
@@ -4881,12 +4871,12 @@ Funziona in due modalità:
 <tr>
 <td><strong>Raw black/white point</strong></td>
 <td>Non toccare</td>
-<td>Essenziale per la pipeline<sup id="fnref8:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
+<td>Essenziale per la pipeline<sup id="fnref6:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>White balance</strong></td>
 <td>Lasciare su <em>Camera Reference</em></td>
-<td>Serve solo per la demosaicizzazione<sup id="fnref9:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
+<td>Serve solo per la demosaicizzazione<sup id="fnref7:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Demosaic</strong></td>
@@ -4907,12 +4897,12 @@ Funziona in due modalità:
 </table>
 <div class="admonition danger">
 <p class="admonition-title">NON modificare i moduli disabilitati</p>
-<p>I moduli grigi (<em>raw black/white point</em>, <em>input/output color profile</em>) sono essenziali per il funzionamento della pipeline. Non modificarli.<sup id="fnref3:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
+<p>I moduli grigi (<em>raw black/white point</em>, <em>input/output color profile</em>) sono essenziali per il funzionamento della pipeline. Non modificarli.<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
 </div>
 <h2 id="calibrazione-del-colore">Calibrazione del Colore<a class="headerlink" href="#calibrazione-del-colore" title="Permanent link">¶</a></h2>
 <p>La gestione del colore in darktable segue un approccio a <strong>due stadi</strong>:<sup id="fnref:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
 <ol>
-<li><strong>White Balance</strong>: lascia su <em>Camera Reference</em>. Corregge solo la dominante verde del sensore Bayer<sup id="fnref4:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></li>
+<li><strong>White Balance</strong>: lascia su <em>Camera Reference</em>. Corregge solo la dominante verde del sensore Bayer<sup id="fnref3:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></li>
 <li><strong>Color Calibration</strong> (tab CAT): adattamento cromatico percettivo con il modello <strong>CAT16</strong></li>
 </ol>
 <p>Questo approccio e' molto piu' preciso del tradizionale bilanciamento con temperatura/tinta, e previene i color shift nelle alte luci.</p>
@@ -4945,7 +4935,7 @@ Funziona in due modalità:
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Cursore della tinta</p>
-<p>Evitare il cursore della tinta nella calibrazione colore: e' troppo sensibile. Usare il selettore di area neutra o aggiungere magenta per correggere dominanti verdi.<sup id="fnref5:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
+<p>Evitare il cursore della tinta nella calibrazione colore: e' troppo sensibile. Usare il selettore di area neutra o aggiungere magenta per correggere dominanti verdi.<sup id="fnref4:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
 </div>
 <blockquote>
 <p><em>Color calibration provides a more accurate white balance than the legacy white balance module using the CAT16 chromatic adaptation transform from the CIE.</em><sup id="fnref2:manual-colorcal"><a class="footnote-ref" href="#fn:manual-colorcal">2</a></sup></p>
@@ -4957,7 +4947,7 @@ Funziona in due modalità:
 </div>
 <div class="admonition info">
 <p class="admonition-title">Profilo colore di input</p>
-<p>Mantenere <em>linear rec 2020 RGB</em> come profilo colore di input per la compatibilita' scene-referred.<sup id="fnref6:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
+<p>Mantenere <em>linear rec 2020 RGB</em> come profilo colore di input per la compatibilita' scene-referred.<sup id="fnref5:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></p>
 </div>
 <h3 id="esempio-workflow-macro-con-flash-da-video-tutorial">Esempio: workflow macro con flash (da video tutorial)<a class="headerlink" href="#esempio-workflow-macro-con-flash-da-video-tutorial" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://discuss.pixls.us/t/darktable-5-4-a-introductory-beginner-workflow-and-interactive-walkthrough/54755">darktable 5.4 - A Introductory Beginner Workflow</a> (timestamp 7.0–7.2)</em><br>
@@ -4970,9 +4960,9 @@ Funziona in due modalità:
 <h3 id="problema-il-modulo-exposure-non-reagisce-al-clic-del-contagocce-in-modalita-automatic">Problema: Il modulo <code>exposure</code> non reagisce al clic del contagocce in modalità <code>automatic</code><a class="headerlink" href="#problema-il-modulo-exposure-non-reagisce-al-clic-del-contagocce-in-modalita-automatic" title="Permanent link">¶</a></h3>
 <p>La causa più comune è che il modulo è impostato su <code>mode = manual</code>. Per usare il contagocce automatico, è necessario impostare prima <code>mode = automatic</code>, quindi cliccare sull’icona rossa accanto a <code>spot exposure mapping</code> per attivare la modalità <code>input</code>. Se il modulo è già in <code>automatic</code>, assicurarsi che <code>area exposure mapping</code> sia abilitato e che il <code>clipping threshold</code> non sia impostato a zero<sup id="fnref3:dt40-new"><a class="footnote-ref" href="#fn:dt40-new">11</a></sup>.</p>
 <h3 id="problema-dopo-aver-applicato-exposure-20-ev-limmagine-rimane-scura-e-listogramma-non-si-sposta">Problema: Dopo aver applicato <code>exposure +2.0 EV</code>, l’immagine rimane scura e l’istogramma non si sposta<a class="headerlink" href="#problema-dopo-aver-applicato-exposure-20-ev-limmagine-rimane-scura-e-listogramma-non-si-sposta" title="Permanent link">¶</a></h3>
-<p>Questo indica che il modulo <code>exposure</code> sta operando in uno spazio colore errato. Verificare che il profilo colore di input sia <code>linear rec 2020 RGB</code> e che il modulo <code>filmic rgb</code> (o <code>sigmoid</code>) sia attivo e configurato correttamente: un <code>filmic rgb</code> disattivato o con <code>white relative exposure</code> troppo basso non visualizzerà l’aumento di esposizione. Il problema è frequente quando si lavora con preset personalizzati che disabilitano i moduli di tonemapping<sup id="fnref2:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup>.</p>
+<p>Questo indica che il modulo <code>exposure</code> sta operando in uno spazio colore errato. Verificare che il profilo colore di input sia <code>linear rec 2020 RGB</code> e che il modulo <code>filmic rgb</code> (o <code>sigmoid</code>) sia attivo e configurato correttamente: un <code>filmic rgb</code> disattivato o con <code>white relative exposure</code> troppo basso non visualizzerà l’aumento di esposizione. Il problema è frequente quando si lavora con preset personalizzati che disabilitano i moduli di tonemapping<sup id="fnref:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup>.</p>
 <h3 id="problema-la-maschera-disegnata-non-appare-traslucida-sul-modulo-exposure">Problema: La maschera disegnata non appare traslucida sul modulo <code>exposure</code><a class="headerlink" href="#problema-la-maschera-disegnata-non-appare-traslucida-sul-modulo-exposure" title="Permanent link">¶</a></h3>
-<p>La maschera potrebbe essere invisibile perché <code>mask opacity</code> è impostata a <code>0%</code>, oppure perché <code>opacity</code> del modulo è <code>0%</code>. Entrambi i controlli sono indipendenti: <code>mask opacity</code> regola la trasparenza della sovrapposizione grafica della maschera (utile per la composizione visiva), mentre <code>opacity</code> regola l’intensità dell’effetto esposizione stesso. Per visualizzare la maschera, impostare <code>mask opacity = 50%</code> e <code>opacity = 100%</code><sup id="fnref2:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</p>
+<p>La maschera potrebbe essere invisibile perché <code>mask opacity</code> è impostata a <code>0%</code>, oppure perché <code>opacity</code> del modulo è <code>0%</code>. Entrambi i controlli sono indipendenti: <code>mask opacity</code> regola la trasparenza della sovrapposizione grafica della maschera (utile per la composizione visiva), mentre <code>opacity</code> regola l’intensità dell’effetto esposizione stesso. Per visualizzare la maschera, impostare <code>mask opacity = 50%</code> e <code>opacity = 100%</code><sup id="fnref3:masking-ep1"><a class="footnote-ref" href="#fn:masking-ep1">12</a></sup>.</p>
 <h2 id="risorse-pratiche">Risorse pratiche<a class="headerlink" href="#risorse-pratiche" title="Permanent link">¶</a></h2>
 <h3 id="esempio-completo-workflow-street-photography-in-bn">Esempio completo: workflow street photography in B/N<a class="headerlink" href="#esempio-completo-workflow-street-photography-in-bn" title="Permanent link">¶</a></h3>
 <p>Per una foto RAW Olympus E-M5 scattata in condizioni di scarsa luce:
@@ -4997,7 +4987,7 @@ Funziona in due modalità:
 <tbody>
 <tr>
 <td>Immagine rimane troppo scura dopo <code>exposure +2.0 EV</code></td>
-<td>Tone mapper assente o disattivato<sup id="fnref10:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
+<td>Tone mapper assente o disattivato<sup id="fnref8:pipeline"><a class="footnote-ref" href="#fn:pipeline">5</a></sup></td>
 <td>Verificare che un tone mapper (AgX, sigmoid o filmic rgb) sia attivo; il profilo colore di uscita resta sRGB</td>
 </tr>
 <tr>
@@ -5008,7 +4998,7 @@ Funziona in due modalità:
 <tr>
 <td><code>spot exposure mapping</code> non reagisce al clic</td>
 <td>Il modulo non è in modalità <code>automatic</code> o <code>spot mode</code> non è impostato su <code>input</code></td>
-<td>Impostare <code>mode = automatic</code>, quindi cliccare sull’icona rossa accanto a <code>spot exposure mapping</code><sup id="fnref5:dt40-new"><a class="footnote-ref" href="#fn:dt40-new">11</a></sup></td>
+<td>Impostare <code>mode = automatic</code>, quindi cliccare sull’icona rossa accanto a <code>spot exposure mapping</code><sup id="fnref4:dt40-new"><a class="footnote-ref" href="#fn:dt40-new">11</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -5017,7 +5007,7 @@ Funziona in due modalità:
 <hr>
 <ol>
 <li id="fn:manual-exposure">
-<p><em>darktable User Manual -- Exposure module</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-exposure.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-exposure" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-exposure" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-exposure" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><em>darktable User Manual -- Exposure module</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-exposure.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-exposure" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-exposure" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-exposure" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-exposure" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:manual-colorcal">
 <p><em>darktable User Manual -- Color Calibration</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-calibration/">docs.darktable.org</a> | Copia locale: <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-color-calibration.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual-colorcal" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-colorcal" title="Jump back to footnote 2 in the text">↩</a></p>
@@ -5029,13 +5019,13 @@ Funziona in due modalità:
 <p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:pipeline">
-<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref7:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref8:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref9:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref10:pipeline" title="Jump back to footnote 5 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=1nPW6WPhhTo">The darktable pipeline for beginners</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref2:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref3:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref4:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref5:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref6:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref7:pipeline" title="Jump back to footnote 5 in the text">↩</a><a class="footnote-backref" href="#fnref8:pipeline" title="Jump back to footnote 5 in the text">↩</a></p>
 </li>
 <li id="fn:dt54">
 <p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 6 in the text">↩</a></p>
 </li>
 <li id="fn:lowlight">
-<p><em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:lowlight" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:lowlight" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref3:lowlight" title="Jump back to footnote 7 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=O7wXgmQZqiU">Lowlight photos in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:lowlight" title="Jump back to footnote 7 in the text">↩</a><a class="footnote-backref" href="#fnref2:lowlight" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:nightsky">
 <p><em><a href="https://www.youtube.com/watch?v=5P0Yj_vqy5w">darktable Night Sky Full Edit</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:nightsky" title="Jump back to footnote 8 in the text">↩</a></p>
@@ -5044,10 +5034,10 @@ Funziona in due modalità:
 <p><em><a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Darktable landscape edit with AI</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:landscape" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref2:landscape" title="Jump back to footnote 9 in the text">↩</a><a class="footnote-backref" href="#fnref3:landscape" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 <li id="fn:agx-guide">
-<p><em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AgX in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref2:agx-guide" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref3:agx-guide" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref4:agx-guide" title="Jump back to footnote 10 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=iaZ2-QvOHyA">A guide to AgX in darktable</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:agx-guide" title="Jump back to footnote 10 in the text">↩</a><a class="footnote-backref" href="#fnref2:agx-guide" title="Jump back to footnote 10 in the text">↩</a></p>
 </li>
 <li id="fn:dt40-new">
-<p><em><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0?</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt40-new" title="Jump back to footnote 11 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0?</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt40-new" title="Jump back to footnote 11 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt40-new" title="Jump back to footnote 11 in the text">↩</a></p>
 </li>
 <li id="fn:masking-ep1">
 <p><em><a href="https://www.youtube.com/watch?v=807sNff1TMk">darktable masking Episode 1</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:masking-ep1" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref2:masking-ep1" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref3:masking-ep1" title="Jump back to footnote 12 in the text">↩</a><a class="footnote-backref" href="#fnref4:masking-ep1" title="Jump back to footnote 12 in the text">↩</a></p>
@@ -5059,7 +5049,7 @@ Funziona in due modalità:
 <p><em><a href="https://www.youtube.com/watch?v=wUrhoiU1bTM">darktable masking Episode 3</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:masking-ep3" title="Jump back to footnote 14 in the text">↩</a></p>
 </li>
 <li id="fn:b&amp;w-street">
-<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:b&amp;w-street" title="Jump back to footnote 15 in the text">↩</a><a class="footnote-backref" href="#fnref2:b&amp;w-street" title="Jump back to footnote 15 in the text">↩</a><a class="footnote-backref" href="#fnref3:b&amp;w-street" title="Jump back to footnote 15 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:b&amp;w-street" title="Jump back to footnote 15 in the text">↩</a><a class="footnote-backref" href="#fnref2:b&amp;w-street" title="Jump back to footnote 15 in the text">↩</a></p>
 </li>
 <li id="fn:dt38-new">
 <p><em><a href="https://www.youtube.com/watch?v=5smugZ5pXN0">darktable 3.8 What is new?</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt38-new" title="Jump back to footnote 16 in the text">↩</a></p>
