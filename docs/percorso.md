@@ -24,6 +24,8 @@ La guida ha due anime: un **percorso** da seguire in ordine e un **manuale di ri
 
 **Pratica:** [Migrazione da Lightroom](workshop/from-lightroom.md), se arrivi da Lightroom.
 
+**Esercizio:** [Esercizio 1 — Rilievi sotto i faretti](esercizi/index.md#esercizio-1-rilievi-sotto-i-faretti) (RAW scaricabile, con soluzione).
+
 ## Livello 2 — Controllo del colore e delle zone
 
 **Obiettivo:** correggere colore e contrasto in modo mirato, lavorare su zone dell'immagine, organizzare l'archivio.
@@ -43,6 +45,8 @@ La guida ha due anime: un **percorso** da seguire in ordine e un **manuale di ri
 
 **Pratica:** [Paesaggio](workshop/landscape.md), [Ritratto](workshop/portrait.md), [Street](workshop/street.md).
 
+**Esercizio:** [Esercizio 2 — Il corridoio delle statue](esercizi/index.md#esercizio-2-il-corridoio-delle-statue) (RAW scaricabile).
+
 ## Livello 3 — Tecniche avanzate
 
 **Obiettivo:** affrontare casi difficili (alta gamma dinamica, luce scarsa, bianco e nero, grading creativo) e capire la gestione del colore.
@@ -60,6 +64,8 @@ La guida ha due anime: un **percorso** da seguire in ordine e un **manuale di ri
 | 8 | [Preferenze di elaborazione](preferences/processing.md) | OpenCL/GPU e prestazioni |
 
 **Pratica:** [HDR](workshop/hdr.md), [Scarsa illuminazione](workshop/lowlight.md), [Color grading avanzato](workshop/color-grading.md), [Bianco e nero](workshop/black-white.md), [Macro](workshop/macro.md), [Effetti creativi](workshop/creative-effects.md).
+
+**Esercizio:** [Esercizio 3 — L'installazione al buio](esercizi/index.md#esercizio-3-linstallazione-al-buio) (RAW scaricabile).
 
 ## Riferimento
 

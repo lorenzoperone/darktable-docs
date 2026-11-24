@@ -1,6 +1,9 @@
 # Guida al post-processing con darktable
 
-Benvenuto nella guida operativa al flusso di lavoro **scene-referred** in darktable 5.4+.
+Benvenuto nella guida operativa al flusso di lavoro **scene-referred** in darktable.
+
+!!! tip "Da dove iniziare"
+    Se sei all'inizio segui il **[percorso di apprendimento](percorso.md)**: tre livelli, con le pagine nell'ordine giusto. Per vedere subito il metodo all'opera c'è la **[lezione interattiva](workflow/lezione-interattiva.md)**; per metterti alla prova, gli **[esercizi con RAW](esercizi/index.md)** scaricabili.
 
 !!! info "Obiettivo"
     Questa guida non e' un manuale del software. Non troverai qui la lista di ogni parametro.
@@ -10,6 +13,12 @@ Benvenuto nella guida operativa al flusso di lavoro **scene-referred** in darkta
 ## Cosa trovi qui
 
 <div class="grid cards" markdown>
+
+- :material-school: **Percorso ed esercizi**
+
+    Tre livelli di apprendimento, una lezione interattiva e RAW da scaricare per esercitarti.
+
+    [:octicons-arrow-right-24: Il percorso](percorso.md) · [Esercizi](esercizi/index.md)
 
 - :material-camera-enhance: **Flusso di lavoro**
 
