@@ -120,7 +120,7 @@ Il modulo include un sistema di protezione automatica del gamut:
 *Da [ENG] Darktable landscape edit with AI (OERXOFz9lEo) (timestamp 12:30)*  
 1. Attiva `color balance rgb` (nella pipeline si trova dopo `color calibration` e prima di AGX).  
 2. Nella scheda **Master**, imposta `hue shift = +6.2°` per neutralizzare una dominante arancione da lampade stradali.  
-3. Nella scheda **4 Ways**, imposta `shadows lift` → `hue = +2.1°`, `chroma = −8%` per attenuare il verde nelle ombre.  
+3. Nella scheda **4 Ways**, regola `shadows lift` con una `hue` verso il magenta e una `chroma` bassa per attenuare il verde nelle ombre (la `chroma` dei controlli 4 ways non è mai negativa: per correggere una dominante si sposta la tinta verso il colore opposto).  
 4. Nella scheda **Masks**, regola `mask middle-gray fulcrum = 0.20` per allineare il punto di separazione ombre/luci con la scena reale [^OERXOFz9lEo-1230].
 
 ### Esempio: Stile “Teal & Orange” su ritratto in esterno  
@@ -139,13 +139,16 @@ Il modulo include un sistema di protezione automatica del gamut:
 
 ## Tabella preset built-in
 
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| **basic colorfulness\|standard** | Punto di partenza neutrale per ogni immagine | Imposta `global vibrance = +25%`, `global saturation = +5%`, `contrast = +12%` [^dt48-color-balance-rgb] |
-| **creative\|teal-orange** | Ritratti, paesaggi urbani, soggetti con cielo e pelle | Preconfigura maschere tonali per separazione cromatica forte [^dt48-color-balance-rgb] |
-| **monochrome\|high-contrast** | Immagini in bianco e nero con alto impatto visivo | Disabilita `global saturation`, privilegia `hue shift` e `global chroma` [^dt48-color-balance-rgb] |
-| **portrait\|natural-skin** | Ritratti con pelle realistica | Imposta `shadows lift` → `hue = +8.2°`, `chroma = −12%` per attenuare rossori [^DzdGL30lYjU-1650s] |
-| **landscape\|vivid-sky** | Paesaggi con cieli dinamici | Usa `highlights gain` → `hue = −45°`, `chroma = +28%` per intensificare il blu [^OERXOFz9lEo-09:10] |
+darktable include quattro preset, tutti della famiglia *basic colorfulness*[^dt48-color-balance-rgb]:
+
+| Preset | Quando usarlo |
+|---|---|
+| **basic colorfulness \| standard** | Punto di partenza neutrale per ogni immagine: il manuale lo indica come impostazione ragionevole per la saturazione dopo il tone mapping |
+| **basic colorfulness \| natural skin** | Come *standard*, con una resa più prudente pensata per i toni della pelle |
+| **basic colorfulness \| vibrant colors** | Colori più vividi: paesaggi, soggetti colorati |
+| **basic colorfulness \| legacy** | Riproduce il comportamento delle prime versioni del modulo (usa la croma globale invece della saturazione) |
+
+Per altri look (teal & orange, bianco e nero, ecc.) non esistono preset nativi: si costruiscono con i controlli del modulo e si salvano come preset propri.
 
 ## Domande frequenti
 
@@ -185,7 +188,5 @@ Questo avviene perché `hue shift` opera su coordinate cromatiche (CIE u′v′ 
 [^bw-edit-video]: [ENG] Full b&w edits in darktable for street photography, video-tutorials, A Dabble in Photography, 2026-04-12
 [^dt52-release-video]: [ENG] New Release: darktable 5.2, video-tutorials, A Dabble in Photography, 2026-04-12
 [^DzdGL30lYjU-1513s]: [ENG] darktable Full edit #1, timestamp 1513s, A Dabble in Photography, 2026-04-12
-[^DzdGL30lYjU-1650s]: [ENG] darktable Full edit #1, timestamp 1650s, A Dabble in Photography, 2026-04-12
 [^f9szYMJ9wYo-0545]: [ENG] Full b&w edits in darktable for street photography, timestamp 05:45, A Dabble in Photography, 2026-04-12
-[^OERXOFz9lEo-09:10]: [ENG] Darktable landscape edit with AI, timestamp 09:10, A Dabble in Photography, 2026-04-12
 [^OERXOFz9lEo-1230]: [ENG] Darktable landscape edit with AI, timestamp 12:30, A Dabble in Photography, 2026-04-12

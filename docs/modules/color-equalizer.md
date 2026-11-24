@@ -233,8 +233,8 @@ Nel tutorial *How to Get Accurate Colours*, viene discusso il fenomeno percettiv
 *Da [Darktable landscape edit with AI](https://www.youtube.com/watch?v=OERXOFz9lEo) (05:00–09:10)*  
 1. Creare una **maschera parametrica** nel modulo Exposure usando `Jz` (luminanza) > 75% e `Cz` (crominanza) < 25% per isolare il cielo nuvoloso  
 2. Applicare una seconda istanza di **Color Equalizer**, rinominata `sky`, e collegarla alla maschera  
-3. Nella tab **Brightness**, abbassare la luminosita' del blu (-0.45 EV) e del cyan (-0.30 EV)  
-4. Nella tab **Saturation**, aumentare la saturazione del blu (+0.25) e ridurre quella del lavender (-0.15)  
+3. Nella tab **Brightness**, abbassare la luminosita' del blu e del cyan (i cursori sono in percentuale: 0% = invariato, valori negativi scuriscono)  
+4. Nella tab **Saturation**, aumentare la saturazione del blu e ridurre quella del lavender (anche qui in percentuale, 0% = invariato)  
 5. Impostare **Effect radius = 32 px**, **Contrast = -0.4**, e attivare **Use guided filter**  
 
 ### Esempio: Smoothing dei toni della pelle (da *How to smooth up colors?*)

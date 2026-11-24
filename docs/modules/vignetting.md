@@ -104,7 +104,7 @@ Nessuno di questi sostituisce `vignetting` per la semplicità di utilizzo, ma tu
 ## Domande frequenti
 
 ### Problema: La vignetta appare troppo “dura” anche con `fall-off radius` alto  
-Questo accade spesso su immagini con alta risoluzione e basso rumore. Il problema è legato all’interpolazione lineare del gradiente in spazio RGB non lineare. La soluzione è attivare `dithering → 8-bit output` *prima* di regolare i parametri, oppure passare a `exposure` + maschera ellittica con `transition = 85%` per un controllo più robusto[^vignetting-manual].
+Questo accade spesso su immagini con alta risoluzione e basso rumore. Il problema è legato all’interpolazione lineare del gradiente in spazio RGB non lineare. La soluzione è attivare `dithering → 8-bit output` *prima* di regolare i parametri, oppure passare a `exposure` + maschera ellittica con bordo sfumato per un controllo più robusto[^vignetting-manual].
 
 ### Problema: La vignetta non si allinea al centro dell’immagine dopo rotazione o ritaglio  
 Il modulo `vignetting` opera sul frame originale *prima* delle trasformazioni geometriche (crop, rotate, perspective). Per allineare la vignetta al nuovo centro, devi compensare manualmente `horizontal center` e `vertical center` in base allo spostamento del centro geometrico dopo il ritaglio — ad esempio, se hai ritagliato 10% a sinistra, imposta `horizontal center = +0.10`[^process-manual].

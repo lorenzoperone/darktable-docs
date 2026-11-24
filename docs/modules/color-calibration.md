@@ -121,7 +121,7 @@ Seconda istanza (B/W conversione):
 1. Creare prima istanza di `color calibration` con maschera parametrica su sfondo verde (JzCzhz → H: 80–120, z: 0.02–0.15)  
 2. Impostare `illuminant = custom`, `hue = 69.9°`, `chroma = 35.2%`, `adaptation = CAT16`  
 3. Creare seconda istanza con maschera disegnata sulla coccinella, invertita rispetto alla prima  
-4. Nella seconda istanza, impostare `illuminant = detect from edges`, `temperature = -12 K`  
+4. Nella seconda istanza, impostare `illuminant = detect from edges` (la temperatura viene calcolata dal modulo)  
 5. Attivare `gamut compression` in entrambe le istanze con `clip negative RGB from gamut = ON`  
 6. Regolare `opacity` della seconda istanza a `85%` per evitare over-correction del rosso[^MJJR8DJ3rr8]
 

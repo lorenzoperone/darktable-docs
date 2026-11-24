@@ -194,7 +194,7 @@ Gli strumenti Impulse/Luminance/Chrominance NR dell'articolo originale apparteng
 
 | Modulo | Parametri chiave | Scopo |
 |--------|-----------------|-------|
-| **Esposizione** | Exposure ~2.30 EV, Black ~150 | Esposizione corretta |
+| **Esposizione** | Exposure ~+2.30 EV | Esposizione corretta |
 | **White Balance** | Spot WB su area neutra | Colori naturali |
 | **Denoise (profiled)** | Profilo automatico | Rumore controllato |
 | **Local Contrast** | Detail poco sopra il default | Profondita' |

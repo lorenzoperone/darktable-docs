@@ -108,7 +108,7 @@ Nel modulo `composite`, imposta:
 2. Attiva `composite`: **blend mode = Multiply**, **opacity = 88%**, **mask = global**.  
 3. Nell’originale, aggiungi `local contrast`: **mode = local laplacian**, **detail = 125%**, **highlights = 50%**, **shadows = 45%**, **mid-tone range = 0.52**.  
 4. Disegna una maschera a mano sul volto (forma irregolare), poi imposta **feathering radius = 8 px**, **blurring radius = 3 px**, **mask contrast = +0.25**, **mask opacity = +0.15**[^dragon-video].  
-5. Infine, applica `color balance rgb`: **global vibrance = 110%**, **contrast = 2.05**, **contrast gray fulcrum = 18.5%**, **white fulcrum = +0.15 EV**[^dragon-video].
+5. Infine, applica `color balance rgb`: **global vibrance** al massimo del cursore (100%), **contrast = 2.05**, **contrast gray fulcrum = 18.5%**, **white fulcrum = +0.15 EV**[^dragon-video].
 
 ---
 

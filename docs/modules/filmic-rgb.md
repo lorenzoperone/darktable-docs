@@ -202,13 +202,12 @@ Richiedono massima estensione della gamma dinamica e controllo del rumore:
 4. Nella scheda `Look`, regolare `contrast = 1.4`, `latitude = 75%`, `shadows ↔ highlights balance = +0.1`  
 5. Verificare `Options → preserve chrominance = Max RGB` e `safe mode = on`[^filmic-night]
 
-### Esempio: Controllo precisione toni medi con maschera  
+### Esempio: Ricostruzione delle alte luci e controllo dei mezzitoni  
 *Da Filmic RGB: The Heart of Post-Production on Darktable (xtzav1-AjV4) (04:15–06:00)*  
-1. Attivare `masking → exposure` nel modulo Filmic RGB  
-2. Impostare `stimulator = RGB norma euclidea`, `smoothing diameter = 5.00%`, `refinement = 1.00`  
-3. Applicare `mask exposure compensation = −1.57 EV` per isolare le luci  
-4. Regolare `highlights saturation mix = 25%` solo sulla maschera  
-5. Attivare `display highlight reconstruction mask` per visualizzare l’area di ricostruzione[^tutorial-video-it]
+1. Apri la scheda *reconstruct* di Filmic RGB  
+2. Regola `threshold` per scegliere da quale luminanza iniziare la ricostruzione e `transition` per sfumare il passaggio  
+3. Attiva la visualizzazione della maschera di ricostruzione (*display highlight reconstruction mask*) per vedere l’area interessata[^tutorial-video-it]  
+4. Filmic non ha una scheda di mascheratura: per regolare i mezzitoni con una maschera usa il *tone equalizer*, scheda *masking* (`smoothing diameter`, `edges refinement/feathering`, `mask exposure compensation`)
 
 ---
 
@@ -241,7 +240,7 @@ Se `threshold` è troppo alto (es. > +1.5 EV), la ricostruzione non parte. Ridur
   Options: preserve = Max RGB, version = v7, safe = on  
   ```  
 - **Verifica del clipping**: premere `O` per attivare la visualizzazione del clipping (aree rosse = R clip, gialle = R+G clip, bianche = tutti i canali)[^manual-filmic].  
-- **Maschere per Filmic**: usare `masking → exposure` con `smoothing diameter = 5%` e `mask exposure compensation = -1.0 EV` per isolare le luci e regolarle separatamente[^filmic-masking].  
+- **Maschere per Filmic**: filmic non ha una scheda di mascheratura; per isolare le luci e regolarle separatamente usa la maschera di luminanza del *tone equalizer* (scheda *masking*)[^filmic-masking].  
 - **Esportazione per web**: usare profilo `sRGB` e `white point = 100%` — nessuna modifica a `Display` necessaria[^manual-filmic].  
 
 ---
