@@ -1,0 +1,62 @@
+{
+  "slug": "sweep-exposure",
+  "title": "",
+  "steps": [
+    {
+      "n": 0,
+      "title": "-0.5 EV",
+      "text": "",
+      "img": "passo-0.jpg",
+      "xmp": "passo-0.xmp"
+    },
+    {
+      "n": 1,
+      "title": "+0.0 EV",
+      "text": "",
+      "img": "passo-1.jpg",
+      "xmp": "passo-1.xmp"
+    },
+    {
+      "n": 2,
+      "title": "+0.7 EV",
+      "text": "",
+      "img": "passo-2.jpg",
+      "xmp": "passo-2.xmp"
+    },
+    {
+      "n": 3,
+      "title": "+1.2 EV",
+      "text": "",
+      "img": "passo-3.jpg",
+      "xmp": "passo-3.xmp"
+    },
+    {
+      "n": 4,
+      "title": "+1.6 EV",
+      "text": "",
+      "img": "passo-4.jpg",
+      "xmp": "passo-4.xmp"
+    },
+    {
+      "n": 5,
+      "title": "+2.0 EV",
+      "text": "",
+      "img": "passo-5.jpg",
+      "xmp": "passo-5.xmp"
+    },
+    {
+      "n": 6,
+      "title": "+2.5 EV",
+      "text": "",
+      "img": "passo-6.jpg",
+      "xmp": "passo-6.xmp"
+    },
+    {
+      "n": 7,
+      "title": "+3.0 EV",
+      "text": "",
+      "img": "passo-7.jpg",
+      "xmp": "passo-7.xmp"
+    }
+  ]
+}
