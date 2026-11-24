@@ -106,7 +106,7 @@ Sigmoid offre due approcci distinti alla conservazione cromatica, selezionabili 
 - **Non usare sigmoid insieme ad altri display transforms**: disattiva `filmic rgb` o `base curve` prima di abilitare sigmoid[^sigmoid-manual].
 - **Per immagini con alta frequenza cromatica (es. LED, vetrine)**: usa `per channel` + `red/blue attenuation` (20–40%) + `recover purity` (50–70%) per evitare banding e posterizzazione[^sigmoid-manual].
 - **Per ritratti**: preferisci `skew = -0.10` a `-0.25` e `contrast = 0.95–1.15`. Evita `skew > +0.15` per non accentuare pori o venature[^sigmoid-manual].
-- **Per paesaggi con cieli intensi**: usa `skew = +0.25–+0.40` e `target white = 0.97–0.99` per preservare dettagli senza clipping[^sigmoid-fr].
+- **Per paesaggi con cieli intensi**: usa `skew = +0.25–+0.40` e un `target white` leggermente sotto il `100%` (circa `97–99%`) per preservare dettagli senza clipping[^sigmoid-fr].
 - **Calibrazione monitor**: sigmoid è sensibile alla gamma del display. Assicurati di usare un profilo ICC corretto e una gamma di riferimento 2.2[^sigmoid-manual].
 
 ### Esempio: Calibrazione del grigio medio con area picker  
@@ -139,7 +139,7 @@ Sigmoid offre due approcci distinti alla conservazione cromatica, selezionabili 
 Questo fenomeno è tipico quando `Contrast > 1.70` e `Skew > +0.35` sono combinati senza attenuazione. La soluzione è ridurre la pendenza centrale (`Contrast ≤ 1.45`) e applicare `blue attenuation = 35–45%` prima della curva, seguita da `recover purity = 50–60%`[^sigmoid-manual].
 
 ### Problema: Le alte luci appaiono “lavate” in modalità `rgb ratio`  
-In `rgb ratio`, la desaturazione è forzata lungo linee spettrali, il che può causare una perdita percettiva di “brillantezza”. Per recuperare vivacità, aggiungi un livello di `sharpen` con `radius = 1.2`, `strength = 18%`, e maschera basata su `lightness` con `threshold = 0.75`[^sigmoid-manual].
+In `rgb ratio`, la desaturazione è forzata lungo linee spettrali, il che può causare una perdita percettiva di “brillantezza”. Per recuperare vivacità, valuta la modalità `per channel` oppure aggiungi un po' di contrasto locale (`local contrast`) con una maschera parametrica sulle luci[^sigmoid-manual].
 
 ### Problema: `Preserve hue = 100%` non impedisce shift nei rossi saturi  
 Ciò accade perché `preserve hue` opera solo in spazio RGB e non compensa le interazioni cromatiche non lineari alle alte luminanze. La soluzione è attivare `red attenuation = 25%` + `red rotation = -0.6°` nella sezione *Primaries* per stabilizzare la traiettoria cromatica[^sigmoid-manual].

@@ -101,9 +101,9 @@ Usa `mask manager` per interventi mirati:
 ### Passo 7: Nitidezza e vignettatura finale
 
 - **Nitidezza**: Usa `sharpen` (non `unsharp mask`). Imposta:
-  - `amount = 45–65%`
-  - `radius = 0.8–1.2 px`
-  - `threshold = 15–25` (per evitare di accentuare il rumore ISO alto tipico della street)[^manual-sharpen]
+  - parti dai valori predefiniti (`radius` 2.0, `amount` 0.5, `threshold` 0.5): `amount` va da 0 a 2 e non è una percentuale
+  - alza `amount` o abbassa `radius` solo se serve, giudicando al 100%
+  - alza leggermente `threshold` se la nitidezza accentua il rumore dell'ISO alto, tipico della street[^manual-sharpen]
 
 - **Vignettatura**: Usa `vignette` con:
   - `strength = -15%` (scurisce leggermente i bordi)
@@ -120,7 +120,7 @@ Usa `mask manager` per interventi mirati:
 | `color calibration` (BW) | normalize channels | ✅ abilitato | disabilitato | Fondamentale per una conversione B/N fedele[^street-video-1] |
 | `local contrast` | highlights | da regolare a vista | 50% | Priorità assoluta per occhi, capelli, superfici riflettenti[^street-video-1] |
 | `mask manager` | Opacity (maschera circolare) | 60–85% | 75% | Valore ottimale per integrazione naturale[^street-video-1] |
-| `sharpen` | threshold | 15–25 | 20 | Impedisci l’amplificazione del rumore ISO 1600+[^manual-sharpen] |
+| `sharpen` | threshold | poco sopra il default (0.5) | 1–2 | Limita l’amplificazione del rumore ad ISO alto: valori molto alti annullano la nitidezza[^manual-sharpen] |
 
 ## Consigli operativi
 

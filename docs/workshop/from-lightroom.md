@@ -126,9 +126,9 @@ In darktable: due moduli separati; nel pixelpipe `denoise (profiled)` è sempre 
 ### `sharpening`  
 | Parametro | Valore tipico | Perché |
 |-----------|----------------|--------|
-| **Amount** | 45–70 | Valore sufficiente per sensori moderni (R6, A7IV, Z6II) |
-| **Radius** | 0.9–1.3 | Evita effetti “halo”; >1.5 genera artefatti sui bordi |
-| **Threshold** | 15–25 | Ignora il rumore nelle zone omogenee (cielo, pelle) |
+| **Amount** | 0–2 (default 0.5) | Non è una percentuale: parti dal default e alza solo se serve |
+| **Radius** | default 2.0 (cursore fino a 8) | Valori alti generano aloni sui bordi |
+| **Threshold** | default 0.5 | Alzalo poco per ignorare il rumore nelle zone omogenee (cielo, pelle) |
 
 ### `denoise (profiled)` (applicato nel pixelpipe prima di `sharpen`)  
 | Parametro | Valore tipico | Perché |
@@ -212,23 +212,21 @@ In Lightroom: *Detail > Sharpening* + *Lens Corrections > Transform*
 In darktable:  
 
 ### `demosaic` (con capture sharpening)  
-Disponibile da darktable 5.4+, questa funzione applica una nitidezza *durante* la demosaicizzazione, non dopo. È più efficace e meno rumorosa del `sharpening` tradizionale[^discuss-pixls-demosaic].  
-- Abilita **Capture sharpening**  
-- `radius` = 12 (valore calcolato automaticamente, ma regolabile tra 8–16)  
-- `strength` = 0.85  
-- `threshold` = 18  
+Questa funzione applica una nitidezza *durante* la demosaicizzazione, non dopo: lavora sui dati del sensore ed è meno soggetta ad amplificare il rumore del `sharpen` tradizionale[^discuss-pixls-demosaic].  
+- Abilita **capture sharpen** nel modulo `demosaic`  
+- `radius`: da 0 a 1.5, con un pulsante che lo calcola dai dati del sensore (a 0 viene ricalcolato automaticamente)  
+- `contrast sensitivity` (default 0.40) e `iterations` (default 8) controllano la forza e il numero di passaggi; `corner boost` e `sharp center` compensano la perdita di nitidezza ai bordi dell'obiettivo  
 
 ✅ **Nota operativa**:  
-Se compare l’errore *“cannot calculate reliable capture radius”*, disattiva temporaneamente `crop` e zooma a 1:1 prima di abilitare il modulo[^discuss-pixls-demosaic].
+Il calcolo automatico del raggio richiede un'area dell'immagine con abbastanza dettaglio: se il risultato non convince, zooma al 100% su una zona nitida e ripeti il calcolo[^discuss-pixls-demosaic].
 
 ### `rotate perspective`  
 Per correggere orizzonti inclinati o linee cadenti (es. architettura):  
-- Abilita **Structure detection** → `Verticals`  
-- `correction strength` = 0.65  
-- `refinement` = 0.30  
-- `rotation` = 0.0° (se la struttura è ben rilevata, non serve regolare manualmente)  
+- Nella sezione *automatic fit* analizza le linee con **structure → automatically analyse line structure**  
+- Poi usa **fit → vertical** (o *horizontal*, *both*) per correggere automaticamente le linee cadenti  
+- Rifinisci a occhio con `rotation` e `lens shift (vertical)` se la struttura non è stata rilevata bene (se manca struttura sufficiente, darktable lo segnala)  
 
-⚠️ **Attenzione**: non eccedere oltre `correction strength = 0.75`: genera artefatti di interpolazione e perdita di dettaglio nei bordi[^darktable-manual-rotate-perspective].
+⚠️ **Attenzione**: correzioni prospettiche forti allargano l'area vuota ai bordi: con *automatic cropping* attivo il ritaglio sacrifica una parte dell'immagine, quindi lascia margine in fase di scatto[^darktable-manual-rotate-perspective].
 
 ---
 

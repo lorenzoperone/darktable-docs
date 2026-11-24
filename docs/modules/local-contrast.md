@@ -44,7 +44,7 @@ Il parametro **detail** è il principale controllo del modulo:
 - **Default**: `125%` (100% = nessun effetto)  
 - **Range**: `0%` a `500%`  
 - **Effetto**: inserisce un elemento a forma di **S** nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)[^manual-local-contrast]  
-- **Valore comune**: `+0.35` per ritratti (enfatizza pelle e occhi), `+0.65` per paesaggi (texture di roccia/foglie)
+- **Uso**: valori più alti del default per paesaggi (texture di roccia e foglie); vicino al default sui ritratti, dove un contrasto locale forte accentua pelle e imperfezioni
 
 !!! tip "Usa il confronto prima/dopo"
     Crea uno snapshot dal modulo *snapshots* (pannello sinistro) per confrontare prima/dopo mentre regoli `detail`. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”[^manual-local-contrast].
@@ -66,9 +66,9 @@ I parametri **highlights** e **shadows** agiscono *sulle estremità* della curva
 | Parametro | Range | Default | Descrizione |
 |-----------|--------|---------|-------------|
 | **detail** | `0%` – `500%` | `125%` | Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni[^manual-local-contrast] |
-| **highlights** | `-1.00` – `+1.00` | `0.00` | Controllo del contrasto nelle alte luci. Negativo = compressione, positivo = enfasi[^manual-local-contrast] |
-| **shadows** | `-1.00` – `+1.00` | `0.00` | Controllo del contrasto nelle ombre. Positivo = maggiore contrasto, negativo = lifting ombre[^manual-local-contrast] |
-| **mid-tone range** | `0.00` – `1.00` | `0.50` | Estensione della zona centrale della curva S. Valori alti → più valori classificati come “mezzi toni”, meno come luci/ombre. Utile per HDR con range dinamico elevato[^manual-local-contrast] |
+| **highlights** | percentuale | `50%` | Contrasto locale nelle alte luci[^manual-local-contrast] |
+| **shadows** | percentuale | `50%` | Contrasto locale nelle ombre[^manual-local-contrast] |
+| **mid-tone range** | `0.001` – `1.0` | `0.50` | Cosa conta come “mezzi toni”. Valori bassi comprimono meglio la gamma dinamica (meno contrasto in ombre e luci); valori alti danno un contrasto locale più forte[^manual-local-contrast] |
 
 ## Parametri avanzati (modalità *bilateral grid*)
 
@@ -76,8 +76,8 @@ Disponibili solo quando si seleziona **bilateral grid**:
 
 | Parametro | Range | Default | Descrizione |
 |-----------|--------|---------|-------------|
-| **coarseness** | `0.00` – `1.00` | `0.50` | Definisce la *scala spaziale* dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)[^manual-local-contrast] |
-| **contrast** | `-1.00` – `+1.00` | `0.00` | Intensità della distinzione tra livelli di luminanza. Analogamente a `detail`, ma con algoritmo diverso[^manual-local-contrast] |
+| **coarseness** | numero intero, minimo `3` | `50` | Definisce la *scala spaziale* dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)[^manual-local-contrast] |
+| **contrast** | numero intero, minimo `1` | `20` | Differenza di luminanza (L) con cui il filtro riconosce un bordo[^manual-local-contrast] |
 | **detail** | `0%` – `500%` | `125%` | Aggiunge o rimuove dettaglio, come nella modalità *local laplacian*[^manual-local-contrast] |
 
 !!! warning "bilateral grid: uso limitato"
@@ -89,20 +89,20 @@ Disponibili solo quando si seleziona **bilateral grid**:
 - ❌ **Non è equivalente a “Unsharp Mask”**: quest’ultimo opera su frequenze fisse; `local contrast` è adattivo alla scala locale.  
 - 🎯 **Usalo selettivamente**: applica maschere (tramite **mask manager**) per agire solo su occhi, capelli, texture di pietra — non sull’intera immagine.  
 - 📉 **Evita di sovrapporlo a “sharpen”**: entrambi agiscono su frequenze simili. Preferisci `local contrast` per il *micro-contrast* e `sharpen` per il *macro-contrast* (bordi netti).  
-- 🧪 **Prova con “detail = 0.00”, poi “shadows = +0.25”, “highlights = -0.15”**: è un punto di partenza sicuro per la maggior parte delle immagini RAW[^manual-local-contrast].
+- 🧪 **Parti dai preset integrati (*clarity*) o dai valori predefiniti** e regola `detail` a vista, giudicando al 100% e con il confronto prima/dopo[^manual-local-contrast].
 
 ### Esempio: Paesaggio con cielo nuvoloso e foresta in ombra  
 *Da [Darktable landscape edit with AI](https://www.youtube.com/watch?v=OERXOFz9lEo) (timestamp 06:22)*  
 1. Attiva **local contrast**, modalità *local laplacian*.  
-2. Imposta `detail = +0.52` per rafforzare la texture delle nuvole e delle foglie.  
-3. Regola `highlights = -0.38` per comprimere delicatamente le luci sulle creste nuvolose, evitando clipping.  
-4. Imposta `shadows = +0.41` per aumentare il contrasto nelle zone d’ombra della foresta, mantenendo i neri profondi.  
-5. Usa una maschera parametrica su **Cz (chromaticity)** per isolare le foglie verdi e applicare un ulteriore `+0.15` a `detail` solo su quelle zone[^yt-landscape-ai].
+2. Alza `detail` oltre il default per rafforzare la texture di nuvole e foglie.  
+3. Abbassa `highlights` per contenere il contrasto sulle creste nuvolose ed evitare clipping.  
+4. Alza `shadows` per aumentare il contrasto nelle zone d’ombra della foresta, mantenendo i neri profondi.  
+5. Usa una maschera parametrica su **Cz (chromaticity)** per isolare le foglie verdi e dare un ulteriore aumento di `detail` solo su quelle zone[^yt-landscape-ai].
 
 ### Esempio: Ritratto in studio con pelle luminosa  
 *Da [Full b&w edits in darktable for street photography](https://www.youtube.com/watch?v=f9szYMJ9wYo) (timestamp 12:47)*  
 1. Dopo aver applicato **Filmic RGB**, attiva **local contrast**.  
-2. Imposta `detail = +0.33`, `shadows = +0.18`, `highlights = -0.09`.  
+2. Mantieni `detail`, `shadows` e `highlights` vicini ai valori predefiniti: sulla pelle bastano ritocchi leggeri.  
 3. Attiva la maschera parametrica sul canale **Lab a+b** per isolare i toni della pelle (rosso/arancio).  
 4. Riduci l’opacità della maschera al `65%` per un’applicazione graduale.  
 5. Usa il blend mode **Lab lightness** per evitare qualsiasi alterazione cromatica[^yt-bw-street].
@@ -110,13 +110,13 @@ Disponibili solo quando si seleziona **bilateral grid**:
 ## Domande frequenti
 
 ### Problema: L’immagine mostra artefatti “grainy” o “sabbiosi” dopo aver applicato `local contrast`  
-Questo accade tipicamente quando `detail` è troppo alto (> `+0.75`) su immagini con rumore ISO elevato (es. ISO 3200+). La soluzione è applicare **denoise (profiled)** *prima* di `local contrast`, oppure ridurre `detail` a `+0.40–0.55` e compensare con `shadows = +0.20` per preservare la percezione di dettaglio senza amplificare il rumore[^forum-iso-grain].
+Questo accade tipicamente quando `detail` è molto alto su immagini con rumore ISO elevato (es. ISO 3200+). Nel pixelpipe *denoise (profiled)* viene già applicato prima di `local contrast`: aumenta la riduzione del rumore oppure riporta `detail` verso il valore predefinito (125%)[^forum-iso-grain].
 
 ### Problema: Si formano “halo” bianchi intorno ai bordi degli oggetti  
-Gli halo indicano che `highlights` è troppo positivo o che `mid-tone range` è troppo basso (< `0.35`). Riduci `highlights` a `≤ +0.15` e aumenta `mid-tone range` a `0.60–0.70` per restringere l’area di intervento alle transizioni strette, escludendo i bordi netti[^forum-halo-fix].
+Gli halo compaiono con impostazioni estreme, soprattutto in modalità *bilateral grid*, che può dare artefatti attorno ai bordi: passa a *local laplacian* e riduci `detail` e `highlights`[^forum-halo-fix].
 
 ### Problema: Il modulo sembra “non fare nulla” su una foto in bianco e nero  
-`local contrast` opera sul canale **L** di Lab, quindi funziona anche su immagini monochrome. Tuttavia, se l’immagine è stata convertita in B/N tramite **monochrome** *dopo* `local contrast`, l’effetto sarà annullato. Assicurati che **monochrome** sia posizionato *prima* di `local contrast` nella pixelpipe, oppure applica `local contrast` su un’istanza duplicata con blend mode **Lab lightness**[^forum-bn-no-effect].
+`local contrast` opera sul canale **L** di Lab, quindi funziona anche su immagini monochrome. Se non vedi effetto, controlla che `detail` sia sopra il 100% (a 100% il modulo non modifica l’immagine) e che una maschera di fusione non escluda l’area[^forum-bn-no-effect].
 
 ## Tabella preset built-in
 

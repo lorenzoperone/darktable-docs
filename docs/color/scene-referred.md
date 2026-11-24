@@ -65,7 +65,7 @@ Il modulo `sigmoid` è il tone mapper più flessibile per flussi scene-referred,
 | `color processing` | `per channel`, `rgb ratio` | `per channel` | `per channel` | `rgb ratio` preserva perfettamente la cromaticità ma desatura fortemente i colori puri; `per channel` permette regolazioni fini con *preserve hue*. |
 | `preserve hue` | `0%`–`100%` | `100%` | `70%`–`90%` | A `100%`: comportamento identico a `rgb ratio`. A `70%`: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.[^sigmoid-manual] |
 | `target black` | `0%`–`15%` | `0.0152%` | `0.0` | Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare *global offset* in `color balance rgb`.[^sigmoid-manual] |
-| `target white` | `20%`–`1600%` | `100%` | `1.0`–`2.5` | Valori >2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.[^sigmoid-manual] |
+| `target white` | `20%`–`1600%` | `100%` | `100%` | Il default (bianco di un display SDR) va bene nella maggior parte dei casi; valori più alti servono solo per un'uscita HDR.[^sigmoid-manual] |
 | `red/green/blue attenuation` | `0.0`–`1.0` | `0.0` | `0.15`–`0.40` | Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore `0.25` per cieli, `0.35` per luci artificiali intense.[^sigmoid-manual] |
 | `recover purity` | `0%`–`100%` | `0%` | `80%`–`100%` | Ripristina la saturazione nelle medie luci. A `80%`: mantiene un leggero “smorzamento” naturale delle alte luci.[^sigmoid-manual] |
 
