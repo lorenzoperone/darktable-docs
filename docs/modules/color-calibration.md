@@ -66,6 +66,9 @@ La **color patch** mostra l’illuminante calcolato proiettato nello spazio sRGB
 
 > **Nota tecnica**: La CCT è solo un’indicazione. Internamente, l’illuminante è sempre rappresentato in coordinate **CIE xyY assolute**, indipendentemente dall’etichetta. Un’etichetta `(invalid)` non implica un errore: significa solo che la temperatura non è fisicamente significativa[^manual].
 
+!!! example "Prova tu: trascina il cursore"
+    --8<-- "snippets/sweep-cat-temperature.md"
+
 ### Selezione dell’illuminante: cosa cambia
 
 | Opzione | Quando usarla | Effetto sul flusso |
