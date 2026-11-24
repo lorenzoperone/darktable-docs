@@ -33,6 +33,17 @@ i3_*.py
 i6_*.py
 lessons/
 
+# Output di lavoro locali (screenshot batch, probe, backup XMP, skill Qwen)
+g1_output/
+g5_output/
+g2_probe_results.jsonl
+requirements-real.json
+xmp_backup_*/
+.qwen/
+
+# Workflow dello scraper: richiede scraper/ (locale), fallirebbe su GitHub
+.github/workflows/scrape.yml
+
 # Scraper package
 scraper/
 

@@ -32,8 +32,7 @@ darktable-docs/
 ├── requirements.txt
 └── .github/workflows/
     ├── publish.yml        # Build + deploy → GitHub Pages (push su main)
-    ├── check.yml          # mkdocs build --strict su PR e rami non-main
-    └── scrape.yml         # Aggiornamento manuale banca dati
+    └── check.yml          # mkdocs build --strict su PR e rami non-main
 ```
 
 Gli strumenti di lavoro descritti più sotto (scraper, linter, generazione contenuti, fact-check,
@@ -122,13 +121,6 @@ del build e deploy su `gh-pages` a ogni push su `main`.
 
 1. Su GitHub: **Settings › Pages › Source** → seleziona `gh-pages` branch
 2. Opzionale: aggiungi dominio personalizzato
-
----
-
-## Aggiornamento banca dati via GitHub Actions
-
-Dal tab **Actions** su GitHub → seleziona **"Aggiorna banca dati scraper"** → **Run workflow**.  
-Puoi specificare la sorgente singola e il delay tra richieste.
 
 ---
 
