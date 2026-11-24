@@ -3018,17 +3018,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#preset-built-in-per-macro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset built-in per macro
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#consigli-avanzati" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4325,17 +4314,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#preset-built-in-per-macro" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset built-in per macro
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#consigli-avanzati" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4406,8 +4384,8 @@
 <h3 id="passo-1-identificazione-del-piano-a-fuoco-con-focus-peaking">Passo 1: Identificazione del piano a fuoco con Focus Peaking<a class="headerlink" href="#passo-1-identificazione-del-piano-a-fuoco-con-focus-peaking" title="Permanent link">¶</a></h3>
 <p>Prima di aprire la <em>Camera Oscura</em>, attiva <strong>Focus Peaking</strong> in modalità <em>lighttable</em> per identificare l’immagine campione della sequenza di focus stacking:</p>
 <ul>
-<li>Premi <code>P</code> per abilitare il focus peaking  </li>
-<li>Regola la sensibilità (<code>Shift + P</code>) fino a quando i bordi nitidi (es. contorno di un petalo, antenne di un insetto) appaiono con un contorno rosso fluoresccente  </li>
+<li>Attiva il focus peaking con la sua icona (disponibile in <em>lighttable</em> e in <em>camera oscura</em>)  </li>
+<li>I bordi nitidi (es. contorno di un petalo, antenne di un insetto) vengono evidenziati con una mappa a colori: giallo (molto nitido), verde e blu  </li>
 <li>Seleziona l’immagine con il massimo dettaglio nel punto di interesse (non necessariamente quella più centrale)  </li>
 </ul>
 <div class="admonition info">
@@ -4456,13 +4434,13 @@
 <li><code>min</code>: <code>0.35</code> (zone medio-chiare: venature, polline)  </li>
 <li><code>max</code>: <code>0.95</code> (zone molto luminose: riflessi, gocce)  </li>
 <li>Parametri:  </li>
-<li><code>clarity</code>: <code>22%</code> (valore ottimale per dettagli senza “halo”)  </li>
-<li><code>clarity in highlights</code>: <code>38%</code> (per far emergere i riflessi senza bruciare)  </li>
-<li><code>clarity in shadows</code>: <code>8%</code> (minimo, per non esaltare il rumore nelle ombre)  </li>
+<li><code>detail</code>: aumentare moderatamente (valori più alti = più contrasto locale; eccedere crea “halo”)  </li>
+<li><code>highlights</code>: regolare per far emergere i riflessi senza bruciarli  </li>
+<li><code>shadows</code>: tenere basso, per non esaltare il rumore nelle ombre  </li>
 </ul>
 <h3 id="passo-5-rifinitura-finale">Passo 5: Rifinitura finale<a class="headerlink" href="#passo-5-rifinitura-finale" title="Permanent link">¶</a></h3>
 <ul>
-<li><strong>Denoise</strong>: usa <code>denoise (profiled)</code> → <code>strength</code>: <code>12%</code>, <code>spatial extent</code>: <code>1.2</code>, <code>range extent</code>: <code>0.8</code> — sufficiente per ISO 400–800 tipici della macro su treppiede  </li>
+<li><strong>Denoise</strong>: usa <code>denoise (profiled)</code> → <code>strength</code> bassa, modalità <code>wavelets</code> (default) — sufficiente per ISO 400–800 tipici della macro su treppiede  </li>
 <li><strong>Vignettatura</strong>: <code>vignetting</code> → <code>strength</code>: <code>-18%</code>, <code>scale</code>: <code>0.85</code> — per guidare l’occhio verso il soggetto centrale  </li>
 <li><strong>Cornice</strong>: <code>watermark</code> → <code>opacity</code>: <code>12%</code>, <code>size</code>: <code>0.5%</code>, <code>font</code>: <code>DejaVu Sans</code> — discreto e leggibile anche in stampa 300 dpi  </li>
 </ul>
@@ -4497,8 +4475,8 @@
 </tr>
 <tr>
 <td><code>local contrast</code></td>
-<td><code>clarity in highlights</code></td>
-<td><code>38%</code></td>
+<td><code>highlights</code></td>
+<td>da regolare a vista</td>
 <td>Esalta i dettagli nei punti di massima luminosità senza clipping<sup id="fnref7:focus-stacking-video"><a class="footnote-ref" href="#fn:focus-stacking-video">1</a></sup></td>
 </tr>
 <tr>
@@ -4517,7 +4495,7 @@
    - <code>input R</code>: <code>−0.124</code> (riduce dominante rossa su petali sottili)<br>
    - <code>input G</code>: <code>+0.082</code> (migliora resa della clorofilla in venature)<br>
    - <code>input B</code>: <code>−0.037</code> (mitiga birifrangenza blu su superfici umide)<br>
-4. Attiva <code>output color profile</code>: <code>filmic rgb – scene-referred default</code><br>
+4. Usa <code>filmic rgb</code> come tone mapper (preferenza <em>scene-referred (filmic)</em>); il profilo colore di uscita resta sRGB<br>
 5. Conferma con <code>spot color mapping</code> su un’area di riferimento (es. stelo verde) con <code>lightness_target = 51.2%</code>, <code>chroma_target = 47.5%</code>  </p>
 <h2 id="esempio-mascheratura-avanzata-per-dettagli-fini">Esempio: Mascheratura avanzata per dettagli fini<a class="headerlink" href="#esempio-mascheratura-avanzata-per-dettagli-fini" title="Permanent link">¶</a></h2>
 <p><em>Da [ENG] Full b&amp;w edits in darktable for street photography (video-tutorials) (timestamp 06:45–08:20)</em><sup id="fnref:street-video"><a class="footnote-ref" href="#fn:street-video">6</a></sup><br>
@@ -4527,7 +4505,7 @@
    - <code>feathering radius</code>: <code>12 px</code> (allinea la maschera ai bordi reali usando <code>input before blur</code>)<br>
    - <code>blurring radius</code>: <code>3 px</code> (evita transizioni troppo dure)<br>
    - <code>mask opacity</code>: <code>92%</code> (conserva il 100% dell’effetto sul bordo, attenua leggermente il centro)<br>
-4. Applica <code>clarity in highlights = 41%</code> solo su quel tracciato<br>
+4. Applica <code>local contrast</code> con <code>highlights</code> aumentato solo su quel tracciato<br>
 5. Usa <code>mask contrast = +0.25</code> per aumentare la definizione del gradiente interno della maschera  </p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-ricostruzione-delle-luci-fallisce-su-riflessi-metallici-con-artefatti-ringing">Problema: Ricostruzione delle luci fallisce su riflessi metallici con artefatti “ringing”<a class="headerlink" href="#problema-ricostruzione-delle-luci-fallisce-su-riflessi-metallici-con-artefatti-ringing" title="Permanent link">¶</a></h3>
@@ -4535,7 +4513,7 @@
 <h3 id="problema-spot-color-mapping-produce-shift-cromatico-su-zone-sfocate">Problema: Spot Color Mapping produce shift cromatico su zone sfocate<a class="headerlink" href="#problema-spot-color-mapping-produce-shift-cromatico-su-zone-sfocate" title="Permanent link">¶</a></h3>
 <p>In macro, il campionamento di <code>spot color mapping</code> su aree con bokeh pronunciato genera errori di stima della luminanza cromatica. Si risolve impostando <code>feathering guide</code> su <code>input after blur</code> nella maschera associata al modulo <code>color calibration</code>, e riducendo <code>feathering radius</code> a <code>8 px</code>. Ciò impedisce alla maschera di “cavalcare” i gradienti cromatici del bokeh<sup id="fnref:mask-refinement"><a class="footnote-ref" href="#fn:mask-refinement">8</a></sup>.</p>
 <h3 id="problema-local-contrast-introduce-rumore-nelle-ombre-di-superfici-pelose">Problema: Local contrast introduce rumore nelle ombre di superfici pelose<a class="headerlink" href="#problema-local-contrast-introduce-rumore-nelle-ombre-di-superfici-pelose" title="Permanent link">¶</a></h3>
-<p>Con <code>clarity in shadows &gt; 10%</code>, i peli fini (es. su fiori o insetti) mostrano granularità artificiale. La correzione è applicare <code>local contrast</code> con maschera parametrica <code>L</code> impostata su <code>min = 0.02</code>, <code>max = 0.18</code>, e <code>clarity in shadows = 4%</code>, seguita da <code>denoise (profiled)</code> con <code>strength = 7%</code> applicato <em>solo</em> su quella stessa maschera<sup id="fnref2:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup>.</p>
+<p>Con <code>shadows</code> troppo alto in <code>local contrast</code>, i peli fini (es. su fiori o insetti) mostrano granularità artificiale. La correzione è applicare <code>local contrast</code> con maschera parametrica <code>L</code> impostata su <code>min = 0.02</code>, <code>max = 0.18</code>, e <code>shadows</code> più basso, seguita da <code>denoise (profiled)</code> con <code>strength = 7%</code> applicato <em>solo</em> su quella stessa maschera<sup id="fnref2:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup>.</p>
 <h2 id="rifinitura-con-filmic-rgb-per-macro">Rifinitura con Filmic RGB per macro<a class="headerlink" href="#rifinitura-con-filmic-rgb-per-macro" title="Permanent link">¶</a></h2>
 <p>Per immagini macro con elevata gamma dinamica (es. gocce d’acqua su fondo nero con riflessi speculari), <code>filmic rgb</code> sostituisce efficacemente <code>highlight reconstruction</code> in alcuni casi. Il suo utilizzo richiede preparazione specifica:</p>
 <ul>
@@ -4544,8 +4522,8 @@
 <li><code>white relative exposure</code>: <code>3.200 EV</code> (valore ottimale per riflessi su superfici lisce, misurato con pipetta su goccia)  </li>
 <li><code>black relative exposure</code>: <code>−6.800 EV</code> (estende la profondità delle ombre senza introdurre rumore)  </li>
 <li>Nella scheda <em>Reconstruct</em>:  </li>
-<li><code>reconstruct mode</code>: <code>clip and blend</code>  </li>
-<li><code>reconstruction strength</code>: <code>0.35</code> (valore conservativo per evitare “halo” su bordi netti)  </li>
+<li><code>threshold</code>: abbassare finché la maschera di ricostruzione copre solo i riflessi bruciati  </li>
+<li><code>transition</code>: regolare per evitare “halo” su bordi netti  </li>
 <li>Nella scheda <em>Look</em>:  </li>
 <li><code>contrast</code>: <code>1.30</code>  </li>
 <li><code>latitude</code>: <code>82%</code>  </li>
@@ -4560,37 +4538,9 @@
 <ul>
 <li>Usare <code>drawn mask</code> con <code>feathering guide = input before blur</code> e <code>feathering radius = 24 px</code>  </li>
 <li>Attivare <code>details threshold = +12</code> nella scheda <em>Refinement</em>: questo esclude dalle aree mascherate le zone con bassa struttura (es. sfondo omogeneo), concentrandosi esclusivamente su dettagli con alta frequenza spaziale<sup id="fnref2:mask-refinement"><a class="footnote-ref" href="#fn:mask-refinement">8</a></sup>.  </li>
-<li>Applicare <code>local contrast</code> con <code>clarity = 28%</code>, <code>clarity in highlights = 45%</code>, <code>clarity in shadows = 3%</code>  </li>
+<li>Applicare <code>local contrast</code> aumentando <code>detail</code> e <code>highlights</code>, tenendo basso <code>shadows</code>  </li>
 <li>Usare <code>mask contrast = +0.40</code> per accentuare la transizione tra dettaglio e sfondo  </li>
 </ul>
-<h2 id="preset-built-in-per-macro">Preset built-in per macro<a class="headerlink" href="#preset-built-in-per-macro" title="Permanent link">¶</a></h2>
-<p>darktable 5.4 include preset preconfigurati per macro nel modulo <code>color calibration</code>, accessibili dal menu a tendina <em>Presets</em>:</p>
-<table>
-<thead>
-<tr>
-<th>Preset</th>
-<th>Quando usarlo</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>macro: flower translucence</code></td>
-<td>Su petali sottili con retroilluminazione</td>
-<td>Bilancia R/G/B per massimizzare la resa della clorofilla e minimizzare la dominante rossa<sup id="fnref4:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup></td>
-</tr>
-<tr>
-<td><code>macro: insect exoskeleton</code></td>
-<td>Su carapaci lucidi con riflessi speculati</td>
-<td>Riduce leggermente la saturazione nei toni arancio/verde per evitare “over-saturation” dei pigmenti chitinici<sup id="fnref5:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup></td>
-</tr>
-<tr>
-<td><code>macro: water droplet</code></td>
-<td>Su gocce d’acqua su superfici vegetali</td>
-<td>Aumenta la luminanza del canale blu (+0.061) per migliorare la resa della birifrangenza<sup id="fnref6:dt54-manual"><a class="footnote-ref" href="#fn:dt54-manual">4</a></sup></td>
-</tr>
-</tbody>
-</table>
 <h2 id="consigli-avanzati">Consigli avanzati<a class="headerlink" href="#consigli-avanzati" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Maschere geometriche</strong>: per oggetti con contorni netti (insetti, fiori), preferisci maschere disegnate (<code>drawn mask</code>) con <code>feathering</code>: <code>0.3%</code> — più preciso di quelle parametriche su bordi complessi  </li>
@@ -4619,7 +4569,7 @@
 <p>darktable 4.0.0 — darktable FR, 2022-07-03. URL: https://darktable.fr/posts/2022/07/darktable-4-0-0/&nbsp;<a class="footnote-backref" href="#fnref:dt40-features" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt40-features" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt40-features" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:dt54-manual">
-<p>darktable usermanual — official documentation. URL: https://darktable.gitlab.io/doc/en/&nbsp;<a class="footnote-backref" href="#fnref:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt54-manual" title="Jump back to footnote 4 in the text">↩</a></p>
+<p>darktable usermanual — official documentation. URL: https://darktable.gitlab.io/doc/en/&nbsp;<a class="footnote-backref" href="#fnref:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54-manual" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54-manual" title="Jump back to footnote 4 in the text">↩</a></p>
 </li>
 <li id="fn:bw-video">
 <p>[ENG] darktable Black&amp;White photography — A Dabble in Photography, YouTube, 2026-04-12. URL: https://www.youtube.com/watch?v=efWVSR93m5k&nbsp;<a class="footnote-backref" href="#fnref:bw-video" title="Jump back to footnote 5 in the text">↩</a></p>
@@ -4661,7 +4611,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

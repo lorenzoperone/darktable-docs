@@ -2875,10 +2875,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-attenuazione-prima-del-tone-mapping-color-calibration-scheda-primaries" class="md-nav__link">
+  <a href="#a-attenuazione-delle-primarie-sigmoid-sezione-primaries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Attenuazione prima del tone mapping (color calibration → scheda primaries)
+        A. Attenuazione delle primarie (sigmoid → sezione primaries)
       
     </span>
   </a>
@@ -2935,10 +2935,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#esempio-recupero-luci-con-sigmoid-filmic-rgb-da-video-tutorial" class="md-nav__link">
+  <a href="#esempio-recupero-luci-con-filmic-rgb-in-alternativa-a-sigmoid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Recupero luci con Sigmoid + filmic rgb (da video tutorial)
+        Esempio: Recupero luci con filmic rgb (in alternativa a sigmoid)
       
     </span>
   </a>
@@ -4261,10 +4261,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-attenuazione-prima-del-tone-mapping-color-calibration-scheda-primaries" class="md-nav__link">
+  <a href="#a-attenuazione-delle-primarie-sigmoid-sezione-primaries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Attenuazione prima del tone mapping (color calibration → scheda primaries)
+        A. Attenuazione delle primarie (sigmoid → sezione primaries)
       
     </span>
   </a>
@@ -4321,10 +4321,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#esempio-recupero-luci-con-sigmoid-filmic-rgb-da-video-tutorial" class="md-nav__link">
+  <a href="#esempio-recupero-luci-con-filmic-rgb-in-alternativa-a-sigmoid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Recupero luci con Sigmoid + filmic rgb (da video tutorial)
+        Esempio: Recupero luci con filmic rgb (in alternativa a sigmoid)
       
     </span>
   </a>
@@ -4555,7 +4555,7 @@
 </tr>
 </tbody>
 </table>
-<p>⚠️ <strong>Attenzione</strong>: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), vai alla scheda <em>Color</em> e abbassa <code>red attenuation</code> a <code>15–25%</code><sup id="fnref:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup>.</p>
+<p>⚠️ <strong>Attenzione</strong>: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), apri la sezione <em>primaries</em> di sigmoid e regola <code>red attenuation</code> a <code>15–25%</code><sup id="fnref:color-perception-video"><a class="footnote-ref" href="#fn:color-perception-video">5</a></sup>.</p>
 <hr>
 <h2 id="passo-3-controllo-locale-con-tone-equalizer">Passo 3: Controllo locale con <code>tone equalizer</code><a class="headerlink" href="#passo-3-controllo-locale-con-tone-equalizer" title="Permanent link">¶</a></h2>
 <p>Il modulo <strong>tone equalizer</strong> è lo strumento chiave per l’HDR: permette di “dodgere” e “burnare” zone specifiche <strong>senza distruggere il contrasto locale</strong>, grazie alla sua maschera guidata<sup id="fnref2:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</p>
@@ -4640,7 +4640,7 @@
 <hr>
 <h2 id="passo-4-affinamento-cromatico">Passo 4: Affinamento cromatico<a class="headerlink" href="#passo-4-affinamento-cromatico" title="Permanent link">¶</a></h2>
 <p>Dopo la compressione tonale, i colori saturi nelle luci tendono a “uscire dal gamut” (clipping cromatico). Risolvilo in due fasi:</p>
-<h3 id="a-attenuazione-prima-del-tone-mapping-color-calibration-scheda-primaries">A. Attenuazione prima del tone mapping (<code>color calibration</code> → scheda <em>primaries</em>)<a class="headerlink" href="#a-attenuazione-prima-del-tone-mapping-color-calibration-scheda-primaries" title="Permanent link">¶</a></h3>
+<h3 id="a-attenuazione-delle-primarie-sigmoid-sezione-primaries">A. Attenuazione delle primarie (<code>sigmoid</code> → sezione <em>primaries</em>)<a class="headerlink" href="#a-attenuazione-delle-primarie-sigmoid-sezione-primaries" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -4694,7 +4694,7 @@
 </tr>
 </tbody>
 </table>
-<p>✅ <strong>Controlla</strong>: attiva <code>C</code> (Clipping cromatico) — non devono apparire aree gialle o bianche (indicano clipping RGB combinato).</p>
+<p>✅ <strong>Controlla</strong>: attiva il controllo gamut (<em>gamut check</em>, dal pulsante nella barra sotto l'immagine) e verifica che le luci non segnalino colori fuori gamut.</p>
 <hr>
 <h2 id="parametri-critici-da-monitorare-tabella-di-riferimento">Parametri critici da monitorare (tabella di riferimento)<a class="headerlink" href="#parametri-critici-da-monitorare-tabella-di-riferimento" title="Permanent link">¶</a></h2>
 <table>
@@ -4730,7 +4730,7 @@
 <td>&gt;0.6 → oscillazioni matematiche, banding<sup id="fnref13:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup></td>
 </tr>
 <tr>
-<td><code>color calibration</code></td>
+<td><code>sigmoid</code> (primaries)</td>
 <td><code>blue attenuation</code></td>
 <td><code>10% – 70%</code></td>
 <td><code>42%</code></td>
@@ -4741,9 +4741,9 @@
 <hr>
 <h2 id="consigli-operativi-finali">Consigli operativi finali<a class="headerlink" href="#consigli-operativi-finali" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Ordine di attivazione</strong>: <code>exposure</code> → <code>sigmoid</code> → <code>tone equalizer</code> → <code>color balance rgb</code>. Cambiare l’ordine può generare artefatti<sup id="fnref7:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.  </li>
+<li><strong>Ordine nella pipeline</strong>: l'ordine dei moduli nel pixelpipe è fisso (<code>exposure</code> → <code>tone equalizer</code><sup id="fnref7:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup> → <code>color balance rgb</code> → <code>sigmoid</code>); l'ordine in cui li regoli è libero.  </li>
 <li><strong>Zoom costante</strong>: lavora sempre a <code>100%</code> per valutare il clipping, ma verifica il risultato a <code>25%</code> per il contrasto globale<sup id="fnref5:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.  </li>
-<li><strong>Salva uno snapshot prima di sigmoid</strong>: utile per confrontare prima/dopo con <code>Ctrl+Shift+D</code><sup id="fnref:dt52-snapshots-video"><a class="footnote-ref" href="#fn:dt52-snapshots-video">6</a></sup>.  </li>
+<li><strong>Salva uno snapshot prima di sigmoid</strong>: utile per confrontare prima/dopo dal modulo <em>snapshot</em><sup id="fnref:dt52-snapshots-video"><a class="footnote-ref" href="#fn:dt52-snapshots-video">6</a></sup>.  </li>
 <li><strong>Evita il doppio tone mapping</strong>: non usare contemporaneamente <code>sigmoid</code> e <code>AGX</code> — causano over-compression e banding<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">3</a></sup>.  </li>
 </ul>
 <hr>
@@ -4756,13 +4756,13 @@
 5. Usa la barra <code>mask post-processing</code>: clicca sull’icona a forma di bacchetta magica accanto a <code>mask contrast compensation</code> → applica <code>+18%</code> per espandere l’istogramma della maschera su tutto il range -8..0 EV.<br>
 6. Verifica in <em>advanced</em>: l’istogramma della maschera deve coprire ≥90% della larghezza, con picchi distinti in -4 EV (nuvole) e -1 EV (cielo chiaro)<sup id="fnref2:sigmoid-v5-video"><a class="footnote-ref" href="#fn:sigmoid-v5-video">2</a></sup>.</p>
 <hr>
-<h2 id="esempio-recupero-luci-con-sigmoid-filmic-rgb-da-video-tutorial">Esempio: Recupero luci con Sigmoid + filmic rgb (da video tutorial)<a class="headerlink" href="#esempio-recupero-luci-con-sigmoid-filmic-rgb-da-video-tutorial" title="Permanent link">¶</a></h2>
+<h2 id="esempio-recupero-luci-con-filmic-rgb-in-alternativa-a-sigmoid">Esempio: Recupero luci con filmic rgb (in alternativa a sigmoid)<a class="headerlink" href="#esempio-recupero-luci-con-filmic-rgb-in-alternativa-a-sigmoid" title="Permanent link">¶</a></h2>
 <p><em>Da <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#">darktable user manual - filmic rgb</a> (sezione <em>reconstruct tab</em>)</em><br>
-1. Dopo aver applicato <code>sigmoid</code>, apri <code>filmic rgb</code> e vai alla scheda <em>reconstruct</em>.<br>
-2. Abilita <code>reconstruct highlights</code> e imposta <code>method</code> su <code>clip</code>.<br>
-3. Imposta <code>strength</code> a <code>0.35</code>: sufficiente per fondere i bordi delle nuvole bruciate senza creare halo.<br>
-4. Regola <code>iterations</code> a <code>2</code>: migliora la convergenza del processo di ricostruzione senza introdurre rumore aggiuntivo<sup id="fnref:dt48-filmic-rgb"><a class="footnote-ref" href="#fn:dt48-filmic-rgb">7</a></sup>.<br>
-5. Attiva <code>C</code> (Clipping cromatico) e verifica che le aree gialle spariscano dalle nuvole — se persistono, torna a <code>color calibration</code> e incrementa <code>blue attenuation</code> di ulteriori <code>5%</code><sup id="fnref2:dt48-filmic-rgb"><a class="footnote-ref" href="#fn:dt48-filmic-rgb">7</a></sup>.</p>
+1. Disattiva <code>sigmoid</code> (non usare due tone mapper insieme), attiva <code>filmic rgb</code> e vai alla scheda <em>reconstruct</em>.<br>
+2. Regola <code>threshold</code> finché la maschera di ricostruzione (icona accanto allo slider) copre solo le nuvole bruciate.<br>
+3. Regola <code>transition</code> per ammorbidire il passaggio tra zone ricostruite e zone valide.<br>
+4. Bilancia <code>bloom ↔ reconstruct</code>, <code>gray ↔ colorful details</code> e <code>structure ↔ texture</code> in base al risultato<sup id="fnref:dt48-filmic-rgb"><a class="footnote-ref" href="#fn:dt48-filmic-rgb">7</a></sup>.<br>
+5. Verifica a zoom 100% che i bordi delle nuvole non mostrino aloni o aree piatte<sup id="fnref2:dt48-filmic-rgb"><a class="footnote-ref" href="#fn:dt48-filmic-rgb">7</a></sup>.</p>
 <hr>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-tone-equalizer-genera-artefatti-a-bassa-risoluzione-banding-o-frastagliature">Problema: <code>tone equalizer</code> genera artefatti a bassa risoluzione (banding o frastagliature)<a class="headerlink" href="#problema-tone-equalizer-genera-artefatti-a-bassa-risoluzione-banding-o-frastagliature" title="Permanent link">¶</a></h3>
@@ -4784,19 +4784,19 @@
 </thead>
 <tbody>
 <tr>
-<td><code>compress shadows and highlights (eigf)</code></td>
-<td>Immagini con ombre profonde e luci intense (es. interni con finestre)</td>
-<td>Usa il filtro <code>eigf</code>: bilancia compressione tra luci e ombre senza favorire zone specifiche<sup id="fnref14:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
+<td><code>compress shadows/highlights \| EIGF \| strong</code> / <code>medium</code> / <code>soft</code></td>
+<td>Immagini con ombre profonde e luci intense (es. interni con finestre, tramonti)</td>
+<td>Filtro <code>eigf</code>: compressione di ombre e luci, intensità decrescente da <em>strong</em> a <em>soft</em><sup id="fnref14:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
-<td><code>compress shadows only (gf)</code></td>
-<td>Paesaggi con cielo perfettamente esposto ma ombre schiacciate (es. boschi al mattino)</td>
-<td>Usa <code>gf</code>: preserva meglio il contrasto locale nelle ombre, a costo di una leggera perdita di dettaglio nelle luci<sup id="fnref15:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
+<td><code>compress shadows/highlights \| GF \| strong</code> / <code>medium</code> / <code>soft</code></td>
+<td>Stessi casi, con il filtro guidato classico</td>
+<td>Filtro <code>gf</code>: sfocatura della maschera dipendente dall'esposizione<sup id="fnref15:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 <tr>
-<td><code>compress highlights only (eigf)</code></td>
-<td>Tramonti con nuvole brillanti ma ombre ben dettagliate</td>
-<td>Ideale per questo workshop: agisce principalmente sugli slider <code>0 EV</code> e <code>-1 EV</code>, lasciando inalterati <code>-6 EV</code> e <code>-8 EV</code><sup id="fnref16:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
+<td><code>contrast tone curve \| soft</code> / <code>medium</code> / …</td>
+<td>Aggiungere contrasto tonale globale</td>
+<td>Curva di contrasto applicata tramite gli slider EV<sup id="fnref16:dt48-tone-equalizer"><a class="footnote-ref" href="#fn:dt48-tone-equalizer">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -4858,7 +4858,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

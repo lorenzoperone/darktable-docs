@@ -2802,10 +2802,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-calibrazione-colore-primaries" class="md-nav__link">
+  <a href="#passo-4-agx-sezione-primaries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4 — Calibrazione colore: Primaries
+        Passo 4 — AgX: sezione primaries
       
     </span>
   </a>
@@ -4454,10 +4454,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-calibrazione-colore-primaries" class="md-nav__link">
+  <a href="#passo-4-agx-sezione-primaries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4 — Calibrazione colore: Primaries
+        Passo 4 — AgX: sezione primaries
       
     </span>
   </a>
@@ -4931,7 +4931,7 @@
 <p>Assegnare il modulo Exposure alla scorciatoia <code>E</code> e usare la rotella del mouse per regolazioni rapide. Fondamentale quando si lavora su molte immagini in sessione.</p>
 </div>
 <h3 id="passo-2-pipeline-con-agx">Passo 2 — Pipeline con AGX<a class="headerlink" href="#passo-2-pipeline-con-agx" title="Permanent link">¶</a></h3>
-<p>Per le foto a luci miste, <strong>AGX+</strong> è preferibile per evitare tonalità magenta indesiderate:</p>
+<p>Per le foto a luci miste, <strong>AgX</strong> come tone mapper è preferibile per evitare tonalità magenta indesiderate:</p>
 <table>
 <thead>
 <tr>
@@ -4941,18 +4941,18 @@
 </thead>
 <tbody>
 <tr>
-<td>Output color profile</td>
-<td><strong>AgX+</strong> scene-referred default</td>
+<td>Tone mapper</td>
+<td><strong>AgX</strong> (preferenza <em>flusso di lavoro: scene-referred (AgX)</em>)</td>
 </tr>
 <tr>
-<td>Input color profile</td>
-<td>scene-referred default</td>
+<td>Profilo colore di uscita</td>
+<td>sRGB (default)</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
-<p class="admonition-title">Perché AGX+ per il lowlight</p>
-<p>AGX+ gestisce meglio i colori saturi (come le luci viola di un palco) senza generare blocchi di colore innaturali. Il profilo AgX+ è specificamente ottimizzato per scene con colori dominanti forti<sup id="fnref:agx-plus-optimization"><a class="footnote-ref" href="#fn:agx-plus-optimization">1</a></sup>.</p>
+<p class="admonition-title">Perché AgX per il lowlight</p>
+<p>AgX gestisce meglio i colori saturi (come le luci viola di un palco) senza generare blocchi di colore innaturali<sup id="fnref:agx-plus-optimization"><a class="footnote-ref" href="#fn:agx-plus-optimization">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-agx-avanzato-controllo-tonale">Passo 3 — AGX avanzato: controllo tonale<a class="headerlink" href="#passo-3-agx-avanzato-controllo-tonale" title="Permanent link">¶</a></h3>
 <p><strong>AGX (impostazioni principali):</strong>
@@ -4976,9 +4976,9 @@
 | Shoulder start | 17.54% | Anticipa il contrasto nelle medie-luci |
 | Toe power | 2.37 | Approfondisce le ombre |
 | Curve gamma | 2.20 | Default |</p>
-<h3 id="passo-4-calibrazione-colore-primaries">Passo 4 — Calibrazione colore: Primaries<a class="headerlink" href="#passo-4-calibrazione-colore-primaries" title="Permanent link">¶</a></h3>
-<p>Per recuperare vivacità cromatica dopo AGX:</p>
-<p><strong>Color Calibration (tab Primaries):</strong>
+<h3 id="passo-4-agx-sezione-primaries">Passo 4 — AgX: sezione primaries<a class="headerlink" href="#passo-4-agx-sezione-primaries" title="Permanent link">¶</a></h3>
+<p>Per recuperare vivacità cromatica, si regolano le primarie direttamente nel modulo AgX (non in color calibration, che non ha questi parametri):</p>
+<p><strong>AgX (sezione <em>primaries</em>):</strong>
 | Parametro | Valore |
 |-----------|--------|
 | Red attenuation | 10.00% |
@@ -5027,12 +5027,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Output color profile</td>
-<td>Filmic RGB, scene-referred default</td>
+<td>Tone mapper</td>
+<td>Filmic RGB (preferenza <em>flusso di lavoro: scene-referred (filmic)</em>)</td>
 </tr>
 <tr>
-<td>Input color profile</td>
-<td>scene-referred default</td>
+<td>Profilo colore di uscita</td>
+<td>sRGB (default)</td>
 </tr>
 <tr>
 <td>Denoise</td>
@@ -5130,7 +5130,7 @@
 <td>Luminosità base</td>
 </tr>
 <tr>
-<td><strong>AGX+</strong></td>
+<td><strong>AgX</strong></td>
 <td>White 6.5 EV, Black -10 EV, Contrast 2.80</td>
 <td>Tone mapping, no magenta</td>
 </tr>
@@ -5140,7 +5140,7 @@
 <td>Contrasto controllato</td>
 </tr>
 <tr>
-<td><strong>Color Calibration</strong> (Primaries)</td>
+<td><strong>AgX</strong> (primaries)</td>
 <td>Attenuazione R 10%, G 10%, B 15%</td>
 <td>Vivacità cromatica</td>
 </tr>
@@ -5205,11 +5205,11 @@
 </table>
 <h2 id="principi-chiave-per-il-lowlight">Principi chiave per il lowlight<a class="headerlink" href="#principi-chiave-per-il-lowlight" title="Permanent link">¶</a></h2>
 <ol>
-<li><strong>AGX+ per colori dominanti forti</strong> — evita i blocchi di colore innaturali  </li>
+<li><strong>AgX per colori dominanti forti</strong> — evita i blocchi di colore innaturali  </li>
 <li><strong>Shoulder/Toe al posto del contrasto</strong> — controllo separato di luci e ombre  </li>
 <li><strong>Maschere inverse</strong> — cielo e primo piano gestiti separatamente  </li>
 <li><strong>Snapshot ad ogni passo</strong> — fondamentale per non perdere dettagli sui volti  </li>
-<li><strong>Primaries prima del tone mapping</strong> — attenuare i colori saturi PRIMA della compressione tonale  </li>
+<li><strong>Primaries di AgX</strong> — attenuare i colori saturi PRIMA della compressione tonale (AgX lo fa internamente, prima della curva)  </li>
 </ol>
 <hr>
 <h2 id="modulo-lowlight-vision-simulazione-della-visione-notturna-umana">Modulo <code>lowlight vision</code>: simulazione della visione notturna umana<a class="headerlink" href="#modulo-lowlight-vision-simulazione-della-visione-notturna-umana" title="Permanent link">¶</a></h2>
@@ -5290,7 +5290,7 @@
 </ul>
 <h3 id="workflow-integrato-concerto-iso-2000">Workflow integrato (concerto ISO 2000)<a class="headerlink" href="#workflow-integrato-concerto-iso-2000" title="Permanent link">¶</a></h3>
 <ol>
-<li>Attivare <code>raw denoise</code> subito dopo <code>demosaic</code> (in posizione 3–4 nella pipeline).</li>
+<li>Attivare <code>raw denoise</code>: lavora sui dati raw, prima del <code>demosaic</code> (la posizione nella pipeline è fissa).</li>
 <li>Impostare <code>noise threshold = 0.320</code>.</li>
 <li>Regolare la curva:  </li>
 <li>Coarse point: 75%  </li>
@@ -5369,7 +5369,7 @@
 </table>
 <h3 id="esempio-workflow-concerti-fujifilm-x-t2-iso-2000">Esempio: workflow concerti (Fujifilm X-T2, ISO 2000)<a class="headerlink" href="#esempio-workflow-concerti-fujifilm-x-t2-iso-2000" title="Permanent link">¶</a></h3>
 <p><em>Da [ENG] Darktable First steps EP06](https://www.youtube.com/watch?v=iPjlgyrKqBY) (timestamp 03:00–07:00)</em><br>
-1. Attivare <code>denoise (profiled)</code> in posizione 5–6 della pipeline, dopo <code>exposure</code> e prima di <code>color calibration</code>.<br>
+1. Attivare <code>denoise (profiled)</code>: nella pipeline si trova subito dopo il <code>demosaic</code>, prima di <code>exposure</code> e di <code>color calibration</code>.<br>
 2. Selezionare <code>mode = wavelets</code> → <code>Y0U0V0 color mode</code>.<br>
 3. Regolare le curve:<br>
    - <code>Y0</code> (luminanza): punto sinistro (coarse) a 85%, centro (mid) a 70%, destro (fine) a 35%.<br>
@@ -5430,7 +5430,7 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Ordine critico nella pipeline</p>
-<p><code>astrophoto denoise</code> deve essere inserito <strong>dopo</strong> <code>exposure</code>, <code>filmic rgb</code> e <code>color calibration</code>, ma <strong>prima</strong> di <code>sharpen</code>, <code>local contrast</code> e <code>bloom</code>. Se posizionato troppo presto, interferisce con la compressione tonale; troppo tardi, amplifica artefatti<sup id="fnref:astrophoto-pipeline-order"><a class="footnote-ref" href="#fn:astrophoto-pipeline-order">20</a></sup>.</p>
+<p>Nella pipeline <code>astrophoto denoise</code><sup id="fnref:astrophoto-pipeline-order"><a class="footnote-ref" href="#fn:astrophoto-pipeline-order">20</a></sup> si trova <strong>dopo</strong> <code>exposure</code> e <code>color calibration</code>, ma <strong>prima</strong> del tone mapper (<code>filmic rgb</code>/<code>sigmoid</code>/<code>AgX</code>), di <code>sharpen</code> e di <code>local contrast</code>.</p>
 </div>
 <hr>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>

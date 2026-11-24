@@ -1263,10 +1263,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" class="md-nav__link">
+  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-di-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80
+        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto di default
       
     </span>
   </a>
@@ -4434,10 +4434,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" class="md-nav__link">
+  <a href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-di-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80
+        Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto di default
       
     </span>
   </a>
@@ -4520,12 +4520,13 @@ L’algoritmo è basato su modelli fisici della risposta cromatica della pellico
 <p>Usare la pipetta (eyedropper) su <strong>'pivot exposure'</strong> per definire la zona di massimo contrasto. La pipetta su <strong>'output target'</strong> modifica entrambi i parametri simultaneamente.<sup id="fnref3:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
 </div>
 <h3 id="parametri-avanzati">Parametri avanzati<a class="headerlink" href="#parametri-avanzati" title="Permanent link">¶</a></h3>
+<p>I default indicati sono quelli del preset <em>scene-referred default</em> di darktable 5.6 (verificati sul codice sorgente); versioni precedenti e i tutorial video possono riportare valori diversi.</p>
 <table>
 <thead>
 <tr>
 <th>Parametro</th>
 <th>Funzione</th>
-<th>Valore tipico</th>
+<th>Default</th>
 <th>Consiglio</th>
 </tr>
 </thead>
@@ -4533,7 +4534,7 @@ L’algoritmo è basato su modelli fisici della risposta cromatica della pellico
 <tr>
 <td><strong>Contrast</strong></td>
 <td>Contrasto globale</td>
-<td><code>2.00–3.20</code> (default <code>2.80</code>)</td>
+<td>default <code>3.00</code></td>
 <td>Partire dal valore di default; valori &gt;3.50 introducono artefatti in ombre/alti toni<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
 </tr>
 <tr>
@@ -4545,19 +4546,19 @@ L’algoritmo è basato su modelli fisici della risposta cromatica della pellico
 <tr>
 <td><strong>Shoulder power</strong></td>
 <td>Compressione alte luci</td>
-<td><code>1.20–2.00</code> (default <code>1.55</code>)</td>
+<td>default <code>3.30</code></td>
 <td>Aumentare per controllare picchi di luminanza senza desaturazione (es. cielo estivo)<sup id="fnref10:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Toe power</strong></td>
 <td>Compressione ombre</td>
-<td><code>1.20–2.00</code> (default <code>1.55</code>)</td>
+<td>default <code>1.50</code></td>
 <td>Ridurre per preservare dettagli nelle ombre profonde (es. interni notturni)<sup id="fnref11:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></td>
 </tr>
 <tr>
 <td><strong>Preserve Hue</strong></td>
 <td>Fedelta' cromatica</td>
-<td><code>0–100%</code> (default <code>100%</code>)</td>
+<td><code>0–100%</code> (default <code>60%</code>)</td>
 <td>Disabilitare per i tramonti<sup id="fnref12:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup>; mantenere &gt;80% per ritratti pelle<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">8</a></sup></td>
 </tr>
 <tr>
@@ -4797,7 +4798,7 @@ La versione v7 introduce un <em>highlight saturation mix</em> più aggressivo, u
 2. Nel modulo AgX, clicca su <strong>auto tune levels</strong><br>
 3. Il sistema calcola automaticamente <code>white relative exposure = +6.50 EV</code> e <code>black relative exposure = -10.00 EV</code><br>
 4. Controlla visivamente che le zone di massima luminanza (es. riflessi su vetro) e minima (es. ombre sotto un tavolo) conservino dettagli<br>
-5. Se il cielo appare troppo compresso, aumenta <em>shoulder power</em> da <code>1.55</code> a <code>1.75</code><sup id="fnref3:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
+5. Se il cielo appare troppo compresso, aumenta leggermente <em>shoulder power</em> (es. +0.2)<sup id="fnref3:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
 <h3 id="esempio-correzione-di-clipping-cromatico-con-primaries">Esempio: Correzione di clipping cromatico con Primaries<a class="headerlink" href="#esempio-correzione-di-clipping-cromatico-con-primaries" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 NEW UPDATE!</a> (timestamp 06:28)</em><br>
 1. Apri un’immagine con forti luci blu (es. palco con LED blu)<br>
@@ -4808,7 +4809,7 @@ La versione v7 introduce un <em>highlight saturation mix</em> più aggressivo, u
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati">Problema: La curva tonale mostra una porzione arancione anche con parametri moderati<a class="headerlink" href="#problema-la-curva-tonale-mostra-una-porzione-arancione-anche-con-parametri-moderati" title="Permanent link">¶</a></h3>
 <p>Questo indica che la curva sta entrando in una regione non invertibile (overshoot). Riduci <em>latitude</em> o aumenta <em>shoulder power</em> per ristabilire la forma a S. Se persiste, modifica <em>curve gamma</em> a <code>0.95</code> per riequilibrare la transizione.<sup id="fnref2:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">5</a></sup></p>
-<h3 id="problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280">Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80<a class="headerlink" href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-a-280" title="Permanent link">¶</a></h3>
+<h3 id="problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-di-default">Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto di default<a class="headerlink" href="#problema-dopo-aver-attivato-agx-limmagine-appare-troppo-piatta-nonostante-il-contrasto-di-default" title="Permanent link">¶</a></h3>
 <p>Verifica che il modulo <em>exposure</em> sia stato usato per posizionare correttamente il grigio medio prima di AgX. Un valore errato di <em>exposure</em> (es. <code>-0.80 EV</code>) può annullare l’effetto del contrasto. Riporta <em>exposure</em> a <code>0.00 EV</code> e regola nuovamente con la pipetta su una zona neutra.<sup id="fnref5:dt54"><a class="footnote-ref" href="#fn:dt54">7</a></sup></p>
 <h3 id="problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini">Problema: Il modulo Sigmoid produce artefatti sui capelli o sulle texture fini<a class="headerlink" href="#problema-il-modulo-sigmoid-produce-artefatti-sui-capelli-o-sulle-texture-fini" title="Permanent link">¶</a></h3>
 <p>Riduci il parametro <em>skew</em> a <code>-0.25</code> e imposta <em>preserve hue</em> a <code>95%</code>. Evita valori di <em>contrast</em> superiori a <code>1.80</code> su immagini con ISO &gt;1600, dove il rumore amplifica gli artefatti.<sup id="fnref:sigmoid-tutorial"><a class="footnote-ref" href="#fn:sigmoid-tutorial">11</a></sup></p>
@@ -4881,7 +4882,7 @@ La versione v7 introduce un <em>highlight saturation mix</em> più aggressivo, u
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

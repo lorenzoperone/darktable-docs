@@ -4462,11 +4462,11 @@
 <h2 id="contesto">Contesto<a class="headerlink" href="#contesto" title="Permanent link">¶</a></h2>
 <p>Immagine scattata con Fujifilm X-Pro3, 35mm, f/1.8, 1/4000s, ISO 160. Il RAW appare spento e privo di contrasto. Il cielo è uniformemente grigio e i colori autunnali dell'albero non hanno pop.</p>
 <h2 id="passo-1-correzioni-di-base">Passo 1 -- Correzioni di base<a class="headerlink" href="#passo-1-correzioni-di-base" title="Permanent link">¶</a></h2>
-<p><strong>Orientation:</strong>
+<p><strong>Rotate and perspective</strong> (o angolo di <strong>crop</strong>):
 | Parametro | Valore |
 |-----------|--------|
-| Auto | yes |</p>
-<p>Allineare l'orizzonte come primo passo, prima di qualsiasi altra correzione.</p>
+| Rotation | Secondo l'orizzonte (clic destro e trascina lungo l'orizzonte) |</p>
+<p>Allineare l'orizzonte come primo passo, prima di qualsiasi altra correzione. Il modulo <em>orientation</em> serve solo per rotazioni di 90° e ribaltamenti, non per raddrizzare l'orizzonte.</p>
 <p><strong>Sigmoid</strong> (tone mapper scelto per questo paesaggio):
 | Parametro | Valore |
 |-----------|--------|
@@ -4538,7 +4538,7 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Maschera esclusiva</p>
-<p>La combinazione <strong>exclusive</strong> tra maschera disegnata e parametrica rimuove dalla selezione le aree che soddisfano entrambi i criteri — utile per escludere il cielo che potrebbe essere catturato dalla maschera disegnata.</p>
+<p>La combinazione <strong>exclusive</strong> moltiplica maschera disegnata e parametrica: resta selezionata solo l'area che soddisfa entrambi i criteri (intersezione) — utile per escludere il cielo che potrebbe essere catturato dalla maschera disegnata.</p>
 </div>
 <h2 id="passo-3-applicare-la-maschera-al-color-equalizer">Passo 3 -- Applicare la maschera al Color Equalizer<a class="headerlink" href="#passo-3-applicare-la-maschera-al-color-equalizer" title="Permanent link">¶</a></h2>
 <p>Invece di ricreare la maschera, riutilizzarla come <strong>raster mask</strong> nel <strong>Color Equalizer</strong>:</p>
@@ -4693,8 +4693,8 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Orientation</strong></td>
-<td>Auto</td>
+<td><strong>Rotate and perspective</strong></td>
+<td>Rotazione sull'orizzonte</td>
 <td>Allineare orizzonte</td>
 </tr>
 <tr>
@@ -4757,7 +4757,7 @@
 1. Creare un nuovo modulo <strong>Esposizione</strong>, rinominarlo <code>"sky JzCzHz"</code><br>
 2. Attivare una <strong>maschera parametrica</strong>, selezionare <code>input = Jz</code><br>
 3. Impostare i valori: <code>Jz min = 160</code>, <code>Jz max = 280</code>, <code>Cz min = 0</code>, <code>Cz max = 120</code><br>
-4. Attivare <code>combine masks = exclusive</code> e aggiungere una maschera disegnata per escludere il sole e le nubi più dense<br>
+4. Attivare <code>combine masks = exclusive</code> e aggiungere una maschera disegnata a polarità invertita per escludere il sole e le nubi più dense<br>
 5. Applicare <code>exposure = +0.312 EV</code>, <code>contrast = +21.7%</code>, <code>opacity = 78%</code><br>
 6. Riutilizzare la stessa maschera come <strong>raster mask</strong> in <strong>Color Balance RGB</strong>, con <code>highlights hue = 32° (giallo chiaro)</code> e <code>chroma = +18%</code><sup id="fnref:video-3mdy"><a class="footnote-ref" href="#fn:video-3mdy">1</a></sup>  </p>
 <h2 id="esempio-recupero-dettagli-nuvole-con-filmic-rgb">Esempio: Recupero dettagli nuvole con Filmic RGB<a class="headerlink" href="#esempio-recupero-dettagli-nuvole-con-filmic-rgb" title="Permanent link">¶</a></h2>
@@ -4766,7 +4766,7 @@
 2. Impostare <code>white relative exposure = +4.72 EV</code> per espandere i dettagli nelle alte luci nuvolose<br>
 3. Impostare <code>black relative exposure = -13.34 EV</code> per illuminare le ombre senza perdere struttura<br>
 4. Nella tab <code>look</code>, impostare <code>contrast = 1.22</code>, <code>latitude = 92%</code>, <code>shadows ↔ highlights balance = +0.15</code><br>
-5. Attivare <code>highlight reconstruction = guided filter</code>, <code>strength = 0.45</code>, <code>iterations = 2</code><br>
+5. Nella tab <code>reconstruct</code>, regolare <code>threshold</code> e <code>transition</code> per ricostruire le alte luci bruciate delle nuvole<br>
 6. Usare una <strong>maschera raster</strong> derivata da un modulo Exposure con <code>input = Jz/Cz/hz</code> per limitare l’effetto alle sole zone nuvolose<sup id="fnref:video-5p0y-filmic"><a class="footnote-ref" href="#fn:video-5p0y-filmic">2</a></sup>  </p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-maschera-cielo-troppo-rigida-bordi-netti-visibili">Problema: Maschera cielo troppo rigida, bordi netti visibili<a class="headerlink" href="#problema-maschera-cielo-troppo-rigida-bordi-netti-visibili" title="Permanent link">¶</a></h3>
@@ -4820,7 +4820,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

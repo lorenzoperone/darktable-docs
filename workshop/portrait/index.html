@@ -4814,41 +4814,36 @@
 <tr>
 <td>Denoise (profiled)</td>
 <td>--</td>
-<td>Auto</td>
-<td>Primo passo</td>
+<td>Default (profilo automatico)</td>
+<td>Primo e spesso unico passo</td>
 </tr>
 <tr>
-<td>Impulse NR</td>
-<td>Threshold</td>
-<td>55-70</td>
-<td>Sale e pepe</td>
-</tr>
-<tr>
-<td>Luminance NR</td>
-<td>Amount</td>
-<td>6</td>
+<td>Denoise (profiled)</td>
+<td>Curve luma/chroma (modalità wavelets)</td>
+<td>Ridurre se il dettaglio si appiattisce</td>
 <td>Non esagerare</td>
 </tr>
 <tr>
-<td>Chrominance NR</td>
-<td>Amount</td>
-<td>6</td>
-<td>Controllare l'iride</td>
+<td>Hot pixels</td>
+<td>Threshold</td>
+<td>Default</td>
+<td>Solo se compaiono pixel isolati (“sale e pepe”)</td>
 </tr>
 </tbody>
 </table>
+<p>Gli strumenti Impulse/Luminance/Chrominance NR dell'articolo originale appartengono a RawTherapee: in darktable si usa <em>denoise (profiled)</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Crominanza e dettaglio dell'iride</p>
-<p>Spingere troppo la Chrominance NR fa perdere i colori bellissimi dell'iride. Controllare sempre a zoom 200% sull'occhio del soggetto.</p>
+<p>Spingere troppo la riduzione del rumore cromatico fa perdere i colori bellissimi dell'iride. Controllare sempre a zoom 200% sull'occhio del soggetto.</p>
 </div>
 <h3 id="passo-4-contrasto-locale-e-color-balance">Passo 4 -- Contrasto locale e Color Balance<a class="headerlink" href="#passo-4-contrasto-locale-e-color-balance" title="Permanent link">¶</a></h3>
 <p><strong>Local Contrast:</strong>
 | Parametro | Valore |
 |-----------|--------|
-| Radius | 17 (per ritratti ravvicinati) |
-| Contrast | 0.5 |
-| Detail | 0.3 |
-| Sharpen | 0.0 |</p>
+| Detail | Poco sopra il default (125%) |
+| Highlights | 50% (default) |
+| Shadows | 50% (default) |
+| Mid-tone range | 0.50 (default) |</p>
 <p><strong>Color Balance RGB:</strong>
 - Preset: <strong>standard</strong> oppure <strong>vibrant colors</strong>
 - Basic colourfulness: aumentare moderatamente
@@ -4922,13 +4917,13 @@
 <td>Colori naturali</td>
 </tr>
 <tr>
-<td><strong>Denoise</strong></td>
-<td>Profiled auto + Luminance/Chrominance 6</td>
+<td><strong>Denoise (profiled)</strong></td>
+<td>Profilo automatico</td>
 <td>Rumore controllato</td>
 </tr>
 <tr>
 <td><strong>Local Contrast</strong></td>
-<td>Radius 17, Contrast 0.5</td>
+<td>Detail poco sopra il default</td>
 <td>Profondita'</td>
 </tr>
 <tr>
@@ -5048,7 +5043,7 @@
 <p>Non usare contemporaneamente <code>color equalizer</code> e <code>color calibration</code> (tab <em>colorfulness</em>) per il controllo della pelle: generano conflitti di pipeline e artefatti cromatici. Preferire <code>color equalizer</code> per correzioni locali e <code>color calibration</code> solo per bilanciamento globale<sup id="fnref2:dt-manual-color-calibration"><a class="footnote-ref" href="#fn:dt-manual-color-calibration">3</a></sup>.</p>
 </div>
 <h4 id="retouch-ritocco-microscopico-con-wavelet"><code>retouch</code> — Ritocco microscopico con wavelet<a class="headerlink" href="#retouch-ritocco-microscopico-con-wavelet" title="Permanent link">¶</a></h4>
-<p>Per rimuovere imperfezioni senza appiattire la texture, il modulo <code>retouch</code> in modalità <strong>wavelet decomposition</strong> è insostituibile. Si lavora esclusivamente sulle scale più coarse (livelli 1–3 su 6), dove compaiono macchie, pori dilatati e irregolarità di tono, lasciando intatta la scala fine (capelli, peluria, rughe sottili).</p>
+<p>Per rimuovere imperfezioni senza appiattire la texture, il modulo <code>retouch</code> in modalità <strong>wavelet decomposition</strong> è insostituibile. Si lavora sulle scale in cui compaiono macchie, pori dilatati e irregolarità di tono, lasciando intatte quelle dei dettagli più fini (capelli, peluria, rughe sottili). In darktable la scala 1 è la più fine: i numeri crescono verso le strutture più grandi.</p>
 <table>
 <thead>
 <tr>
@@ -5178,7 +5173,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

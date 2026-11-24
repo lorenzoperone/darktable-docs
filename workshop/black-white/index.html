@@ -4498,7 +4498,7 @@
 <p><strong>Esposizione:</strong>
 | Parametro | Valore |
 |-----------|--------|
-| Exposure | Variabile (controllare con bordo bianco <code>Cmd+B</code>) |
+| Exposure | Variabile (valutare la luminosità con la modalità <em>valutazione colore</em>, <code>Ctrl/Cmd+B</code>) |
 | Black level correction | Regolare per scurire i neri |</p>
 <p><strong>Filmic RGB:</strong>
 | Parametro | Valore | Note |
@@ -4508,7 +4508,7 @@
 | Dynamic range scaling | +0.00% | Di default |</p>
 <div class="admonition tip">
 <p class="admonition-title">Bordo bianco per valutare l'esposizione</p>
-<p>Premere <code>Cmd+B</code> per visualizzare il bordo bianco attorno all'immagine: indica quando le alte luci stanno per clippare. Usarlo come riferimento per Exposure e Filmic RGB<sup id="fnref:process-ref"><a class="footnote-ref" href="#fn:process-ref">4</a></sup>.</p>
+<p>Premere <code>Ctrl/Cmd+B</code> per attivare la modalità <em>valutazione colore</em> (color assessment)<sup id="fnref:process-ref"><a class="footnote-ref" href="#fn:process-ref">4</a></sup>: una cornice grigia e bianca di riferimento (ISO 12646) aiuta a giudicare la luminosità dell'immagine. Non è un indicatore di clipping: per quello usare l'indicatore di sovraesposizione.</p>
 </div>
 <h2 id="passo-5-viraggio-cromatico-con-color-balance-rgb">Passo 5 — Viraggio cromatico con Color Balance RGB<a class="headerlink" href="#passo-5-viraggio-cromatico-con-color-balance-rgb" title="Permanent link">¶</a></h2>
 <p>Per un B&amp;W non neutro ma con carattere, si usa <strong>Color Balance RGB</strong> in modalita' <strong>4 ways</strong>:</p>
@@ -4719,7 +4719,7 @@
 5. Attivare <strong>Normalizza</strong> nell’istanza successiva di <strong>Color Calibration</strong> usata per la conversione B&amp;W<sup id="fnref:monochrome-guide"><a class="footnote-ref" href="#fn:monochrome-guide">2</a></sup>.</p>
 <h3 id="esempio-recupero-di-alteluci-con-guided-laplacians">Esempio: Recupero di alteluci con guided laplacians<a class="headerlink" href="#esempio-recupero-di-alteluci-con-guided-laplacians" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/">Highlight reconstruction</a> (sezione “guided laplacians” mode)</em><br>
-1. Inserire <strong>Highlight Reconstruction</strong> subito dopo <strong>Demosaic</strong>, prima di <strong>Input Color Profile</strong><br>
+1. Attivare <strong>Highlight Reconstruction</strong>: opera sui dati raw, prima del <strong>Demosaic</strong> (la posizione nella pipeline è fissa)<br>
 2. Impostare <code>method = guided laplacians</code><br>
 3. Regolare <code>clipping threshold</code> fino a evidenziare solo le aree realmente sovraesposte (usare la maschera di clipping con icona accanto allo slider)<br>
 4. Impostare <code>iterations = 3</code>, <code>diameter of the reconstruction = 256</code>, <code>noise level = 0.02</code><br>

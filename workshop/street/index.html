@@ -2858,10 +2858,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-contrasto-globale-con-esposizione-non-con-agx" class="md-nav__link">
+  <a href="#passo-4-contrasto-globale-con-esposizione-e-tone-mapper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4: Contrasto globale con esposizione (non con AGX)
+        Passo 4: Contrasto globale con esposizione e tone mapper
       
     </span>
   </a>
@@ -2930,10 +2930,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#esempio-maschera-circolare-su-occhio-con-clarity-in-highlights" class="md-nav__link">
+  <a href="#esempio-maschera-circolare-su-occhio-con-local-contrast" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Maschera circolare su occhio con clarity in highlights
+        Esempio: Maschera circolare su occhio con local contrast
       
     </span>
   </a>
@@ -4199,10 +4199,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-4-contrasto-globale-con-esposizione-non-con-agx" class="md-nav__link">
+  <a href="#passo-4-contrasto-globale-con-esposizione-e-tone-mapper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 4: Contrasto globale con esposizione (non con AGX)
+        Passo 4: Contrasto globale con esposizione e tone mapper
       
     </span>
   </a>
@@ -4271,10 +4271,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#esempio-maschera-circolare-su-occhio-con-clarity-in-highlights" class="md-nav__link">
+  <a href="#esempio-maschera-circolare-su-occhio-con-local-contrast" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Maschera circolare su occhio con clarity in highlights
+        Esempio: Maschera circolare su occhio con local contrast
       
     </span>
   </a>
@@ -4409,13 +4409,13 @@
 - <code>color calibration</code> (per conversione B/N controllata)<br>
 - <code>local contrast</code> (per definire bordi e texture senza artefatti)<br>
 - <code>mask manager</code> (per mascherature rapide su volti, occhi, mani)<br>
-Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> — AGX è opzionale e spesso sovrabbondante<sup id="fnref10:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup><sup id="fnref6:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>.</p>
+Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup><sup id="fnref6:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>; il tone mapper (sigmoid, filmic o AgX) resta invece attivo, come in ogni flusso scene-referred.</p>
 </div>
 <h2 id="panoramica-del-flusso-di-lavoro">Panoramica del flusso di lavoro<a class="headerlink" href="#panoramica-del-flusso-di-lavoro" title="Permanent link">¶</a></h2>
 <p>Il workflow segue un ordine rigoroso, ispirato alle tecniche analogiche di dodging &amp; burning e alla pratica del <em>“less is more”</em> tipica della street<sup id="fnref2:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>:</p>
 <pre class="mermaid"><code>flowchart TD
     A["1. Duplicato +&lt;br/&gt;ritaglio compositivo"] --&gt; B["2. Bilanciamento&lt;br/&gt;bianco + geometria"] --&gt; C["3. Conversione B/N&lt;br/&gt;(color calibration)"] --&gt; D["4. Contrasto globale&lt;br/&gt;(esposizione)"] --&gt; E["5. Contrasto locale&lt;br/&gt;+ maschere"] --&gt; F["6. Nitidezza +&lt;br/&gt;vignettatura"]</code></pre>
-<p>Questo ordine evita l’accumulo di artefatti: ad esempio, applicare <code>local contrast</code> <em>prima</em> della conversione B/N genera distorsioni cromatiche indesiderate<sup id="fnref3:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>. Il modulo <code>color calibration</code> è usato <strong>due volte</strong>: una per il bilanciamento del bianco (tab <em>White Balance</em>), una per la conversione (tab <em>Colorfulness</em>, con <code>gray</code> abilitato)<sup id="fnref3:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
+<p>Questo ordine evita l’accumulo di artefatti: ad esempio, applicare <code>local contrast</code> <em>prima</em> della conversione B/N genera distorsioni cromatiche indesiderate<sup id="fnref3:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>. Il modulo <code>color calibration</code> è usato <strong>due volte</strong>: una per il bilanciamento del bianco (tab <em>CAT</em>), una per la conversione (tab <em>gray</em>)<sup id="fnref3:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 <h2 id="flusso-di-lavoro-passo-passo">Flusso di lavoro passo-passo<a class="headerlink" href="#flusso-di-lavoro-passo-passo" title="Permanent link">¶</a></h2>
 <h3 id="passo-1-duplicato-e-ritaglio-compositivo">Passo 1: Duplicato e ritaglio compositivo<a class="headerlink" href="#passo-1-duplicato-e-ritaglio-compositivo" title="Permanent link">¶</a></h3>
 <p>Apri l’immagine RAW in modalità <em>lighttable</em>, selezionala e premi <code>Ctrl+D</code> per creare un duplicato. Questo preserva l’originale per eventuali revisioni<sup id="fnref4:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
@@ -4427,7 +4427,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <p><strong>Perché?</strong> Un ritaglio preciso elimina distrazioni marginali e rafforza la narrazione visiva — fondamentale quando il soggetto è un dettaglio fugace (una mano, uno sguardo, un riflesso)<sup id="fnref11:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 </blockquote>
 <h3 id="passo-2-bilanciamento-del-bianco-con-color-calibration">Passo 2: Bilanciamento del bianco con color calibration<a class="headerlink" href="#passo-2-bilanciamento-del-bianco-con-color-calibration" title="Permanent link">¶</a></h3>
-<p>Attiva la prima istanza di <code>color calibration</code>. Vai alla scheda <em>White Balance</em> e usa la pipetta sul grigio neutro più affidabile (es. marciapiede bagnato, muro chiaro, cielo uniforme). Se non disponibile, imposta manualmente:</p>
+<p>Attiva la prima istanza di <code>color calibration</code>. Vai alla scheda <em>CAT</em> e usa la pipetta sul grigio neutro più affidabile (es. marciapiede bagnato, muro chiaro, cielo uniforme). Se non disponibile, imposta manualmente:</p>
 <table>
 <thead>
 <tr>
@@ -4455,7 +4455,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 </div>
 <h3 id="passo-3-conversione-in-bianco-e-nero-con-color-calibration-seconda-istanza">Passo 3: Conversione in bianco e nero con color calibration (seconda istanza)<a class="headerlink" href="#passo-3-conversione-in-bianco-e-nero-con-color-calibration-seconda-istanza" title="Permanent link">¶</a></h3>
 <p>Aggiungi una <strong>seconda istanza</strong> di <code>color calibration</code>. Rinominala <code>"BW conversion"</code> per chiarezza.</p>
-<p>Vai alla scheda <em>Colorfulness</em> e imposta:</p>
+<p>Vai alla scheda <em>gray</em> e imposta:</p>
 <table>
 <thead>
 <tr>
@@ -4480,18 +4480,13 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <td>tutti a <code>0.000</code></td>
 <td>Partenza neutrale: ogni canale ha peso identico<sup id="fnref25:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
-<tr>
-<td>output color profile</td>
-<td><code>filmic rgb • scene-referred default</code></td>
-<td>Profilo predefinito stabile per B/N<sup id="fnref4:manual-color-calibration"><a class="footnote-ref" href="#fn:manual-color-calibration">3</a></sup></td>
-</tr>
 </tbody>
 </table>
 <blockquote>
 <p><strong>Osserva</strong>: L’istogramma cambia forma — diventa un’unica curva concentrata (non tre curve separate RGB). Se rimangono picchi separati, <code>normalize channels</code> non è attivo o <code>gray</code> è disattivato<sup id="fnref13:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 </blockquote>
-<h3 id="passo-4-contrasto-globale-con-esposizione-non-con-agx">Passo 4: Contrasto globale con esposizione (non con AGX)<a class="headerlink" href="#passo-4-contrasto-globale-con-esposizione-non-con-agx" title="Permanent link">¶</a></h3>
-<p>In street photography, <strong>evita AGX, Filmic RGB e Sigmoid</strong>. Usa invece il modulo <code>exposure</code> per un controllo diretto e prevedibile<sup id="fnref5:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup><sup id="fnref4:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>:</p>
+<h3 id="passo-4-contrasto-globale-con-esposizione-e-tone-mapper">Passo 4: Contrasto globale con esposizione e tone mapper<a class="headerlink" href="#passo-4-contrasto-globale-con-esposizione-e-tone-mapper" title="Permanent link">¶</a></h3>
+<p>Mantieni il tone mapper di default (sigmoid, filmic o AgX): nel flusso scene-referred è indispensabile, altrimenti le alte luci clippano. Usa il modulo <code>exposure</code> per fissare la luminosità dei mezzitoni<sup id="fnref5:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup><sup id="fnref4:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -4512,11 +4507,6 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <td>Corregge leggeri offset del nero (es. ombre grigie invece che nere)<sup id="fnref27:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
-<td>clarity</td>
-<td><code>15–45%</code></td>
-<td>Aumenta il contrasto locale <em>globale</em>: definisce bordi senza introdurre halos<sup id="fnref28:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
-</tr>
-<tr>
 <td>mode</td>
 <td><code>Manual</code></td>
 <td>Evita <code>Automatic</code>: troppo aggressivo su scene caotiche<sup id="fnref7:bw-video"><a class="footnote-ref" href="#fn:bw-video">2</a></sup></td>
@@ -4524,8 +4514,8 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 </tbody>
 </table>
 <div class="admonition tip">
-<p class="admonition-title">Clarity &gt; Contrast per la street</p>
-<p>La <code>clarity</code> agisce sulle transizioni medie (non sui dettagli fini né sulle zone omogenee), rendendo i volti, i tessuti e le superfici urbane immediatamente più incisivi — senza rischio di granulosità<sup id="fnref14:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
+<p class="admonition-title">Contrasto locale &gt; contrasto globale per la street</p>
+<p>Il <code>local contrast</code> agisce sulle transizioni medie (non sui dettagli fini né sulle zone omogenee), rendendo i volti, i tessuti e le superfici urbane immediatamente più incisivi — senza rischio di granulosità<sup id="fnref14:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 </div>
 <h3 id="passo-5-contrasto-locale-selettivo-con-local-contrast-e-maschere">Passo 5: Contrasto locale selettivo con local contrast e maschere<a class="headerlink" href="#passo-5-contrasto-locale-selettivo-con-local-contrast-e-maschere" title="Permanent link">¶</a></h3>
 <p>Attiva <code>local contrast</code>. Questo modulo è <strong>centrale</strong> per la street: definisce il soggetto senza alterare lo sfondo caotico<sup id="fnref6:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
@@ -4539,19 +4529,19 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 </thead>
 <tbody>
 <tr>
-<td>clarity</td>
-<td><code>25–55%</code></td>
-<td>Base per tutta l’immagine (valore già impostato in <code>exposure</code> può essere ridotto qui)<sup id="fnref29:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>detail</td>
+<td>sopra il default</td>
+<td>Contrasto locale di base per tutta l’immagine<sup id="fnref28:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
-<td>clarity in highlights</td>
-<td><code>30–65%</code></td>
-<td>Per far risaltare occhi, capelli bagnati, superfici lucide<sup id="fnref30:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>highlights</td>
+<td>da regolare a vista</td>
+<td>Per far risaltare occhi, capelli bagnati, superfici lucide<sup id="fnref29:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
-<td>clarity in shadows</td>
-<td><code>15–40%</code></td>
-<td>Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)<sup id="fnref31:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>shadows</td>
+<td>da regolare a vista</td>
+<td>Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)<sup id="fnref30:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
 <td>radius</td>
@@ -4561,7 +4551,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 </tbody>
 </table>
 <blockquote>
-<p><strong>Esempio pratico</strong>: Su un ritratto di strada, imposta <code>clarity in highlights = 48%</code>, <code>radius = 22 px</code>. Poi applica una maschera circolare sull’occhio destro: l’iride diventa immediatamente più presente, senza toccare la pelle circostante<sup id="fnref15:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
+<p><strong>Esempio pratico</strong>: Su un ritratto di strada, aumenta <code>highlights</code> e <code>detail</code>. Poi applica una maschera circolare sull’occhio destro: l’iride diventa immediatamente più presente, senza toccare la pelle circostante<sup id="fnref15:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 </blockquote>
 <h3 id="passo-6-mascheratura-avanzata-con-mask-manager">Passo 6: Mascheratura avanzata con mask manager<a class="headerlink" href="#passo-6-mascheratura-avanzata-con-mask-manager" title="Permanent link">¶</a></h3>
 <p>Usa <code>mask manager</code> per interventi mirati:</p>
@@ -4570,7 +4560,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <li>Imposta <code>Opacity = 75%</code>, <code>Feather = 12%</code>, <code>Size = 38%</code></li>
 <li>Nell’istanza di <code>exposure</code> associata, regola:</li>
 <li><code>exposure = +0.25 EV</code> (per illuminare leggermente il volto)</li>
-<li><code>clarity = 32%</code> (per definire i contorni)</li>
+<li>per definire i contorni usa un’istanza di <code>local contrast</code> con la stessa maschera</li>
 </ol>
 <blockquote>
 <p><strong>Perché non usare <code>tone equalizer</code>?</strong> È troppo fine per la street: richiede tempo e precisione che contrasta con la natura istantanea del genere. Le maschere geometriche (<code>Circle</code>, <code>Gradient</code>, <code>Path</code>) sono 5× più veloci e altrettanto efficaci<sup id="fnref16:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
@@ -4607,32 +4597,25 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 </thead>
 <tbody>
 <tr>
-<td><code>exposure</code></td>
-<td>clarity</td>
-<td>15–45%</td>
-<td>25%</td>
-<td>Primo controllo del “peso visivo” dell’immagine<sup id="fnref32:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
-</tr>
-<tr>
 <td><code>color calibration</code> (BW)</td>
 <td>normalize channels</td>
 <td>✅ abilitato</td>
 <td>disabilitato</td>
-<td>Fondamentale per una conversione B/N fedele<sup id="fnref33:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>Fondamentale per una conversione B/N fedele<sup id="fnref31:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
 <td><code>local contrast</code></td>
-<td>clarity in highlights</td>
-<td>30–65%</td>
-<td>35%</td>
-<td>Priorità assoluta per occhi, capelli, superfici riflettenti<sup id="fnref34:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>highlights</td>
+<td>da regolare a vista</td>
+<td>50%</td>
+<td>Priorità assoluta per occhi, capelli, superfici riflettenti<sup id="fnref32:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
 <td><code>mask manager</code></td>
 <td>Opacity (maschera circolare)</td>
 <td>60–85%</td>
 <td>75%</td>
-<td>Valore ottimale per integrazione naturale<sup id="fnref35:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
+<td>Valore ottimale per integrazione naturale<sup id="fnref33:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
 <td><code>sharpen</code></td>
@@ -4647,14 +4630,14 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <ul>
 <li><strong>ISO alto?</strong> Usa <code>denoise (profiled)</code> <em>prima</em> di <code>local contrast</code>, non dopo. Imposta <code>strength = 35–55%</code>, <code>patch-based = false</code>, <code>spatial extent = 1.2</code><sup id="fnref:manual-denoise"><a class="footnote-ref" href="#fn:manual-denoise">6</a></sup>.  </li>
 <li><strong>Luci dure?</strong> Evita <code>fill light</code> — preferisci una maschera <code>Gradient</code> su una zona d’ombra con <code>exposure = +0.40 EV</code><sup id="fnref18:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.  </li>
-<li><strong>Sfondo caotico?</strong> Non usare <code>background blur</code>: crea artefatti. Usa invece <code>local contrast</code> con <code>clarity in shadows = 10%</code> e <code>radius = 40 px</code> per “appiattire” leggermente lo sfondo senza sfocarlo<sup id="fnref19:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.  </li>
-<li><strong>Velocità:</strong> Salva uno stile chiamato <code>"Street B/N Quick"</code> con i parametri base (<code>exposure.clarity=25</code>, <code>color calibration.gray=true</code>, <code>local contrast.clarity=35</code>) — applicalo con un click su nuove immagini<sup id="fnref20:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</li>
+<li><strong>Sfondo caotico?</strong> Non usare <code>background blur</code>: crea artefatti. Usa invece <code>local contrast</code> con <code>shadows</code> ridotto per “appiattire” leggermente lo sfondo senza sfocarlo<sup id="fnref19:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.  </li>
+<li><strong>Velocità:</strong> Salva uno stile chiamato <code>"Street B/N Quick"</code> con i parametri base (<code>color calibration</code> in scheda <em>gray</em>, <code>local contrast</code> con <code>detail</code> aumentato) — applicalo con un click su nuove immagini<sup id="fnref20:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</li>
 </ul>
-<h3 id="esempio-maschera-circolare-su-occhio-con-clarity-in-highlights">Esempio: Maschera circolare su occhio con clarity in highlights<a class="headerlink" href="#esempio-maschera-circolare-su-occhio-con-clarity-in-highlights" title="Permanent link">¶</a></h3>
+<h3 id="esempio-maschera-circolare-su-occhio-con-local-contrast">Esempio: Maschera circolare su occhio con local contrast<a class="headerlink" href="#esempio-maschera-circolare-su-occhio-con-local-contrast" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a> (timestamp 02:34)</em><br>
 1. Crea una maschera <code>Circle</code> centrata sull’iride destra<br>
 2. Imposta <code>Opacity = 82%</code>, <code>Feather = 14%</code>, <code>Size = 28%</code><br>
-3. Nell’istanza di <code>local contrast</code> associata, imposta <code>clarity in highlights = 48%</code>, <code>radius = 22 px</code><br>
+3. Nell’istanza di <code>local contrast</code> associata, aumenta <code>highlights</code> e <code>detail</code><br>
 4. Verifica che l’occhio risulti più definito senza alterare la pelle circostante<sup id="fnref7:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></p>
 <h3 id="esempio-controllo-del-nero-con-black-level-correction">Esempio: Controllo del nero con black level correction<a class="headerlink" href="#esempio-controllo-del-nero-con-black-level-correction" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a> (timestamp 03:17)</em><br>
@@ -4673,7 +4656,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <h3 id="problema-color-calibration-mostra-ancora-tre-curve-rgb-dopo-aver-abilitato-gray">Problema: <code>color calibration</code> mostra ancora tre curve RGB dopo aver abilitato <code>gray</code><a class="headerlink" href="#problema-color-calibration-mostra-ancora-tre-curve-rgb-dopo-aver-abilitato-gray" title="Permanent link">¶</a></h3>
 <p>La funzione <code>gray</code> non impone una conversione monochrome se <code>normalize channels</code> è disattivato. Abilitare entrambi i parametri è obbligatorio per ottenere una singola curva Luminance. Se il comportamento persiste, controlla che l’immagine non sia già stata flaggata come monochrome tramite demosaic passthrough<sup id="fnref:manual-color-calibration"><a class="footnote-ref" href="#fn:manual-color-calibration">3</a></sup>.</p>
 <h3 id="problema-local-contrast-introduce-artefatti-ai-bordi-dei-vestiti">Problema: <code>local contrast</code> introduce artefatti ai bordi dei vestiti<a class="headerlink" href="#problema-local-contrast-introduce-artefatti-ai-bordi-dei-vestiti" title="Permanent link">¶</a></h3>
-<p>Questo accade tipicamente con <code>radius &gt; 45 px</code> su tessuti fini (lino, seta) o con <code>clarity in highlights &gt; 65%</code> su superfici lucide. Riduci <code>radius</code> a <code>28–32 px</code> e abbassa <code>clarity in highlights</code> a <code>52%</code>; aggiungi una maschera <code>Path</code> lungo il contorno del capo per limitare l’effetto<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup>.</p>
+<p>Questo accade tipicamente con <code>radius &gt; 45 px</code> su tessuti fini (lino, seta) o con <code>highlights</code> troppo alto su superfici lucide. Riduci <code>radius</code> a <code>28–32 px</code> e abbassa <code>highlights</code>; aggiungi una maschera <code>Path</code> lungo il contorno del capo per limitare l’effetto<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup>.</p>
 <h3 id="problema-maschera-circolare-troppo-rigida-su-pelle-anziana">Problema: maschera circolare troppo rigida su pelle anziana<a class="headerlink" href="#problema-maschera-circolare-troppo-rigida-su-pelle-anziana" title="Permanent link">¶</a></h3>
 <p>L’eccessiva <code>Feather</code> (oltre 18%) causa perdita di definizione; una <code>Feather</code> troppo bassa (&lt;8%) produce transizioni nette non naturali. Il valore ottimale per pelle rugosa è <code>12–14%</code>, combinato con <code>Opacity = 72%</code> e <code>Size = 35%</code><sup id="fnref9:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 <h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">¶</a></h2>
@@ -4688,13 +4671,13 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
 <hr>
 <ol>
 <li id="fn:street-video-1">
-<p>[ENG] Full b&amp;w edits in darktable for street photography, A Dabble in Photography, YouTube, 2026. URL: https://www.youtube.com/watch?v=f9szYMJ9wYo&nbsp;<a class="footnote-backref" href="#fnref:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:street-video-1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>[ENG] Full b&amp;w edits in darktable for street photography, A Dabble in Photography, YouTube, 2026. URL: https://www.youtube.com/watch?v=f9szYMJ9wYo&nbsp;<a class="footnote-backref" href="#fnref:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:street-video-1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:street-video-1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:bw-video">
 <p>[ENG] darktable Black&amp;White photography, A Dabble in Photography, YouTube, 2026. URL: https://www.youtube.com/watch?v=efWVSR93m5k&nbsp;<a class="footnote-backref" href="#fnref:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:bw-video" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:bw-video" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:manual-color-calibration">
-<p>darktable User Manual, “Color Calibration”, darktable.gitlab.io/doc/en/color_calibration.html&nbsp;<a class="footnote-backref" href="#fnref:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a></p>
+<p>darktable User Manual, “Color Calibration”, darktable.gitlab.io/doc/en/color_calibration.html&nbsp;<a class="footnote-backref" href="#fnref:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-color-calibration" title="Jump back to footnote 3 in the text">↩</a></p>
 </li>
 <li id="fn:manual-local-contrast">
 <p>darktable User Manual, “Local Contrast”, darktable.gitlab.io/doc/en/local_contrast.html&nbsp;<a class="footnote-backref" href="#fnref:manual-local-contrast" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual-local-contrast" title="Jump back to footnote 4 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual-local-contrast" title="Jump back to footnote 4 in the text">↩</a></p>
@@ -4730,7 +4713,7 @@ Non serve <code>dehaze</code>, <code>filmic RGB</code> o <code>sigmoid</code> �
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     
