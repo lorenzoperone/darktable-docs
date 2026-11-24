@@ -5,6 +5,9 @@ Tre file RAW scattati nella stessa sessione (Sony RX100 VI, gipsoteca), scelti p
 !!! note "Uso dei file"
     © Lorenzo Perone. I RAW sono forniti per esercitarsi con questa guida.
 
+!!! info "Tutor dentro darktable"
+    Per ogni esercizio c'è uno zip con un piccolo script Lua: installato in darktable, aggiunge in camera oscura un pannello che mostra le istruzioni passo per passo, **verifica** se hai eseguito il passo e, se serve, **mostra** la soluzione. Istruzioni nel file `LEGGIMI.txt` dello zip. Provato su darktable 5.6.
+
 !!! tip "Come lavorare"
     Importa il file in darktable con il flusso scene-referred di default (vedi [Importazione](../workflow/import.md)). Prima di toccare un modulo, scrivi su un foglio cosa non ti convince dell'immagine: è l'abitudine più utile che puoi prendere. Poi confronta il risultato con la checklist.
 
@@ -25,7 +28,7 @@ Tre file RAW scattati nella stessa sessione (Sony RX100 VI, gipsoteca), scelti p
 
 [:material-download: Scarica il RAW (21 MB)](raw/DSC08237.ARW){ .md-button download }
 
-**Soluzione:** è la [lezione interattiva](../workflow/lezione-interattiva.md), con la cronologia XMP di ogni passo. Per confrontarla con la tua: in *lighttable* duplica l'immagine e, nel modulo **cronologia**, usa **carica file sidecar** sul duplicato con l'XMP dell'ultimo passo.
+**Soluzione:** è la [lezione interattiva](../workflow/lezione-interattiva.md), con la cronologia XMP di ogni passo e il [tutor per darktable](kit/flusso-base.zip). Per confrontarla con la tua: in *lighttable* duplica l'immagine e, nel modulo **cronologia**, usa **carica file sidecar** sul duplicato con l'XMP dell'ultimo passo.
 
 ??? question "Checklist di verifica"
     - Esposizione aumentata di circa un EV rispetto all'apertura, giudicando i rilievi e non i faretti.
@@ -49,6 +52,8 @@ Tre file RAW scattati nella stessa sessione (Sony RX100 VI, gipsoteca), scelti p
 
 [:material-download: Scarica il RAW (21 MB)](raw/DSC08210.ARW){ .md-button download }
 
+**Soluzione:** [passo per passo](soluzione-corridoio.md), con la cronologia XMP di ogni passo e il [tutor per darktable](kit/esercizio-corridoio.zip). Guardala dopo averci provato.
+
 ??? question "Checklist di verifica"
     - Il gesso è chiaro e quasi neutro; il pavimento e le pareti conservano il loro colore.
     - Stipiti delle porte e bordi delle teche verticali; nessuna statua tagliata male dal ritaglio.
@@ -70,6 +75,8 @@ Tre file RAW scattati nella stessa sessione (Sony RX100 VI, gipsoteca), scelti p
 3. Gestire il rumore nelle zone scure senza impastare le texture delle casse.
 
 [:material-download: Scarica il RAW (21 MB)](raw/DSC08239.ARW){ .md-button download }
+
+**Soluzione:** [passo per passo](soluzione-installazione.md), con la cronologia XMP di ogni passo e il [tutor per darktable](kit/esercizio-installazione.zip). Guardala dopo averci provato.
 
 ??? question "Checklist di verifica"
     - Le proiezioni non sono bruciate e non virano verso il magenta.

@@ -25,7 +25,6 @@
 
 local dt = require "darktable"
 
-local MODULE = "dt_tutor"
 local here = debug.getinfo(1, "S").source:sub(2):match("(.*/)") or "./"
 local lesson_file = os.getenv("DT_TUTOR_LESSON") or (here .. "tutor_data.lua")
 
@@ -34,6 +33,8 @@ if not ok or type(lesson) ~= "table" then
   dt.print_error("[tutor] lezione non caricata: " .. tostring(lesson))
   return
 end
+-- un pannello per lezione: più lezioni possono essere installate insieme
+local MODULE = "dt_tutor_" .. (lesson.slug or "lezione"):gsub("[^%w]", "_")
 
 local current = 1
 
@@ -160,7 +161,7 @@ local installed = false
 local function install()
   if installed then return end
   installed = true
-  dt.register_lib(MODULE, "tutor", true, false,
+  dt.register_lib(MODULE, "tutor: " .. (lesson.title or "lezione"), true, false,
     { [dt.gui.views.darkroom] = { "DT_UI_CONTAINER_PANEL_LEFT_CENTER", 100 } },
     panel, nil, nil)
 end
@@ -175,6 +176,7 @@ show_step()
 dt_tutor_api = {
   go = go, verify = verify, show_me = show_me, install = install,
   installed = function() return installed end,
+  lesson = lesson,
   history = function()
     local img = dt.gui.views.darkroom.display_image()
     local m = img and history_modules(img)

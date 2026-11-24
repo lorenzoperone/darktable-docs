@@ -3,23 +3,22 @@
 Pannello "tutor" nella camera oscura di darktable per le lezioni interattive della guida: mostra l'istruzione del passo, **verifica** se lo studente l'ha eseguito e, su richiesta, **mostra** la soluzione applicando la cronologia XMP del passo.
 
 - `dt_tutor.lua` — il pannello
-- `tutor_data.lua` — la lezione "flusso base in 5 passi" (stessa foto e stessi XMP di `docs/workflow/lezione-interattiva.md`)
-- `test_tutor.lua` — test automatico (usa il pannello e scrive l'esito in un log)
+- i dati di ogni lezione (`tutor_data.lua` + XMP dei passi) sono generati da `i6_render_steps.py` e pubblicati come zip in `docs/esercizi/kit/<lezione>.zip`, pronti da installare (vedi `LEGGIMI.txt` nello zip)
+- `test_tutor.lua` — test automatico generico: per ogni passo con verifiche controlla ✗ prima e ✓ dopo «mostrami»
 
-Foto dell'esercizio: `docs/esercizi/raw/DSC08237.ARW`.
+Lezioni disponibili: `flusso-base` (DSC08237), `esercizio-corridoio` (DSC08210), `esercizio-installazione` (DSC08239); foto in `docs/esercizi/raw/`.
 
 ## Installazione
 
-1. Copia `dt_tutor.lua` e `tutor_data.lua` in `~/.config/darktable/lua/tutor/`.
-2. In `~/.config/darktable/luarc` aggiungi: `require "tutor/dt_tutor"`.
-3. Imposta `DT_DOCS_REPO` alla cartella di questo repository (serve per trovare gli XMP di soluzione), oppure modifica `xmp_dir` in `tutor_data.lua`.
-4. Avvia darktable, apri la foto: il pannello **tutor** compare a sinistra nella camera oscura dopo il primo cambio di vista.
+1. Estrai lo zip della lezione in `~/.config/darktable/lua/` (crea `tutor-<lezione>/`).
+2. In `~/.config/darktable/luarc` aggiungi: `require "tutor-<lezione>/dt_tutor"` (una riga per lezione).
+3. Avvia darktable, apri la foto: il pannello **tutor** compare a sinistra nella camera oscura dopo il primo cambio di vista.
 
 > **Attenzione:** "mostrami" sostituisce la cronologia dell'immagine: usalo sulla foto dell'esercizio, non sulle tue elaborazioni.
 
 ## Stato: provato su darktable 5.6.2 (macOS), 2026-11-24
 
-Test automatico superato: installazione del pannello al primo cambio di vista, verifica cursore (esposizione ✗ a +0,70 EV, ✓ a +1,60 EV), verifica modulo (equalizzatore toni ✗ → ✓), "mostrami" applica la soluzione del passo.
+Test automatico superato su tutte e tre le lezioni, installate dallo zip: installazione del pannello al primo cambio di vista, verifica cursore (esposizione ✗ a +0,70 EV, ✓ a +1,60 EV), verifica modulo (equalizzatore toni ✗ → ✓), "mostrami" applica la soluzione del passo.
 
 Cose scoperte nel test (valgono per chi scrive altre lezioni):
 

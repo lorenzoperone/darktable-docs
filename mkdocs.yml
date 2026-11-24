@@ -104,7 +104,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Percorso: percorso.md
-  - Esercizi: esercizi/index.md
+  - Esercizi:
+    - esercizi/index.md
+    - esercizi/soluzione-corridoio.md
+    - esercizi/soluzione-installazione.md
   - Lighttable:
     - lighttable/index.md
     - lighttable/modalita.md

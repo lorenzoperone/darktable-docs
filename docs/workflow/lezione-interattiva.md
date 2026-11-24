@@ -59,6 +59,12 @@ Approfondisci: [Colore](color.md) · [Bilanciamento colore RGB](../modules/color
 
 [:material-download: Cronologia XMP di questo passo](../images/lezioni/flusso-base/passo-4.xmp){ .md-button download }
 
+## Tutor in darktable
+
+Puoi seguire questa lezione anche dentro darktable, con un pannello che ti guida passo per passo, verifica quello che hai fatto e, se serve, applica la soluzione. Istruzioni di installazione nel file LEGGIMI.txt dello zip.
+
+[:material-download: Scarica il tutor per darktable](../esercizi/kit/flusso-base.zip){ .md-button download }
+
 ## Riusare la cronologia
 
 Ogni file XMP contiene la cronologia fino a quel passo. Per applicarla a una tua foto: in *lighttable* seleziona l'immagine e, nel modulo **cronologia** (*history stack*), usa **carica file sidecar** (*load sidecar file*). Il risultato sarà diverso, perché esposizione e luce cambiano da scatto a scatto: è proprio il punto. I preset sono un punto di partenza, il passo di esposizione va sempre rifatto a occhio.
