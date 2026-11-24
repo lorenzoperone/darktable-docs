@@ -4633,7 +4633,7 @@
 <li><strong>Default</strong>: <code>125%</code> (100% = nessun effetto)  </li>
 <li><strong>Range</strong>: <code>0%</code> a <code>500%</code>  </li>
 <li><strong>Effetto</strong>: inserisce un elemento a forma di <strong>S</strong> nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)<sup id="fnref12:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
-<li><strong>Valore comune</strong>: <code>+0.35</code> per ritratti (enfatizza pelle e occhi), <code>+0.65</code> per paesaggi (texture di roccia/foglie)</li>
+<li><strong>Uso</strong>: valori più alti del default per paesaggi (texture di roccia e foglie); vicino al default sui ritratti, dove un contrasto locale forte accentua pelle e imperfezioni</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Usa il confronto prima/dopo</p>
@@ -4691,21 +4691,21 @@
 </tr>
 <tr>
 <td><strong>highlights</strong></td>
-<td><code>-1.00</code> – <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Controllo del contrasto nelle alte luci. Negativo = compressione, positivo = enfasi<sup id="fnref20:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td>percentuale</td>
+<td><code>50%</code></td>
+<td>Contrasto locale nelle alte luci<sup id="fnref20:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>shadows</strong></td>
-<td><code>-1.00</code> – <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Controllo del contrasto nelle ombre. Positivo = maggiore contrasto, negativo = lifting ombre<sup id="fnref21:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td>percentuale</td>
+<td><code>50%</code></td>
+<td>Contrasto locale nelle ombre<sup id="fnref21:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>mid-tone range</strong></td>
-<td><code>0.00</code> – <code>1.00</code></td>
+<td><code>0.001</code> – <code>1.0</code></td>
 <td><code>0.50</code></td>
-<td>Estensione della zona centrale della curva S. Valori alti → più valori classificati come “mezzi toni”, meno come luci/ombre. Utile per HDR con range dinamico elevato<sup id="fnref22:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td>Cosa conta come “mezzi toni”. Valori bassi comprimono meglio la gamma dinamica (meno contrasto in ombre e luci); valori alti danno un contrasto locale più forte<sup id="fnref22:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4723,15 +4723,15 @@
 <tbody>
 <tr>
 <td><strong>coarseness</strong></td>
-<td><code>0.00</code> – <code>1.00</code></td>
-<td><code>0.50</code></td>
+<td>numero intero, minimo <code>3</code></td>
+<td><code>50</code></td>
 <td>Definisce la <em>scala spaziale</em> dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)<sup id="fnref23:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>contrast</strong></td>
-<td><code>-1.00</code> – <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Intensità della distinzione tra livelli di luminanza. Analogamente a <code>detail</code>, ma con algoritmo diverso<sup id="fnref24:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td>numero intero, minimo <code>1</code></td>
+<td><code>20</code></td>
+<td>Differenza di luminanza (L) con cui il filtro riconosce un bordo<sup id="fnref24:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
 <td><strong>detail</strong></td>
@@ -4751,29 +4751,29 @@
 <li>❌ <strong>Non è equivalente a “Unsharp Mask”</strong>: quest’ultimo opera su frequenze fisse; <code>local contrast</code> è adattivo alla scala locale.  </li>
 <li>🎯 <strong>Usalo selettivamente</strong>: applica maschere (tramite <strong>mask manager</strong>) per agire solo su occhi, capelli, texture di pietra — non sull’intera immagine.  </li>
 <li>📉 <strong>Evita di sovrapporlo a “sharpen”</strong>: entrambi agiscono su frequenze simili. Preferisci <code>local contrast</code> per il <em>micro-contrast</em> e <code>sharpen</code> per il <em>macro-contrast</em> (bordi netti).  </li>
-<li>🧪 <strong>Prova con “detail = 0.00”, poi “shadows = +0.25”, “highlights = -0.15”</strong>: è un punto di partenza sicuro per la maggior parte delle immagini RAW<sup id="fnref16:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</li>
+<li>🧪 <strong>Parti dai preset integrati (<em>clarity</em>) o dai valori predefiniti</strong> e regola <code>detail</code> a vista, giudicando al 100% e con il confronto prima/dopo<sup id="fnref16:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</li>
 </ul>
 <h3 id="esempio-paesaggio-con-cielo-nuvoloso-e-foresta-in-ombra">Esempio: Paesaggio con cielo nuvoloso e foresta in ombra<a class="headerlink" href="#esempio-paesaggio-con-cielo-nuvoloso-e-foresta-in-ombra" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=OERXOFz9lEo">Darktable landscape edit with AI</a> (timestamp 06:22)</em><br>
 1. Attiva <strong>local contrast</strong>, modalità <em>local laplacian</em>.<br>
-2. Imposta <code>detail = +0.52</code> per rafforzare la texture delle nuvole e delle foglie.<br>
-3. Regola <code>highlights = -0.38</code> per comprimere delicatamente le luci sulle creste nuvolose, evitando clipping.<br>
-4. Imposta <code>shadows = +0.41</code> per aumentare il contrasto nelle zone d’ombra della foresta, mantenendo i neri profondi.<br>
-5. Usa una maschera parametrica su <strong>Cz (chromaticity)</strong> per isolare le foglie verdi e applicare un ulteriore <code>+0.15</code> a <code>detail</code> solo su quelle zone<sup id="fnref:yt-landscape-ai"><a class="footnote-ref" href="#fn:yt-landscape-ai">4</a></sup>.</p>
+2. Alza <code>detail</code> oltre il default per rafforzare la texture di nuvole e foglie.<br>
+3. Abbassa <code>highlights</code> per contenere il contrasto sulle creste nuvolose ed evitare clipping.<br>
+4. Alza <code>shadows</code> per aumentare il contrasto nelle zone d’ombra della foresta, mantenendo i neri profondi.<br>
+5. Usa una maschera parametrica su <strong>Cz (chromaticity)</strong> per isolare le foglie verdi e dare un ulteriore aumento di <code>detail</code> solo su quelle zone<sup id="fnref:yt-landscape-ai"><a class="footnote-ref" href="#fn:yt-landscape-ai">4</a></sup>.</p>
 <h3 id="esempio-ritratto-in-studio-con-pelle-luminosa">Esempio: Ritratto in studio con pelle luminosa<a class="headerlink" href="#esempio-ritratto-in-studio-con-pelle-luminosa" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=f9szYMJ9wYo">Full b&amp;w edits in darktable for street photography</a> (timestamp 12:47)</em><br>
 1. Dopo aver applicato <strong>Filmic RGB</strong>, attiva <strong>local contrast</strong>.<br>
-2. Imposta <code>detail = +0.33</code>, <code>shadows = +0.18</code>, <code>highlights = -0.09</code>.<br>
+2. Mantieni <code>detail</code>, <code>shadows</code> e <code>highlights</code> vicini ai valori predefiniti: sulla pelle bastano ritocchi leggeri.<br>
 3. Attiva la maschera parametrica sul canale <strong>Lab a+b</strong> per isolare i toni della pelle (rosso/arancio).<br>
 4. Riduci l’opacità della maschera al <code>65%</code> per un’applicazione graduale.<br>
 5. Usa il blend mode <strong>Lab lightness</strong> per evitare qualsiasi alterazione cromatica<sup id="fnref:yt-bw-street"><a class="footnote-ref" href="#fn:yt-bw-street">3</a></sup>.</p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-limmagine-mostra-artefatti-grainy-o-sabbiosi-dopo-aver-applicato-local-contrast">Problema: L’immagine mostra artefatti “grainy” o “sabbiosi” dopo aver applicato <code>local contrast</code><a class="headerlink" href="#problema-limmagine-mostra-artefatti-grainy-o-sabbiosi-dopo-aver-applicato-local-contrast" title="Permanent link">¶</a></h3>
-<p>Questo accade tipicamente quando <code>detail</code> è troppo alto (&gt; <code>+0.75</code>) su immagini con rumore ISO elevato (es. ISO 3200+). La soluzione è applicare <strong>denoise (profiled)</strong> <em>prima</em> di <code>local contrast</code>, oppure ridurre <code>detail</code> a <code>+0.40–0.55</code> e compensare con <code>shadows = +0.20</code> per preservare la percezione di dettaglio senza amplificare il rumore<sup id="fnref:forum-iso-grain"><a class="footnote-ref" href="#fn:forum-iso-grain">5</a></sup>.</p>
+<p>Questo accade tipicamente quando <code>detail</code> è molto alto su immagini con rumore ISO elevato (es. ISO 3200+). Nel pixelpipe <em>denoise (profiled)</em> viene già applicato prima di <code>local contrast</code>: aumenta la riduzione del rumore oppure riporta <code>detail</code> verso il valore predefinito (125%)<sup id="fnref:forum-iso-grain"><a class="footnote-ref" href="#fn:forum-iso-grain">5</a></sup>.</p>
 <h3 id="problema-si-formano-halo-bianchi-intorno-ai-bordi-degli-oggetti">Problema: Si formano “halo” bianchi intorno ai bordi degli oggetti<a class="headerlink" href="#problema-si-formano-halo-bianchi-intorno-ai-bordi-degli-oggetti" title="Permanent link">¶</a></h3>
-<p>Gli halo indicano che <code>highlights</code> è troppo positivo o che <code>mid-tone range</code> è troppo basso (&lt; <code>0.35</code>). Riduci <code>highlights</code> a <code>≤ +0.15</code> e aumenta <code>mid-tone range</code> a <code>0.60–0.70</code> per restringere l’area di intervento alle transizioni strette, escludendo i bordi netti<sup id="fnref:forum-halo-fix"><a class="footnote-ref" href="#fn:forum-halo-fix">6</a></sup>.</p>
+<p>Gli halo compaiono con impostazioni estreme, soprattutto in modalità <em>bilateral grid</em>, che può dare artefatti attorno ai bordi: passa a <em>local laplacian</em> e riduci <code>detail</code> e <code>highlights</code><sup id="fnref:forum-halo-fix"><a class="footnote-ref" href="#fn:forum-halo-fix">6</a></sup>.</p>
 <h3 id="problema-il-modulo-sembra-non-fare-nulla-su-una-foto-in-bianco-e-nero">Problema: Il modulo sembra “non fare nulla” su una foto in bianco e nero<a class="headerlink" href="#problema-il-modulo-sembra-non-fare-nulla-su-una-foto-in-bianco-e-nero" title="Permanent link">¶</a></h3>
-<p><code>local contrast</code> opera sul canale <strong>L</strong> di Lab, quindi funziona anche su immagini monochrome. Tuttavia, se l’immagine è stata convertita in B/N tramite <strong>monochrome</strong> <em>dopo</em> <code>local contrast</code>, l’effetto sarà annullato. Assicurati che <strong>monochrome</strong> sia posizionato <em>prima</em> di <code>local contrast</code> nella pixelpipe, oppure applica <code>local contrast</code> su un’istanza duplicata con blend mode <strong>Lab lightness</strong><sup id="fnref:forum-bn-no-effect"><a class="footnote-ref" href="#fn:forum-bn-no-effect">7</a></sup>.</p>
+<p><code>local contrast</code> opera sul canale <strong>L</strong> di Lab, quindi funziona anche su immagini monochrome. Se non vedi effetto, controlla che <code>detail</code> sia sopra il 100% (a 100% il modulo non modifica l’immagine) e che una maschera di fusione non escluda l’area<sup id="fnref:forum-bn-no-effect"><a class="footnote-ref" href="#fn:forum-bn-no-effect">7</a></sup>.</p>
 <h2 id="tabella-preset-built-in">Tabella preset built-in<a class="headerlink" href="#tabella-preset-built-in" title="Permanent link">¶</a></h2>
 <p>darktable include 2 preset preconfigurati per <code>local contrast</code>, accessibili dal menu a tendina in alto a destra del modulo<sup id="fnref4:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>:</p>
 <table>

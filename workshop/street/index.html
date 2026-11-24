@@ -4807,10 +4807,10 @@ Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote
 <h3 id="passo-7-nitidezza-e-vignettatura-finale">Passo 7: Nitidezza e vignettatura finale<a class="headerlink" href="#passo-7-nitidezza-e-vignettatura-finale" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>Nitidezza</strong>: Usa <code>sharpen</code> (non <code>unsharp mask</code>). Imposta:</li>
-<li><code>amount = 45–65%</code></li>
-<li><code>radius = 0.8–1.2 px</code></li>
+<li>parti dai valori predefiniti (<code>radius</code> 2.0, <code>amount</code> 0.5, <code>threshold</code> 0.5): <code>amount</code> va da 0 a 2 e non è una percentuale</li>
+<li>alza <code>amount</code> o abbassa <code>radius</code> solo se serve, giudicando al 100%</li>
 <li>
-<p><code>threshold = 15–25</code> (per evitare di accentuare il rumore ISO alto tipico della street)<sup id="fnref:manual-sharpen"><a class="footnote-ref" href="#fn:manual-sharpen">5</a></sup></p>
+<p>alza leggermente <code>threshold</code> se la nitidezza accentua il rumore dell'ISO alto, tipico della street<sup id="fnref:manual-sharpen"><a class="footnote-ref" href="#fn:manual-sharpen">5</a></sup></p>
 </li>
 <li>
 <p><strong>Vignettatura</strong>: Usa <code>vignette</code> con:</p>
@@ -4859,9 +4859,9 @@ Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote
 <tr>
 <td><code>sharpen</code></td>
 <td>threshold</td>
-<td>15–25</td>
-<td>20</td>
-<td>Impedisci l’amplificazione del rumore ISO 1600+<sup id="fnref2:manual-sharpen"><a class="footnote-ref" href="#fn:manual-sharpen">5</a></sup></td>
+<td>poco sopra il default (0.5)</td>
+<td>1–2</td>
+<td>Limita l’amplificazione del rumore ad ISO alto: valori molto alti annullano la nitidezza<sup id="fnref2:manual-sharpen"><a class="footnote-ref" href="#fn:manual-sharpen">5</a></sup></td>
 </tr>
 </tbody>
 </table>
