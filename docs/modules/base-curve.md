@@ -122,8 +122,8 @@ Per creare una curva personalizzata:
 
 ## Domande frequenti
 
-### Problema: La curva base viene ignorata dopo aver cambiato il modulo `input color profile`  
-Quando si modifica `input color profile` dopo `base curve`, la pipeline può ricalcolare il segnale in modo non coerente. La soluzione è reimpostare l’ordine tramite `module order`: spostare `base curve` immediatamente dopo `white balance` e prima di `input color profile`. Se il problema persiste, disattivare e riattivare `base curve` per forzare il refresh del segnale[^processing-manual].
+### Problema: La curva base non ha effetto  
+Verifica che il modulo sia attivo e che non sia attivo anche un tone mapper (AgX, sigmoid o filmic): in un flusso scene-referred i due si sovrappongono e conviene usarne uno solo. L'ordine dei moduli nel pixelpipe è fisso: *base curve* viene dopo *input color profile* e dopo i moduli colore scene-referred[^processing-manual].
 
 ### Problema: Il grafico della curva appare "piatto" anche dopo aver aggiunto nodi  
 Ciò accade quando `scale for graph` è impostato a 0.0 (scala lineare). Aumentare il valore a **1.0–2.0** espande visivamente la porzione inferiore del grafico, rendendo visibili i nodi nelle ombre. Questo non modifica la curva reale, ma solo la sua rappresentazione grafica[^curves-manual].

@@ -257,19 +257,9 @@ Verificare che **Color Equalizer** sia posizionato **dopo** `denoise (profiled)`
 ### Problema: "Non riesco a isolare il verde della vegetazione senza influenzare la pelle"
 Usare una **maschera parametrica** basata su `Cz` (crominanza) > 30% e `hz` (tonalità) tra 120°–180°, quindi applicare il Color Equalizer su quella maschera. Evitare di dipendere esclusivamente dal `saturation threshold`, poiché pelle e foglie possono avere sovrapposizioni di saturazione[^pixls-smooth].
 
-## Posizionamento nella pipeline
+## Posizione nel pixelpipe
 
-Il posizionamento del Color Equalizer nella catena di elaborazione e' cruciale per il risultato:
-
-| Scenario | Posizionamento | Motivazione |
-|----------|---------------|-------------|
-| Correzione cromativa generica | Dopo Color Calibration, prima di Filmic/Sigmoid | Opera su colori ancora lineari, massimo controllo[^pipeline] |
-| Conversione B/N | **Tra due istanze di Color Calibration** | Controlla la luminanza dei colori prima della desaturazione[^b-and-w] |
-| Ritocco finale | Dopo Filmic/Sigmoid, prima dell'export | Correzioni sottili sul risultato tonale finale |
-| Con maschere parametriche | Dopo il modulo che genera la luminanza di riferimento | La maschera parametrica opera correttamente sulla luminanza processata |
-
-!!! tip "Pipeline consigliata per B/N"
-    `RAW -> White Balance -> Tone Equalizer -> Color Calibration (1) -> Color Equalizer -> Color Calibration (2, desaturato) -> Filmic/Sigmoid`[^b-and-w]
+L'ordine dei moduli nel pixelpipe è fisso: il color equalizer si trova dopo *color calibration* e prima del tone mapper (AgX, sigmoid, filmic), insieme a *color balance rgb*[^pipeline]. Opera quindi su colori ancora lineari, dove ha il massimo controllo, e non può essere spostato dopo il tone mapper. Per la conversione in bianco e nero ricorda che la conversione di *color calibration* (scheda *gray*) avviene prima del color equalizer: per controllare la luminanza dei singoli colori nel B/N usa il mixer *gray* di *color calibration* stessa.
 
 ## Consigli per colori accurati
 

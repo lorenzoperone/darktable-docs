@@ -23,25 +23,22 @@ Il manuale ufficiale descrive le due modalita' di regolazione (*manual* e *autom
 
 > In *automatic* mode, darktable selects an area from the image and adjusts the exposure to match a target lightness value. The area can be set using a drawn mask or a parametric mask.[^manual-exposure]
 
-### Parametri dettagliati del modulo Exposure
+### Parametri del modulo exposure
 
-Il modulo `exposure` in darktable 5.4+ dispone di **otto parametri fondamentali**, tutti operanti nello spazio scene-referred lineare prima di qualsiasi compressione tonale:
+Il modulo `exposure` lavora nello spazio scene-referred lineare, prima di qualsiasi compressione tonale. I valori predefiniti sono quelli di darktable 5.6, letti dal codice sorgente[^manual-exposure].
 
 | Parametro | Tipo | Range | Default | Descrizione |
 |-----------|------|-------|---------|-------------|
-| `mode` | selezione | `manual`, `automatic` | `manual` | Determina se l’esposizione è impostata manualmente o calcolata automaticamente su un’area definita. |
-| `compensate camera exposure` | slider | `-5.0` a `+5.0 EV` | `0.0 EV` | Corregge lo scostamento tra l’esposizione misurata dalla fotocamera e quella effettiva (es. per errori di misurazione o ISO non standard). Valori tipici: `-0.7 EV` per RAW Fujifilm X-H2S[^agx-guide]. |
-| `exposure` | slider | `-8.0` a `+8.0 EV` | `0.0 EV` | Regolazione principale dell’esposizione globale. Incrementi di `±0.1 EV` sono sufficienti per affinamenti precisi; `±1.0 EV` equivale a un’intera stop. Valore tipico per recupero in bassa luce: `+1.000 EV`[^lowlight]. |
-| `black level correction` | slider | `-0.01` a `+0.01` | `0.0000` | Compensa piccole deviazioni del livello nero hardware (es. offset del sensore). Non deve mai superare `±0.001` per evitare clipping negativo[^pipeline]. |
-| `clipping threshold` | slider | `0.001%` a `10.0%` | `0.010%` | Soglia percentuale di pixel considerati “bruciati” o “schiacciati”. Usato da `auto tune levels` e dagli algoritmi di rilevamento area. Valore consigliato per precisione: `0.005%`[^agx-guide]. |
-| `spot exposure mapping` | toggle | `off` / `on` | `off` | Abilita la nuova funzionalità introdotta in darktable 4.0 per trasferire l’esposizione misurata su un’area specifica (es. un fiore) ad altre immagini[^dt40-new]. |
-| `drawn mask` | maschera | `no mask used`, `1 shape used`, ecc. | `no mask used` | Conteggio delle forme vettoriali applicate al modulo (cerchio, ellisse, gradiente, path). Richiede espansione della sezione “masks” per configurazione avanzata[^masking-ep1]. |
-| `opacity` | slider | `0%` a `100%` | `100%` | Opacità globale dell’effetto esposizione. Utile per blending con altre istanze o per simulare filtri ND variabili[^b&w-street]. |
+| `mode` | selezione | `manual`, `automatic` | `manual` | In modalità manuale imposti tu esposizione e livello del nero; in modalità automatica (solo RAW) darktable calcola l’esposizione da un'analisi dell'istogramma, utile ad esempio per il deflickering di sequenze time-lapse. |
+| `compensate camera exposure` | interruttore | acceso/spento | spento | Rimuove la compensazione di esposizione registrata dalla fotocamera nei dati Exif (modalità manuale). |
+| `exposure` | cursore | `-18` a `+18 EV` (il cursore mostra un intervallo più stretto; clic destro per inserire un valore) | `0 EV` | Regolazione principale dell’esposizione globale. Con il flusso scene-referred il valore di partenza applicato all'apertura è `+0.7 EV` (preset *scene-referred default*). |
+| `black level correction` | cursore | `-1` a `+1` | `0` | Regola il punto del nero per recuperare valori RGB negativi. Non usarlo per aggiungere densità ai neri: per quello serve il tone mapper. |
+| `percentile` | cursore | `0` a `100%` | `50%` | Solo modalità automatica: posizione dell'istogramma usata per correggere l'esposizione. |
+| `target level` | cursore | `-18` a `+18 EV` | `-4 EV` | Solo modalità automatica: livello obiettivo rispetto al punto bianco della fotocamera. |
+| `area exposure mapping` | sezione | valore L in CIE Lab, modalità *measure*/*correction* | — | Imposta o misura la luminosità di un'area di riferimento per uniformare l'esposizione di una serie di immagini. |
 
-Ogni parametro agisce su un livello distinto della pipeline:
-- `compensate camera exposure` opera *prima* della lettura del raw black/white point;
-- `exposure` e `black level correction` operano nello spazio lineare *post-demosaic*, ma *pre-tonemapping*;
-- `clipping threshold` influenza solo gli algoritmi automatici (`auto tune levels`, `spot exposure mapping`) e non modifica l’immagine direttamente[^pipeline].
+Il modulo `exposure` si può usare anche con maschere disegnate e parametriche: la sezione *masks* del modulo mostra quante forme sono applicate, e l'opacità regola l'intensità dell'effetto per fondere più istanze[^masking-ep1].
+
 
 ### Flusso di lavoro avanzato con maschere
 

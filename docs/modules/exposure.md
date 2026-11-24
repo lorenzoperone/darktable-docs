@@ -28,7 +28,7 @@ Introdotta in darktable 4.0, questa funzionalità avanzata permette di **misurar
 | **Lightness (L\*)** | 0.0 ... 100.0 % | Valore di luminosità CIE Lab misurato nell’area selezionata. Il valore predefinito è 50.0% (grigio medio)[^manual]. |
 | **Target lightness** | 0.0 ... 100.0 % | Luminosità obiettivo per l’area. darktable calcola l’esposizione richiesta per far sì che l’area raggiunga questo valore[^manual]. |
 
-> **Nota tecnica**: L’area mapping richiede che il modulo `exposure` sia posizionato *prima* di `input color profile` nella pipeline, poiché la conversione da RGB camera a Lab dipende dal profilo colore. Su JPEG/PNG, spostare `exposure` dopo `input color profile` o usare il preset *v3.0 for JPEG/non-RAW input*[^manual].
+> **Nota**: la modalità *automatica* del modulo (percentile e target level) funziona solo su immagini RAW[^manual]. La luminosità dell’area si misura in CIE Lab 1976.
 
 ## Uso nel flusso scene-referred
 
@@ -92,7 +92,7 @@ Per deflickering di una sequenza di 120 immagini con variazioni di luce dovute a
 2. Con il color picker, selezionare un’area neutra stabile (es. muro in ombra, L\* = 32.4%).
 3. Passare alla seconda immagine: `mode` passa automaticamente a *Correction*.
 4. Selezionare la stessa area: darktable calcola `exposure = -0.17 EV`.
-5. Ripetere per tutte le immagini della sequenza usando il tasto **++ctrl+c++** per copiare la misura e **++ctrl+v++** per incollarla[^eo].
+5. Ripetere per tutte le immagini della sequenza[^eo].
 
 ### 6. Esempio pratico: esposizione per stampa su carta opaca
 *Da [darktable first steps ep01](https://www.youtube.com/watch?v=P4cL61ZHqFw) (timestamp 12:45)*  
@@ -103,9 +103,6 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 4. Verificare che il bianco del colletto rimanga sotto L\* = 95% per evitare perdita di dettaglio in stampa[^firststeps].
 
 ## Domande frequenti
-
-### Problema: L’area mapping non funziona su JPEG importati
-Il modulo `exposure` in modalità *area mapping* richiede un segnale lineare RAW per convertire correttamente da RGB camera a CIE Lab. Su JPEG, il segnale è già compresso con una gamma non lineare (es. sRGB gamma 2.2), rendendo impossibile la misura affidabile di L\*. Soluzione: spostare `exposure` **dopo** `input color profile` nella pipeline o usare il preset *v3.0 for JPEG/non-RAW input*[^manual].
 
 ### Problema: Dopo aver applicato `exposure`, il modulo `color calibration` mostra artefatti cromatici
 Questo accade quando `black level correction` genera valori RGB negativi, che interferiscono con gli algoritmi di adattamento cromatico CAT16. La soluzione è evitare `black level correction` e usare invece `filmic rgb` → *scene tab* → `black relative exposure` per gestire i neri, oppure `base curve` con un toe pronunciato[^manual].
