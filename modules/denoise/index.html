@@ -4518,12 +4518,12 @@
 <p><code>denoise (profiled)</code> è il modulo principale per la riduzione rumore in darktable 5.4+, progettato per essere sia facile da usare che altamente efficace. A differenza di algoritmi generici, sfrutta database di profili di rumore misurati empiricamente su oltre <strong>300 modelli di fotocamere</strong> (Canon, Nikon, Sony, Fujifilm, Panasonic, ecc.)<sup id="fnref4:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>. Ogni profilo contiene curve di varianza rumore in funzione della luminanza per diversi valori ISO (es. ISO 100, 200, 400, 800, 1600, 3200, 6400, 12800), con interpolazione automatica per valori intermedi<sup id="fnref5:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>. Il modulo supporta due algoritmi fondamentali — <em>non-local means</em> e <em>wavelets</em> — entrambi disponibili in modalità <strong>auto</strong> (interfaccia semplificata) e <strong>manual</strong> (controllo fine per ogni scala di dettaglio). Non richiede alcuna installazione esterna ed è incluso di default in darktable 5.4+.</p>
 <div class="admonition info">
 <p class="admonition-title">Posizionamento nella pipeline</p>
-<p>Il modulo deve essere inserito <strong>subito dopo <code>raw black/white point</code> e prima di <code>demosaic</code></strong>, o comunque <strong>prima di <code>input color profile</code></strong>. Questo garantisce che il denoising agisca sui dati raw non ancora trasformati in spazio colore, dove il rumore è meglio modellabile e i profili ISO sono accurati<sup id="fnref9:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>. Inserire <code>denoise (profiled)</code> dopo <code>exposure</code> o <code>filmic rgb</code> compromette l’efficacia del profilo.</p>
+<p>Il modulo si trova <strong>subito dopo <code>demosaic</code></strong> e <strong>prima di <code>exposure</code> e di <code>input color profile</code></strong> (posizione fissa). Questo garantisce che il denoising agisca sui dati raw non ancora trasformati in spazio colore, dove il rumore è meglio modellabile e i profili ISO sono accurati<sup id="fnref9:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>. Inserire <code>denoise (profiled)</code> dopo <code>exposure</code> o <code>filmic rgb</code> compromette l’efficacia del profilo.</p>
 </div>
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
 <ol>
 <li><strong>Prima fase (raw processing)</strong>:  </li>
-<li>Applica <code>raw black/white point</code> → <code>denoise (profiled)</code> → <code>demosaic</code> → <code>input color profile</code>.  </li>
+<li>Nella pipeline: <code>raw black/white point</code> → <code>demosaic</code> → <code>denoise (profiled)</code> → <code>exposure</code> → <code>input color profile</code>.  </li>
 <li>
 <p>Se necessario, attiva <code>capture sharpening</code> nel modulo <code>Demosaic</code> con <code>contrast sensitivity</code> tra <strong>0.15 e 0.35</strong>, per compensare la leggera perdita di nitidezza senza amplificare il rumore<sup id="fnref3:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup><sup id="fnref3:pipeline"><a class="footnote-ref" href="#fn:pipeline">2</a></sup>.</p>
 </li>
@@ -4541,7 +4541,7 @@
 </ol>
 <blockquote>
 <p>✅ <strong>Ordine ottimale della pipeline per ISO &gt; 3200</strong>:<br>
-<code>raw black/white point</code> → <code>denoise (profiled)</code> → <code>demosaic</code> (con capture sharpening) → <code>input color profile</code> → <code>exposure</code> → <code>filmic rgb</code> → <code>contrast equalizer</code> (denoise spline attivata) → <code>astrophoto denoise</code> (solo se necessario).</p>
+<code>raw black/white point</code> → <code>demosaic</code> (con capture sharpening) → <code>denoise (profiled)</code> → <code>exposure</code> → <code>input color profile</code> → <code>astrophoto denoise</code> (solo se necessario) → <code>contrast equalizer</code> (denoise spline attivata) → <code>filmic rgb</code>.</p>
 </blockquote>
 <h2 id="modalita">Modalità<a class="headerlink" href="#modalita" title="Permanent link">¶</a></h2>
 <table>
@@ -4762,7 +4762,7 @@
 <h3 id="problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera">Problema: <code>denoise (profiled)</code> non riconosce il mio modello di fotocamera<a class="headerlink" href="#problema-denoise-profiled-non-riconosce-il-mio-modello-di-fotocamera" title="Permanent link">¶</a></h3>
 <p>darktable cerca il profilo tramite tag Exif <code>Make</code>, <code>Model</code> e <code>ExposureIndex</code>. Se il firmware della fotocamera scrive valori non standard (es. <code>Model = "X-H2S"</code> invece di <code>"FUJIFILM X-H2S"</code>), il profilo non viene trovato. Soluzione: usare <code>raw denoise</code> come alternativa temporanea, oppure generare un profilo personalizzato con <a href="https://github.com/BR0k3N/noise-profile-generator">Noise Profile Generator (NPG)</a><sup id="fnref:pixls-noise"><a class="footnote-ref" href="#fn:pixls-noise">4</a></sup>.</p>
 <h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
-<p>darktable include 7 preset preconfigurati per <code>denoise (profiled)</code>, accessibili dal menu a tendina <em>Preset</em> in alto a destra del modulo<sup id="fnref8:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>:</p>
+<p>darktable include un solo preset integrato per <code>denoise (profiled)</code>, accessibile dal menu preset del modulo<sup id="fnref8:48-profiled"><a class="footnote-ref" href="#fn:48-profiled">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -4773,39 +4773,9 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Low noise (ISO 100–400)</strong></td>
-<td>Studio, paesaggi in luce piena</td>
-<td><code>Strength = 0.4</code>, <code>Preserve shadows = 0.8</code>, <code>Y0 curve</code> piatta a <code>0.3</code></td>
-</tr>
-<tr>
-<td><strong>Medium noise (ISO 800–3200)</strong></td>
-<td>Eventi indoor, ritratti in luce artificiale</td>
-<td><code>Strength = 0.9</code>, <code>Preserve shadows = 0.4</code>, <code>U0V0 curve</code> alzata a sinistra</td>
-</tr>
-<tr>
-<td><strong>High noise (ISO 6400–12800)</strong></td>
-<td>Concerti, reportage notturno</td>
-<td><code>Strength = 1.4</code>, <code>Preserve shadows = 0.15</code>, <code>Y0 curve</code> [0.95, 0.85, 0.7, 0.4, 0.2, 0.1, 0.05]</td>
-</tr>
-<tr>
-<td><strong>Astrophotography (ISO 1600+)</strong></td>
-<td>Lunghe esposizioni, cielo stellato</td>
-<td><code>Mode = wavelets Y0U0V0 manual</code>, <code>U0V0 curve</code> max ai primi 4 punti</td>
-</tr>
-<tr>
-<td><strong>Portrait skin (ISO 200–800)</strong></td>
-<td>Pelle umana, texture fine</td>
-<td><code>Mode = non-local means manual</code>, <code>patch size = 3</code>, <code>scattering = 10</code></td>
-</tr>
-<tr>
-<td><strong>Landscape detail (ISO 100–400)</strong></td>
-<td>Montagne, architettura, alta risoluzione</td>
-<td><code>Strength = 0.35</code>, <code>Preserve shadows = 0.7</code>, <code>Y0 curve</code> quasi piatta</td>
-</tr>
-<tr>
-<td><strong>Chroma only</strong></td>
-<td>Per uso in cascata con blend mode <em>chroma</em></td>
-<td><code>Mode = wavelets Y0U0V0 manual</code>, <code>Y0 curve</code> a zero, <code>U0V0 curve</code> attiva</td>
+<td><strong>wavelets: chroma only</strong></td>
+<td>Per ridurre solo il rumore cromatico, lasciando intatta la grana di luminanza</td>
+<td>Modalità <em>wavelets</em>, agisce solo sui canali di crominanza</td>
 </tr>
 </tbody>
 </table>
@@ -4829,7 +4799,7 @@
 <tr>
 <td><strong>Surface blur</strong></td>
 <td>Sfuocatura conservativa dei bordi con filtro bilaterale. <strong>Non è un modulo di denoise primario</strong><sup id="fnref:48-surface-blur"><a class="footnote-ref" href="#fn:48-surface-blur">7</a></sup>.</td>
-<td>Dopo <code>input color profile</code>, in blend mode <em>chroma</em> o <em>luminance</em></td>
+<td>Subito dopo <code>denoise (profiled)</code>, prima di <code>input color profile</code>; in blend mode <em>chroma</em> o <em>luminance</em></td>
 <td>Utile per rimuovere <em>moire cromatico</em> o uniformare tonalità della pelle. Evitare su immagini con rumore luma diffuso.</td>
 </tr>
 <tr>
@@ -4917,7 +4887,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

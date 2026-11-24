@@ -5295,10 +5295,10 @@
 </div>
 <h3 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h3>
 <ol>
-<li>Applicare <code>lowlight vision</code> <strong>dopo</strong> i moduli di denoising (<code>denoise (profiled)</code> o <code>astrophoto denoise</code>) e prima di <code>color calibration</code>.</li>
+<li><code>lowlight vision</code> è un modulo creativo display-referred: nella pipeline si trova <strong>dopo</strong> il tone mapper (e quindi dopo denoise e <code>color calibration</code>); la posizione è fissa.</li>
 <li>Usare una maschera disegnata se si desidera applicare l’effetto solo a parti specifiche (es. cielo stellato, non al primo piano).</li>
-<li>Abilitare <code>look only</code> per confrontare in tempo reale l’effetto prima di renderlo permanente.</li>
-<li>Combinare con <code>exposure</code> e <code>filmic rgb</code> per bilanciare la luminosità globale dopo la trasformazione scotopica.</li>
+<li>Usare uno snapshot per confrontare l’effetto prima/dopo.</li>
+<li>Combinare con <code>exposure</code> e <code>filmic rgb</code> per bilanciare la luminosità globale.</li>
 </ol>
 <hr>
 <h2 id="modulo-raw-denoise-denoising-pre-demosaic">Modulo <code>raw denoise</code>: denoising pre-demosaic<a class="headerlink" href="#modulo-raw-denoise-denoising-pre-demosaic" title="Permanent link">¶</a></h2>

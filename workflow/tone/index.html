@@ -4827,7 +4827,7 @@ La versione v7 introduce un <em>highlight saturation mix</em> più aggressivo, u
 <ul>
 <li>✅ <strong>Non cercare equivalenze 1:1</strong>: i tone mapper di darktable sono <em>scene-referred</em>, quindi non replicano i preset “VSCO” o “Kodak Portra” in modo diretto.  </li>
 <li>✅ <strong>Usa sempre i metadati RAW</strong>: i valori di <em>black/white relative exposure</em> derivano direttamente dalle informazioni del sensore — non dai valori di Lightroom.  </li>
-<li>✅ <strong>Evita il double-processing</strong>: non applicare <em>exposure</em> prima di <em>filmic</em> o <em>agx</em>: quest’ultimo gestisce già la mappatura globale.  </li>
+<li>✅ <strong>Evita il double-processing</strong>: usa <em>exposure</em> (sempre prima del tone mapper) solo per posizionare il grigio medio, e lascia a <em>filmic</em> o <em>agx</em> la mappatura globale senza aggiungere altre curve di compressione.  </li>
 <li>❌ <strong>Non usare “fill light” o “recovery”</strong>: questi concetti non esistono in darktable; il recupero luci avviene tramite <em>highlight reconstruction</em>, <em>sigmoid</em>, o <em>agx shoulder</em>.  </li>
 <li>❌ <strong>Non usare “clarity” come in LR</strong>: in darktable, <em>local contrast</em> o <em>diffuse or sharpen</em> sono strumenti distinti, non sostituti di un tone mapper.</li>
 </ul>

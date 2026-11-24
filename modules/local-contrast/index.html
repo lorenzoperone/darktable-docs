@@ -4423,10 +4423,10 @@
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
 <p>Il flusso ottimale prevede tre fasi sequenziali, con <strong>local contrast</strong> sempre in posizione <em>finale</em> della pipeline (dopo tone mapping e bilanciamento cromatico):</p>
 <pre class="mermaid"><code>flowchart TD
-    A["1. Esposizione&lt;br/&gt;globale"] --&gt; B["2. Tone mapping&lt;br/&gt;(AGX/Sigmoid/Filmic)"] --&gt; C["3. Bilanciamento&lt;br/&gt;colore"] --&gt; D["4. Contrasto locale&lt;br/&gt;(texture e dettaglio)"]</code></pre>
+    A["1. Esposizione&lt;br/&gt;globale"] --&gt; B["2. Bilanciamento&lt;br/&gt;colore"] --&gt; C["3. Tone mapping&lt;br/&gt;(AGX/Sigmoid/Filmic)"] --&gt; D["4. Contrasto locale&lt;br/&gt;(texture e dettaglio)"]</code></pre>
 <div class="admonition tip">
-<p class="admonition-title">Ordine critico: dopo AGX, prima di sharpen</p>
-<p>Applica <strong>local contrast</strong> <em>dopo</em> <strong>AGX</strong>, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. Inoltre, posizionalo <em>prima</em> di <strong>sharpen</strong> o <strong>diffuse or sharpen</strong>, poiché questi ultimi operano su frequenze più alte<sup id="fnref9:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup><sup id="fnref3:manual-shadows-highlights"><a class="footnote-ref" href="#fn:manual-shadows-highlights">2</a></sup>.</p>
+<p class="admonition-title">Ordine critico: dopo AGX</p>
+<p>Applica <strong>local contrast</strong> <em>dopo</em> <strong>AGX</strong>, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. <sup id="fnref9:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup><sup id="fnref3:manual-shadows-highlights"><a class="footnote-ref" href="#fn:manual-shadows-highlights">2</a></sup> Nota: nella pipeline <strong>sharpen</strong> e <strong>diffuse or sharpen</strong> si trovano <em>prima</em> di local contrast (e prima del tone mapper).</p>
 </div>
 <h3 id="passo-1-scegli-la-modalita">Passo 1: Scegli la modalità<a class="headerlink" href="#passo-1-scegli-la-modalita" title="Permanent link">¶</a></h3>
 <p>Il primo passo è selezionare l’algoritmo:</p>
@@ -4437,14 +4437,14 @@
 <h3 id="passo-2-regola-il-livello-base-di-dettaglio">Passo 2: Regola il livello base di dettaglio<a class="headerlink" href="#passo-2-regola-il-livello-base-di-dettaglio" title="Permanent link">¶</a></h3>
 <p>Il parametro <strong>detail</strong> è il principale controllo del modulo:</p>
 <ul>
-<li><strong>Default</strong>: <code>0.00</code>  </li>
-<li><strong>Range tipico</strong>: <code>-1.00</code> a <code>+1.00</code>  </li>
+<li><strong>Default</strong>: <code>125%</code> (100% = nessun effetto)  </li>
+<li><strong>Range</strong>: <code>0%</code> a <code>500%</code>  </li>
 <li><strong>Effetto</strong>: inserisce un elemento a forma di <strong>S</strong> nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)<sup id="fnref12:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>  </li>
 <li><strong>Valore comune</strong>: <code>+0.35</code> per ritratti (enfatizza pelle e occhi), <code>+0.65</code> per paesaggi (texture di roccia/foglie)</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Usa il confronto prima/dopo</p>
-<p>Premi <code>Ctrl+D</code> per attivare il confronto <em>before/after</em> mentre regoli <code>detail</code>. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”<sup id="fnref13:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
+<p>Crea uno snapshot dal modulo <em>snapshots</em> (pannello sinistro) per confrontare prima/dopo mentre regoli <code>detail</code>. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”<sup id="fnref13:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h3 id="passo-3-affina-luci-e-ombre">Passo 3: Affina luci e ombre<a class="headerlink" href="#passo-3-affina-luci-e-ombre" title="Permanent link">¶</a></h3>
 <p>I parametri <strong>highlights</strong> e <strong>shadows</strong> agiscono <em>sulle estremità</em> della curva S:</p>
@@ -4461,23 +4461,23 @@
 <tbody>
 <tr>
 <td><strong>highlights</strong></td>
-<td><code>-1.00</code> to <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Controlla il contrasto nelle <strong>alte luci</strong>. Valori negativi <em>comprimono</em> i dettagli luminosi (es. nuvole, riflessi); valori positivi li <em>accentuano</em><sup id="fnref17:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td><code>0%</code> to <code>100%</code></td>
+<td><code>50%</code></td>
+<td>Controlla il contrasto nelle <strong>alte luci</strong>. Valori bassi (sotto il 50%) <em>comprimono</em> i dettagli luminosi (es. nuvole, riflessi); valori alti li <em>accentuano</em><sup id="fnref17:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 <td>Per recuperare dettagli in cieli sovraesposti (senza clipping), o per dare “pop” ai riflessi su capelli/metalli</td>
 </tr>
 <tr>
 <td><strong>shadows</strong></td>
-<td><code>-1.00</code> to <code>+1.00</code></td>
-<td><code>0.00</code></td>
-<td>Controlla il contrasto nelle <strong>ombre</strong>. Valori positivi <em>aumentano il contrasto</em> nelle zone scure; valori negativi <em>sollevano le ombre</em> (simula una “fill light” locale)<sup id="fnref18:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
+<td><code>0%</code> to <code>100%</code></td>
+<td><code>50%</code></td>
+<td>Controlla il contrasto nelle <strong>ombre</strong>. Valori alti <em>aumentano il contrasto</em> nelle zone scure; valori bassi <em>sollevano le ombre</em> (simula una “fill light” locale)<sup id="fnref18:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 <td>Per rendere più vividi i dettagli in ombra (es. pieghe di un abito, rametti in penombra), senza appiattire le zone nere</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
 <p class="admonition-title">Attenzione al banding</p>
-<p>Valori estremi di <code>highlights</code> o <code>shadows</code> (oltre <code>±0.70</code>) possono causare <strong>banding</strong> (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con <code>detail</code><sup id="fnref14:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
+<p>Valori estremi di <code>highlights</code> o <code>shadows</code> (vicini a <code>0%</code> o <code>100%</code>) possono causare <strong>banding</strong> (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con <code>detail</code><sup id="fnref14:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>.</p>
 </div>
 <h2 id="parametri-principali-modalita-local-laplacian">Parametri principali (modalità <em>local laplacian</em>)<a class="headerlink" href="#parametri-principali-modalita-local-laplacian" title="Permanent link">¶</a></h2>
 <table>
@@ -4492,8 +4492,8 @@
 <tbody>
 <tr>
 <td><strong>detail</strong></td>
-<td><code>-1.00</code> – <code>+1.00</code></td>
-<td><code>0.00</code></td>
+<td><code>0%</code> – <code>500%</code></td>
+<td><code>125%</code></td>
 <td>Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni<sup id="fnref19:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 <tr>
@@ -4542,8 +4542,8 @@
 </tr>
 <tr>
 <td><strong>detail</strong></td>
-<td><code>-1.00</code> – <code>+1.00</code></td>
-<td><code>0.00</code></td>
+<td><code>0%</code> – <code>500%</code></td>
+<td><code>125%</code></td>
 <td>Aggiunge o rimuove dettaglio, come nella modalità <em>local laplacian</em><sup id="fnref25:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup></td>
 </tr>
 </tbody>
@@ -4582,7 +4582,7 @@
 <h3 id="problema-il-modulo-sembra-non-fare-nulla-su-una-foto-in-bianco-e-nero">Problema: Il modulo sembra “non fare nulla” su una foto in bianco e nero<a class="headerlink" href="#problema-il-modulo-sembra-non-fare-nulla-su-una-foto-in-bianco-e-nero" title="Permanent link">¶</a></h3>
 <p><code>local contrast</code> opera sul canale <strong>L</strong> di Lab, quindi funziona anche su immagini monochrome. Tuttavia, se l’immagine è stata convertita in B/N tramite <strong>monochrome</strong> <em>dopo</em> <code>local contrast</code>, l’effetto sarà annullato. Assicurati che <strong>monochrome</strong> sia posizionato <em>prima</em> di <code>local contrast</code> nella pixelpipe, oppure applica <code>local contrast</code> su un’istanza duplicata con blend mode <strong>Lab lightness</strong><sup id="fnref:forum-bn-no-effect"><a class="footnote-ref" href="#fn:forum-bn-no-effect">7</a></sup>.</p>
 <h2 id="tabella-preset-built-in">Tabella preset built-in<a class="headerlink" href="#tabella-preset-built-in" title="Permanent link">¶</a></h2>
-<p>darktable 5.4 include 4 preset preconfigurati per <code>local contrast</code>, accessibili dal menu a tendina in alto a destra del modulo<sup id="fnref4:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>:</p>
+<p>darktable include 2 preset preconfigurati per <code>local contrast</code>, accessibili dal menu a tendina in alto a destra del modulo<sup id="fnref4:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">1</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -4593,27 +4593,18 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>default</strong></td>
-<td>Starting point neutro</td>
-<td><code>detail = 0.00</code>, <code>highlights = 0.00</code>, <code>shadows = 0.00</code>, <code>mid-tone range = 0.50</code></td>
-</tr>
-<tr>
 <td><strong>clarity</strong></td>
 <td>Enfasi generale su texture</td>
-<td><code>detail = +0.40</code>, <code>highlights = -0.10</code>, <code>shadows = +0.20</code>, <code>mid-tone range = 0.55</code></td>
+<td><code>detail = 133%</code>, <code>mid-tone range = 0.50</code> (local laplacian)</td>
 </tr>
 <tr>
-<td><strong>dehaze</strong></td>
-<td>Recupero dettagli in atmosfera opaca</td>
-<td><code>detail = +0.60</code>, <code>highlights = -0.45</code>, <code>shadows = +0.30</code>, <code>mid-tone range = 0.40</code></td>
-</tr>
-<tr>
-<td><strong>soft skin</strong></td>
-<td>Ritratti con pelle levigata</td>
-<td><code>detail = -0.25</code>, <code>highlights = -0.15</code>, <code>shadows = -0.30</code>, <code>mid-tone range = 0.65</code></td>
+<td><strong>HDR local tone-mapping</strong></td>
+<td>Compressione locale forte, look HDR</td>
+<td><code>detail = 200%</code>, <code>mid-tone range = 0.25</code> (local laplacian)</td>
 </tr>
 </tbody>
 </table>
+<p>Le impostazioni di default del modulo (senza preset) sono <code>detail = 125%</code>, <code>highlights = 50%</code>, <code>shadows = 50%</code>, <code>mid-tone range = 0.50</code>.</p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-local-contrast.png" data-desc-position="bottom"><img alt="Interfaccia del modulo local contrast (Contrasto locale) in darktable" src="../../images/ui-local-contrast.png"></a>
 <em>Il modulo «local contrast» (Contrasto locale) nell'interfaccia di darktable (vista darkroom).</em></p>
@@ -4671,7 +4662,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

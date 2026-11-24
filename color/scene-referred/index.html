@@ -4438,8 +4438,8 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <tbody>
 <tr>
 <td><code>contrast</code></td>
-<td><code>0.0</code>–<code>10.0</code></td>
-<td><code>2.0</code></td>
+<td><code>0.1</code>–<code>10.0</code></td>
+<td><code>1.5</code></td>
 <td><code>1.8</code>–<code>2.5</code></td>
 <td>Controlla la pendenza della curva log-logistica. Valori &gt;3.0 comprimono fortemente le luci, rischiando posterizzazione se non accompagnati da <em>red/green/blue attenuation</em>.</td>
 </tr>
@@ -4466,15 +4466,15 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 </tr>
 <tr>
 <td><code>target black</code></td>
-<td><code>0.0</code>–<code>0.1</code></td>
-<td><code>0.0</code></td>
+<td><code>0%</code>–<code>15%</code></td>
+<td><code>0.0152%</code></td>
 <td><code>0.0</code></td>
 <td>Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare <em>global offset</em> in <code>color balance rgb</code>.<sup id="fnref5:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 <tr>
 <td><code>target white</code></td>
-<td><code>1.0</code>–<code>10.0</code></td>
-<td><code>1.0</code></td>
+<td><code>20%</code>–<code>1600%</code></td>
+<td><code>100%</code></td>
 <td><code>1.0</code>–<code>2.5</code></td>
 <td>Valori &gt;2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.<sup id="fnref6:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
@@ -4488,14 +4488,14 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <tr>
 <td><code>recover purity</code></td>
 <td><code>0%</code>–<code>100%</code></td>
-<td><code>100%</code></td>
+<td><code>0%</code></td>
 <td><code>80%</code>–<code>100%</code></td>
 <td>Ripristina la saturazione nelle medie luci. A <code>80%</code>: mantiene un leggero “smorzamento” naturale delle alte luci.<sup id="fnref8:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p>✅ <strong>Best practice</strong>: usa sempre il preset <em>smooth</em> come punto di partenza per <code>sigmoid</code>. Modifica <em>red/green/blue rotation</em> solo se necessario: valori tipici sono <code>R: -2°</code>, <code>G: +1°</code>, <code>B: -3°</code> per correggere lievi sbilanciamenti cromatici nei bianchi puri.<sup id="fnref2:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></p>
+<p>✅ <strong>Best practice</strong>: usa sempre il preset <em>smooth</em> come punto di partenza per <code>sigmoid</code>. Modifica <em>red/green/blue rotation</em> solo se necessario: il preset <em>smooth</em> usa <code>R: +2°</code>, <code>G: -1°</code>, <code>B: -3°</code> per correggere lievi sbilanciamenti cromatici nei bianchi puri.<sup id="fnref2:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">6</a></sup></p>
 </blockquote>
 <h3 id="filmic-rgb-tone-mapping-robusto-alternativa-a-sigmoid"><code>filmic rgb</code> — Tone mapping robusto (alternativa a sigmoid)<a class="headerlink" href="#filmic-rgb-tone-mapping-robusto-alternativa-a-sigmoid" title="Permanent link">¶</a></h3>
 <table>
@@ -4599,7 +4599,7 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
 <h3 id="workflow-iterativo-per-immagini-ad-alta-dinamica">✅ Workflow iterativo per immagini ad alta dinamica<a class="headerlink" href="#workflow-iterativo-per-immagini-ad-alta-dinamica" title="Permanent link">¶</a></h3>
 <p>Per foto con luci bruciate (es. sole inquadrato, finestre sovraesposte):</p>
 <ol>
-<li>Attiva <code>highlight reconstruction</code> <strong>prima di <code>demosaic</code></strong>, con <em>method = guided</em> e <em>strength = 0.6</em> → recupera struttura cromatica senza artefatti.<sup id="fnref:highlight-reconstruction"><a class="footnote-ref" href="#fn:highlight-reconstruction">24</a></sup>  </li>
+<li>Attiva <code>highlight reconstruction</code> <strong>prima di <code>demosaic</code></strong>, con <em>method = guided laplacians</em> (regolando <em>clipping threshold</em> e <em>iterations</em>) → recupera struttura cromatica senza artefatti.<sup id="fnref:highlight-reconstruction"><a class="footnote-ref" href="#fn:highlight-reconstruction">24</a></sup>  </li>
 <li>Usa <code>exposure</code> per posizionare il grigio medio (<code>0.18</code>) sul soggetto principale — ignora temporaneamente le luci.  </li>
 <li>Applica <code>sigmoid</code> con <code>skew = +0.25</code>, <code>contrast = 2.2</code>, <code>preserve hue = 75%</code>.  </li>
 <li>Se le luci restano “piatte”, aumenta <code>red attenuation = 0.3</code>, <code>blue attenuation = 0.25</code>, <code>recover purity = 85%</code>.  </li>
@@ -4720,7 +4720,7 @@ Il profilo <em>input color profile</em> deve essere lasciato su <em>embedded</em
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

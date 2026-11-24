@@ -4664,7 +4664,7 @@
 <h3 id="problema-nessun-effetto-visibile-anche-dopo-regolazione-della-curva">Problema: Nessun effetto visibile anche dopo regolazione della curva<a class="headerlink" href="#problema-nessun-effetto-visibile-anche-dopo-regolazione-della-curva" title="Permanent link">¶</a></h3>
 <p>Verifica che l’istogramma della maschera copra effettivamente il range EV del punto modificato: se il punto a –4.0 EV è attivo ma l’istogramma della maschera ha picco solo tra –1.0 e +0.5 EV, quel punto non influenzerà nulla. Usa la bacchetta magica su <code>mask exposure compensation</code> e <code>mask contrast compensation</code> per espanderlo<sup id="fnref:dt54"><a class="footnote-ref" href="#fn:dt54">3</a></sup>.</p>
 <h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
-<p>darktable 5.4 include preset preconfigurati per casi comuni, accessibili dal menu hamburger (☰) del modulo<sup id="fnref9:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup>:</p>
+<p>I preset integrati sono accessibili dal menu preset del modulo<sup id="fnref9:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -4675,24 +4675,34 @@
 </thead>
 <tbody>
 <tr>
-<td><code>compress shadows &amp; highlights (eigf)</code></td>
-<td>Immagini con ampio DR e necessità di compressione senza perdita di contrasto locale</td>
-<td>Usa EIGF per uniformità tra ombre e luci; valore predefinito <code>smoothing diameter = 5%</code><sup id="fnref22:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup></td>
+<td><code>compress shadows/highlights \| EIGF \| strong</code> / <code>medium</code> / <code>soft</code></td>
+<td>Immagini con ampio DR e necessità di compressione</td>
+<td>Filtro <code>eigf</code> (default): sfocatura della maschera indipendente dall'esposizione</td>
 </tr>
 <tr>
-<td><code>compress shadows &amp; highlights (gf)</code></td>
-<td>Immagini con ombre molto dettagliate e luci semplici (es. ritratti in studio)</td>
-<td>Usa guided filter originale: migliore preservazione dettagli ombre, ma sfocatura maggiore nelle luci<sup id="fnref23:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup></td>
+<td><code>compress shadows/highlights \| GF \| strong</code> / <code>medium</code> / <code>soft</code></td>
+<td>Stessi casi, con il filtro guidato classico</td>
+<td>Filtro <code>guided filter</code></td>
 </tr>
 <tr>
-<td><code>lift shadows (eigf)</code></td>
-<td>Ombre piatte e poco definite, senza clipping</td>
-<td>Applica +0.9 EV a –8.0 EV, +0.5 EV a –6.0 EV, con <code>curve smoothing = 0.4</code><sup id="fnref24:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup></td>
+<td><code>contrast tone curve \| soft</code> / <code>medium</code> / <code>strong</code></td>
+<td>Aggiungere contrasto tonale globale</td>
+<td>Curva di contrasto applicata tramite gli slider EV</td>
 </tr>
 <tr>
-<td><code>recover highlights (eigf)</code></td>
-<td>Luci sovraesposte ma recuperabili (es. cielo con dettagli nuvolosi)</td>
-<td>Applica –0.7 EV a +0.0 EV, –0.3 EV a +2.0 EV, con <code>mask contrast compensation = +0.3</code><sup id="fnref25:dt48"><a class="footnote-ref" href="#fn:dt48">2</a></sup></td>
+<td><code>relight: fill-in</code></td>
+<td>Schiarire le ombre come con un pannello di riempimento</td>
+<td>Solleva le zone scure</td>
+</tr>
+<tr>
+<td><code>simple tone curve</code></td>
+<td>Punto di partenza per curve personalizzate</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>mask blending \| all purposes</code>, <code>mask blending \| people with backlight</code></td>
+<td>Uso del modulo come generatore di maschere</td>
+<td>Impostazioni della maschera ottimizzate per il blending</td>
 </tr>
 </tbody>
 </table>
@@ -4713,7 +4723,7 @@ Il video <em>Full b&amp;w edits in darktable for street photography</em> dimostr
 <p><em>darktable User Manual -- Tone Equalizer</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:dt48">
-<p><em>darktable user manual - tone equalizer</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code>&nbsp;<a class="footnote-backref" href="#fnref:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref12:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref13:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref14:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref15:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref16:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref17:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref18:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref19:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref20:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref21:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref22:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref23:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref24:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref25:dt48" title="Jump back to footnote 2 in the text">↩</a></p>
+<p><em>darktable user manual - tone equalizer</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md</code>&nbsp;<a class="footnote-backref" href="#fnref:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref10:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref11:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref12:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref13:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref14:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref15:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref16:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref17:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref18:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref19:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref20:dt48" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref21:dt48" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 <li id="fn:dt54">
 <p><em><a href="https://www.youtube.com/watch?v=yiTqUgoWg6Q">darktable 5.4 UPDATE</a></em> -- A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:dt54" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref2:dt54" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref3:dt54" title="Jump back to footnote 3 in the text">↩</a><a class="footnote-backref" href="#fnref4:dt54" title="Jump back to footnote 3 in the text">↩</a></p>
@@ -4761,7 +4771,7 @@ Il video <em>Full b&amp;w edits in darktable for street photography</em> dimostr
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

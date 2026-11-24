@@ -4635,7 +4635,7 @@ Questo evita artefatti di sovrapposizione e garantisce transizioni fluide<sup id
 <h3 id="problema-il-color-picker-non-risponde-o-restituisce-valori-anomali">Problema: Il color picker non risponde o restituisce valori anomali<a class="headerlink" href="#problema-il-color-picker-non-risponde-o-restituisce-valori-anomali" title="Permanent link">¶</a></h3>
 <p>Il color picker richiede che il modulo <code>input color profile</code> sia impostato su <code>linear rec 2020 RGB</code> e che <code>white balance</code> sia su <code>camera reference</code>. Se si usa un profilo custom o <code>white balance</code> manuale, il picker restituisce valori non affidabili (es. <code>xyY = [0.33, 0.33, 1.0]</code> indipendentemente dalla zona selezionata). Verificare lo stato del modulo <code>input color profile</code> prima di usare il picker<sup id="fnref4:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</p>
 <h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
-<p>darktable 5.4 include 7 preset preconfigurati per <code>color calibration</code>, accessibili dal menu hamburger del modulo. I più utili per il workflow moderno sono:</p>
+<p>I preset integrati di <code>color calibration</code> sono accessibili dal menu preset del modulo:</p>
 <table>
 <thead>
 <tr>
@@ -4646,29 +4646,24 @@ Questo evita artefatti di sovrapposizione e garantisce transizioni fluide<sup id
 </thead>
 <tbody>
 <tr>
-<td><code>modern chromatic adaptation (CAT16)</code></td>
-<td>Workflow predefinito per nuovi RAW</td>
-<td>Imposta <code>illuminant = as shot</code>, <code>adaptation = CAT16</code>, <code>temperature = 0</code>, <code>gamut compression = OFF</code><sup id="fnref:presets-manual"><a class="footnote-ref" href="#fn:presets-manual">8</a></sup></td>
-</tr>
-<tr>
-<td><code>gray world auto</code></td>
-<td>Scene naturali con superfici neutre</td>
-<td>Usa <code>detect from surfaces</code>, <code>adaptation = CAT16</code>, <code>normalize channels = OFF</code><sup id="fnref2:presets-manual"><a class="footnote-ref" href="#fn:presets-manual">8</a></sup></td>
-</tr>
-<tr>
-<td><code>gray edge auto</code></td>
-<td>Architettura, prodotti, scene artificiali</td>
-<td>Usa <code>detect from edges</code>, <code>adaptation = CAT16</code>, <code>temperature = 0</code><sup id="fnref3:presets-manual"><a class="footnote-ref" href="#fn:presets-manual">8</a></sup></td>
-</tr>
-<tr>
 <td><code>basic channel mixer</code></td>
-<td>Grading creativo senza CAT</td>
-<td>Imposta <code>illuminant = same as pipeline (D50)</code>, <code>adaptation = CAT16</code>, <code>R=G=B=0.000</code><sup id="fnref4:presets-manual"><a class="footnote-ref" href="#fn:presets-manual">8</a></sup></td>
+<td>Mixer di canali senza adattamento cromatico</td>
+<td>Disattiva la CAT e usa solo le schede R/G/B</td>
 </tr>
 <tr>
-<td><code>color checker calibration</code></td>
-<td>Calibrazione con X-Rite ColorChecker</td>
-<td>Abilita <code>calibrate with a color checker</code> nella tab Channel Mixer<sup id="fnref:batch-editing"><a class="footnote-ref" href="#fn:batch-editing">9</a></sup></td>
+<td><code>monochrome \| luminance-based</code></td>
+<td>Conversione B/N neutra</td>
+<td>Scheda <em>gray</em> basata sulla luminanza</td>
+</tr>
+<tr>
+<td><code>monochrome \| ILFORD HP5+</code>, <code>\| ILFORD DELTA 100</code>, <code>\| ILFORD DELTA 400 - 3200</code>, <code>\| ILFORD FP4+</code>, <code>\| Fuji Acros 100</code></td>
+<td>Emulazione di pellicole B/N</td>
+<td>Pesi R/G/B della scheda <em>gray</em> calibrati sulla sensibilità spettrale della pellicola</td>
+</tr>
+<tr>
+<td><code>channel swap \| swap G and B</code>, <code>\| swap G and R</code>, <code>\| swap R and B</code></td>
+<td>Infrarosso, effetti creativi</td>
+<td>Scambia due canali</td>
 </tr>
 </tbody>
 </table>
@@ -4706,12 +4701,6 @@ Questo evita artefatti di sovrapposizione e garantisce transizioni fluide<sup id
 </li>
 <li id="fn:discussion-pixls-2025-LED">
 <p><em><a href="https://discuss.pixls.us/t/led-lighting-and-cat16-accuracy/24189">LED lighting and CAT16 accuracy</a></em> — PIXLS.US forum, 2025-03-12 | <code>processed/discussion-pixls-us/24189.md</code>&nbsp;<a class="footnote-backref" href="#fnref:discussion-pixls-2025-LED" title="Jump back to footnote 7 in the text">↩</a></p>
-</li>
-<li id="fn:presets-manual">
-<p><em>darktable User Manual — Presets</em>, <a href="https://docs.darktable.org/usermanual/development/en/darkroom/processing-modules/presets/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-darkroom-processing-modules-presets.md</code>&nbsp;<a class="footnote-backref" href="#fnref:presets-manual" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:presets-manual" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref3:presets-manual" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref4:presets-manual" title="Jump back to footnote 8 in the text">↩</a></p>
-</li>
-<li id="fn:batch-editing">
-<p><em>darktable User Manual — Batch-editing images</em>, <a href="https://docs.darktable.org/usermanual/development/en/guides-tutorials/batch-editing/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-guides-tutorials-batch-editing.md</code>&nbsp;<a class="footnote-backref" href="#fnref:batch-editing" title="Jump back to footnote 9 in the text">↩</a></p>
 </li>
 </ol>
 </div>

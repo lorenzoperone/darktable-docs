@@ -4587,8 +4587,8 @@
 <tbody>
 <tr>
 <td><strong>Contrast</strong></td>
-<td><code>0.10 – 5.00</code></td>
-<td><code>1.00</code></td>
+<td><code>0.10 – 10.00</code></td>
+<td><code>1.50</code></td>
 <td>Pendenza della curva nella regione centrale. Aumenta il contrasto globale senza spostare i punti di nero/bianco<sup id="fnref26:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
@@ -4611,15 +4611,15 @@
 </tr>
 <tr>
 <td><strong>Target black</strong></td>
-<td><code>0.00 – 0.10</code></td>
-<td><code>0.00</code></td>
-<td>Valore minimo di output (nero). Di solito lasciato a <code>0.00</code>. Valori &gt; <code>0.01</code> producono un effetto “faded”<sup id="fnref30:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><code>0% – 15%</code></td>
+<td><code>0.0152%</code></td>
+<td>Valore minimo di output (nero). Di solito lasciato al default. Valori più alti producono un effetto “faded”<sup id="fnref30:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
 <td><strong>Target white</strong></td>
-<td><code>0.90 – 1.10</code></td>
-<td><code>1.00</code></td>
-<td>Valore massimo di output (bianco). <code>1.00</code> = bianco puro. Valori &lt; <code>0.98</code> evitano clipping cromatico in luci intense<sup id="fnref31:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><code>20% – 1600%</code></td>
+<td><code>100%</code></td>
+<td>Valore massimo di output (bianco). <code>100%</code> = bianco puro. Valori di poco inferiori evitano clipping cromatico in luci intense<sup id="fnref31:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 </tbody>
 </table>
@@ -4725,22 +4725,22 @@
 <tr>
 <td><strong>smooth</strong></td>
 <td>Base per la maggior parte delle immagini (ritratti, paesaggi neutri)</td>
-<td>Imposta <code>Contrast = 1.00</code>, <code>Skew = 0.00</code>, <code>target white = 1.00</code>, <code>target black = 0.00</code>, e <code>primaries</code> ottimizzati per una transizione morbida<sup id="fnref38:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><code>Contrast = 1.50</code>, <code>Skew = -0.20</code>, primarie Rec2020 con attenuazione R/G/B <code>10% / 10% / 15%</code> e rotazione <code>+2° / -1° / -3°</code><sup id="fnref38:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
 </tr>
 <tr>
-<td><strong>high contrast</strong></td>
-<td>Immagini con forte impatto visivo (street photography, reportage)</td>
-<td>Imposta <code>Contrast = 1.65</code>, <code>Skew = +0.12</code>, <code>target white = 0.985</code>, <code>blue attenuation = 33%</code><sup id="fnref39:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><strong>neutral gray</strong></td>
+<td>Resa neutra con mezzitoni più chiari</td>
+<td><code>Contrast = 1.22</code>, <code>Skew = +0.65</code>, <code>preserve hue = 100%</code></td>
 </tr>
 <tr>
-<td><strong>portrait soft</strong></td>
-<td>Ritratti in luce diffusa o studio con fondale neutro</td>
-<td>Imposta <code>Contrast = 0.92</code>, <code>Skew = -0.22</code>, <code>preserve hue = 95%</code>, <code>red attenuation = 15%</code><sup id="fnref40:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><strong>ACES 100-nit like</strong></td>
+<td>Look simile alla trasformata ACES per display SDR</td>
+<td><code>Contrast = 1.60</code>, <code>Skew = -0.20</code>, <code>per channel</code>, <code>preserve hue = 0%</code></td>
 </tr>
 <tr>
-<td><strong>neon lights</strong></td>
-<td>Scene notturne con luci artificiali intense (LED, insegne)</td>
-<td>Imposta <code>Contrast = 1.20</code>, <code>Skew = +0.38</code>, <code>red attenuation = 28%</code>, <code>blue attenuation = 52%</code>, <code>recover purity = 45%</code><sup id="fnref41:sigmoid-manual"><a class="footnote-ref" href="#fn:sigmoid-manual">1</a></sup>.</td>
+<td><strong>Reinhard</strong></td>
+<td>Curva classica di Reinhard</td>
+<td><code>Contrast = 1.00</code>, <code>Skew = 0.00</code>, <code>RGB ratio</code></td>
 </tr>
 </tbody>
 </table>
@@ -4779,7 +4779,7 @@
 <hr>
 <ol>
 <li id="fn:sigmoid-manual">
-<p>darktable user manual - sigmoid, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref39:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref40:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref41:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>darktable user manual - sigmoid, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/&nbsp;<a class="footnote-backref" href="#fnref:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:sigmoid-manual" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:filmic-sigmoid-p3">
 <p>[ENG] Filmic and Sigmoid (Part 3), https://www.youtube.com/watch?v=LQHFOLAN028&nbsp;<a class="footnote-backref" href="#fnref:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref4:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref5:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref6:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref7:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref8:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref9:filmic-sigmoid-p3" title="Jump back to footnote 2 in the text">↩</a></p>
@@ -4812,7 +4812,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

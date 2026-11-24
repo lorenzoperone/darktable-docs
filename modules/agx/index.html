@@ -1817,7 +1817,7 @@
   <a href="#esempio-setup-agx-per-ritratti-ad-alta-iso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Setup AGX+ per ritratti ad alta ISO
+        Esempio: setup AgX per ritratti ad alta ISO
       
     </span>
   </a>
@@ -1842,10 +1842,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-agx-non-appare-nel-menu-dei-profili" class="md-nav__link">
+  <a href="#problema-agx-non-viene-applicato-automaticamente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: AGX+ non appare nel menu dei profili
+        Problema: AgX non viene applicato automaticamente
       
     </span>
   </a>
@@ -4840,7 +4840,7 @@
   <a href="#esempio-setup-agx-per-ritratti-ad-alta-iso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Setup AGX+ per ritratti ad alta ISO
+        Esempio: setup AgX per ritratti ad alta ISO
       
     </span>
   </a>
@@ -4865,10 +4865,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#problema-agx-non-appare-nel-menu-dei-profili" class="md-nav__link">
+  <a href="#problema-agx-non-viene-applicato-automaticamente" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Problema: AGX+ non appare nel menu dei profili
+        Problema: AgX non viene applicato automaticamente
       
     </span>
   </a>
@@ -5129,7 +5129,7 @@
 </ul>
 </div>
 <h2 id="gestione-del-colore-in-agx">Gestione del colore in AGX<a class="headerlink" href="#gestione-del-colore-in-agx" title="Permanent link">¶</a></h2>
-<p>La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda <em>Color</em> o tramite il modulo <em>Color Calibration</em> con tab <em>Primaries</em>.<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
+<p>La seconda faccia di AGX e' la gestione cromatica<sup id="fnref8:agx-guide"><a class="footnote-ref" href="#fn:agx-guide">1</a></sup><sup id="fnref:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup>, accessibile dalla scheda <em>primaries</em> del modulo stesso (non da <em>color calibration</em>, che non ha questi parametri).</p>
 <h3 id="attenuazione-delle-primarie-before-tone-mapping">Attenuazione delle primarie (Before Tone Mapping)<a class="headerlink" href="#attenuazione-delle-primarie-before-tone-mapping" title="Permanent link">¶</a></h3>
 <p>Prima della compressione tonale, puoi desaturare selettivamente i canali RGB:<sup id="fnref2:dt54-update"><a class="footnote-ref" href="#fn:dt54-update">5</a></sup></p>
 <table>
@@ -5297,7 +5297,7 @@
 <p>Per foto scattate in condizioni di scarsa luce:<sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
 <ol>
 <li><strong>Exposure</strong>: aumenta significativamente (+1.0 a +2.0 EV o piu')</li>
-<li><strong>AGX+</strong> come profilo di output (evita tonalita' magenta indesiderate)<sup id="fnref3:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
+<li><strong>AgX</strong> come tone mapper (evita tonalita' magenta indesiderate)<sup id="fnref3:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup>; il profilo colore di uscita resta sRGB</li>
 <li><strong>Black relative exposure</strong>: spingi piu' in basso (-15 a -20 EV) per pulire il rumore nelle ombre<sup id="fnref4:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></li>
 <li><strong>Shoulder power</strong>: 2.0-2.5 (proteggi le luci artificiali)</li>
 <li><strong>Toe power</strong>: 1.5-2.0 (controlla le ombre sollevate dall'esposizione)</li>
@@ -5305,7 +5305,7 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Foto ISO alti</p>
-<p>Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.<sup id="fnref6:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup></p>
+<p>Per foto ad alto ISO, AgX gestisce bene le dominanti cromatiche<sup id="fnref6:lowlight"><a class="footnote-ref" href="#fn:lowlight">2</a></sup>; non esiste una variante "AGX+" né va scelto come profilo di output: si regolano invece le primarie nella scheda <em>primaries</em>.</p>
 </div>
 <h3 id="effetto-dragan-ritratti-drammatici">Effetto Dragan (ritratti drammatici)<a class="headerlink" href="#effetto-dragan-ritratti-drammatici" title="Permanent link">¶</a></h3>
 <p>Per il look ad alto contrasto stile Andrzej Dragan:<sup id="fnref:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup></p>
@@ -5543,7 +5543,7 @@
 <td>2.50-3.50</td>
 <td>2.00-2.50</td>
 <td>1.50-2.00</td>
-<td>Usa profilo AGX+</td>
+<td>Regola le primarie</td>
 </tr>
 <tr>
 <td><strong>B/N</strong></td>
@@ -5583,15 +5583,15 @@
 3. Regola <code>pivot relative exposure = -0.00 EV</code> e <code>pivot target output = 18.00%</code><br>
 4. Aumenta <code>contrast = 3.00</code> per definizione senza alterare la curva S<br>
 5. Usa <code>blue attenuation = 16.75%</code> e <code>blue rotation = -3.0°</code> per spostare i toni fuori dal gamut<sup id="fnref2:landscape"><a class="footnote-ref" href="#fn:landscape">3</a></sup>  </p>
-<h3 id="esempio-setup-agx-per-ritratti-ad-alta-iso">Esempio: Setup AGX+ per ritratti ad alta ISO<a class="headerlink" href="#esempio-setup-agx-per-ritratti-ad-alta-iso" title="Permanent link">¶</a></h3>
+<h3 id="esempio-setup-agx-per-ritratti-ad-alta-iso">Esempio: setup AgX per ritratti ad alta ISO<a class="headerlink" href="#esempio-setup-agx-per-ritratti-ad-alta-iso" title="Permanent link">¶</a></h3>
 <p><em>Da <a href="https://www.youtube.com/watch?v=EuvG0lh8OB8">The Dragan effect in darktable</a> (00:00–01:50)</em><br>
 1. Verifica che il tone mapper sia AgX (preferenza <em>flusso di lavoro: scene-referred (AgX)</em>)<br>
 2. Imposta <code>black relative exposure = -10.00 EV</code> e <code>dynamic range scaling = +10.00%</code><br>
 3. Il tutorial (darktable 5.4) usa <code>shoulder power = 1.55</code> e <code>toe power = 1.55</code> per equilibrio tonale<br>
 4. Attiva <code>color calibration</code> → <em>CAT</em> → <code>detect from image surfaces</code> per bilanciamento preciso<sup id="fnref2:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">7</a></sup>  </p>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
-<h3 id="problema-agx-non-appare-nel-menu-dei-profili">Problema: AGX+ non appare nel menu dei profili<a class="headerlink" href="#problema-agx-non-appare-nel-menu-dei-profili" title="Permanent link">¶</a></h3>
-<p>AGX+ è disponibile solo con profili di input/output compatibili con scene-referred (non con display-referred). Verifica che <code>Preferences &gt; Processing &gt; Pixel workflow defaults</code> sia impostato su <code>scene-referred (agx)</code> e non su <code>display-referred</code>. Se il profilo non compare, reinstalla i profili ICC da <code>darktable.org/downloads</code><sup id="fnref:discussion-pixls-54755"><a class="footnote-ref" href="#fn:discussion-pixls-54755">10</a></sup>  </p>
+<h3 id="problema-agx-non-viene-applicato-automaticamente">Problema: AgX non viene applicato automaticamente<a class="headerlink" href="#problema-agx-non-viene-applicato-automaticamente" title="Permanent link">¶</a></h3>
+<p>AgX è un modulo (tone mapper), non un profilo colore: non compare nel menu dei profili di ingresso o di uscita. Per applicarlo di default, imposta <code>Preferences &gt; Processing &gt; auto-apply pixel workflow defaults</code> su <code>scene-referred (AgX)</code><sup id="fnref:discussion-pixls-54755"><a class="footnote-ref" href="#fn:discussion-pixls-54755">10</a></sup>; in alternativa attivalo a mano dal gruppo dei moduli.  </p>
 <h3 id="problema-la-curva-tonale-non-si-aggiorna-in-tempo-reale">Problema: La curva tonale non si aggiorna in tempo reale<a class="headerlink" href="#problema-la-curva-tonale-non-si-aggiorna-in-tempo-reale" title="Permanent link">¶</a></h3>
 <p>Questo accade quando OpenCL non è completamente inizializzato. Controlla i popup di avvio: l’elaborazione sarà più lenta fino al completamento dell’inizializzazione di OpenCL in background. Disabilitare temporaneamente <code>OpenCL</code> in <code>Preferences &gt; Performance</code> risolve il problema, ma riduce le prestazioni<sup id="fnref:darktable-fr-4.6"><a class="footnote-ref" href="#fn:darktable-fr-4.6">11</a></sup>  </p>
 <h3 id="problema-maschere-parametriche-non-funzionano-con-agx">Problema: Maschere parametriche non funzionano con AGX<a class="headerlink" href="#problema-maschere-parametriche-non-funzionano-con-agx" title="Permanent link">¶</a></h3>

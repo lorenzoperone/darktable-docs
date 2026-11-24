@@ -4557,7 +4557,7 @@
 <h3 id="problema-leffetto-sembra-innaturale-su-paesaggi-con-cielo-omogeneo">Problema: L’effetto sembra “innaturale” su paesaggi con cielo omogeneo<a class="headerlink" href="#problema-leffetto-sembra-innaturale-su-paesaggi-con-cielo-omogeneo" title="Permanent link">¶</a></h3>
 <p>La causa è la compressione lineare del gradiente su grandi aree a bassa frequenza, che amplifica le differenze minime tra pixel. Il manuale raccomanda esplicitamente di evitare <code>vignetting</code> in questi casi e di usare invece <code>exposure</code> con maschera ellittica e <code>tone equalizer</code> per modulare la luminosità del cielo in modo più granulare<sup id="fnref6:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup>.</p>
 <h2 id="preset-integrati">Preset integrati<a class="headerlink" href="#preset-integrati" title="Permanent link">¶</a></h2>
-<p>darktable 5.4 include tre preset preconfigurati per <code>vignetting</code>, accessibili dal menu hamburger (☰) del modulo:</p>
+<p>darktable include un solo preset integrato per <code>vignetting</code>, accessibile dal menu preset del modulo:</p>
 <table>
 <thead>
 <tr>
@@ -4568,19 +4568,9 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>subtle</strong></td>
-<td>Effetti minimi per correzione compositiva discreta</td>
-<td><code>brightness = -0.25 EV</code>, <code>fall-off radius = 0.75</code>, <code>saturation = 0%</code><sup id="fnref27:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup></td>
-</tr>
-<tr>
-<td><strong>dramatic</strong></td>
-<td>Effetto teatrale per ritratti o immagini concettuali</td>
-<td><code>brightness = -0.90 EV</code>, <code>fall-off start = 0.30</code>, <code>fall-off radius = 0.20</code><sup id="fnref28:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup></td>
-</tr>
-<tr>
-<td><strong>cinematic</strong></td>
-<td>Simulazione di rapporto d’aspetto anamorfico</td>
-<td><code>shape = 0.85</code>, <code>width/height ratio = 2.35</code>, <code>brightness = -0.65 EV</code><sup id="fnref29:vignetting-manual"><a class="footnote-ref" href="#fn:vignetting-manual">1</a></sup></td>
+<td><strong>lomo</strong></td>
+<td>Look da fotocamera giocattolo (Lomo)</td>
+<td><code>fall-off start = 40%</code>, <code>fall-off radius = 100%</code>, <code>brightness = -1.00</code>, <code>saturation = +0.50</code></td>
 </tr>
 </tbody>
 </table>
@@ -4600,7 +4590,7 @@
 <hr>
 <ol>
 <li id="fn:vignetting-manual">
-<p>darktable user manual - vignetting — https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/vignetting/&nbsp;<a class="footnote-backref" href="#fnref:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>darktable user manual - vignetting — https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/vignetting/&nbsp;<a class="footnote-backref" href="#fnref:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:vignetting-manual" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:lens-correction-manual">
 <p>darktable user manual - lens correction — https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/&nbsp;<a class="footnote-backref" href="#fnref:lens-correction-manual" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:lens-correction-manual" title="Jump back to footnote 2 in the text">↩</a></p>
@@ -4639,7 +4629,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

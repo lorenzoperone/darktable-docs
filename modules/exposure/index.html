@@ -4569,7 +4569,7 @@
 <li>Attivare la valutazione colore (<strong><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-b">B</kbd></span></strong>) per visualizzare il bordo bianco di riferimento e verificare la linearità dei toni medi<sup id="fnref3:firststeps"><a class="footnote-ref" href="#fn:firststeps">2</a></sup>.</li>
 <li>Selezionare un’area neutra ben illuminata (es. parete chiara, superficie opaca) e usare lo strumento di misurazione (<code>color picker</code> accanto allo slider <code>exposure</code>) per ottenere una lettura L*.</li>
 <li>Regolare <code>exposure</code> finché il valore L* letto nell’area target si avvicina a <strong>50.0%</strong>, ignorando ombre profonde e alte luci (gestite successivamente da <code>filmic rgb</code>, <code>tone curve</code> o <code>highlight reconstruction</code>)<sup id="fnref8:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</li>
-<li>Verificare che nessun canale RGB sia clippato: abilitare <code>clipping indicators</code> (<strong><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-o">O</kbd></span></strong>) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).</li>
+<li>Verificare che nessun canale RGB sia clippato: abilitare l'indicatore di clipping (<strong><span class="keys"><kbd class="key-o">O</kbd></span></strong>) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Evitare il black level correction per i neri</p>
@@ -4607,7 +4607,6 @@
 <h3 id="3-scorciatoie-da-tastiera">3. Scorciatoie da tastiera<a class="headerlink" href="#3-scorciatoie-da-tastiera" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong><span class="keys"><kbd class="key-e">E</kbd></span> + rotella mouse</strong>: regolazione rapida di <code>exposure</code><sup id="fnref:lowlight"><a class="footnote-ref" href="#fn:lowlight">3</a></sup></li>
-<li><strong><span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-e">E</kbd></span></strong>: attiva/disattiva il modulo <code>exposure</code></li>
 <li><strong>++ctrl+click++ sullo slider <code>exposure</code></strong>: inserimento manuale del valore (fino a ±18 EV)<sup id="fnref11:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup></li>
 <li><strong>++alt+click++ sullo slider <code>black level correction</code></strong>: reset al valore predefinito (0.0)</li>
 </ul>
@@ -4652,22 +4651,13 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 </thead>
 <tbody>
 <tr>
-<td><strong>Auto-exposure (50%)</strong></td>
-<td>Editing batch rapido di immagini con illuminazione costante</td>
-<td>Usa il 50° percentile come riferimento per il grigio medio. Non adatto a immagini high-key o low-key<sup id="fnref20:manual"><a class="footnote-ref" href="#fn:manual">1</a></sup>.</td>
-</tr>
-<tr>
-<td><strong>Expose to the right (ETTR)</strong></td>
-<td>Preparazione per <code>filmic rgb</code> o <code>AgX</code> con massima qualità tonale</td>
-<td>Imposta <code>exposure</code> in modo che il picco dell’istogramma RAW tocchi il bordo destro senza superarlo<sup id="fnref:process"><a class="footnote-ref" href="#fn:process">13</a></sup>.</td>
-</tr>
-<tr>
-<td><strong>Deflicker base</strong></td>
-<td>Time-lapse con variazioni di luce moderate</td>
-<td>Configurato con <code>area mode = Measure</code>, <code>target lightness = 50.0%</code>, <code>clipping threshold = 0.005%</code><sup id="fnref4:eo"><a class="footnote-ref" href="#fn:eo">8</a></sup>.</td>
+<td><strong>magic lantern defaults</strong></td>
+<td>File scattati con Magic Lantern (ETTR automatico)</td>
+<td>Imposta <code>mode = automatic</code> con <code>percentile = 50%</code> e <code>target level = -4 EV</code>, per riportare automaticamente l'esposizione</td>
 </tr>
 </tbody>
 </table>
+<p>È l'unico preset integrato del modulo.</p>
 <h2 id="riferimenti-visuali">Riferimenti visuali<a class="headerlink" href="#riferimenti-visuali" title="Permanent link">¶</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/ui-exposure.png" data-desc-position="bottom"><img alt="Interfaccia del modulo exposure (Esposizione) in darktable" src="../../images/ui-exposure.png"></a>
 <em>Il modulo «exposure» (Esposizione) nell'interfaccia di darktable (vista darkroom).</em></p>
@@ -4684,7 +4674,7 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 <hr>
 <ol>
 <li id="fn:manual">
-<p><em>darktable User Manual -- Exposure</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-exposure.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:manual" title="Jump back to footnote 1 in the text">↩</a></p>
+<p><em>darktable User Manual -- Exposure</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-exposure.md</code>&nbsp;<a class="footnote-backref" href="#fnref:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:manual" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:manual" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:firststeps">
 <p><em><a href="https://www.youtube.com/watch?v=P4cL61ZHqFw">darktable first steps ep01</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:firststeps" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref2:firststeps" title="Jump back to footnote 2 in the text">↩</a><a class="footnote-backref" href="#fnref3:firststeps" title="Jump back to footnote 2 in the text">↩</a></p>
@@ -4705,7 +4695,7 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 <p><em>darktable user manual — (deprecated) basic adjustments</em>, <a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/basic-adjustments/">docs.darktable.org</a>&nbsp;<a class="footnote-backref" href="#fnref:deprecated" title="Jump back to footnote 7 in the text">↩</a></p>
 </li>
 <li id="fn:eo">
-<p><em><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0?</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:eo" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:eo" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref3:eo" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref4:eo" title="Jump back to footnote 8 in the text">↩</a></p>
+<p><em><a href="https://www.youtube.com/watch?v=_EOGBmksHDw">What is new in darktable 4.0?</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:eo" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref2:eo" title="Jump back to footnote 8 in the text">↩</a><a class="footnote-backref" href="#fnref3:eo" title="Jump back to footnote 8 in the text">↩</a></p>
 </li>
 <li id="fn:wUrhoiU1bTM">
 <p><em><a href="https://www.youtube.com/watch?v=wUrhoiU1bTM">darktable masking Episode 3</a></em> — A Dabble in Photography&nbsp;<a class="footnote-backref" href="#fnref:wUrhoiU1bTM" title="Jump back to footnote 9 in the text">↩</a></p>
@@ -4718,9 +4708,6 @@ Per preparare un ritratto destinato alla stampa su carta FSC-certificata con rif
 </li>
 <li id="fn:pixls-hdr">
 <p><em>PIXLS.US — HDR Photography with Free Software</em>, <a href="https://pixls.us/articles/hdr-photography-with-free-software-luminancehdr/">pixls.us/articles/hdr-photography-with-free-software-luminancehdr/</a>&nbsp;<a class="footnote-backref" href="#fnref:pixls-hdr" title="Jump back to footnote 12 in the text">↩</a></p>
-</li>
-<li id="fn:process">
-<p><em>darktable user manual — process</em>, <a href="https://docs.darktable.org/usermanual/development/en/overview/workflow/process/">docs.darktable.org</a> | <code>processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-process.md</code>&nbsp;<a class="footnote-backref" href="#fnref:process" title="Jump back to footnote 13 in the text">↩</a></p>
 </li>
 </ol>
 </div>

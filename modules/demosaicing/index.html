@@ -4543,7 +4543,7 @@
 <p>Il modulo <code>demosaic</code> appare grigio e bloccato nella pipeline (non modificabile) in modalità <em>darkroom</em> perché è un passaggio tecnico indispensabile: senza di esso, i dati RAW rimangono una matrice di intensità monocromatiche e non possono essere interpretati come immagine RGB. Non è possibile saltarlo né bypassarlo<sup id="fnref2:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>.</p>
 </div>
 <h2 id="panoramica">Panoramica<a class="headerlink" href="#panoramica" title="Permanent link">¶</a></h2>
-<p>Il demosaicing opera immediatamente dopo <code>raw black/white point</code> e prima di <code>white balance</code>, <code>input color profile</code> e tutti i moduli creativi. La sua posizione è fissa nella <em>pixelpipe</em>, poiché lavora sui dati lineari più grezzi disponibili<sup id="fnref2:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>. Il suo compito primario è:</p>
+<p>Il demosaicing opera dopo <code>raw black/white point</code>, <code>white balance</code> e <code>highlight reconstruction</code>, e prima di <code>input color profile</code> e di tutti i moduli creativi. La sua posizione è fissa nella <em>pixelpipe</em>, poiché lavora sui dati lineari più grezzi disponibili<sup id="fnref2:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>. Il suo compito primario è:</p>
 <ol>
 <li><strong>Interpolare i valori mancanti</strong> per ogni pixel (es. un pixel verde deve stimare i valori di rosso e blu adiacenti);</li>
 <li><strong>Ridurre artefatti cromatici</strong>, come false colori (fringing) e moiré;</li>
@@ -4557,7 +4557,7 @@
 <h2 id="flusso-di-lavoro-consigliato">Flusso di lavoro consigliato<a class="headerlink" href="#flusso-di-lavoro-consigliato" title="Permanent link">¶</a></h2>
 <p>Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico della pipeline scene-referred<sup id="fnref:pipeline-beginner"><a class="footnote-ref" href="#fn:pipeline-beginner">3</a></sup>:</p>
 <pre class="mermaid"><code>flowchart TD
-    A["1. Punto nero/bianco&lt;br/&gt;RAW (fisso)"] --&gt; B["2. Demosaicizzazione&lt;br/&gt;(algoritmo + capture&lt;br/&gt;sharpen)"] --&gt; C["3. Bilanciamento&lt;br/&gt;del bianco"] --&gt; D["4. Profilo input"] --&gt; E["5. Esposizione&lt;br/&gt;(grigio medio)"]</code></pre>
+    A["1. Punto nero/bianco&lt;br/&gt;RAW (fisso)"] --&gt; B["2. Bilanciamento&lt;br/&gt;del bianco"] --&gt; C["3. Demosaicizzazione&lt;br/&gt;(algoritmo + capture&lt;br/&gt;sharpen)"] --&gt; D["4. Esposizione&lt;br/&gt;(grigio medio)"] --&gt; E["5. Profilo input"]</code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Capture sharpen va attivato <em>prima</em> del denoise</p>
 <p>Il <code>capture sharpen</code> integrato nel modulo <code>demosaic</code> agisce sui dati lineari <em>prima</em> che il rumore venga amplificato dai moduli successivi. Attivarlo qui è molto più efficace (e meno rumoroso) che usare il modulo <code>sharpen</code> o <code>diffuse or sharpen</code> in seguito<sup id="fnref5:dragan-effect"><a class="footnote-ref" href="#fn:dragan-effect">4</a></sup>.</p>
@@ -4729,8 +4729,8 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
 <p>Disabilita <code>color_smoothing</code>, riduci <code>Iterations</code> a <strong>6</strong> per <code>Markesteijn</code>, e usa <code>PPG</code> solo per anteprime rapide. Su hardware limitato, evita <code>AMaZE</code> (il più lento)<sup id="fnref9:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Verifica il risultato con zoom 100% e maschera di sovrapposizione</p>
-<p>Per valutare la qualità del demosaicing, usa <code>Ctrl+1</code> per zoomare al 100% e attiva la <strong>maschera di sovrapposizione</strong> (<code>O</code>): evidenzia i falsi colori (fringing rosso/ciano) e i bordi instabili. Se compaiono alone cromatici, prova a abilitare <code>color_smoothing</code> o passa a Markesteijn<sup id="fnref15:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
+<p class="admonition-title">Verifica il risultato con zoom 100%</p>
+<p>Per valutare la qualità del demosaicing, zooma al 100% (<code>Alt+1</code> o il menu di zoom del modulo <em>navigation</em>) e osserva i bordi: cerca falsi colori (fringing rosso/ciano) e bordi instabili. Se compaiono alone cromatici, prova a abilitare <code>color_smoothing</code> o passa a Markesteijn<sup id="fnref15:manual-demosaic"><a class="footnote-ref" href="#fn:manual-demosaic">1</a></sup>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Non combinare capture_sharpen con altri moduli di nitidezza</p>
@@ -4825,7 +4825,7 @@ Per immagini ad alto ISO o con dettagli finissimi (macro, paesaggi), <strong>Mar
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     

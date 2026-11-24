@@ -4590,9 +4590,9 @@ Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote
 <td>Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)<sup id="fnref30:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup></td>
 </tr>
 <tr>
-<td>radius</td>
-<td><code>15–45 px</code></td>
-<td>Più piccolo = dettagli più fini (pelle, tessuti); più grande = forme generali (silhouette, volumi)<sup id="fnref3:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup></td>
+<td>mid-tone range</td>
+<td><code>0.50</code> (default)</td>
+<td>Più alto = più valori trattati come mezzitoni; più basso = più effetto su luci e ombre<sup id="fnref3:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4674,7 +4674,7 @@ Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote
 </table>
 <h2 id="consigli-operativi">Consigli operativi<a class="headerlink" href="#consigli-operativi" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>ISO alto?</strong> Usa <code>denoise (profiled)</code> <em>prima</em> di <code>local contrast</code>, non dopo. Imposta <code>strength = 35–55%</code>, <code>patch-based = false</code>, <code>spatial extent = 1.2</code><sup id="fnref:manual-denoise"><a class="footnote-ref" href="#fn:manual-denoise">6</a></sup>.  </li>
+<li><strong>ISO alto?</strong> Usa <code>denoise (profiled)</code> <em>prima</em> di <code>local contrast</code>, non dopo. Regola <code>strength</code> (default 1,0) in base all’ISO<sup id="fnref:manual-denoise"><a class="footnote-ref" href="#fn:manual-denoise">6</a></sup>.  </li>
 <li><strong>Luci dure?</strong> Evita <code>fill light</code> — preferisci una maschera <code>Gradient</code> su una zona d’ombra con <code>exposure = +0.40 EV</code><sup id="fnref18:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.  </li>
 <li><strong>Sfondo caotico?</strong> Non usare <code>background blur</code>: crea artefatti. Usa invece <code>local contrast</code> con <code>shadows</code> ridotto per “appiattire” leggermente lo sfondo senza sfocarlo<sup id="fnref19:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.  </li>
 <li><strong>Velocità:</strong> Salva uno stile chiamato <code>"Street B/N Quick"</code> con i parametri base (<code>color calibration</code> in scheda <em>gray</em>, <code>local contrast</code> con <code>detail</code> aumentato) — applicalo con un click su nuove immagini<sup id="fnref20:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</li>
@@ -4702,7 +4702,7 @@ Non serve <code>dehaze</code><sup id="fnref10:street-video-1"><a class="footnote
 <h3 id="problema-color-calibration-mostra-ancora-tre-curve-rgb-dopo-aver-abilitato-gray">Problema: <code>color calibration</code> mostra ancora tre curve RGB dopo aver abilitato <code>gray</code><a class="headerlink" href="#problema-color-calibration-mostra-ancora-tre-curve-rgb-dopo-aver-abilitato-gray" title="Permanent link">¶</a></h3>
 <p>La funzione <code>gray</code> non impone una conversione monochrome se <code>normalize channels</code> è disattivato. Abilitare entrambi i parametri è obbligatorio per ottenere una singola curva Luminance. Se il comportamento persiste, controlla che l’immagine non sia già stata flaggata come monochrome tramite demosaic passthrough<sup id="fnref:manual-color-calibration"><a class="footnote-ref" href="#fn:manual-color-calibration">3</a></sup>.</p>
 <h3 id="problema-local-contrast-introduce-artefatti-ai-bordi-dei-vestiti">Problema: <code>local contrast</code> introduce artefatti ai bordi dei vestiti<a class="headerlink" href="#problema-local-contrast-introduce-artefatti-ai-bordi-dei-vestiti" title="Permanent link">¶</a></h3>
-<p>Questo accade tipicamente con <code>radius &gt; 45 px</code> su tessuti fini (lino, seta) o con <code>highlights</code> troppo alto su superfici lucide. Riduci <code>radius</code> a <code>28–32 px</code> e abbassa <code>highlights</code>; aggiungi una maschera <code>Path</code> lungo il contorno del capo per limitare l’effetto<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup>.</p>
+<p>Questo accade tipicamente con <code>detail</code> troppo alto su tessuti fini (lino, seta) o con <code>highlights</code> troppo alto su superfici lucide. Riduci <code>detail</code> e abbassa <code>highlights</code>; aggiungi una maschera <code>Path</code> lungo il contorno del capo per limitare l’effetto<sup id="fnref:manual-local-contrast"><a class="footnote-ref" href="#fn:manual-local-contrast">4</a></sup>.</p>
 <h3 id="problema-maschera-circolare-troppo-rigida-su-pelle-anziana">Problema: maschera circolare troppo rigida su pelle anziana<a class="headerlink" href="#problema-maschera-circolare-troppo-rigida-su-pelle-anziana" title="Permanent link">¶</a></h3>
 <p>L’eccessiva <code>Feather</code> (oltre 18%) causa perdita di definizione; una <code>Feather</code> troppo bassa (&lt;8%) produce transizioni nette non naturali. Il valore ottimale per pelle rugosa è <code>12–14%</code>, combinato con <code>Opacity = 72%</code> e <code>Size = 35%</code><sup id="fnref9:street-video-1"><a class="footnote-ref" href="#fn:street-video-1">1</a></sup>.</p>
 <h2 id="risorse-utili">Risorse utili<a class="headerlink" href="#risorse-utili" title="Permanent link">¶</a></h2>

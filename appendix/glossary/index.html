@@ -4154,7 +4154,7 @@
 </tr>
 <tr>
 <td><strong>Pixelpipe</strong></td>
-<td>La pipeline interna di elaborazione di darktable. Applica i moduli in ordine fisso (dal basso verso l’alto): <code>raw black/white point</code> → <code>demosaic</code> → <code>color calibration</code> → <code>exposure</code> → <code>tone mapping</code> → <code>output color profile</code>. L’ordine è critico: i moduli prima del tone mapper operano in scene-referred, quelli dopo in display-referred <sup id="fnref2:pixelpipe-order"><a class="footnote-ref" href="#fn:pixelpipe-order">9</a></sup></td>
+<td>La pipeline interna di elaborazione di darktable. Applica i moduli in ordine fisso (dal basso verso l’alto): <code>raw black/white point</code> → <code>white balance</code> → <code>demosaic</code> → <code>exposure</code> → <code>input color profile</code> → <code>color calibration</code> → <code>tone mapping</code> → <code>output color profile</code>. L’ordine è critico: i moduli prima del tone mapper operano in scene-referred, quelli dopo in display-referred <sup id="fnref2:pixelpipe-order"><a class="footnote-ref" href="#fn:pixelpipe-order">9</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/development/en/special-topics/program-internals/pixelpipe/">Manual</a></td>
 </tr>
 <tr>
@@ -4219,7 +4219,7 @@
 </tr>
 <tr>
 <td><strong>Input color profile</strong></td>
-<td>Profilo ICC che descrive lo spazio colore del sensore. Viene applicato subito dopo <code>demosaic</code>. Default: <code>embedded</code> (profilo estratto dai metadati RAW) o <code>scene-referred default</code>. Valori tipici: <code>linear_rec2020</code>, <code>linear_srgb</code>, <code>linear_acescg</code> <sup id="fnref:input-profile"><a class="footnote-ref" href="#fn:input-profile">22</a></sup></td>
+<td>Profilo ICC che descrive lo spazio colore del sensore. Viene applicato dopo <code>demosaic</code> ed <code>exposure</code>, all'ingresso della parte RGB della pipeline. Default: <code>embedded</code> (profilo estratto dai metadati RAW) o <code>scene-referred default</code>. Valori tipici: <code>linear_rec2020</code>, <code>linear_srgb</code>, <code>linear_acescg</code> <sup id="fnref:input-profile"><a class="footnote-ref" href="#fn:input-profile">22</a></sup></td>
 <td><a href="https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/input-color-profile/">Manual</a></td>
 </tr>
 <tr>
@@ -4361,7 +4361,7 @@
 </li>
 <li>
 <p><strong>Verifica il gamut prima dell’esportazione</strong><br>
-  Usa il modulo <code>gamut check</code> (disponibile come plugin esterno o tramite <code>mask manager</code>) per evidenziare aree fuori gamut sRGB. Se presenti, riduci <code>blue attenuation</code> o usa <code>color balance rgb</code> con <code>saturation</code> negativo prima del tone mapper <sup id="fnref:gamut-check"><a class="footnote-ref" href="#fn:gamut-check">32</a></sup>.</p>
+  Usa il controllo gamut integrato (<code>gamut check</code>, <code>Ctrl+G</code> in camera oscura) per evidenziare aree fuori gamut sRGB. Se presenti, riduci <code>blue attenuation</code> o usa <code>color balance rgb</code> con <code>saturation</code> negativo prima del tone mapper <sup id="fnref:gamut-check"><a class="footnote-ref" href="#fn:gamut-check">32</a></sup>.</p>
 </li>
 </ul>
 <h2 id="risorse">Risorse<a class="headerlink" href="#risorse" title="Permanent link">¶</a></h2>
