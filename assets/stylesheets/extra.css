@@ -59,3 +59,42 @@
   max-width: 100%;
   height: auto;
 }
+
+/* ── Lezioni interattive (I.6): confronto prima/dopo per passi ───────── */
+.dt-lesson { margin: 1.2rem 0; }
+.dt-lesson__bar { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .5rem; }
+.dt-lesson__step {
+  font: inherit; font-size: .72rem; cursor: pointer;
+  padding: .3rem .7rem; border-radius: 2px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background: transparent; color: var(--md-default-fg-color);
+}
+.dt-lesson__step:hover { border-color: var(--md-accent-fg-color); }
+.dt-lesson__step.is-active {
+  background: var(--md-primary-fg-color); border-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.dt-lesson__ref { font-size: .68rem; color: var(--md-default-fg-color--light); margin-bottom: .5rem; }
+.dt-lesson__ref label { margin-left: .6rem; cursor: pointer; }
+.dt-lesson__stage { position: relative; line-height: 0; user-select: none; overflow: hidden; border-radius: 2px; }
+.dt-lesson__stage img { width: 100%; height: auto; display: block; }
+.dt-lesson__before { position: absolute; inset: 0; }
+.dt-lesson__handle {
+  position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px;
+  background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.35); pointer-events: none;
+}
+.dt-lesson__handle::after {
+  content: "⟷"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 2rem; height: 2rem; line-height: 2rem; text-align: center; font-size: .9rem;
+  border-radius: 50%; background: #fff; color: #222; box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.dt-lesson__label {
+  position: absolute; top: .5rem; line-height: 1.2; font-size: .65rem;
+  padding: .2rem .45rem; border-radius: 2px; background: rgba(0,0,0,.6); color: #fff; pointer-events: none;
+}
+.dt-lesson__label--l { left: .5rem; }
+.dt-lesson__label--r { right: .5rem; }
+.dt-lesson__range {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
+  opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none;
+}

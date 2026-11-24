@@ -1,0 +1,41 @@
+{
+  "slug": "flusso-base",
+  "title": "Lezione interattiva: il flusso base in 5 passi",
+  "steps": [
+    {
+      "n": 0,
+      "title": "Apertura",
+      "text": "Il RAW come lo apre darktable con il flusso scene-referred: bilanciamento del bianco con adattamento cromatico in calibrazione colore, esposizione di partenza +0,7 EV e tone mapper AgX con il suo preset di default (qui è attiva anche la correzione obiettivo). L'immagine è corretta ma scura: i faretti sono già al limite, le ombre sono chiuse.",
+      "img": "passo-0.jpg",
+      "xmp": "passo-0.xmp"
+    },
+    {
+      "n": 1,
+      "title": "Esposizione",
+      "text": "Modulo esposizione: da +0,7 a +1,6 EV. Si imposta la luminosità dei toni medi (i rilievi) senza preoccuparsi delle luci: in scene-referred è il tone mapper (AgX) a comprimerle verso il bianco del monitor.",
+      "img": "passo-1.jpg",
+      "xmp": "passo-1.xmp"
+    },
+    {
+      "n": 2,
+      "title": "Ombre e luci",
+      "text": "Equalizzatore tonale, preset nativo «compress shadows/highlights | EIGF | medium»: alza le ombre e abbassa le alte luci per zone, con una maschera guidata che preserva il contrasto locale. È l'equivalente ragionato di Ombre/Luci di Lightroom.",
+      "img": "passo-2.jpg",
+      "xmp": "passo-2.xmp"
+    },
+    {
+      "n": 3,
+      "title": "Contrasto locale",
+      "text": "Contrasto locale, preset nativo «clarity»: aumenta il dettaglio a media scala, qui la tridimensionalità degli intagli. Corrisponde a Chiarezza/Texture di Lightroom.",
+      "img": "passo-3.jpg",
+      "xmp": "passo-3.xmp"
+    },
+    {
+      "n": 4,
+      "title": "Colore",
+      "text": "Bilanciamento colore RGB, preset nativo «basic colorfulness | vibrant colors»: aumenta vividezza, croma e saturazione lavorando in uno spazio percettivo, con un effetto più marcato sui colori poco saturi. È l'equivalente di Vividezza/Saturazione di Lightroom.",
+      "img": "passo-4.jpg",
+      "xmp": "passo-4.xmp"
+    }
+  ]
+}
