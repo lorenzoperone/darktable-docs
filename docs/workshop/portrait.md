@@ -152,23 +152,24 @@ Per ritratti a ISO elevati, bilanciare riduzione rumore e conservazione del dett
 
 | Modulo | Parametro | Valore | Note |
 |--------|-----------|--------|------|
-| Denoise (profiled) | -- | Auto | Primo passo |
-| Impulse NR | Threshold | 55-70 | Sale e pepe |
-| Luminance NR | Amount | 6 | Non esagerare |
-| Chrominance NR | Amount | 6 | Controllare l'iride |
+| Denoise (profiled) | -- | Default (profilo automatico) | Primo e spesso unico passo |
+| Denoise (profiled) | Curve luma/chroma (modalità wavelets) | Ridurre se il dettaglio si appiattisce | Non esagerare |
+| Hot pixels | Threshold | Default | Solo se compaiono pixel isolati (“sale e pepe”) |
+
+Gli strumenti Impulse/Luminance/Chrominance NR dell'articolo originale appartengono a RawTherapee: in darktable si usa *denoise (profiled)*.
 
 !!! warning "Crominanza e dettaglio dell'iride"
-    Spingere troppo la Chrominance NR fa perdere i colori bellissimi dell'iride. Controllare sempre a zoom 200% sull'occhio del soggetto.
+    Spingere troppo la riduzione del rumore cromatico fa perdere i colori bellissimi dell'iride. Controllare sempre a zoom 200% sull'occhio del soggetto.
 
 ### Passo 4 -- Contrasto locale e Color Balance
 
 **Local Contrast:**
 | Parametro | Valore |
 |-----------|--------|
-| Radius | 17 (per ritratti ravvicinati) |
-| Contrast | 0.5 |
-| Detail | 0.3 |
-| Sharpen | 0.0 |
+| Detail | Poco sopra il default (125%) |
+| Highlights | 50% (default) |
+| Shadows | 50% (default) |
+| Mid-tone range | 0.50 (default) |
 
 **Color Balance RGB:**
 - Preset: **standard** oppure **vibrant colors**
@@ -195,8 +196,8 @@ Per ritratti a ISO elevati, bilanciare riduzione rumore e conservazione del dett
 |--------|-----------------|-------|
 | **Esposizione** | Exposure ~2.30 EV, Black ~150 | Esposizione corretta |
 | **White Balance** | Spot WB su area neutra | Colori naturali |
-| **Denoise** | Profiled auto + Luminance/Chrominance 6 | Rumore controllato |
-| **Local Contrast** | Radius 17, Contrast 0.5 | Profondita' |
+| **Denoise (profiled)** | Profilo automatico | Rumore controllato |
+| **Local Contrast** | Detail poco sopra il default | Profondita' |
 | **Color Balance RGB** | Standard/vibrant, colourfulness | Colori ritratto |
 | **Color Equalizer** | Desaturazione selettiva pelle | Toni pelle naturali |
 
@@ -252,7 +253,7 @@ Una volta isolata la pelle, `color equalizer` permette di agire su **saturazione
 
 #### `retouch` — Ritocco microscopico con wavelet
 
-Per rimuovere imperfezioni senza appiattire la texture, il modulo `retouch` in modalità **wavelet decomposition** è insostituibile. Si lavora esclusivamente sulle scale più coarse (livelli 1–3 su 6), dove compaiono macchie, pori dilatati e irregolarità di tono, lasciando intatta la scala fine (capelli, peluria, rughe sottili).
+Per rimuovere imperfezioni senza appiattire la texture, il modulo `retouch` in modalità **wavelet decomposition** è insostituibile. Si lavora sulle scale in cui compaiono macchie, pori dilatati e irregolarità di tono, lasciando intatte quelle dei dettagli più fini (capelli, peluria, rughe sottili). In darktable la scala 1 è la più fine: i numeri crescono verso le strutture più grandi.
 
 | Parametro | Valore tipico | Range utile | Note |
 |-----------|-------------|-------------|------|

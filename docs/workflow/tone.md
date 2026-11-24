@@ -20,13 +20,15 @@ L’algoritmo è basato su modelli fisici della risposta cromatica della pellico
 
 ### Parametri avanzati
 
-| Parametro | Funzione | Valore tipico | Consiglio |
+I default indicati sono quelli del preset *scene-referred default* di darktable 5.6 (verificati sul codice sorgente); versioni precedenti e i tutorial video possono riportare valori diversi.
+
+| Parametro | Funzione | Default | Consiglio |
 |-----------|----------|----------------|-----------|
-| **Contrast** | Contrasto globale | `2.00–3.20` (default `2.80`) | Partire dal valore di default; valori >3.50 introducono artefatti in ombre/alti toni[^agx-guide] |
+| **Contrast** | Contrasto globale | default `3.00` | Partire dal valore di default; valori >3.50 introducono artefatti in ombre/alti toni[^agx-guide] |
 | **Pivot exposure** | Punto di contrasto massimo | `-2.00 EV` a `+2.00 EV` (default `0.00 EV`) | Usare la pipetta sul soggetto; valori positivi spostano il massimo contrasto verso le luci[^agx-guide] |
-| **Shoulder power** | Compressione alte luci | `1.20–2.00` (default `1.55`) | Aumentare per controllare picchi di luminanza senza desaturazione (es. cielo estivo)[^agx-guide] |
-| **Toe power** | Compressione ombre | `1.20–2.00` (default `1.55`) | Ridurre per preservare dettagli nelle ombre profonde (es. interni notturni)[^agx-guide] |
-| **Preserve Hue** | Fedelta' cromatica | `0–100%` (default `100%`) | Disabilitare per i tramonti[^agx-guide]; mantenere >80% per ritratti pelle[^lowlight] |
+| **Shoulder power** | Compressione alte luci | default `3.30` | Aumentare per controllare picchi di luminanza senza desaturazione (es. cielo estivo)[^agx-guide] |
+| **Toe power** | Compressione ombre | default `1.50` | Ridurre per preservare dettagli nelle ombre profonde (es. interni notturni)[^agx-guide] |
+| **Preserve Hue** | Fedelta' cromatica | `0–100%` (default `60%`) | Disabilitare per i tramonti[^agx-guide]; mantenere >80% per ritratti pelle[^lowlight] |
 | **Primaries** | Gestione gamut | Attivabile solo se `Preserve Hue < 100%` | Solo per mitigare problemi di clipping cromatico[^dt54] |
 
 !!! warning "Cursori da evitare"
@@ -159,7 +161,7 @@ Il principio è semplice: ogni pixel viene corretto in base al valore di luminos
 2. Nel modulo AgX, clicca su **auto tune levels**  
 3. Il sistema calcola automaticamente `white relative exposure = +6.50 EV` e `black relative exposure = -10.00 EV`  
 4. Controlla visivamente che le zone di massima luminanza (es. riflessi su vetro) e minima (es. ombre sotto un tavolo) conservino dettagli  
-5. Se il cielo appare troppo compresso, aumenta *shoulder power* da `1.55` a `1.75`[^dt54]
+5. Se il cielo appare troppo compresso, aumenta leggermente *shoulder power* (es. +0.2)[^dt54]
 
 ### Esempio: Correzione di clipping cromatico con Primaries
 *Da [darktable 5.4 NEW UPDATE!](https://www.youtube.com/watch?v=yiTqUgoWg6Q) (timestamp 06:28)*  
@@ -174,7 +176,7 @@ Il principio è semplice: ogni pixel viene corretto in base al valore di luminos
 ### Problema: La curva tonale mostra una porzione arancione anche con parametri moderati
 Questo indica che la curva sta entrando in una regione non invertibile (overshoot). Riduci *latitude* o aumenta *shoulder power* per ristabilire la forma a S. Se persiste, modifica *curve gamma* a `0.95` per riequilibrare la transizione.[^agx-guide]
 
-### Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto a 2.80
+### Problema: Dopo aver attivato AgX, l’immagine appare troppo "piatta" nonostante il contrasto di default
 Verifica che il modulo *exposure* sia stato usato per posizionare correttamente il grigio medio prima di AgX. Un valore errato di *exposure* (es. `-0.80 EV`) può annullare l’effetto del contrasto. Riporta *exposure* a `0.00 EV` e regola nuovamente con la pipetta su una zona neutra.[^dt54]
 
 ### Problema: Il modulo Sigmoid produce artefatti sui capelli o sulle texture fini

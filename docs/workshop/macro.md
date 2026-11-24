@@ -25,8 +25,8 @@ Ogni fase opera su dati *scene-referred*, senza conversione prematura in output-
 
 Prima di aprire la *Camera Oscura*, attiva **Focus Peaking** in modalità *lighttable* per identificare l’immagine campione della sequenza di focus stacking:
 
-- Premi `P` per abilitare il focus peaking  
-- Regola la sensibilità (`Shift + P`) fino a quando i bordi nitidi (es. contorno di un petalo, antenne di un insetto) appaiono con un contorno rosso fluoresccente  
+- Attiva il focus peaking con la sua icona (disponibile in *lighttable* e in *camera oscura*)  
+- I bordi nitidi (es. contorno di un petalo, antenne di un insetto) vengono evidenziati con una mappa a colori: giallo (molto nitido), verde e blu  
 - Seleziona l’immagine con il massimo dettaglio nel punto di interesse (non necessariamente quella più centrale)  
 
 !!! info "Focus peaking è essenziale per macro"
@@ -75,13 +75,13 @@ La chiarezza globale appiattisce i dettagli. Usa `local contrast` con maschere p
   - `min`: `0.35` (zone medio-chiare: venature, polline)  
   - `max`: `0.95` (zone molto luminose: riflessi, gocce)  
 - Parametri:  
-  - `clarity`: `22%` (valore ottimale per dettagli senza “halo”)  
-  - `clarity in highlights`: `38%` (per far emergere i riflessi senza bruciare)  
-  - `clarity in shadows`: `8%` (minimo, per non esaltare il rumore nelle ombre)  
+  - `detail`: aumentare moderatamente (valori più alti = più contrasto locale; eccedere crea “halo”)  
+  - `highlights`: regolare per far emergere i riflessi senza bruciarli  
+  - `shadows`: tenere basso, per non esaltare il rumore nelle ombre  
 
 ### Passo 5: Rifinitura finale
 
-- **Denoise**: usa `denoise (profiled)` → `strength`: `12%`, `spatial extent`: `1.2`, `range extent`: `0.8` — sufficiente per ISO 400–800 tipici della macro su treppiede  
+- **Denoise**: usa `denoise (profiled)` → `strength` bassa, modalità `wavelets` (default) — sufficiente per ISO 400–800 tipici della macro su treppiede  
 - **Vignettatura**: `vignetting` → `strength`: `-18%`, `scale`: `0.85` — per guidare l’occhio verso il soggetto centrale  
 - **Cornice**: `watermark` → `opacity`: `12%`, `size`: `0.5%`, `font`: `DejaVu Sans` — discreto e leggibile anche in stampa 300 dpi  
 
@@ -92,7 +92,7 @@ La chiarezza globale appiattisce i dettagli. Usa `local contrast` con maschere p
 | `exposure` | `spot exposure mapping` | attivo, `lightness target = 52.9%` | Garantisce coerenza tonale tra frame dello stacking[^focus-stacking-video] |
 | `color calibration` | `spot color mapping` | `hue_target = 305.2°`, `chroma_target = 53.7%` | Stabilizza i colori su superfici microscopiche, dove la dominante cambia con l’angolo di luce[^dt40-update] |
 | `highlight reconstruction` | `method` | `guided laplacians` | Ricostruisce riflessi senza perdita di texture[^dt40-features] |
-| `local contrast` | `clarity in highlights` | `38%` | Esalta i dettagli nei punti di massima luminosità senza clipping[^focus-stacking-video] |
+| `local contrast` | `highlights` | da regolare a vista | Esalta i dettagli nei punti di massima luminosità senza clipping[^focus-stacking-video] |
 | `denoise (profiled)` | `strength` | `12%` | Sufficiente per sensori moderni a basso ISO, evita “plastic look” sui dettagli fini[^dt54-manual] |
 
 ## Esempio: Calibrazione cromatica per superfici traslucide
@@ -104,7 +104,7 @@ La chiarezza globale appiattisce i dettagli. Usa `local contrast` con maschere p
    - `input R`: `−0.124` (riduce dominante rossa su petali sottili)  
    - `input G`: `+0.082` (migliora resa della clorofilla in venature)  
    - `input B`: `−0.037` (mitiga birifrangenza blu su superfici umide)  
-4. Attiva `output color profile`: `filmic rgb – scene-referred default`  
+4. Usa `filmic rgb` come tone mapper (preferenza *scene-referred (filmic)*); il profilo colore di uscita resta sRGB  
 5. Conferma con `spot color mapping` su un’area di riferimento (es. stelo verde) con `lightness_target = 51.2%`, `chroma_target = 47.5%`  
 
 ## Esempio: Mascheratura avanzata per dettagli fini
@@ -116,7 +116,7 @@ La chiarezza globale appiattisce i dettagli. Usa `local contrast` con maschere p
    - `feathering radius`: `12 px` (allinea la maschera ai bordi reali usando `input before blur`)  
    - `blurring radius`: `3 px` (evita transizioni troppo dure)  
    - `mask opacity`: `92%` (conserva il 100% dell’effetto sul bordo, attenua leggermente il centro)  
-4. Applica `clarity in highlights = 41%` solo su quel tracciato  
+4. Applica `local contrast` con `highlights` aumentato solo su quel tracciato  
 5. Usa `mask contrast = +0.25` per aumentare la definizione del gradiente interno della maschera  
 
 ## Domande frequenti
@@ -128,7 +128,7 @@ Quando si applica `highlight reconstruction` su superfici altamente riflettenti 
 In macro, il campionamento di `spot color mapping` su aree con bokeh pronunciato genera errori di stima della luminanza cromatica. Si risolve impostando `feathering guide` su `input after blur` nella maschera associata al modulo `color calibration`, e riducendo `feathering radius` a `8 px`. Ciò impedisce alla maschera di “cavalcare” i gradienti cromatici del bokeh[^mask-refinement].
 
 ### Problema: Local contrast introduce rumore nelle ombre di superfici pelose
-Con `clarity in shadows > 10%`, i peli fini (es. su fiori o insetti) mostrano granularità artificiale. La correzione è applicare `local contrast` con maschera parametrica `L` impostata su `min = 0.02`, `max = 0.18`, e `clarity in shadows = 4%`, seguita da `denoise (profiled)` con `strength = 7%` applicato *solo* su quella stessa maschera[^dt54-manual].
+Con `shadows` troppo alto in `local contrast`, i peli fini (es. su fiori o insetti) mostrano granularità artificiale. La correzione è applicare `local contrast` con maschera parametrica `L` impostata su `min = 0.02`, `max = 0.18`, e `shadows` più basso, seguita da `denoise (profiled)` con `strength = 7%` applicato *solo* su quella stessa maschera[^dt54-manual].
 
 ## Rifinitura con Filmic RGB per macro
 
@@ -139,8 +139,8 @@ Per immagini macro con elevata gamma dinamica (es. gocce d’acqua su fondo nero
   - `white relative exposure`: `3.200 EV` (valore ottimale per riflessi su superfici lisce, misurato con pipetta su goccia)  
   - `black relative exposure`: `−6.800 EV` (estende la profondità delle ombre senza introdurre rumore)  
 - Nella scheda *Reconstruct*:  
-  - `reconstruct mode`: `clip and blend`  
-  - `reconstruction strength`: `0.35` (valore conservativo per evitare “halo” su bordi netti)  
+  - `threshold`: abbassare finché la maschera di ricostruzione copre solo i riflessi bruciati  
+  - `transition`: regolare per evitare “halo” su bordi netti  
 - Nella scheda *Look*:  
   - `contrast`: `1.30`  
   - `latitude`: `82%`  
@@ -155,18 +155,8 @@ Per oggetti con geometrie complesse (es. ali di farfalla, peli di api), le masch
 
 - Usare `drawn mask` con `feathering guide = input before blur` e `feathering radius = 24 px`  
 - Attivare `details threshold = +12` nella scheda *Refinement*: questo esclude dalle aree mascherate le zone con bassa struttura (es. sfondo omogeneo), concentrandosi esclusivamente su dettagli con alta frequenza spaziale[^mask-refinement].  
-- Applicare `local contrast` con `clarity = 28%`, `clarity in highlights = 45%`, `clarity in shadows = 3%`  
+- Applicare `local contrast` aumentando `detail` e `highlights`, tenendo basso `shadows`  
 - Usare `mask contrast = +0.40` per accentuare la transizione tra dettaglio e sfondo  
-
-## Preset built-in per macro
-
-darktable 5.4 include preset preconfigurati per macro nel modulo `color calibration`, accessibili dal menu a tendina *Presets*:
-
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| `macro: flower translucence` | Su petali sottili con retroilluminazione | Bilancia R/G/B per massimizzare la resa della clorofilla e minimizzare la dominante rossa[^dt54-manual] |
-| `macro: insect exoskeleton` | Su carapaci lucidi con riflessi speculati | Riduce leggermente la saturazione nei toni arancio/verde per evitare “over-saturation” dei pigmenti chitinici[^dt54-manual] |
-| `macro: water droplet` | Su gocce d’acqua su superfici vegetali | Aumenta la luminanza del canale blu (+0.061) per migliorare la resa della birifrangenza[^dt54-manual] |
 
 ## Consigli avanzati
 

@@ -10,12 +10,12 @@ Immagine scattata con Fujifilm X-Pro3, 35mm, f/1.8, 1/4000s, ISO 160. Il RAW app
 
 ## Passo 1 -- Correzioni di base
 
-**Orientation:**
+**Rotate and perspective** (o angolo di **crop**):
 | Parametro | Valore |
 |-----------|--------|
-| Auto | yes |
+| Rotation | Secondo l'orizzonte (clic destro e trascina lungo l'orizzonte) |
 
-Allineare l'orizzonte come primo passo, prima di qualsiasi altra correzione.
+Allineare l'orizzonte come primo passo, prima di qualsiasi altra correzione. Il modulo *orientation* serve solo per rotazioni di 90° e ribaltamenti, non per raddrizzare l'orizzonte.
 
 **Sigmoid** (tone mapper scelto per questo paesaggio):
 | Parametro | Valore |
@@ -69,7 +69,7 @@ Affinare la selezione con parametri cromatici:
 | Input B | 1.0 |
 
 !!! info "Maschera esclusiva"
-    La combinazione **exclusive** tra maschera disegnata e parametrica rimuove dalla selezione le aree che soddisfano entrambi i criteri — utile per escludere il cielo che potrebbe essere catturato dalla maschera disegnata.
+    La combinazione **exclusive** moltiplica maschera disegnata e parametrica: resta selezionata solo l'area che soddisfa entrambi i criteri (intersezione) — utile per escludere il cielo che potrebbe essere catturato dalla maschera disegnata.
 
 ## Passo 3 -- Applicare la maschera al Color Equalizer
 
@@ -178,7 +178,7 @@ Applicare la nitidezza come ultimo passo, solo se necessario:
 
 | Modulo | Parametri chiave | Scopo |
 |--------|-----------------|-------|
-| **Orientation** | Auto | Allineare orizzonte |
+| **Rotate and perspective** | Rotazione sull'orizzonte | Allineare orizzonte |
 | **Sigmoid** | Contrast 1.5, Preserve hue 100% | Tone mapping |
 | **Exposure** (tree highlights) | Contenitore maschera, exposure 0 | Maschera combinata albero |
 | **Exposure** (tree global) | 2 shapes, gradiente diagonale | Maschera globale albero |
@@ -202,7 +202,7 @@ Applicare la nitidezza come ultimo passo, solo se necessario:
 1. Creare un nuovo modulo **Esposizione**, rinominarlo `"sky JzCzHz"`  
 2. Attivare una **maschera parametrica**, selezionare `input = Jz`  
 3. Impostare i valori: `Jz min = 160`, `Jz max = 280`, `Cz min = 0`, `Cz max = 120`  
-4. Attivare `combine masks = exclusive` e aggiungere una maschera disegnata per escludere il sole e le nubi più dense  
+4. Attivare `combine masks = exclusive` e aggiungere una maschera disegnata a polarità invertita per escludere il sole e le nubi più dense  
 5. Applicare `exposure = +0.312 EV`, `contrast = +21.7%`, `opacity = 78%`  
 6. Riutilizzare la stessa maschera come **raster mask** in **Color Balance RGB**, con `highlights hue = 32° (giallo chiaro)` e `chroma = +18%`[^video-3mdy]  
 
@@ -212,7 +212,7 @@ Applicare la nitidezza come ultimo passo, solo se necessario:
 2. Impostare `white relative exposure = +4.72 EV` per espandere i dettagli nelle alte luci nuvolose  
 3. Impostare `black relative exposure = -13.34 EV` per illuminare le ombre senza perdere struttura  
 4. Nella tab `look`, impostare `contrast = 1.22`, `latitude = 92%`, `shadows ↔ highlights balance = +0.15`  
-5. Attivare `highlight reconstruction = guided filter`, `strength = 0.45`, `iterations = 2`  
+5. Nella tab `reconstruct`, regolare `threshold` e `transition` per ricostruire le alte luci bruciate delle nuvole  
 6. Usare una **maschera raster** derivata da un modulo Exposure con `input = Jz/Cz/hz` per limitare l’effetto alle sole zone nuvolose[^video-5p0y-filmic]  
 
 ## Domande frequenti  

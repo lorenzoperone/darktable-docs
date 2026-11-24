@@ -156,7 +156,7 @@ Il modulo include un sistema di protezione automatica del gamut:
 ## Domande frequenti
 
 ### Problema: `global power` genera clipping asimmetrico nelle luci  
-Se `global power` viene applicato senza regolare `white fulcrum`, il segnale viene normalizzato rispetto a un valore errato (default 1.0 EV), causando compressioni non bilanciate. La soluzione è usare la pipetta accanto a `white fulcrum` per selezionare una zona chiara ma non bruciata, oppure impostare manualmente `white fulcrum = 4.2 EV` per una scena con sole diretto [^dt48-color-balance-rgb].
+Se `global power` viene applicato senza regolare `white fulcrum`, il segnale viene normalizzato rispetto a un valore errato (default 0 EV), causando compressioni non bilanciate. La soluzione è usare la pipetta accanto a `white fulcrum` per selezionare una zona chiara ma non bruciata, oppure impostare manualmente `white fulcrum = 4.2 EV` per una scena con sole diretto [^dt48-color-balance-rgb].
 
 ### Problema: `hue shift` non sembra avere effetto su immagini in B/N  
 Questo avviene perché `hue shift` opera su coordinate cromatiche (CIE u′v′ o JzAzBz), che richiedono almeno una minima quantità di croma per essere visibili. Per immagini monocromatiche, prima applica `global chroma = +3%` per introdurre una base di croma manipolabile, quindi `hue shift` [^f9szYMJ9wYo-0545].

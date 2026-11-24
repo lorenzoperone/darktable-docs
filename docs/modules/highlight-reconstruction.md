@@ -78,7 +78,7 @@ Questo metodo richiede regolazioni precise per bilanciare qualità e prestazioni
 | Parametro | Funzione | Valore tipico | Fonte |
 |-----------|----------|----------------|-------|
 | **noise level** | Maschera la differenza di texture tra zona ricostruita e originale. | `0.03`–`0.08` (ISO medio-alto) | [^dt48-highlight] |
-| **iterations** | Numero di passaggi per affinare la propagazione del gradiente. | `3`–`5` (default `3`) | [^dt48-highlight] |
+| **iterations** | Numero di passaggi per affinare la propagazione del gradiente. | `1`–`256` (default `30`) | [^dt48-highlight] |
 | **inpaint a flat color** | “Booster” per rimuovere magenta in grandi aree. | `0%` (disattivato di default); `20%`–`40%` solo se necessario | [^dt48-highlight] |
 | **diameter of the reconstruction** | Dimensione massima della scala usata. | `256` px (per aree <128 px); `512` px (massimo raccomandato) | [^dt48-highlight] |
 

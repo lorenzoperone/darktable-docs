@@ -29,15 +29,15 @@ Configurare una scorciatoia da tastiera per l'esposizione: premere `E` per attiv
 
 ### Passo 2 — Pipeline con AGX
 
-Per le foto a luci miste, **AGX+** è preferibile per evitare tonalità magenta indesiderate:
+Per le foto a luci miste, **AgX** come tone mapper è preferibile per evitare tonalità magenta indesiderate:
 
 | Parametro | Valore |
 |-----------|--------|
-| Output color profile | **AgX+** scene-referred default |
-| Input color profile | scene-referred default |
+| Tone mapper | **AgX** (preferenza *flusso di lavoro: scene-referred (AgX)*) |
+| Profilo colore di uscita | sRGB (default) |
 
-!!! info "Perché AGX+ per il lowlight"
-    AGX+ gestisce meglio i colori saturi (come le luci viola di un palco) senza generare blocchi di colore innaturali. Il profilo AgX+ è specificamente ottimizzato per scene con colori dominanti forti[^agx-plus-optimization].
+!!! info "Perché AgX per il lowlight"
+    AgX gestisce meglio i colori saturi (come le luci viola di un palco) senza generare blocchi di colore innaturali[^agx-plus-optimization].
 
 ### Passo 3 — AGX avanzato: controllo tonale
 
@@ -64,11 +64,11 @@ Per le foto a luci miste, **AGX+** è preferibile per evitare tonalità magenta 
 | Toe power | 2.37 | Approfondisce le ombre |
 | Curve gamma | 2.20 | Default |
 
-### Passo 4 — Calibrazione colore: Primaries
+### Passo 4 — AgX: sezione primaries
 
-Per recuperare vivacità cromatica dopo AGX:
+Per recuperare vivacità cromatica, si regolano le primarie direttamente nel modulo AgX (non in color calibration, che non ha questi parametri):
 
-**Color Calibration (tab Primaries):**
+**AgX (sezione *primaries*):**
 | Parametro | Valore |
 |-----------|--------|
 | Red attenuation | 10.00% |
@@ -123,8 +123,8 @@ Verificare la presenza di dati nelle alte luci **prima** di aumentare l'esposizi
 
 | Parametro | Valore |
 |-----------|--------|
-| Output color profile | Filmic RGB, scene-referred default |
-| Input color profile | scene-referred default |
+| Tone mapper | Filmic RGB (preferenza *flusso di lavoro: scene-referred (filmic)*) |
+| Profilo colore di uscita | sRGB (default) |
 | Denoise | Profiled |
 | Highlight reconstruction | Disabled |
 | White balance | As shot |
@@ -215,9 +215,9 @@ Rimuovere elementi distraenti con lo strumento di clonazione/repair. Poi:
 | Modulo | Parametri chiave | Scopo |
 |--------|-----------------|-------|
 | **Exposure** | +1.000 EV (poi aumentare) | Luminosità base |
-| **AGX+** | White 6.5 EV, Black -10 EV, Contrast 2.80 | Tone mapping, no magenta |
+| **AgX** | White 6.5 EV, Black -10 EV, Contrast 2.80 | Tone mapping, no magenta |
 | **AGX (avanzati)** | Shoulder start 17.54%, Toe 2.37 | Contrasto controllato |
-| **Color Calibration** (Primaries) | Attenuazione R 10%, G 10%, B 15% | Vivacità cromatica |
+| **AgX** (primaries) | Attenuazione R 10%, G 10%, B 15% | Vivacità cromatica |
 | **Color Equalizer** | Shadows -8%, Mids -6%, Highlights +12% | Contrasto e dettagli volti |
 | **Color Balance RGB** | Brilliance per zone | Controllo spill |
 
@@ -235,11 +235,11 @@ Rimuovere elementi distraenti con lo strumento di clonazione/repair. Poi:
 
 ## Principi chiave per il lowlight
 
-1. **AGX+ per colori dominanti forti** — evita i blocchi di colore innaturali  
+1. **AgX per colori dominanti forti** — evita i blocchi di colore innaturali  
 2. **Shoulder/Toe al posto del contrasto** — controllo separato di luci e ombre  
 3. **Maschere inverse** — cielo e primo piano gestiti separatamente  
 4. **Snapshot ad ogni passo** — fondamentale per non perdere dettagli sui volti  
-5. **Primaries prima del tone mapping** — attenuare i colori saturi PRIMA della compressione tonale  
+5. **Primaries di AgX** — attenuare i colori saturi PRIMA della compressione tonale (AgX lo fa internamente, prima della curva)  
 
 ---
 
@@ -290,7 +290,7 @@ Il modulo **raw denoise** opera direttamente sui dati RAW *prima* del demosaic, 
 
 ### Workflow integrato (concerto ISO 2000)
 
-1. Attivare `raw denoise` subito dopo `demosaic` (in posizione 3–4 nella pipeline).
+1. Attivare `raw denoise`: lavora sui dati raw, prima del `demosaic` (la posizione nella pipeline è fissa).
 2. Impostare `noise threshold = 0.320`.
 3. Regolare la curva:  
    - Coarse point: 75%  
@@ -327,7 +327,7 @@ Questo è il modulo principale per la riduzione del rumore in condizioni lowligh
 ### Esempio: workflow concerti (Fujifilm X-T2, ISO 2000)
 
 *Da [ENG] Darktable First steps EP06](https://www.youtube.com/watch?v=iPjlgyrKqBY) (timestamp 03:00–07:00)*  
-1. Attivare `denoise (profiled)` in posizione 5–6 della pipeline, dopo `exposure` e prima di `color calibration`.  
+1. Attivare `denoise (profiled)`: nella pipeline si trova subito dopo il `demosaic`, prima di `exposure` e di `color calibration`.  
 2. Selezionare `mode = wavelets` → `Y0U0V0 color mode`.  
 3. Regolare le curve:  
    - `Y0` (luminanza): punto sinistro (coarse) a 85%, centro (mid) a 70%, destro (fine) a 35%.  
@@ -365,7 +365,7 @@ Progettato per astrofotografia, questo modulo è efficace anche su immagini lowl
 - Su immagini con cielo stellato: permette di preservare le stelle come punti luminosi senza “smussarle”
 
 !!! warning "Ordine critico nella pipeline"
-    `astrophoto denoise` deve essere inserito **dopo** `exposure`, `filmic rgb` e `color calibration`, ma **prima** di `sharpen`, `local contrast` e `bloom`. Se posizionato troppo presto, interferisce con la compressione tonale; troppo tardi, amplifica artefatti[^astrophoto-pipeline-order].
+    Nella pipeline `astrophoto denoise`[^astrophoto-pipeline-order] si trova **dopo** `exposure` e `color calibration`, ma **prima** del tone mapper (`filmic rgb`/`sigmoid`/`AgX`), di `sharpen` e di `local contrast`.
 
 ---
 

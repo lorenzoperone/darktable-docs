@@ -38,7 +38,7 @@ Il primo passo pratico in AGX e' quasi sempre il pulsante **Auto Tune Levels**:[
 
 Il parametro **Contrast** controlla la pendenza della curva S globale:[^agx-guide]
 
-- **Default**: ~2.80
+- **Default**: 3.00 in darktable 5.6 (i tutorial su darktable 5.4 partono da 2.80)
 - **Aumenta** per piu' impatto visivo (tipicamente 3.0-4.5)
 - **Riduci** per scene gia' contrastate o per un look piu' morbido[^agx-guide]
 
@@ -66,9 +66,9 @@ Questi due parametri controllano separatamente le estremita' della curva:[^agx-g
 | **Dynamic range scaling** | -50% - +50% | +10.00% | Scala simmetricamente il range dinamico calcolato. Utile come margine di sicurezza per luminanze estreme.[^dt54-update] |
 | **Pivot relative exposure** | Variabile | +0.00 EV | Punto di massimo contrasto sulla curva. Spostalo sulla zona dell'immagine che vuoi sia piu' nitida.[^agx-guide] |
 | **Pivot target output** | 0% - 50% | 18.00% | Luminanza di output del pivot. 18% corrisponde al grigio medio (riflettanza neutra).[^agx-guide] |
-| **Contrast** | 1.0 - 5.0 | 2.80 | Pendenza della curva S. Controlla il contrasto globale.[^agx-guide] |
-| **Shoulder power** | 1.0 - 5.0 | 1.55 | Controllo della compressione nelle alte luci.[^agx-guide] |
-| **Toe power** | 1.0 - 5.0 | 1.55 | Controllo della compressione nelle ombre.[^agx-guide] |
+| **Contrast** | 1.0 - 5.0 | 3.00 | Pendenza della curva S. Controlla il contrasto globale.[^agx-guide] |
+| **Shoulder power** | 1.0 - 5.0 | 3.30 | Controllo della compressione nelle alte luci.[^agx-guide] |
+| **Toe power** | 1.0 - 5.0 | 1.50 | Controllo della compressione nelle ombre.[^agx-guide] |
 
 ## Parametri avanzati della curva
 
@@ -304,9 +304,12 @@ I "Notorious 6" sono sei problemi noti dei tone mapper scene-referred (in partic
 | **Scroll del mouse** su un modulo | Regola il primo parametro visibile |
 | **Ctrl + click destro** su uno slider | Reset del parametro al valore default |
 | **Click destro** su slider di tonalità | Apre la ruota cromatica visuale[^dt54-update] |
-| **Cmd/Ctrl + B** | Mostra bordo bianco di riferimento per valutare l'esposizione[^agx-guide] |
+| **Cmd/Ctrl + B** | Attiva la modalità *valutazione colore* (cornice grigia e bianca di riferimento) per giudicare luminosità e colore[^agx-guide] |
 
 ## Parametri di riferimento rapido
+
+!!! note "Versione"
+    Valori tratti da tutorial su darktable 5.4, quando i default erano contrast 2.80 e toe/shoulder power 1.55. In darktable 5.6 i default sono contrast 3.00, toe power 1.50, shoulder power 3.30: usa la tabella come direzione (più o meno contrasto/compressione), non come valori assoluti.
 
 | Scenario | Contrast | Shoulder | Toe | Note |
 |----------|----------|----------|-----|------|
@@ -345,9 +348,9 @@ In AGX, quando la curva tonale mostra una porzione **arancione** nelle estremita
 
 ### Esempio: Setup AGX+ per ritratti ad alta ISO  
 *Da [The Dragan effect in darktable](https://www.youtube.com/watch?v=EuvG0lh8OB8) (00:00–01:50)*  
-1. Seleziona `output color profile = AgX+ scene-referred default`  
+1. Verifica che il tone mapper sia AgX (preferenza *flusso di lavoro: scene-referred (AgX)*)  
 2. Imposta `black relative exposure = -10.00 EV` e `dynamic range scaling = +10.00%`  
-3. Usa `shoulder power = 1.55` e `toe power = 1.55` per equilibrio tonale  
+3. Il tutorial (darktable 5.4) usa `shoulder power = 1.55` e `toe power = 1.55` per equilibrio tonale  
 4. Attiva `color calibration` → *CAT* → `detect from image surfaces` per bilanciamento preciso[^dragan-effect]  
 
 ## Domande frequenti

@@ -46,7 +46,7 @@ Attiva il modulo `soften` e imposta:
 
 ### Passo 3: Affinamento finale
 - Aggiungi `AGX`: usa **Contrast = 2.20–2.60** (non >3.00, altrimenti il glow diventa artificiale)[^orton-video].
-- Usa `color balance rgb`: attenua leggermente il blu (**Blue attenuation = 20%**) prima di AGX per evitare clipping nei cieli[^dt54-update].
+- Attenua leggermente il blu nella sezione *primaries* di `AGX` (**blue attenuation**) per evitare clipping nei cieli[^dt54-update].
 - Applica `vignetting`: bordo scuro sottile (**strength = -15%**, **radius = 70%**) per focalizzare l’attenzione sul centro[^lomos].
 
 ---
@@ -59,7 +59,7 @@ Il Dragan richiede 3 livelli: **originale**, **sfocato invertito**, **fuso in Mu
 1. Clicca su **Duplicate** (icona copia nel pannello sinistro) → crea una copia.
 2. Nella copia, applica:
    - `blur`: **blur_type = gaussian**, **blur_radius = 18–22 px** (valore dipende dalla risoluzione: 20 px per 6000px larghezza)[^dragon-video].
-   - `invert`: attiva il modulo `invert` (non presente di default: abilitalo in *preferences > modules > invert*).
+   - `invert`: cerca il modulo `invert` con la ricerca moduli (nota: lavora sui dati raw, all'inizio della pipeline).
 3. Torna all’immagine originale e attiva `composite`.
 
 ### Passo 2: Configurazione `composite`
@@ -73,10 +73,9 @@ Nel modulo `composite`, imposta:
 
 ### Passo 3: Rafforzamento del contrasto
 - Aggiungi `sigmoid`: attivalo *dopo* `composite`.
-  - **contrast** = `1.80–2.20`  
-  - **midtones** = `0.45–0.55`  
-  - **black point** = `-0.10 EV`, **white point** = `+0.05 EV`  
-  *(Questi valori evitano il clipping e preservano il dettaglio nei neri profondi)*[^dragon-video].
+  - **contrast** = `1.80–2.20` (default 1,5)  
+  - **skew** = `0.00` (regolare per spostare il contrasto verso ombre o luci)  
+  - **target black** / **target white** = lasciare ai default[^dragon-video].
 
 - Usa `local contrast`: applica una maschera sul volto/soggetto con **detail = 110–130%**, **highlights = 60%**, **shadows = 40%** per enfatizzare texture senza bruciare le luci[^dragon-video].
 
@@ -90,7 +89,7 @@ Nel modulo `composite`, imposta:
 | **Orton** | `soften` | `brightness` | `+1.00 EV` | Se l’immagine appare troppo lavata, riduci a `+0.70 EV` e aumenta `saturation`[^soften-manual]. |
 | **Dragan** | `blur` | `blur_radius` | `20 px` | Su immagini <4000px, usa `12–15 px`. Troppo poco → nessun effetto; troppo → artefatti da aliasing[^dragon-video]. |
 | **Dragan** | `composite` | `opacity` | `90%` | Valori <80% indeboliscono il dramma; >95% appiattiscono il volume tonale[^dragon-video]. |
-| **Entrambi** | `AGX` | `Shoulder power` | `1.20–1.40` | Riduci rispetto al default (1.55) per preservare i dettagli nelle luci glow/drammatiche[^agx-guide]. |
+| **Entrambi** | `AGX` | `Shoulder power` | `1.20–1.40` | Riduci rispetto al default per preservare i dettagli nelle luci glow/drammatiche[^agx-guide]. |
 
 ---
 
@@ -100,7 +99,7 @@ Nel modulo `composite`, imposta:
 *Da [The Orton effect in darktable](https://www.youtube.com/watch?v=OF7ZcDPQfeM) (03:30–07:40)*  
 1. Duplica l’immagine → nella copia applica `blur` con **blur_radius = 20 px**, **blur_type = gaussian**.  
 2. Attiva `composite` sull’originale e imposta **blend mode = Multiply**, **opacity = 90%**, **mask = global**.  
-3. Aggiungi `sigmoid` dopo `composite`: **contrast = 1.90**, **midtones = 0.50**, **black point = -0.08 EV**, **white point = +0.03 EV**[^orton-video].  
+3. Aggiungi `sigmoid` dopo `composite`: **contrast = 1.90**, **skew** e **target black/white** ai default[^orton-video].  
 4. Usa `color balance rgb`: attiva **shadows lift** con **red = 1.05**, **green = 0.98**, **blue = 0.92**, per riscaldare le ombre senza alterare i toni medi[^orton-video].  
 
 ### Esempio: Dragan con doppia maschera locale

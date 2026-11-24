@@ -64,7 +64,7 @@ Attiva `sigmoid`, poi imposta:
 | `color_processing` | `per channel` | Mantiene la separazione cromatica durante la compressione[^sigmoid-v5-video]. |
 | `preserve_hue` | `100.00%` | Impedisce spostamenti indesiderati della tinta nelle transizioni tonali[^sigmoid-v5-video]. |
 
-⚠️ **Attenzione**: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), vai alla scheda *Color* e abbassa `red attenuation` a `15–25%`[^color-perception-video].
+⚠️ **Attenzione**: se noti dominanti rosse nelle luci (es. nuvole arancioni diventano rosse), apri la sezione *primaries* di sigmoid e regola `red attenuation` a `15–25%`[^color-perception-video].
 
 ---
 
@@ -106,7 +106,7 @@ Usa gli slider da **-8 EV** a **0 EV** per intervenire sulle zone:
 
 Dopo la compressione tonale, i colori saturi nelle luci tendono a “uscire dal gamut” (clipping cromatico). Risolvilo in due fasi:
 
-### A. Attenuazione prima del tone mapping (`color calibration` → scheda *primaries*)
+### A. Attenuazione delle primarie (`sigmoid` → sezione *primaries*)
 
 | Parametro | Valore | Perché |
 |-----------|--------|--------|
@@ -122,7 +122,7 @@ Dopo la compressione tonale, i colori saturi nelle luci tendono a “uscire dal 
 | `midtones` | `+0.10` | Ristabilisce la vividezza perduta nella compressione |
 | `highlights` | `-0.05` | Controbilancia l’eccesso di bianco nelle luci (evita “lavaggio”)[^color-perception-video] |
 
-✅ **Controlla**: attiva `C` (Clipping cromatico) — non devono apparire aree gialle o bianche (indicano clipping RGB combinato).
+✅ **Controlla**: attiva il controllo gamut (*gamut check*, dal pulsante nella barra sotto l'immagine) e verifica che le luci non segnalino colori fuori gamut.
 
 ---
 
@@ -133,15 +133,15 @@ Dopo la compressione tonale, i colori saturi nelle luci tendono a “uscire dal 
 | `exposure` | `clipping threshold` | `0.001% – 0.050%` | `0.010%` | Troppo basso → falso clipping; troppo alto → non vedi i veri problemi |
 | `sigmoid` | `contrast` | `1.20 – 2.00` | `1.60` | >2.0 → curve instabili, artefatti nelle transizioni[^sigmoid-v5-video] |
 | `tone equalizer` | `curve smoothing` | `0.2 – 0.5` | `0.35` | >0.6 → oscillazioni matematiche, banding[^dt48-tone-equalizer] |
-| `color calibration` | `blue attenuation` | `10% – 70%` | `42%` | >70% → immagine spenta, perdita di atmosfera[^dt54-update] |
+| `sigmoid` (primaries) | `blue attenuation` | `10% – 70%` | `42%` | >70% → immagine spenta, perdita di atmosfera[^dt54-update] |
 
 ---
 
 ## Consigli operativi finali
 
-- **Ordine di attivazione**: `exposure` → `sigmoid` → `tone equalizer` → `color balance rgb`. Cambiare l’ordine può generare artefatti[^dt48-tone-equalizer].  
+- **Ordine nella pipeline**: l'ordine dei moduli nel pixelpipe è fisso (`exposure` → `tone equalizer`[^dt48-tone-equalizer] → `color balance rgb` → `sigmoid`); l'ordine in cui li regoli è libero.  
 - **Zoom costante**: lavora sempre a `100%` per valutare il clipping, ma verifica il risultato a `25%` per il contrasto globale[^sigmoid-v5-video].  
-- **Salva uno snapshot prima di sigmoid**: utile per confrontare prima/dopo con `Ctrl+Shift+D`[^dt52-snapshots-video].  
+- **Salva uno snapshot prima di sigmoid**: utile per confrontare prima/dopo dal modulo *snapshot*[^dt52-snapshots-video].  
 - **Evita il doppio tone mapping**: non usare contemporaneamente `sigmoid` e `AGX` — causano over-compression e banding[^dt54-update].  
 
 ---
@@ -158,14 +158,14 @@ Dopo la compressione tonale, i colori saturi nelle luci tendono a “uscire dal 
 
 ---
 
-## Esempio: Recupero luci con Sigmoid + filmic rgb (da video tutorial)
+## Esempio: Recupero luci con filmic rgb (in alternativa a sigmoid)
 
 *Da [darktable user manual - filmic rgb](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/#) (sezione *reconstruct tab*)*  
-1. Dopo aver applicato `sigmoid`, apri `filmic rgb` e vai alla scheda *reconstruct*.  
-2. Abilita `reconstruct highlights` e imposta `method` su `clip`.  
-3. Imposta `strength` a `0.35`: sufficiente per fondere i bordi delle nuvole bruciate senza creare halo.  
-4. Regola `iterations` a `2`: migliora la convergenza del processo di ricostruzione senza introdurre rumore aggiuntivo[^dt48-filmic-rgb].  
-5. Attiva `C` (Clipping cromatico) e verifica che le aree gialle spariscano dalle nuvole — se persistono, torna a `color calibration` e incrementa `blue attenuation` di ulteriori `5%`[^dt48-filmic-rgb].
+1. Disattiva `sigmoid` (non usare due tone mapper insieme), attiva `filmic rgb` e vai alla scheda *reconstruct*.  
+2. Regola `threshold` finché la maschera di ricostruzione (icona accanto allo slider) copre solo le nuvole bruciate.  
+3. Regola `transition` per ammorbidire il passaggio tra zone ricostruite e zone valide.  
+4. Bilancia `bloom ↔ reconstruct`, `gray ↔ colorful details` e `structure ↔ texture` in base al risultato[^dt48-filmic-rgb].  
+5. Verifica a zoom 100% che i bordi delle nuvole non mostrino aloni o aree piatte[^dt48-filmic-rgb].
 
 ---
 
@@ -188,9 +188,9 @@ I preset integrati nel modulo `tone equalizer` sono progettati per casi d’uso 
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| `compress shadows and highlights (eigf)` | Immagini con ombre profonde e luci intense (es. interni con finestre) | Usa il filtro `eigf`: bilancia compressione tra luci e ombre senza favorire zone specifiche[^dt48-tone-equalizer]. |
-| `compress shadows only (gf)` | Paesaggi con cielo perfettamente esposto ma ombre schiacciate (es. boschi al mattino) | Usa `gf`: preserva meglio il contrasto locale nelle ombre, a costo di una leggera perdita di dettaglio nelle luci[^dt48-tone-equalizer]. |
-| `compress highlights only (eigf)` | Tramonti con nuvole brillanti ma ombre ben dettagliate | Ideale per questo workshop: agisce principalmente sugli slider `0 EV` e `-1 EV`, lasciando inalterati `-6 EV` e `-8 EV`[^dt48-tone-equalizer]. |
+| `compress shadows/highlights \| EIGF \| strong` / `medium` / `soft` | Immagini con ombre profonde e luci intense (es. interni con finestre, tramonti) | Filtro `eigf`: compressione di ombre e luci, intensità decrescente da *strong* a *soft*[^dt48-tone-equalizer]. |
+| `compress shadows/highlights \| GF \| strong` / `medium` / `soft` | Stessi casi, con il filtro guidato classico | Filtro `gf`: sfocatura della maschera dipendente dall'esposizione[^dt48-tone-equalizer]. |
+| `contrast tone curve \| soft` / `medium` / … | Aggiungere contrasto tonale globale | Curva di contrasto applicata tramite gli slider EV[^dt48-tone-equalizer]. |
 
 ---
 

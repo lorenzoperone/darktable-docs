@@ -20,14 +20,14 @@ flowchart TD
     --> C["3. Bilanciamento<br/>del bianco"]
     --> D["4. Calibrazione<br/>colore (primaries)"]
     --> E["5. Curva toni"]
-    --> F["6. Nitidezza"]
-    --> G["7. Riduzione rumore"]
+    --> F["6. Riduzione rumore"]
+    --> G["7. Nitidezza"]
     --> H["8. Correzione<br/>obiettivo"]
     --> I["9. Vignettatura"]
     --> J["10. Bilanciamento<br/>colore RGB"]
 ```
 
-> ⚠️ **Attenzione**: In darktable, i moduli agiscono *in sequenza rigida*. L’ordine conta: ad esempio, `sharpening` deve venire *prima* di `denoise`, altrimenti il rumore viene accentuato[^de-lightroom-a-darktable-02].
+> ⚠️ **Attenzione**: In darktable, i moduli agiscono *in sequenza rigida*[^de-lightroom-a-darktable-02]: l'ordine del pixelpipe è fisso e non dipende dall'ordine in cui attivi i moduli. Ad esempio, `denoise (profiled)` è sempre applicato prima di `sharpen`.
 
 ---
 
@@ -36,7 +36,7 @@ flowchart TD
 Apri l’immagine RAW in darktable:  
 → Seleziona la foto nella *lighttable*  
 → Premi `D` per entrare in *darkroom*  
-→ Attiva la visualizzazione dell’istogramma (`Ctrl+H`)  
+→ Verifica che l’istogramma (modulo *scopes*, in alto a destra) sia visibile  
 
 Osserva:
 - L’istogramma mostra una distribuzione asimmetrica? (es. pila a sinistra = sottoesposta)  
@@ -76,14 +76,14 @@ In darktable: modulo **`white balance`**, scheda *White balance*
 | **Temperature** | 4500–6500 K | Usa la pipetta su una zona neutra (pavimento, muro, carta grigia); evita superfici riflesse o illuminate da fonti miste[^de-lightroom-a-darktable-02] |
 | **Tint** | -5 a +10 | Corregge dominanti verdi/magenta; valori estremi (> ±15) indicano problemi di illuminazione o profilo errato |
 
-⚠️ **Attenzione**: `white balance` agisce *prima* di `color calibration`. Se usi profili custom (es. DCP), applicali *prima* di questo modulo[^faire-comme-lightroom].
+⚠️ **Attenzione**: `white balance` agisce *prima* di `color calibration`[^faire-comme-lightroom]. darktable non legge profili DCP: usa le matrici integrate o un profilo ICC in *input color profile*, e affina con *color calibration*.
 
 ---
 
 ## Passo 4: Gestione del colore (`color calibration`)
 
 In Lightroom: *Basic > Vibrance/Saturation* + *HSL*  
-In darktable: modulo **`color calibration`**, scheda *Primaries*  
+In darktable: modulo **`color calibration`**, schede *colorfulness* e *CAT* (per la *gamut compression*)  
 
 | Parametro | Valore tipico | Perché |
 |-----------|----------------|--------|
@@ -121,16 +121,16 @@ Usa la modalità **point curve**, non parametric (più precisa e simile a Lightr
 ## Passo 6: Nitidezza e rumore (`sharpening` + `denoise (profiled)`)
 
 In Lightroom: *Detail > Sharpening + Noise Reduction*  
-In darktable: due moduli separati, in ordine rigoroso:  
+In darktable: due moduli separati; nel pixelpipe `denoise (profiled)` è sempre applicato prima di `sharpen`:  
 
-### `sharpening` (prima del rumore)  
+### `sharpening`  
 | Parametro | Valore tipico | Perché |
 |-----------|----------------|--------|
 | **Amount** | 45–70 | Valore sufficiente per sensori moderni (R6, A7IV, Z6II) |
 | **Radius** | 0.9–1.3 | Evita effetti “halo”; >1.5 genera artefatti sui bordi |
 | **Threshold** | 15–25 | Ignora il rumore nelle zone omogenee (cielo, pelle) |
 
-### `denoise (profiled)` (dopo il sharpening)  
+### `denoise (profiled)` (applicato nel pixelpipe prima di `sharpen`)  
 | Parametro | Valore tipico | Perché |
 |-----------|----------------|--------|
 | **Strength** | 25–45 | Regola in base all’ISO: ISO 100 → 25, ISO 3200 → 45 |
@@ -152,11 +152,7 @@ In darktable:
 - Se il profilo manca: usa `manual` → `Distortion` (-5 a +10), `Multiplier` (0.95–1.05)  
 
 ### `vignetting`  
-| Parametro | Valore tipico | Perché |
-|-----------|----------------|--------|
-| **Strength** | -15 a -40 | Compensa vignettatura ottica (valore negativo = attenuazione) |
-| **Scale** | 50–70 | Controlla l’estensione radiale della correzione |
-| **Center X/Y** | 0.00 / 0.00 | Allinea al centro ottico (modifica solo se l’immagine è fortemente decentrata) |
+La vignettatura ottica si corregge in *lens correction* (vedi sopra): il modulo `vignetting` serve solo come effetto creativo, per scurire o schiarire i bordi a gusto.
 
 ✅ **Cosa osservare**:  
 - Attiva `preview grid` (icona griglia): ti aiuta a valutare distorsione e vignettatura[^de-lightroom-a-darktable-04].
@@ -187,7 +183,7 @@ In darktable: modulo **`filmic rgb`**, scheda *Scene* e *Look*
 
 Il modulo `filmic rgb` è il sostituto concettuale più potente del vecchio `base curve` e del `tone curve` per flussi *scene-referred*. È progettato per gestire dinamiche ampie, preservare i colori e offrire un controllo fisicamente coerente del tono[^filmic-rgb-intro].  
 
-> ⚠️ **Attenzione**: `filmic rgb` deve essere inserito **dopo** `exposure`, `white balance`, `color calibration`, `demosaic`, `sharpening` e `denoise`, ma **prima** di `color balance rgb` e `vignetting`[^filmic-rgb-order].
+> ⚠️ **Attenzione**: nel pixelpipe `filmic rgb`[^filmic-rgb-order] viene **dopo** `demosaic`, `denoise`, `white balance`, `exposure`, `color calibration`, `sharpen` e `color balance rgb`, e **prima** di `vignetting`. La posizione è fissa.
 
 ### Esempio: configurazione base per scatto ETTR  
 *Da [“filmic rgb: remap any dynamic range in darktable 3”](https://www.youtube.com/watch?v=zbPj_TqTF880) (timestamp 4:12)*  
@@ -200,9 +196,9 @@ Il modulo `filmic rgb` è il sostituto concettuale più potente del vecchio `bas
    - `latitude` = 92%  
    - `shadows ↔ highlights balance` = -0.15  
 3. Nella scheda *Options*:  
-   - `preserve chrominance` = `JzAzBz`  
+   - `preserve chrominance` = `RGB power norm` (default)  
    - `contrast in shadows` = `soft`  
-   - `contrast in highlights` = `medium`  
+   - `contrast in highlights` = `soft` (opzioni: `hard`, `soft`, `safe`)  
 
 ✅ **Cosa osservare**:  
 - Attiva `look only` view (icona grafico): la curva centrale deve essere una S morbida, senza “gobbi” né tagli netti.  
@@ -238,11 +234,11 @@ Per correggere orizzonti inclinati o linee cadenti (es. architettura):
 
 ## Consigli operativi chiave
 
-- **Non usare mai `base curve` per lo sviluppo**: è deprecata in darktable 5.4+ e interferisce con AGX[^dt54-update]. Usa `tone curve` o `AGX` al suo posto.  
-- **I profili DCP non sono equivalenti a quelli Lightroom**: i profili Canon/Nikon in darktable sono generati da `dcraw` e possono differire. Usa `color calibration` per affinamenti locali[^darktable-not-lightroom].  
+- **Non usare `base curve` nel flusso scene-referred**[^dt54-update]: non è deprecata, ma è pensata per il flusso display-referred. Usa sigmoid, filmic o AgX al suo posto.  
+- **darktable non usa profili DCP**[^darktable-not-lightroom]: i colori di partenza derivano dalle matrici integrate per ogni fotocamera (o da un profilo ICC in *input color profile*). Usa `color calibration` per gli affinamenti.  
 - **I preset Lightroom (.xmp) NON sono importabili**: darktable usa `.dtstyle`. Converti manualmente o usa strumenti esterni come [`lr2dt`](https://github.com/bradleybuda/lr2dt)[^de-lightroom-a-darktable-05].  
-- **La gestione dei cataloghi è diversa**: darktable non ha “cataloghi” nel senso Lightroom. Usa cartelle fisiche + metadati XMP embedded[^de-lightroom-a-darktable-01].  
-- **Per il tethering**: darktable supporta USB tethering nativo (Canon/Nikon/Sony), ma *senza anteprima live*: la foto appare solo dopo lo scatto[^tethering-avec-darktable].  
+- **La gestione dei cataloghi è diversa**[^de-lightroom-a-darktable-01]: darktable usa un database (`library.db`) più file XMP *sidecar* accanto a ogni immagine, non metadati incorporati nel file.  
+- **Per il tethering**[^tethering-avec-darktable]: la vista *tethering* (via gphoto2) supporta lo scatto da USB e, sulle fotocamere compatibili, anche il live view.  
 - **`base curve` è compatibile solo con `display-referred`**: se abilitato in un flusso `scene-referred`, causa clipping e comportamenti imprevedibili[^base-curve-display-referred].  
 - **Usa `color assessment mode` (Ctrl+B) per ogni regolazione tonale**: il bordo bianco su sfondo grigio al 18% elimina gli errori percettivi causati dal contesto cromatico[^process-color-assessment].  
 
@@ -254,10 +250,10 @@ Per correggere orizzonti inclinati o linee cadenti (es. architettura):
 Ciò accade perché `filmic rgb` rimuove la compressione tonale precoce del `base curve`. Il “piatto” è in realtà neutralità fisica: i dati sono ora lineari e pronti per il grading. Applica `color balance rgb` per reintrodurre vividezza e atmosfera, non `saturation` globale[^filmic-rgb-prerequisites].
 
 ### Problema: “Il modulo `color balance rgb` non reagisce ai cursori”  
-Verifica che il modulo sia abilitato *dopo* `filmic rgb` e *prima* di `vignetting`. Se è posizionato prima di `filmic`, i suoi effetti saranno compressi e impercettibili. Usa `history stack` per confermare l’ordine esatto[^color-balance-rgb-input].
+Verifica che il modulo sia effettivamente attivo e che una maschera non ne limiti l'effetto. Nel pixelpipe `color balance rgb`[^color-balance-rgb-input] si trova sempre *prima* del tone mapper (`filmic rgb`/`sigmoid`/`AgX`): è la posizione corretta, non va spostato.
 
 ### Problema: “Il rumore aumenta dopo aver applicato `sharpening`”  
-Questo è normale: `sharpening` amplifica il rumore esistente. La soluzione è applicare `denoise (profiled)` *subito dopo*, non prima. L’ordine `sharpening` → `denoise (profiled)` è obbligatorio per un risultato pulito[^de-lightroom-a-darktable-02].
+Questo è normale: `sharpening` amplifica il rumore esistente. Nel pixelpipe `denoise (profiled)`[^de-lightroom-a-darktable-02] è comunque applicato *prima* di `sharpen`: aumenta la riduzione del rumore o riduci `amount`/alza `threshold` in `sharpen`.
 
 ---
 
@@ -265,9 +261,12 @@ Questo è normale: `sharpening` amplifica il rumore esistente. La soluzione è a
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **basic colorfulness** | Come punto di partenza per saturazione globale | Imposta `global saturation = +12%`, `global vibrance = +8%`, `contrast = 0.95`[^color-balance-rgb-presets] |
-| **teal/orange color-grading** | Per separazione soggetto/sfondo (ritratti) | Richiede due istanze mascherate: una per sfondo (teal), una per pelle (orange). Non usare su immagini con illuminazione mista[^color-balance-presets-teal-orange] |
-| **Kodak Portra 400** | Emulazione film per ritratti naturali | Basato su LUT integrato; applicabile solo in modalità `slope, offset, power`[^color-balance-presets-kodak] |
+| **basic colorfulness \| standard** | Come punto di partenza per saturazione globale | Aumento moderato di vibrance e saturazione[^color-balance-rgb-presets] |
+| **basic colorfulness \| natural skin** | Ritratti | Variante più delicata sui toni della pelle |
+| **basic colorfulness \| vibrant colors** | Paesaggi, colori accesi | Variante più marcata |
+| **basic colorfulness \| legacy** | Compatibilità con modifiche vecchie | Versione originale del preset |
+
+Non esistono preset integrati di teal/orange o di emulazione pellicola: questi look si costruiscono a mano nella scheda *4 ways*.
 
 ---
 
@@ -307,6 +306,4 @@ Questo è normale: `sharpening` amplifica il rumore esistente. La soluzione è a
 [^process-color-assessment]: darktable.org, ["User Manual – process"](https://docs.darktable.org/usermanual/development/en/overview/workflow/process/#color-assessment-mode)
 [^color-balance-rgb-input]: darktable.org, ["User Manual – color balance rgb"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/#)
 [^color-balance-rgb-presets]: darktable.org, ["User Manual – color balance rgb presets"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/#presets)
-[^color-balance-presets-teal-orange]: darktable.org, ["User Manual – color balance presets (§ teal/orange)"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
-[^color-balance-presets-kodak]: darktable.org, ["User Manual – color balance presets (§ Kodak Portra)"](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance/#presets)
 [^darktable-info-scene-referred]: darktable.info, ["Scene-Referred Workflow"](https://darktable.info/en/darktable-first-steps/understand/scene-referred-workflow/)

@@ -8,7 +8,7 @@ Il workflow per la street photography in bianco e nero in darktable 5.4+ si basa
     - `color calibration` (per conversione B/N controllata)  
     - `local contrast` (per definire bordi e texture senza artefatti)  
     - `mask manager` (per mascherature rapide su volti, occhi, mani)  
-    Non serve `dehaze`, `filmic RGB` o `sigmoid` — AGX è opzionale e spesso sovrabbondante[^street-video-1][^bw-video].
+    Non serve `dehaze`[^street-video-1][^bw-video]; il tone mapper (sigmoid, filmic o AgX) resta invece attivo, come in ogni flusso scene-referred.
 
 ## Panoramica del flusso di lavoro
 
@@ -19,7 +19,7 @@ flowchart TD
     A["1. Duplicato +<br/>ritaglio compositivo"] --> B["2. Bilanciamento<br/>bianco + geometria"] --> C["3. Conversione B/N<br/>(color calibration)"] --> D["4. Contrasto globale<br/>(esposizione)"] --> E["5. Contrasto locale<br/>+ maschere"] --> F["6. Nitidezza +<br/>vignettatura"]
 ```
 
-Questo ordine evita l’accumulo di artefatti: ad esempio, applicare `local contrast` *prima* della conversione B/N genera distorsioni cromatiche indesiderate[^bw-video]. Il modulo `color calibration` è usato **due volte**: una per il bilanciamento del bianco (tab *White Balance*), una per la conversione (tab *Colorfulness*, con `gray` abilitato)[^street-video-1].
+Questo ordine evita l’accumulo di artefatti: ad esempio, applicare `local contrast` *prima* della conversione B/N genera distorsioni cromatiche indesiderate[^bw-video]. Il modulo `color calibration` è usato **due volte**: una per il bilanciamento del bianco (tab *CAT*), una per la conversione (tab *gray*)[^street-video-1].
 
 ## Flusso di lavoro passo-passo
 
@@ -36,7 +36,7 @@ Usa il modulo `crop` per:
 
 ### Passo 2: Bilanciamento del bianco con color calibration
 
-Attiva la prima istanza di `color calibration`. Vai alla scheda *White Balance* e usa la pipetta sul grigio neutro più affidabile (es. marciapiede bagnato, muro chiaro, cielo uniforme). Se non disponibile, imposta manualmente:
+Attiva la prima istanza di `color calibration`. Vai alla scheda *CAT* e usa la pipetta sul grigio neutro più affidabile (es. marciapiede bagnato, muro chiaro, cielo uniforme). Se non disponibile, imposta manualmente:
 
 | Parametro | Valore tipico | Osservazione |
 |-----------|----------------|--------------|
@@ -50,30 +50,28 @@ Attiva la prima istanza di `color calibration`. Vai alla scheda *White Balance* 
 
 Aggiungi una **seconda istanza** di `color calibration`. Rinominala `"BW conversion"` per chiarezza.
 
-Vai alla scheda *Colorfulness* e imposta:
+Vai alla scheda *gray* e imposta:
 
 | Parametro | Valore | Perché |
 |-----------|--------|--------|
 | gray | ✅ abilitato | Attiva la modalità scala di grigi vera[^street-video-1] |
 | normalize channels | ✅ abilitato | Garantisce che R, G, B contribuiscano equamente alla luminanza finale[^street-video-1] |
 | input R / G / B | tutti a `0.000` | Partenza neutrale: ogni canale ha peso identico[^street-video-1] |
-| output color profile | `filmic rgb • scene-referred default` | Profilo predefinito stabile per B/N[^manual-color-calibration] |
 
 > **Osserva**: L’istogramma cambia forma — diventa un’unica curva concentrata (non tre curve separate RGB). Se rimangono picchi separati, `normalize channels` non è attivo o `gray` è disattivato[^street-video-1].
 
-### Passo 4: Contrasto globale con esposizione (non con AGX)
+### Passo 4: Contrasto globale con esposizione e tone mapper
 
-In street photography, **evita AGX, Filmic RGB e Sigmoid**. Usa invece il modulo `exposure` per un controllo diretto e prevedibile[^street-video-1][^bw-video]:
+Mantieni il tone mapper di default (sigmoid, filmic o AgX): nel flusso scene-referred è indispensabile, altrimenti le alte luci clippano. Usa il modulo `exposure` per fissare la luminosità dei mezzitoni[^street-video-1][^bw-video]:
 
 | Parametro | Valore tipico | Cosa osservare |
 |-----------|----------------|------------------|
 | exposure | da `-0.30` a `+0.80` EV | Regola solo per compensare l’esposizione iniziale — non per “creare” contrasto[^street-video-1] |
 | black level correction | da `-0.0002` a `+0.0002` | Corregge leggeri offset del nero (es. ombre grigie invece che nere)[^street-video-1] |
-| clarity | `15–45%` | Aumenta il contrasto locale *globale*: definisce bordi senza introdurre halos[^street-video-1] |
 | mode | `Manual` | Evita `Automatic`: troppo aggressivo su scene caotiche[^bw-video] |
 
-!!! tip "Clarity > Contrast per la street"
-    La `clarity` agisce sulle transizioni medie (non sui dettagli fini né sulle zone omogenee), rendendo i volti, i tessuti e le superfici urbane immediatamente più incisivi — senza rischio di granulosità[^street-video-1].
+!!! tip "Contrasto locale > contrasto globale per la street"
+    Il `local contrast` agisce sulle transizioni medie (non sui dettagli fini né sulle zone omogenee), rendendo i volti, i tessuti e le superfici urbane immediatamente più incisivi — senza rischio di granulosità[^street-video-1].
 
 ### Passo 5: Contrasto locale selettivo con local contrast e maschere
 
@@ -81,12 +79,12 @@ Attiva `local contrast`. Questo modulo è **centrale** per la street: definisce 
 
 | Parametro | Valore tipico | Quando usarlo |
 |-----------|----------------|----------------|
-| clarity | `25–55%` | Base per tutta l’immagine (valore già impostato in `exposure` può essere ridotto qui)[^street-video-1] |
-| clarity in highlights | `30–65%` | Per far risaltare occhi, capelli bagnati, superfici lucide[^street-video-1] |
-| clarity in shadows | `15–40%` | Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)[^street-video-1] |
+| detail | sopra il default | Contrasto locale di base per tutta l’immagine[^street-video-1] |
+| highlights | da regolare a vista | Per far risaltare occhi, capelli bagnati, superfici lucide[^street-video-1] |
+| shadows | da regolare a vista | Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)[^street-video-1] |
 | radius | `15–45 px` | Più piccolo = dettagli più fini (pelle, tessuti); più grande = forme generali (silhouette, volumi)[^manual-local-contrast] |
 
-> **Esempio pratico**: Su un ritratto di strada, imposta `clarity in highlights = 48%`, `radius = 22 px`. Poi applica una maschera circolare sull’occhio destro: l’iride diventa immediatamente più presente, senza toccare la pelle circostante[^street-video-1].
+> **Esempio pratico**: Su un ritratto di strada, aumenta `highlights` e `detail`. Poi applica una maschera circolare sull’occhio destro: l’iride diventa immediatamente più presente, senza toccare la pelle circostante[^street-video-1].
 
 ### Passo 6: Mascheratura avanzata con mask manager
 
@@ -96,7 +94,7 @@ Usa `mask manager` per interventi mirati:
 2. Imposta `Opacity = 75%`, `Feather = 12%`, `Size = 38%`
 3. Nell’istanza di `exposure` associata, regola:
    - `exposure = +0.25 EV` (per illuminare leggermente il volto)
-   - `clarity = 32%` (per definire i contorni)
+   - per definire i contorni usa un’istanza di `local contrast` con la stessa maschera
 
 > **Perché non usare `tone equalizer`?** È troppo fine per la street: richiede tempo e precisione che contrasta con la natura istantanea del genere. Le maschere geometriche (`Circle`, `Gradient`, `Path`) sono 5× più veloci e altrettanto efficaci[^street-video-1].
 
@@ -119,9 +117,8 @@ Usa `mask manager` per interventi mirati:
 
 | Modulo | Parametro | Range utile | Default | Note |
 |--------|-----------|-------------|---------|------|
-| `exposure` | clarity | 15–45% | 25% | Primo controllo del “peso visivo” dell’immagine[^street-video-1] |
 | `color calibration` (BW) | normalize channels | ✅ abilitato | disabilitato | Fondamentale per una conversione B/N fedele[^street-video-1] |
-| `local contrast` | clarity in highlights | 30–65% | 35% | Priorità assoluta per occhi, capelli, superfici riflettenti[^street-video-1] |
+| `local contrast` | highlights | da regolare a vista | 50% | Priorità assoluta per occhi, capelli, superfici riflettenti[^street-video-1] |
 | `mask manager` | Opacity (maschera circolare) | 60–85% | 75% | Valore ottimale per integrazione naturale[^street-video-1] |
 | `sharpen` | threshold | 15–25 | 20 | Impedisci l’amplificazione del rumore ISO 1600+[^manual-sharpen] |
 
@@ -129,14 +126,14 @@ Usa `mask manager` per interventi mirati:
 
 - **ISO alto?** Usa `denoise (profiled)` *prima* di `local contrast`, non dopo. Imposta `strength = 35–55%`, `patch-based = false`, `spatial extent = 1.2`[^manual-denoise].  
 - **Luci dure?** Evita `fill light` — preferisci una maschera `Gradient` su una zona d’ombra con `exposure = +0.40 EV`[^street-video-1].  
-- **Sfondo caotico?** Non usare `background blur`: crea artefatti. Usa invece `local contrast` con `clarity in shadows = 10%` e `radius = 40 px` per “appiattire” leggermente lo sfondo senza sfocarlo[^street-video-1].  
-- **Velocità:** Salva uno stile chiamato `"Street B/N Quick"` con i parametri base (`exposure.clarity=25`, `color calibration.gray=true`, `local contrast.clarity=35`) — applicalo con un click su nuove immagini[^street-video-1].
+- **Sfondo caotico?** Non usare `background blur`: crea artefatti. Usa invece `local contrast` con `shadows` ridotto per “appiattire” leggermente lo sfondo senza sfocarlo[^street-video-1].  
+- **Velocità:** Salva uno stile chiamato `"Street B/N Quick"` con i parametri base (`color calibration` in scheda *gray*, `local contrast` con `detail` aumentato) — applicalo con un click su nuove immagini[^street-video-1].
 
-### Esempio: Maschera circolare su occhio con clarity in highlights
+### Esempio: Maschera circolare su occhio con local contrast
 *Da [Full b&w edits in darktable for street photography](https://www.youtube.com/watch?v=f9szYMJ9wYo) (timestamp 02:34)*  
 1. Crea una maschera `Circle` centrata sull’iride destra  
 2. Imposta `Opacity = 82%`, `Feather = 14%`, `Size = 28%`  
-3. Nell’istanza di `local contrast` associata, imposta `clarity in highlights = 48%`, `radius = 22 px`  
+3. Nell’istanza di `local contrast` associata, aumenta `highlights` e `detail`  
 4. Verifica che l’occhio risulti più definito senza alterare la pelle circostante[^street-video-1]
 
 ### Esempio: Controllo del nero con black level correction
@@ -160,7 +157,7 @@ Usa `mask manager` per interventi mirati:
 La funzione `gray` non impone una conversione monochrome se `normalize channels` è disattivato. Abilitare entrambi i parametri è obbligatorio per ottenere una singola curva Luminance. Se il comportamento persiste, controlla che l’immagine non sia già stata flaggata come monochrome tramite demosaic passthrough[^manual-color-calibration].
 
 ### Problema: `local contrast` introduce artefatti ai bordi dei vestiti
-Questo accade tipicamente con `radius > 45 px` su tessuti fini (lino, seta) o con `clarity in highlights > 65%` su superfici lucide. Riduci `radius` a `28–32 px` e abbassa `clarity in highlights` a `52%`; aggiungi una maschera `Path` lungo il contorno del capo per limitare l’effetto[^manual-local-contrast].
+Questo accade tipicamente con `radius > 45 px` su tessuti fini (lino, seta) o con `highlights` troppo alto su superfici lucide. Riduci `radius` a `28–32 px` e abbassa `highlights`; aggiungi una maschera `Path` lungo il contorno del capo per limitare l’effetto[^manual-local-contrast].
 
 ### Problema: maschera circolare troppo rigida su pelle anziana
 L’eccessiva `Feather` (oltre 18%) causa perdita di definizione; una `Feather` troppo bassa (<8%) produce transizioni nette non naturali. Il valore ottimale per pelle rugosa è `12–14%`, combinato con `Opacity = 72%` e `Size = 35%`[^street-video-1].

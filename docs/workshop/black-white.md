@@ -60,7 +60,7 @@ Dopo lo scambio canali, l'immagine può risultare sottoesposta o sovraesposta. S
 **Esposizione:**
 | Parametro | Valore |
 |-----------|--------|
-| Exposure | Variabile (controllare con bordo bianco `Cmd+B`) |
+| Exposure | Variabile (valutare la luminosità con la modalità *valutazione colore*, `Ctrl/Cmd+B`) |
 | Black level correction | Regolare per scurire i neri |
 
 **Filmic RGB:**
@@ -71,7 +71,7 @@ Dopo lo scambio canali, l'immagine può risultare sottoesposta o sovraesposta. S
 | Dynamic range scaling | +0.00% | Di default |
 
 !!! tip "Bordo bianco per valutare l'esposizione"
-    Premere `Cmd+B` per visualizzare il bordo bianco attorno all'immagine: indica quando le alte luci stanno per clippare. Usarlo come riferimento per Exposure e Filmic RGB[^process-ref].
+    Premere `Ctrl/Cmd+B` per attivare la modalità *valutazione colore* (color assessment)[^process-ref]: una cornice grigia e bianca di riferimento (ISO 12646) aiuta a giudicare la luminosità dell'immagine. Non è un indicatore di clipping: per quello usare l'indicatore di sovraesposizione.
 
 ## Passo 5 — Viraggio cromatico con Color Balance RGB
 
@@ -164,7 +164,7 @@ Una volta trovata la ricetta giusta, salvarla come **stile** per applicarla rapi
 
 ### Esempio: Recupero di alteluci con guided laplacians  
 *Da [Highlight reconstruction](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/highlight-reconstruction/) (sezione “guided laplacians” mode)*  
-1. Inserire **Highlight Reconstruction** subito dopo **Demosaic**, prima di **Input Color Profile**  
+1. Attivare **Highlight Reconstruction**: opera sui dati raw, prima del **Demosaic** (la posizione nella pipeline è fissa)  
 2. Impostare `method = guided laplacians`  
 3. Regolare `clipping threshold` fino a evidenziare solo le aree realmente sovraesposte (usare la maschera di clipping con icona accanto allo slider)  
 4. Impostare `iterations = 3`, `diameter of the reconstruction = 256`, `noise level = 0.02`  

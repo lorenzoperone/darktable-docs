@@ -57,7 +57,7 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 | `color calibration` | temperature | 1000–25000 K | auto | 5600 K (luce diurna), 3200 K (incandescenza) | Usa CAT16 per adattamento cromatico [^cat16] |
 | `filmic rgb` | white relative exposure | -2.00 – +12.00 EV | auto | +6.50 EV (paesaggio), +4.32 EV (ritratto) | Determina il punto di saturazione delle alte luci [^dt54-update] |
 | `filmic rgb` | black relative exposure | -12.00 – +2.00 EV | auto | -10.00 EV (alta DR), -7.65 EV (media DR) | Determina il punto di cutoff delle ombre [^dt54-update] |
-| `sigmoid` | contrast | 0.10 – 5.00 | 2.00 | 2.80 (standard), 1.50 (soft) | Valori >3.00 producono contrasto aggressivo [^sigmoid-params] |
+| `sigmoid` | contrast | 0.10 – 5.00 | 1.50 | 2.80 (standard), 1.50 (soft) | Valori >3.00 producono contrasto aggressivo [^sigmoid-params] |
 | `sigmoid` | skew | -1.00 – +1.00 | 0.00 | +0.25 (ritratti), -0.15 (paesaggi) | Skew positivo appiattisce ombre, comprime luci [^sigmoid-params] |
 | `agx-tone-compressor` | dynamic range scaling | -20.00% – +20.00% | 0.00% | +10.00% (sicurezza su luci estreme) | Aggiunge margine di sicurezza per clipping [^dt54-update] |
 | `color balance rgb` | saturation | -100 – +100 | 0 | +12 (vivacità moderata), -8 (desaturazione controllata) | Applicato *dopo* il tone mapper [^color-balance-params] |
