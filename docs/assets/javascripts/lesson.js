@@ -83,7 +83,44 @@
     render();
   }
 
-  function init() { document.querySelectorAll(".dt-lesson").forEach(build); }
+  /* Esploratore di parametro (I.7):
+   * <div class="dt-sweep" data-param="contrast" data-default="3"
+   *      data-images='[{label,img},…]'> → cursore che scorre i render. */
+  function buildSweep(root) {
+    if (root.dataset.ready) return;
+    let imgs;
+    try { imgs = JSON.parse(root.dataset.images); } catch (e) { return; }
+    if (!imgs || !imgs.length) return;
+    root.dataset.ready = "1";
+    const def = Math.min(+root.dataset.default || 0, imgs.length - 1);
+    root.innerHTML = `
+      <img class="dt-sweep__img" alt="">
+      <div class="dt-sweep__ctrl">
+        <span class="dt-sweep__value"></span>
+        <input type="range" min="0" max="${imgs.length - 1}" step="1" value="${def}"
+               aria-label="Valore di ${root.dataset.param || "parametro"}">
+        <button type="button" class="dt-sweep__reset">default</button>
+      </div>`;
+    const img = root.querySelector(".dt-sweep__img");
+    const val = root.querySelector(".dt-sweep__value");
+    const range = root.querySelector("input");
+    imgs.forEach((s) => { const im = new Image(); im.src = s.img; });
+    function show(i) {
+      img.src = imgs[i].img;
+      img.alt = imgs[i].label;
+      val.textContent = imgs[i].label + (i === def ? " (default)" : "");
+    }
+    range.addEventListener("input", () => show(+range.value));
+    root.querySelector(".dt-sweep__reset").addEventListener("click", () => {
+      range.value = def; show(def);
+    });
+    show(def);
+  }
+
+  function init() {
+    document.querySelectorAll(".dt-lesson").forEach(build);
+    document.querySelectorAll(".dt-sweep").forEach(buildSweep);
+  }
 
   // Material "instant navigation": ricostruire a ogni cambio pagina
   if (typeof document$ !== "undefined") document$.subscribe(init);

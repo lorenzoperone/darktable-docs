@@ -1,0 +1,55 @@
+{
+  "slug": "sweep-agx-contrast",
+  "title": "",
+  "steps": [
+    {
+      "n": 0,
+      "title": "contrast 1.5",
+      "text": "",
+      "img": "passo-0.jpg",
+      "xmp": "passo-0.xmp"
+    },
+    {
+      "n": 1,
+      "title": "contrast 2.0",
+      "text": "",
+      "img": "passo-1.jpg",
+      "xmp": "passo-1.xmp"
+    },
+    {
+      "n": 2,
+      "title": "contrast 2.5",
+      "text": "",
+      "img": "passo-2.jpg",
+      "xmp": "passo-2.xmp"
+    },
+    {
+      "n": 3,
+      "title": "contrast 3.0",
+      "text": "",
+      "img": "passo-3.jpg",
+      "xmp": "passo-3.xmp"
+    },
+    {
+      "n": 4,
+      "title": "contrast 3.5",
+      "text": "",
+      "img": "passo-4.jpg",
+      "xmp": "passo-4.xmp"
+    },
+    {
+      "n": 5,
+      "title": "contrast 4.0",
+      "text": "",
+      "img": "passo-5.jpg",
+      "xmp": "passo-5.xmp"
+    },
+    {
+      "n": 6,
+      "title": "contrast 5.0",
+      "text": "",
+      "img": "passo-6.jpg",
+      "xmp": "passo-6.xmp"
+    }
+  ]
+}

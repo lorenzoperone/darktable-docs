@@ -42,6 +42,9 @@ Il parametro **Contrast** controlla la pendenza della curva S globale:[^agx-guid
 - **Aumenta** per piu' impatto visivo (tipicamente 3.0-4.5)
 - **Riduci** per scene gia' contrastate o per un look piu' morbido[^agx-guide]
 
+!!! example "Prova tu: trascina il cursore"
+    --8<-- "snippets/sweep-agx-contrast.md"
+
 !!! tip "Valuta il contrasto a distanza"
     Riduci la dimensione di visualizzazione dell'immagine (Ctrl + -) per percepire meglio l'impatto globale del contrasto, invece di lavorare sempre zoomato al 100%.[^pipeline-beginner]
 
