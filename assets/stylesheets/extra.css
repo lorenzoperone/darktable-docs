@@ -98,3 +98,16 @@
   position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
   opacity: 0; cursor: ew-resize; -webkit-appearance: none; appearance: none;
 }
+
+/* ── Esploratore di parametro (I.7) ─────────────────────────────────── */
+.dt-sweep { margin: 1.2rem 0 .3rem; }
+.dt-sweep__img { width: 100%; height: auto; display: block; border-radius: 2px; }
+.dt-sweep__ctrl { display: flex; align-items: center; gap: .8rem; margin-top: .5rem; }
+.dt-sweep__ctrl input { flex: 1; accent-color: var(--md-primary-fg-color); }
+.dt-sweep__value { font-family: var(--md-code-font-family); font-size: .72rem; min-width: 9.5rem; }
+.dt-sweep__reset {
+  font: inherit; font-size: .68rem; cursor: pointer; padding: .2rem .6rem; border-radius: 2px;
+  border: 1px solid var(--md-default-fg-color--lighter); background: transparent;
+  color: var(--md-default-fg-color);
+}
+.dt-sweep__caption { font-size: .68rem; color: var(--md-default-fg-color--light); margin-top: .2rem; }
