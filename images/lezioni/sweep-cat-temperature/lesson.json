@@ -1,0 +1,48 @@
+{
+  "slug": "sweep-cat-temperature",
+  "title": "",
+  "steps": [
+    {
+      "n": 0,
+      "title": "2800 K",
+      "text": "",
+      "img": "passo-0.jpg",
+      "xmp": "passo-0.xmp"
+    },
+    {
+      "n": 1,
+      "title": "3200 K",
+      "text": "",
+      "img": "passo-1.jpg",
+      "xmp": "passo-1.xmp"
+    },
+    {
+      "n": 2,
+      "title": "3600 K",
+      "text": "",
+      "img": "passo-2.jpg",
+      "xmp": "passo-2.xmp"
+    },
+    {
+      "n": 3,
+      "title": "4152 K",
+      "text": "",
+      "img": "passo-3.jpg",
+      "xmp": "passo-3.xmp"
+    },
+    {
+      "n": 4,
+      "title": "5000 K",
+      "text": "",
+      "img": "passo-4.jpg",
+      "xmp": "passo-4.xmp"
+    },
+    {
+      "n": 5,
+      "title": "6000 K",
+      "text": "",
+      "img": "passo-5.jpg",
+      "xmp": "passo-5.xmp"
+    }
+  ]
+}
