@@ -1875,10 +1875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#esempio-controllo-precisione-toni-medi-con-maschera" class="md-nav__link">
+  <a href="#esempio-ricostruzione-delle-alte-luci-e-controllo-dei-mezzitoni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Controllo precisione toni medi con maschera
+        Esempio: Ricostruzione delle alte luci e controllo dei mezzitoni
       
     </span>
   </a>
@@ -4721,10 +4721,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#esempio-controllo-precisione-toni-medi-con-maschera" class="md-nav__link">
+  <a href="#esempio-ricostruzione-delle-alte-luci-e-controllo-dei-mezzitoni" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Esempio: Controllo precisione toni medi con maschera
+        Esempio: Ricostruzione delle alte luci e controllo dei mezzitoni
       
     </span>
   </a>
@@ -5272,13 +5272,12 @@
 3. Nella scheda <code>Reconstruct</code>, abilitare <code>reconstruct highlights</code>, impostare <code>threshold = +0.5 EV</code>, <code>transition = 3.0 EV</code>, <code>mode = reconstruct color</code><br>
 4. Nella scheda <code>Look</code>, regolare <code>contrast = 1.4</code>, <code>latitude = 75%</code>, <code>shadows ↔ highlights balance = +0.1</code><br>
 5. Verificare <code>Options → preserve chrominance = Max RGB</code> e <code>safe mode = on</code><sup id="fnref:filmic-night"><a class="footnote-ref" href="#fn:filmic-night">13</a></sup></p>
-<h3 id="esempio-controllo-precisione-toni-medi-con-maschera">Esempio: Controllo precisione toni medi con maschera<a class="headerlink" href="#esempio-controllo-precisione-toni-medi-con-maschera" title="Permanent link">¶</a></h3>
+<h3 id="esempio-ricostruzione-delle-alte-luci-e-controllo-dei-mezzitoni">Esempio: Ricostruzione delle alte luci e controllo dei mezzitoni<a class="headerlink" href="#esempio-ricostruzione-delle-alte-luci-e-controllo-dei-mezzitoni" title="Permanent link">¶</a></h3>
 <p><em>Da Filmic RGB: The Heart of Post-Production on Darktable (xtzav1-AjV4) (04:15–06:00)</em><br>
-1. Attivare <code>masking → exposure</code> nel modulo Filmic RGB<br>
-2. Impostare <code>stimulator = RGB norma euclidea</code>, <code>smoothing diameter = 5.00%</code>, <code>refinement = 1.00</code><br>
-3. Applicare <code>mask exposure compensation = −1.57 EV</code> per isolare le luci<br>
-4. Regolare <code>highlights saturation mix = 25%</code> solo sulla maschera<br>
-5. Attivare <code>display highlight reconstruction mask</code> per visualizzare l’area di ricostruzione<sup id="fnref:tutorial-video-it"><a class="footnote-ref" href="#fn:tutorial-video-it">15</a></sup></p>
+1. Apri la scheda <em>reconstruct</em> di Filmic RGB<br>
+2. Regola <code>threshold</code> per scegliere da quale luminanza iniziare la ricostruzione e <code>transition</code> per sfumare il passaggio<br>
+3. Attiva la visualizzazione della maschera di ricostruzione (<em>display highlight reconstruction mask</em>) per vedere l’area interessata<sup id="fnref:tutorial-video-it"><a class="footnote-ref" href="#fn:tutorial-video-it">15</a></sup><br>
+4. Filmic non ha una scheda di mascheratura: per regolare i mezzitoni con una maschera usa il <em>tone equalizer</em>, scheda <em>masking</em> (<code>smoothing diameter</code>, <code>edges refinement/feathering</code>, <code>mask exposure compensation</code>)</p>
 <hr>
 <h2 id="domande-frequenti">Domande frequenti<a class="headerlink" href="#domande-frequenti" title="Permanent link">¶</a></h2>
 <h3 id="problema-immagine-appare-piatta-dopo-filmic">Problema: Immagine appare "piatta" dopo Filmic<a class="headerlink" href="#problema-immagine-appare-piatta-dopo-filmic" title="Permanent link">¶</a></h3>
@@ -5301,7 +5300,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Options: preserve = Max RGB, version = v7, safe = on  
 </code></pre></div></li>
 <li><strong>Verifica del clipping</strong>: premere <code>O</code> per attivare la visualizzazione del clipping (aree rosse = R clip, gialle = R+G clip, bianche = tutti i canali)<sup id="fnref24:manual-filmic"><a class="footnote-ref" href="#fn:manual-filmic">1</a></sup>.  </li>
-<li><strong>Maschere per Filmic</strong>: usare <code>masking → exposure</code> con <code>smoothing diameter = 5%</code> e <code>mask exposure compensation = -1.0 EV</code> per isolare le luci e regolarle separatamente<sup id="fnref:filmic-masking"><a class="footnote-ref" href="#fn:filmic-masking">14</a></sup>.  </li>
+<li><strong>Maschere per Filmic</strong>: filmic non ha una scheda di mascheratura; per isolare le luci e regolarle separatamente usa la maschera di luminanza del <em>tone equalizer</em> (scheda <em>masking</em>)<sup id="fnref:filmic-masking"><a class="footnote-ref" href="#fn:filmic-masking">14</a></sup>.  </li>
 <li><strong>Esportazione per web</strong>: usare profilo <code>sRGB</code> e <code>white point = 100%</code> — nessuna modifica a <code>Display</code> necessaria<sup id="fnref25:manual-filmic"><a class="footnote-ref" href="#fn:manual-filmic">1</a></sup>.  </li>
 </ul>
 <hr>

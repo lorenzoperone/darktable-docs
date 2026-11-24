@@ -4815,7 +4815,7 @@ Questo evita artefatti di sovrapposizione e garantisce transizioni fluide<sup id
 1. Creare prima istanza di <code>color calibration</code> con maschera parametrica su sfondo verde (JzCzhz → H: 80–120, z: 0.02–0.15)<br>
 2. Impostare <code>illuminant = custom</code>, <code>hue = 69.9°</code>, <code>chroma = 35.2%</code>, <code>adaptation = CAT16</code><br>
 3. Creare seconda istanza con maschera disegnata sulla coccinella, invertita rispetto alla prima<br>
-4. Nella seconda istanza, impostare <code>illuminant = detect from edges</code>, <code>temperature = -12 K</code><br>
+4. Nella seconda istanza, impostare <code>illuminant = detect from edges</code> (la temperatura viene calcolata dal modulo)<br>
 5. Attivare <code>gamut compression</code> in entrambe le istanze con <code>clip negative RGB from gamut = ON</code><br>
 6. Regolare <code>opacity</code> della seconda istanza a <code>85%</code> per evitare over-correction del rosso<sup id="fnref:MJJR8DJ3rr8"><a class="footnote-ref" href="#fn:MJJR8DJ3rr8">6</a></sup></p>
 <h3 id="esempio-conversione-in-bianco-e-nero-con-controllo-tonale-preciso">Esempio: Conversione in bianco e nero con controllo tonale preciso<a class="headerlink" href="#esempio-conversione-in-bianco-e-nero-con-controllo-tonale-preciso" title="Permanent link">¶</a></h3>
