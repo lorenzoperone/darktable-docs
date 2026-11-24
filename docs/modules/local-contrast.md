@@ -1,4 +1,4 @@
-# Local Contrast
+# Contrasto locale (local contrast)
 
 Il modulo **local contrast** è uno strumento di *enhancement* mirato al miglioramento del contrasto locale — ovvero il contrasto tra dettagli vicini — senza alterare il contrasto globale dell’immagine. Non è un modulo di *tone mapping*, né un sostituto di **AGX**, **Filmic RGB** o **Sigmoid**: opera esclusivamente sul canale **L** dello spazio colore **Lab**, in modo indipendente dall’esposizione globale e dalla compressione tonale[^manual-local-contrast]. È particolarmente efficace per enfatizzare texture, contorni morbidi e micro-dettagli (es. peli, tessuti, granulato, superfici ruvide), ma richiede attenzione per evitare artefatti come *halo* o *banding*[^manual-local-contrast].
 

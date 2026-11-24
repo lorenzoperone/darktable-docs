@@ -1,4 +1,4 @@
-# Color Balance RGB
+# Bilanciamento colore RGB (color balance rgb)
 
 Il modulo **color balance rgb** è uno strumento avanzato di color grading cinematografico integrato nel flusso scene-referred di darktable. Progettato per operazioni creative e non correttive, si distingue per la sua capacità di manipolare cromaticità, saturazione e luminosità in modo percettivamente uniforme, mantenendo l’intonazione cromatica costante durante le regolazioni [^dt48-color-balance-rgb]. Non è adatto ai principianti: richiede una solida comprensione della teoria del colore e della separazione tra *primary* (correzione neutrale) e *secondary* (stilizzazione creativa) color grading [^dt48-color-balance-rgb].
 

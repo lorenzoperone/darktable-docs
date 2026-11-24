@@ -1,4 +1,4 @@
-# Composite: Fusioni avanzate e effetti creativi
+# Fusione (composite)
 
 Il modulo **composite** è uno strumento avanzato per la fusione di livelli in darktable, introdotto ufficialmente come funzionalità stabile a partire dalla versione 5.0.0[^dt50-update]. Non è un semplice “livello di sfocatura”, ma un sistema completo per combinare due versioni della stessa immagine (originale + modificata) con modalità di fusione, maschere e controlli di opacità finemente granulari[^orton-tutorial]. È il cuore tecnico per replicare effetti classici come **Orton**, **Dragan**, **glow** o **double exposure**, senza uscire dall’ecosistema scene-referred di darktable[^dabble-orton][^dabble-dragon].
 

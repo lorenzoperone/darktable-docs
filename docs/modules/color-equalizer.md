@@ -1,4 +1,4 @@
-# Color Equalizer
+# Equalizzatore colore (color equalizer)
 
 Il modulo **Color Equalizer** e' uno strumento di manipolazione cromatica avanzata che opera nello spazio colore **HSL** (Hue, Saturation, Lightness). Permette di regolare selettivamente tonalita', saturazione e luminosita' per specifiche gamme di colore tramite curve interattive e un sistema di mascheramento cromatico integrato.[^ce-in-depth]
 

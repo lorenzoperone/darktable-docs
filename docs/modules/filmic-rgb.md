@@ -1,4 +1,4 @@
-# Tone Mapping: Filmic RGB, AgX, Sigmoid
+# Filmic RGB
 
 darktable offre tre tone mapper scene-referred. **Usane solo uno alla volta.**[^manual-filmic][^manual-agx][^manual-sigmoid]
 

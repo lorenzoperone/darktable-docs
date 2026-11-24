@@ -1,4 +1,4 @@
-# RGB Primaries
+# Primarie RGB (rgb primaries)
 
 Il modulo **rgb primaries** è uno strumento avanzato per la manipolazione del colore che regola la tonalità (hue) e la purezza (purity) dei colori primari RGB (rosso, verde e blu). A differenza di molti altri strumenti di correzione colore, questo modulo lascia invariati i pixel incolori (grigi) e preserva le relazioni di opponenza tra i colori: ad esempio, se si aumenta la purezza del blu, l'intensità del colore opposto (giallo) aumenta per bilanciare la correzione.[^manual-rgb]
 

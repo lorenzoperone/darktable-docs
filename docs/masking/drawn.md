@@ -1,4 +1,4 @@
-# Maschere Disegnate
+# Maschere disegnate
 
 Le maschere disegnate permettono di tracciare forme direttamente sull'immagine: pennello, cerchio, ellisse, percorso (path) e gradiente.[^manual]
 

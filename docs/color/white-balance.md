@@ -1,4 +1,4 @@
-# Bilanciamento del Bianco
+# Bilanciamento del bianco
 
 In darktable, il bilanciamento del bianco segue un **approccio a due stadi** che è più preciso del metodo tradizionale[^manual-wb][^manual-colorcal].
 

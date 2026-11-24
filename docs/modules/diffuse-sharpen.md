@@ -1,4 +1,4 @@
-# Diffuse or Sharpen (Diffondi o Nitidezza)
+# Diffusione o nitidezza (diffuse or sharpen)
 
 Il modulo **Diffuse or Sharpen** e' uno degli strumenti piu' potenti e complessi di darktable. Implementa un modello fisico generalizzato di diffusione -- un'equazione differenziale parziale anisotropa e multiscala -- per simulare o annullare processi diffusivi reali.[^manual]
 

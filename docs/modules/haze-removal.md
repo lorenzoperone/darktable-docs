@@ -1,4 +1,4 @@
-# Haze Removal
+# Rimozione foschia (haze removal)
 
 Il modulo **haze removal** è progettato per ridurre automaticamente gli effetti della polvere e della nebbia atmosferica nelle immagini. Oltre alla dehazing, questo modulo può essere impiegato per dare una spinta cromatica (color boost) specificamente nelle regioni dell'immagine a basso contrasto.[^manual-haze]
 

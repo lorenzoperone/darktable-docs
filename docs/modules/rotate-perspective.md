@@ -1,4 +1,4 @@
-# Rotate and Perspective
+# Rotazione e prospettiva (rotate and perspective)
 
 Il modulo **rotate and perspective** è lo strumento principale di darktable per la correzione geometrica avanzata: raddrizza orizzonti, corregge linee convergenti (effetto “palazzo che cade”), e applica trasformazioni di tipo *lens shift* ispirate agli obiettivi tilt-shift. Basato sull’algoritmo di Markus Hebel (*ShiftN*), opera in uno spazio scene-referred e supporta sia correzioni automatiche basate su rilevamento strutturale che interventi manuali precisi[^manual-48-rotate].
 

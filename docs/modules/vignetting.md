@@ -1,4 +1,4 @@
-# Vignetting
+# Vignettatura (vignetting)
 
 Il modulo **vignetting** applica un effetto di attenuazione della luminosità e saturazione lungo i bordi dell’immagine, con forma geometrica controllabile (circolare, ellittica o quadrata). È uno strumento *non fisico*: non corregge vignettatura ottica reale, ma ne simula o accentua l’effetto per fini compositivi — ad esempio per guidare l’occhio verso il centro o creare un look cinematografico[^vignetting-manual].  
 

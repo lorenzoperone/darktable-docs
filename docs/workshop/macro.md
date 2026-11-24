@@ -1,4 +1,4 @@
-# Macro Close-Up Photography in darktable
+# Fotografia macro e close-up
 
 Il flusso di lavoro per la **macro close-up photography** in darktable richiede un approccio specifico: alta fedeltà cromatica, controllo millimetrico del contrasto locale, gestione precisa delle alte luci (spesso sovraesposte su fondi neri o sfocati), e supporto nativo al *focus stacking* tramite integrazione esterna[^focus-stacking-video]. A differenza della fotografia paesaggistica o ritrattistica, la macro richiede una pipeline che preservi i dettagli microscopici senza introdurre artefatti di denoising, desaturazione o clipping tonale.
 

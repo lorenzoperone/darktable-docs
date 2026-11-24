@@ -1,4 +1,4 @@
-# Demosaicing
+# Demosaicizzazione (demosaic)
 
 Il modulo **demosaicing** è il primo modulo tecnico obbligatorio nella pipeline di elaborazione RAW di darktable. Ricostruisce l’intero spazio colore RGB da un singolo canale per pixel (disposto secondo il pattern del filtro Bayer o X-Trans), trasformando i dati grezzi del sensore in un’immagine visualizzabile con informazioni complete su rosso, verde e blu per ogni punto. È fondamentale per la qualità finale della nitidezza, della risoluzione cromatica e della gestione del rumore, specialmente a ISO elevati[^manual-demosaic][^dt38-demosaic].
 

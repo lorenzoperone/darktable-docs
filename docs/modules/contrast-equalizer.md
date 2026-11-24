@@ -1,4 +1,4 @@
-# Contrast Equalizer
+# Equalizzatore contrasto (contrast equalizer)
 
 Il modulo **contrast equalizer** è uno strumento avanzato per il controllo del contrasto locale e globale basato sulla decomposizione wavelet. Opera nello spazio colore CIE LCh (Luminanza, Crominanza, Tonalità), permettendo di regolare separatamente luminosità (*luma*) e saturazione (*chroma*) a diverse scale di dettaglio — dalle strutture grossolane (*coarse*) a quelle finissime (*fine*) — senza introdurre artefatti cromatici o gradient reversal[^dt48-manual]. È il modulo di riferimento per nitidezza selettiva, bloom controllato, riduzione del rumore multiscala e chiaroscuro strutturale in darktable 5.4+[^dt54-update][^pixls-rgb].
 

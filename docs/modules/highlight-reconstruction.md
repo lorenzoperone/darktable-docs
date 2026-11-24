@@ -1,4 +1,4 @@
-# Highlight Reconstruction
+# Ricostruzione alteluci (highlight reconstruction)
 
 Il modulo **highlight reconstruction** è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone *clippate* — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, **highlight reconstruction agisce molto precocemente**, dopo `white balance` ma prima di `demosaic`, `input color profile` e `color calibration`, su un segnale ancora grezzo e privo di significato cromatico definito [^dt48-highlight].
 

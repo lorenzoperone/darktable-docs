@@ -1,4 +1,4 @@
-# Workshop -- Casi pratici di editing
+# Workshop: casi pratici di editing
 
 Esercitazioni passo-passo basate su video-tutorial reali e articoli della community. Ogni caso mostra il **perche'** dietro ogni scelta, non solo il **come**.
 

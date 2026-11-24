@@ -1,4 +1,4 @@
-# Shortcut da tastiera
+# Scorciatoie da tastiera
 
 ## Panoramica
 

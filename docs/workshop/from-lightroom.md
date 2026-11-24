@@ -1,4 +1,4 @@
-# Migrazione da Lightroom a darktable: Workshop pratico
+# Migrazione da Lightroom a darktable: workshop pratico
 
 Questo workshop guida passo-passo un utente proveniente da Lightroom nell’elaborazione di una fotografia RAW in **darktable 5.4+**, replicando un flusso tipico di sviluppo *Lightroom-style* — ma rispettando l’architettura tecnica e la filosofia di darktable: **scene-referred, non-destructive, modulare e controllabile**[^darktable-not-lightroom]. Non si tratta di “fare come Lightroom”, ma di *tradurre il proprio linguaggio creativo* in un sistema più profondo, meno opaco e completamente aperto[^lightroom-darktable-express-01].
 

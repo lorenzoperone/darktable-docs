@@ -1,4 +1,4 @@
-# Tone Equalizer
+# Equalizzatore toni (tone equalizer)
 
 Il Tone Equalizer opera nel dominio lineare utilizzando una **maschera guidata** che divide l'immagine in zone di luminanza. Il suo cuore è il filtro **EIGF** (Exposure-Independent Guided Filter) che sfuoca la maschera preservando i bordi, evitando aloni[^manual].
 

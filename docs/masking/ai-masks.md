@@ -1,4 +1,4 @@
-# AI masks SAM2 darktable
+# Maschere AI (SAM2)
 
 Il modulo **AI masks SAM2** è il sistema nativo di mascheramento basato su intelligenza artificiale introdotto in darktable 5.6, integrato direttamente nella pipeline scene-referred senza necessità di plugin esterni[^youtube-sam2]. Sostituisce progressivamente i workflow basati su SAM2/SAM3 esterni e maschere raster tradizionali, offrendo maschere vettoriali ad alta precisione generate in tempo reale direttamente dall’immagine RAW[^youtube-sam2][^pixls-gpu]. A differenza dei modelli precedenti, SAM2 opera in modalità *object-aware*, permettendo la segmentazione semantica di soggetti complessi (persone, animali, oggetti) con un solo clic o tramite prompt testuale[^youtube-sam2].
 

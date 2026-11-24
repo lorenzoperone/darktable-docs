@@ -1,4 +1,4 @@
-# Maschere e Blending
+# Maschere e fusione (blending)
 
 Le maschere trasformano darktable da un editor «globale» a uno strumento di precisione chirurgica. Ogni modulo può essere applicato solo a una porzione dell'immagine[^manual-masking].  
 Il sistema di masking è **modulare, riutilizzabile e gerarchico**: le maschere create in un modulo possono essere richiamate come *raster mask* in tutti i moduli successivi nella pipeline — purché siano definite nel modulo più basso possibile[^landscape][^dt54].

@@ -1,4 +1,4 @@
-# Color Grading
+# Color grading
 
 Dopo il tone mapping, i colori appaiono spesso un po' spenti. E' normale: il tone mapper comprime la gamma dinamica, e con essa la saturazione percepita. Questa fase restituisce vita cromatica all'immagine.
 

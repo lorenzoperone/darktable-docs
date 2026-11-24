@@ -1,4 +1,4 @@
-# Input Color Profile
+# Profilo colore di ingresso (input color profile)
 
 Il modulo **input color profile** definisce come darktable interpreterà i dati cromatici dell’immagine in ingresso, convertendoli dallo spazio colore nativo della sorgente (fotocamera, scanner, file JPEG/TIFF) a uno spazio colore di lavoro standardizzato. È il primo modulo *obbligatorio* nella pipeline di elaborazione RAW e agisce prima di qualsiasi regolazione espositiva o cromatica — un errore qui compromette irreversibilmente tutti i passaggi successivi[^manual-48-input].
 

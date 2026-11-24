@@ -1,4 +1,4 @@
-# Orton Effect & Dragan Effect in darktable
+# Effetto Orton ed effetto Dragan
 
 L’**Orton effect** e il **Dragan effect** sono due tecniche di post-produzione che creano un’atmosfera onirica, luminosa e drammatica rispettivamente:  
 - **Orton**: glow morbido, etereo, con alta luminosità e leggera sfocatura — ideale per paesaggi, fiori e ritratti delicati[^orton-video].  

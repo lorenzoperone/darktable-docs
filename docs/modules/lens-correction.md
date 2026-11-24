@@ -1,4 +1,4 @@
-# Lens Correction
+# Correzione obiettivo (lens correction)
 
 Il modulo **lens correction** è il punto di partenza tecnico della pipeline darktable per la correzione ottica automatica e manuale. Gestisce tre difetti fisici fondamentali introdotti dall’obiettivo: **distorsione geometrica**, **aberrazione cromatica trasversale (TCA)** e **vignettatura fotometrica**, in modo non distruttivo e basato sui dati EXIF o sul database esterno [Lensfun](https://lensfun.github.io/)[^dt48-lens-correction]. A partire da darktable 5.4, il modulo supporta anche la simulazione inversa di tali difetti (*distort mode*), utile per effetti creativi o test di calibrazione[^dt48-lens-correction].
 

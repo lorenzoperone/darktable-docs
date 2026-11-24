@@ -1,4 +1,4 @@
-# Soften
+# Sfumatura (soften)
 
 Il modulo **soften** (ammorbidisci) è uno strumento creativo che permette di creare un'immagine digitalmente ammorbidita utilizzando l'effetto Orton. Questa tecnica prende il nome dal fotografo Michael Orton, che originariamente otteneva questo risultato su pellicola diapositiva combinando due esposizioni della stessa scena: una ben esposta e una sovraesposta. In camera oscura, le due immagini venivano sovrapposte, con quella sovraesposta che risultava sfocata.[^manual-soften]
 

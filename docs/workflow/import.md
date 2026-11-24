@@ -1,4 +1,4 @@
-# Importazione e Organizzazione
+# Importazione e organizzazione
 
 Il processo di post-produzione non inizia con la manipolazione dei pixel, ma con l'organizzazione strategica degli asset digitali. darktable non è solo un editor: è un sistema **DAM** (Digital Asset Management) che opera in modo non distruttivo tramite un database SQLite e file XMP sidecar.
 

@@ -1,4 +1,4 @@
-# Maschere Parametriche
+# Maschere parametriche
 
 Le maschere parametriche selezionano i pixel automaticamente in base ai loro valori di luminosità, tonalità o saturazione. Non richiedono di disegnare nulla: la maschera si adatta automaticamente al contenuto.[^manual]
 

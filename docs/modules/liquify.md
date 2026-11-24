@@ -1,4 +1,4 @@
-# Liquify
+# Fluidifica (liquify)
 
 Il modulo **liquify** permette di spostare i pixel dell'immagine applicando distorsioni in stile libero a parti specifiche della foto. Utilizza un sistema basato su nodi (punti, linee e curve) per definire percorsi e aree di influenza, offrendo un controllo granulare simile agli strumenti di deformazione di Photoshop, ma integrato nella pipeline non distruttiva di darktable.[^liquify-manual]
 

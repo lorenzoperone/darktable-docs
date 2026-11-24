@@ -1,4 +1,4 @@
-# Tone Mapping: AGX
+# AgX
 
 Il modulo **AGX** (Academy Color Encoding System-inspired tone mapping) e' il tone mapper predefinito in darktable 5.4+. Sostituisce gradualmente Filmic RGB e Sigmoid, offrendo un approccio ispirato al workflow cinematografico ACES per la compressione tonale scene-referred.[^agx-guide][^manual-agx]
 

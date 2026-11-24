@@ -1,4 +1,4 @@
-# Watermark
+# Filigrana (watermark)
 
 Il modulo **watermark** permette di sovrapporre un’immagine vettoriale (SVG) o bitmap (PNG) personalizzata all’immagine elaborata, con controllo preciso su posizionamento, scala, rotazione e opacità. È particolarmente utile per la protezione del copyright, l’aggiunta di firme, loghi o informazioni contestuali direttamente nell’output finale[^dt48-watermark]. A differenza dei moduli di effetto (es. `vignetting` o `framing`), `watermark` opera in uno spazio indipendente dalla pipeline tonale: il segno viene applicato *dopo* tutti i moduli di correzione e mappatura, garantendo che rimanga visibile anche su sfondi complessi o fortemente elaborati[^dt48-module-groups].
 

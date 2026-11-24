@@ -1,4 +1,4 @@
-# Gamut Mapping: Unbounded Colors
+# Gamut mapping: colori illimitati (unbounded colors)
 
 Il modulo **Gamut Mapping: Unbounded Colors** non è un modulo attivabile dall’utente, ma una *caratteristica fondamentale della pipeline di elaborazione* di darktable, attiva per impostazione predefinita fin dalla versione 3.0 e pienamente integrata nel workflow scene-referred a partire dalla versione 4.0[^unbounded-colors]. Non si tratta di un controllo interattivo come AGX o Filmic RGB, bensì del principio architetturale che consente a darktable di gestire valori RGB superiori a `1.0` (ovvero oltre il 100% display-referred) senza clipping prematuro — preservando così informazioni cromatiche e tonali critiche fino all’ultimo stadio della pipeline[^unbounded-colors][^dt54-update].
 

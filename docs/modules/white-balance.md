@@ -1,4 +1,4 @@
-# White Balance
+# Bilanciamento del bianco (white balance)
 
 Il modulo **white balance** è il primo modulo tecnico della pipeline di elaborazione RAW in darktable, responsabile della correzione obbligatoria del bilanciamento del bianco prima che i dati possano essere correttamente demosaicati e processati. Il suo scopo non è creativo ma *tecnico*: garantire che i grigi neutri della scena siano resi con valori RGB uguali (R = G = B) nel flusso di lavoro[^wb-manual]. A differenza di Lightroom, dove il bilanciamento del bianco è un singolo strumento flessibile, in darktable esso opera in sinergia con il modulo **color calibration**, che gestisce la successiva adattazione cromatica percepita[^color-calib-manual].
 

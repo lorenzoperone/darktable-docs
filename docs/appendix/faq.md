@@ -1,4 +1,4 @@
-# Troubleshooting FAQ: darktable
+# Risoluzione dei problemi (FAQ)
 
 Il modulo **Troubleshooting FAQ** non esiste come componente attivo nella pipeline di elaborazione di darktable. Si tratta invece di una **sezione concettuale e operativa** — integrata nel manuale ufficiale, nei forum della comunità e nelle risorse didattiche — dedicata alla diagnosi e risoluzione sistematica dei problemi più comuni durante l’uso del software[^manual-48-troubleshooting]. Questa pagina di riferimento sintetizza le procedure verificate, i comandi terminali essenziali e le strategie diagnostiche raccomandate per utenti avanzati e migranti da Lightroom/Photoshop, con particolare attenzione a compatibilità hardware, flussi di lavoro scene-referred e gestione degli errori critici.
 

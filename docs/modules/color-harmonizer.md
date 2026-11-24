@@ -1,4 +1,4 @@
-# Color Harmonizer
+# Color harmonizer
 
 Il modulo **color harmonizer**, introdotto in darktable 5.6, riduce la *dissonanza cromatica* spingendo le tonalità verso una palette di colori selezionata.[^manual-ch] La palette è definita da un insieme di angoli di tonalità chiamati **nodi armonici**: i colori "fuori palette" vengono attratti dolcemente verso il nodo più vicino, mentre quelli già su un nodo restano invariati. Un moltiplicatore di saturazione per nodo può inoltre aumentare o ridurre la vividezza dei colori vicini a ciascun nodo.[^manual-ch]
 

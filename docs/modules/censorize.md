@@ -1,4 +1,4 @@
-# Censorize
+# Censura (censorize)
 
 Il modulo **censorize** è uno strumento progettato per degradare parti dell'immagine in modo esteticamente gradevole, con lo scopo principale di anonimizzare persone o oggetti, oppure di nascondere parti del corpo per rispettare le linee guida dei social media.[^censorize-manual]
 

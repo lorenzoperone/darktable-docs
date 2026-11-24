@@ -1,4 +1,4 @@
-# Color Calibration
+# Calibrazione colore (color calibration)
 
 Il modulo **Color Calibration** esegue l'adattamento cromatico usando il modello **CAT16** (Chromatic Adaptation Transform). È il sostituto moderno del bilanciamento del bianco tradizionale, progettato per operare in uno spazio *scene-referred*, dopo l’applicazione del profilo colore di input e prima della mappatura tonale finale[^manual].
 

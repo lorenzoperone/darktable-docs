@@ -1,4 +1,4 @@
-# Color Grading Avanzato: Bilanciamento Colore RGB in darktable
+# Color grading avanzato con bilanciamento colore RGB
 
 Il modulo **color balance rgb** è lo strumento di *secondary color grading* avanzato per il flusso scene-referred, ispirato al cinema e progettato per operare in spazi cromatici perceptualmente uniformi (JzAzBz e darktable UCS) [^dt48-color-balance-rgb]. Sostituisce progressivamente il vecchio modulo *color balance*, offrendo controllo indipendente su ombre, mezzitoni e luci, con maschere luminose pre-calibrate e gestione precisa della saturazione senza shift cromatici [^dt48-color-balance-rgb].
 

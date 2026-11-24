@@ -1,4 +1,4 @@
-# Raster Masks: External Plugins
+# Maschere raster
 
 Il modulo **raster masks external plugins** non è un singolo modulo nativo di darktable, ma una *categoria funzionale* che descrive il flusso di lavoro per importare, convertire e applicare maschere raster generate esternamente (es. con AI tools come SAM2/SAM3, Affinity Photo o Photoshop) nel pipeline di elaborazione di darktable 5.4+[^raster-manual][^external-masks-video]. Questo workflow consente di sfruttare algoritmi di segmentazione avanzati non disponibili nativamente, integrandoli in modo non distruttivo nella pipeline scene-referred[^ai-subsystem-pr].
 

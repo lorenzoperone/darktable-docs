@@ -1,4 +1,4 @@
-# Modulo Retouch
+# Ritocco (retouch)
 
 Il modulo **retouch** è lo strumento centrale per la rimozione selettiva di elementi indesiderati (macchie, fili, sensor dust, riflessi) e per il ritocco avanzato della pelle, del cielo o di altre aree critiche. A partire da darktable 4.8, sostituisce definitivamente il modulo deprecato *spot removal*, integrando clonazione, guarigione (*heal*), riempimento (*fill*) e sfocatura (*blur*) in un’unica interfaccia modulare, con supporto nativo alla **decomposizione wavelet** per un controllo multilivello dei dettagli[^darktable-usermanual-retouch][^pixls-wavelet].
 

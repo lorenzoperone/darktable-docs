@@ -1,4 +1,4 @@
-# Tone Mapping: Sigmoid
+# Sigmoideo (sigmoid)
 
 Il modulo **sigmoid** è un tone mapper basato su una curva log-logistica generalizzata, progettato per mappare la gamma dinamica *scene-referred* (illimitata) nel range limitato del display (0–100%) senza introdurre shift cromatici indesiderati[^sigmoid-manual]. È uno dei tre moduli principali di compressione tonale in darktable — insieme a `filmic rgb` e `agx` — e rimane particolarmente apprezzato per la sua semplicità, prevedibilità e controllo fine sulle transizioni tonali, specialmente in ritratti e immagini con ampie zone di pelle o cielo uniforme[^filmic-sigmoid-p4][^sigmoid-fr].
 

@@ -1,4 +1,4 @@
-# Blurs
+# Sfocature (blurs)
 
 Il modulo **blurs** simula sfocature fisicamente accurate nello spazio RGB scene-referred. A differenza dei semplici filtri di sfocatura, questo modulo utilizza una rappresentazione grafica della *Point Spread Function* (PSF) per mostrare come ogni punto luminoso della scena verrà trasformato in una macchia di luce dall'operatore di sfocatura selezionato.[^manual-blurs]
 

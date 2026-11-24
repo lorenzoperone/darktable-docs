@@ -1,4 +1,4 @@
-# Crop
+# Ritaglio (crop)
 
 Il modulo **crop** è il modulo dedicato al ritaglio geometrico in darktable 5.4+, progettato per sostituire definitivamente il modulo obsoleto *crop and rotate* a partire dalla versione 3.8[^crop-rotate-deprecated]. È posizionato *dopo* i moduli di correzione geometrica (*rotate and perspective*) e *prima* di quelli di ritocco (*retouch*), garantendo che l’intera immagine originale rimanga disponibile per la creazione di sorgenti (*source spots*) nel modulo *retouch*[^crop-manual][^pipeline-order].
 

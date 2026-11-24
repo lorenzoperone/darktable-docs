@@ -1,4 +1,4 @@
-# Denoise (profiled)
+# Riduzione rumore profilata (denoise profiled)
 
 Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in modo intelligente. Attivarlo **prima** dei selettori automatici (esposizione, calibrazione colore) perché il rumore confonde gli algoritmi[^48-profiled]. Questo posizionamento è critico: il modulo opera *prima* di `input color profile` nella pipeline pixelpipe, garantendo che i parametri di denoising siano applicati sui dati raw correttamente scalati rispetto al profilo di rumore del sensore[^48-profiled]. Ciò permette una correzione più precisa della varianza del rumore — che non è costante, ma dipende dalla luminosità del segnale e dall’ISO effettivo[^48-profiled].
 

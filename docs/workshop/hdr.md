@@ -1,4 +1,4 @@
-# HDR Tone Mapping in darktable: Workshop Pratico
+# HDR tone mapping: workshop pratico
 
 Il **tone mapping HDR** in darktable non è un singolo modulo, ma una strategia di compressione tonale che combina tre strumenti complementari:  
 1. **Tone Equalizer**, per il controllo locale e la gestione delle zone di luminanza[^dt48-tone-equalizer]  

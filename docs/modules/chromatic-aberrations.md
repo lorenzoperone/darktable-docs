@@ -1,4 +1,4 @@
-# Chromatic Aberrations
+# Aberrazioni cromatiche (chromatic aberrations)
 
 Il modulo **chromatic aberrations** corregge le aberrazioni cromatiche trasversali (TCA) *dopo* la demosaicizzazione, quindi funziona su immagini già convertite in RGB — a differenza del modulo `raw chromatic aberrations`, che opera direttamente sui dati RAW Bayer[^chromatic-aberrations-manual]. È il modulo principale da utilizzare per la correzione TCA su immagini non-RAW (JPEG, TIFF, PNG) o quando il modulo `lens correction` non riesce a risolvere completamente i bordi colorati[^chromatic-aberrations-manual].
 

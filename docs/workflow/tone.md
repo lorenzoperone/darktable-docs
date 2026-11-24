@@ -1,4 +1,4 @@
-# Tone Mapping
+# Tone mapping
 
 Il passaggio dai dati lineari infiniti alla gamma dinamica limitata del monitor e' gestito dai moduli di tone mapping. darktable offre tre percorsi principali. **Usa solo uno dei tre alla volta**: non sovrapporre Filmic, Sigmoid e AgX.
 

@@ -1,4 +1,4 @@
-# Ritratto -- Effetto Dragan e ritratto chiaroscuro
+# Ritratto: effetto Dragan e chiaroscuro
 
 > **Fonti:** [The Dragan effect in darktable](https://www.youtube.com/watch?v=EuvG0lh8OB8) -- A Dabble in Photography | [An Open Source Portrait (Mairi)](https://pixls.us/articles/an-open-source-portrait-mairi/) -- Pat David
 

@@ -1,4 +1,4 @@
-# Combinare le Maschere
+# Combinare le maschere
 
 Il vero potere delle maschere emerge quando si combinano piu' tipi insieme: drawn + parametric, raster, e le nuove maschere AI.[^manual]
 

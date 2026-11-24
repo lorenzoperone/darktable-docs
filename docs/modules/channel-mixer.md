@@ -1,4 +1,4 @@
-# Channel Mixer (Mix di Canali)
+# Miscelatore canali (channel mixer)
 
 Il **Channel Mixer** (Mix di Canali) è uno dei moduli più potenti di darktable per la manipolazione cromatica. Permette di controllare in modo indipendente quanto ciascun canale di ingresso (Rosso, Verde, Blu) contribuisce a ciascun canale di uscita, attraverso una **moltiplicazione matriciale 3x3**.[^manual]
 

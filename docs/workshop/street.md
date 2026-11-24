@@ -1,4 +1,4 @@
-# Street Photography in darktable: Workshop Pratico B/N
+# Street photography in bianco e nero: workshop pratico
 
 Il workflow per la street photography in bianco e nero in darktable 5.4+ si basa su **controllo selettivo del contrasto tonale**, **gestione precisa della luminosità locale** e **preservazione del carattere “spontaneo” dell’immagine**, senza cadere in effetti artificiali o sovra-elaborati[^street-video-1][^bw-video]. A differenza della fotografia paesaggistica, qui il focus non è sulla gamma dinamica estrema, ma sulla **gerarchia visiva**: chi/che cosa guida lo sguardo, dove l’occhio si ferma, come la luce modella il soggetto nel caos urbano[^street-video-1].
 

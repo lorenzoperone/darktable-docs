@@ -1,4 +1,4 @@
-# Neural Restore
+# Neural restore
 
 Il modulo **neural restore**, aggiunto in darktable 5.6, utilizza l'intelligenza artificiale per applicare restauri avanzati alle immagini selezionate, supportando tre funzioni principali: riduzione del rumore RAW, riduzione del rumore RGB e upscaling (super-risoluzione) 2x o 4x. Disponibile sia nella vista *Lighttable* che nella *Darkroom*, genera un nuovo file (DNG o TIFF) lasciando intatto l'originale.[^manual-nr]
 

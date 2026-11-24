@@ -1,4 +1,4 @@
-# Base Curve
+# Curva base (base curve)
 
 Il modulo **base curve** simula la curva tonale applicata in-camera per generare il JPEG dal RAW, trasformando i dati lineari del sensore in una rappresentazione visivamente coerente sullo schermo[^base-curve-manual]. È il modulo di *tone mapping* predefinito nel workflow **display-referred**, attivato automaticamente quando nelle preferenze è impostato `auto-apply pixel workflow defaults = display-referred`[^processing-manual]. A differenza di AGX o Filmic RGB, opera nello spazio **camera RGB** — non nello spazio di lavoro standard (ProPhoto RGB o XYZ) — e quindi riflette le caratteristiche specifiche del sensore e della pipeline di elaborazione della fotocamera[^pixls-rgb-lab].
 

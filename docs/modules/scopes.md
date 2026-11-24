@@ -1,4 +1,4 @@
-# Scopes
+# Istogramma e colore (scopes)
 
 Il modulo **scopes** è un modulo diagnostico e di controllo visivo che fornisce rappresentazioni grafiche della distribuzione luminosa e cromatica dell’immagine in tempo reale[^scopes-manual]. Non modifica i pixel direttamente, ma consente di valutare oggettivamente esposizione, bilanciamento del bianco, saturazione e armonia cromatica. È posizionato nella barra laterale (di default a destra) ed è calcolato sui dati della *preview*, non sull’immagine finale ad alta risoluzione[^scopes-manual].
 

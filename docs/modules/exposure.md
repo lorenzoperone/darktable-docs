@@ -1,4 +1,4 @@
-# Exposure
+# Esposizione (exposure)
 
 Il modulo **Exposure** controlla la luminosità globale dell’immagine nel dominio lineare, operando *prima* dell’applicazione del profilo colore di input — quindi in uno spazio **scene-referred**, **camera RGB** e **non compresso**[^manual]. Questa posizione nella pipeline è fondamentale: permette di regolare l’esposizione senza introdurre artefatti cromatici o distorsioni di gamma[^dt54]. A differenza di Lightroom, dove l’«esposizione» agisce su un segnale già elaborato (con white balance applicato e curve tonali predefinite), in darktable il modulo `exposure` opera sul segnale grezzo proveniente dal sensore, rendendolo il punto di partenza obbligato per ogni correzione tonale corretta[^firststeps].
 

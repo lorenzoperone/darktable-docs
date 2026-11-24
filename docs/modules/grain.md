@@ -1,4 +1,4 @@
-# Grain
+# Grana (grain)
 
 Il modulo **grain** simula la grana tipica delle pellicole analogiche, aggiungendo una texture sottile e organica all’immagine. A differenza di filtri di rumore o di sfocatura, il grain opera in modo fisicamente plausibile: è calcolato esclusivamente sul canale **L** dello spazio colore **Lab**, preservando la struttura cromatica e la nitidezza dei dettagli[^dt48-grain]. Questo approccio lo rende particolarmente adatto per applicazioni artistiche (ritratti, street, b/n) dove si desidera un aspetto “cinematografico” senza compromettere la definizione o introdurre artefatti cromatici[^darktable-fr-grain-2016].
 

@@ -1,4 +1,4 @@
-# Esposizione e Calibrazione Colore
+# Esposizione e calibrazione colore
 
 Dopo le correzioni tecniche automatiche (lente, denoise, demosaic), i primi due interventi manuali nel flusso scene-referred sono l'**ancoraggio dell'esposizione** e la **calibrazione cromatica**.
 

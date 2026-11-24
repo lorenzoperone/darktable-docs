@@ -1,4 +1,4 @@
-# Color Mapping
+# Mappatura dei colori (color mapping)
 
 Il modulo **Color Mapping** è uno strumento avanzato per trasferire il "look and feel" cromatica di un'immagine (sorgente) a un'altra (target). A differenza delle semplici curve o dei livelli di regolazione, questo modulo esegue un'analisi statistica delle caratteristiche del colore di entrambe le immagini, creando una mappatura basata su cluster di colori dominanti[^manual-color-mapping].
 

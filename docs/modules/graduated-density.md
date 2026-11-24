@@ -1,4 +1,4 @@
-# Graduated Density
+# Filtro graduato (graduated density)
 
 Il modulo **Graduated Density** simula un filtro a densità neutra graduata (ND Grad), permettendo di correggere l'esposizione e il colore in modo progressivo su una porzione dell'immagine. È l'equivalente diretto del "Graduated Filter" di Lightroom, ma implementato come un modulo distinto nella pipeline di elaborazione.[^manual-gd]
 

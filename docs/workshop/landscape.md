@@ -1,4 +1,4 @@
-# Paesaggio -- Tramonto con albero e maschere avanzate
+# Paesaggio: tramonto con albero e maschere avanzate
 
 > **Fonte:** [Darktable landscape edit with AI](https://www.youtube.com/watch?v=OERXOFz9lEo) — A Dabble in Photography
 
