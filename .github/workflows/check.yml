@@ -1,0 +1,45 @@
+name: Controllo build documentazione
+
+# Verifica che la guida compili senza warning (link interni rotti, pagine
+# fuori nav, ecc.) su ogni pull request e su ogni push di rami diversi da main
+# (main è già coperto dal deploy in publish.yml, che fallisce se la build fallisce).
+
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # git-revision-date-localized
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Installa dipendenze
+        run: pip install -r requirements.txt
+
+      - name: Build strict
+        run: mkdocs build --strict
+
+      - name: Pattern noti di allucinazione LLM
+        run: |
+          # URL segnaposto (bias Qwen #3)
+          if grep -rnE "https?://example\.com" docs; then
+            echo "::error::URL segnaposto trovati"; exit 1
+          fi
+          # "Darktable" maiuscolo nella prosa (convenzione brand)
+          if grep -rnE "(^|[^/\`\"'(])Darktable\b" docs --include='*.md' | grep -vE '\]\(|https?://'; then
+            echo "::warning::'Darktable' maiuscolo: verificare (consentito solo nei titoli di terzi citati)"
+          fi
