@@ -178,7 +178,7 @@ L’effetto è causato da un valore eccessivo di `curve smoothing` (>0.6) o da u
 Ciò indica una compressione eccessiva delle alte luci. Riduci `contrast` da `1.60` a `1.35` e aumenta `target_white` da `99.99%` a `99.995%`. In alternativa, usa `tone equalizer` per applicare un leggero `+0.08 EV` allo slider `-1 EV`, che agisce proprio sulle luci medie delle nuvole senza toccare le alte luci bruciate[^sigmoid-v5-video].
 
 ### Problema: il modulo `color calibration` non rileva correttamente l’illuminante AI su immagini con cielo molto uniforme
-Quando l’algoritmo `(AI) detect from surfaces` fallisce su cieli monocromi, passa a `(AI) detect from edges` e disegna manualmente una maschera su una zona con alta frequenza spaziale (es. profilo di un edificio o albero). Questo forza l’analisi su transizioni cromatiche reali, migliorando la precisione del CAT16 fino al 40% rispetto al metodo automatico[^dt48-color-calibration].
+Quando l’algoritmo `(AI) detect from surfaces` fallisce su cieli monocromi, passa a `(AI) detect from edges`[^dt48-color-calibration] e restringi l’area di analisi con il selettore (color picker) su una zona ricca di dettagli (es. profilo di un edificio o albero), così la stima si basa su transizioni cromatiche reali.
 
 ---
 

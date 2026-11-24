@@ -33,7 +33,7 @@ Il flusso ottimale segue la gerarchia fisica della luce e dei sensori:
 
 ```mermaid
 flowchart TD
-    A["1. Correzioni tecniche<br/>(obiettivo, rumore)"] --> B["2. Esposizione<br/>(grigio medio ~18%)"] --> C["3. Equalizzatore<br/>contrasto (nitidezza,<br/>bloom)"] --> D["4. Tone mapping<br/>(AGX/Sigmoid)"] --> E["5. Gestione colore<br/>(calibrazione, CB RGB)"]
+    A["1. Correzioni tecniche<br/>(obiettivo, rumore)"] --> B["2. Esposizione<br/>(grigio medio ~18%)"] --> C["3. Calibrazione<br/>colore"] --> D["4. Equalizzatore<br/>contrasto (nitidezza,<br/>bloom)"] --> E["5. CB RGB +<br/>tone mapping<br/>(AGX/Sigmoid)"]
 ```
 
 ### Passo 1: Imposta la scala di visualizzazione
@@ -198,7 +198,7 @@ Attiva la scheda **edges**, solleva il primo punto (scala 1) a `+0.10`, quindi a
 
 ## Preset integrati
 
-Il modulo **contrast equalizer** include 7 preset ufficiali, accessibili tramite il menu hamburger (☰) in alto a destra del modulo. Tutti operano in CIE LCh e sono compatibili con la pipeline scene-referred[^dt48-manual].
+Il modulo **contrast equalizer** include diversi preset ufficiali (tra cui `coarse`, `denoise & sharpen`, `sharpen`, `denoise chroma`, `denoise`, `bloom`, `clarity` e la serie `deblur`), accessibili tramite il menu hamburger (☰) in alto a destra del modulo. I principali sono riassunti sotto; tutti operano in CIE LCh e sono compatibili con la pipeline scene-referred[^dt48-manual].
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
@@ -206,9 +206,6 @@ Il modulo **contrast equalizer** include 7 preset ufficiali, accessibili tramite
 | `denoise` | Rumore fine su ISO ≥ 1600 | `luma denoise` scala 1 a `+0.20`, `chroma denoise` scale 1–2 a `+0.35`/`+0.15` |
 | `bloom` | Effetto glow su luci isolate | `luma` scala 7 a `+0.35`, `chroma` scala 7 a `+0.18`, `mix = 0.500` |
 | `clarity` | Contrasto locale strutturale | `luma` scale 2–4 a `+0.15`, `+0.12`, `+0.08`; `chroma` a `0.000` |
-| `soften` | Effetto “velvet skin” su ritratti | `luma` scale 1–2 a `-0.20`, `-0.10`; `chroma` scala 1 a `-0.30` |
-| `detail-enhancement` | Estrazione dettagli in macro/fiori | `luma` scale 1–3 a `+0.30`, `+0.25`, `+0.20`; `edges` a `+0.10` su scala 1 |
-| `high-contrast-bw` | Potenziamento strutturale per B/N | `luma` scale 2–5 a `+0.22`, `+0.18`, `+0.15`, `+0.10`; `chroma` a `0.000` |
 
 > 💡 I preset possono essere modificati e salvati come nuovi preset personalizzati. Il valore di **mix** non è memorizzato nel preset: viene sempre applicato al valore corrente[^dt48-manual].
 

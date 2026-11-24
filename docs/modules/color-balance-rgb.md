@@ -22,11 +22,11 @@ Il flusso ideale prevede tre fasi sequenziali, rispettando l’ordine gerarchico
 
 ```mermaid
 flowchart TD
-    A["1. Correzione primaria<br/>(calibrazione colore)"] --> B["2. Compressione tonale<br/>(AGX o Filmic RGB)"] --> C["3. Color grading<br/>(bilanciamento<br/>colore RGB)"]
+    A["1. Correzione primaria<br/>(calibrazione colore)"] --> B["2. Color grading<br/>(bilanciamento<br/>colore RGB)"] --> C["3. Compressione tonale<br/>(AGX o Filmic RGB)"]
 ```
 
-!!! tip "Usa solo dopo la compressione tonale"
-    Applicare `color balance rgb` *prima* di AGX/Filmic RGB porta a risultati imprevedibili: i controlli di saturazione e contrasto assumono comportamenti non lineari e possono causare clipping cromatico irrecuperabile [^dt48-color-balance-rgb].
+!!! tip "Posizione nella pipeline"
+    `color balance rgb` si aspetta dati scene-referred lineari [^dt48-color-balance-rgb]: nel pixelpipe si trova sempre *dopo* `color calibration` e *prima* del tone mapper (AGX/Filmic RGB/Sigmoid). Puoi regolarlo in qualsiasi momento, ma la sua posizione è fissa.
 
 ### Passo 1: Scegliere il profilo di partenza
 
@@ -104,13 +104,7 @@ La scheda **Masks** contiene controlli fondamentali per la precisione del gradin
 Il modulo include un sistema di protezione automatica del gamut:
 
 - **Soft saturation clipping**: quando i valori di croma superano i limiti del profilo colore di uscita (di default Rec. 2020), vengono scalati in modo dolce a tonalità costante, evitando tagli netti (clipping) [^dt48-color-balance-rgb].
-- **Clipping prevention**: i parametri `recover purity`, `master purity boost` e `per-channel purity boost` consentono di recuperare la vividezza persa durante la compressione tonale (es. AGX), senza uscire dal gamut [^dt48-color-balance-rgb].
-
-| Parametro | Quando usarlo | Valore tipico |
-|-----------|----------------|----------------|
-| **Recover purity** | Dopo AGX/Filmic, se i colori appaiono spenti | +10% to +30% [^dt48-color-balance-rgb] |
-| **Master purity boost** | Per dare “pop” globale ai colori | +5% to +20% [^dt48-color-balance-rgb] |
-| **Red/Green/Blue purity boost** | Per enfatizzare o correggere singoli canali (es. rosso pelle) | +0% to +40% per rosso [^dt48-color-balance-rgb] |
+- **Purity**: i parametri `recover purity`, `master purity boost` e `red/green/blue purity boost` non appartengono a `color balance rgb`, ma alle sezioni *primaries* di AgX (purity boost) e sigmoid (recover purity).
 
 ## Consigli pratici per migranti da Lightroom/Photoshop
 
@@ -124,7 +118,7 @@ Il modulo include un sistema di protezione automatica del gamut:
 
 ### Esempio: Bilanciamento cromatico su foto notturna con illuminazione mista  
 *Da [ENG] Darktable landscape edit with AI (OERXOFz9lEo) (timestamp 12:30)*  
-1. Attiva `color balance rgb` dopo AGX e `color calibration`.  
+1. Attiva `color balance rgb` (nella pipeline si trova dopo `color calibration` e prima di AGX).  
 2. Nella scheda **Master**, imposta `hue shift = +6.2°` per neutralizzare una dominante arancione da lampade stradali.  
 3. Nella scheda **4 Ways**, imposta `shadows lift` → `hue = +2.1°`, `chroma = −8%` per attenuare il verde nelle ombre.  
 4. Nella scheda **Masks**, regola `mask middle-gray fulcrum = 0.20` per allineare il punto di separazione ombre/luci con la scena reale [^OERXOFz9lEo-1230].

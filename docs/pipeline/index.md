@@ -7,8 +7,8 @@ In darktable non esistono "livelli" come in Photoshop né uno storico di azioni 
 
 ```mermaid
 flowchart TD
-    A["Fase lineare (scene-referred)<br/>RAW → demosaicizzazione → esposizione<br/>→ riduzione rumore → calibrazione colore"] --> B{"Tone mapping<br/>— scegli uno —<br/>AgX · Filmic RGB · Sigmoideo"}
-    B --> C["Fase display (display-referred)<br/>bilanciamento colore · contrasto locale<br/>equalizzatore toni · finitura"]
+    A["Fase lineare (scene-referred)<br/>RAW → demosaicizzazione → riduzione rumore<br/>→ esposizione → equalizzatore toni<br/>→ calibrazione colore → bilanciamento colore"] --> B{"Tone mapping<br/>— scegli uno —<br/>AgX · Filmic RGB · Sigmoideo"}
+    B --> C["Fase display (display-referred)<br/>contrasto locale · finitura"]
     C --> D["Esporta"]
 ```
 

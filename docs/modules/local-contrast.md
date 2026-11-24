@@ -24,11 +24,11 @@ Il flusso ottimale prevede tre fasi sequenziali, con **local contrast** sempre i
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione<br/>globale"] --> B["2. Tone mapping<br/>(AGX/Sigmoid/Filmic)"] --> C["3. Bilanciamento<br/>colore"] --> D["4. Contrasto locale<br/>(texture e dettaglio)"]
+    A["1. Esposizione<br/>globale"] --> B["2. Bilanciamento<br/>colore"] --> C["3. Tone mapping<br/>(AGX/Sigmoid/Filmic)"] --> D["4. Contrasto locale<br/>(texture e dettaglio)"]
 ```
 
-!!! tip "Ordine critico: dopo AGX, prima di sharpen"
-    Applica **local contrast** *dopo* **AGX**, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. Inoltre, posizionalo *prima* di **sharpen** o **diffuse or sharpen**, poiché questi ultimi operano su frequenze più alte[^manual-local-contrast][^manual-shadows-highlights].
+!!! tip "Ordine critico: dopo AGX"
+    Applica **local contrast** *dopo* **AGX**, perché lavora sui dati già compressi e bilanciati. Non usarlo prima di AGX: potrebbe amplificare il rumore o generare artefatti nella fase di compressione tonale. [^manual-local-contrast][^manual-shadows-highlights] Nota: nella pipeline **sharpen** e **diffuse or sharpen** si trovano *prima* di local contrast (e prima del tone mapper).
 
 ### Passo 1: Scegli la modalità
 
@@ -41,13 +41,13 @@ Il primo passo è selezionare l’algoritmo:
 
 Il parametro **detail** è il principale controllo del modulo:
 
-- **Default**: `0.00`  
-- **Range tipico**: `-1.00` a `+1.00`  
+- **Default**: `125%` (100% = nessun effetto)  
+- **Range**: `0%` a `500%`  
 - **Effetto**: inserisce un elemento a forma di **S** nella curva centrale. Valori positivi aumentano il contrasto locale (più “clarity”), valori negativi lo riducono (effetto “softening”)[^manual-local-contrast]  
 - **Valore comune**: `+0.35` per ritratti (enfatizza pelle e occhi), `+0.65` per paesaggi (texture di roccia/foglie)
 
 !!! tip "Usa il confronto prima/dopo"
-    Premi `Ctrl+D` per attivare il confronto *before/after* mentre regoli `detail`. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”[^manual-local-contrast].
+    Crea uno snapshot dal modulo *snapshots* (pannello sinistro) per confrontare prima/dopo mentre regoli `detail`. Questo ti permette di valutare l’effetto reale, non solo la sensazione soggettiva di “nitidezza”[^manual-local-contrast].
 
 ### Passo 3: Affina luci e ombre
 
@@ -55,17 +55,17 @@ I parametri **highlights** e **shadows** agiscono *sulle estremità* della curva
 
 | Parametro | Range | Default | Effetto pratico | Quando usarlo |
 |-----------|--------|---------|------------------|----------------|
-| **highlights** | `-1.00` to `+1.00` | `0.00` | Controlla il contrasto nelle **alte luci**. Valori negativi *comprimono* i dettagli luminosi (es. nuvole, riflessi); valori positivi li *accentuano*[^manual-local-contrast] | Per recuperare dettagli in cieli sovraesposti (senza clipping), o per dare “pop” ai riflessi su capelli/metalli |
-| **shadows** | `-1.00` to `+1.00` | `0.00` | Controlla il contrasto nelle **ombre**. Valori positivi *aumentano il contrasto* nelle zone scure; valori negativi *sollevano le ombre* (simula una “fill light” locale)[^manual-local-contrast] | Per rendere più vividi i dettagli in ombra (es. pieghe di un abito, rametti in penombra), senza appiattire le zone nere |
+| **highlights** | `0%` to `100%` | `50%` | Controlla il contrasto nelle **alte luci**. Valori bassi (sotto il 50%) *comprimono* i dettagli luminosi (es. nuvole, riflessi); valori alti li *accentuano*[^manual-local-contrast] | Per recuperare dettagli in cieli sovraesposti (senza clipping), o per dare “pop” ai riflessi su capelli/metalli |
+| **shadows** | `0%` to `100%` | `50%` | Controlla il contrasto nelle **ombre**. Valori alti *aumentano il contrasto* nelle zone scure; valori bassi *sollevano le ombre* (simula una “fill light” locale)[^manual-local-contrast] | Per rendere più vividi i dettagli in ombra (es. pieghe di un abito, rametti in penombra), senza appiattire le zone nere |
 
 !!! warning "Attenzione al banding"
-    Valori estremi di `highlights` o `shadows` (oltre `±0.70`) possono causare **banding** (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con `detail`[^manual-local-contrast].
+    Valori estremi di `highlights` o `shadows` (vicini a `0%` o `100%`) possono causare **banding** (strisce di tono) nell’immagine, specialmente in aree con gradazioni continue (cieli, pareti lisce). Se noti artefatti, riduci il valore e compensa con `detail`[^manual-local-contrast].
 
 ## Parametri principali (modalità *local laplacian*)
 
 | Parametro | Range | Default | Descrizione |
 |-----------|--------|---------|-------------|
-| **detail** | `-1.00` – `+1.00` | `0.00` | Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni[^manual-local-contrast] |
+| **detail** | `0%` – `500%` | `125%` | Intensità della curva S centrale. Aumenta il contrasto locale nei mezzi toni[^manual-local-contrast] |
 | **highlights** | `-1.00` – `+1.00` | `0.00` | Controllo del contrasto nelle alte luci. Negativo = compressione, positivo = enfasi[^manual-local-contrast] |
 | **shadows** | `-1.00` – `+1.00` | `0.00` | Controllo del contrasto nelle ombre. Positivo = maggiore contrasto, negativo = lifting ombre[^manual-local-contrast] |
 | **mid-tone range** | `0.00` – `1.00` | `0.50` | Estensione della zona centrale della curva S. Valori alti → più valori classificati come “mezzi toni”, meno come luci/ombre. Utile per HDR con range dinamico elevato[^manual-local-contrast] |
@@ -78,7 +78,7 @@ Disponibili solo quando si seleziona **bilateral grid**:
 |-----------|--------|---------|-------------|
 | **coarseness** | `0.00` – `1.00` | `0.50` | Definisce la *scala spaziale* dei dettagli da modificare. Valori bassi → dettagli fini (pelle, granulato); valori alti → dettagli grossolani (contorni di oggetti)[^manual-local-contrast] |
 | **contrast** | `-1.00` – `+1.00` | `0.00` | Intensità della distinzione tra livelli di luminanza. Analogamente a `detail`, ma con algoritmo diverso[^manual-local-contrast] |
-| **detail** | `-1.00` – `+1.00` | `0.00` | Aggiunge o rimuove dettaglio, come nella modalità *local laplacian*[^manual-local-contrast] |
+| **detail** | `0%` – `500%` | `125%` | Aggiunge o rimuove dettaglio, come nella modalità *local laplacian*[^manual-local-contrast] |
 
 !!! warning "bilateral grid: uso limitato"
     La modalità *bilateral grid* è meno precisa e più suscettibile a halo rispetto a *local laplacian*. Usala solo se hai problemi di prestazioni o se stai replicando un workflow legacy. Non è raccomandata per editing professionale[^manual-local-contrast].
@@ -120,14 +120,14 @@ Gli halo indicano che `highlights` è troppo positivo o che `mid-tone range` è 
 
 ## Tabella preset built-in
 
-darktable 5.4 include 4 preset preconfigurati per `local contrast`, accessibili dal menu a tendina in alto a destra del modulo[^manual-local-contrast]:
+darktable include 2 preset preconfigurati per `local contrast`, accessibili dal menu a tendina in alto a destra del modulo[^manual-local-contrast]:
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **default** | Starting point neutro | `detail = 0.00`, `highlights = 0.00`, `shadows = 0.00`, `mid-tone range = 0.50` |
-| **clarity** | Enfasi generale su texture | `detail = +0.40`, `highlights = -0.10`, `shadows = +0.20`, `mid-tone range = 0.55` |
-| **dehaze** | Recupero dettagli in atmosfera opaca | `detail = +0.60`, `highlights = -0.45`, `shadows = +0.30`, `mid-tone range = 0.40` |
-| **soft skin** | Ritratti con pelle levigata | `detail = -0.25`, `highlights = -0.15`, `shadows = -0.30`, `mid-tone range = 0.65` |
+| **clarity** | Enfasi generale su texture | `detail = 133%`, `mid-tone range = 0.50` (local laplacian) |
+| **HDR local tone-mapping** | Compressione locale forte, look HDR | `detail = 200%`, `mid-tone range = 0.25` (local laplacian) |
+
+Le impostazioni di default del modulo (senza preset) sono `detail = 125%`, `highlights = 50%`, `shadows = 50%`, `mid-tone range = 0.50`.
 
 ## Riferimenti visuali
 

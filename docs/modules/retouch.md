@@ -140,14 +140,7 @@ Il modulo *retouch* richiede almeno 4 punti per chiudere un *path* in modo stabi
 
 ## Preset built-in
 
-Il modulo *retouch* include preset preconfigurati accessibili tramite il pulsante *presets* (icona a tre puntini) nel pannello superiore. I preset ufficiali sono:
-
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| `skin smoothing` | Ritocco pelle rapido | Imposta `scales = 5`, `current = 4`, `algorithm = heal`, `mask opacity = 0.85`[^darktable-usermanual-retouch] |
-| `sky cleanup` | Rimozione fili/nubi su cielo | Imposta `scales = 6`, `current = 6`, `algorithm = clone`, `mask opacity = 1.0`[^darktable-usermanual-retouch] |
-| `portrait blemish` | Correzione brufoli/macosce | Imposta `scales = 5`, `current = 5`, `algorithm = heal`, `mask opacity = 0.9`[^darktable-usermanual-retouch] |
-| `fine detail preservation` | Capelli, barba, trame tessili | Imposta `scales = 5`, `current = 1`, `algorithm = clone`, `mask opacity = 0.25`[^darktable-usermanual-retouch] |
+Il modulo *retouch* non include preset integrati: le impostazioni ricorrenti si possono salvare come preset personali dal menu preset del modulo.
 
 ## Riferimenti visuali
 

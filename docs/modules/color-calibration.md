@@ -143,15 +143,14 @@ Il color picker richiede che il modulo `input color profile` sia impostato su `l
 
 ## Preset integrati
 
-darktable 5.4 include 7 preset preconfigurati per `color calibration`, accessibili dal menu hamburger del modulo. I più utili per il workflow moderno sono:
+I preset integrati di `color calibration` sono accessibili dal menu preset del modulo:
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| `modern chromatic adaptation (CAT16)` | Workflow predefinito per nuovi RAW | Imposta `illuminant = as shot`, `adaptation = CAT16`, `temperature = 0`, `gamut compression = OFF`[^presets-manual] |
-| `gray world auto` | Scene naturali con superfici neutre | Usa `detect from surfaces`, `adaptation = CAT16`, `normalize channels = OFF`[^presets-manual] |
-| `gray edge auto` | Architettura, prodotti, scene artificiali | Usa `detect from edges`, `adaptation = CAT16`, `temperature = 0`[^presets-manual] |
-| `basic channel mixer` | Grading creativo senza CAT | Imposta `illuminant = same as pipeline (D50)`, `adaptation = CAT16`, `R=G=B=0.000`[^presets-manual] |
-| `color checker calibration` | Calibrazione con X-Rite ColorChecker | Abilita `calibrate with a color checker` nella tab Channel Mixer[^batch-editing] |
+| `basic channel mixer` | Mixer di canali senza adattamento cromatico | Disattiva la CAT e usa solo le schede R/G/B |
+| `monochrome \| luminance-based` | Conversione B/N neutra | Scheda *gray* basata sulla luminanza |
+| `monochrome \| ILFORD HP5+`, `\| ILFORD DELTA 100`, `\| ILFORD DELTA 400 - 3200`, `\| ILFORD FP4+`, `\| Fuji Acros 100` | Emulazione di pellicole B/N | Pesi R/G/B della scheda *gray* calibrati sulla sensibilità spettrale della pellicola |
+| `channel swap \| swap G and B`, `\| swap G and R`, `\| swap R and B` | Infrarosso, effetti creativi | Scambia due canali |
 
 ## Riferimenti visuali
 
@@ -174,5 +173,3 @@ darktable 5.4 include 7 preset preconfigurati per `color calibration`, accessibi
 [^bw-edit]: *[Full b&w edits in darktable for street photography](https://www.youtube.com/watch?v=f9szYMJ9wYo)* — A Dabble in Photography
 [^MJJR8DJ3rr8]: *[Some Color calibration ideas](https://www.youtube.com/watch?v=MJJR8DJ3rr8)* — A Dabble in Photography, timestamp 05:20–09:40 | `processed/video-tutorials/MJJR8DJ3rr8.md`
 [^discussion-pixls-2025-LED]: *[LED lighting and CAT16 accuracy](https://discuss.pixls.us/t/led-lighting-and-cat16-accuracy/24189)* — PIXLS.US forum, 2025-03-12 | `processed/discussion-pixls-us/24189.md`
-[^presets-manual]: *darktable User Manual — Presets*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/processing-modules/presets/) | `processed/darktable-usermanual-en/usermanual-48-en-darkroom-processing-modules-presets.md`
-[^batch-editing]: *darktable User Manual — Batch-editing images*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/guides-tutorials/batch-editing/) | `processed/darktable-usermanual-en/usermanual-48-en-guides-tutorials-batch-editing.md`

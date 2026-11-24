@@ -228,7 +228,7 @@ Il `tone equalizer` è il cuore del ritocco pelle, poiché permette di isolare l
 
 | Parametro | Valore tipico | Range utile | Note |
 |-----------|-------------|-------------|------|
-| `luminance estimator` | `RGB euclidean norm` | `RGB euclidean norm`, `Jz Cz hz` | Per pelle, `RGB euclidean norm` dà maggiore coerenza tonale rispetto a `Jz Cz hz`[^dt-manual-tone-equalizer] |
+| `luminance estimator` | `RGB euclidean norm` (default) | `RGB average`, `HSL lightness`, `HSV value / RGB max`, `RGB sum`, `RGB euclidean norm`, `RGB power norm`, `RGB geometric mean` | Per pelle, il default `RGB euclidean norm` dà buona coerenza tonale[^dt-manual-tone-equalizer] |
 | `preserve details` | `eigf` | `eigf`, `guided filter`, `no` | `eigf` è il default e garantisce uniformità tra luci e ombre della pelle[^dt-manual-tone-equalizer] |
 | `smoothing diameter` | `3.5 %` | `1–10 %` | Valori >5% possono causare “halo” ai bordi del viso; <2% rendono la maschera troppo granulare[^dt-manual-tone-equalizer] |
 | `mask exposure compensation` | `+0.25 EV` | `−1.0 → +1.0 EV` | Compensa l’esposizione globale: se la pelle appare troppo scura nell’istogramma della maschera, spostare verso destra[^dt-manual-tone-equalizer] |

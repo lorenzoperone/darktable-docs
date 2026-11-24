@@ -168,16 +168,14 @@ Per una foto RAW Olympus E-M5 scattata in condizioni di scarsa luce:
 4. `exposure` (istanza 2, “vignette”): `ellipse`, `invert mask`, `exposure = -0.55 EV`, `feathering radius = 150 px`.
 
 ### Scorciatoie da tastiera per l’esposizione
-- `E`: attiva/disattiva rapidamente il modulo `exposure`;
-- `Ctrl+E`: duplica l’istanza corrente;
-- `Shift+E`: apre il `mask manager` collegato al modulo attivo;
+- `E` + rotella: regola rapidamente lo slider `exposure` (non attiva/disattiva il modulo);
 - `Mouse wheel`: regola `exposure` con incrementi di `0.05 EV` (premendo `Shift` durante lo scroll: `0.01 EV`)[^dt38-new].
 
 ### Debugging comuni
 
 | Problema | Causa probabile | Soluzione |
 |----------|------------------|-----------|
-| Immagine rimane troppo scura dopo `exposure +2.0 EV` | Profilo colore di output errato (es. `sRGB` invece di `AgX`) | Verificare `output color profile` in `tone curve` o `filmic rgb`[^pipeline] |
+| Immagine rimane troppo scura dopo `exposure +2.0 EV` | Tone mapper assente o disattivato[^pipeline] | Verificare che un tone mapper (AgX, sigmoid o filmic rgb) sia attivo; il profilo colore di uscita resta sRGB |
 | Maschera non visibile pur essendo attiva | `mask opacity = 0%` o `opacity = 0%` nel modulo | Controllare i due slider indipendenti: `opacity` (effetto globale) e `mask opacity` (opacità della maschera stessa)[^masking-ep1] |
 | `spot exposure mapping` non reagisce al clic | Il modulo non è in modalità `automatic` o `spot mode` non è impostato su `input` | Impostare `mode = automatic`, quindi cliccare sull’icona rossa accanto a `spot exposure mapping`[^dt40-new] |
 

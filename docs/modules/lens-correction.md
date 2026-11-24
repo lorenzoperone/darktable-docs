@@ -143,14 +143,7 @@ Alcuni obiettivi zoom (es. Tamron 28-75mm f/2.8 G2) mostrano errori residui di d
 
 ## Preset built-in
 
-darktable 5.4 include preset preconfigurati per scenari comuni, accessibili dal menu a tendina in alto nel modulo. Questi preset non richiedono configurazione manuale e si applicano immediatamente.
-
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| `Auto (from EXIF)` | Default: attivato automaticamente all’apertura | Usa i metadati EXIF per caricare profilo Lensfun; richiede `camera`/`lens` ben identificati[^dt48-lens-correction] |
-| `Rectilinear wide-angle` | Obiettivi grandangolari (≤24mm FF equivalente) con distorsione barrel marcata | Applica `target geometry = rectilinear` e `scale = 1.05`; ottimizzato per Nikon Z 14-30mm f/4[^dt48-lens-correction] |
-| `Fisheye 180°` | Obiettivi fish-eye circolari (es. Samyang 8mm f/3.5) | Imposta `target geometry = fisheye`, `scale = 0.85`, `mode = correct`; disabilita TCA[^dt48-lens-correction] |
-| `Panoramic equirectangular` | Immagini stitched da software esterno (Hugin, PTGui) | Imposta `target geometry = equirectangular`, `scale = 1.0`, `corrections = none`; preserva la geometria sferica[^dt48-lens-correction] |
+Il modulo non include preset integrati: le correzioni vengono caricate automaticamente dai profili Lensfun (o dai metadati incorporati) in base ai dati EXIF.
 
 ## Riferimenti visuali
 

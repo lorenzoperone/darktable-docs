@@ -37,7 +37,7 @@ L’obiettivo primario non è «centrare l’istogramma», ma **posizionare il g
 1. Attivare la valutazione colore (**++cmd+b++**) per visualizzare il bordo bianco di riferimento e verificare la linearità dei toni medi[^firststeps].
 2. Selezionare un’area neutra ben illuminata (es. parete chiara, superficie opaca) e usare lo strumento di misurazione (`color picker` accanto allo slider `exposure`) per ottenere una lettura L\*.
 3. Regolare `exposure` finché il valore L\* letto nell’area target si avvicina a **50.0%**, ignorando ombre profonde e alte luci (gestite successivamente da `filmic rgb`, `tone curve` o `highlight reconstruction`)[^manual].
-4. Verificare che nessun canale RGB sia clippato: abilitare `clipping indicators` (**++ctrl+o++**) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).
+4. Verificare che nessun canale RGB sia clippato: abilitare l'indicatore di clipping (**++o++**) e controllare che non compaiano aree rosse (rosso = clipping canale R), verdi (G) o blu (B).
 
 !!! warning "Evitare il black level correction per i neri"
     Non usare `black level correction` per aumentare la densità dei neri: genera valori RGB negativi che possono causare artefatti cromatici in moduli successivi (es. `color calibration`, `filmic rgb`). Per aggiungere densità ai neri, usare invece:
@@ -75,7 +75,6 @@ Le maschere parametriche (basate su luminosità, colore, frequenza) possono esse
 
 ### 3. Scorciatoie da tastiera
 - **++e++ + rotella mouse**: regolazione rapida di `exposure`[^lowlight]
-- **++shift+e++**: attiva/disattiva il modulo `exposure`
 - **++ctrl+click++ sullo slider `exposure`**: inserimento manuale del valore (fino a ±18 EV)[^manual]
 - **++alt+click++ sullo slider `black level correction`**: reset al valore predefinito (0.0)
 
@@ -121,9 +120,9 @@ L’algoritmo automatico usa il percentile definito (default 50%) e può essere 
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **Auto-exposure (50%)** | Editing batch rapido di immagini con illuminazione costante | Usa il 50° percentile come riferimento per il grigio medio. Non adatto a immagini high-key o low-key[^manual]. |
-| **Expose to the right (ETTR)** | Preparazione per `filmic rgb` o `AgX` con massima qualità tonale | Imposta `exposure` in modo che il picco dell’istogramma RAW tocchi il bordo destro senza superarlo[^process]. |
-| **Deflicker base** | Time-lapse con variazioni di luce moderate | Configurato con `area mode = Measure`, `target lightness = 50.0%`, `clipping threshold = 0.005%`[^eo]. |
+| **magic lantern defaults** | File scattati con Magic Lantern (ETTR automatico) | Imposta `mode = automatic` con `percentile = 50%` e `target level = -4 EV`, per riportare automaticamente l'esposizione |
+
+È l'unico preset integrato del modulo.
 
 ## Riferimenti visuali
 
@@ -152,4 +151,3 @@ L’algoritmo automatico usa il percentile definito (default 50%) e può essere 
 [^P1W1tmk8HLk]: *[darktable masking episode 2](https://www.youtube.com/watch?v=P1W1tmk8HLk)* — A Dabble in Photography
 [^iaZ2QvOHyA]: *[A guide to AgX in darktable](https://www.youtube.com/watch?v=iaZ2-QvOHyA)* — A Dabble in Photography
 [^pixls-hdr]: *PIXLS.US — HDR Photography with Free Software*, [pixls.us/articles/hdr-photography-with-free-software-luminancehdr/](https://pixls.us/articles/hdr-photography-with-free-software-luminancehdr/)
-[^process]: *darktable user manual — process*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/overview/workflow/process/) | `processed/darktable-usermanual-en/usermanual-48-en-overview-workflow-process.md`

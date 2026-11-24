@@ -72,7 +72,7 @@ Ogni controllo della scheda **4 ways** ha tre cursori: *luminance*, *hue* e *chr
 3. Usa **global power** (*luminance*) solo per bilanciare la luminosità dei mezzitoni
 
 !!! info "Maschere luminose: come funzionano"
-    Le maschere sono calcolate *all’ingresso del modulo*, quindi sono insensibili alle modifiche interne. La curva di transizione è definita da `shadows fall-off` (default: 0.25) e `highlights fall-off` (default: 0.25) [^dt48-color-balance-rgb].
+    Le maschere sono calcolate *all’ingresso del modulo*, quindi sono insensibili alle modifiche interne. La curva di transizione è definita da `shadows fall-off` (default: 1.00) e `highlights fall-off` (default: 1.00) [^dt48-color-balance-rgb].
 
 ## Parametri principali
 

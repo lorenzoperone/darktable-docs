@@ -23,7 +23,7 @@ Il flusso tipico con `base curve` segue un ordine rigoroso, essenziale per prese
 
 ```mermaid
 flowchart TD
-    A["1. Demosaicizzazione"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Curva base<br/>(prima non-linearizzazione)"] --> D["4. Profilo input<br/>(spazio di lavoro)"] --> E["5. Esposizione,<br/>contrasto, ecc."]
+    A["1. Bilanciamento<br/>del bianco"] --> B["2. Demosaicizzazione"] --> C["3. Esposizione"] --> D["4. Profilo input<br/>(spazio di lavoro)"] --> E["5. Curva base<br/>(non-linearizzazione)"]
 ```
 
 ### Passo 1: Verifica e selezione della curva
@@ -89,7 +89,7 @@ Per creare una curva personalizzata:
 ## Consigli avanzati per ex-Lightroom users
 
 - **Non cercare equivalenza con “Tone Curve” di LR**: LR opera in uno spazio non lineare (sRGB/gamma 2.2) già all’inizio; `base curve` invece è il primo passaggio *dalla linearità*. La sua curva è più simile al “Process Version” di Adobe Camera Raw (PV2012), non al pannello “Tone Curve”[^pixls-rgb-lab].
-- **Evita di sovrascrivere la curva con modifiche aggressive**: una curva troppo S-shaped prima del `input color profile` può causare clipping irrecuperabile nei canali RGB. Preferisci regolare il contrasto dopo la conversione nello spazio di lavoro[^pixls-rgb-lab].
+- **Evita di sovrascrivere la curva con modifiche aggressive**: una curva troppo S-shaped può causare clipping irrecuperabile nei canali RGB[^pixls-rgb-lab].
 - **Usa `preserve colors = luminance` per ritratti**: minimizza gli shift cromatici sulle pelli, specialmente con curve ad alta pendenza nei mezzi toni[^curves-manual].
 - **Per immagini JPEG importate**: `base curve` è disabilitata per default. Se necessario, spostala *dopo* `input color profile` usando il modulo `module order`[^exposure-manual].
 

@@ -63,12 +63,12 @@ Il parametro **Skew** controlla l’asimmetria della curva: sposta il punto di m
 
 | Parametro | Range | Default | Descrizione |
 |-----------|-------|---------|-------------|
-| **Contrast** | `0.10 – 5.00` | `1.00` | Pendenza della curva nella regione centrale. Aumenta il contrasto globale senza spostare i punti di nero/bianco[^sigmoid-manual]. |
+| **Contrast** | `0.10 – 10.00` | `1.50` | Pendenza della curva nella regione centrale. Aumenta il contrasto globale senza spostare i punti di nero/bianco[^sigmoid-manual]. |
 | **Skew** | `-1.00 – +1.00` | `0.00` | Asimmetria della curva. Valori positivi accentuano le luci; valori negativi enfatizzano le ombre[^sigmoid-manual]. |
 | **Color processing** | `per channel`, `rgb ratio` | `per channel` | Modalità di applicazione della curva: `per channel` agisce su RGB separatamente (più potente, ma può alterare l’Hue); `rgb ratio` mantiene i rapporti RGB (preserva meglio il colore, ma meno flessibile)[^sigmoid-manual]. |
 | **Preserve hue** *(solo in `per channel`)* | `0% – 100%` | `100%` | Livello di conservazione della tonalità spettrale. `100%` ≈ comportamento di `rgb ratio`; `0%` = massima distorsione cromatica (utile per effetti “caldi” in tramonti)[^sigmoid-manual]. |
-| **Target black** | `0.00 – 0.10` | `0.00` | Valore minimo di output (nero). Di solito lasciato a `0.00`. Valori > `0.01` producono un effetto “faded”[^sigmoid-manual]. |
-| **Target white** | `0.90 – 1.10` | `1.00` | Valore massimo di output (bianco). `1.00` = bianco puro. Valori < `0.98` evitano clipping cromatico in luci intense[^sigmoid-manual]. |
+| **Target black** | `0% – 15%` | `0.0152%` | Valore minimo di output (nero). Di solito lasciato al default. Valori più alti producono un effetto “faded”[^sigmoid-manual]. |
+| **Target white** | `20% – 1600%` | `100%` | Valore massimo di output (bianco). `100%` = bianco puro. Valori di poco inferiori evitano clipping cromatico in luci intense[^sigmoid-manual]. |
 
 ## Parametri avanzati: Primaries
 
@@ -150,10 +150,10 @@ darktable 5.4 include preset preconfigurati per sigmoid, accessibili dal menu a 
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **smooth** | Base per la maggior parte delle immagini (ritratti, paesaggi neutri) | Imposta `Contrast = 1.00`, `Skew = 0.00`, `target white = 1.00`, `target black = 0.00`, e `primaries` ottimizzati per una transizione morbida[^sigmoid-manual]. |
-| **high contrast** | Immagini con forte impatto visivo (street photography, reportage) | Imposta `Contrast = 1.65`, `Skew = +0.12`, `target white = 0.985`, `blue attenuation = 33%`[^sigmoid-manual]. |
-| **portrait soft** | Ritratti in luce diffusa o studio con fondale neutro | Imposta `Contrast = 0.92`, `Skew = -0.22`, `preserve hue = 95%`, `red attenuation = 15%`[^sigmoid-manual]. |
-| **neon lights** | Scene notturne con luci artificiali intense (LED, insegne) | Imposta `Contrast = 1.20`, `Skew = +0.38`, `red attenuation = 28%`, `blue attenuation = 52%`, `recover purity = 45%`[^sigmoid-manual]. |
+| **smooth** | Base per la maggior parte delle immagini (ritratti, paesaggi neutri) | `Contrast = 1.50`, `Skew = -0.20`, primarie Rec2020 con attenuazione R/G/B `10% / 10% / 15%` e rotazione `+2° / -1° / -3°`[^sigmoid-manual]. |
+| **neutral gray** | Resa neutra con mezzitoni più chiari | `Contrast = 1.22`, `Skew = +0.65`, `preserve hue = 100%` |
+| **ACES 100-nit like** | Look simile alla trasformata ACES per display SDR | `Contrast = 1.60`, `Skew = -0.20`, `per channel`, `preserve hue = 0%` |
+| **Reinhard** | Curva classica di Reinhard | `Contrast = 1.00`, `Skew = 0.00`, `RGB ratio` |
 
 !!! info "Come applicare un preset"
     Clicca sull'icona a forma di freccia verso il basso (▼) nell’angolo in alto a destra del modulo `sigmoid`. Seleziona il preset desiderato: i parametri verranno caricati immediatamente e applicati in tempo reale[^sigmoid-manual].

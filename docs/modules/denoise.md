@@ -7,12 +7,12 @@ Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in 
 `denoise (profiled)` è il modulo principale per la riduzione rumore in darktable 5.4+, progettato per essere sia facile da usare che altamente efficace. A differenza di algoritmi generici, sfrutta database di profili di rumore misurati empiricamente su oltre **300 modelli di fotocamere** (Canon, Nikon, Sony, Fujifilm, Panasonic, ecc.)[^48-profiled]. Ogni profilo contiene curve di varianza rumore in funzione della luminanza per diversi valori ISO (es. ISO 100, 200, 400, 800, 1600, 3200, 6400, 12800), con interpolazione automatica per valori intermedi[^48-profiled]. Il modulo supporta due algoritmi fondamentali — *non-local means* e *wavelets* — entrambi disponibili in modalità **auto** (interfaccia semplificata) e **manual** (controllo fine per ogni scala di dettaglio). Non richiede alcuna installazione esterna ed è incluso di default in darktable 5.4+.
 
 !!! info "Posizionamento nella pipeline"
-    Il modulo deve essere inserito **subito dopo `raw black/white point` e prima di `demosaic`**, o comunque **prima di `input color profile`**. Questo garantisce che il denoising agisca sui dati raw non ancora trasformati in spazio colore, dove il rumore è meglio modellabile e i profili ISO sono accurati[^48-profiled]. Inserire `denoise (profiled)` dopo `exposure` o `filmic rgb` compromette l’efficacia del profilo.
+    Il modulo si trova **subito dopo `demosaic`** e **prima di `exposure` e di `input color profile`** (posizione fissa). Questo garantisce che il denoising agisca sui dati raw non ancora trasformati in spazio colore, dove il rumore è meglio modellabile e i profili ISO sono accurati[^48-profiled]. Inserire `denoise (profiled)` dopo `exposure` o `filmic rgb` compromette l’efficacia del profilo.
 
 ## Flusso di lavoro consigliato
 
 1. **Prima fase (raw processing)**:  
-   - Applica `raw black/white point` → `denoise (profiled)` → `demosaic` → `input color profile`.  
+   - Nella pipeline: `raw black/white point` → `demosaic` → `denoise (profiled)` → `exposure` → `input color profile`.  
    - Se necessario, attiva `capture sharpening` nel modulo `Demosaic` con `contrast sensitivity` tra **0.15 e 0.35**, per compensare la leggera perdita di nitidezza senza amplificare il rumore[^dt54][^pipeline].
 
 2. **Seconda fase (post-demosaic)**:  
@@ -23,7 +23,7 @@ Il modulo utilizza profili specifici per sensore e ISO per ridurre il rumore in 
    - Per casi estremi (astrofotografia, scatti in condizioni di luce molto scarsa), combina con `astrophoto denoise` *solo dopo* `denoise (profiled)` e *prima di `shadows and highlights`*, poiché è computazionalmente pesante[^48-astrophoto].
 
 > ✅ **Ordine ottimale della pipeline per ISO > 3200**:  
-> `raw black/white point` → `denoise (profiled)` → `demosaic` (con capture sharpening) → `input color profile` → `exposure` → `filmic rgb` → `contrast equalizer` (denoise spline attivata) → `astrophoto denoise` (solo se necessario).
+> `raw black/white point` → `demosaic` (con capture sharpening) → `denoise (profiled)` → `exposure` → `input color profile` → `astrophoto denoise` (solo se necessario) → `contrast equalizer` (denoise spline attivata) → `filmic rgb`.
 
 ## Modalità
 
@@ -130,24 +130,18 @@ darktable cerca il profilo tramite tag Exif `Make`, `Model` e `ExposureIndex`. S
 
 ## Preset integrati
 
-darktable include 7 preset preconfigurati per `denoise (profiled)`, accessibili dal menu a tendina *Preset* in alto a destra del modulo[^48-profiled]:
+darktable include un solo preset integrato per `denoise (profiled)`, accessibile dal menu preset del modulo[^48-profiled]:
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **Low noise (ISO 100–400)** | Studio, paesaggi in luce piena | `Strength = 0.4`, `Preserve shadows = 0.8`, `Y0 curve` piatta a `0.3` |
-| **Medium noise (ISO 800–3200)** | Eventi indoor, ritratti in luce artificiale | `Strength = 0.9`, `Preserve shadows = 0.4`, `U0V0 curve` alzata a sinistra |
-| **High noise (ISO 6400–12800)** | Concerti, reportage notturno | `Strength = 1.4`, `Preserve shadows = 0.15`, `Y0 curve` [0.95, 0.85, 0.7, 0.4, 0.2, 0.1, 0.05] |
-| **Astrophotography (ISO 1600+)** | Lunghe esposizioni, cielo stellato | `Mode = wavelets Y0U0V0 manual`, `U0V0 curve` max ai primi 4 punti |
-| **Portrait skin (ISO 200–800)** | Pelle umana, texture fine | `Mode = non-local means manual`, `patch size = 3`, `scattering = 10` |
-| **Landscape detail (ISO 100–400)** | Montagne, architettura, alta risoluzione | `Strength = 0.35`, `Preserve shadows = 0.7`, `Y0 curve` quasi piatta |
-| **Chroma only** | Per uso in cascata con blend mode *chroma* | `Mode = wavelets Y0U0V0 manual`, `Y0 curve` a zero, `U0V0 curve` attiva |
+| **wavelets: chroma only** | Per ridurre solo il rumore cromatico, lasciando intatta la grana di luminanza | Modalità *wavelets*, agisce solo sui canali di crominanza |
 
 ## Altri moduli di riduzione rumore
 
 | Modulo | Uso | Posizionamento ideale | Note |
 |--------|-----|------------------------|------|
 | **Raw denoise** | Denoise *sui dati raw grezzi*, prima del demosaic. Basato su dcraw. Utile per sensori con rumore particolarmente omogeneo (es. vecchie DSLR)[^48-raw-denoise]. | Subito dopo `raw black/white point`, prima di `denoise (profiled)` | Usa curve *coarse/fine* per rumore a diverse scale. Non usa profili ISO: meno preciso ma più universale. |
-| **Surface blur** | Sfuocatura conservativa dei bordi con filtro bilaterale. **Non è un modulo di denoise primario**[^48-surface-blur]. | Dopo `input color profile`, in blend mode *chroma* o *luminance* | Utile per rimuovere *moire cromatico* o uniformare tonalità della pelle. Evitare su immagini con rumore luma diffuso. |
+| **Surface blur** | Sfuocatura conservativa dei bordi con filtro bilaterale. **Non è un modulo di denoise primario**[^48-surface-blur]. | Subito dopo `denoise (profiled)`, prima di `input color profile`; in blend mode *chroma* o *luminance* | Utile per rimuovere *moire cromatico* o uniformare tonalità della pelle. Evitare su immagini con rumore luma diffuso. |
 | **Astrophoto denoise** | Ottimizzato per fotografia astronomica: algoritmo non-local means con maggiore enfasi su strutture deboli[^48-astrophoto]. | Dopo `denoise (profiled)` e prima di `shadows and highlights` | Richiede tempi di elaborazione lunghi: usare solo su immagini con rumore residuo visibile a 100% zoom. |
 | **Contrast equalizer** | Denoise *mirato su scale specifiche* nel dominio wavelet. Complementare a `denoise (profiled)`[^48-contrast-equalizer]. | Dopo `denoise (profiled)` e prima di `shadows and highlights` | La *denoising spline* nella scheda Luma/Chroma permette di eliminare rumore solo su determinate scale di dettaglio. |
 | **AI Denoise (darktable ≥5.5)** | Modulo sperimentale basato su modello NAFNet (ONNX). Richiede download manuale del modello[^pixls-ai]. | Dopo `input color profile`, prima di `output color profile` | Non sostituisce `denoise (profiled)`: è più lento e richiede GPU/CUDA per prestazioni accettabili. Da usare solo per casi estremi. |

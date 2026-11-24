@@ -143,7 +143,7 @@ Il principio è semplice: ogni pixel viene corretto in base al valore di luminos
 
 - ✅ **Non cercare equivalenze 1:1**: i tone mapper di darktable sono *scene-referred*, quindi non replicano i preset “VSCO” o “Kodak Portra” in modo diretto.  
 - ✅ **Usa sempre i metadati RAW**: i valori di *black/white relative exposure* derivano direttamente dalle informazioni del sensore — non dai valori di Lightroom.  
-- ✅ **Evita il double-processing**: non applicare *exposure* prima di *filmic* o *agx*: quest’ultimo gestisce già la mappatura globale.  
+- ✅ **Evita il double-processing**: usa *exposure* (sempre prima del tone mapper) solo per posizionare il grigio medio, e lascia a *filmic* o *agx* la mappatura globale senza aggiungere altre curve di compressione.  
 - ❌ **Non usare “fill light” o “recovery”**: questi concetti non esistono in darktable; il recupero luci avviene tramite *highlight reconstruction*, *sigmoid*, o *agx shoulder*.  
 - ❌ **Non usare “clarity” come in LR**: in darktable, *local contrast* o *diffuse or sharpen* sono strumenti distinti, non sostituti di un tone mapper.
 

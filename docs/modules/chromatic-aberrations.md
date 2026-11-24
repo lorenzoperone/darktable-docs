@@ -106,9 +106,9 @@ Combina il modulo con blend mode specifici:
 
 | Modulo | Dati di ingresso | Momento nella pipeline | Note chiave |
 |--------|------------------|--------------------------|--------------|
-| **`lens correction`** | RAW o RGB | Prima della demosaicizzazione | Usa profili Lensfun/metadati; migliore precisione; **primo passo obbligatorio**[^lens-correction-manual] |
-| **`raw chromatic aberrations`** | Solo RAW Bayer | Subito dopo `demosaic` | Più aggressivo; richiede bilanciamento del bianco accurato; **disabilitare se usi `lens correction`**[^raw-chromatic-aberrations-manual] |
-| **`chromatic aberrations`** | RGB (qualsiasi formato) | Dopo `input color profile` | Controllo visivo diretto; ideale per affinamento; **secondo passo**[^chromatic-aberrations-manual] |
+| **`lens correction`** | RAW o RGB | Dopo la demosaicizzazione, prima di `input color profile` | Usa profili Lensfun/metadati; migliore precisione; **primo passo obbligatorio**[^lens-correction-manual] |
+| **`raw chromatic aberrations`** | Solo RAW Bayer | Prima di `demosaic` | Più aggressivo; richiede bilanciamento del bianco accurato; **disabilitare se usi `lens correction`**[^raw-chromatic-aberrations-manual] |
+| **`chromatic aberrations`** | RGB (qualsiasi formato) | Subito dopo `lens correction`, prima di `input color profile` | Controllo visivo diretto; ideale per affinamento; **secondo passo**[^chromatic-aberrations-manual] |
 | **`(deprecated) defringe`** | RGB | Qualsiasi posizione | Obsoleto da darktable 3.6; progettato per LCA, non TCA; **non usare**[^defringe-manual] |
 
 !!! warning "Non combinare raw chromatic aberrations e lens correction"
@@ -136,14 +136,7 @@ Verifica che il modulo `chromatic aberrations` sia posizionato **dopo** `input c
 
 ## Preset integrati
 
-Il modulo `chromatic aberrations` include preset preconfigurati per casi comuni. Non sono modificabili dall’utente ma possono essere applicati con un clic.
-
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| `default` | Immagini generiche con TCA moderata | `guide=Green`, `radius=0.50`, `strength=1.00`, `correction mode=all`[^preset-default] |
-| `wide-angle` | Obiettivi ultra-grandangolari (≤16mm FF) | `guide=Green`, `radius=0.78`, `strength=0.92`, `very large chromatic aberrations=on`[^preset-wide] |
-| `telephoto` | Obiettivi teleobiettivo (≥100mm FF) | `guide=Green`, `radius=0.42`, `strength=1.15`, `correction mode=all`[^preset-tele] |
-| `portrait` | Ritratti con bordi ciano su pelle chiara | `guide=Green`, `radius=0.55`, `strength=0.78`, `correction mode=brighten only`[^preset-portrait] |
+Il modulo `chromatic aberrations` non include preset integrati: i parametri si regolano a mano (o si salvano come preset personali).
 
 ## Riferimenti visuali
 
@@ -167,7 +160,3 @@ Il modulo `chromatic aberrations` include preset preconfigurati per casi comuni.
 [^video-dabble-38]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0 | `processed/tutorial-video/it/dabble-38.md`
 [^discussion-pixls-2023-05]: PIXLS.US discussion thread “TCA inversion after correction”, https://discuss.pixls.us/t/tca-inversion-after-correction/21847 | `processed/discussion/pixls-2023-05.md`
 [^discussion-darktable-org-2024-02]: darktable.org forum “Artifacts with chromatic aberrations module”, https://discuss.darktable.org/t/artifacts-with-chromatic-aberrations-module/19442 | `processed/discussion/darktable-org-2024-02.md`
-[^preset-default]: darktable source code — default preset definition for `chromatic aberrations`, https://github.com/darktable-org/darktable/blob/release-4.8/src/iop/chromatic_aberrations.c#L142 | `processed/reference/en/darktable-source-4.8.md`
-[^preset-wide]: darktable source code — preset `wide-angle` definition, https://github.com/darktable-org/darktable/blob/release-4.8/src/iop/chromatic_aberrations.c#L151 | `processed/reference/en/darktable-source-4.8.md`
-[^preset-tele]: darktable source code — preset `telephoto` definition, https://github.com/darktable-org/darktable/blob/release-4.8/src/iop/chromatic_aberrations.c#L159 | `processed/reference/en/darktable-source-4.8.md`
-[^preset-portrait]: darktable source code — preset `portrait` definition, https://github.com/darktable-org/darktable/blob/release-4.8/src/iop/chromatic_aberrations.c#L167 | `processed/reference/en/darktable-source-4.8.md`

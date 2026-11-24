@@ -264,10 +264,10 @@ Questo modulo è particolarmente utile per:
 
 ### Flusso di lavoro consigliato
 
-1. Applicare `lowlight vision` **dopo** i moduli di denoising (`denoise (profiled)` o `astrophoto denoise`) e prima di `color calibration`.
+1. `lowlight vision` è un modulo creativo display-referred: nella pipeline si trova **dopo** il tone mapper (e quindi dopo denoise e `color calibration`); la posizione è fissa.
 2. Usare una maschera disegnata se si desidera applicare l’effetto solo a parti specifiche (es. cielo stellato, non al primo piano).
-3. Abilitare `look only` per confrontare in tempo reale l’effetto prima di renderlo permanente.
-4. Combinare con `exposure` e `filmic rgb` per bilanciare la luminosità globale dopo la trasformazione scotopica.
+3. Usare uno snapshot per confrontare l’effetto prima/dopo.
+4. Combinare con `exposure` e `filmic rgb` per bilanciare la luminosità globale.
 
 ---
 

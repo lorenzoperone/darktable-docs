@@ -3,7 +3,7 @@
 Il modulo **input color profile** definisce come darktable interpreterà i dati cromatici dell’immagine in ingresso, convertendoli dallo spazio colore nativo della sorgente (fotocamera, scanner, file JPEG/TIFF) a uno spazio colore di lavoro standardizzato. È il primo modulo *obbligatorio* nella pipeline di elaborazione RAW e agisce prima di qualsiasi regolazione espositiva o cromatica — un errore qui compromette irreversibilmente tutti i passaggi successivi[^manual-48-input].
 
 !!! info "Posizione critica nella pipeline"
-    Il modulo `input color profile` si trova **subito dopo `raw black/white point`** e **prima di `white balance`**, nel flusso scene-referred. Non è modificabile per immagini RAW: se disabilitato, appare grigio e bloccato nella pipeline[^pipeline-beginner]. Questa posizione garantisce che la mappatura colore avvenga sui dati grezzi, non su valori già bilanciati o esposti[^manual-48-input].
+    Il modulo `input color profile` si trova **dopo** `white balance`, `demosaic` ed `exposure`, e **prima di `color calibration`**, nel flusso scene-referred. Non è modificabile per immagini RAW: se disabilitato, appare grigio e bloccato nella pipeline[^pipeline-beginner]. Questa posizione garantisce che la mappatura colore avvenga sui dati grezzi, non su valori già bilanciati o esposti[^manual-48-input].
 
 ## Panoramica
 

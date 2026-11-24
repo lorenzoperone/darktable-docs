@@ -3,7 +3,7 @@
 ## Panoramica
 
 darktable 5.4+ offre un sistema di **acceleratori** (keyboard shortcuts) altamente flessibile e personalizzabile, progettato per supportare flussi di lavoro professionali e ad alta produttività. A differenza di Lightroom, dove le scorciatoie sono fisse o parzialmente modificabili, darktable permette di assegnare combinazioni chiave a *qualsiasi azione* dell’interfaccia — dai moduli di elaborazione alle funzioni globali, passando per maschere, snapshot, esportazione e persino controlli MIDI[^manual-48-shortcuts]. Il sistema è strutturato in tre livelli:  
-- **Scorciatoie semplici** (simple shortcuts): combinazioni di tasti (es. `Ctrl+Shift+E`) senza movimento del mouse;  
+- **Scorciatoie semplici** (simple shortcuts): combinazioni di tasti (es. `Ctrl+E`) senza movimento del mouse;  
 - **Scorciatoie estese** (extended shortcuts): combinazioni che includono rotella del mouse o movimento del cursore (es. `Ctrl+X` + scroll per regolare un slider);  
 - **Mapping visuale** (visual shortcut mapping): modalità interattiva per assegnare scorciatoie con un clic diretto sui widget UI[^manual-48-shortcuts].
 
@@ -20,7 +20,7 @@ Il flusso ottimale per integrare le scorciatoie nel tuo workflow prevede tre fas
    Usa `H` per identificare le scorciatoie già disponibili nella vista corrente. Verifica anche la finestra `Preferences > Shortcuts`: qui puoi filtrare per vista (`lighttable`, `darkroom`, `global`) e per tipo di azione (`buttons`, `toggles`, `sliders`). Le scorciatoie predefinite coprono ~90% delle operazioni quotidiane[^video-shortcuts-7usDvgrjvb4].
 
 2. **Fase 2 – Personalizzazione mirata**  
-   Attiva la **modalità mapping visuale**: clicca sull’icona dedicata nella top panel o usa `Ctrl+Shift+T` (macOS: `Cmd+Shift+T`). Il cursore cambia forma:
+   Attiva la **modalità mapping visuale**: clicca sull’icona dedicata nella top panel. Il cursore cambia forma:
    - ✅ **Icona tastiera + “+”**: widget aggiungibile al [Quick Access Panel](https://docs.darktable.org/usermanual/development/en/darkroom/organization/quick-access-panel/) (Ctrl+click);
    - ⚠️ **Icona tastiera senza segno**: widget mappabile ma non aggiungibile al Quick Access;
    - 🚫 **Cerchio rosso con barra**: area non mappabile (es. spazio vuoto, istogramma, aree non-widget).
@@ -48,7 +48,7 @@ Il flusso ottimale per integrare le scorciatoie nel tuo workflow prevede tre fas
 | ++1++ – ++5++ | Assegna stelle | Imposta `rating = 1` a `5`. `0` rimuove il rating. Valori validi: `-1` (reject), `0–5` (stelle). Default: `0`. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 | ++f1++ – ++f5++ | Etichette colore | Assegna etichette colore: `F1`=rosso, `F2`=giallo, `F3`=verde, `F4`=blu, `F5`=viola. Ogni pressione *togglia* l’etichetta su tutte le immagini selezionate[^manual-48-overview]. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 | ++0++ | Rimuove tutti i rating | Imposta `rating = 0` su tutte le immagini selezionate. Utile per ripulire metadati prima di un nuovo batch. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
-| ++ctrl+d++ | Duplica immagine(i) | Crea una copia RAW con storia vuota. La copia eredita solo i metadati EXIF/IPTC, non le modifiche. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
+| ++ctrl+d++ | Duplica immagine(i) | Crea un duplicato virtuale che include la cronologia di sviluppo. Per un duplicato con cronologia vuota usa `Ctrl+Shift+D`. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 | ++w++ | Zoom temporaneo massimo | Mentre il tasto è premuto, ingrandisce al 100% l’immagine nella vista Lighttable. Rilasciando torna alla scala precedente. | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 | ++ctrl+w++ | Zoom con focus | Come `W`, ma evidenzia le aree in fuoco con un overlay verde (richiede che `focus detection` sia abilitato in `preferences > lighttable > image preview`). | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 
@@ -60,14 +60,14 @@ Il flusso ottimale per integrare le scorciatoie nel tuo workflow prevede tre fas
 | ++cmd+b++ / ++ctrl+b++ | Bordo bianco valutazione colore | Attiva la funzione *color assessment*: mostra un bordo bianco intorno all’immagine per valutare il bilanciamento del bianco. Funziona solo in `darkroom`. | [First steps](https://www.youtube.com/watch?v=P4cL61ZHqFw)[^firststeps] |
 | ++ctrl+z++ | Annulla ultima modifica | Annulla l’ultima azione nell’history stack. Profondità massima: 100 azioni (configurabile in `preferences > darkroom > history stack size`). | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/history-stack/) |
 | ++ctrl+y++ | Ripristina modifica annullata | Ripristina l’ultima azione annullata. Non è un semplice “redo”: è il complemento esatto di `Ctrl+Z`. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/history-stack/) |
-| ++ctrl+e++ | Esporta immagine | Apre la finestra `export selected`. Supporta formati: JPEG, PNG, TIFF, WEBP, AVIF, HEIF. Default: JPEG quality `95%`, sRGB. | [Manual](https://docs.darktable.org/usermanual/development/en/export/) |
-| ++o++ | Indicatore sovraesposizione | Attiva l’overlay “blink” sulle zone con valori RGB > `0.999` (255/255). Si disattiva automaticamente al cambio modulo. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/) |
-| ++shift+o++ | Indicatore sottoesposizione | Attiva l’overlay “blink” sulle zone con valori RGB < `0.001` (1/255). Complementare a `O`. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/) |
-| ++ctrl+shift+a++ | Auto esposizione | Applica l’algoritmo automatico di bilanciamento esposizione. Basato su analisi dell’istogramma globale. Non modifica `white balance`. | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/exposure/) |
+| ++ctrl+e++ | Esporta immagine | Esporta le immagini selezionate con le impostazioni correnti del modulo *export*, senza aprire finestre. | [Manual](https://docs.darktable.org/usermanual/development/en/export/) |
+| ++o++ | Indicatore di clipping | Attiva/disattiva l’indicatore di clipping (sovra e sottoesposizione) sull’immagine elaborata. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/) |
+| ++shift+o++ | Indicatore RAW sovraesposto | Attiva/disattiva l’indicatore *raw overexposed*, che segnala i pixel clippati nei dati RAW (a differenza di `O`, che segnala il clipping dopo l’elaborazione). | [Manual](https://docs.darktable.org/usermanual/development/en/module-reference/utility-modules/darkroom/raw-overexposed/) |
+| ++ctrl+shift+a++ | Deseleziona tutto | Deseleziona tutte le immagini (azione di selezione, non di esposizione). | [Manual](https://docs.darktable.org/usermanual/development/en/lighttable/overview/) |
 | ++space++ | Avanza all’immagine successiva | Nella vista `darkroom`, passa alla prossima immagine nella collezione corrente. Se sei all’ultima, torna alla prima. | [Video](https://www.youtube.com/watch?v=7usDvgrjvb4)[^video-shortcuts-7usDvgrjvb4] |
-| ++shift+space++ | Indietreggia all’immagine precedente | Come `space`, ma in direzione inversa. | [Video](https://www.youtube.com/watch?v=7usDvgrjvb4)[^video-shortcuts-7usDvgrjvb4] |
+| ++backspace++ | Torna all’immagine precedente | Come `space`, ma in direzione inversa. | [Video](https://www.youtube.com/watch?v=7usDvgrjvb4)[^video-shortcuts-7usDvgrjvb4] |
 | ++g++ | Attiva/disattiva guide di composizione | Mostra/nasconde linee di griglia (terzi, diagonali, golden ratio). Configurabili in `preferences > darkroom > composition guides`. | [Video](https://www.youtube.com/watch?v=7usDvgrjvb4)[^video-shortcuts-7usDvgrjvb4] |
-| ++ctrl+shift+l++ / ++ctrl+shift+r++ | Mostra/nascondi pannelli in vista affiancata | In vista side-by-side (`X`), mostra/nasconde il pannello sinistro (`L`) o destro (`R`). Utile per confronti puliti. | [dt 5.2](https://www.youtube.com/watch?v=YcLJMaDbfRA)[^dt52] |
+| ++ctrl+shift+l++ / ++ctrl+shift+r++ | Mostra/nascondi pannello sinistro/destro | Mostra o nasconde il pannello sinistro (`L`) o destro (`R`) in qualsiasi vista, non solo in quella affiancata. Utile per confronti puliti. | [dt 5.2](https://www.youtube.com/watch?v=YcLJMaDbfRA)[^dt52] |
 | ++a++ + rotella | Zoom/pan in vista affiancata | In vista side-by-side, `A` + scroll zooma sincronamente entrambe le immagini. `A` + drag sposta entrambe. | [dt 5.2](https://www.youtube.com/watch?v=YcLJMaDbfRA)[^dt52] |
 
 ## Maschere
@@ -86,12 +86,10 @@ Il flusso ottimale per integrare le scorciatoie nel tuo workflow prevede tre fas
 
 | Shortcut | Azione | Dettagli tecnici | Fonte |
 |----------|--------|------------------|-------|
-| ++ctrl+shift+l++ / ++ctrl+shift+r++ | Mostra/nascondi pannelli in vista affiancata | Come sopra, ma in vista `X`: `Ctrl+Shift+L` mostra/nasconde il pannello *sinistro*, `Ctrl+Shift+R` quello *destro*. | [dt 5.2](https://www.youtube.com/watch?v=YcLJMaDbfRA)[^dt52] |
 | ++a++ + rotella | Zoom/pan in vista affiancata | `A` + scroll zooma entrambe le immagini simultaneamente. `A` + drag sposta entrambe. Mantenendo `Ctrl`, lo zoom è più lento (`×0.1`); con `Shift`, più veloce (`×10`). | [dt 5.2](https://www.youtube.com/watch?v=YcLJMaDbfRA)[^dt52] |
 | ++ctrl+shift++ + regolazione vignettatura | Ruota/allunga mantenendo il soggetto | In `vignetting`, `Ctrl+Shift` + scroll regola `rotation` (range: `-180°` a `+180°`, step `1°`). Con `Shift` invece regola `strength` (range: `0–100%`). | [Lowlight](https://www.youtube.com/watch?v=O7wXgmQZqiU)[^lowlight] |
-| ++ctrl+1++ – ++ctrl+9++ | Salva snapshot numerato | Crea uno snapshot con nome automatico (`snapshot 1`, `snapshot 2`, ecc.). Massimo 9 snapshot per immagine. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/snapshots/) |
-| ++1++ – ++9++ | Carica snapshot numerato | Carica lo snapshot salvato con quel numero. Se non esiste, non fa nulla. | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/snapshots/) |
-| ++ctrl+shift+s++ | Salva snapshot con nome personalizzato | Apre la finestra di dialogo per inserire un nome descrittivo (es. `"before filmic"`, `"final export"`). | [Manual](https://docs.darktable.org/usermanual/development/en/darkroom/snapshots/) |
+
+Gli snapshot non hanno scorciatoie predefinite (i tasti `1`–`5` assegnano le stelle): si creano dal modulo *snapshots* nel pannello sinistro, e si possono associare a una scorciatoia personalizzata.
 
 ## Parametri
 

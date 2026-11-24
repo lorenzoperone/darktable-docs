@@ -60,16 +60,16 @@ Il modulo `sigmoid` è il tone mapper più flessibile per flussi scene-referred,
 
 | Parametro | Range | Default | Valore tipico | Descrizione |
 |-----------|-------|---------|---------------|-------------|
-| `contrast` | `0.0`–`10.0` | `2.0` | `1.8`–`2.5` | Controlla la pendenza della curva log-logistica. Valori >3.0 comprimono fortemente le luci, rischiando posterizzazione se non accompagnati da *red/green/blue attenuation*. |
+| `contrast` | `0.1`–`10.0` | `1.5` | `1.8`–`2.5` | Controlla la pendenza della curva log-logistica. Valori >3.0 comprimono fortemente le luci, rischiando posterizzazione se non accompagnati da *red/green/blue attenuation*. |
 | `skew` | `-1.0`–`+1.0` | `0.0` | `-0.2`–`+0.3` | Sposta il fulcro della compressione: `+0.3` preserva dettagli nelle luci, `-0.2` approfondisce le ombre senza schiacciarle.[^sigmoid-manual] |
 | `color processing` | `per channel`, `rgb ratio` | `per channel` | `per channel` | `rgb ratio` preserva perfettamente la cromaticità ma desatura fortemente i colori puri; `per channel` permette regolazioni fini con *preserve hue*. |
 | `preserve hue` | `0%`–`100%` | `100%` | `70%`–`90%` | A `100%`: comportamento identico a `rgb ratio`. A `70%`: ottimo compromesso per tramonti, dove si vuole un arancione “caldo” ma controllato.[^sigmoid-manual] |
-| `target black` | `0.0`–`0.1` | `0.0` | `0.0` | Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare *global offset* in `color balance rgb`.[^sigmoid-manual] |
-| `target white` | `1.0`–`10.0` | `1.0` | `1.0`–`2.5` | Valori >2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.[^sigmoid-manual] |
+| `target black` | `0%`–`15%` | `0.0152%` | `0.0` | Mai modificare: altera la definizione fisica del nero della scena. Per effetti analogici, usare *global offset* in `color balance rgb`.[^sigmoid-manual] |
+| `target white` | `20%`–`1600%` | `100%` | `1.0`–`2.5` | Valori >2.0 espandono la luminosità massima gestibile prima del clipping, utile per immagini HDR da esportare in ProPhoto.[^sigmoid-manual] |
 | `red/green/blue attenuation` | `0.0`–`1.0` | `0.0` | `0.15`–`0.40` | Riduce la purezza dei primari prima della compressione: evita posterizzazione in LED blu o cieli saturi. Valore `0.25` per cieli, `0.35` per luci artificiali intense.[^sigmoid-manual] |
-| `recover purity` | `0%`–`100%` | `100%` | `80%`–`100%` | Ripristina la saturazione nelle medie luci. A `80%`: mantiene un leggero “smorzamento” naturale delle alte luci.[^sigmoid-manual] |
+| `recover purity` | `0%`–`100%` | `0%` | `80%`–`100%` | Ripristina la saturazione nelle medie luci. A `80%`: mantiene un leggero “smorzamento” naturale delle alte luci.[^sigmoid-manual] |
 
-> ✅ **Best practice**: usa sempre il preset *smooth* come punto di partenza per `sigmoid`. Modifica *red/green/blue rotation* solo se necessario: valori tipici sono `R: -2°`, `G: +1°`, `B: -3°` per correggere lievi sbilanciamenti cromatici nei bianchi puri.[^sigmoid-manual]
+> ✅ **Best practice**: usa sempre il preset *smooth* come punto di partenza per `sigmoid`. Modifica *red/green/blue rotation* solo se necessario: il preset *smooth* usa `R: +2°`, `G: -1°`, `B: -3°` per correggere lievi sbilanciamenti cromatici nei bianchi puri.[^sigmoid-manual]
 
 ### `filmic rgb` — Tone mapping robusto (alternativa a sigmoid)
 
@@ -109,7 +109,7 @@ Nel flusso scene-referred, la fusione (*blending*) richiede attenzione specifica
 
 Per foto con luci bruciate (es. sole inquadrato, finestre sovraesposte):
 
-1. Attiva `highlight reconstruction` **prima di `demosaic`**, con *method = guided* e *strength = 0.6* → recupera struttura cromatica senza artefatti.[^highlight-reconstruction]  
+1. Attiva `highlight reconstruction` **prima di `demosaic`**, con *method = guided laplacians* (regolando *clipping threshold* e *iterations*) → recupera struttura cromatica senza artefatti.[^highlight-reconstruction]  
 2. Usa `exposure` per posizionare il grigio medio (`0.18`) sul soggetto principale — ignora temporaneamente le luci.  
 3. Applica `sigmoid` con `skew = +0.25`, `contrast = 2.2`, `preserve hue = 75%`.  
 4. Se le luci restano “piatte”, aumenta `red attenuation = 0.3`, `blue attenuation = 0.25`, `recover purity = 85%`.  

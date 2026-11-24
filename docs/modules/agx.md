@@ -95,7 +95,7 @@ Espandendo la sezione *Advanced Curve Parameters*, si trovano controlli aggiunti
 
 ## Gestione del colore in AGX
 
-La seconda faccia di AGX e' la gestione cromatica, accessibile dalla scheda *Color* o tramite il modulo *Color Calibration* con tab *Primaries*.[^agx-guide][^dt54-update]
+La seconda faccia di AGX e' la gestione cromatica[^agx-guide][^dt54-update], accessibile dalla scheda *primaries* del modulo stesso (non da *color calibration*, che non ha questi parametri).
 
 ### Attenuazione delle primarie (Before Tone Mapping)
 
@@ -195,14 +195,14 @@ I tramonti sono la sfida piu' difficile per un tone mapper a causa dei colori es
 Per foto scattate in condizioni di scarsa luce:[^lowlight]
 
 1. **Exposure**: aumenta significativamente (+1.0 a +2.0 EV o piu')
-2. **AGX+** come profilo di output (evita tonalita' magenta indesiderate)[^lowlight]
+2. **AgX** come tone mapper (evita tonalita' magenta indesiderate)[^lowlight]; il profilo colore di uscita resta sRGB
 3. **Black relative exposure**: spingi piu' in basso (-15 a -20 EV) per pulire il rumore nelle ombre[^lowlight]
 4. **Shoulder power**: 2.0-2.5 (proteggi le luci artificiali)
 5. **Toe power**: 1.5-2.0 (controlla le ombre sollevate dall'esposizione)
 6. **Color Balance RGB**: usa la scheda *4 Ways* per color grading creativo nelle ombre e luci[^lowlight]
 
 !!! tip "Foto ISO alti"
-    Per foto ad alto ISO, AGX+ (la variante con profilo esteso) gestisce meglio le dominanti cromatiche rispetto ad AGX standard. Selezionalo nelle impostazioni del profilo di output.[^lowlight]
+    Per foto ad alto ISO, AgX gestisce bene le dominanti cromatiche[^lowlight]; non esiste una variante "AGX+" né va scelto come profilo di output: si regolano invece le primarie nella scheda *primaries*.
 
 ### Effetto Dragan (ritratti drammatici)
 
@@ -319,7 +319,7 @@ I "Notorious 6" sono sei problemi noti dei tone mapper scene-referred (in partic
 | **Ritratto** | 2.80-3.50 | 1.55-2.00 | 1.55-2.00 | Toni pelle naturali |
 | **Paesaggio** | 3.00-4.50 | 2.00-3.00 | 1.55-2.50 | Recupera cielo |
 | **Tramonto** | 2.50-3.50 | 1.55-2.00 | 1.55-2.00 | Attenua blu/rossi |
-| **Lowlight** | 2.50-3.50 | 2.00-2.50 | 1.50-2.00 | Usa profilo AGX+ |
+| **Lowlight** | 2.50-3.50 | 2.00-2.50 | 1.50-2.00 | Regola le primarie |
 | **B/N** | 3.00-4.00 | 1.55-2.00 | 1.55-2.00 | Poi desatura |
 | **Alto contrasto** | 3.50-4.50 | 2.00-3.00 | 1.55-2.00 | Dragan effect[^dragan-effect] |
 
@@ -349,7 +349,7 @@ In AGX, quando la curva tonale mostra una porzione **arancione** nelle estremita
 4. Aumenta `contrast = 3.00` per definizione senza alterare la curva S  
 5. Usa `blue attenuation = 16.75%` e `blue rotation = -3.0°` per spostare i toni fuori dal gamut[^landscape]  
 
-### Esempio: Setup AGX+ per ritratti ad alta ISO  
+### Esempio: setup AgX per ritratti ad alta ISO  
 *Da [The Dragan effect in darktable](https://www.youtube.com/watch?v=EuvG0lh8OB8) (00:00–01:50)*  
 1. Verifica che il tone mapper sia AgX (preferenza *flusso di lavoro: scene-referred (AgX)*)  
 2. Imposta `black relative exposure = -10.00 EV` e `dynamic range scaling = +10.00%`  
@@ -358,8 +358,8 @@ In AGX, quando la curva tonale mostra una porzione **arancione** nelle estremita
 
 ## Domande frequenti
 
-### Problema: AGX+ non appare nel menu dei profili  
-AGX+ è disponibile solo con profili di input/output compatibili con scene-referred (non con display-referred). Verifica che `Preferences > Processing > Pixel workflow defaults` sia impostato su `scene-referred (agx)` e non su `display-referred`. Se il profilo non compare, reinstalla i profili ICC da `darktable.org/downloads`[^discussion-pixls-54755]  
+### Problema: AgX non viene applicato automaticamente  
+AgX è un modulo (tone mapper), non un profilo colore: non compare nel menu dei profili di ingresso o di uscita. Per applicarlo di default, imposta `Preferences > Processing > auto-apply pixel workflow defaults` su `scene-referred (AgX)`[^discussion-pixls-54755]; in alternativa attivalo a mano dal gruppo dei moduli.  
 
 ### Problema: La curva tonale non si aggiorna in tempo reale  
 Questo accade quando OpenCL non è completamente inizializzato. Controlla i popup di avvio: l’elaborazione sarà più lenta fino al completamento dell’inizializzazione di OpenCL in background. Disabilitare temporaneamente `OpenCL` in `Preferences > Performance` risolve il problema, ma riduce le prestazioni[^darktable-fr-4.6]  

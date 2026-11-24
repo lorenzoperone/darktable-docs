@@ -162,17 +162,17 @@ La vignettatura ottica si corregge in *lens correction* (vedi sopra): il modulo 
 ## Passo 8: Stile finale (`color balance rgb`)
 
 In Lightroom: *Split Toning* o *Calibration*  
-In darktable: modulo **`color balance rgb`**, scheda *Global*  
+In darktable: modulo **`color balance rgb`**, scheda *4 ways*  
 
 | Parametro | Valore tipico | Perché |
 |-----------|----------------|--------|
-| **Shadows hue/saturation** | 210° / +15% | Aggiunge un tocco freddo alle ombre (blu-ciano) |
-| **Midtones hue/saturation** | 0° / +5% | Neutralità con leggera saturazione |
-| **Highlights hue/saturation** | 30° / +10% | Tono caldo alle luci (giallo-ambra) |
+| **Shadows lift hue/chroma** | 210° / +15% | Aggiunge un tocco freddo alle ombre (blu-ciano) |
+| **Global power hue/chroma** | 0° / +5% | Neutralità con leggera saturazione |
+| **Highlights gain hue/chroma** | 30° / +10% | Tono caldo alle luci (giallo-ambra) |
 | **Global saturation** | +5% a +12% | “Pop” finale senza artificiosità |
 
 ✅ **Consiglio avanzato**:  
-Per un look “cinematografico”, abilita *Chroma blend mode* → `LCh` e usa `chroma` invece di `saturation` per un controllo più fisiologico del colore[^de-lightroom-a-darktable-05].
+Per un look “cinematografico”[^de-lightroom-a-darktable-05], lavora sulla `chroma` dei controlli 4 ways invece che sulla `saturation` globale, per un controllo più fisiologico del colore.
 
 ---
 

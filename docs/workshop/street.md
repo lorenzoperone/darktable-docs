@@ -82,7 +82,7 @@ Attiva `local contrast`. Questo modulo è **centrale** per la street: definisce 
 | detail | sopra il default | Contrasto locale di base per tutta l’immagine[^street-video-1] |
 | highlights | da regolare a vista | Per far risaltare occhi, capelli bagnati, superfici lucide[^street-video-1] |
 | shadows | da regolare a vista | Per recuperare dettagli in ombre profonde (portoni, tunnel, sottopassaggi)[^street-video-1] |
-| radius | `15–45 px` | Più piccolo = dettagli più fini (pelle, tessuti); più grande = forme generali (silhouette, volumi)[^manual-local-contrast] |
+| mid-tone range | `0.50` (default) | Più alto = più valori trattati come mezzitoni; più basso = più effetto su luci e ombre[^manual-local-contrast] |
 
 > **Esempio pratico**: Su un ritratto di strada, aumenta `highlights` e `detail`. Poi applica una maschera circolare sull’occhio destro: l’iride diventa immediatamente più presente, senza toccare la pelle circostante[^street-video-1].
 
@@ -124,7 +124,7 @@ Usa `mask manager` per interventi mirati:
 
 ## Consigli operativi
 
-- **ISO alto?** Usa `denoise (profiled)` *prima* di `local contrast`, non dopo. Imposta `strength = 35–55%`, `patch-based = false`, `spatial extent = 1.2`[^manual-denoise].  
+- **ISO alto?** Usa `denoise (profiled)` *prima* di `local contrast`, non dopo. Regola `strength` (default 1,0) in base all’ISO[^manual-denoise].  
 - **Luci dure?** Evita `fill light` — preferisci una maschera `Gradient` su una zona d’ombra con `exposure = +0.40 EV`[^street-video-1].  
 - **Sfondo caotico?** Non usare `background blur`: crea artefatti. Usa invece `local contrast` con `shadows` ridotto per “appiattire” leggermente lo sfondo senza sfocarlo[^street-video-1].  
 - **Velocità:** Salva uno stile chiamato `"Street B/N Quick"` con i parametri base (`color calibration` in scheda *gray*, `local contrast` con `detail` aumentato) — applicalo con un click su nuove immagini[^street-video-1].
@@ -157,7 +157,7 @@ Usa `mask manager` per interventi mirati:
 La funzione `gray` non impone una conversione monochrome se `normalize channels` è disattivato. Abilitare entrambi i parametri è obbligatorio per ottenere una singola curva Luminance. Se il comportamento persiste, controlla che l’immagine non sia già stata flaggata come monochrome tramite demosaic passthrough[^manual-color-calibration].
 
 ### Problema: `local contrast` introduce artefatti ai bordi dei vestiti
-Questo accade tipicamente con `radius > 45 px` su tessuti fini (lino, seta) o con `highlights` troppo alto su superfici lucide. Riduci `radius` a `28–32 px` e abbassa `highlights`; aggiungi una maschera `Path` lungo il contorno del capo per limitare l’effetto[^manual-local-contrast].
+Questo accade tipicamente con `detail` troppo alto su tessuti fini (lino, seta) o con `highlights` troppo alto su superfici lucide. Riduci `detail` e abbassa `highlights`; aggiungi una maschera `Path` lungo il contorno del capo per limitare l’effetto[^manual-local-contrast].
 
 ### Problema: maschera circolare troppo rigida su pelle anziana
 L’eccessiva `Feather` (oltre 18%) causa perdita di definizione; una `Feather` troppo bassa (<8%) produce transizioni nette non naturali. Il valore ottimale per pelle rugosa è `12–14%`, combinato con `Opacity = 72%` e `Size = 35%`[^street-video-1].

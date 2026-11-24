@@ -50,7 +50,7 @@ Questa guida integra l'analisi automatizzata di **12 video-tutorial** del canale
 | # | Video | Argomento | Parametri chiave estratti |
 |---|-------|-----------|----------------------------|
 | 1 | [darktable first steps ep01](https://www.youtube.com/watch?v=P4cL61ZHqFw) | Primi passi | `preferences → processing → auto-apply pixel workflow defaults = ON`, `chromatic adaptation = modern` [^adabble-ep01] |
-| 2 | [The darktable pipeline](https://www.youtube.com/watch?v=1nPW6WPhhTo) | Pipeline per principianti | Ordine ottimale: `demosaic → input color profile → filmic rgb → exposure → white balance → color calibration → tone equalizer` [^adabble-pipeline] |
+| 2 | [The darktable pipeline](https://www.youtube.com/watch?v=1nPW6WPhhTo) | Pipeline per principianti [^adabble-pipeline] | Ordine reale della pipeline: `white balance → demosaic → exposure → tone equalizer → input color profile → color calibration → filmic rgb` |
 | 3 | [A guide to AGX](https://www.youtube.com/watch?v=iaZ2-QvOHyA) | Tone mapping AgX | `AgX` preimpostato: `dynamic range = 14.1`, `black relative exposure = -6.5`, `white relative exposure = +7.6`, `contrast = 0.75` [^adabble-agx] |
 | 4 | [darktable 5.4 UPDATE](https://www.youtube.com/watch?v=yiTqUgoWg6Q) | Novità 5.4 | Nuovo modulo `AI object segmentation`, miglioramento del `tone equalizer` (supporto maschere esterne `.png` 16-bit) [^adabble-54-update] |
 | 5 | [Lowlight photos](https://www.youtube.com/watch?v=O7wXgmQZqiU) | Foto scarsa luce | `denoise (profiled)`: `strength = 0.82`, `sharpen = 0.35`, `wavelets scale = 3`, `non-local means patch size = 7` [^adabble-lowlight] |

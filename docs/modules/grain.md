@@ -95,18 +95,7 @@ Nel workflow b/n, il grain è fondamentale per sostituire la “struttura” per
 4. Disattiva la maschera per verificare che lo sfondo rimanga privo di grana: la transizione deve essere netta senza frange[^darktable-fr-grain-2016]  
 ## Tabella preset built-in
 
-darktable 4.8 include 8 preset ufficiali per `grain`, preconfigurati in base a profili di pellicola reali e testati su immagini di riferimento. Tutti i preset operano esclusivamente sul canale L di Lab e sono compatibili con flussi scene-referred[^dt48-grain].
-
-| Preset | Quando usarlo | Note |
-|---|---|---|
-| `Kodak Tri-X` | Street photography in luce mista o bassa; soggetti con texture media (tessuti, pelle, cemento) | Basato su ISO 400; `coarseness ≈ 1.1`, `strength ≈ 45%`[^dt48-grain] |
-| `Ilford Delta 3200` | Reportage notturno o immagini ad alto contrasto con forte dinamica | Grana molto irregolare; `coarseness = 1.85`, `strength = 62%`[^dt48-grain] |
-| `Kodak Portra 160` | Ritratti in studio o paesaggi con dettaglio fine | Grana quasi invisibile; `coarseness = 0.32`, `strength = 18%`[^dt48-grain] |
-| `Fuji Acros II` | B/N architettonico o documentario con controllo assoluto del microcontrasto | Grana fine e omogenea; `coarseness = 0.28`, `strength = 12%`[^dt48-grain] |
-| `Cinestill 800T` | Stili cinematografici con dominanti arancio/ambra | Grana media con leggera anisotropia; `coarseness = 1.25`, `strength = 53%`[^dt48-grain] |
-| `Agfa APX 400` | Fotografia analogica vintage con resa morbida | Grana leggermente sfumata; `coarseness = 0.95`, `strength = 38%`[^dt48-grain] |
-| `Fomapan 400` | B/N ad alto impatto con grana pronunciata ma non invasiva | Grana medio-fine con elevata coesione tonale; `coarseness = 1.05`, `strength = 47%`[^dt48-grain] |
-| `Custom` | Personalizzazione avanzata o workflow ibridi (es. integrazione con LUT esterne) | Valori iniziali: `coarseness = 1.00`, `strength = 50%`[^dt48-grain] |
+Il modulo `grain` non include preset integrati: le simulazioni di pellicola si ottengono regolando a mano `coarseness`, `strength` e `midtones bias`.
 
 ## Domande frequenti
 

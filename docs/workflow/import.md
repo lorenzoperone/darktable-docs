@@ -37,7 +37,7 @@ Il modulo **import**, accessibile nella vista *Lighttable*, è il punto di ingre
 
 ### Flusso di lavoro completo del modulo **import**
 
-1. **Apertura del modulo**: clicca su *Import* nella barra laterale sinistra della vista *Lighttable* o premi `Ctrl+I`.
+1. **Apertura del modulo**: clicca su *Import* nella barra laterale sinistra della vista *Lighttable* o premi `Ctrl+Shift+I`.
 2. **Selezione della modalità**: scegli tra:
    - `add to library`
    - `copy & import`

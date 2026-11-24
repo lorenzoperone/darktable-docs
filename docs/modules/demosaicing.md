@@ -7,7 +7,7 @@ Il modulo **demosaicing** è il primo modulo tecnico obbligatorio nella pipeline
 
 ## Panoramica
 
-Il demosaicing opera immediatamente dopo `raw black/white point` e prima di `white balance`, `input color profile` e tutti i moduli creativi. La sua posizione è fissa nella *pixelpipe*, poiché lavora sui dati lineari più grezzi disponibili[^manual-demosaic]. Il suo compito primario è:
+Il demosaicing opera dopo `raw black/white point`, `white balance` e `highlight reconstruction`, e prima di `input color profile` e di tutti i moduli creativi. La sua posizione è fissa nella *pixelpipe*, poiché lavora sui dati lineari più grezzi disponibili[^manual-demosaic]. Il suo compito primario è:
 
 1. **Interpolare i valori mancanti** per ogni pixel (es. un pixel verde deve stimare i valori di rosso e blu adiacenti);
 2. **Ridurre artefatti cromatici**, come false colori (fringing) e moiré;
@@ -25,7 +25,7 @@ Il flusso ottimale per il demosaicing segue rigorosamente l’ordine fisico dell
 
 ```mermaid
 flowchart TD
-    A["1. Punto nero/bianco<br/>RAW (fisso)"] --> B["2. Demosaicizzazione<br/>(algoritmo + capture<br/>sharpen)"] --> C["3. Bilanciamento<br/>del bianco"] --> D["4. Profilo input"] --> E["5. Esposizione<br/>(grigio medio)"]
+    A["1. Punto nero/bianco<br/>RAW (fisso)"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Demosaicizzazione<br/>(algoritmo + capture<br/>sharpen)"] --> D["4. Esposizione<br/>(grigio medio)"] --> E["5. Profilo input"]
 ```
 
 !!! tip "Capture sharpen va attivato *prima* del denoise"
@@ -142,8 +142,8 @@ Disabilita `color_smoothing`, riduci `Iterations` a **6** per `Markesteijn`, e u
 
 ## Consigli operativi
 
-!!! tip "Verifica il risultato con zoom 100% e maschera di sovrapposizione"
-    Per valutare la qualità del demosaicing, usa `Ctrl+1` per zoomare al 100% e attiva la **maschera di sovrapposizione** (`O`): evidenzia i falsi colori (fringing rosso/ciano) e i bordi instabili. Se compaiono alone cromatici, prova a abilitare `color_smoothing` o passa a Markesteijn[^manual-demosaic].
+!!! tip "Verifica il risultato con zoom 100%"
+    Per valutare la qualità del demosaicing, zooma al 100% (`Alt+1` o il menu di zoom del modulo *navigation*) e osserva i bordi: cerca falsi colori (fringing rosso/ciano) e bordi instabili. Se compaiono alone cromatici, prova a abilitare `color_smoothing` o passa a Markesteijn[^manual-demosaic].
 
 !!! warning "Non combinare capture_sharpen con altri moduli di nitidezza"
     Evita di usare contemporaneamente `capture_sharpen`, `sharpen`, `diffuse or sharpen` e `local contrast`. Questo crea una cascata di effetti cumulativi che distruggono la struttura naturale dell’immagine. Usa `capture_sharpen` *una sola volta*, all’inizio della pipeline[^dragan-effect].

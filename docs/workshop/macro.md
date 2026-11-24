@@ -98,8 +98,8 @@ La chiarezza globale appiattisce i dettagli. Usa `local contrast` con maschere p
 ## Esempio: Calibrazione cromatica per superfici traslucide
 
 *Da [ENG] darktable Black&White photography (video-tutorials) (timestamp 05:20–08:20)*[^bw-video]  
-1. Apri `color calibration` → scheda *Input*  
-2. Disattiva `normalize channels` e abilita `gray`  
+1. Apri `color calibration` → scheda *gray*  
+2. Disattiva `normalize channels`  
 3. Regola manualmente i canali di ingresso per bilanciare la traslucenza:  
    - `input R`: `−0.124` (riduce dominante rossa su petali sottili)  
    - `input G`: `+0.082` (migliora resa della clorofilla in venature)  

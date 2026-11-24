@@ -144,14 +144,16 @@ Verifica che l’istogramma della maschera copra effettivamente il range EV del 
 
 ## Preset integrati
 
-darktable 5.4 include preset preconfigurati per casi comuni, accessibili dal menu hamburger (☰) del modulo[^dt48]:
+I preset integrati sono accessibili dal menu preset del modulo[^dt48]:
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| `compress shadows & highlights (eigf)` | Immagini con ampio DR e necessità di compressione senza perdita di contrasto locale | Usa EIGF per uniformità tra ombre e luci; valore predefinito `smoothing diameter = 5%`[^dt48] |
-| `compress shadows & highlights (gf)` | Immagini con ombre molto dettagliate e luci semplici (es. ritratti in studio) | Usa guided filter originale: migliore preservazione dettagli ombre, ma sfocatura maggiore nelle luci[^dt48] |
-| `lift shadows (eigf)` | Ombre piatte e poco definite, senza clipping | Applica +0.9 EV a –8.0 EV, +0.5 EV a –6.0 EV, con `curve smoothing = 0.4`[^dt48] |
-| `recover highlights (eigf)` | Luci sovraesposte ma recuperabili (es. cielo con dettagli nuvolosi) | Applica –0.7 EV a +0.0 EV, –0.3 EV a +2.0 EV, con `mask contrast compensation = +0.3`[^dt48] |
+| `compress shadows/highlights \| EIGF \| strong` / `medium` / `soft` | Immagini con ampio DR e necessità di compressione | Filtro `eigf` (default): sfocatura della maschera indipendente dall'esposizione |
+| `compress shadows/highlights \| GF \| strong` / `medium` / `soft` | Stessi casi, con il filtro guidato classico | Filtro `guided filter` |
+| `contrast tone curve \| soft` / `medium` / `strong` | Aggiungere contrasto tonale globale | Curva di contrasto applicata tramite gli slider EV |
+| `relight: fill-in` | Schiarire le ombre come con un pannello di riempimento | Solleva le zone scure |
+| `simple tone curve` | Punto di partenza per curve personalizzate | — |
+| `mask blending \| all purposes`, `mask blending \| people with backlight` | Uso del modulo come generatore di maschere | Impostazioni della maschera ottimizzate per il blending |
 
 ## Riferimenti visuali
 

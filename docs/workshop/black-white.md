@@ -107,8 +107,8 @@ Per dare profondità all'immagine senza appiattire i dettagli:
 
 | Parametro | Valore | Maschera |
 |-----------|--------|----------|
-| Shadow exposure | Leggermente negativo | Rastamask globale |
-| Mask exposure compensation | -1.93 EV | exposure + tree global |
+| Shadow exposure | Leggermente negativo | — |
+| Mask exposure compensation | Variabile (centrare l'istogramma della maschera) | — |
 | Mask contrast compensation | +0.00 EV | — |
 | Curve smoothing | +0.00 | — |
 
@@ -150,7 +150,7 @@ Una volta trovata la ricetta giusta, salvarla come **stile** per applicarla rapi
 | **Esposizione** | Valore variabile, black level correction | Correzione luminosità base |
 | **Filmic RGB** | White ~4.94 EV, Black ~-7.42 EV | Tone mapping |
 | **Color Balance RGB** | 4 ways, shadows hue, highlights luminance | Viraggio cromatico |
-| **Tone Equalizer** | Maschera raster, mask exposure -1.93 EV | Contrasto locale |
+| **Tone Equalizer** | Maschera guidata interna, mask exposure compensation | Contrasto locale |
 | **Diffuse or Sharpen** | De-haze speeds negative, anisotropia +200% | Recupero dettagli |
 | **Maschere parametriche** | Input Cz, feathering alto | Selezione zone omogenee |
 

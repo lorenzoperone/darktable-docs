@@ -1,9 +1,9 @@
 # Highlight Reconstruction
 
-Il modulo **highlight reconstruction** è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone *clippate* — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, **highlight reconstruction agisce molto precocemente**, prima di `input color profile`, `color calibration` e `white balance`, su un segnale ancora grezzo e privo di significato cromatico definito [^dt48-highlight].
+Il modulo **highlight reconstruction** è il primo modulo della pipeline di elaborazione in darktable dedicato al recupero delle informazioni cromatiche nelle zone *clippate* — ovvero dove uno o più canali RGB hanno raggiunto il valore massimo registrabile dal sensore o dal file RAW. A differenza dei moduli di tone mapping (come AGX o Filmic RGB), che operano su dati già bilanciati e profilati, **highlight reconstruction agisce molto precocemente**, dopo `white balance` ma prima di `demosaic`, `input color profile` e `color calibration`, su un segnale ancora grezzo e privo di significato cromatico definito [^dt48-highlight].
 
 !!! info "Posizione critica nella pipeline"
-    Il modulo si trova subito dopo `demosaic` e prima di `input color profile`. Questa posizione è fondamentale: poiché non esiste ancora un concetto di "bianco" o "colore" ben definito, i metodi di ricostruzione devono basarsi esclusivamente su gradienti spaziali e rapporti tra pixel adiacenti — non su valori cromatici assoluti [^dt48-highlight].
+    Il modulo si trova subito dopo `white balance` e prima di `demosaic` (e quindi di `input color profile`). Questa posizione è fondamentale: poiché non esiste ancora un concetto di "bianco" o "colore" ben definito, i metodi di ricostruzione devono basarsi esclusivamente su gradienti spaziali e rapporti tra pixel adiacenti — non su valori cromatici assoluti [^dt48-highlight].
 
 ## Panoramica
 
@@ -28,7 +28,7 @@ Il flusso ottimale prevede un'integrazione stretta con `exposure`, `white balanc
 
 ```mermaid
 flowchart TD
-    A["1. Esposizione<br/>globale"] --> B["2. Bilanciamento<br/>del bianco"] --> C["3. Ricostruzione<br/>alte luci"] --> D["4. Profilo input +<br/>Calibrazione colore"] --> E["5. Tone mapping<br/>(AGX/Filmic)"]
+    A["1. Bilanciamento<br/>del bianco"] --> B["2. Ricostruzione<br/>alte luci"] --> C["3. Esposizione<br/>globale"] --> D["4. Profilo input +<br/>Calibrazione colore"] --> E["5. Tone mapping<br/>(AGX/Filmic)"]
 ```
 
 ### Passo 1: Verifica e impostazione del clipping threshold
@@ -101,7 +101,7 @@ In pratica:
 
 ## Consigli operativi
 
-- **Non attivare mai `highlight reconstruction` prima di `exposure` e `white balance`**: senza un’esposizione corretta, non c’è nulla da ricostruire; senza bilanciamento, i rapporti RGB sono instabili e la ricostruzione sarà imprecisa [^dt48-highlight].
+- **Cura prima il bilanciamento del bianco**[^dt48-highlight]: `highlight reconstruction` è applicato sempre dopo `white balance` (che ne determina i rapporti RGB) e prima di `exposure`; la posizione è fissa, ma un bilanciamento errato rende la ricostruzione imprecisa.
 - **Verifica il white point della fotocamera**: se impostato male, il clipping viene rilevato in modo errato, compromettendo tutta la ricostruzione. Controlla le preferenze di `raw black/white point` [^dt48-highlight].
 - **Per immagini X-Trans**: il metodo `reconstruct in LCh` funziona meglio grazie alla maggiore densità di pixel nel blocco sensore (8 invece di 3) [^dt48-highlight].
 - **Se vedi artefatti “a labirinto”**: disattiva `reconstruct color` e passa a `segmentation based` o `guided laplacians` [^dt48-highlight].
@@ -129,9 +129,8 @@ In pratica:
 1. Per un file RAF Fujifilm GFX100s, attiva `highlight reconstruction` e seleziona `reconstruct in LCh`.  
 2. Imposta `clipping threshold = 0.9985` (valore più conservativo rispetto ai Bayer, grazie alla maggiore densità di campioni per blocco).  
 3. Nota che il modulo analizza gruppi di 8 pixel (non 3): ciò migliora la stima della luminanza L anche quando tutti i canali sono clippati.  
-4. Combina con `filmic rgb → Reconstruct → Desaturate to white`: la ricostruzione in LCh fornisce una base luminosa stabile, mentre Filmic gestisce la transizione finale verso l’achromatico.  
-5. Verifica che `output color profile` sia impostato su `AgX+ scene-referred default` per evitare tonalità magenta residue.  
-6. Convalida con lo strumento `RAW overexposed` (`O`): nessuna area rossa deve persistere dopo questa combinazione.
+4. Combina con `filmic rgb` → scheda *reconstruct* (`gray ↔ colorful details` spostato verso *gray*): la ricostruzione in LCh fornisce una base luminosa stabile, mentre Filmic gestisce la transizione finale verso l’achromatico.  
+5. Convalida con lo strumento `RAW overexposed` (`Shift+O`): nessuna area rossa deve persistere dopo questa combinazione.
 
 ## Domande frequenti
 

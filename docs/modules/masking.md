@@ -60,10 +60,8 @@ Ogni forma disegnata (cerchio, ellisse, gradiente, tracciato) espone questi cont
 > 💡 **Scorciatoie da tastiera** (attive quando la maschera è selezionata):  
 > - `Ctrl + rotella mouse`: regola `mask_opacity`  
 > - `Shift + rotella mouse`: regola `feathering_radius`  
-> - `Alt + rotella mouse`: regola `blurring_radius`  
-> - `C`: attiva lo strumento *parametric mask*  
-> - `D`: attiva lo strumento *drawn mask*  
-> - `M`: attiva/disattiva la visualizzazione gialla della maschera (`display mask`)[^episode1-210][^episode2-96]
+> - `C` (con il cursore su uno slider della maschera parametrica): mostra il canale in ingresso/uscita  
+> - `M` (con il cursore su uno slider della maschera parametrica): mostra la maschera risultante sovrapposta all'immagine[^episode1-210][^episode2-96]
 
 ## Gestione delle maschere: Mask Manager
 

@@ -269,7 +269,7 @@ Il posizionamento del Color Equalizer nella catena di elaborazione e' cruciale p
 | Con maschere parametriche | Dopo il modulo che genera la luminanza di riferimento | La maschera parametrica opera correttamente sulla luminanza processata |
 
 !!! tip "Pipeline consigliata per B/N"
-    `RAW -> White Balance -> Color Calibration (1) -> Color Equalizer -> Color Calibration (2, desaturato) -> Filmic/Sigmoid -> Tone Equalizer`[^b-and-w]
+    `RAW -> White Balance -> Tone Equalizer -> Color Calibration (1) -> Color Equalizer -> Color Calibration (2, desaturato) -> Filmic/Sigmoid`[^b-and-w]
 
 ## Consigli per colori accurati
 

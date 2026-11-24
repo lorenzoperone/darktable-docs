@@ -114,13 +114,11 @@ La causa è la compressione lineare del gradiente su grandi aree a bassa frequen
 
 ## Preset integrati
 
-darktable 5.4 include tre preset preconfigurati per `vignetting`, accessibili dal menu hamburger (☰) del modulo:
+darktable include un solo preset integrato per `vignetting`, accessibile dal menu preset del modulo:
 
 | Preset | Quando usarlo | Note |
 |---|---|---|
-| **subtle** | Effetti minimi per correzione compositiva discreta | `brightness = -0.25 EV`, `fall-off radius = 0.75`, `saturation = 0%`[^vignetting-manual] |
-| **dramatic** | Effetto teatrale per ritratti o immagini concettuali | `brightness = -0.90 EV`, `fall-off start = 0.30`, `fall-off radius = 0.20`[^vignetting-manual] |
-| **cinematic** | Simulazione di rapporto d’aspetto anamorfico | `shape = 0.85`, `width/height ratio = 2.35`, `brightness = -0.65 EV`[^vignetting-manual] |
+| **lomo** | Look da fotocamera giocattolo (Lomo) | `fall-off start = 40%`, `fall-off radius = 100%`, `brightness = -1.00`, `saturation = +0.50` |
 
 ## Riferimenti visuali
 
