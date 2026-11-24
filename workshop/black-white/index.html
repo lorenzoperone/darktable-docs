@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
     
     
       
@@ -30,10 +30,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -4365,7 +4365,6 @@
 <p><strong>Fonte:</strong> <a href="https://www.youtube.com/watch?v=PKK2QTPKsjY">Develop infrared photos with darktable</a> — A Dabble in Photography</p>
 </blockquote>
 <p>Questo caso studio mostra come trasformare un RAW infrarosso (filtro 720nm) in un'immagine monocromatica con viraggio cromatico creativo. La stessa tecnica si applica a qualsiasi foto che richiede una conversione B&amp;W controllata.</p>
-<p><em>Figura 1 — Immagine infrarosso prima della conversione in bianco e nero.</em></p>
 <h2 id="contesto">Contesto<a class="headerlink" href="#contesto" title="Permanent link">¶</a></h2>
 <p>Le foto infrarosse presentano una dominante rossa/magenta estrema e richiedono uno scambio dei canali RGB prima di qualsiasi altra correzione. Il filtro Hoya 720nm agisce come un ND da ~6 stop: tempi di esposizione lunghi e treppiede obbligatorio.</p>
 <div class="admonition warning">
@@ -4373,7 +4372,7 @@
 <p>Il filtro Hoya 720nm è fortemente consigliato rispetto a marchi economici (es. URTH), che possono introdurre troppa luce rossa rendendo la correzione estremamente difficile in post-produzione<sup id="fnref:ir-video"><a class="footnote-ref" href="#fn:ir-video">1</a></sup>.</p>
 </div>
 <h2 id="passo-1-analisi-del-raw-e-configurazione-pipeline">Passo 1 — Analisi del RAW e configurazione pipeline<a class="headerlink" href="#passo-1-analisi-del-raw-e-configurazione-pipeline" title="Permanent link">¶</a></h2>
-<p>L'immagine RAW appare completamente rossa/magenta. Prima di tutto si verifica che il workflow sia impostato su <strong>scene-referred</strong> con profilo di ingresso <strong>Rec2020 RGB linear</strong>.</p>
+<p>L'immagine RAW appare completamente rossa/magenta. Prima di tutto si verifica che il workflow sia impostato su <strong>scene-referred</strong> con profilo di lavoro <strong>Rec2020 RGB lineare</strong> (il default del modulo <em>profilo colore di ingresso</em>).</p>
 <table>
 <thead>
 <tr>
@@ -4384,15 +4383,15 @@
 <tbody>
 <tr>
 <td>Workflow</td>
-<td>scene-referred (Filmic RGB)</td>
+<td>scene-referred</td>
 </tr>
 <tr>
-<td>Profilo ingresso</td>
-<td>Rec2020 RGB linear</td>
+<td>Profilo di lavoro</td>
+<td>Rec2020 RGB lineare</td>
 </tr>
 <tr>
-<td>Profilo uscita</td>
-<td>Filmic RGB</td>
+<td>Tone mapper</td>
+<td>Filmic RGB (in alternativa Sigmoid o AgX)</td>
 </tr>
 </tbody>
 </table>
@@ -4442,7 +4441,6 @@
 <p class="admonition-title">Somma dei coefficienti = 1</p>
 <p>Quando si modificano i coefficienti del mixer di canali, assicurarsi che la somma sia 1 oppure attivare l'opzione <strong>Normalizza</strong> per evitare alterazioni indesiderate della luminosità<sup id="fnref:color-calibration-ref"><a class="footnote-ref" href="#fn:color-calibration-ref">3</a></sup>.</p>
 </div>
-<p><em>Figura 2 — Configurazione del Color Calibration per lo scambio dei canali rosso e blu.</em></p>
 <h2 id="passo-3-conversione-in-bianco-e-nero">Passo 3 — Conversione in Bianco e Nero<a class="headerlink" href="#passo-3-conversione-in-bianco-e-nero" title="Permanent link">¶</a></h2>
 <p>Si aggiunge un'istanza di <strong>Color Calibration</strong> con il preset <strong>black and white</strong>. L'ordine nella pipeline è cruciale: questo modulo va posizionato <strong>dopo</strong> le correzioni cromatiche, subito prima di Filmic RGB.</p>
 <table>
@@ -4587,7 +4585,6 @@
 </tr>
 </tbody>
 </table>
-<p><em>Figura 3 — Regolazione dell'equalizzatore tonale per aumentare la profondità dell'immagine.</em></p>
 <h2 id="passo-8-finitura-con-diffuse-or-sharpen">Passo 8 — Finitura con Diffuse or Sharpen<a class="headerlink" href="#passo-8-finitura-con-diffuse-or-sharpen" title="Permanent link">¶</a></h2>
 <p>Per recuperare texture e rimuovere eventuali aloni:</p>
 <table>
@@ -4620,7 +4617,6 @@
 </tr>
 </tbody>
 </table>
-<p><em>Figura 4 — Applicazione di Diffuse or Sharpen per recuperare texture e rimuovere aloni.</em></p>
 <h2 id="creare-uno-stile-per-il-batch-editing">Creare uno stile per il batch editing<a class="headerlink" href="#creare-uno-stile-per-il-batch-editing" title="Permanent link">¶</a></h2>
 <p>Una volta trovata la ricetta giusta, salvarla come <strong>stile</strong> per applicarla rapidamente ad altre foto IR dello stesso set:</p>
 <ol>
@@ -4634,7 +4630,6 @@
 <p>Lo stile automatizza lo scambio dei canali e il bilanciamento del bianco. Da lì, regolare esposizione e maschere per ogni singola immagine<sup id="fnref2:ir-video"><a class="footnote-ref" href="#fn:ir-video">1</a></sup>.</p>
 </div>
 <h2 id="risultato-finale">Risultato finale<a class="headerlink" href="#risultato-finale" title="Permanent link">¶</a></h2>
-<p><em>Figura 5 — Immagine finale dopo tutte le regolazioni: scambio canali, conversione B&amp;W, viraggio cromatico, contrasto locale e sharpening.</em></p>
 <h2 id="riepilogo-impostazioni">Riepilogo impostazioni<a class="headerlink" href="#riepilogo-impostazioni" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -4766,7 +4761,7 @@
     <span class="md-icon" title="Ultimo aggiornamento">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    27 giugno 2026
+    24 novembre 2026
   </span>
 
     
@@ -4840,10 +4835,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
       
