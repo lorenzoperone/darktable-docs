@@ -54,4 +54,3 @@ flowchart TD
 ```
 
 Le tabelle **Riepilogo impostazioni** a fine pagina riassumono tutti i moduli e i parametri usati, per riferimento rapido.
-

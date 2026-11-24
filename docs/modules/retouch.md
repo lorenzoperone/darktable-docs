@@ -170,5 +170,5 @@ Il modulo *retouch* include preset preconfigurati accessibili tramite il pulsant
 [^darktable-usermanual-retouch]: darktable user manual - retouch, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/retouch/#
 [^pixls-wavelet]: PIXLS.US - Skin Retouching with Wavelet Decompose, https://pixls.us/articles/skin-retouching-with-wavelet-decompose/
 [^darktable-fr-2023-12]: darktable.fr – Nouveautés darktable 4.6 (FR), https://darktable.fr/posts/2023/12/darktable_4.6/
-[^darktable-fr-2019-01]: darktable.fr – Tuto N° 18 : Le module RETOUCHE . 2ème partie : DECOMPOSITION EN ONDELETTES, https://darktable.fr/posts/2019/01/tuto-n-18-le-module-retouche-2eme-partie-decomposition-en-ondelettes-pour-la-retouche/  
+[^darktable-fr-2019-01]: darktable.fr – Tuto N° 18 : Le module RETOUCHE . 2ème partie : DECOMPOSITION EN ONDELETTES, https://darktable.fr/posts/2019/01/tuto-n-18-le-module-retouche-2eme-partie-decomposition-en-ondelettes-pour-la-retouche/
 [^darktable-fr-2019-01-tuto18-2]: darktable.fr – Tuto N° 18 : Le module RETOUCHE . 2ème partie (video timestamp 12:47), https://darktable.fr/posts/2019/01/tuto-n-18-le-module-retouche-2eme-partie-decomposition-en-ondelettes-pour-la-retouche/

@@ -161,8 +161,8 @@ Il modulo `chromatic aberrations` include preset preconfigurati per casi comuni.
 ## Fonti
 
 [^chromatic-aberrations-manual]: darktable user manual - chromatic aberrations, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/chromatic-aberrations/#
-[^lens-correction-manual]: darktable user manual - lens correction, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/#  
-[^raw-chromatic-aberrations-manual]: darktable user manual - raw chromatic aberrations, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/raw-chromatic-aberrations/#  
+[^lens-correction-manual]: darktable user manual - lens correction, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/lens-correction/#
+[^raw-chromatic-aberrations-manual]: darktable user manual - raw chromatic aberrations, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/raw-chromatic-aberrations/#
 [^defringe-manual]: darktable user manual - (deprecated) defringe, https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/defringe/#
 [^video-dabble-38]: [ENG] darktable 3.8 What is new?, https://www.youtube.com/watch?v=5smugZ5pXN0 | `processed/tutorial-video/it/dabble-38.md`
 [^discussion-pixls-2023-05]: PIXLS.US discussion thread “TCA inversion after correction”, https://discuss.pixls.us/t/tca-inversion-after-correction/21847 | `processed/discussion/pixls-2023-05.md`

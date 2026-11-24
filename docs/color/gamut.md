@@ -109,5 +109,5 @@ Valori tipici per la ricostruzione:
 
 [^unbounded-colors]: darktable user manual - unbounded colors — https://docs.darktable.org/usermanual/development/en/special-topics/color-management/unbounded-colors/
 [^filmic-rgb]: darktable user manual - filmic rgb — https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/filmic-rgb/
-[^dt54-update]: darktable 5.4 release notes (darktable-fr) — https://darktable.fr/posts/2025/12/notes-version-5.4.0/  
+[^dt54-update]: darktable 5.4 release notes (darktable-fr) — https://darktable.fr/posts/2025/12/notes-version-5.4.0/
 [^agx-guide]: [ENG] A guide to AgX in darktable — YouTube video by A Dabble in Photography — https://www.youtube.com/watch?v=iaZ2-QvOHyA

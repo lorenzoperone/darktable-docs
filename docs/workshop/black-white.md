@@ -4,7 +4,6 @@
 
 Questo caso studio mostra come trasformare un RAW infrarosso (filtro 720nm) in un'immagine monocromatica con viraggio cromatico creativo. La stessa tecnica si applica a qualsiasi foto che richiede una conversione B&W controllata.
 
-*Figura 1 — Immagine infrarosso prima della conversione in bianco e nero.*
 
 ## Contesto
 
@@ -15,13 +14,13 @@ Le foto infrarosse presentano una dominante rossa/magenta estrema e richiedono u
 
 ## Passo 1 — Analisi del RAW e configurazione pipeline
 
-L'immagine RAW appare completamente rossa/magenta. Prima di tutto si verifica che il workflow sia impostato su **scene-referred** con profilo di ingresso **Rec2020 RGB linear**.
+L'immagine RAW appare completamente rossa/magenta. Prima di tutto si verifica che il workflow sia impostato su **scene-referred** con profilo di lavoro **Rec2020 RGB lineare** (il default del modulo *profilo colore di ingresso*).
 
 | Parametro | Valore |
 |-----------|--------|
-| Workflow | scene-referred (Filmic RGB) |
-| Profilo ingresso | Rec2020 RGB linear |
-| Profilo uscita | Filmic RGB |
+| Workflow | scene-referred |
+| Profilo di lavoro | Rec2020 RGB lineare |
+| Tone mapper | Filmic RGB (in alternativa Sigmoid o AgX) |
 
 !!! tip "Bilanciamento del bianco su vegetazione"
     Per le foto IR, impostare il WB su foglie o erba: la vegetazione riflette l'infrarosso e appare molto chiara/neutra, fornendo un punto di riferimento affidabile per il bilanciamento[^monochrome-guide].
@@ -41,7 +40,6 @@ Il passo fondamentale è scambiare i canali rosso e blu usando **Color Calibrati
 !!! important "Somma dei coefficienti = 1"
     Quando si modificano i coefficienti del mixer di canali, assicurarsi che la somma sia 1 oppure attivare l'opzione **Normalizza** per evitare alterazioni indesiderate della luminosità[^color-calibration-ref].
 
-*Figura 2 — Configurazione del Color Calibration per lo scambio dei canali rosso e blu.*
 
 ## Passo 3 — Conversione in Bianco e Nero
 
@@ -114,7 +112,6 @@ Per dare profondità all'immagine senza appiattire i dettagli:
 | Mask contrast compensation | +0.00 EV | — |
 | Curve smoothing | +0.00 | — |
 
-*Figura 3 — Regolazione dell'equalizzatore tonale per aumentare la profondità dell'immagine.*
 
 ## Passo 8 — Finitura con Diffuse or Sharpen
 
@@ -128,7 +125,6 @@ Per recuperare texture e rimuovere eventuali aloni:
 | 3rd order speed | Valori negativi per de-haze |
 | 1st/3rd order anisotropy | +200% per direzionalità |
 
-*Figura 4 — Applicazione di Diffuse or Sharpen per recuperare texture e rimuovere aloni.*
 
 ## Creare uno stile per il batch editing
 
@@ -144,7 +140,6 @@ Una volta trovata la ricetta giusta, salvarla come **stile** per applicarla rapi
 
 ## Risultato finale
 
-*Figura 5 — Immagine finale dopo tutte le regolazioni: scambio canali, conversione B&W, viraggio cromatico, contrasto locale e sharpening.*
 
 ## Riepilogo impostazioni
 

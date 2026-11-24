@@ -98,4 +98,3 @@ Questa documentazione aggrega e cita contenuti da quattro famiglie di fonti:
 - **Fotografare per Stupire** (italiano, 10 video) — tutorial in italiano: interfaccia e catalogazione, bilanciamento del bianco, controllo colore, maschere parametriche, rimozione imperfezioni, riduzione rumore, equalizzatore toni, workflow ritratto
 
 Citati nelle pagine come `[^firststeps]`, `[^pipeline]`, `[^agx-guide]`, ecc.
-

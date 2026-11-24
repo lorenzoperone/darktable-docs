@@ -31,4 +31,3 @@ Ogni scheda modulo riporta: funzione, parametri principali, consigli dai video-t
 | **Composite** | Fusione di livelli duplicati |
 
 > Per la documentazione completa di tutti i moduli: [darktable User Manual -- Module Reference](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/) | Copie locali in `processed/darktable-usermanual-en/`
-

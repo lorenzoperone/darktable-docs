@@ -44,7 +44,7 @@ Osserva:
 - La preview mostra artefatti? (bande, frange cromatiche, macchie) → richiederà correzioni specifiche  
 
 !!! tip "Prima regola: non toccare nulla subito"
-    darktable applica già un profilo di ingresso e una curva base. Prima di modificare, premi `R` per **reimpostare tutti i moduli attivi** — così parti da uno stato pulito e coerente[^suivre-tutoriels-lr].
+    Con il flusso *scene-referred* (default) darktable applica già alcuni moduli di base: profilo colore di ingresso, bilanciamento del bianco, un'esposizione di partenza e il tone mapper scelto nelle preferenze (AgX, Sigmoid o Filmic) — **non** una curva base come in Lightroom. Valuta l'immagine così com'è prima di intervenire; se vuoi ripartire da zero, usa il modulo **cronologia** (*history stack*) e torna all'elemento *originale*. Vedi [Cronologia e history stack](../pipeline/history-stack.md).
 
 ---
 

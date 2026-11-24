@@ -272,7 +272,7 @@ Le maschere **shadows**, **mid-tones**, **highlights** sono calcolate *all’ing
 
 ## Fonti
 
-[^manual-colorbalance]: *darktable User Manual -- Color Balance RGB*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/) | Copia locale: `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-color-balance-rgb.md`  
+[^manual-colorbalance]: *darktable User Manual -- Color Balance RGB*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-balance-rgb/) | Copia locale: `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-color-balance-rgb.md`
 [^manual-coloreq]: *darktable User Manual -- Color Equalizer*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/color-equalizer/)
 [^manual-toneeq]: *darktable User Manual -- Tone Equalizer*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/tone-equalizer/) | Copia locale: `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-tone-equalizer.md`
 [^manual-contrasteq]: *darktable User Manual -- Contrast Equalizer*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/contrast-equalizer/) | Copia locale: `processed/darktable-usermanual-en/usermanual-48-en-module-reference-processing-modules-contrast-equalizer.md`

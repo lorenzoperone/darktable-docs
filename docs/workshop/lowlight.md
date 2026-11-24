@@ -2,7 +2,6 @@
 
 > **Fonti:** [Lowlight photos in darktable](https://www.youtube.com/watch?v=O7wXgmQZqiU) — A Dabble in Photography | [darktable Night Sky Full Edit](https://www.youtube.com/watch?v=5P0Yj_vqy5w) — A Dabble in Photography
 
-*Figura 1 — Immagine lowlight: luci sceniche viola, ISO 2000, esposizione da recuperare.*
 
 Due scenari di scarsa illuminazione: un concerto con luci sceniche colorate (ISO 2000) e un paesaggio notturno al crepuscolo.
 
@@ -27,7 +26,6 @@ Configurare una scorciatoia da tastiera per l'esposizione: premere `E` per attiv
 !!! tip "Scorciatoia E + rotella"
     Assegnare il modulo Exposure alla scorciatoia `E` e usare la rotella del mouse per regolazioni rapide. Fondamentale quando si lavora su molte immagini in sessione.
 
-*Figura 2 — Regolazione rapida dell'esposizione con scorciatoia E + rotella.*
 
 ### Passo 2 — Pipeline con AGX
 
@@ -58,7 +56,6 @@ Per le foto a luci miste, **AGX+** è preferibile per evitare tonalità magenta 
 !!! warning "Preservare i volti"
     Non aumentare eccessivamente il contrasto per preservare i dettagli facciali. Usare **shoulder power** e **toe power** invece del cursore contrasto generico per un controllo più preciso su luci e ombre[^agx-shoulder-toe].
 
-*Figura 3 — Configurazione AGX+ per luci sceniche viola: shoulder/toe al posto del contrasto generico.*
 
 **AGX (parametri avanzati della curva):**
 | Parametro | Valore | Note |
@@ -99,7 +96,6 @@ Per recuperare vivacità cromatica dopo AGX:
 !!! info "Strategia ombre-luci"
     Ridurre ombre e toni medi aumenta il contrasto percepito e recupera dettagli sui volti. Aumentare le luci controlla la saturazione delle luci sceniche senza slavare i colori[^color-equalizer-lowlight].
 
-*Figura 4 — Color Equalizer: ombre/toni medi scuriti per contrasto, luci aumentate per controllare saturazione.*
 
 ### Passo 6 — Color Balance RGB per raffinamento
 
@@ -111,7 +107,6 @@ Per recuperare vivacità cromatica dopo AGX:
 
 Usare per controllare lo spill cromatico (colore che "sborda" da aree molto saturate) e recuperare dettagli nelle zone sovraesposte dalle luci sceniche.
 
-*Figura 5 — Color Balance RGB: controllo spill cromatico e recupero dettagli luci sceniche.*
 
 ---
 
@@ -119,7 +114,6 @@ Usare per controllare lo spill cromatico (colore che "sborda" da aree molto satu
 
 ### Contesto
 
-*Figura 6 — Paesaggio notturno: edificio illuminato, cielo interessante ma immagine piatta.*
 
 Sony ILCE-7RM3, 24mm, f/4.0, ISO 800. Scena al crepuscolo con edificio illuminato internamente. Il cielo ha colori interessanti ma l'immagine è piatta e il primo piano è troppo scuro.
 
@@ -152,7 +146,6 @@ Verificare la presenza di dati nelle alte luci **prima** di aumentare l'esposizi
 | White relative exposure | 4.88 EV | Ricco di colore negli highlight |
 | Black relative exposure | -13.34 EV | Illuminare le ombre |
 
-*Figura 8 — Filmic RGB: compressione tonale per recuperare dettagli dal RAW notturno.*
 
 !!! info "Look only per la curva"
     La modalità *look only* nella curva Filmic RGB mostra l'effetto senza modifiche permanenti — utile per sperimentare prima di applicare[^filmic-look-only].
@@ -161,7 +154,6 @@ Verificare la presenza di dati nelle alte luci **prima** di aumentare l'esposizi
 
 Creare due istanze di **Exposure** con maschere inverse:
 
-*Figura 7 — Maschera Exposure: cielo e primo piano separati con maschera disegnata + Jz parametrica.*
 
 **Exposure (istanza "sky"):**
 | Parametro | Valore |
@@ -201,7 +193,6 @@ Creare due istanze di **Exposure** con maschere inverse:
 
 **Color Equalizer** per affinare la tonalità del cielo.
 
-*Figura 9 — Tone Equalizer: scultura della luce tra cielo e primo piano.*
 
 ### Passo 6 — Ritaglio cinematografico e filtro graduato
 

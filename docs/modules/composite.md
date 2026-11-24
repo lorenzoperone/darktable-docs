@@ -173,7 +173,7 @@ Il modulo rallenta notevolmente il refresh dell’anteprima anche su hardware mo
 
 ## Fonti
 
-[^dt50-update]: darktable.fr, “Version 5.0.0”, 2024-12-20 — conferma introduzione stabile di composite e posizionamento nella pipeline[^dt50-update]  
+[^dt50-update]: darktable.fr, “Version 5.0.0”, 2024-12-20 — conferma introduzione stabile di composite e posizionamento nella pipeline
 [^orton-tutorial]: darktable.fr, “l'effet Orton et le module composite”, 2025-10-13 — descrizione pratica, workflow e confronto con soften
 [^dabble-orton]: YouTube, “The Orton effect in darktable”, A Dabble in Photography, 2026-04-12 — dimostrazione passo-passo con parametri reali (blur radius 20–25 px, multiply, opacity 45%)
 [^dabble-dragon]: YouTube, “The Dragan effect in darktable”, A Dabble in Photography, 2026-04-12 — uso di invert + screen, foreground opacity 100%, blending globale

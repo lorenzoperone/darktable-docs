@@ -125,4 +125,3 @@ I valori numerici qui sotto sono quelli effettivamente osservabili nei tutorial 
 [^tone-mapper-conflict]: darktable Manual — Sigmoid Usage Notes. https://docs.darktable.org/usermanual/development/en/module-reference/processing-modules/sigmoid/
 [^sam2-raster]: A Dabble in Photography — AI masks. https://www.youtube.com/watch?v=7yd5riDmUjk
 [^gamut-check]: darktable Manual — Gamut Check Plugin. https://github.com/darktable-org/darktable/tree/master/src/external/gamutcheck
-

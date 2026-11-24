@@ -130,7 +130,7 @@ Ogni canale dispone di **quattro marker triangolari**, organizzati in due coppie
 [^manual]: *darktable User Manual -- Parametric Masks*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/masks/parametric/) | `processed/darktable-usermanual-en/usermanual-48-en-darkroom-masking-and-blending-masks-parametric.md`
 [^landscape]: *[Landscape edit with AI](https://www.youtube.com/watch?v=OERXOFz9lEo)* — A Dabble in Photography
 [^pixls-luminosity]: *PIXLS.US — Luminosity Masking in Darktable*, [pixls.us](https://pixls.us/articles/luminosity-masking-in-darktable/) | `processed/pixls-articles/articles-luminosity-masking-in-darktable.md`
-[^jzazbz]: *JzAzBz — A uniform color space for HDR and wide gamut applications*, CIE Technical Report, 2017 [^jzazbz]  
+[^jzazbz]: *JzAzBz — A uniform color space for HDR and wide gamut applications*, CIE Technical Report, 2017
 [^drawn-parametric]: *darktable user manual — combining drawn & parametric masks*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/masks/drawn-and-parametric/)
 [^refinement]: *darktable user manual — mask refinement & additional controls*, [docs.darktable.org](https://docs.darktable.org/usermanual/development/en/darkroom/masking-and-blending/masks/refinement-controls/)
 [^darktable-masks-ep4]: *[ENG] darktable masks Episode 4*, A Dabble in Photography, [youtube.com/watch?v=4z70D5zRAXw](https://www.youtube.com/watch?v=4z70D5zRAXw)
