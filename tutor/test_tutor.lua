@@ -16,7 +16,21 @@ log("lezione: " .. tostring(api.lesson.title) .. " — installato all'avvio: " .
 dt.gui.current_view(dt.gui.views.lighttable); dt.control.sleep(2500)
 log("installato dopo cambio vista: " .. tostring(api.installed()))
 
-local img = dt.database[1]
+local orig = dt.database[1]
+-- protezione: sull'ORIGINALE «mostrami» deve rifiutarsi e non toccare la cronologia
+dt.gui.selection({ orig })
+local tries0 = 0
+repeat
+  dt.gui.current_view(dt.gui.views.darkroom); dt.control.sleep(1500); tries0 = tries0 + 1
+until dt.gui.current_view().id == dt.gui.views.darkroom.id or tries0 >= 8
+dt.gui.views.darkroom.display_image(orig); dt.control.sleep(3000)
+api.goto_step(#api.lesson.steps); api.show_me(); dt.control.sleep(1500)
+local guard_ok = api.result():find("duplica") ~= nil
+log("protezione sull'originale: " .. (guard_ok and "OK (rifiutato)" or ("KO: " .. api.result())))
+-- da qui si lavora su un duplicato, come farebbe lo studente
+dt.gui.current_view(dt.gui.views.lighttable); dt.control.sleep(2000)
+local img = orig:duplicate(); dt.control.sleep(1500)
+log("duplicato creato: versione " .. tostring(img.duplicate_index))
 dt.gui.selection({ img })
 local tries = 0
 repeat
@@ -39,6 +53,7 @@ for n, st in ipairs(api.lesson.steps) do
         n, st.title, before, after, good and "OK" or "KO"))
   end
 end
+ok_all = ok_all and guard_ok
 log("ESITO: " .. (ok_all and "TUTTO OK" or "CI SONO KO"))
 log("FINE")
 dt.control.quit()

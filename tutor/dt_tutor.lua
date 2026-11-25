@@ -117,6 +117,17 @@ local function show_me()
   local s = lesson.steps[current]
   local img = dt.gui.views.darkroom.display_image()
   if not img or not s.xmp then return end
+  -- Protezione: «mostrami» SOSTITUISCE la cronologia dell'immagine. Si applica solo
+  -- alla foto della lezione e solo a un DUPLICATO, così le modifiche dell'originale
+  -- (o di altre foto) non si perdono.
+  if lesson.raw and img.filename ~= lesson.raw then
+    w_result.label = "Questa lezione usa la foto " .. lesson.raw .. ": aprila in camera oscura (stai guardando " .. img.filename .. ")."
+    return
+  end
+  if (img.duplicate_index or 0) == 0 then
+    w_result.label = "Per non perdere le tue modifiche, prima duplica la foto con la cronologia vuota (lighttable, Ctrl+Shift+D) e aprila in camera oscura: «mostrami» lavora solo sui duplicati."
+    return
+  end
   local path = (lesson.xmp_dir or here) .. "/" .. s.xmp
   local n = current
   w_result.label = "Applico la soluzione del passo " .. n .. "…"

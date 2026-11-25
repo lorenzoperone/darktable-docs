@@ -14,7 +14,7 @@ Lezioni disponibili: `flusso-base` (DSC08237), `esercizio-corridoio` (DSC08210),
 2. In `~/.config/darktable/luarc` aggiungi: `require "tutor-<lezione>/dt_tutor"` (una riga per lezione).
 3. Avvia darktable, apri la foto: il pannello **tutor** compare a sinistra nella camera oscura dopo il primo cambio di vista.
 
-> **Attenzione:** "mostrami" sostituisce la cronologia dell'immagine: usalo sulla foto dell'esercizio, non sulle tue elaborazioni.
+> **Protezione:** "mostrami" sostituisce la cronologia dell'immagine, quindi si rifiuta di lavorare su una foto diversa da quella della lezione e sulla foto originale: duplica prima la foto con la cronologia vuota (lighttable, `Ctrl+Shift+D`) e aprila in camera oscura.
 
 ## Stato: provato su darktable 5.6.2 (macOS), 2026-11-24
 
