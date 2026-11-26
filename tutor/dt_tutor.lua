@@ -154,12 +154,24 @@ local panel = dt.new_widget("box") {
   dt.new_widget("label") { label = lesson.title or "lezione" },
   w_title,
   w_text,
+  dt.new_widget("label") { label = "verifica = controlla se hai fatto il passo", ellipsize = "end" },
+  dt.new_widget("label") { label = "mostrami = applica la soluzione al duplicato", ellipsize = "end" },
   dt.new_widget("box") {
     orientation = "horizontal",
-    dt.new_widget("button") { label = "◀", clicked_callback = function() go(-1) end },
-    dt.new_widget("button") { label = "verifica", clicked_callback = verify },
-    dt.new_widget("button") { label = "mostrami", clicked_callback = show_me },
-    dt.new_widget("button") { label = "▶", clicked_callback = function() go(1) end },
+    dt.new_widget("button") {
+      label = "◀", tooltip = "passo precedente",
+      clicked_callback = function() go(-1) end },
+    dt.new_widget("button") {
+      label = "verifica",
+      tooltip = "Controlla se hai eseguito il passo: guarda lo stato della foto aperta e scrive ✓ o ✗ per ogni condizione. Non modifica nulla.",
+      clicked_callback = verify },
+    dt.new_widget("button") {
+      label = "mostrami",
+      tooltip = "Applica alla foto aperta la soluzione di questo passo (e dei passi precedenti). SOSTITUISCE la cronologia: funziona solo su un duplicato della foto della lezione, creato con Ctrl+Shift+D.",
+      clicked_callback = show_me },
+    dt.new_widget("button") {
+      label = "▶", tooltip = "passo successivo",
+      clicked_callback = function() go(1) end },
   },
   w_result,
 }
